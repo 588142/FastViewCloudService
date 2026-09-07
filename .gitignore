@@ -4,6 +4,9 @@ __pycache__/
 # 临时下载目录
 _dl/
 
+# 单卷导出产物
+_export/
+
 # Trae IDE 共享包缓存
 .trae-html-share-packages/
 
