@@ -439,7 +439,7 @@
     <div class="theorem">
       <span class="t-name">定理 3.7 · 前景理论价值函数定理（Kahneman & Tversky, 1979）</span>
       价值函数v(·)在参照点处呈S形：在获益域呈凹函数（风险规避），在损失域呈凸函数（风险寻求），且损失域的斜率大于获益域的斜率（损失厌恶）。
-      <span class="t-note">Kahneman与Tversky通过实验发现：v(x)在x>0（获益）时呈凹形——v''(x) < 0；在x<0（损失）时呈凸形——v''(x) > 0；且损失域的斜率约为获益域斜率的2倍——v(-x) ≈ -2·v(x)（损失厌恶系数λ≈2.25）。该定理的数学形式为：v(x) = x^α（x≥0）, v(x) = -λ·(-x)^β（x<0），其中α, β ∈ (0,1)，λ>1。该定理挑战了期望效用理论的核心假设——效用函数在所有域中均为凹函数，且对获益与损失对称。该定理的修正：Tversky与Kahneman（1992）的"累积前景理论"用等级依赖权重函数替代了原始版本的"概率权重函数"。</span>
+      <span class="t-note">Kahneman与Tversky通过实验发现：v(x)在x>0（获益）时呈凹形——v''(x) &lt; 0；在x&lt;0（损失）时呈凸形——v''(x) > 0；且损失域的斜率约为获益域斜率的2倍——v(-x) ≈ -2·v(x)（损失厌恶系数λ≈2.25）。该定理的数学形式为：v(x) = x^α（x≥0）, v(x) = -λ·(-x)^β（x&lt;0），其中α, β ∈ (0,1)，λ>1。该定理挑战了期望效用理论的核心假设——效用函数在所有域中均为凹函数，且对获益与损失对称。该定理的修正：Tversky与Kahneman（1992）的"累积前景理论"用等级依赖权重函数替代了原始版本的"概率权重函数"。</span>
     </div>
 
     <h3>3.8 Tversky的诊断性-可加性定理</h3>
@@ -483,11 +483,11 @@
       <p><strong>步骤4：</strong>考虑信度ρ_{XX'}的定义。在CTT中，信度定义为真分数方差与观察分数方差之比：</p>
       <p>ρ_{XX'} = Var(T_total) / Var(X_total) = Var(T_total) / (Var(T_total) + Var(E_total))</p>
 
-      <p><strong>步骤5：</strong>关键不等式。注意Var(T_total) = Var(ΣT_i) = ΣVar(T_i) + 2Σ_{i<j}Cov(T_i, T_j)。由于所有项目测量同一构念，Cov(T_i, T_j) ≥ 0，故：</p>
+      <p><strong>步骤5：</strong>关键不等式。注意Var(T_total) = Var(ΣT_i) = ΣVar(T_i) + 2Σ_{i&lt;j}Cov(T_i, T_j)。由于所有项目测量同一构念，Cov(T_i, T_j) ≥ 0，故：</p>
       <p>Var(T_total) ≥ ΣVar(T_i)</p>
       <p>且等号成立当且仅当所有Cov(T_i, T_j) = 0——即项目之间无共同变异，但这在"同一构念"的假设下几乎不可能发生。</p>
 
-      <p><strong>步骤6：</strong>同样，对于误差方差：Var(E_total) = ΣVar(E_i) + 2Σ_{i<j}Cov(E_i, E_j)。由于假设误差独立，Cov(E_i, E_j) = 0，故：</p>
+      <p><strong>步骤6：</strong>同样，对于误差方差：Var(E_total) = ΣVar(E_i) + 2Σ_{i&lt;j}Cov(E_i, E_j)。由于假设误差独立，Cov(E_i, E_j) = 0，故：</p>
       <p>Var(E_total) = ΣVar(E_i)</p>
 
       <p><strong>步骤7：</strong>比较α与ρ_{XX'}。将步骤5与步骤6代入：</p>
@@ -496,9 +496,9 @@
 
       <p>而ρ_{XX'} = Var(T_total) / (Var(T_total) + Var(E_total))</p>
 
-      <p><strong>步骤8：</strong>注意Var(T_total) - ΣVar(T_i) = 2Σ_{i<j}Cov(T_i, T_j)。在tau-等价条件下（所有Cov(T_i, T_j)相等且所有Var(T_i)相等），可以证明(k/(k-1)) · (Var(T_total) - ΣVar(T_i)) = Var(T_total)，因此α = ρ_{XX'}。</p>
+      <p><strong>步骤8：</strong>注意Var(T_total) - ΣVar(T_i) = 2Σ_{i&lt;j}Cov(T_i, T_j)。在tau-等价条件下（所有Cov(T_i, T_j)相等且所有Var(T_i)相等），可以证明(k/(k-1)) · (Var(T_total) - ΣVar(T_i)) = Var(T_total)，因此α = ρ_{XX'}。</p>
 
-      <p>在非tau-等价条件下，因为(k/(k-1)) · (Var(T_total) - ΣVar(T_i)) < Var(T_total)（当协方差不等时），故α < ρ_{XX'}。</p>
+      <p>在非tau-等价条件下，因为(k/(k-1)) · (Var(T_total) - ΣVar(T_i)) &lt; Var(T_total)（当协方差不等时），故α &lt; ρ_{XX'}。</p>
 
       <p><strong>结论：</strong>α ≤ ρ_{XX'}，即克朗巴赫α系数是信度的下界。当且仅当项目满足tau-等价条件时，α = ρ_{XX'}。该证明的关键推论是：α不是测量"单维性"的指标——一个高α值仅说明项目间协方差较大，但项目可能同时测量多个维度。</p>
 
@@ -534,7 +534,7 @@
       <p>P(X_s > X_n) = P(D > 0) = P((D - d')/√(2σ²) > -d'/√(2σ²))</p>
 
       <p><strong>步骤5：</strong>利用正态分布的对称性：</p>
-      <p>P(Z > -d'/√(2σ²)) = P(Z < d'/√(2σ²))</p>
+      <p>P(Z > -d'/√(2σ²)) = P(Z &lt; d'/√(2σ²))</p>
       <p>因为标准正态分布关于0对称。</p>
 
       <p><strong>步骤6：</strong>因此：</p>
