@@ -1,0 +1,508 @@
+<!-- ==================== 本科生升级层 · 附录 ==================== -->
+
+      <section class="sec" id="appendix-a">
+        <h2><span class="chapno">附录一</span>本科生升级导览与教材对标</h2>
+        <div class="callout">
+          <span class="callout-title">为什么需要这套附录</span>
+          <p>前面的七章是"思想谱系"：我们沿着时间线看逻辑如何从亚里士多德走到哥德尔，理解每个学派的<strong>来龙去脉</strong>。但一门真正的本科逻辑课，还要求你<strong>能动手</strong>——默写定义、填真值表、做自然演绎证明、判别三段论、符号化一段自然语言。本附录就是为此补上的"硬核层"：它不改变前面七章的谱系结构，而是把每个谱系节点背后的<strong>操作技术</strong>补出来，让你从"讲得清"进阶到"做得对"。</p>
+        </div>
+
+        <h3>对标的三本本科经典教材</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>教材</th><th>作者</th><th>本附录对应章节</th><th>定位</th></tr></thead>
+            <tbody>
+              <tr><td>《简明逻辑学导论》<br>A Concise Introduction to Logic</td><td>Patrick Hurley</td><td>附录二、三、四、五、六</td><td>北美主流入门教材，覆盖命题逻辑、三段论、谓词逻辑与谬误</td></tr>
+              <tr><td>《逻辑学导论》<br>Introduction to Logic</td><td>Irving Copi &amp; Carl Cohen</td><td>附录二、四、五、七</td><td>偏日常语言与批判性思维，三段论与谬误讲得最细</td></tr>
+              <tr><td>陈波《逻辑学是什么》</td><td>陈波</td><td>附录二、三、六</td><td>中文入门，衔接现代逻辑的符号系统</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>学习路线图</h3>
+        <figure class="diagram">
+          <figcaption>附录图 A · 本科逻辑学习路线</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  A["精确定义<br>（附录二）"] --> B["命题逻辑<br>（附录三）"]
+  B --> C["自然演绎<br>（附录四）"]
+  C --> D["三段论<br>（附录五）"]
+  D --> E["谓词逻辑<br>（附录六）"]
+  E --> F["哥德尔定理<br>（附录六）"]
+  A --> G["方法训练<br>符号化（附录七）"]
+  G --> H["习题集<br>（附录八）"]
+  I["文献·争论·延伸<br>（附录九、十、十一）"] -.-> A
+  classDef hd fill:#334155,color:#fff,stroke:#334155;
+  class A,B,C,D,E,F,G,H,I hd;
+          </pre>
+        </figure>
+
+        <h3>本附录要你掌握的六个"本科级"目标</h3>
+        <ul>
+          <li><strong>会背定义</strong>：能默写并辨析"有效性 vs 健全性""演绎 vs 归纳 vs 溯因"等核心概念；</li>
+          <li><strong>会填真值表</strong>：能判定一个复合命题是否重言式、两命题是否逻辑等价；</li>
+          <li><strong>会做证明</strong>：能用八条基本推理规则 + 替换规则完成自然演绎证明；</li>
+          <li><strong>会判别三段论</strong>：能判断一个直言三段论属于哪个格、式是否有效；</li>
+          <li><strong>会符号化</strong>：能把一句自然语言翻译成命题逻辑或谓词逻辑的符号；</li>
+          <li><strong>会读原著</strong>：能直接阅读亚里士多德、哥德尔等人的关键段落。</li>
+        </ul>
+      </section>
+
+      <section class="sec" id="appendix-b">
+        <h2><span class="chapno">附录二</span>精确定义与术语表</h2>
+        <p>谱系章节里这些词都出现过，但都是<strong>描述性</strong>的。表格里给出的是<strong>可默写、可辨错</strong>的严格定义——本科生水平的标志，就是能用自己的话复述它们，并指出易混处。</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>术语</th><th>符号</th><th>严格定义</th><th>易混点 / 辨析</th></tr></thead>
+            <tbody>
+              <tr><td><strong>命题</strong></td><td>p, q, r …</td><td>能判定真假的陈述句</td><td>疑问句、祈使句不是命题；"这句话是假的"是悖论而非命题</td></tr>
+              <tr><td><strong>论证</strong></td><td>—</td><td>一组前提 + 一个结论的结构，前提用于支持结论</td><td>论证看的是"支持关系"，不是争吵</td></tr>
+              <tr><td><strong>有效性</strong></td><td>—</td><td>当且仅当<em>不可能</em>出现"前提全真而结论假"，论证才有效</td><td>有效性与前提真假无关；只问"形式能不能保真"</td></tr>
+              <tr><td><strong>健全性</strong></td><td>—</td><td>有效 <strong>且</strong> 前提全部为真</td><td>有效性 + 真假前提 = 健全；前提假的有效论证不健全</td></tr>
+              <tr><td><strong>演绎</strong></td><td>⊨</td><td>前提真则结论<em>必然</em>真</td><td>结论不超出前提内容；不可能前提真结论假</td></tr>
+              <tr><td><strong>归纳</strong></td><td>—</td><td>前提真只使结论<em>概然</em>真（概率提高但非必然）</td><td>结论可能已知前提下仍为假（黑天鹅问题）</td></tr>
+              <tr><td><strong>溯因</strong></td><td>—</td><td>从结果反推"最佳解释"作为假设</td><td>结论是<em>最合理的猜测</em>，不是证明</td></tr>
+              <tr><td><strong>重言式</strong></td><td>⊨ p</td><td>在所有赋值下恒真的命题</td><td>如 p ∨ ¬p；"空对空的真"</td></tr>
+              <tr><td><strong>矛盾式</strong></td><td>—</td><td>在所有赋值下恒假的命题</td><td>如 p ∧ ¬p</td></tr>
+              <tr><td><strong>偶然式</strong></td><td>—</td><td>既非重言式也非矛盾式（有真有假）</td><td>如 p → q</td></tr>
+              <tr><td><strong>逻辑等价</strong></td><td>≡</td><td>两命题在所有赋值下真值相等</td><td>记作 p ≡ q，读作"p 逻辑等价于 q"</td></tr>
+              <tr><td><strong>一致性</strong></td><td>—</td><td>一组命题能够<em>同时</em>为真</td><td>矛盾的一组命题不一致</td></tr>
+              <tr><td><strong>完备性</strong></td><td>—</td><td>形式系统能证明所有<em>有效</em>的公式</td><td>与哥德尔"不完备"相对；完备≠可判定</td></tr>
+              <tr><td><strong>可判定性</strong></td><td>—</td><td>存在算法，能对任意公式判定其是否为定理</td><td>命题逻辑可判定；谓词逻辑不可判定（丘奇）</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="explain">
+          <p><strong>最容易丢分的三个辨析：</strong></p>
+          <ul>
+            <li><strong>有效 ≠ 真</strong>：有效说的是<em>形式</em>（如果前提真，结论不可能假），一个字都不涉及前提实际真假。</li>
+            <li><strong>归纳 ≠ 演绎</strong>：演绎结论"必然"，归纳结论只是"概然"。归纳永远可能被反例推翻。</li>
+            <li><strong>重言式 ≠ 废话</strong>：p ∨ ¬p 看起来没信息量，但它是逻辑的<em>恒真地基</em>，自然演绎里靠它做归谬法的支点。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sec" id="appendix-c">
+        <h2><span class="chapno">附录三</span>命题逻辑：联结词、真值表与逻辑等价</h2>
+        <p>命题逻辑把整句当作不可再分的原子 p、q，再用联结词把它们拼成复合命题。只要掌握五个联结词和一套真值表，就能判定任何复合命题在"真/假"意义上的行为。</p>
+
+        <h3>3.1 五个联结词的真值表</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>联结词</th><th>读法</th><th>真值定义</th><th>日常对应</th></tr></thead>
+            <tbody>
+              <tr><td><strong>¬</strong>（否定）</td><td>"非"</td><td>¬p 与 p 真值相反</td><td>"不下雨"</td></tr>
+              <tr><td><strong>∧</strong>（合取）</td><td>"且"</td><td>p∧q 仅当两者皆真时为真</td><td>"又……又……"</td></tr>
+              <tr><td><strong>∨</strong>（析取）</td><td>"或"</td><td>p∨q 至少一真即为真</td><td>"或者……或者……"（相容或）</td></tr>
+              <tr><td><strong>→</strong>（蕴含）</td><td>"如果……那么"</td><td>仅当前件真而后件假时为假</td><td>"雨天 ⇒ 地湿"</td></tr>
+              <tr><td><strong>↔</strong>（等值）</td><td>"当且仅当"</td><td>两者真值相同时为真</td><td>"……当且仅当……"</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th colspan="4">蕴含 p → q 的真值表（本科必背，易错点在下两行）</th></tr></thead>
+            <tbody>
+              <tr><td><strong>p</strong></td><td><strong>q</strong></td><td><strong>p → q</strong></td><td>直觉检验</td></tr>
+              <tr><td>真</td><td>真</td><td>真</td><td>承诺兑现</td></tr>
+              <tr><td>真</td><td>假</td><td><strong>假</strong></td><td>承诺落空（唯一假的情形）</td></tr>
+              <tr><td>假</td><td>真</td><td>真</td><td>前件未发生，蕴含自动为真（"空真"）</td></tr>
+              <tr><td>假</td><td>假</td><td>真</td><td>前件未发生，蕴含自动为真</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="explain">
+          <p><strong>为什么"假 → 真"算真？</strong>这是初学者最困惑的"实质蕴含"。把它想成一句承诺："如果明天下雨，我就带伞。"若明天没下雨（前件假），无论你有没有带伞，你都没<em>违背</em>承诺——所以这句蕴含不是假的，只能算真。逻辑上唯一让"如果 p 那么 q"为假的情况，是 p 发生了而 q 没兑现。</p>
+        </div>
+
+        <h3>3.2 常用逻辑等价式（替换规则）</h3>
+        <div class="formula">
+          <span class="f-name">双否律 Double Negation</span>
+          ¬¬p ≡ p
+        </div>
+        <div class="formula">
+          <span class="f-name">德摩根律 De Morgan</span>
+          ¬(p ∧ q) ≡ ¬p ∨ ¬q<br>
+          ¬(p ∨ q) ≡ ¬p ∧ ¬q
+        </div>
+        <div class="formula">
+          <span class="f-name">蕴含等值 Implication</span>
+          p → q ≡ ¬p ∨ q
+        </div>
+        <div class="formula">
+          <span class="f-name">逆否等值 Contraposition</span>
+          p → q ≡ ¬q → ¬p
+          <span class="f-note">逆否命题与原命题逻辑等价；但"逆命题(q→p)"和"否命题(¬p→¬q)"不等价。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">分配律 Distribution</span>
+          p ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r)<br>
+          p ∨ (q ∧ r) ≡ (p ∨ q) ∧ (p ∨ r)
+        </div>
+
+        <h3>3.3 例题：用真值表证明逻辑等价</h3>
+        <p>证明 <strong>p → q ≡ ¬p ∨ q</strong>：</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>p</th><th>q</th><th>¬p</th><th>p → q</th><th>¬p ∨ q</th></tr></thead>
+            <tbody>
+              <tr><td>真</td><td>真</td><td>假</td><td>真</td><td>真</td></tr>
+              <tr><td>真</td><td>假</td><td>假</td><td>假</td><td>假</td></tr>
+              <tr><td>假</td><td>真</td><td>真</td><td>真</td><td>真</td></tr>
+              <tr><td>假</td><td>假</td><td>真</td><td>真</td><td>真</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="explain">
+          <p>两列真值完全一致，故 p → q ≡ ¬p ∨ q。这条等价式是自然演绎中把"如果……那么……"转换成"非……或……"的关键工具。</p>
+        </div>
+      </section>
+
+      <section class="sec" id="appendix-d">
+        <h2><span class="chapno">附录四</span>自然演绎与证明方法</h2>
+        <p>自然演绎（Natural Deduction）是一套"像人一样逐步推理"的规则系统。每写一步，都要引用一条规则和它作用的前提行号。下面是本科入门必须掌握的八条基本推理规则。</p>
+
+        <h3>4.1 八条基本推理规则（蕴涵规则）</h3>
+        <div class="formula">
+          <span class="f-name">肯定前件 Modus Ponens（MP）</span>
+          从 p → q 和 p，推出 q。
+          <span class="f-note">符号：p → q, p ⊢ q。三段论的祖先，最重要的一条。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">否定后件 Modus Tollens（MT）</span>
+          从 p → q 和 ¬q，推出 ¬p。
+          <span class="f-note">符号：p → q, ¬q ⊢ ¬p。福尔摩斯的招牌推理。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">假言三段论 Hypothetical Syllogism（HS）</span>
+          从 p → q 和 q → r，推出 p → r。
+        </div>
+        <div class="formula">
+          <span class="f-name">析取三段论 Disjunctive Syllogism（DS）</span>
+          从 p ∨ q 和 ¬p，推出 q。
+        </div>
+        <div class="formula">
+          <span class="f-name">合取引入 Conjunction（Conj）</span>
+          从 p 和 q，推出 p ∧ q。
+        </div>
+        <div class="formula">
+          <span class="f-name">简化 Simplification（Simp）</span>
+          从 p ∧ q，推出 p（或 q）。
+        </div>
+        <div class="formula">
+          <span class="f-name">附加 Addition（Add）</span>
+          从 p，推出 p ∨ q。
+        </div>
+        <div class="formula">
+          <span class="f-name">构造性二难 Constructive Dilemma（CD）</span>
+          从 (p → q) ∧ (r → s) 和 p ∨ r，推出 q ∨ s。
+        </div>
+
+        <h3>4.2 两种"临时假设"法</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>方法</th><th>思路</th><th>要点</th></tr></thead>
+            <tbody>
+              <tr><td><strong>条件证明 CP</strong></td><td>要证 p → q，临时假设 p，推出 q，再"取消假设"得到 p → q</td><td>假设可以临时引入，证明目标完成后必须"撤销"</td></tr>
+              <tr><td><strong>归谬法 RAA</strong></td><td>假设 ¬p，推出矛盾（q ∧ ¬q），从而得出 p</td><td>依赖矛盾律与排中律（经典逻辑）</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>4.3 完整证明示例</h3>
+        <p>证明 <strong>p → q, q → r ⊢ p → r</strong>（即假言三段论）：</p>
+        <div class="formula">
+          <span class="f-name">证明（三行，用 CP + MP）</span>
+          1. p → q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前提<br>
+          2. q → r&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前提<br>
+          3. ├ p&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;假设（为证 p → r）<br>
+          4. q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,3 MP<br>
+          5. r&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2,4 MP<br>
+          6. p → r&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3–5 CP
+          <span class="f-note">第 3 行的"├ p"表示临时假设，第 6 行取消它。每行的右端注明"行号 + 规则名"，这是自然演绎的标准书写格式。</span>
+        </div>
+
+        <div class="explain">
+          <p><strong>证明不是"算"出来的，"格式"就是分数。</strong>本科作业里，规则名（MP、MT、DS…）和行号缺一不可。养成"每步一行、右侧注明依据"的习惯，比背规则本身更重要。</p>
+        </div>
+      </section>
+
+      <section class="sec" id="appendix-e">
+        <h2><span class="chapno">附录五</span>三段论：格、式与文恩图检验</h2>
+        <p>三段论是亚里士多德留下的最古老的形式系统。一个直言三段论由<strong>大前提、小前提、结论</strong>三句直言命题构成，共含三个词项：<strong>大项 P</strong>（结论的谓项）、<strong>小项 S</strong>（结论的主项）、<strong>中项 M</strong>（只出现在前提、不出现在结论里的桥接项）。</p>
+
+        <h3>5.1 四种直言命题（A / E / I / O）</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>符号</th><th>名称</th><th>形式</th><th>例句</th></tr></thead>
+            <tbody>
+              <tr><td><strong>A</strong></td><td>全称肯定</td><td>所有 S 是 P</td><td>所有人都是会死的</td></tr>
+              <tr><td><strong>E</strong></td><td>全称否定</td><td>没有 S 是 P</td><td>没有人是石头</td></tr>
+              <tr><td><strong>I</strong></td><td>特称肯定</td><td>有些 S 是 P</td><td>有些天鹅是白的</td></tr>
+              <tr><td><strong>O</strong></td><td>特称否定</td><td>有些 S 不是 P</td><td>有些鸟不会飞</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>5.2 四个格（中项 M 的位置决定"格"）</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>格</th><th>大前提</th><th>小前提</th><th>结论</th><th>范例</th></tr></thead>
+            <tbody>
+              <tr><td><strong>第一格</strong></td><td>M – P</td><td>S – M</td><td>S – P</td><td>最自然、"标准型"，亚里士多德范式</td></tr>
+              <tr><td><strong>第二格</strong></td><td>P – M</td><td>S – M</td><td>S – P</td><td>中项做两次谓项，结论常否定</td></tr>
+              <tr><td><strong>第三格</strong></td><td>M – P</td><td>M – S</td><td>S – P</td><td>中项做两次主项，结论常特称</td></tr>
+              <tr><td><strong>第四格</strong></td><td>P – M</td><td>M – S</td><td>S – P</td><td>最不自然（亚里士多德未明列）</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>5.3 第一格四个有效式（助记名）</h3>
+        <div class="formula">
+          <span class="f-name">Barbara（AAA-1）</span>
+          所有 M 是 P；所有 S 是 M；所以所有 S 是 P。
+          <span class="f-note">所有人都会死；苏格拉底是人；所以苏格拉底会死。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">Celarent（EAE-1）</span>
+          没有 M 是 P；所有 S 是 M；所以没有 S 是 P。
+        </div>
+        <div class="formula">
+          <span class="f-name">Darii（AII-1）</span>
+          所有 M 是 P；有些 S 是 M；所以有些 S 是 P。
+        </div>
+        <div class="formula">
+          <span class="f-name">Ferio（EIO-1）</span>
+          没有 M 是 P；有些 S 是 M；所以有些 S 不是 P。
+        </div>
+
+        <div class="explain">
+          <p>四个格共有 <strong>256</strong> 种可能式（4 种前提命题 × 4 × 4 组合），其中只有 <strong>24</strong> 个有效式，其中 <strong>15</strong> 个"无条件有效"。中世纪学生靠一首助记诗（"Barbara, Celarent, Darii, Ferio…"）背诵全部有效式。你至少要记牢第一格的这四个。</p>
+        </div>
+
+        <h3>5.4 文恩图检验法</h3>
+        <p>用三个相交的圆分别表示 S、M、P 三个集合，把两个前提的"存在/不存在"关系涂进图里；若结论的关系<strong>自动在图中出现</strong>，则三段论有效；若还需额外假设才成立，则无效。文恩图是三段论的"看图验算器"，比死记助记名更可靠。</p>
+      </section>
+
+      <section class="sec" id="appendix-f">
+        <h2><span class="chapno">附录六</span>谓词逻辑入门与哥德尔不完备定理</h2>
+
+        <h3>6.1 从命题逻辑到谓词逻辑</h3>
+        <p>命题逻辑把整句当原子，无法表达句子<em>内部</em>的"所有/有些"。谓词逻辑引入<strong>个体（a, b, c…）</strong>、<strong>谓词（F, G, P…）</strong>和<strong>量词</strong>，才能写出"所有哲学家都会死"这样的普遍命题。</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>量词</th><th>读法</th><th>典型形式</th><th>含义</th></tr></thead>
+            <tbody>
+              <tr><td><strong>∀</strong></td><td>全称量词"对每个"</td><td>∀x(P(x) → M(x))</td><td>每个 P 都是 M</td></tr>
+              <tr><td><strong>∃</strong></td><td>存在量词"存在"</td><td>∃x(P(x) ∧ G(x))</td><td>存在某个既是 P 又是 G 的个体</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">符号化的黄金规则（高频考点）</span>
+          <p><strong>全称 → 用"蕴含"</strong>：∀x(P(x) → M(x))，"所有哲学家都会死"。<br>
+          <strong>存在 → 用"合取"</strong>：∃x(P(x) ∧ G(x))，"有些哲学家是希腊人"。<br>
+          把它俩搞反（写成 ∀x(P(x) ∧ M(x))）是初学者最经典的错误——那等于断言"宇宙里每个东西都是哲学家"。</p>
+        </div>
+
+        <h3>6.2 四条量词规则</h3>
+        <div class="formula">
+          <span class="f-name">全称例示 UI</span>
+          从 ∀xF(x) 推出 F(a)（把任意个体 a 代入）。
+        </div>
+        <div class="formula">
+          <span class="f-name">全称概括 UG</span>
+          从"对任意个体 a"成立的 F(a)，推出 ∀xF(x)（a 需为"无名字的任意个体"）。
+        </div>
+        <div class="formula">
+          <span class="f-name">存在例示 EI</span>
+          从 ∃xF(x) 推出 F(c)（c 是一个"新的、未用过"的专名）。
+        </div>
+        <div class="formula">
+          <span class="f-name">存在概括 EG</span>
+          从 F(a) 推出 ∃xF(x)。
+        </div>
+
+        <h3>6.3 哥德尔不完备定理的精确陈述</h3>
+        <div class="history">
+          <span class="history-title">第一不完备定理（1931）</span>
+          <p>任何<strong>一致</strong>且<strong>足以表达基本算术</strong>的形式系统 F，都至少存在一个命题 σ，使得 <strong>σ 为真，但 F 既不能证明 σ，也不能证明 ¬σ</strong>。这样的 σ 称为"不可判定命题"。</p>
+          <p><strong>直觉</strong>：只要系统够强（能谈论它自己的证明），就必然存在"真却证不出来"的句子——不存在一个能证明所有算术真理的公理系统。</p>
+        </div>
+        <div class="history">
+          <span class="history-title">第二不完备定理</span>
+          <p>在上述条件下，F <strong>不能证明自身的一致性</strong>（即不能在 F 内部证明"F 不致矛盾"）。</p>
+          <p><strong>直觉</strong>：一个系统要让人相信它无矛盾，不能靠它自己给自己开证明——这击碎了希尔伯特"用有限方法证明数学一致性"的计划。</p>
+        </div>
+      </section>
+
+      <section class="sec" id="appendix-g">
+        <h2><span class="chapno">附录七</span>方法训练：把自然语言符号化</h2>
+        <p>这是从"读懂"到"会用"的桥梁：把一句日常话翻译成逻辑符号，是所有证明、所有判定、所有谬误分析的第一步。下面是四类高频转写套路。</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>自然语言</th><th>逻辑符号</th><th>关键提示</th></tr></thead>
+            <tbody>
+              <tr><td>"如果天下雨，那么比赛取消"</td><td>R → C</td><td>"如果…那么…"＝蕴含 →</td></tr>
+              <tr><td>"只有完成作业，才能及格"</td><td>P → H</td><td>"只有 A 才 B"＝ B → A（别写反！）</td></tr>
+              <tr><td>"除非下雨，否则不开伞"</td><td>¬R → S …（据语境）</td><td>"除非 A 否则 B"＝ ¬A → B 或 ¬B → A，需按语境定</td></tr>
+              <tr><td>"既不便宜又不耐用"</td><td>¬C ∧ ¬D</td><td>"既不…又不…"＝两个否定 ∧</td></tr>
+              <tr><td>"所有人都要吃饭"</td><td>∀x(H(x) → E(x))</td><td>全称配蕴含</td></tr>
+              <tr><td>"有人不爱吃香菜"</td><td>∃x(P(x) ∧ ¬L(x))</td><td>存在配合取</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">"只有 A 才 B"为什么是 B → A？</span>
+          <p>"只有交了钱 A，才能进会场 B"意味着：若有人进了会场，他一定交了钱——即 <strong>B → A</strong>。把"只有 A 才 B"写成 A → B 是最常见的翻车点，务必记住："只有"后面接的是<strong>后件</strong>。</p>
+        </div>
+
+        <h3>符号化三步法</h3>
+        <ul>
+          <li><strong>第一步·定原子</strong>：把每个简单陈述句标成一个字母（p = 天下雨）；</li>
+          <li><strong>第二步·找联结词</strong>：识别"且/或/非/如果…那么/当且仅当/只有…才/除非"；</li>
+          <li><strong>第三步·套括号</strong>：把复合句用括号分组，避免 p ∧ q ∨ r 这种歧义。</li>
+        </ul>
+      </section>
+
+      <section class="sec" id="appendix-h">
+        <h2><span class="chapno">附录八</span>经典习题集（含参考答案）</h2>
+        <p>学完附录二至七，用这套题检验自己是否真的"上手"了。建议先独立做，再看答案。</p>
+
+        <h3>一、概念题</h3>
+        <ol style="margin-left:1.3rem; margin-bottom:1rem;">
+          <li>一个论证<em>有效</em>但前提全假，它是否健全？为什么？</li>
+          <li>写出 p → q 的逆否命题、逆命题、否命题，并指出哪个与 p → q 等价。</li>
+          <li>命题 p ∧ ¬p 属于重言式、矛盾式还是偶然式？</li>
+          <li>"只有 A 才 B"应符号化为什么？</li>
+        </ol>
+
+        <h3>二、计算题</h3>
+        <ol style="margin-left:1.3rem; margin-bottom:1rem;">
+          <li>用真值表证明德摩根律：¬(p ∧ q) ≡ ¬p ∨ ¬q。</li>
+          <li>用真值表判断 (p → q) ∧ (q → r) 是否为重言式。</li>
+          <li>把"如果下雨且打雷，我就不出门"符号化，并写其逆否命题。</li>
+        </ol>
+
+        <h3>三、证明题</h3>
+        <ol style="margin-left:1.3rem; margin-bottom:1rem;">
+          <li>用自然演绎证明：p ∨ q, ¬p ⊢ q（析取三段论）。</li>
+          <li>用自然演绎证明：p → q, ¬q ⊢ ¬p（否定后件 Modus Tollens）。</li>
+          <li>判断三段论"所有 M 是 P；所有 S 是 M；所以所有 S 是 P"的格与式，并说明其有效性。</li>
+        </ol>
+
+        <h3>四、开放题</h3>
+        <ol style="margin-left:1.3rem; margin-bottom:1rem;">
+          <li>找一条今天社交媒体上让你"感觉不对"的论证，用第五章的谬误清单给它定性，再画出它的标准论证结构（前提 → 结论）。</li>
+          <li>用归谬法论证"√2 不是有理数"的逻辑骨架（提示：假设 √2 = m/n，且 m、n 互质，推出矛盾）。</li>
+        </ol>
+
+        <h3>参考答案（做完再看）</h3>
+        <div class="explain">
+          <p><strong>概念题</strong>：① 不健全——健全要求"有效且前提全真"，前提假则必不健全；② 逆否命题 ¬q → ¬p（等价），逆命题 q → p（不等价），否命题 ¬p → ¬q（不等价）；③ 矛盾式；④ B → A。</p>
+          <p><strong>计算题</strong>：① 列 4 行真值表，¬(p∧q) 与 ¬p∨¬q 两列全同；② 不是重言式（在 p=T,q=T,r=F 时取假）；③ 符号化为 (R ∧ T) → ¬G，逆否为 G → ¬(R ∧ T) 即 G → (¬R ∨ ¬T)。</p>
+          <p><strong>证明题</strong>：① 前提 p∨q、¬p，由 DS 直接得 q；② 由 MT 一步得 ¬p（这是规则本身，也可用 RAA：假设 p，由 p→q 得 q，与 ¬q 矛盾）；③ 第一格、AAA-1、即 Barbara，有效。</p>
+          <p><strong>开放题</strong>：① 视具体论证而定，重点看"是否偷换概念/以偏概全/滑坡"；② 假设 √2=m/n（m,n 互质）→ 2n²=m² → m 为偶 → m=2k → n 为偶 → m、n 有公因子 2，与"互质"矛盾，故假设不成立。</p>
+        </div>
+      </section>
+
+      <section class="sec" id="appendix-i">
+        <h2><span class="chapno">附录九</span>一手文献选读</h2>
+        <p>谱系章节里我们"转述"了这些思想；这里是它们的<strong>原文</strong>。本科逻辑的要求，是能直接面对原典，而不是只看二手介绍。</p>
+
+        <div class="callout">
+          <span class="callout-title">亚里士多德《前分析篇》· 三段论</span>
+          <p>"三段论是一种论证，其中某些事物被设定之后，另一事物就必然地由之推出，而不必再预设别的词项。"</p>
+          <p><strong>读法</strong>：注意"必然地由之推出"——这是"有效性"概念的最早表述，也是整个演绎逻辑的起点。</p>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">培根《新工具》· 四假象</span>
+          <p>"围困人们心灵的假象共有四类……族类的假象、洞穴的假象、市场的假象、剧场的假象。"</p>
+          <p><strong>读法</strong>：培根把导致思维错误的偏见分门别类，这是近代"批判性思维"的先声。</p>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">密尔《逻辑体系》· 归纳</span>
+          <p>"归纳是那样一种理智活动，我们从已知为真的特殊事例出发，推出关于尚未观察的一类事例的结论。"</p>
+          <p><strong>读法</strong>：对比亚里士多德"必然推出"与密尔"从特殊到未观察"，正好是演绎与归纳的分水岭。</p>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">弗雷格《概念文字》· 形式化理想</span>
+          <p>"我把判断分解为概念与对象……以算术的精确性写出推理的每一步。"</p>
+          <p><strong>读法</strong>：弗雷格要把推理变成"可机械检查的符号演算"，这是现代逻辑诞生的一刻。</p>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">哥德尔《论〈数学原理〉及相关系统的形式不可判定命题》(1931)</span>
+          <p>"在任意包含算术的形式系统中，都存在这样一类命题，它们在该系统中既不能被证明也不能被否证。"</p>
+          <p><strong>读法</strong>：二十年后的今天再读，重点是"既不能证明也不能否证"这句话的重量——理性第一次被严格地划出了边界。</p>
+        </div>
+      </section>
+
+      <section class="sec" id="appendix-j">
+        <h2><span class="chapno">附录十</span>关键争论与未解问题</h2>
+        <p>通识只讲"结论"，本科则要触碰领域内<strong>仍在争论</strong>的问题。逻辑看似严密，实则至今有五个没有定论的大争点。</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>争论</th><th>核心问题</th><th>关键人物</th><th>现状</th></tr></thead>
+            <tbody>
+              <tr><td><strong>归纳问题</strong></td><td>凭什么过去的规律适用于未来？归纳能否被理性辩护？</td><td>休谟</td><td>至今无公认解决，被称为"哲学丑闻"</td></tr>
+              <tr><td><strong>罗素悖论</strong></td><td>"所有不包含自身的集合的集合"含不含自身？</td><td>罗素、康托尔</td><td>推动了公理化集合论（ZF/ZFC）的产生</td></tr>
+              <tr><td><strong>数学基础之争</strong></td><td>数学能否完全还原为逻辑（逻辑主义）或形式符号（形式主义）？</td><td>弗雷格、罗素、希尔伯特、布劳威尔</td><td>哥德尔定理重创两者，直觉主义另立门户</td></tr>
+              <tr><td><strong>排中律之争</strong></td><td>"p 或 ¬p 必有一真"是否恒成立？</td><td>布劳威尔（反对）</td><td>催生直觉主义逻辑与多值逻辑</td></tr>
+              <tr><td><strong>非经典逻辑</strong></td><td>经典二值逻辑够不够描述模糊、量子、论证语境？</td><td>卢卡西维茨、杜麦特等</td><td>模糊逻辑、多值逻辑、相干逻辑等并立</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="explain">
+          <p><strong>这些争点的意义</strong>：它们说明"逻辑"不是一个已经完工的机器，而是一片仍在扩张的疆域。掌握它们，你就从"逻辑的使用者"进阶为"能对逻辑本身提问的人"。</p>
+        </div>
+      </section>
+
+      <section class="sec" id="appendix-k">
+        <h2><span class="chapno">附录十一</span>延伸阅读与课程对照</h2>
+
+        <h3>教材（由浅入深）</h3>
+        <ul>
+          <li>陈波《逻辑学是什么》——中文入门，先建立直觉；</li>
+          <li>Hurley《A Concise Introduction to Logic》——北美标准教材，习题量大，覆盖本附录全部主题；</li>
+          <li>Copi &amp; Cohen《Introduction to Logic》——偏日常语言与批判性思维；</li>
+          <li>Enderton《A Mathematical Introduction to Logic》——数理逻辑进阶，接哥德尔定理的严格证明（研究生向）。</li>
+        </ul>
+
+        <h3>古典原典</h3>
+        <ul>
+          <li>亚里士多德《工具论》（尤其《前分析篇》）——三段论的源头；</li>
+          <li>培根《新工具》——归纳法的方法论宣言；</li>
+          <li>密尔《逻辑体系》——归纳五法的系统化；</li>
+          <li>弗雷格《概念文字》《算术基础》——现代逻辑的开山之作；</li>
+          <li>哥德尔《论形式系统的不可判定命题》(1931) —— 原作。</li>
+        </ul>
+
+        <h3>在线课程对照（MIT OpenCourseWare / 公开课）</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>课程</th><th>来源</th><th>对应本卷内容</th></tr></thead>
+            <tbody>
+              <tr><td>Logic I（24.241）</td><td>MIT OCW</td><td>附录三、四、六：命题逻辑与谓词逻辑、证明论</td></tr>
+              <tr><td>Paradox and Infinity（24.118）</td><td>MIT OCW</td><td>附录六、十：哥德尔、康托尔、罗素悖论</td></tr>
+              <tr><td>Introduction to Logic</td><td>Stanford / Coursera</td><td>附录二至五：命题逻辑、真值表、自然演绎</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">本卷升级小结</span>
+          <p>至此，本卷在"思想谱系"之上，补齐了<strong>精确定义、形式系统、证明方法、习题检验、一手文献、关键争论与课程对照</strong>七件"本科硬核"装备。逻辑卷的示范到此为止——如果这个样板你认可，就可以把同一套八组件模板，依次复制到其余六个星标卷。</p>
+        </div>
+      </section>

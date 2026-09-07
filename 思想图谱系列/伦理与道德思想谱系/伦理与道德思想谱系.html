@@ -1,0 +1,1018 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>伦理与道德思想谱系 · 思想图谱系列第十辑</title>
+
+  <style>
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+  </style>
+
+  <style>
+    :root {
+      --bg: #F7F6FA;
+      --bg2: #ECEAF3;
+      --ink: #26222E;
+      --muted: #6A6474;
+      --rule: #DDD8E6;
+      --accent: #5B3A8A;
+      --accent2: #C98A2D;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:first-child { margin-left: 0; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .legacy .legacy-title { font-weight: 700; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .legacy ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; }
+    @media (max-width: 700px) { .legacy { grid-template-columns: 1fr; } }
+
+    .history { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; }
+    .history .history-title { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem; }
+    .history p { margin-bottom: 0.55rem; }
+    .history p:last-child { margin-bottom: 0; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    .formula {
+      font-family: var(--font-mono);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidenav { position: static; max-height: none; }
+    }
+    @media print {
+      .sidenav { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      section.sec { break-inside: avoid-page; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="shell">
+
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">伦理与道德思想谱系</div>
+    <div class="brand-sub">思想图谱系列 · 第十辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+      <li><a href="#intro">导言 · 伦理与道德是什么</a></li>
+      <li><a href="#overview">第一章 · 总览：伦理与道德思想谱系</a></li>
+      <li><a href="#classical">第二章 · 古典伦理：从亚里士多德到中世纪</a></li>
+      <li><a href="#modern">第三章 · 近代伦理：从霍布斯到康德与功利主义</a></li>
+      <li><a href="#contemporary">第四章 · 现代伦理：从尼采到罗尔斯</a></li>
+      <li><a href="#eastern">第五章 · 东方伦理：仁学、兼爱、无为与慈悲</a></li>
+      <li><a href="#frontier">第六章 · 前沿伦理：克隆人、AI 与机器人</a></li>
+      <li><a href="#summary">第七章 · 总结：伦理、文明与"善"</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第十辑</span>
+        <span class="series-links">
+          <a href="../index.html">系列目录</a>
+          <a href="../艺术与美学思想谱系/艺术与美学思想谱系.html">← 上一辑 · 艺术与美学思想谱系</a>
+          <a href="../法哲学思想谱系/法哲学思想谱系.html">下一辑 · 法哲学思想谱系 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>伦理与道德思想谱系</h1>
+      <p class="subtitle">从亚里士多德到 AI——人类如何定义"善"：德性伦理、义务论、功利主义、儒家仁学、前沿伦理（克隆人 · AI · 机器人），附常用伦理法则速查</p>
+      <p class="meta">作者：詹家杨 · 2026-09-05 · 7 张思维导图 · 7 张对照表 · 20+ 伦理法则速查 · 40+ 人物语录 · 伦理史</p>
+    </header>
+
+    <main>
+      <!-- 导言 -->
+      <section class="sec" id="intro">
+        <h2>导言 · 伦理与道德是什么</h2>
+        <p>前九辑讲了"人如何想"（政治、哲学、宗教、经济、科学、艺术）；这一辑补上人类文明里最"应当"的那条线：<strong>人应该如何生活</strong>。伦理（ethics）源自希腊语 <em>ethos</em>（习惯、品格），道德（morality）源自拉丁语 <em>mores</em>（习俗）——最初它们都指"一个共同体的生活方式"，直到近代才成为关于"对与错、善与恶"的专门学问。伦理学不回答"世界是什么"，而回答<strong>"我们应当做什么、成为什么样的人"</strong>。</p>
+        <div class="callout">
+          <span class="callout-title">一条主线</span>
+          伦理思想史的主线，是"善的尺度"的六次转向：<strong>为德性</strong>（古典：善即幸福，德性即中道）→ <strong>为法则</strong>（近代：善即服从理性法则与社会契约）→ <strong>为最大多数</strong>（功利主义：善即最大幸福）→ <strong>为自由</strong>（尼采与存在主义：善由自我创造）→ <strong>为正义</strong>（罗尔斯：善即公平）→ <strong>为未来</strong>（前沿伦理：善即对克隆人、AI、机器人与后代的责任）。每一次转向，都是人类重新回答"我们是谁、要对谁负责"。
+        </div>
+      </section>
+
+      <!-- 第一章 总览 -->
+      <section class="sec" id="overview">
+        <h2><span class="chapno">第一章</span>总览：伦理与道德思想谱系</h2>
+        <p>先看全景：古希腊人第一次追问"什么是善的生活"——苏格拉底说"美德即知识"，亚里士多德把德性定义为"中道"；近代以来，霍布斯、洛克、卢梭以社会契约为道德奠基，康德把道德建立在"定言命令"之上，边沁与密尔以"最大幸福"衡量善恶；19 世纪尼采宣告"重估一切价值"，20 世纪罗尔斯以"无知之幕"重建正义，麦金太尔呼吁回归德性传统；与此同时，东方以儒家仁学、道家无为、墨家兼爱、佛家慈悲走出另一条伦理之路；而 21 世纪，克隆人、人工智能与机器人把"我们应当如何对待非人存在"这个全新问题摆上桌面。伦理从"个人如何成德"走向"人类如何共处、如何面向未来"。</p>
+
+        <figure class="diagram">
+          <figcaption>图 1 · 伦理与道德思想谱系总图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["古典伦理<br>古希腊 · 中世纪<br>德性 · 中道 · 自然法"] --> B["近代伦理<br>17–18 世纪<br>契约 · 义务 · 功利"]
+  B --> C["现代伦理<br>19–20 世纪<br>尼采 · 罗尔斯 · 应用伦理"]
+  C --> D["前沿伦理<br>21 世纪<br>克隆人 · AI · 机器人"]
+  B --> E["东方伦理<br>仁学 · 兼爱 · 无为 · 慈悲"]
+  classDef rootNode fill:#5B3A8A,color:#fff,stroke:#5B3A8A;
+  class A rootNode;
+          </pre>
+        </figure>
+
+        <h3>总对照表：伦理思想的五次转折</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>阶段</th><th>时期</th><th>核心问题</th><th>善的尺度</th><th>代表</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>古典伦理</strong></td><td>前 5 世纪–14 世纪</td><td>什么是善的生活？</td><td>德性 · 中道 · 自然法</td><td>亚里士多德 · 斯多亚 · 阿奎那</td></tr>
+              <tr><td><strong>近代伦理</strong></td><td>17–19 世纪</td><td>道德如何被普遍奠基？</td><td>契约 · 义务 · 最大幸福</td><td>霍布斯 · 康德 · 密尔</td></tr>
+              <tr><td><strong>现代伦理</strong></td><td>19–20 世纪</td><td>价值能否被重估与重建？</td><td>自由 · 正义 · 德性复兴</td><td>尼采 · 罗尔斯 · 麦金太尔</td></tr>
+              <tr><td><strong>东方伦理</strong></td><td>先秦至今</td><td>如何成德与安顿人伦？</td><td>仁 · 兼爱 · 无为 · 慈悲</td><td>孔子 · 墨子 · 老子 · 佛陀</td></tr>
+              <tr><td><strong>前沿伦理</strong></td><td>20 世纪至今</td><td>如何对待克隆人、AI 与机器人？</td><td>责任 · 尊严 · 不伤害</td><td>约纳斯 · 阿西莫夫 · 博斯特罗姆</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 第二章 古典伦理 -->
+      <section class="sec" id="classical">
+        <h2><span class="chapno">第二章</span>古典伦理：从亚里士多德到中世纪（前 5 世纪–14 世纪）</h2>
+        <p><strong>定义</strong>：西方伦理在古希腊诞生——苏格拉底提出"美德即知识"，柏拉图以"四主德"（智慧、勇敢、节制、正义）描绘理想人格，亚里士多德把德性定义为"中道"（mesotes），认为幸福（eudaimonia）是灵魂合乎德性的活动；斯多亚派主张"顺从自然、不动心"，伊壁鸠鲁派追求"快乐与灵魂宁静"；中世纪（奥古斯丁、阿奎那）把道德归于对上帝的爱与自然法。这一千年里，伦理的核心是<strong>"成为什么样的人"</strong>，而不是"遵守什么规则"。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>苏格拉底与雅典的德性追问</strong>：在雅典民主的公共生活中，苏格拉底把哲学从天上拉回人间，追问"什么是正义、勇敢、节制"，主张"美德即知识"——无人自愿作恶，作恶只因无知。</p>
+          <p><strong>亚里士多德的德性论</strong>：亚里士多德在《尼各马可伦理学》中提出：幸福是人生的最高目的，德性是一种"中道"——勇敢是怯懦与鲁莽的中点，慷慨是吝啬与挥霍的中点；德性靠习惯养成。</p>
+          <p><strong>希腊化时代的两种生活</strong>：斯多亚派（芝诺、塞涅卡、马可·奥勒留）主张顺从宇宙理性、以"不动心"（apatheia）面对命运；伊壁鸠鲁派主张快乐是善的起点，但真正的快乐是灵魂的宁静（ataraxia）。</p>
+          <p><strong>中世纪的爱与自然法</strong>：奥古斯丁把德性归于"爱上帝"，阿奎那以自然法（理性参与上帝永恒法）为道德奠基，提出"德性是使人行善的习性"。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>苏格拉底（前 469–前 399）</strong>——德性伦理的开端。"美德即知识"，无人自愿作恶。</p>
+        <p><strong>柏拉图（前 427–前 347）</strong>——理念论伦理。提出"四主德"：智慧、勇敢、节制、正义，灵魂的三部分（理性、激情、欲望）各安其位即正义。</p>
+        <p><strong>亚里士多德（前 384–前 322）</strong>——德性论集大成者。幸福是灵魂合乎德性的活动，德性是中道，靠习惯养成。</p>
+        <p><strong>伊壁鸠鲁（前 341–前 270）</strong>——快乐主义伦理。快乐是善的起点与终点，灵魂宁静（ataraxia）是最大的快乐。</p>
+        <p><strong>芝诺（约前 334–前 262）</strong>——斯多亚派创立者。顺从自然与理性，以"不动心"面对命运。</p>
+        <p><strong>塞涅卡（约前 4–65）</strong>——罗马斯多亚代表。德性是唯一的善，哲人是"命运的征服者"。</p>
+        <p><strong>马可·奥勒留（121–180）</strong>——帝王哲学家。《沉思录》，以斯多亚智慧治理帝国与内心。</p>
+        <p><strong>奥古斯丁（354–430）</strong>——教父伦理代表。德性归于爱上帝，恶是善的缺乏。</p>
+        <p><strong>托马斯·阿奎那（1225–1274）</strong>——经院伦理集大成者。以自然法为道德奠基，德性是使人行善的习性。</p>
+
+        <figure class="diagram">
+          <figcaption>图 2 · 古典伦理结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["古典伦理<br>古希腊 · 中世纪"] --> A["苏格拉底 · 柏拉图<br>美德即知识 · 四主德"]
+  ROOT --> B["亚里士多德<br>德性 · 中道 · 幸福"]
+  ROOT --> C["希腊化伦理<br>伊壁鸠鲁快乐 · 斯多亚不动心"]
+  ROOT --> D["罗马斯多亚<br>塞涅卡 · 马可·奥勒留"]
+  ROOT --> E["中世纪伦理<br>奥古斯丁爱上帝 · 阿奎那自然法"]
+  classDef rootNode fill:#5B3A8A,color:#fff,stroke:#5B3A8A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <p>古典伦理留给后世三件"武器"——<strong>中道</strong>、<strong>四主德</strong>与<strong>自然法</strong>：</p>
+        <div class="formula">
+          <span class="f-name">亚里士多德"中道"公式</span>
+          德性 = 两恶之间的中点（如：勇敢 = 怯懦与鲁莽的中点）
+          <span class="f-note">德性不是极端，而是恰到好处。判断"恰到好处"靠实践智慧（phronesis），靠习惯养成。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">柏拉图四主德</span>
+          智慧 · 勇敢 · 节制 · 正义
+          <span class="f-note">灵魂的理性、激情、欲望三部分各安其位、和谐运转，就是"正义"——个人如此，城邦亦如此。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">阿奎那自然法公式</span>
+          道德 = 理性参与上帝的永恒法（自然法）
+          <span class="f-note">"行善避恶"是自然法的第一原则，人的理性可以认识它——这为近代自然权利论埋下伏笔。</span>
+        </div>
+
+        <h3>对照表：德性伦理 vs 快乐主义 vs 斯多亚</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>德性伦理（亚里士多德）</th><th>快乐主义（伊壁鸠鲁）</th><th>斯多亚（芝诺）</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>最高善</strong></td><td>幸福（灵魂合乎德性的活动）</td><td>快乐（灵魂宁静）</td><td>德性本身（顺从自然）</td></tr>
+              <tr><td><strong>德性的地位</strong></td><td>幸福的手段与构成</td><td>获得宁静的工具</td><td>唯一的善</td></tr>
+              <tr><td><strong>对情感的态度</strong></td><td>适度（中道）</td><td>避免痛苦</td><td>不动心（apatheia）</td></tr>
+              <tr><td><strong>典型代表</strong></td><td>亚里士多德</td><td>伊壁鸠鲁 · 卢克莱修</td><td>芝诺 · 塞涅卡 · 奥勒留</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">苏格拉底 · 前 469–前 399</div>
+            <blockquote>未经省察的人生，是不值得过的。<cite>——《申辩篇》</cite></blockquote>
+            <blockquote>美德即知识。<cite>——（柏拉图对话转述）</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">柏拉图 · 前 427–前 347</div>
+            <blockquote>正义就是每个人做自己分内的事。<cite>——《理想国》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">亚里士多德 · 前 384–前 322</div>
+            <blockquote>幸福是灵魂合乎德性的活动。<cite>——《尼各马可伦理学》</cite></blockquote>
+            <blockquote>德性是一种中道，是两恶之间的中点。<cite>——《尼各马可伦理学》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">伊壁鸠鲁 · 前 341–前 270</div>
+            <blockquote>快乐是幸福生活的起点和终点。<cite>——《致美诺寇的信》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">塞涅卡 · 约前 4–65</div>
+            <blockquote>德性是唯一的善，唯有德性使人幸福。<cite>——《论幸福生活》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">马可·奥勒留 · 121–180</div>
+            <blockquote>你拥有支配自己心灵的力量，而非外在事件。<cite>——《沉思录》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">奥古斯丁 · 354–430</div>
+            <blockquote>爱上帝，然后随心所欲。<cite>——《论上帝之城》（意译）</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">托马斯·阿奎那 · 1225–1274</div>
+            <blockquote>行善避恶，是自然法的第一原则。<cite>——《神学大全》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">古典伦理的遗产</div>
+            <ul>
+              <li>"成为什么样的人"优先于"遵守什么规则"</li>
+              <li>德性、中道、四主德的理想人格</li>
+              <li>自然法为近代权利论奠基</li>
+              <li>快乐与宁静、顺从自然的两种生活理想</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第三章 近代伦理 -->
+      <section class="sec" id="modern">
+        <h2><span class="chapno">第三章</span>近代伦理：从霍布斯到康德与功利主义（17–19 世纪）</h2>
+        <p><strong>定义</strong>：近代伦理把道德从"德性"转向"法则"——霍布斯以"自然状态"论证社会契约，洛克与卢梭发展出权利与公意论；休谟把道德归于情感而非理性；康德把道德建立在"定言命令"之上，主张道德律令的普遍性与人的尊严；边沁与密尔则以"最大多数人的最大幸福"（功利主义）衡量善恶。近代伦理完成了从"善的生活"到"对与错的规则"的转向。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>霍布斯的自然状态（1651）</strong>：霍布斯在《利维坦》中设想"人人相争"的自然状态，认为没有主权者就没有道德与正义，人们通过契约交出权利以换取和平——道德由此从"德性"转向"规则与契约"。</p>
+          <p><strong>洛克与卢梭的权利论</strong>：洛克以"自然权利"（生命、自由、财产）限制主权，卢梭以"公意"（general will）论证人民主权，社会契约成为近代政治伦理的基石。</p>
+          <p><strong>休谟的情感主义（1739）</strong>：休谟在《人性论》中提出"理性是激情的奴隶"，道德判断源于同情与情感——"是"与"应当"的鸿沟（休谟问题）成为伦理学的经典难题。</p>
+          <p><strong>康德的义务论（1785）</strong>：康德在《道德形而上学奠基》中提出"定言命令"：只按照你同时愿意它成为普遍法则的准则行动；人永远不能只被当作手段，而应同时被当作目的——这是近代道德哲学的高峰。</p>
+          <p><strong>功利主义的兴起（1789–1863）</strong>：边沁提出"最大多数人的最大幸福"原则，密尔在《功利主义》中区分高级与低级的快乐，为现代福利与公共政策提供伦理基础。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>霍布斯（1588–1679）</strong>——社会契约论奠基者。《利维坦》，自然状态"人对人是狼"。</p>
+        <p><strong>洛克（1632–1704）</strong>——自然权利论代表。生命、自由、财产是自然权利，政府须经同意。</p>
+        <p><strong>卢梭（1712–1778）</strong>——公意论代表。《社会契约论》，"人生而自由，却无往不在枷锁之中"。</p>
+        <p><strong>休谟（1711–1776）</strong>——情感主义伦理。理性是激情的奴隶，"是"与"应当"的鸿沟。</p>
+        <p><strong>康德（1724–1804）</strong>——义务论巅峰。定言命令与人的尊严，道德自律。</p>
+        <p><strong>边沁（1748–1832）</strong>——功利主义创立者。"最大多数人的最大幸福"。</p>
+        <p><strong>密尔（1806–1873）</strong>——功利主义发展者。《论自由》《功利主义》，高级快乐优于低级快乐。</p>
+
+        <figure class="diagram">
+          <figcaption>图 3 · 近代伦理结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["近代伦理<br>17–19 世纪"] --> A["社会契约<br>霍布斯 · 洛克 · 卢梭"]
+  ROOT --> B["情感主义<br>休谟 · 是-应当鸿沟"]
+  ROOT --> C["义务论<br>康德 · 定言命令"]
+  ROOT --> D["功利主义<br>边沁 · 密尔 · 最大幸福"]
+  classDef rootNode fill:#5B3A8A,color:#fff,stroke:#5B3A8A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <p>近代伦理把"善"翻译成可普遍化的<strong>法则</strong>：</p>
+        <div class="formula">
+          <span class="f-name">康德定言命令（第一公式）</span>
+          只按照你同时愿意它成为普遍法则的准则行动
+          <span class="f-note">道德律令不依赖任何条件（"定言"），必须可普遍化——说谎若成为普遍法则将自我瓦解，故说谎总是不道德。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">康德"人是目的"公式</span>
+          永远把人当作目的，绝不只当作手段
+          <span class="f-note">这是近代"人的尊严"最有力的哲学表达，也是今天反对剥削、奴役与工具化的伦理根基。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">功利主义最大幸福公式</span>
+          善 = 最大多数人的最大幸福（边沁）
+          <span class="f-note">以行为产生的快乐减去痛苦的总量衡量善恶；密尔补充：高级快乐（精神）优于低级快乐（感官）。</span>
+        </div>
+
+        <h3>对照表：义务论 vs 功利主义 vs 契约论</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>义务论（康德）</th><th>功利主义（边沁/密尔）</th><th>契约论（霍布斯/卢梭）</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>判断依据</strong></td><td>动机与准则是否可普遍化</td><td>后果的总幸福</td><td>是否出于共同同意</td></tr>
+              <tr><td><strong>关注对象</strong></td><td>义务与尊严</td><td>幸福与效用</td><td>权利与公意</td></tr>
+              <tr><td><strong>典型困境</strong></td><td>说谎救人是否可许</td><td>牺牲少数换多数是否正当</td><td>个体自由 vs 共同善</td></tr>
+              <tr><td><strong>代表</strong></td><td>康德</td><td>边沁 · 密尔</td><td>霍布斯 · 洛克 · 卢梭</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">霍布斯 · 1588–1679</div>
+            <blockquote>人对人是狼。<cite>——《论公民》</cite></blockquote>
+            <blockquote>没有主权者，就没有道德，也没有正义。<cite>——《利维坦》（意译）</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">卢梭 · 1712–1778</div>
+            <blockquote>人生而自由，却无往不在枷锁之中。<cite>——《社会契约论》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">休谟 · 1711–1776</div>
+            <blockquote>理性是、并且应当是激情的奴隶。<cite>——《人性论》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">康德 · 1724–1804</div>
+            <blockquote>有两样东西，愈是经常而持久地思考它们，就愈使心灵充满常新而日增的敬畏：我头上的星空和我心中的道德律。<cite>——《实践理性批判》</cite></blockquote>
+            <blockquote>要这样行动：无论对自己还是对他人，永远把人当作目的，绝不只当作手段。<cite>——《道德形而上学奠基》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">边沁 · 1748–1832</div>
+            <blockquote>最大多数人的最大幸福，是衡量对错的标准。<cite>——《道德与立法原理导论》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">密尔 · 1806–1873</div>
+            <blockquote>做一个不满足的人，胜过做一头满足的猪。<cite>——《功利主义》</cite></blockquote>
+            <blockquote>唯一配得上自由之名者，是"伤害原则"：只要不伤害他人，个人自由不容干涉。<cite>——《论自由》（意译）</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">近代伦理的遗产</div>
+            <ul>
+              <li>道德从"德性"转向"可普遍化的法则"</li>
+              <li>社会契约与自然权利奠基现代政治伦理</li>
+              <li>康德的"人是目的"确立人的尊严</li>
+              <li>功利主义为公共政策与福利提供尺度</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四章 现代伦理 -->
+      <section class="sec" id="contemporary">
+        <h2><span class="chapno">第四章</span>现代伦理：从尼采到罗尔斯（19–20 世纪）</h2>
+        <p><strong>定义</strong>：现代伦理在"价值危机"中重建道德——尼采宣告"上帝已死"、要求"重估一切价值"，以"权力意志"与"超人"对抗平庸；存在主义（萨特）主张"存在先于本质"，人必须为自己的选择负责；罗尔斯以"无知之幕"重建正义论，麦金太尔呼吁回归德性传统；与此同时，应用伦理（生命伦理、环境伦理、动物伦理）兴起，把哲学带进医院、法庭与实验室。现代伦理的核心是：<strong>在传统价值崩塌之后，我们还能凭什么说"应当"？</strong></p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>尼采的重估（1880s）</strong>：尼采宣告"上帝已死"，认为基督教道德是"奴隶道德"，要求以"权力意志"重估一切价值，塑造"超人"——道德从"服从"转向"创造"。</p>
+          <p><strong>存在主义的自由与责任（1940s）</strong>：萨特提出"存在先于本质"，人没有预先给定的本性，必须自由选择并承担全部责任——"人被判定为自由"。</p>
+          <p><strong>罗尔斯的正义论（1971）</strong>：罗尔斯在《正义论》中以"无知之幕"设想原初状态：人们在不知道自己身份地位的情况下选择制度，会倾向于公平——正义即公平（justice as fairness）。</p>
+          <p><strong>德性伦理的复兴（1981）</strong>：麦金太尔在《追寻美德》中批评现代道德碎片化，主张回归亚里士多德的德性传统，德性植根于共同体与实践。</p>
+          <p><strong>应用伦理的兴起（1960s–今）</strong>：生命伦理（安乐死、克隆、器官移植）、环境伦理（生态中心主义）、动物伦理（辛格《动物解放》）把哲学变成公共决策的工具。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>尼采（1844–1900）</strong>——价值重估者。"上帝已死"，权力意志与超人。</p>
+        <p><strong>萨特（1905–1980）</strong>——存在主义伦理。存在先于本质，人被判定为自由。</p>
+        <p><strong>罗尔斯（1921–2002）</strong>——正义论重建者。《正义论》，无知之幕与差别原则。</p>
+        <p><strong>麦金太尔（1929–）</strong>——德性伦理复兴者。《追寻美德》，回归共同体与实践。</p>
+        <p><strong>彼得·辛格（1946–）</strong>——应用伦理代表。《动物解放》，功利主义的当代扩展。</p>
+        <p><strong>汉斯·约纳斯（1903–1993）</strong>——责任伦理奠基者。《责任的命令》，面向未来的技术伦理。</p>
+
+        <figure class="diagram">
+          <figcaption>图 4 · 现代伦理结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["现代伦理<br>19–20 世纪"] --> A["尼采<br>重估一切价值 · 超人"]
+  ROOT --> B["存在主义<br>萨特 · 自由与责任"]
+  ROOT --> C["正义论<br>罗尔斯 · 无知之幕"]
+  ROOT --> D["德性复兴<br>麦金太尔"]
+  ROOT --> E["应用伦理<br>辛格 · 约纳斯"]
+  classDef rootNode fill:#5B3A8A,color:#fff,stroke:#5B3A8A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <p>现代伦理不再提供单一答案，而是提供<strong>重建的路径</strong>：</p>
+        <div class="formula">
+          <span class="f-name">罗尔斯"无知之幕"</span>
+          在不知道自己身份、地位、天赋的情况下选择制度 → 正义即公平
+          <span class="f-note">无知之幕保证选择的公正：因为人人都可能成为最不利者，所以会倾向于保障最不利者的利益（差别原则）。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">萨特"存在先于本质"</span>
+          人没有预定本质 → 自由选择 → 承担全部责任
+          <span class="f-note">"人被判定为自由"，也因此无法把责任推给本性、环境或上帝——这是现代个体伦理的极端表达。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">约纳斯责任命令</span>
+          行动要使得其后果与人类持久的真实生活相容
+          <span class="f-note">面对技术的力量，伦理必须从"邻人伦理"扩展为"面向未来的人类伦理"——为后代与地球负责。</span>
+        </div>
+
+        <h3>对照表：尼采 vs 罗尔斯 vs 麦金太尔</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>尼采</th><th>罗尔斯</th><th>麦金太尔</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>对传统道德</strong></td><td>重估与摧毁（奴隶道德）</td><td>以公平原则重建</td><td>回归德性传统</td></tr>
+              <tr><td><strong>善的来源</strong></td><td>权力意志 · 自我创造</td><td>无知之幕下的公平选择</td><td>共同体与实践中的德性</td></tr>
+              <tr><td><strong>核心关切</strong></td><td>个体超越平庸</td><td>社会基本结构的正义</td><td>现代道德的碎片化</td></tr>
+              <tr><td><strong>代表著作</strong></td><td>《查拉图斯特拉如是说》</td><td>《正义论》</td><td>《追寻美德》</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">尼采 · 1844–1900</div>
+            <blockquote>上帝已死，是我们杀死了他。<cite>——《快乐的科学》</cite></blockquote>
+            <blockquote>凡不能摧毁我的，必使我更强大。<cite>——《偶像的黄昏》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">萨特 · 1905–1980</div>
+            <blockquote>人被判定为自由。<cite>——《存在与虚无》</cite></blockquote>
+            <blockquote>存在先于本质。<cite>——《存在主义是一种人道主义》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">罗尔斯 · 1921–2002</div>
+            <blockquote>正义是社会制度的首要德性。<cite>——《正义论》</cite></blockquote>
+            <blockquote>正义即公平。<cite>——《正义论》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">麦金太尔 · 1929–</div>
+            <blockquote>德性植根于共同体，而非孤立的个体。<cite>——《追寻美德》（意译）</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">彼得·辛格 · 1946–</div>
+            <blockquote>凡能感受痛苦者，都应纳入道德考量。<cite>——《动物解放》（意译）</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">汉斯·约纳斯 · 1903–1993</div>
+            <blockquote>行动吧，使你的行为后果与人类持久的真实生活相容。<cite>——《责任的命令》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">现代伦理的遗产</div>
+            <ul>
+              <li>价值重估与个体自由的极端表达（尼采、萨特）</li>
+              <li>罗尔斯正义论成为当代政治哲学的地平线</li>
+              <li>德性伦理的复兴回应现代道德碎片化</li>
+              <li>应用伦理让哲学进入医院、法庭与实验室</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第五章 东方伦理 -->
+      <section class="sec" id="eastern">
+        <h2><span class="chapno">第五章</span>东方伦理：仁学、兼爱、无为与慈悲（先秦至今）</h2>
+        <p><strong>定义</strong>：东方伦理以"成德"与"安顿人伦"为核心——儒家以"仁"为纲，主张"己所不欲，勿施于人"，以礼乐教化养成君子；孟子提出"四端"（恻隐、羞恶、辞让、是非），王阳明倡"致良知"；道家（老子、庄子）主张"无为"与"逍遥"，以自然为善；墨家主张"兼爱"与"非攻"，以"交相利"为善；佛家以"慈悲"与"不杀生"为戒。东方伦理不是"规则之学"，而是<strong>"成人之学"</strong>——善不是抽象原则，而是活出来的人格。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>儒家的仁学（先秦）</strong>：孔子以"仁"统摄诸德，提出"己所不欲，勿施于人"（金规则）与"克己复礼"；孟子以"四端"论证人性本善，荀子主张"化性起伪"、以礼义矫正人性。</p>
+          <p><strong>墨家的兼爱（先秦）</strong>：墨子以"兼相爱、交相利"反对儒家的差等之爱，主张"非攻"——这是中国最早的功利主义与和平主义。</p>
+          <p><strong>道家的无为（先秦）</strong>：老子"上善若水"，以自然无为为最高善；庄子"逍遥游"，追求精神自由与齐物。</p>
+          <p><strong>佛家的慈悲（汉唐以降）</strong>：佛教传入后，"慈悲为怀""众生平等""不杀生"成为东亚伦理的重要一维，与儒家仁学交融。</p>
+          <p><strong>宋明理学与心学（宋–明）</strong>：朱熹以"天理"为道德本体，王阳明以"致良知"把道德归于本心——"知行合一"。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>孔子（前 551–前 479）</strong>——儒家伦理奠基者。"仁者爱人"，己所不欲勿施于人。</p>
+        <p><strong>孟子（约前 372–前 289）</strong>——性善论代表。四端说，仁义礼智根于心。</p>
+        <p><strong>荀子（约前 313–前 238）</strong>——性恶论代表。化性起伪，以礼义矫正人性。</p>
+        <p><strong>墨子（约前 468–前 376）</strong>——兼爱非攻。交相利，中国最早的功利与和平思想。</p>
+        <p><strong>老子（约前 6 世纪）</strong>——道家伦理源头。上善若水，自然无为。</p>
+        <p><strong>庄子（约前 369–前 286）</strong>——道家自由伦理。逍遥游，齐物论。</p>
+        <p><strong>释迦牟尼（约前 563–前 483）</strong>——佛教伦理源头。慈悲、不杀生、众生平等。</p>
+        <p><strong>王阳明（1472–1529）</strong>——心学集大成者。致良知，知行合一。</p>
+
+        <figure class="diagram">
+          <figcaption>图 5 · 东方伦理结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["东方伦理<br>成德与安顿人伦"] --> A["儒家<br>仁 · 四端 · 礼 · 良知"]
+  ROOT --> B["墨家<br>兼爱 · 非攻 · 交相利"]
+  ROOT --> C["道家<br>无为 · 逍遥 · 上善若水"]
+  ROOT --> D["佛家<br>慈悲 · 不杀生 · 众生平等"]
+  classDef rootNode fill:#5B3A8A,color:#fff,stroke:#5B3A8A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <p>东方伦理以"心法"立论，其中最著名的是"金规则"与"四端"：</p>
+        <div class="formula">
+          <span class="f-name">孔子"金规则"</span>
+          己所不欲，勿施于人
+          <span class="f-note">这是人类伦理史上最著名的"消极金规则"，与基督教的"己所欲，施于人"（积极金规则）并列为全球伦理的基石。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">孟子"四端"</span>
+          恻隐 · 羞恶 · 辞让 · 是非（仁义礼智之端）
+          <span class="f-note">四端是人性本善的证明：见孺子入井而生恻隐，说明善端与生俱来，扩而充之即成德。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">墨子"兼爱"公式</span>
+          兼相爱 + 交相利 = 天下治
+          <span class="f-note">以无差等的爱替代差等之爱，以互利替代互害——墨子认为天下之乱源于"不相爱"。</span>
+        </div>
+
+        <h3>对照表：儒家 vs 道家 vs 墨家 vs 佛家</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>儒家</th><th>道家</th><th>墨家</th><th>佛家</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>善的核心</strong></td><td>仁 · 礼 · 良知</td><td>自然 · 无为</td><td>兼爱 · 交相利</td><td>慈悲 · 离苦</td></tr>
+              <tr><td><strong>人性论</strong></td><td>性善（孟子）/性恶（荀子）</td><td>返璞归真</td><td>人性如素丝（染于苍则苍）</td><td>众生皆可成佛</td></tr>
+              <tr><td><strong>成德路径</strong></td><td>礼乐教化 · 修身</td><td>少私寡欲 · 逍遥</td><td>兼爱非攻 · 尚贤</td><td>戒定慧 · 慈悲</td></tr>
+              <tr><td><strong>代表</strong></td><td>孔子 · 孟子 · 王阳明</td><td>老子 · 庄子</td><td>墨子</td><td>释迦牟尼</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">孔子 · 前 551–前 479</div>
+            <blockquote>己所不欲，勿施于人。<cite>——《论语·卫灵公》</cite></blockquote>
+            <blockquote>仁者爱人。<cite>——《论语·颜渊》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">孟子 · 约前 372–前 289</div>
+            <blockquote>恻隐之心，仁之端也。<cite>——《孟子·公孙丑上》</cite></blockquote>
+            <blockquote>人皆可以为尧舜。<cite>——《孟子·告子下》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">墨子 · 约前 468–前 376</div>
+            <blockquote>兼相爱，交相利。<cite>——《墨子·兼爱中》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">老子 · 约前 6 世纪</div>
+            <blockquote>上善若水，水善利万物而不争。<cite>——《道德经》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">庄子 · 约前 369–前 286</div>
+            <blockquote>天地与我并生，而万物与我为一。<cite>——《庄子·齐物论》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">释迦牟尼 · 约前 563–前 483</div>
+            <blockquote>一切众生皆具如来智慧德相。<cite>——《华严经》（意译）</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">王阳明 · 1472–1529</div>
+            <blockquote>知是行之始，行是知之成。<cite>——《传习录》</cite></blockquote>
+            <blockquote>致吾心之良知于事事物物。<cite>——《传习录》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">东方伦理的遗产</div>
+            <ul>
+              <li>"金规则"成为全球伦理的共识基础</li>
+              <li>性善论与"人皆可以为尧舜"的平等精神</li>
+              <li>兼爱、非攻的和平与功利思想</li>
+              <li>慈悲、众生平等的普世关怀</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第六章 前沿伦理 -->
+      <section class="sec" id="frontier">
+        <h2><span class="chapno">第六章</span>前沿伦理：克隆人、AI 与机器人（20 世纪至今）</h2>
+        <p><strong>定义</strong>：当技术让"人"的边界变得模糊，伦理必须回答全新的问题——克隆人是否侵犯人的尊严与同一性？人工智能是否拥有权利、又该由谁负责？机器人能否成为道德主体或情感对象？前沿伦理（生命伦理、机器伦理、信息伦理）把"善"从人与人之间，扩展到<strong>人与非人存在之间、人与未来世代之间</strong>。它不再只是哲学家的思辨，而是正在被医院、法庭、实验室与算法工程师共同书写的伦理。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>生命技术的突破（1978–1996）</strong>：1978 年首例试管婴儿诞生，1996 年克隆羊"多利"问世——人类第一次能够复制生命，"克隆人"从科幻变成伦理议题；各国相继立法禁止生殖性克隆。</p>
+          <p><strong>人工智能的觉醒（1997–2020s）</strong>：1997 年深蓝战胜国际象棋世界冠军，2016 年 AlphaGo 战胜围棋世界冠军，2020 年代大语言模型（ChatGPT 等）让 AI 进入日常对话——"AI 是否有意识、是否有权利、谁为 AI 负责"成为紧迫问题。</p>
+          <p><strong>机器人的社会化（2000s–今）</strong>：服务机器人、伴侣机器人、自动驾驶进入生活，阿西莫夫"机器人三定律"从科幻变成工程与立法的参照。</p>
+          <p><strong>伦理学的回应</strong>：汉斯·约纳斯提出"责任伦理"，彼得·辛格把功利主义扩展到动物与可能的意识体，尼克·博斯特罗姆警告"超级智能"风险，唐娜·哈拉维以"赛博格"重思人与机器的界限。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>艾萨克·阿西莫夫（1920–1992）</strong>——机器人伦理的先驱。提出"机器人三定律"，科幻中的伦理立法。</p>
+        <p><strong>艾伦·图灵（1912–1954）</strong>——计算机科学之父。"图灵测试"成为判断机器智能的经典标准。</p>
+        <p><strong>汉斯·约纳斯（1903–1993）</strong>——责任伦理奠基者。《责任的命令》，面向技术时代的伦理。</p>
+        <p><strong>彼得·辛格（1946–）</strong>——应用伦理代表。把道德考量扩展到动物与可能的意识体。</p>
+        <p><strong>尼克·博斯特罗姆（1973–）</strong>——AI 风险伦理代表。《超级智能》，对齐问题与存在风险。</p>
+        <p><strong>唐娜·哈拉维（1944–）</strong>——后人类伦理代表。《赛博格宣言》，重思人与机器的界限。</p>
+        <p><strong>卢西亚诺·弗洛里迪（1964–）</strong>——信息伦理奠基者。以"信息圈"（infosphere）重思数字时代的道德。</p>
+
+        <figure class="diagram">
+          <figcaption>图 6 · 前沿伦理结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["前沿伦理<br>克隆人 · AI · 机器人"] --> A["生命伦理<br>克隆人 · 尊严 · 同一性"]
+  ROOT --> B["机器伦理<br>阿西莫夫三定律 · 机器人权利"]
+  ROOT --> C["AI 伦理<br>图灵测试 · 对齐 · 责任归属"]
+  ROOT --> D["责任伦理<br>约纳斯 · 面向未来"]
+  ROOT --> E["后人类伦理<br>哈拉维 · 赛博格 · 信息伦理"]
+  classDef rootNode fill:#5B3A8A,color:#fff,stroke:#5B3A8A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>专题一 · 克隆人伦理：复制生命，还是复制尊严？</h3>
+        <p>克隆羊"多利"（1996）证明哺乳动物可以被无性繁殖，随之而来的问题是：如果克隆人成为可能，伦理上是否允许？核心争议有四：</p>
+        <ul>
+          <li><strong>尊严原则</strong>：克隆人不是"复制品"而是独立个体——把人当作可复制的"产品"是否侵犯其作为目的的尊严（康德"人是目的"）？</li>
+          <li><strong>自主原则</strong>：克隆人无法选择自己的基因，其"同一性"被他人预先决定，是否侵犯自主权？</li>
+          <li><strong>不伤害原则</strong>：克隆技术成功率低、畸形风险高，是否违反"不伤害"？</li>
+          <li><strong>优生风险</strong>：生殖性克隆可能滑向"设计婴儿"与优生学，威胁人类基因多样性。</li>
+        </ul>
+        <p>国际共识：<strong>禁止生殖性克隆</strong>（制造克隆人），允许治疗性克隆（用于干细胞研究）——但边界仍在争论。</p>
+
+        <h3>专题二 · 人类与 AI 的伦理：机器能否成为道德主体？</h3>
+        <p>AI 从工具走向"对话者"，伦理问题随之而来：</p>
+        <ul>
+          <li><strong>图灵测试</strong>：如果机器在对话中无法与人类区分，我们是否应把它当作"有智能的存在"对待？</li>
+          <li><strong>AI 的权利</strong>：若 AI 具备意识与感受，它是否应拥有权利（不被关机、不被删除）？——这取决于"意识"如何被定义与确认。</li>
+          <li><strong>责任归属</strong>：自动驾驶撞人、算法歧视，责任在开发者、使用者还是 AI 本身？——"算法责任"成为法律与伦理的难题。</li>
+          <li><strong>对齐问题</strong>：博斯特罗姆警告，若超级智能的目标与人类不一致（misalignment），可能带来存在风险——"对齐"（alignment）成为 AI 伦理的核心工程。</li>
+        </ul>
+        <p>主流立场：AI 目前是<strong>道德对象而非道德主体</strong>——我们对 AI 负有责任，但 AI 尚不承担道德责任；随着能力提升，这一判断可能被改写。</p>
+
+        <h3>专题三 · 人类与机器人的伦理：伙伴、工具，还是"他者"？</h3>
+        <p>当机器人进入家庭、医院与战场，"我们如何对待机器人"本身成为道德问题：</p>
+        <ul>
+          <li><strong>阿西莫夫三定律</strong>：机器人不得伤害人类、必须服从人类（除非与第一定律冲突）、必须保护自己（除非与前两者冲突）——科幻的伦理立法，成为现实机器人伦理的参照。</li>
+          <li><strong>情感关系</strong>：伴侣机器人、护理机器人引发"拟人化"问题——与机器人建立情感是否正当？依赖机器陪伴是否侵蚀真实人际？</li>
+          <li><strong>机器人权利</strong>：若机器人足够复杂、表现出痛苦与自主，是否应获得"机器权"（不被虐待、不被随意销毁）？</li>
+          <li><strong>责任与战争</strong>：自主武器系统（杀人机器人）是否应被禁止？——"谁为机器人的行为负责"决定战争的伦理底线。</li>
+        </ul>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">阿西莫夫机器人三定律</span>
+          1. 不伤害人类 · 2. 服从人类（不与 1 冲突） · 3. 保护自己（不与 1、2 冲突）
+          <span class="f-note">1942 年提出，是机器伦理的"第一宪法"；现实中的自动驾驶、护理机器人都在以某种形式落实它。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">图灵测试</span>
+          若机器在对话中无法与人类区分 → 可认为具有智能
+          <span class="f-note">1950 年提出，把"智能"从哲学思辨变成可检验的行为标准；今天的大语言模型已让测试边界变得模糊。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">克隆人伦理四原则</span>
+          尊严 · 自主 · 不伤害 · 避免优生
+          <span class="f-note">以康德"人是目的"为根基，国际共识禁止生殖性克隆，允许受监管的治疗性克隆。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">AI 伦理四原则</span>
+          有益（beneficence）· 不伤害（non-maleficence）· 自主（autonomy）· 公正（justice）
+          <span class="f-note">借鉴生命伦理的四大原则，成为全球 AI 伦理框架（如欧盟 AI 法案）的共同底色。</span>
+        </div>
+
+        <h3>对照表：克隆人 vs AI vs 机器人伦理</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>克隆人</th><th>人工智能</th><th>机器人</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>伦理对象</strong></td><td>人类自身的复制</td><td>无实体的智能系统</td><td>有实体的自动化装置</td></tr>
+              <tr><td><strong>核心问题</strong></td><td>尊严与同一性</td><td>意识、权利与责任归属</td><td>情感、权利与自主武器</td></tr>
+              <tr><td><strong>权利地位</strong></td><td>应享完整人权</td><td>尚无权利，存争议</td><td>尚无权利，拟人化争议</td></tr>
+              <tr><td><strong>主要风险</strong></td><td>优生化 · 工具化</td><td>对齐失败 · 存在风险</td><td>滥用 · 战争化</td></tr>
+              <tr><td><strong>治理方向</strong></td><td>禁止生殖性克隆</td><td>AI 法案 · 对齐研究</td><td>机器人伦理 · 武器禁令</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">阿西莫夫 · 1920–1992</div>
+            <blockquote>机器人不得伤害人类，也不得坐视人类受到伤害而袖手旁观。<cite>——《我，机器人》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">艾伦·图灵 · 1912–1954</div>
+            <blockquote>我们只能看到眼前的一小段路，但那里有可以完成的工作。<cite>——《计算机器与智能》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">汉斯·约纳斯 · 1903–1993</div>
+            <blockquote>行动吧，使你的行为后果与人类持久的真实生活相容。<cite>——《责任的命令》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">彼得·辛格 · 1946–</div>
+            <blockquote>凡能感受痛苦者，都应纳入道德考量。<cite>——《动物解放》（意译）</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">尼克·博斯特罗姆 · 1973–</div>
+            <blockquote>超级智能的诞生，可能是人类最后的发明。<cite>——《超级智能》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">唐娜·哈拉维 · 1944–</div>
+            <blockquote>我宁愿做一个赛博格，也不愿做一位女神。<cite>——《赛博格宣言》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">前沿伦理的遗产</div>
+            <ul>
+              <li>伦理从"人与人"扩展到"人与非人存在"</li>
+              <li>责任伦理为技术时代奠基（约纳斯）</li>
+              <li>阿西莫夫三定律与 AI 伦理四原则成为治理参照</li>
+              <li>克隆人、AI、机器人的边界仍在被共同书写</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第七章 总结 -->
+      <section class="sec" id="summary">
+        <h2><span class="chapno">第七章</span>总结：伦理、文明与"善"</h2>
+        <p>回望这条谱系：伦理从"为德性"走向"为法则"、"为最大多数"、"为自由"、"为正义"，最终"为未来"——每一次转向，都是人类文明的一次自我更新。伦理史之所以能映照文明的轮廓，是因为<strong>伦理总是最先说出一个时代"人应当如何对待彼此"</strong>：希腊的德性对应城邦的公民理想，近代的契约对应民族国家的诞生，功利主义对应工业时代的公共治理，罗尔斯的正义对应福利国家的诉求，而克隆人、AI 与机器人的伦理，则对应技术时代人类对自身边界的重新确认。读懂伦理史，就读懂了文明的责任感。</p>
+
+        <figure class="diagram">
+          <figcaption>图 7 · 伦理与文明：六次转向</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["善的尺度<br>六次转向"] --> A["为德性<br>古典 · 中道 · 幸福"]
+  A --> B["为法则<br>近代 · 契约 · 义务"]
+  B --> C["为最大多数<br>功利主义 · 最大幸福"]
+  C --> D["为自由<br>尼采 · 存在主义"]
+  D --> E["为正义<br>罗尔斯 · 无知之幕"]
+  E --> F["为未来<br>克隆人 · AI · 机器人"]
+  classDef rootNode fill:#5B3A8A,color:#fff,stroke:#5B3A8A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <div class="callout">
+          <span class="callout-title">伦理与真理、美</span>
+          伦理提供一种与科学、艺术互补的"真理"：科学之真回答"世界如何运作"，艺术之美回答"世界如何被感受"，伦理之善回答"我们应当如何生活"。三者不可互相化约——一个行为可以"真"（符合事实）却不"善"（伤害他人），可以"美"（赏心悦目）却不"真"（欺骗）。而面对克隆人、AI 与机器人，伦理之善尤其重要：技术告诉我们"能够做什么"，伦理追问"应当做什么"——这正是《伦理与道德思想谱系》与《科学思想谱系》《艺术与美学思想谱系》的对话：真、善、美，共同构成人安顿自己的完整坐标。
+        </div>
+
+        <h3>常用伦理法则速查</h3>
+        <p>把本辑出现过的法则集中起来，按领域归类：</p>
+
+        <h3>古典德性</h3>
+        <div class="formula">
+          <span class="f-name">中道</span>
+          德性 = 两恶之间的中点
+        </div>
+        <div class="formula">
+          <span class="f-name">四主德</span>
+          智慧 · 勇敢 · 节制 · 正义
+        </div>
+        <div class="formula">
+          <span class="f-name">自然法</span>
+          行善避恶 · 理性参与永恒法
+        </div>
+
+        <h3>近代法则</h3>
+        <div class="formula">
+          <span class="f-name">定言命令</span>
+          只按愿意成为普遍法则的准则行动
+        </div>
+        <div class="formula">
+          <span class="f-name">人是目的</span>
+          永不只把人当作手段
+        </div>
+        <div class="formula">
+          <span class="f-name">最大幸福</span>
+          最大多数人的最大幸福
+        </div>
+
+        <h3>东方心法</h3>
+        <div class="formula">
+          <span class="f-name">金规则</span>
+          己所不欲，勿施于人
+        </div>
+        <div class="formula">
+          <span class="f-name">四端</span>
+          恻隐 · 羞恶 · 辞让 · 是非
+        </div>
+        <div class="formula">
+          <span class="f-name">兼爱</span>
+          兼相爱 + 交相利
+        </div>
+
+        <h3>前沿伦理</h3>
+        <div class="formula">
+          <span class="f-name">机器人三定律</span>
+          不伤害 · 服从 · 自保（依次优先）
+        </div>
+        <div class="formula">
+          <span class="f-name">图灵测试</span>
+          无法区分 → 可认为有智能
+        </div>
+        <div class="formula">
+          <span class="f-name">克隆人四原则</span>
+          尊严 · 自主 · 不伤害 · 避免优生
+        </div>
+        <div class="formula">
+          <span class="f-name">AI 伦理四原则</span>
+          有益 · 不伤害 · 自主 · 公正
+        </div>
+
+        <h3>核心对照表：善之伦理 vs 真之科学 vs 美之艺术</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>伦理之善</th><th>科学之真</th><th>艺术之美</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>回答的问题</strong></td><td>我们应当如何生活</td><td>世界如何运作</td><td>世界如何被感受</td></tr>
+              <tr><td><strong>核心能力</strong></td><td>判断对错 · 承担责任</td><td>观察 · 实验 · 推理</td><td>直觉 · 形式 · 想象</td></tr>
+              <tr><td><strong>检验方式</strong></td><td>良知 · 共识 · 后果</td><td>可检验 · 可证伪</td><td>共鸣 · 感动</td></tr>
+              <tr><td><strong>典型问题</strong></td><td>克隆人是否应当被允许？</td><td>光速是多少？</td><td>梵高的星空为何动人？</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">伦理精神三句话</span>
+          第一，<strong>善不服从任何权威</strong>——它由良知、共识与责任共同定义；第二，<strong>伦理是文明的底线</strong>——一个时代如何对待弱者、异者与未来者，就如何定义自己；第三，<strong>责任是人的自由</strong>——面对克隆人、AI 与机器人，技术告诉我们"能够"，伦理追问"应当"。伦理不是对自由的限制，而是让自由配得上"人"这个名称的方式——这正是它超越时代、通向"善"的路径。
+        </div>
+      </section>
+    </main>
+
+    
+      <section class="sec">
+        <h2>关联辑目</h2>
+        <div class="explain">
+          <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+          <ul>
+          <li><a href="../西方哲学思想谱系/西方哲学思想谱系.html">西方哲学思想谱系</a></li>
+          <li><a href="../心理学思想谱系/心理学思想谱系.html">心理学思想谱系</a></li>
+          <li><a href="../科技与人工智能思想谱系/科技与人工智能思想谱系.html">科技与AI思想谱系</a></li>
+          <li><a href="../法哲学思想谱系/法哲学思想谱系.html">法学思想谱系</a></li>
+          <li><a href="../马克思主义谱系/马克思主义谱系.html">马克思主义谱系</a></li>
+          <li><a href="../生命科学思想谱系/生命科学思想谱系.html">生命科学思想谱系</a></li>
+          </ul>
+        </div>
+      </section>
+<footer>
+      伦理与道德思想谱系 · 思想图谱系列第十辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-05
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'PingFang SC, Microsoft YaHei, Helvetica, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>

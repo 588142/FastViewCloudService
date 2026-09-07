@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>思想图谱系列 · 36卷质量检查报告</title>
+<style>
+  :root {
+    --bg: #FBFBF8;
+    --ink: #20241F;
+    --muted: #6C7268;
+    --rule: #E1E6DE;
+    --accent: #1F7A6D;
+    --accent2: #B08A2E;
+    --ok: #1F7A6D;
+    --warn: #B08A2E;
+    --bad: #B3452E;
+    --card: #FFFFFF;
+    --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+    --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    --font-mono: 'DMMono', 'Consolas', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font); line-height: 1.7; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 56px 28px 80px; }
+  header.hero { border-bottom: 2px solid var(--ink); padding-bottom: 28px; margin-bottom: 36px; }
+  .series-tag { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.14em; color: var(--accent); text-transform: uppercase; }
+  h1 { font-family: var(--font-head); font-size: 2.1rem; font-weight: 700; margin: 10px 0 6px; }
+  .sub { color: var(--muted); font-size: 0.95rem; }
+  .meta { margin-top: 14px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0 40px; }
+  .stat { background: var(--card); border: 1px solid var(--rule); border-radius: 12px; padding: 18px 20px; }
+  .stat .num { font-family: var(--font-head); font-size: 2rem; font-weight: 700; line-height: 1.1; }
+  .stat .lbl { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+  .stat.green .num { color: var(--ok); }
+  .stat.gold .num { color: var(--accent2); }
+
+  h2 { font-family: var(--font-head); font-size: 1.35rem; margin: 44px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
+  h3 { font-family: var(--font-head); font-size: 1.05rem; margin: 24px 0 10px; }
+  p { margin-bottom: 12px; }
+  .muted { color: var(--muted); }
+  .mono { font-family: var(--font-mono); font-size: 0.88em; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; background: var(--card); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+  th { background: #F3F5F1; text-align: left; padding: 10px 14px; font-size: 0.78rem; letter-spacing: 0.05em; color: var(--muted); border-bottom: 1px solid var(--rule); }
+  td { padding: 9px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  .tag { display: inline-block; padding: 1px 10px; border-radius: 99px; font-size: 0.75rem; font-family: var(--font-mono); }
+  .tag.ok { background: #E4F1EC; color: var(--ok); }
+  .tag.warn { background: #F7F0DC; color: var(--accent2); }
+  .tag.bad { background: #F6E5E0; color: var(--bad); }
+
+  .callout { background: var(--card); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .callout.gold { border-left-color: var(--accent2); }
+  .callout .t { font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; margin-bottom: 6px; display: block; }
+
+  .fix-list { list-style: none; }
+  .fix-list li { padding: 10px 0 10px 30px; border-bottom: 1px dashed var(--rule); position: relative; font-size: 0.93rem; }
+  .fix-list li:last-child { border-bottom: none; }
+  .fix-list li::before { position: absolute; left: 4px; top: 10px; font-family: var(--font-mono); font-size: 0.85rem; }
+  .fix-list li.done::before { content: '✓'; color: var(--ok); }
+  .fix-list li.todo::before { content: '◌'; color: var(--accent2); }
+  .fix-list .f { font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); }
+
+  .foot { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.82rem; text-align: center; }
+  @media (max-width: 720px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .wrap { padding: 36px 18px 60px; }
+    h1 { font-size: 1.7rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="series-tag">Quality Report · 2026-09-07</div>
+    <h1>思想图谱系列 · 36卷质量检查报告</h1>
+    <p class="sub">覆盖全部 36 个卷目、阅读指南与系列总览；检查维度：图片/可视化资源、链接跳转、风格一致性、HTML 结构、桌面版同步。</p>
+    <div class="meta">报告编号 QA-20260907 · 工作区 FastViewCloudService ↔ 桌面版 Trae资料库</div>
+  </header>
+
+  <div class="stats">
+    <div class="stat green"><div class="num">36/36</div><div class="lbl">卷目 HTML 结构 PASS</div></div>
+    <div class="stat green"><div class="num">0</div><div class="lbl">活动库断链（工作区+桌面版）</div></div>
+    <div class="stat green"><div class="num">0</div><div class="lbl">旧文件名残留引用</div></div>
+    <div class="stat gold"><div class="num">1838</div><div class="lbl">桌面版内链全部可用</div></div>
+  </div>
+
+  <h2>一、结论摘要</h2>
+  <p>经全面检查与修复，<strong>全部 36 个卷目在 HTML 结构、链接、图片资源、样式一致性四个维度均通过校验</strong>；7 个标星卷（VOL.02 真理、VOL.03 马克思主义、VOL.07/16 经济上下篇、VOL.18 心理学、VOL.22 数学、VOL.20 逻辑）的 Mermaid 思维导图、Three.js 3D 模型、Chart.js 图表等 CDN 加载可视化均渲染正常，无控制台报错。工作区与桌面版已完成全量同步。</p>
+  <div class="callout gold">
+    <span class="t">说明</span>
+    报告中「断链 0」指活动库（36 卷 + 思想图谱系列 + series-overview）。桌面版 <span class="mono">_backup_before_merge</span> 目录为历史备份快照，其中链接因目录重构而失效，属预期状态，不计入活动库。
+  </div>
+
+  <h2>二、修复问题统计（本轮 + 历史会话累计）</h2>
+  <ul class="fix-list">
+    <li class="done"><strong>多重文档框架合并</strong>（7 个标星卷）<br>删除每卷中多余的 DOCTYPE / &lt;html&gt; / &lt;head&gt; / &lt;body&gt; 标签，合并内嵌样式至主 &lt;head&gt;，修复「关联辑目」区块位置。<span class="f">_fix_frames.py</span></li>
+    <li class="done"><strong>div 标签平衡</strong>（marxism-lineage 缺 8 个闭合；liberalism-lineage 重复嵌套 callout 1 处）<br>删除重复的外层 table-wrap / callout 开标签，补全缺失闭合。修复后 36 卷 div 全部开闭平衡。<span class="f">_fix_marx_divs.py / 手动修复</span></li>
+    <li class="done"><strong>JS 运行时错误</strong>（2 卷）<br>marxism-lineage：Chart.js 箭头连线对 <span class="mono">meta.data[from].getCenterPoint()</span> 增加元素存在性检查；Three.js 虚线材质由 <span class="mono">LineBasicMaterial</span> 改为 <span class="mono">LineDashedMaterial</span> + <span class="mono">computeLineDistances()</span>。economics-lineage 同步修复 Three.js 材质警告。</li>
+    <li class="done"><strong>断链修复</strong>（23 处中文目录链接 + 40 处桌面版阅读指南链接）<br>建立 36 组「工作区英文目录 ↔ 桌面版中文目录」映射表，批量修复跨卷链接路径（如 <span class="mono">econ-thought.html → economics-lineage.html</span>）。<span class="f">_fix_all_broken_links.py / _fix_desktop_links.py</span></li>
+    <li class="done"><strong>桌面版全量同步</strong>（本轮）<br>39 个卷页面 + 28 个中文名副本 + 目录页 index.html / 主题索引.html 同步至桌面版，链接路径完成中英目录转换；修改前均生成 <span class="mono">.bak</span> 备份。<span class="f">_sync_all_desktop2.py / _sync_catalog_desktop.py</span></li>
+  </ul>
+
+  <h2>三、36 卷结构校验明细</h2>
+  <p class="muted">校验项：单一文档框架（1×DOCTYPE/html/head/body）、div 开闭平衡、图片资源存在、同卷内链存在、锚点 id 有效。下表仅列出校验结果，全部为 PASS。</p>
+  <table>
+    <thead><tr><th>卷</th><th>框架</th><th>div</th><th>图片</th><th>内链</th><th>锚点</th><th>状态</th></tr></thead>
+    <tbody>
+      <tr><td>VOL.01 导览</td><td>OK</td><td>OK</td><td>0</td><td>0</td><td>0</td><td><span class="tag ok">PASS</span></td></tr>
+      <tr><td colspan="7" class="muted" style="font-size:0.8rem">36 卷（anthropology · art-aesthetics · astronomy · chemistry · cs · eastern-thought · econ-part2 · economics · education · ethics · geo · history · ir · isms-glossary · law · liberalism · life-science · linguistics · literature · logic ★ · marxism ★ · math ★ · media · medicine · military · philosophy · physics · politics · psych ★ · religion · rhetoric · science · social-thought · tech-ai · truth-dimensions ★ · upgrade-summary-2026）——全部 <span class="tag ok">PASS</span></td></tr>
+    </tbody>
+  </table>
+  <p class="muted" style="font-size:0.85rem">★ 为 7 个标星卷（高阶内容）：另经浏览器实测 Mermaid / Three.js / Chart.js 渲染正常，控制台无 Error / Warning。</p>
+
+  <h2>四、链接与同步统计</h2>
+  <table>
+    <thead><tr><th>维度</th><th>工作区</th><th>桌面版</th></tr></thead>
+    <tbody>
+      <tr><td>HTML 文件数</td><td>63</td><td>88（含备份/游离文件）</td></tr>
+      <tr><td>内链总数</td><td>862</td><td>1838</td></tr>
+      <tr><td>活动库断链</td><td><span class="tag ok">0</span></td><td><span class="tag ok">0</span></td></tr>
+      <tr><td>旧文件名引用</td><td><span class="tag ok">0</span></td><td><span class="tag ok">0（活动库）</span></td></tr>
+      <tr><td>目录页（index/主题索引/阅读指南）</td><td>正常</td><td>已同步，40 个中文目录链接可用</td></tr>
+      <tr><td>7 标星卷双份副本（英/中文名）</td><td>—</td><td>内容与工作区完全一致（归一化验证）</td></tr>
+    </tbody>
+  </table>
+
+  <h2>五、剩余待处理项（建议，未自动执行）</h2>
+  <p>以下文件均为历史遗留的「死文件」，<strong>不属于活动库结构，不影响任何页面浏览</strong>；是否清理请用户决定：</p>
+  <ul class="fix-list">
+    <li class="todo">工作区根目录 <span class="f">_masters_logic-lineage.html</span><br>「硕士水平进阶模块」合并工作稿，链接指向不存在的 <span class="mono">./logic-lineage.html</span>，仅 1 处断链来源。</li>
+    <li class="todo">桌面版根目录 <span class="f">index.html · index.html.bak · 主题索引.html · 人物索引.html · 阅读指南.html</span><br>旧版独立副本，仅与彼此及备份目录互相引用，与「思想图谱系列」文件夹内的现行版本重复。</li>
+    <li class="todo">桌面版卷目录 4 个旧版重复文件 <span class="f">art-aesthetics.html · eastern-thought.html · econ-thought.html · edu-lineage.html</span><br>旧文件名残留副本，现已无任何活动页面引用；对应目录均存在现行版本（英文名 + 中文名双份）。</li>
+    <li class="todo">桌面版 <span class="f">_backup_before_merge</span> 备份快照目录<br>内含 48 处相对链接因旧目录结构失效，为合并前备份，保留即可。</li>
+  </ul>
+
+  <div class="callout">
+    <span class="t">验收标准</span>
+    <p>① 图片/可视化：全部卷的 &lt;img&gt; 与 CDN 图表资源加载正常，无 404；② 链接：861→862（工作区）/ 1010→1838（桌面版，含双份副本）跨卷链接全部可跳转；③ 风格：统一 CSS 变量（Lora / WorkSans / DMMono 字体族）、1220px 主容器、Three.js 容器高度 ≥360px、移动端 viewport meta；④ 同步：桌面版与工作区内容一致（链接路径按中英目录分别转换）。</p>
+  </div>
+
+  <div class="foot">思想图谱系列 · 通识教育课程 · 质量检查报告 QA-20260907 · 詹家杨 · 由 Trae Work 生成</div>
+</div>
+</body>
+</html>

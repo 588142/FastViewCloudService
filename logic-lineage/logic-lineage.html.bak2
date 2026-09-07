@@ -1,0 +1,1187 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>逻辑与论证思想谱系 · 思想图谱系列第二十辑</title>
+
+  <style>
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+  </style>
+
+  <style>
+    :root {
+      --bg: #FBF8F3;
+      --bg2: #F3EDE1;
+      --ink: #2B2418;
+      --muted: #6E6352;
+      --rule: #E4DBC9;
+      --accent: #334155;
+      --accent2: #1D4ED8;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:first-child { margin-left: 0; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .legacy .legacy-title { font-weight: 700; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .legacy ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; }
+    @media (max-width: 700px) { .legacy { grid-template-columns: 1fr; } }
+
+    .history { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; }
+    .history .history-title { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem; }
+    .history p { margin-bottom: 0.55rem; }
+    .history p:last-child { margin-bottom: 0; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+    p a, li a { color: var(--accent); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    .formula {
+      font-family: var(--font-mono);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    .explain { margin: 0 0 1.6rem 0; padding: 1rem 1.2rem; background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; font-size: 0.92rem; line-height: 1.7; }
+    .explain p { margin-bottom: 0.6rem; }
+    .explain ul { margin: 0.4rem 0 0.6rem 1.2rem; }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidenav { position: static; max-height: none; }
+    }
+    @media print {
+      .sidenav { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      section.sec { break-inside: avoid-page; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="shell">
+
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">逻辑与论证思想谱系</div>
+    <div class="brand-sub">思想图谱系列 · 第二十辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+      <li><a href="#intro">导言 · 思想的骨架</a></li>
+      <li><a href="#overview">第一章 · 总览：逻辑的演变</a></li>
+      <li><a href="#classical">第二章 · 古典逻辑：从亚里士多德到经院逻辑</a></li>
+      <li><a href="#modern">第三章 · 近代逻辑与科学方法：从培根到密尔</a></li>
+      <li><a href="#mathematical">第四章 · 现代逻辑与数学基础：从弗雷格到哥德尔</a></li>
+      <li><a href="#argument">第五章 · 论证与谬误：日常推理的技艺</a></li>
+      <li><a href="#mind">第六章 · 逻辑与思维：认知、AI 与批判性思维</a></li>
+      <li><a href="#summary">第七章 · 总结提炼：逻辑的启示</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第二十辑</span>
+        <span class="series-links">
+          <a href="../思想图谱系列/index.html">系列目录</a>
+          <a href="../education-lineage/education-lineage.html">← 上一辑 · 教育思想谱系</a>
+          <a href="../literature-lineage/literature-lineage.html">下一辑 · 文学与语言思想谱系 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>逻辑与论证思想谱系</h1>
+    <div class="advanced-badge" style="display:inline-flex;align-items:center;gap:6px;margin:6px 0 2px;padding:5px 13px;border:1px solid #c9a227;border-radius:999px;background:rgba(201,162,39,0.10);color:#a8841f;font-size:0.82rem;font-weight:700;letter-spacing:0.02em;">★ 高阶内容 · 建议在通识骨架建立后精读本卷</div>
+      <p class="subtitle">从亚里士多德的三段论到哥德尔的不完备定理——人类如何正确地推理：古典逻辑、近代科学方法、现代数理逻辑、日常论证与谬误、认知与批判性思维，提炼"必然性之基、一致性之守、完备性之限、可错性之谦、批判性之勇"的逻辑规律</p>
+      <p class="meta">作者：詹家杨 · 2026-09-05 · 8 张思维导图 · 7 张对照表 · 30+ 人物语录 · 逻辑</p>
+    </header>
+
+    <main>
+      <!-- 导言 -->
+      <section class="sec" id="intro">
+        <h2>导言 · 思想的骨架</h2>
+        <p>逻辑（logic）来自希腊语 logos——"言辞、理性、道理"。这个词道出了逻辑的本质：它是<strong>正确推理的科学</strong>，是思想得以成立的骨架。哲学、科学、法律、数学、政治辩论——一切严肃的思想活动，都建立在逻辑之上。前面十九辑梳理了人类关于世界、社会、心灵与美的种种思想，而本辑要追问的是更根本的问题：<strong>这些思想是如何被正确地建立起来的？</strong>当我们说"因为……所以……"时，什么样的"因为"能支撑"所以"？</p>
+
+        <h3>本章大纲</h3>
+        <ul>
+          <li>0.1 逻辑的定义与本质：logos——言辞、理性、道理</li>
+          <li>0.2 逻辑的七次转向：为必然→为命题→为神学→为经验→为演算→为数学→为思维</li>
+          <li>0.3 逻辑与其他学科的关系：与真理卷、哲学卷的关联</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>logos</strong>：逻辑的词源，意为“言辞、理性、道理”</li>
+          <li><strong>必然性推理</strong>：推理的有效性不依赖内容，而取决于形式</li>
+          <li><strong>逻辑谱系</strong>：古典逻辑→近代科学方法→现代数理逻辑→论证与谬误→逻辑与思维</li>
+        </ul>
+        <div class="callout">
+          <span class="callout-title">一条主线</span>
+          逻辑关注对象的七次转向：<strong>为必然</strong>（亚里士多德：三段论，从前提必然推出结论）→ <strong>为命题</strong>（斯多葛：命题逻辑，条件推理）→ <strong>为神学</strong>（中世纪：逻辑作为经院论证的工具）→ <strong>为经验</strong>（培根：归纳法，从经验中求知）→ <strong>为演算</strong>（莱布尼茨：把推理变成计算）→ <strong>为数学</strong>（弗雷格、罗素：逻辑主义，数学奠基）→ <strong>为思维</strong>（当代：认知科学、AI 与批判性思维）。每一次转向，都是人类对"如何正确地思考"的一次重新回答。
+        </div>
+        <p>本辑沿逻辑的谱系展开——<strong>古典逻辑</strong>（亚里士多德、斯多葛学派、经院逻辑）、<strong>近代逻辑与科学方法</strong>（培根、笛卡尔、莱布尼茨、密尔）、<strong>现代逻辑与数学基础</strong>（布尔、弗雷格、罗素、哥德尔、图灵）、<strong>论证与谬误</strong>（图尔敏、常见谬误）、<strong>逻辑与思维</strong>（认知偏差、AI 与批判性思维），看"正确推理"的艺术如何从亚里士多德的工具论，长成支撑整个现代文明的理性大厦。它与第二辑《真理的多维图景》互为表里——真理卷回答"什么是真"，本辑回答"如何论证为真"；又与第十七辑《西方哲学思想谱系》血脉相连——逻辑是哲学的第一工具，也是整个思想图谱系列的第一块地基。</p>
+
+        <figure class="diagram">
+          <figcaption>图 1 · 逻辑的七次转向图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["为必然<br>亚里士多德 · 三段论"] --> B["为命题<br>斯多葛 · 命题逻辑"]
+  B --> C["为神学<br>中世纪 · 经院论证"]
+  C --> D["为经验<br>培根 · 归纳法"]
+  D --> E["为演算<br>莱布尼茨 · 推理即计算"]
+  E --> F["为数学<br>弗雷格 · 罗素 · 逻辑主义"]
+  F --> G["为思维<br>认知科学 · AI · 批判性思维"]
+  classDef shift fill:#334155,color:#fff,stroke:#334155;
+  class A,B,C,D,E,F,G shift;
+          </pre>
+        </figure>
+<div class="explain">
+        <p><strong>图 1 详解：</strong>逻辑的七次转向，不仅是一段历史，更揭示了人类对"如何正确推理"这一问题的七次重新回答。每一次转向，都对应着人类思想的一次重大突破。</p>
+        <p><strong>从"为必然"到"为思维"：</strong></p>
+        <ul>
+          <li><strong>为必然（亚里士多德）</strong>——逻辑的起点。亚里士多德发现，有些推理之所以"必然"成立，不是因为内容，而是因为形式。"所有人都会死；苏格拉底是人；所以苏格拉底会死"——这个推理如果换成"所有猫都怕水；加菲是猫；所以加菲怕水"依然成立——这就是"形式"的力量。亚里士多德的伟大在于：他把推理从内容中解放出来，让形式本身成为研究对象。</li>
+          <li><strong>为演算（莱布尼茨）</strong>——最超前的一步。莱布尼茨在 17 世纪就梦想"把推理变成计算"——让两个哲学家不必争论，只需"拿起笔算一算"就能解决分歧。他发明了二进制，并预言"将来会有一种推理机器"。这个梦想在 300 年后变成了计算机——二进制成为计算机的底层语言，布尔代数成为电路设计的数学基础。莱布尼茨是"计算机科学的第一位先知"。</li>
+          <li><strong>为思维（当代）</strong>——逻辑的终极回归。经过两千多年的演变，逻辑回到了它的起点：人类思维本身。但这一次，逻辑不再是亚里士多德的"工具论"，而是认知科学、人工智能和批判性思维的共同语言。卡尼曼的双系统理论告诉我们：人的思维并非天然逻辑——逻辑需要训练才能内化。而 AI 的崛起则提出了一个更尖锐的问题：机器能"推理"吗？</li>
+        </ul>
+        <p><strong>现实案例：</strong>2023 年，大型语言模型（如 GPT-4）在逻辑推理测试中表现出了惊人的能力——能解决复杂的逻辑谜题、编写正确的代码。但仔细分析发现：模型不是"推理"出来的，而是从海量数据中"统计"出最可能的答案。当问题涉及"反事实推理"（如果情况不同会怎样？）或"因果推理"（A 导致 B 还是 B 导致 A？）时，模型常常出错。这表明：<strong>统计关联不等于逻辑必然</strong>——逻辑的"必然性"仍然是人类思维相对于 AI 的独特优势。</p>
+      </div>
+
+      </section>
+<figure class="diagram">
+        <figcaption>图 1a · 逻辑学基本概念树状图 —— 逻辑的定义·核心概念·基本规则·思想律·应用领域</figcaption>
+        <div style="overflow-x:auto;text-align:center;">
+        <svg viewBox="0 0 720 520" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;height:auto;">
+          <defs>
+            <marker id="arl" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+              <path d="M1 1 L7 4 L1 7 Z" fill="#52525B"/>
+            </marker>
+          </defs>
+          <rect x="0" y="0" width="720" height="520" fill="#F7F7F8" rx="8"/>
+          <rect x="210" y="12" width="300" height="40" rx="20" fill="#334155"/>
+          <text x="360" y="38" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700" font-family="system-ui,sans-serif">逻辑学基本概念</text>
+          <line x1="360" y1="52" x2="360" y2="68" stroke="#334155" stroke-width="2"/>
+          <line x1="72" y1="68" x2="648" y2="68" stroke="#52525B" stroke-width="1.5"/>
+          <line x1="72" y1="68" x2="72" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl)"/>
+          <line x1="216" y1="68" x2="216" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl)"/>
+          <line x1="360" y1="68" x2="360" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl)"/>
+          <line x1="504" y1="68" x2="504" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl)"/>
+          <line x1="648" y1="68" x2="648" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl)"/>
+          <rect x="14" y="82" width="116" height="34" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+          <text x="72" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="sans-serif">逻辑的定义</text>
+          <rect x="164" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#6F6FFF" stroke-width="1.5"/>
+          <text x="216" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="sans-serif">核心概念</text>
+          <rect x="308" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+          <text x="360" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="sans-serif">基本规则</text>
+          <rect x="452" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#6F6FFF" stroke-width="1.5"/>
+          <text x="504" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="sans-serif">思想律</text>
+          <rect x="596" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+          <text x="648" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="sans-serif">应用领域</text>
+          <rect x="12" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="72" y="147" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">正确推理的科学</text>
+          <rect x="12" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="72" y="177" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">logos 言辞·理性·道理</text>
+          <rect x="12" y="190" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="72" y="207" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">形式与内容的分离</text>
+          <rect x="12" y="220" width="120" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+          <text x="72" y="237" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">思想的思想（元思维）</text>
+          <line x1="72" y1="116" x2="72" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <line x1="72" y1="154" x2="72" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <line x1="72" y1="184" x2="72" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <line x1="72" y1="214" x2="72" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <rect x="162" y="130" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="216" y="147" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">演绎推理（必然）</text>
+          <rect x="162" y="160" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="216" y="177" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">归纳推理（概然）</text>
+          <rect x="162" y="190" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="216" y="207" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">溯因推理（最佳解释）</text>
+          <rect x="162" y="220" width="108" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+          <text x="216" y="237" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">类比推理</text>
+          <line x1="216" y1="116" x2="216" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <line x1="216" y1="154" x2="216" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <line x1="216" y1="184" x2="216" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <line x1="216" y1="214" x2="216" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <rect x="300" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="360" y="147" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">三段论（大前提→小前提→结论）</text>
+          <rect x="300" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="360" y="177" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">联结词（∧ ∨ ¬ → ↔）</text>
+          <rect x="300" y="190" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="360" y="207" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">量词（∀ 所有·∃ 存在）</text>
+          <rect x="300" y="220" width="120" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+          <text x="360" y="237" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">真值表</text>
+          <line x1="360" y1="116" x2="360" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <line x1="360" y1="154" x2="360" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <line x1="360" y1="184" x2="360" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <line x1="360" y1="214" x2="360" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <rect x="450" y="130" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="504" y="147" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">矛盾律：不能同时为真</text>
+          <rect x="450" y="160" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="504" y="177" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">排中律：必有一真一假</text>
+          <rect x="450" y="190" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="504" y="207" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">同一律：A 是 A</text>
+          <rect x="450" y="220" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="504" y="237" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">充足理由律</text>
+          <line x1="504" y1="116" x2="504" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <line x1="504" y1="154" x2="504" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <line x1="504" y1="184" x2="504" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <line x1="504" y1="214" x2="504" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <rect x="590" y="130" width="116" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="648" y="147" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">数学与计算机科学</text>
+          <rect x="590" y="160" width="116" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="648" y="177" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">科学方法（实验验证）</text>
+          <rect x="590" y="190" width="116" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="648" y="207" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">法律与辩论</text>
+          <rect x="590" y="220" width="116" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="648" y="237" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">AI 与机器学习</text>
+          <line x1="648" y1="116" x2="648" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <line x1="648" y1="154" x2="648" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <line x1="648" y1="184" x2="648" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <line x1="648" y1="214" x2="648" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+          <rect x="30" y="265" width="660" height="240" rx="10" fill="#EFEFF2" opacity="0.7"/>
+          <text x="360" y="290" text-anchor="middle" fill="#171717" font-size="14" font-weight="700" font-family="sans-serif">专业名词释义</text>
+          <text x="50" y="315" fill="#171717" font-size="12" font-weight="700" font-family="sans-serif">▎逻辑（Logic）</text>
+          <text x="50" y="332" fill="#52525B" font-size="11" font-family="sans-serif">源自希腊语 logos（言辞、理性、道理），是"正确推理的科学"。逻辑不关心"你思考什么"，而关心"你怎么</text>
+          <text x="50" y="348" fill="#52525B" font-size="11" font-family="sans-serif">思考"——它是关于思想形式的学问。一个推理正确与否，取决于它的形式是否有效，而非内容是否真实。</text>
+          <text x="50" y="376" fill="#171717" font-size="12" font-weight="700" font-family="sans-serif">▎演绎推理（Deduction）</text>
+          <text x="50" y="393" fill="#52525B" font-size="11" font-family="sans-serif">从一般前提必然推出个别结论的推理。如果前提为真，结论必然为真——"所有人都会死；苏格拉底是人；</text>
+          <text x="50" y="409" fill="#52525B" font-size="11" font-family="sans-serif">所以苏格拉底会死"。演绎是"保真"的，但无法产生新知识（结论已蕴含在前提中）。</text>
+          <text x="50" y="437" fill="#171717" font-size="12" font-weight="700" font-family="sans-serif">▎归纳推理（Induction）</text>
+          <text x="50" y="454" fill="#52525B" font-size="11" font-family="sans-serif">从个别经验推出一般原理的推理。"我见过的天鹅都是白的，所以所有天鹅都是白的"——归纳能产生新知识，</text>
+          <text x="50" y="470" fill="#52525B" font-size="11" font-family="sans-serif">但结论不是必然的（休谟的归纳问题）。科学方法的核心就是归纳——从实验数据中提炼定律。</text>
+          <text x="50" y="498" fill="#171717" font-size="12" font-weight="700" font-family="sans-serif">▎思想律（Laws of Thought）</text>
+          <text x="50" y="515" fill="#52525B" font-size="11" font-family="sans-serif">逻辑学的基本公理：矛盾律（A 与非 A 不能同时为真）、排中律（A 与非 A 必有一真）、同一律（A 是 A）、</text>
+          <text x="50" y="531" fill="#52525B" font-size="11" font-family="sans-serif">充足理由律（任何真命题都有理由）。这四条是逻辑思考的"底线"，破坏它们中的任何一条，思考就崩溃了。</text>
+        </svg>
+        </div>
+      </figure>
+      <div class="explain">
+        <p><strong>图 1a 详解：</strong>逻辑学看似抽象，但它的核心结构并不复杂——"四大支柱"构成其基本框架。理解逻辑，首先要理解"逻辑不是知识，而是知识的骨架"。</p>
+        <p><strong>逻辑的定义：</strong>逻辑不是"关于世界的知识"，而是"关于知识的程序"。当你问"这个结论是如何得出的？"——你就在做逻辑检查。逻辑不告诉你"事实是什么"，而是告诉你"如果事实是这样，那么什么必然随之而来"。这是逻辑的根本特点：它关注的是<strong>推理的形式</strong>而非内容。一个推理可以是"形式上有效"但"内容上荒谬"的——比如"所有人都会飞；苏格拉底是人；所以苏格拉底会飞"——这个推理在形式上完全正确（三段论 AAA 式），但前提为假，所以结论也不可靠。逻辑教会我们区分"形式有效"和"前提真实"——这是批判性思维的第一课。</p>
+        <p><strong>四大核心推理类型：</strong></p>
+        <ul>
+          <li><strong>演绎推理（Deduction）</strong>——从一般到特殊。三段论是演绎的经典形式：大前提（所有 M 是 P）→ 小前提（所有 S 是 M）→ 结论（所有 S 是 P）。演绎是"保真"的——如果前提真，结论必然真。但它的代价是"不产生新知识"：结论已经隐含在前提中了。数学证明就是演绎的典范。</li>
+          <li><strong>归纳推理（Induction）</strong>——从特殊到一般。我们看到 1000 只天鹅都是白的，归纳出"所有天鹅都是白的"。归纳是科学发现的核心——但休谟指出：归纳的结论不能被逻辑证明（"太阳明天会升起"无法被证明）。归纳是"概然的"而非"必然的"。</li>
+          <li><strong>溯因推理（Abduction）</strong>——从现象到最佳解释。医生看到病人的症状，推测最可能的病因——"如果 A 是原因，那么症状 B 会出现"——溯因是"往回推理"（从结果找原因），是日常诊断、侦探破案、科学假说的核心推理模式。</li>
+          <li><strong>类比推理（Analogy）</strong>——从相似性到相似性。因为 A 和 B 在 x、y 上相似，所以 A 在 z 上也应该和 B 相似。类比的力量在于"举一反三"，但弱点在于"相似不保证相同"——每一个类比都是不完美的。</li>
+        </ul>
+        <p><strong>思想律的价值：</strong>矛盾律、排中律、同一律、充足理由律——这四条"思想律"看起来简单得近乎废话，但它们是逻辑思考的"不可触碰的底线"。一旦你允许矛盾（"A 既是又不是"），你就可以推出任何结论——这就是"爆炸原理"（ex contradictione quodlibet）：从矛盾中可以推出一切。所有逻辑系统的根基，都在于拒绝矛盾。</p>
+      </div>
+
+      <!-- 第一章 总览 -->
+      <section class="sec" id="overview">
+        <h2><span class="chapno">第一章</span>总览：逻辑的演变</h2>
+        <p>先看全景：逻辑几乎与哲学同龄。亚里士多德在公元前 4 世纪建立了系统的三段论逻辑，被后世尊为"逻辑学之父"；斯多葛学派发展出命题逻辑，奠定了条件推理的基础。中世纪，逻辑是"七艺"中"三科"（文法、修辞、逻辑）之一，经院学者以逻辑论证神学命题。近代，培根以《新工具》挑战亚里士多德的演绎传统，开创归纳法；莱布尼茨梦想把推理变成计算。19 世纪，布尔把逻辑代数化，弗雷格创立谓词逻辑，逻辑迎来数学化革命。20 世纪，罗素与怀特海试图把数学奠基在逻辑之上，哥德尔却证明了逻辑的极限，图灵则把逻辑变成可计算的机器。当代，逻辑走出书斋，成为认知科学、人工智能与批判性思维的核心工具。理解逻辑，就是理解人类理性自我奠基的全部历程。</p>
+
+        <h3>本章大纲</h3>
+        <ul>
+          <li>1.1 逻辑的起源：亚里士多德与三段论</li>
+          <li>1.2 逻辑的数学化：从布尔到弗雷格</li>
+          <li>1.3 逻辑的当代转向：认知科学与人工智能</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>三段论</strong>：由两个前提必然推出结论的推理形式</li>
+          <li><strong>矛盾律与排中律</strong>：思想不能自相矛盾；命题非真即假</li>
+          <li><strong>逻辑的数学化</strong>：布尔代数、弗雷格谓词逻辑、哥德尔不完备定理</li>
+        </ul>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>古典逻辑（前4世纪–5世纪）</strong>：亚里士多德著《工具论》（Organon），建立范畴论与三段论，提出矛盾律、排中律；斯多葛学派克里西普斯发展命题逻辑，提出假言推理（肯定前件、否定后件）；波菲利作《导论》注释亚里士多德，波爱修斯把逻辑著作译介给中世纪。</p>
+          <p><strong>中世纪逻辑（5–15世纪）</strong>：逻辑是大学"三科"（trivium）之一；阿伯拉尔以"是与否"（Sic et Non）的辩证方法探究神学；奥卡姆提出"如无必要，勿增实体"的剃刀原则；唯名论与实在论之争贯穿经院哲学。</p>
+          <p><strong>近代逻辑与科学方法（16–18世纪）</strong>：培根《新工具》（1620）批判演绎法、倡导归纳法，提出"四假象"说；笛卡尔《谈谈方法》（1637）确立"清楚明白"的推理规则；莱布尼茨梦想建立"普遍字符"与理性演算，发明二进制。</p>
+          <p><strong>逻辑的数学化（19世纪）</strong>：布尔《思维规律的研究》（1854）把逻辑变成代数；弗雷格《概念文字》（1879）创立谓词逻辑与量词理论；密尔《逻辑体系》（1843）系统化归纳五法；皮尔士独立发展出量词逻辑与溯因推理。</p>
+          <p><strong>数学基础危机（20世纪初）</strong>：罗素发现"集合悖论"，与怀特海合著《数学原理》（1910–1913）试图以逻辑奠基数学；希尔伯特提出形式主义纲领；哥德尔不完备定理（1931）宣告这一纲领的极限；图灵（1936）以图灵机定义可计算性。</p>
+          <p><strong>当代逻辑（20世纪中–）</strong>：逻辑从数学走向认知科学与人工智能——纽厄尔与西蒙的"物理符号系统"、麦卡锡的 AI 逻辑、卡尼曼的认知偏差研究、图尔敏的论证模型，逻辑成为理解思维与机器的共同语言。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>亚里士多德（前384–前322）</strong>——三段论、矛盾律、逻辑学之父。</p>
+        <p><strong>克里西普斯（约前279–前206）</strong>——斯多葛学派、命题逻辑。</p>
+        <p><strong>阿伯拉尔（1079–1142）</strong>——辩证方法、"是与否"。</p>
+        <p><strong>奥卡姆（约1287–1347）</strong>——奥卡姆剃刀、唯名论。</p>
+        <p><strong>培根（1561–1626）</strong>——归纳法、《新工具》、四假象。</p>
+        <p><strong>笛卡尔（1596–1650）</strong>——方法论、清楚明白、我思故我在。</p>
+        <p><strong>莱布尼茨（1646–1716）</strong>——普遍字符、二进制、理性演算之梦。</p>
+        <p><strong>密尔（1806–1873）</strong>——归纳五法、《逻辑体系》。</p>
+        <p><strong>布尔（1815–1864）</strong>——布尔代数、逻辑的数学化。</p>
+        <p><strong>弗雷格（1848–1925）</strong>——谓词逻辑、概念文字、逻辑主义。</p>
+        <p><strong>罗素（1872–1970）</strong>——罗素悖论、类型论、《数学原理》。</p>
+        <p><strong>哥德尔（1906–1978）</strong>——不完备定理。</p>
+        <p><strong>图灵（1912–1954）</strong>——图灵机、可计算性、停机问题。</p>
+        <p><strong>卡尼曼（1934–）</strong>——系统 1 与系统 2、认知偏差。</p>
+
+        <figure class="diagram">
+          <figcaption>图 2 · 逻辑演变结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["逻辑"] --> A["古典逻辑<br>亚里士多德 · 斯多葛 · 经院"]
+  ROOT --> B["近代科学方法<br>培根 · 笛卡尔 · 莱布尼茨 · 密尔"]
+  ROOT --> C["现代数理逻辑<br>布尔 · 弗雷格 · 罗素 · 哥德尔 · 图灵"]
+  ROOT --> D["论证与谬误<br>图尔敏 · 非形式逻辑"]
+  ROOT --> E["逻辑与思维<br>认知科学 · AI · 批判性思维"]
+  classDef rootNode fill:#334155,color:#fff,stroke:#334155;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+<div class="explain">
+        <p><strong>图 2 详解：</strong>逻辑的五个分支构成了这门学科的完整骨架。从古典逻辑到当代逻辑与思维，每条分支都代表了人类对"推理"的不同理解。</p>
+        <p><strong>五个分支的深层逻辑：</strong></p>
+        <ul>
+          <li><strong>古典逻辑 → 近代科学方法：</strong>从"必然推理"到"发现新知"的转向。古典逻辑只能证明已知，无法产生新知识。培根意识到这一点，转而研究"如何从经验中归纳出一般原理"——这就是近代科学方法的开端。这一转向的意义在于：逻辑不再只是"证明的工具"，而成为"发现的工具"。</li>
+          <li><strong>近代科学方法 → 现代数理逻辑：</strong>从"自然的推理"到"形式的演算"。莱布尼茨的"推理即计算"之梦在布尔和弗雷格手中变为现实。逻辑变成了数学的一个分支——用符号、公式和证明来研究推理本身。这是逻辑史上最深刻的一次转型：逻辑从"研究思维的工具"变成了"被研究的对象"。</li>
+          <li><strong>现代数理逻辑 → 论证与谬误：</strong>从"形式的完美"到"日常的混乱"。图尔敏指出，现实中的论证不是数学证明——它没有公理，没有必然性，只有主张、根据和反驳。这一转向提醒我们：逻辑不能只活在教科书里，它必须面对真实世界的复杂和模糊。</li>
+          <li><strong>论证与谬误 → 逻辑与思维：</strong>从"应该如何推理"到"实际上如何推理"。卡尼曼的认知研究表明：人的思维常常不遵循逻辑规则——我们依赖直觉（系统 1），走捷径，犯系统性错误。批判性思维，就是训练"系统 2"在关键时刻接管"系统 1"的能力。</li>
+        </ul>
+        <p><strong>现实案例：</strong>理解这五个分支的关联，可以帮助你在日常生活中更好地使用逻辑。当你写一篇论文时，你先用"归纳"收集数据（科学方法），再用"演绎"构建论证（古典逻辑），然后用"图尔敏模型"检查论证是否完整（论证与谬误），最后要警惕"确认偏差"（逻辑与思维）——五个步骤缺一不可。</p>
+      </div>
+
+        <h3>对照表：逻辑主要时期速览</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>时期</th><th>核心问题</th><th>代表人物</th><th>思想遗产</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>古典逻辑</strong></td><td>必然推理如何可能</td><td>亚里士多德 · 克里西普斯 · 波爱修斯</td><td>三段论 · 命题逻辑 · 矛盾律</td></tr>
+              <tr><td><strong>中世纪逻辑</strong></td><td>逻辑与信仰的关系</td><td>阿伯拉尔 · 奥卡姆</td><td>辩证方法 · 奥卡姆剃刀</td></tr>
+              <tr><td><strong>近代科学方法</strong></td><td>如何从经验求知</td><td>培根 · 笛卡尔 · 莱布尼茨 · 密尔</td><td>归纳法 · 方法论 · 密尔五法</td></tr>
+              <tr><td><strong>逻辑的数学化</strong></td><td>逻辑能否变成演算</td><td>布尔 · 弗雷格 · 皮尔士</td><td>布尔代数 · 谓词逻辑 · 溯因</td></tr>
+              <tr><td><strong>数学基础危机</strong></td><td>数学能否奠基在逻辑上</td><td>罗素 · 希尔伯特 · 哥德尔 · 图灵</td><td>类型论 · 不完备定理 · 可计算性</td></tr>
+              <tr><td><strong>当代逻辑</strong></td><td>逻辑与思维的关系</td><td>图尔敏 · 卡尼曼 · 麦卡锡</td><td>论证模型 · 认知偏差 · AI 逻辑</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 第二章 古典逻辑 -->
+      <section class="sec" id="classical">
+        <h2><span class="chapno">第二章</span>古典逻辑：从亚里士多德到经院逻辑</h2>
+        <p>古典逻辑是逻辑的源头，也是整个西方理性传统的起点。亚里士多德在《工具论》中建立了人类第一套系统的推理理论——三段论：由两个前提必然推出一个结论。斯多葛学派则从另一个方向出发，研究命题之间的条件关系，奠定了命题逻辑的基础。中世纪，逻辑成为大学"三科"之一，经院学者用逻辑论证神学，奥卡姆以"剃刀"原则为思维瘦身。古典逻辑的核心洞见是：<strong>推理的有效性不取决于内容，而取决于形式</strong>——只要形式正确，结论就必然成立。这一洞见，让人类第一次拥有了"不依赖具体内容"的思维工具。</p>
+
+        <h3>本章大纲</h3>
+        <ul>
+          <li>2.1 亚里士多德的三段论与直言命题</li>
+          <li>2.2 斯多葛学派的命题逻辑</li>
+          <li>2.3 中世纪经院逻辑与奥卡姆剃刀</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>直言命题四形式（A/E/I/O）</strong>：全称肯定、全称否定、特称肯定、特称否定</li>
+          <li><strong>假言推理</strong>：肯定前件（modus ponens）与否定后件（modus tollens）</li>
+          <li><strong>奥卡姆剃刀</strong>：如无必要，勿增实体</li>
+        </ul>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>亚里士多德的《工具论》（前4世纪）</strong>：亚里士多德把逻辑著作合称《工具论》，包括《范畴篇》《解释篇》《前分析篇》《后分析篇》等；他提出直言命题的四形式（全称肯定 A、全称否定 E、特称肯定 I、特称否定 O），并建立三段论系统——"所有人都会死；苏格拉底是人；所以苏格拉底会死"。</p>
+          <p><strong>斯多葛的命题逻辑（前3世纪）</strong>：克里西普斯被称为"斯多葛的逻辑学家"，他研究命题之间的联结（如果……那么……、或者……或者……），提出假言推理的两种基本形式——肯定前件（modus ponens）与否定后件（modus tollens），是命题逻辑的先驱。</p>
+          <p><strong>中世纪经院逻辑（11–14世纪）</strong>：逻辑是"三科"（文法、修辞、逻辑）之一，是大学的基础课程；阿伯拉尔《是与否》以辩证方法列举神学命题的正反论据；奥卡姆提出"如无必要，勿增实体"的剃刀原则，主张唯名论——共相只是名称，不是实体。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>亚里士多德（前384–前322）</strong>——三段论、《工具论》、矛盾律与排中律。</p>
+        <p><strong>克里西普斯（约前279–前206）</strong>——命题逻辑、假言推理。</p>
+        <p><strong>波菲利（约234–约305）</strong>——《导论》、波菲利之树。</p>
+        <p><strong>波爱修斯（约480–524）</strong>——逻辑译介、《哲学的慰藉》。</p>
+        <p><strong>阿伯拉尔（1079–1142）</strong>——辩证方法、《是与否》。</p>
+        <p><strong>奥卡姆（约1287–1347）</strong>——奥卡姆剃刀、唯名论。</p>
+
+        <figure class="diagram">
+          <figcaption>图 3 · 古典逻辑结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["古典逻辑"] --> A["亚里士多德<br>三段论 · 直言命题 · 矛盾律"]
+  ROOT --> B["斯多葛学派<br>命题逻辑 · 假言推理"]
+  ROOT --> C["经院逻辑<br>辩证方法 · 唯名论 · 奥卡姆剃刀"]
+  classDef rootNode fill:#334155,color:#fff,stroke:#334155;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+<div class="explain">
+        <p><strong>图 3 详解：</strong>古典逻辑的三条分支——亚里士多德的三段论、斯多葛的命题逻辑、经院的辩证方法——构成了人类逻辑学的第一块基石。理解这三条分支，就是理解逻辑学是如何"从零到一"的。</p>
+        <p><strong>亚里士多德的三段论——逻辑的诞生：</strong></p>
+        <ul>
+          <li>亚里士多德在《工具论》中建立了人类第一套完整的推理系统。三段论的核心是"形式决定有效性"——一个三段论是否有效，不看它说的是什么，而看它"怎么说的"。比如"所有 A 是 B；所有 B 是 C；所以所有 A 是 C"——这个形式无论塞进什么内容，都必然有效。</li>
+          <li><strong>现实案例：</strong>在法庭上，三段论无处不在。大前提："故意杀人者应受刑罚"；小前提："被告实施了故意杀人行为"；结论："被告应受刑罚"。三段论的正确性不取决于你是否同情被告，而取决于大前提是否成立、小前提能否证明——这就是法律推理的"形式正义"基础。</li>
+        </ul>
+        <p><strong>斯多葛的命题逻辑——条件推理的起源：</strong></p>
+        <ul>
+          <li>克里西普斯不研究"概念之间的关系"（如"所有人都会死"），而研究"命题之间的关系"（如"如果下雨，地会湿"）。他发现了两种最基本的有效推理形式：肯定前件（modus ponens）和否定后件（modus tollens）。这两种形式构成了一切条件推理的基础——从计算机的 if-then 语句，到法律中的"如果……那么……"条款。</li>
+          <li><strong>现实案例：</strong>否定后件是侦探破案的核心逻辑。如果凶手是 A，那么 A 应该有作案时间（如果 P 则 Q）；调查发现 A 没有作案时间（非 Q）；所以 A 不是凶手（非 P）。这就是否定后件——从"后果不成立"推出"条件不成立"。福尔摩斯说的"排除所有不可能的，剩下的就是答案"——本质上就是否定后件的反复运用。</li>
+        </ul>
+        <p><strong>经院逻辑与奥卡姆剃刀——思维的"瘦身"：</strong></p>
+        <ul>
+          <li>奥卡姆剃刀——"如无必要，勿增实体"——是逻辑学中最著名的原则之一。它的逻辑含义是：在解释力相同的情况下，选择假设最少的理论。这不是一个"真理"标准（更简单的理论不一定更真），而是一个"方法论"原则：更简单的理论更容易检验、更容易证伪。</li>
+          <li><strong>现实案例：</strong>在机器学习中，奥卡姆剃刀是"正则化"（regularization）的哲学基础。一个过于复杂的模型可以完美拟合训练数据，但会产生"过拟合"——在测试数据上表现很差。更好的做法是选择"足够简单"的模型——这正是奥卡姆剃刀在现代 AI 中的体现。</li>
+        </ul>
+      </div>
+      <figure class="diagram">
+        <figcaption>图 3a · 直言命题对当方阵 —— A/E/I/O 四形式间的逻辑关系</figcaption>
+        <pre class="mermaid">
+      flowchart TB
+        A["A: 所有 S 是 P<br>全称肯定"] --- CONTRARY["反对关系<br>不能同真，可同假"] --- E["E: 所有 S 不是 P<br>全称否定"]
+        A --> SUBALT["差等关系<br>全称真则特称真"] --> I["I: 有些 S 是 P<br>特称肯定"]
+        E --> SUBALT2["差等关系<br>全称真则特称真"] --> O["O: 有些 S 不是 P<br>特称否定"]
+        I --- SUBCONTRARY["下反对关系<br>不能同假，可同真"] --- O
+        A -.-> CONTRADICT["矛盾关系<br>不能同真，不能同假"] -.-> O
+        E -.-> CONTRADICT2["矛盾关系"] -.-> I
+        classDef a fill:#1E3A8A,color:#fff;
+        classDef e fill:#991B1B,color:#fff;
+        classDef i fill:#1E7E34,color:#fff;
+        classDef o fill:#92400E,color:#fff;
+        class A a;
+        class E e;
+        class I i;
+        class O o;
+        </pre>
+      </figure>
+      <div class="explain">
+        <p><strong>图 3a 详解：</strong>对当方阵（Square of Opposition）是古典逻辑的经典工具，展示了四种直言命题之间的逻辑关系。理解这些关系，就是理解"推理的边界"——哪些推论是有效的，哪些是无效的。</p>
+        <ul>
+          <li><strong>矛盾关系（A 与 O、E 与 I）：</strong>不能同真，不能同假。如果"所有人都会死"（A 真），那么"有些人不会死"（O 假）——反之亦然。这是最强的逻辑关系：一个真，另一个必然假。</li>
+          <li><strong>反对关系（A 与 E）：</strong>不能同真，可以同假。"所有人都会死"和"所有人都不会死"不能同时为真，但可以同时为假（如果有些人会死、有些人不会）。</li>
+          <li><strong>下反对关系（I 与 O）：</strong>不能同假，可以同真。"有些人会死"和"有些人不会死"可以同时为真，但不能同时为假。</li>
+          <li><strong>现实案例：</strong>在辩论中，对当方阵帮助你判断对方的"反驳"是否有效。如果你说"所有科学家都支持进化论"（A），对方说"有些科学家不支持进化论"（O）——这是矛盾关系，只要能证明一个有少数科学家不支持，你的 A 就被否定了。但如果对方说"所有科学家都不支持进化论"（E）——这是反对关系，你只需要证明"至少有一个科学家支持"（I），就能证明 E 为假。</li>
+        </ul>
+      </div>
+
+        <h3>公式速查：古典逻辑核心规则</h3>
+        <div class="formula"><span class="f-name">三段论（直言三段论）</span>所有 M 是 P；所有 S 是 M；∴ 所有 S 是 P。<span class="f-note">亚里士多德 · 由两个前提必然推出结论，有效性取决于形式而非内容。</span></div>
+        <div class="formula"><span class="f-name">直言命题四形式（A/E/I/O）</span>A：所有 S 是 P　E：所有 S 不是 P　I：有些 S 是 P　O：有些 S 不是 P。<span class="f-note">四形式之间存在矛盾、反对、差等、下反对四种对当关系。</span></div>
+        <div class="formula"><span class="f-name">假言推理（斯多葛）</span>肯定前件：如果 P 则 Q；P；∴ Q。　否定后件：如果 P 则 Q；非 Q；∴ 非 P。<span class="f-note">注意：肯定后件与否定前件是无效推理。</span></div>
+        <div class="formula"><span class="f-name">奥卡姆剃刀</span>如无必要，勿增实体（Entia non sunt multiplicanda praeter necessitatem）。<span class="f-note">在解释力相同时，选择假设最少的理论。</span></div>
+
+        <h3>对照表：古典逻辑学家对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>逻辑学家</th><th>核心贡献</th><th>关键概念</th><th>历史地位</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>亚里士多德</strong></td><td>三段论系统</td><td>直言命题 · 矛盾律 · 排中律</td><td>逻辑学之父</td></tr>
+              <tr><td><strong>克里西普斯</strong></td><td>命题逻辑</td><td>条件句 · 假言推理</td><td>斯多葛逻辑的代表</td></tr>
+              <tr><td><strong>波菲利</strong></td><td>注释与分类</td><td>波菲利之树 · 属加种差</td><td>新柏拉图主义逻辑</td></tr>
+              <tr><td><strong>波爱修斯</strong></td><td>逻辑译介</td><td>逻辑术语的拉丁化</td><td>中世纪逻辑的桥梁</td></tr>
+              <tr><td><strong>阿伯拉尔</strong></td><td>辩证方法</td><td>是与否 · 正反论据</td><td>经院辩证法的先驱</td></tr>
+              <tr><td><strong>奥卡姆</strong></td><td>剃刀原则</td><td>唯名论 · 简约原则</td><td>近代经验论的先声</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">亚里士多德 · 前384–前322</div>
+            <blockquote>求知是所有人的本性。<cite>——《形而上学》</cite></blockquote>
+            <blockquote>一切知识都始于感觉，终于理性。<cite>——《后分析篇》</cite></blockquote>
+            <blockquote>矛盾律：同一事物在同一方面不能同时存在又不存在。<cite>——《形而上学》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">奥卡姆 · 约1287–1347</div>
+            <blockquote>如无必要，勿增实体。<cite>——奥卡姆剃刀</cite></blockquote>
+            <div class="legacy-who">阿伯拉尔 · 1079–1142</div>
+            <blockquote>通过怀疑，我们开始探究；通过探究，我们认识真理。<cite>——《是与否》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第三章 近代逻辑与科学方法 -->
+      <section class="sec" id="modern">
+        <h2><span class="chapno">第三章</span>近代逻辑与科学方法：从培根到密尔</h2>
+        <p>近代是逻辑的转折点。亚里士多德的演绎逻辑长于"从一般到个别"，却难以产生新知识。培根在《新工具》中反其道而行：真正的知识应从个别经验出发，通过归纳上升为一般原理。笛卡尔则从"我思故我在"出发，为理性确立"清楚明白"的标准。莱布尼茨梦想把推理变成计算，让争论以"算一算"的方式解决。密尔在《逻辑体系》中把归纳法系统化为五种方法。近代逻辑的核心洞见是：<strong>推理不仅是证明已知，更是发现新知</strong>——归纳法让逻辑从"必然的证明"走向"可能的发现"。</p>
+
+        <h3>本章大纲</h3>
+        <ul>
+          <li>3.1 培根的归纳法与四假象</li>
+          <li>3.2 笛卡尔的方法论与莱布尼茨的演算之梦</li>
+          <li>3.3 密尔的归纳五法</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>归纳法</strong>：从个别经验上升到一般原理</li>
+          <li><strong>四假象</strong>：种族、洞穴、市场、剧场假象</li>
+          <li><strong>密尔五法</strong>：求同、求异、求同求异并用、共变、剩余</li>
+          <li><strong>休谟的归纳问题</strong>：归纳结论不能从前提中必然推出</li>
+        </ul>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>培根的《新工具》（1620）</strong>：培根批评亚里士多德的演绎法"不能产生新知识"，提出以归纳法为核心的"新工具"；他列举阻碍认识的"四假象"——种族假象（人类共有的偏见）、洞穴假象（个人的偏见）、市场假象（语言的误导）、剧场假象（权威体系的迷信），主张"知识就是力量"。</p>
+          <p><strong>笛卡尔的方法论（1637）</strong>：笛卡尔在《谈谈方法》中确立四条规则——怀疑一切、分析为简、由简到繁、全面检验；"我思故我在"成为近代哲学的起点；他主张以数学的确定性为一切知识的范本。</p>
+          <p><strong>莱布尼茨的演算之梦（17世纪）</strong>：莱布尼茨梦想建立"普遍字符"（characteristica universalis），把一切概念还原为基本符号，让推理变成计算；他发明二进制，预言"将来会有一种推理机器"。</p>
+          <p><strong>密尔的归纳五法（1843）</strong>：密尔在《逻辑体系》中系统化归纳法——求同法、求异法、求同求异并用法、共变法、剩余法，为实验科学提供了可操作的推理规则。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>培根（1561–1626）</strong>——归纳法、四假象、《新工具》。</p>
+        <p><strong>笛卡尔（1596–1650）</strong>——方法论、我思故我在、清楚明白。</p>
+        <p><strong>莱布尼茨（1646–1716）</strong>——普遍字符、二进制、理性演算。</p>
+        <p><strong>洛克（1632–1704）</strong>——经验论、白板说。</p>
+        <p><strong>休谟（1711–1776）</strong>——归纳问题、习惯是人生的伟大指南。</p>
+        <p><strong>密尔（1806–1873）</strong>——归纳五法、《逻辑体系》。</p>
+
+        <figure class="diagram">
+          <figcaption>图 4 · 近代逻辑与科学方法结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["近代逻辑与科学方法"] --> A["培根<br>归纳法 · 四假象"]
+  ROOT --> B["笛卡尔<br>方法论 · 我思故我在"]
+  ROOT --> C["莱布尼茨<br>普遍字符 · 二进制"]
+  ROOT --> D["休谟<br>归纳问题 · 习惯"]
+  ROOT --> E["密尔<br>归纳五法"]
+  classDef rootNode fill:#334155,color:#fff,stroke:#334155;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+<div class="explain">
+        <p><strong>图 4 详解：</strong>近代逻辑与科学方法代表了逻辑史上的一次"范式转换"——从"证明已知"到"发现新知"。培根、笛卡尔、莱布尼茨、休谟、密尔——这五位思想家各自从不同角度回答了同一个问题：如何从经验中获取可靠的知识？</p>
+        <p><strong>培根的归纳法——科学的"新工具"：</strong></p>
+        <ul>
+          <li>培根认为亚里士多德的演绎法"不能产生新知识"——三段论的结论已经蕴含在前提中，你永远无法从"所有人都会死"推出"这个药能治病"。培根提出：真正的知识应从个别经验出发，通过归纳上升为一般原理。他列举了阻碍认识的"四假象"——种族假象（人类共有的偏见）、洞穴假象（个人的偏见）、市场假象（语言的误导）、剧场假象（权威体系的迷信）——这些"假象"至今仍是批判性思维的核心概念。</li>
+          <li><strong>现实案例：</strong>2020 年新冠疫情期间，医学界对"瑞德西韦是否有效"的争论，就是培根方法的完美体现。一开始只有个别病例报告（个别经验），然后通过随机对照试验（密尔的求异法）收集数据，最后归纳出"有效"或"无效"的结论。整个过程就是培根"从个别到一般"的科学方法。</li>
+        </ul>
+        <p><strong>休谟的归纳问题——逻辑的"死穴"：</strong></p>
+        <ul>
+          <li>休谟指出：归纳推理的结论不能从前提中必然推出。"太阳明天会升起"——我们相信它，不是因为逻辑证明，而是因为"习惯"。休谟的归纳问题是近代哲学的一个"死穴"：科学方法的核心是归纳，但归纳的合理性本身无法被归纳证明。这个两难在 20 世纪由波普尔以"证伪主义"试图解决——科学不能证明理论为真，只能证明理论为假。</li>
+          <li><strong>现实案例：</strong>"所有天鹅都是白的"——欧洲人相信了上千年，直到在澳大利亚发现了黑天鹅。这一发现不是"例外"，而是休谟问题的完美演示：归纳永远无法"证明"一个理论，只能"支持"它。在投资领域，2008 年金融危机就是"黑天鹅事件"——所有基于历史数据的风险模型（归纳法）都未能预测。塔勒布的《黑天鹅》告诉我们的核心教训是：不要用归纳法来预测"从未发生过"的事情。</li>
+        </ul>
+        <p><strong>密尔的归纳五法——实验科学的逻辑基础：</strong></p>
+        <ul>
+          <li>密尔把归纳法系统化为五种方法：求同法（在不同场合中找到共同因素）、求异法（在对照实验中找到差异因素）、共变法（找到相关性）、剩余法（排除已知因素后剩下的就是原因）、求同求异并用法。这五种方法至今仍是实验科学和数据分析的基础。</li>
+          <li><strong>现实案例：</strong>求异法就是"对照实验"——两组除了一个变量外其他都相同，如果结果不同，差异就是原因。这就是"对照组"和"实验组"的逻辑基础。在医学中，要证明"新药有效"，就需要求异法：一组服药（实验组），一组服安慰剂（对照组），其他条件完全相同——如果实验组显著好转，药就是有效的。</li>
+        </ul>
+      </div>
+      <figure class="diagram">
+        <figcaption>图 4a · 演绎 vs 归纳 vs 溯因 —— 三种推理模式的对比</figcaption>
+        <pre class="mermaid">
+      flowchart LR
+        ROOT["三种推理模式"] --> DED["演绎推理<br>规则+案例→结论<br>必然性推理"]
+        ROOT --> IND["归纳推理<br>案例+结论→规则<br>概然性推理"]
+        ROOT --> ABD["溯因推理<br>结论+规则→案例<br>最佳解释推理"]
+        classDef root fill:#334155,color:#fff;
+        class ROOT root;
+        </pre>
+      </figure>
+      <div class="explain">
+        <p><strong>图 4a 详解：</strong>演绎、归纳、溯因是三种最基本的推理模式。理解它们的区别，是掌握逻辑学的关键——这三种推理分别对应着"必然"、"概然"和"最佳解释"三种不同的认识论层次。</p>
+        <ul>
+          <li><strong>演绎推理（Deduction）</strong>——从规则出发，应用到案例，得出必然结论。演绎是"保真"的，但"不产生新知识"——结论已经隐含在前提中。数学证明、法律推理、计算机程序的核心都是演绎。</li>
+          <li><strong>归纳推理（Induction）</strong>——从案例出发，归纳出规则。归纳能产生新知识（科学发现），但结论不是必然的——"所有天鹅都是白的"可能在下一秒被一只黑天鹅推翻。科学方法的核心就是归纳，而休谟的归纳问题表明：归纳的合理性无法被逻辑证明，只能被实践支撑。</li>
+          <li><strong>溯因推理（Abduction）</strong>——从现象出发，推断出最佳解释。医生诊断、侦探破案、AI 诊断系统的核心都是溯因。溯因是"往回推理"——从结果推原因，从现象推机制。溯因的结论不是必然的，而是"最合理的"——这也是为什么第二诊断意见常常不同。</li>
+          <li><strong>现实案例：</strong>在 AI 领域，三种推理各有体现。专家系统主要用演绎（if-then 规则），机器学习主要用归纳（从数据中学习模式），而诊断 AI 系统（如 IBM Watson）核心是溯因——从症状推断病因。理解三种推理的区别，帮助你理解 AI 的能力边界：AI 擅长归纳和溯因，但不擅长"真正的演绎"——它不能保证推理的必然性。</li>
+        </ul>
+      </div>
+
+        <h3>公式速查：归纳与科学方法</h3>
+        <div class="formula"><span class="f-name">密尔求同法</span>在不同场合中，唯一共同的因素即原因。<span class="f-note">如：不同食物中都含某物，该物即致病原因。</span></div>
+        <div class="formula"><span class="f-name">密尔求异法</span>在其他条件相同、仅一因素不同时，该因素即原因。<span class="f-note">对照实验的逻辑基础。</span></div>
+        <div class="formula"><span class="f-name">密尔共变法</span>某现象随另一现象按比例变化，则二者有因果联系。<span class="f-note">相关性的逻辑表达。</span></div>
+        <div class="formula"><span class="f-name">休谟的归纳问题</span>归纳推理的结论不能从前提中必然推出——"太阳明天升起"无法被逻辑证明，只能被习惯支撑。<span class="f-note">归纳的合理性本身无法被归纳证明。</span></div>
+
+        <h3>对照表：近代逻辑学家对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>逻辑学家</th><th>核心贡献</th><th>关键概念</th><th>历史地位</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>培根</strong></td><td>归纳法</td><td>四假象 · 知识就是力量</td><td>近代科学方法之父</td></tr>
+              <tr><td><strong>笛卡尔</strong></td><td>方法论</td><td>我思故我在 · 清楚明白</td><td>近代哲学之父</td></tr>
+              <tr><td><strong>莱布尼茨</strong></td><td>理性演算</td><td>普遍字符 · 二进制</td><td>数理逻辑的先驱</td></tr>
+              <tr><td><strong>洛克</strong></td><td>经验论</td><td>白板说 · 观念来源</td><td>英国经验论代表</td></tr>
+              <tr><td><strong>休谟</strong></td><td>归纳问题</td><td>习惯 · 因果怀疑</td><td>经验论的怀疑论高峰</td></tr>
+              <tr><td><strong>密尔</strong></td><td>归纳五法</td><td>求同 · 求异 · 共变 · 剩余</td><td>实验科学逻辑的系统化</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">培根 · 1561–1626</div>
+            <blockquote>知识就是力量。<cite>——《新工具》</cite></blockquote>
+            <blockquote>读史使人明智，读诗使人灵秀，数学使人周密，逻辑使人善辩。<cite>——《论学问》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">笛卡尔 · 1596–1650</div>
+            <blockquote>我思故我在。<cite>——《谈谈方法》</cite></blockquote>
+            <div class="legacy-who">休谟 · 1711–1776</div>
+            <blockquote>习惯是人生的伟大指南。<cite>——《人类理解研究》</cite></blockquote>
+            <div class="legacy-who">莱布尼茨 · 1646–1716</div>
+            <blockquote>让我们计算吧——用计算代替争论。<cite>——理性演算之梦</cite></blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四章 现代逻辑与数学基础 -->
+      <section class="sec" id="mathematical">
+        <h2><span class="chapno">第四章</span>现代逻辑与数学基础：从弗雷格到哥德尔</h2>
+        <p>19 世纪末到 20 世纪上半叶，逻辑经历了一场革命。布尔把逻辑变成代数，弗雷格创立谓词逻辑——逻辑第一次拥有了足以表达全部数学的语言。罗素与怀特海试图把数学奠基在逻辑之上，却遭遇了罗素悖论。希尔伯特提出形式主义纲领，哥德尔却以不完备定理宣告：任何足够强的形式系统，都既不一致又完备不可兼得。图灵则以图灵机定义了"可计算"的边界。现代逻辑的核心洞见是：<strong>逻辑既是人类理性的语言，也有其不可逾越的边界</strong>——正是这些边界，塑造了 20 世纪数学、计算机科学与人工智能的整个形态。</p>
+
+        <h3>本章大纲</h3>
+        <ul>
+          <li>4.1 布尔代数与逻辑的数学化</li>
+          <li>4.2 弗雷格的谓词逻辑与逻辑主义</li>
+          <li>4.3 罗素悖论与《数学原理》</li>
+          <li>4.4 哥德尔不完备定理与图灵的可计算性</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>逻辑联结词</strong>：∧ 合取、∨ 析取、¬ 否定、→ 蕴含、↔ 等值</li>
+          <li><strong>量词</strong>：∀ 所有、∃ 存在</li>
+          <li><strong>哥德尔不完备定理</strong>：任何包含算术的相容系统都存在不可判定命题</li>
+          <li><strong>丘奇-图灵论题</strong>：可计算等价于图灵机可计算</li>
+        </ul>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>布尔的代数革命（1854）</strong>：布尔在《思维规律的研究》中把逻辑运算化为代数运算——与（∧）、或（∨）、非（¬），逻辑第一次可以用数学符号演算，为后世计算机的"0 与 1"奠定基础。</p>
+          <p><strong>弗雷格的谓词逻辑（1879）</strong>：弗雷格在《概念文字》中引入量词（∀ 所有、∃ 存在）与函数-主目结构，创立谓词逻辑，使逻辑足以表达数学命题；他主张"逻辑主义"——数学可以还原为逻辑。</p>
+          <p><strong>罗素悖论与《数学原理》（1901–1913）</strong>：罗素发现"包含自身为元素的集合"悖论，动摇了集合论基础；他与怀特海合著三大卷《数学原理》，试图从逻辑公理推出全部数学，并提出类型论回避悖论。</p>
+          <p><strong>哥德尔不完备定理（1931）</strong>：哥德尔证明：任何包含算术的相容形式系统，都存在既不能证明也不能否证的命题；且该系统无法证明自身的一致性。希尔伯特"我们必须知道，我们必将知道"的纲领就此终结。</p>
+          <p><strong>图灵的可计算性（1936）</strong>：图灵提出"图灵机"作为可计算性的精确定义，证明停机问题不可判定；"可计算"与"图灵可计算"等价（丘奇-图灵论题），为计算机科学奠基。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>布尔（1815–1864）</strong>——布尔代数、逻辑的数学化。</p>
+        <p><strong>弗雷格（1848–1925）</strong>——谓词逻辑、概念文字、逻辑主义。</p>
+        <p><strong>皮尔士（1839–1914）</strong>——量词逻辑、溯因推理、实用主义。</p>
+        <p><strong>罗素（1872–1970）</strong>——罗素悖论、类型论、《数学原理》。</p>
+        <p><strong>怀特海（1861–1947）</strong>——《数学原理》合著者。</p>
+        <p><strong>希尔伯特（1862–1943）</strong>——形式主义纲领、希尔伯特计划。</p>
+        <p><strong>哥德尔（1906–1978）</strong>——不完备定理。</p>
+        <p><strong>图灵（1912–1954）</strong>——图灵机、可计算性、停机问题。</p>
+
+        <figure class="diagram">
+          <figcaption>图 5 · 现代逻辑与数学基础结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["现代逻辑"] --> A["布尔<br>布尔代数 · 逻辑即演算"]
+  ROOT --> B["弗雷格<br>谓词逻辑 · 量词"]
+  ROOT --> C["罗素与怀特海<br>逻辑主义 · 类型论"]
+  ROOT --> D["哥德尔<br>不完备定理"]
+  ROOT --> E["图灵<br>图灵机 · 可计算性"]
+  classDef rootNode fill:#334155,color:#fff,stroke:#334155;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+<div class="explain">
+        <p><strong>图 5 详解：</strong>现代逻辑是逻辑史上最深刻、最激动人心的一章。布尔、弗雷格、罗素、哥德尔、图灵——这五位天才把逻辑从"思维的工具"变成了"可计算的数学"，同时也揭示了逻辑的"极限"。</p>
+        <p><strong>布尔的代数革命——逻辑变成计算：</strong></p>
+        <ul>
+          <li>布尔在《思维规律的研究》中把逻辑运算变成代数运算——"与"（∧）是乘法、"或"（∨）是加法、"非"（¬）是补集。逻辑命题可以用代数方程来求解。这一革命的意义在于：推理不再是"心理活动"，而是"数学运算"——你算一算就能知道结论是否正确。今天的计算机电路就是布尔代数的物理实现——每一个晶体管都在做"与或非"的逻辑运算。</li>
+          <li><strong>现实案例：</strong>你在搜索引擎中输入"猫 AND 狗"——搜索引擎做的就是把"猫"的结果集和"狗"的结果集做"与"运算（交集）。"猫 OR 狗"是"或"运算（并集）。"猫 NOT 狗"是"非"运算（差集）。布尔代数不仅是计算机的底层语言，也是你每天都在使用的工具。</li>
+        </ul>
+        <p><strong>哥德尔不完备定理——逻辑的"边界"：</strong></p>
+        <ul>
+          <li>哥德尔在 1931 年证明了一个让数学界震惊的结论：任何包含算术的相容形式系统，都存在既不能证明也不能否证的命题。这意味着：数学的真理性超出了数学的证明能力。希尔伯特的"我们必须知道，我们必将知道"的梦想被击碎了——数学不是"无所不知"的。</li>
+          <li><strong>现实案例：</strong>哥德尔定理对 AI 有深远的影响。如果数学真理超越了形式系统的证明能力，那么同样以形式系统为基础的 AI 是否也无法"超越自身"？哲学家卢卡斯（Lucas）和彭罗斯（Penrose）据此论证：人类思维可以"看到"哥德尔命题的真值（虽然系统不能证明它），所以人类思维超越了形式系统——因此 AI 永远不能达到人类水平的意识。虽然这一论证有争议，但它揭示了逻辑的一个深刻洞见：任何一个系统，都"看不到"自己的边界。</li>
+        </ul>
+        <p><strong>图灵的可计算性——计算的"极限"：</strong></p>
+        <ul>
+          <li>图灵在 1936 年提出了"图灵机"——一个极其简单的抽象机器，却能执行任何可计算的任务。他证明了"停机问题"不可判定：不存在一个通用算法来判断任意程序是否会停止运行。这意味着：计算机能做的事情是有"天花板"的——有些事情永远无法用算法解决。</li>
+          <li><strong>现实案例：</strong>停机问题有一个直观的"程序员版本"："你能否写一个程序，检查任意一段代码是否包含死循环？"图灵证明：不能。因为如果存在这样的检查程序，你可以构造一个"自我矛盾"的程序让它崩溃——就像"这句话是假的"这个悖论一样。这个结论的现实意义是：计算机科学有"理论的边界"——并不是所有"合理"的问题都有"算法"解。</li>
+        </ul>
+      </div>
+      <figure class="diagram">
+        <figcaption>图 5a · 哥德尔不完备定理的通俗解读 —— 逻辑与数学的"边界"</figcaption>
+        <pre class="mermaid">
+      flowchart TB
+        A["形式系统 F<br>含算术公理"] --> B["哥德尔编码<br>证明→数学命题"]
+        B --> C["自指命题 G<br>G ⇔ ''G 在F中不可证明''"]
+        C --> D{"G 可证明吗？"}
+        D -->|"能"| E["F 不一致！<br>因 G 说自身不可证<br>F 却证了它"]
+        D -->|"不能"| F["G 为真！<br>因 G 说自身不可证<br>而确实不可证"]
+        E --> G["结论：<br>一致→不完备<br>完备→不一致"]
+        F --> G
+        classDef core fill:#334155,color:#fff;
+        class G core;
+        </pre>
+      </figure>
+      <div class="explain">
+        <p><strong>图 5a 详解：</strong>哥德尔不完备定理是 20 世纪最深刻、最容易被误解的数学定理之一。它与"相对主义"无关——它揭示的是逻辑系统本身的"结构性局限"。</p>
+        <ul>
+          <li><strong>核心思想：</strong>哥德尔构造了一个"自指命题"G——"G 在系统 F 中不可证明"。如果 F 能证明 G，那么 F 推翻了 G 的断言（G 说'G 不可证明'），所以 F 不一致。如果 F 不能证明 G，那么 G 为真（因为 G 说的正是'G 不可证明'），但 F 无法证明一个真命题——所以 F 不完备。无论哪种情况，F 都做不到"既一致又完备"。</li>
+          <li><strong>不被误解的要点：</strong>哥德尔定理不是说"有些真理永远无法知道"——它只说"在这个系统内部无法证明"。人类可以通过"元系统"（meta-system）来"看到"G 为真。哥德尔定理也不是"一切都是相对的"——恰恰相反，它本身是一个精确的数学定理，有严格的证明。</li>
+          <li><strong>哲学启示：</strong>哥德尔定理告诉我们：任何一个足够丰富的系统，都无法"自我证明"——它需要一个"更高层次"的视角来审视自己。在组织中，这意味着"自我审计"的局限性；在个人成长中，这意味着"跳出自己的思维框架"的重要性。</li>
+        </ul>
+      </div>
+
+        <h3>公式速查：现代逻辑核心符号</h3>
+        <div class="formula"><span class="f-name">逻辑联结词</span>∧ 合取（且）　∨ 析取（或）　¬ 否定（非）　→ 蕴含（如果……那么）　↔ 等值（当且仅当）。<span class="f-note">现代逻辑的基本词汇。</span></div>
+        <div class="formula"><span class="f-name">量词</span>∀x 对所有 x　∃x 存在某个 x。<span class="f-note">弗雷格《概念文字》引入，使逻辑足以表达数学。</span></div>
+        <div class="formula"><span class="f-name">德摩根定律</span>¬(P ∧ Q) ⇔ (¬P) ∨ (¬Q)　¬(P ∨ Q) ⇔ (¬P) ∧ (¬Q)。<span class="f-note">否定与合取/析取的转换规则。</span></div>
+        <div class="formula"><span class="f-name">哥德尔不完备定理</span>任何包含算术的相容形式系统，都存在既不能证明也不能否证的命题；且该系统无法证明自身的一致性。<span class="f-note">1931 · 逻辑与数学的边界。</span></div>
+        <div class="formula"><span class="f-name">丘奇-图灵论题</span>"可计算"等价于"图灵机可计算"。<span class="f-note">可计算性理论的基石。</span></div>
+
+        <h3>对照表：现代逻辑学家对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>逻辑学家</th><th>核心贡献</th><th>关键概念</th><th>历史地位</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>布尔</strong></td><td>逻辑代数化</td><td>布尔代数 · 0 与 1</td><td>计算机逻辑的先驱</td></tr>
+              <tr><td><strong>弗雷格</strong></td><td>谓词逻辑</td><td>量词 · 概念文字</td><td>现代逻辑之父</td></tr>
+              <tr><td><strong>皮尔士</strong></td><td>逻辑与实用主义</td><td>溯因 · 量词逻辑</td><td>美国哲学与逻辑的奠基者</td></tr>
+              <tr><td><strong>罗素</strong></td><td>逻辑主义</td><td>罗素悖论 · 类型论</td><td>分析哲学的开创者</td></tr>
+              <tr><td><strong>希尔伯特</strong></td><td>形式主义</td><td>希尔伯特计划</td><td>数学基础三派之一</td></tr>
+              <tr><td><strong>哥德尔</strong></td><td>不完备定理</td><td>不可判定命题</td><td>20 世纪最伟大的逻辑学家</td></tr>
+              <tr><td><strong>图灵</strong></td><td>可计算性</td><td>图灵机 · 停机问题</td><td>计算机科学之父</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">弗雷格 · 1848–1925</div>
+            <blockquote>逻辑是真理的科学，而不是思维的科学。<cite>——《思想》</cite></blockquote>
+            <div class="legacy-who">罗素 · 1872–1970</div>
+            <blockquote>三种简单而极其强烈的激情支配着我的一生：对爱的渴望、对知识的追求、对人类苦难不可遏制的同情。<cite>——《自传》</cite></blockquote>
+            <blockquote>数学是逻辑的延伸。<cite>——逻辑主义</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">哥德尔 · 1906–1978</div>
+            <blockquote>有些命题既不能被证明，也不能被否证。<cite>——不完备定理</cite></blockquote>
+            <div class="legacy-who">希尔伯特 · 1862–1943</div>
+            <blockquote>我们必须知道，我们必将知道。<cite>——1930 年演讲</cite></blockquote>
+            <div class="legacy-who">图灵 · 1912–1954</div>
+            <blockquote>我们只能看到前面很短的距离，但我们可以看到那里有许多需要做的事情。<cite>——《计算机器与智能》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第五章 论证与谬误 -->
+      <section class="sec" id="argument">
+        <h2><span class="chapno">第五章</span>论证与谬误：日常推理的技艺</h2>
+        <p>逻辑不仅存在于教科书与数学中，更存在于每一次辩论、每一篇评论、每一条新闻里。日常论证不同于形式逻辑——它没有公理，只有立场；没有必然，只有说服。图尔敏提出论证的实用模型：主张需要根据来支撑，根据需要正当理由来辩护，还可能遭遇限定与反驳。而谬误则是论证的陷阱——它们看似有理，实则无效。识别谬误，是批判性思维的第一课。本章的核心洞见是：<strong>论证不是数学证明，而是生活的实践</strong>——好的论证既要有效，更要诚实。</p>
+
+        <h3>本章大纲</h3>
+        <ul>
+          <li>5.1 论证的结构：图尔敏六要素</li>
+          <li>5.2 论证评估三标准</li>
+          <li>5.3 常见谬误的识别</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>图尔敏论证模型</strong>：主张、根据、正当理由、支援、限定、反驳</li>
+          <li><strong>论证评估三标准</strong>：有效性、可靠性、说服力</li>
+          <li><strong>常见谬误</strong>：人身攻击、稻草人、滑坡、循环论证、假两难等</li>
+        </ul>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>亚里士多德的《修辞学》（前4世纪）</strong>：亚里士多德把修辞定义为"在任何问题上发现说服手段的能力"，区分了逻辑论证（logos）、情感诉诸（pathos）与人格诉诸（ethos），是论证理论的源头。</p>
+          <p><strong>图尔敏的论证模型（1958）</strong>：图尔敏在《论证的运用》中提出论证六要素——主张（claim）、根据（data）、正当理由（warrant）、支援（backing）、限定（qualifier）、反驳（rebuttal），把论证从形式逻辑的抽象中拉回日常实践。</p>
+          <p><strong>非形式逻辑与谬误研究（20世纪中–）</strong>：佩雷尔曼的"新修辞学"、范爱默伦的"语用-辩证理论"把论证视为对话中的理性互动；谬误研究系统化分类了人身攻击、稻草人、滑坡等常见谬误。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>亚里士多德（前384–前322）</strong>——修辞学、logos/pathos/ethos。</p>
+        <p><strong>图尔敏（1922–2009）</strong>——论证模型、《论证的运用》。</p>
+        <p><strong>佩雷尔曼（1912–1984）</strong>——新修辞学、论证的听众。</p>
+        <p><strong>范爱默伦（1945–）</strong>——语用-辩证理论、论证的批判性讨论。</p>
+
+        <figure class="diagram">
+          <figcaption>图 6 · 图尔敏论证模型图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  D["根据 Data"] --> W["正当理由 Warrant"]
+  W --> Q["限定 Qualifier"]
+  Q --> C["主张 Claim"]
+  W --> B["支援 Backing"]
+  C -.-> R["反驳 Rebuttal"]
+  classDef core fill:#334155,color:#fff,stroke:#334155;
+  class C core;
+          </pre>
+        </figure>
+<div class="explain">
+        <p><strong>图 6 详解：</strong>图尔敏论证模型是"日常论证"的解剖图——它告诉我们，现实中的论证不像数学证明那样"干净"，而是包含主张、根据、正当理由、支援、限定和反驳六个要素。理解这六个要素，就是理解"什么样的论证才算好论证"。</p>
+        <ul>
+          <li><strong>主张（Claim）</strong>——你想证明的结论。这是论证的"终点"。"应该降低大学学费"——这就是一个主张。</li>
+          <li><strong>根据（Data）</strong>——支持主张的事实。这是论证的"起点"。"过去十年学费上涨了 50%"——这是一个根据。</li>
+          <li><strong>正当理由（Warrant）</strong>——从根据到主张的桥梁——解释为什么"根据"能支持"主张"。"学费上涨过快会导致学生负担过重，影响教育公平"——这是正当理由。</li>
+          <li><strong>支援（Backing）</strong>——对正当理由的进一步支持。研究数据显示"学费每上涨 10%，低收入家庭学生入学率下降 5%"——这是支援。</li>
+          <li><strong>限定（Qualifier）</strong>——结论的力度。"可能"、"很可能"、"在大多数情况下"——限定词表明你承认例外。</li>
+          <li><strong>反驳（Rebuttal）</strong>——例外与反例。"除非有足够的奖学金覆盖"——这是对主张的反驳条件。</li>
+        </ul>
+        <p><strong>现实案例：</strong>在职场中，图尔敏模型是"有效沟通"的实用工具。当你向老板提出"需要增加人手"（主张）时，你不能只说"人不够"（根据），还要说清楚"为什么人不够导致需要增加人手"（正当理由）——"当前项目量增加了 30%，现有团队无法在截止日期前完成"——并提供数据（支援）。同时，你要给自己留有余地（限定）——"如果项目量持续增长"——并预判可能的反对意见（反驳）——"除非我们调整优先级，砍掉一些低优先级的项目"。一个完整的论证，就是这六个要素的有机组合。</p></li>
+      </div>
+      <figure class="diagram">
+        <figcaption>图 6a · 谬误市集 —— 十二种常见逻辑谬误一览</figcaption>
+        <pre class="mermaid">
+      flowchart TB
+        ROOT["常见逻辑谬误"] --> GROUP1["语言与情感类"]
+        ROOT --> GROUP2["逻辑与推理类"]
+        GROUP1 --> A["人身攻击<br>攻击人而非论证"]
+        GROUP1 --> B["稻草人<br>歪曲观点再攻击"]
+        GROUP1 --> C["诉诸权威<br>以权威代论证"]
+        GROUP1 --> D["诉诸情感<br>以情绪代理由"]
+        GROUP1 --> E["红鲱鱼<br>引入无关话题"]
+        GROUP1 --> F["偷换概念<br>一词多义偷换"]
+        GROUP2 --> G["滑坡谬误<br>一步退让→灾难"]
+        GROUP2 --> H["循环论证<br>结论暗含前提"]
+        GROUP2 --> I["以偏概全<br>个例→普遍结论"]
+        GROUP2 --> J["假两难<br>只给两个选项"]
+        GROUP2 --> K["诉诸无知<br>未证伪→为真"]
+        GROUP2 --> L["事后归因<br>先后→因果"]
+        classDef root fill:#334155,color:#fff;
+        class ROOT root;
+        classDef group fill:#5B2E6D,color:#fff;
+        class GROUP1,GROUP2 group;
+        </pre>
+      </figure>
+      <div class="explain">
+        <p><strong>图 6a 详解：</strong>谬误是论证的"陷阱"——它们看似有道理，实则从根本上破坏了论证的正当性。这十二种谬误是日常对话、新闻报道、社交媒体中最常见的"逻辑毒素"。识别它们，是批判性思维的核心技能。</p>
+        <ul>
+          <li><strong>人身攻击（Ad Hominem）</strong>——攻击说话者而非论证，是社交媒体中最常见的谬误。当一个人无法反驳你的论据时，他转而攻击你的动机、身份或品格——"你不就是某人的粉丝吗？"判断标准：即使说话者人品有问题，他的论证仍然可能正确。</li>
+          <li><strong>稻草人（Straw Man）</strong>——曲解对方的观点，让"假想敌"更容易被击败。在政治辩论中尤其常见——"你主张减少排放？那不就是想禁止开车吗？"对策：在批评对方之前，先用自己的话复述对方的观点，让对方确认"这就是我的意思"。</li>
+          <li><strong>滑坡谬误（Slippery Slope）</strong>——假设一个步骤必然导致一连串不可控的后果。"如果允许同性婚姻，下一步就会允许人兽婚姻"——这是典型滑坡。并非所有"连锁反应"都是谬误——关键在于每一步之间的"必然性"是否成立。如果每一步都有独立理由，那就不是滑坡谬误；如果只是"恐吓"，那就是。</li>
+          <li><strong>假两难（False Dilemma）</strong>——只给出两个选项，忽略其他可能性。"要么支持战争，要么不爱国"——这是政治宣传中最常见的谬误。现实中几乎所有问题都有"第三种选项"。</li>
+          <li><strong>日常应用：</strong>在阅读新闻时，养成"主动识别谬误"的习惯。当你看到一条评论让你"感觉不对"但说不清为什么时，对照这十二种谬误列表——往往能精准定位论证的破绽。这就是批判性思维的"肌肉训练"。</li>
+        </ul>
+      </div>
+
+        <h3>公式速查：论证与谬误</h3>
+        <div class="formula"><span class="f-name">图尔敏论证六要素</span>主张（要证明的结论）→ 根据（支持主张的事实）→ 正当理由（从根据到主张的桥梁）→ 支援（正当理由背后的依据）→ 限定（结论的强度）→ 反驳（例外与反例）。<span class="f-note">日常论证的完整解剖图。</span></div>
+        <div class="formula"><span class="f-name">论证评估三标准</span>有效性（形式是否成立）· 可靠性（前提是否真实）· 说服力（对听众是否有力）。<span class="f-note">一个论证可能有效但不可靠，也可能可靠但缺乏说服力。</span></div>
+
+        <h3>对照表：常见谬误速查表</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>谬误</th><th>类型</th><th>含义</th><th>示例</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>人身攻击</strong></td><td>非形式</td><td>攻击说话者而非论证本身</td><td>"他是罪犯，他的话不可信"</td></tr>
+              <tr><td><strong>稻草人</strong></td><td>非形式</td><td>歪曲对方观点再加以攻击</td><td>把"减少排放"说成"禁止开车"</td></tr>
+              <tr><td><strong>诉诸权威</strong></td><td>非形式</td><td>以权威代替论证</td><td>"专家都这么说，所以是对的"</td></tr>
+              <tr><td><strong>诉诸情感</strong></td><td>非形式</td><td>以情绪代替理由</td><td>"想想孩子们，支持这项政策吧"</td></tr>
+              <tr><td><strong>滑坡谬误</strong></td><td>非形式</td><td>假设一步退让必然导致灾难</td><td>"允许 X，就会导致 Y 和 Z"</td></tr>
+              <tr><td><strong>循环论证</strong></td><td>非形式</td><td>结论暗中作为前提</td><td>"它是真的，因为它是真的"</td></tr>
+              <tr><td><strong>以偏概全</strong></td><td>非形式</td><td>以个别样本推出普遍结论</td><td>"我认识的程序员都内向"</td></tr>
+              <tr><td><strong>假两难</strong></td><td>非形式</td><td>只给两个选项，忽略其他可能</td><td>"要么支持我，要么反对我"</td></tr>
+              <tr><td><strong>偷换概念</strong></td><td>非形式</td><td>同一词在不同语境中偷换含义</td><td>"自由"在前后文中含义不同</td></tr>
+              <tr><td><strong>红鲱鱼</strong></td><td>非形式</td><td>引入无关话题转移注意力</td><td>"先别谈预算，看看对手的丑闻"</td></tr>
+              <tr><td><strong>诉诸无知</strong></td><td>非形式</td><td>因无法证伪而断言为真</td><td>"没人证明有外星人，所以没有"</td></tr>
+              <tr><td><strong>事后归因</strong></td><td>非形式</td><td>把先后关系当作因果关系</td><td>"我穿了红袜子，球队就赢了"</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">图尔敏 · 1922–2009</div>
+            <blockquote>论证不是数学证明，而是生活的一部分。<cite>——《论证的运用》</cite></blockquote>
+            <div class="legacy-who">亚里士多德 · 前384–前322</div>
+            <blockquote>修辞是在任何问题上发现说服手段的能力。<cite>——《修辞学》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">佩雷尔曼 · 1912–1984</div>
+            <blockquote>论证的目的，是赢得听众的赞同。<cite>——《新修辞学》</cite></blockquote>
+            <div class="legacy-who">范爱默伦 · 1945–</div>
+            <blockquote>论证是理性地解决分歧的方式。<cite>——语用-辩证理论</cite></blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第六章 逻辑与思维 -->
+      <section class="sec" id="mind">
+        <h2><span class="chapno">第六章</span>逻辑与思维：认知、AI 与批判性思维</h2>
+        <p>逻辑是理性的理想，而人的实际思维常常偏离逻辑。卡尼曼揭示：人的思维有两套系统——系统 1 快速直觉、系统 2 缓慢理性，而系统 1 的种种启发式带来了系统性的认知偏差。与此同时，人工智能把逻辑推向了新的疆域：从早期的符号逻辑到今天的神经网络与大模型，机器在"推理"上既超越人类又暴露局限。本章的核心洞见是：<strong>逻辑不是天生的本能，而是需要训练的能力</strong>——批判性思维，就是让系统 2 在关键时刻接管系统 1 的能力。</p>
+
+        <h3>本章大纲</h3>
+        <ul>
+          <li>6.1 系统 1 与系统 2：卡尼曼的双系统理论</li>
+          <li>6.2 认知偏差与启发式</li>
+          <li>6.3 人工智能与逻辑推理</li>
+          <li>6.4 批判性思维的训练</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>系统 1 与系统 2</strong>：快速直觉与缓慢理性</li>
+          <li><strong>认知偏差</strong>：确认偏差、锚定效应、损失厌恶、可得性启发等</li>
+          <li><strong>批判性思维</strong>：质疑前提、评估证据、识别谬误</li>
+        </ul>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>认知偏差研究（20世纪70年代–）</strong>：卡尼曼与特沃斯基通过一系列实验揭示：人在判断概率时依赖代表性、可得性等启发式，产生确认偏差、锚定效应、损失厌恶等系统性错误；卡尼曼因此获 2002 年诺贝尔经济学奖。</p>
+          <p><strong>AI 的逻辑传统（1950年代–）</strong>：麦卡锡 1956 年提出"人工智能"一词，早期 AI 以符号逻辑为核心（逻辑编程、专家系统）；纽厄尔与西蒙提出"物理符号系统假设"——符号系统是智能的充分必要条件。</p>
+          <p><strong>因果推断与深度学习（21世纪）</strong>：珀尔以因果图重建因果推断，指出"相关不等于因果"；深度学习与大模型以统计关联逼近语言与推理，但"逻辑推理"仍是 AI 的核心难题。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>卡尼曼（1934–）</strong>——系统 1 与系统 2、认知偏差。</p>
+        <p><strong>特沃斯基（1937–1996）</strong>——启发式与偏差、前景理论。</p>
+        <p><strong>皮亚杰（1896–1980）</strong>——认知发展阶段、逻辑思维的发生。</p>
+        <p><strong>纽厄尔（1927–1992）与西蒙（1916–2001）</strong>——物理符号系统、通用问题求解。</p>
+        <p><strong>麦卡锡（1927–2011）</strong>——人工智能之父、逻辑编程。</p>
+        <p><strong>珀尔（1936–）</strong>——因果推断、因果图。</p>
+
+        <figure class="diagram">
+          <figcaption>图 7 · 逻辑与思维结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["逻辑与思维"] --> A["认知科学<br>系统1与系统2 · 认知偏差"]
+  ROOT --> B["批判性思维<br>质疑前提 · 评估证据"]
+  ROOT --> C["人工智能<br>符号逻辑 · 机器学习 · 大模型"]
+  ROOT --> D["因果推断<br>相关不等于因果"]
+  classDef rootNode fill:#334155,color:#fff,stroke:#334155;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+<div class="explain">
+        <p><strong>图 7 详解：</strong>逻辑与思维是逻辑学中最"接地气"的一章——它把逻辑从两千年的理论传统中拉回当下，直面"人实际上如何思考"和"机器如何推理"这两个核心问题。</p>
+        <p><strong>卡尼曼的双系统理论——人的"逻辑盲区"：</strong></p>
+        <ul>
+          <li>卡尼曼和特沃斯基通过几十年实验揭示：人的思维不是"理性的计算器"，而是"快速直觉（系统 1）和缓慢理性（系统 2）的混合体"。系统 1 是自动的、快速的、直觉的——你看到一张愤怒的脸，不需要分析就知道"他在生气"。系统 2 是控制的、缓慢的、理性的——你计算 17×24 时，需要集中注意力。问题是：系统 1 虽然高效，却容易犯系统性错误——确认偏差、锚定效应、损失厌恶——这些偏差不是"偶然的"，而是"系统性的"。</li>
+          <li><strong>现实案例：</strong>"确认偏差"是互联网时代最危险的认知偏差之一。你越相信某个观点，算法就越向你推送"支持"这个观点的内容——你的"信息茧房"越来越厚。在 2020 年美国大选和新冠疫情期间，确认偏差导致大量选民只相信"符合自己立场"的信息，极化加剧。对策：在阅读任何信息之前，先问自己"如果这个观点是错的，我需要看到什么证据才能改变看法？"——这是对抗确认偏差最有效的"心理疫苗"。</li>
+        </ul>
+        <p><strong>AI 的逻辑——机器的"推理"有边界吗？：</strong></p>
+        <ul>
+          <li>AI 的逻辑传统有两个分支：符号逻辑（专家系统、逻辑编程）和统计学习（神经网络、大模型）。符号逻辑试图把人类推理"编码"为计算机可执行的规则——"如果症状 A 且 B，则疾病 C"——但现实世界太复杂，规则永远写不完。统计学习则从数据中"学习"模式——GPT 能写诗、编程、解数学题，但它不是"推理"出来的，而是"概率预测"出来的。</li>
+          <li><strong>现实案例：</strong>2023 年，GPT-4 在律师资格考试中排名前 10%，但在简单的逻辑推理题中却可能犯错——比如"如果 A 在 B 的左边，B 在 C 的左边，那么 A 在 C 的哪边？"这种对人类来说"显而易见"的传递推理，对大模型来说不一定"可靠"。这表明：<strong>统计关联 ≠ 逻辑必然</strong>——AI 的"推理"和人类的"推理"在本质上是不同的。</li>
+        </ul>
+        <p><strong>批判性思维——让系统 2 接管：</strong></p>
+        <ul>
+          <li>批判性思维不是"反对一切"，而是"在相信之前先检查"。检查什么？检查前提（"这个论证的假设是什么？"）、检查证据（"这个主张有什么证据支持？"）、检查推理（"这个推理有效吗？"）、检查谬误（"这个论证有没有犯逻辑错误？"）。批判性思维是可以训练的——就像肌肉一样，越练越强。</li>
+          <li><strong>现实案例：</strong>在"后真相"时代，批判性思维是"信息素养"的核心。当你在社交媒体上看到一条"惊人消息"——先暂停一下（让系统 2 上线），然后问自己：来源可靠吗？这是事实还是观点？有没有其他解释？有没有遗漏关键信息？——这五个问题，就是批判性思维的"第一道防线"。</li>
+        </ul>
+      </div>
+
+        <h3>对照表：常见认知偏差速查表</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>认知偏差</th><th>含义</th><th>典型表现</th><th>应对策略</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>确认偏差</strong></td><td>偏好支持自己观点的信息</td><td>只读认同自己的新闻</td><td>主动寻找反例</td></tr>
+              <tr><td><strong>可得性启发</strong></td><td>以容易想起的程度判断概率</td><td>因新闻频发而高估风险</td><td>查统计数据而非印象</td></tr>
+              <tr><td><strong>锚定效应</strong></td><td>受最初信息影响过大</td><td>被标价锚定而低估还价空间</td><td>先独立判断再参考他人</td></tr>
+              <tr><td><strong>损失厌恶</strong></td><td>对损失比对收益更敏感</td><td>宁可冒险也不愿接受确定损失</td><td>用长期视角衡量得失</td></tr>
+              <tr><td><strong>后见之明</strong></td><td>事后认为结果本可预见</td><td>"我早就知道会这样"</td><td>记录事前判断</td></tr>
+              <tr><td><strong>群体思维</strong></td><td>为求一致而放弃独立思考</td><td>团队中无人提出异议</td><td>指定"魔鬼代言人"</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">卡尼曼 · 1934–</div>
+            <blockquote>我们对自己认为熟知的事物确信不疑，却无法预见自己的无知。<cite>——《思考，快与慢》</cite></blockquote>
+            <blockquote>系统 1 是直觉，系统 2 是理性；真正的智慧是知道何时该用哪个。<cite>——《思考，快与慢》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">珀尔 · 1936–</div>
+            <blockquote>因果关系是理解世界的语言。<cite>——《为什么》</cite></blockquote>
+            <div class="legacy-who">麦卡锡 · 1927–2011</div>
+            <blockquote>人工智能是关于制造智能机器的科学与工程。<cite>——1955 年研究计划</cite></blockquote>
+            <div class="legacy-who">皮亚杰 · 1896–1980</div>
+            <blockquote>智慧是适应。<cite>——《儿童智慧的起源》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第七章 总结提炼 -->
+      <section class="sec" id="summary">
+        <h2><span class="chapno">第七章</span>总结提炼：逻辑的启示</h2>
+        <p>回顾从亚里士多德的三段论到哥德尔的不完备定理，可以提炼出逻辑的核心规律：<strong>必然性之基、一致性之守、完备性之限、可错性之谦、批判性之勇</strong>。逻辑不提供关于"世界是什么"的答案，它提供的是"如何正确地思考"的永恒方法——它让人类第一次拥有了不依赖具体内容的思维工具，也让人类第一次看清了理性的边界。理解逻辑，就是理解人类理性自我奠基的全部历程，也是理解我们如何成为会思考的人。</p>
+
+        <h3>本章大纲</h3>
+        <ul>
+          <li>7.1 逻辑五大规律回顾</li>
+          <li>7.2 逻辑与理性的边界</li>
+          <li>7.3 逻辑精神的当代意义</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>必然性之基</strong>：有效性取决于形式</li>
+          <li><strong>一致性之守</strong>：思想不能自相矛盾</li>
+          <li><strong>完备性之限</strong>：任何系统都有边界</li>
+          <li><strong>可错性之谦</strong>：经验知识可被修正</li>
+          <li><strong>批判性之勇</strong>：敢于质疑前提与权威</li>
+        </ul>
+
+        <figure class="diagram">
+          <figcaption>图 8 · 逻辑五大规律图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["逻辑五大规律"] --> A["必然性之基<br>推理的有效性不依赖内容"]
+  ROOT --> B["一致性之守<br>思想不能自相矛盾"]
+  ROOT --> C["完备性之限<br>任何系统都有边界"]
+  ROOT --> D["可错性之谦<br>归纳结论永远可被修正"]
+  ROOT --> E["批判性之勇<br>敢于质疑前提与权威"]
+  classDef rootNode fill:#334155,color:#fff,stroke:#334155;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <div class="history">
+          <span class="history-title">五大规律的提炼</span>
+          <p><strong>必然性之基</strong>：亚里士多德发现推理的有效性取决于形式而非内容——"所有人都会死，苏格拉底是人，所以苏格拉底会死"之所以成立，与苏格拉底无关，而与形式有关。必然性之基的启示是：逻辑是人类唯一不依赖经验内容就能保证正确性的思维工具，它是所有知识大厦的地基。</p>
+          <p><strong>一致性之守</strong>：矛盾律要求同一事物不能同时存在又不存在，斯多葛与中世纪逻辑都以此为核心。一致性之守的启示是：一个自相矛盾的思想体系必然崩塌——无论是个人信念还是社会制度，都要经受"是否自洽"的检验。</p>
+          <p><strong>完备性之限</strong>：哥德尔证明任何足够强的形式系统都有不可判定的命题，图灵证明停机问题不可判定。完备性之限的启示是：理性有边界，任何体系都不能自我证明一切——这既是谦卑的理由，也是开放的理由。</p>
+          <p><strong>可错性之谦</strong>：休谟指出归纳无法被逻辑证明，培根提醒我们警惕四假象，波普尔（与逻辑一脉相承）主张科学是可错的。可错性之谦的启示是：一切经验知识都是可修正的假设——真正的理性不是从不犯错，而是敢于承认错误并修正。</p>
+          <p><strong>批判性之勇</strong>：从苏格拉底的诘问到笛卡尔的怀疑，从图尔敏的论证模型到卡尼曼的认知偏差，批判性思维要求我们质疑前提、评估证据、识别谬误。批判性之勇的启示是：独立思考需要勇气——敢于对权威说"请给出论证"，敢于对自己说"我可能错了"。</p>
+        </div>
+
+        <h3>对照表：逻辑五大规律的对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>规律</th><th>核心命题</th><th>代表人物</th><th>思想启示</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>必然性之基</strong></td><td>有效性取决于形式</td><td>亚里士多德</td><td>逻辑是知识大厦的地基</td></tr>
+              <tr><td><strong>一致性之守</strong></td><td>思想不能自相矛盾</td><td>亚里士多德 · 斯多葛</td><td>自洽是思想成立的前提</td></tr>
+              <tr><td><strong>完备性之限</strong></td><td>任何系统都有边界</td><td>哥德尔 · 图灵</td><td>理性有界，保持开放</td></tr>
+              <tr><td><strong>可错性之谦</strong></td><td>经验知识可被修正</td><td>休谟 · 培根 · 波普尔</td><td>真正的理性敢于认错</td></tr>
+              <tr><td><strong>批判性之勇</strong></td><td>质疑前提与权威</td><td>苏格拉底 · 笛卡尔 · 卡尼曼</td><td>独立思考需要勇气</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">逻辑精神三句话</span>
+          第一，<strong>逻辑是思想的骨架</strong>——没有逻辑，哲学只是意见，科学只是猜测，辩论只是争吵；第二，<strong>逻辑的边界也是理性的边界</strong>——哥德尔与图灵告诉我们，理性既伟大又有界，谦卑不是软弱而是清醒；第三，<strong>逻辑最终通向自由</strong>——批判性思维让人不被权威摆布、不被情绪裹挟、不被谬误欺骗，这是理性赋予人的最大自由。与第二辑《真理的多维图景》合观，真理卷回答"什么是真"，本辑回答"如何论证为真"；与第十七辑《西方哲学思想谱系》对话，哲学问"人是什么"，逻辑答"人如何正确地思考"。这正是思想图谱系列的地基——先学会正确地思考，才能正确地理解世界。
+        </div>
+      </section>
+    </main>
+
+    
+      <section class="sec">
+        <h2>关联辑目</h2>
+        <div class="explain">
+          <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+          <ul>
+          <li><a href="../philosophy-lineage/philosophy-lineage.html">西方哲学思想谱系</a></li>
+          <li><a href="../math-lineage/math-lineage.html">数学思想谱系</a></li>
+          <li><a href="../truth-dimensions/truth-dimensions.html">真理的多维图景</a></li>
+          <li><a href="../tech-ai-lineage/tech-ai-lineage.html">科技与AI思想谱系</a></li>
+          <li><a href="../rhetoric-lineage/rhetoric-lineage.html">修辞与演说思想谱系</a></li>
+          <li><a href="../science-lineage/science-lineage.html">科学思想谱系</a></li>
+          </ul>
+        </div>
+      </section>
+<footer>
+      逻辑与论证思想谱系 · 思想图谱系列第二十辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-05
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'PingFang SC, Microsoft YaHei, Helvetica, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>

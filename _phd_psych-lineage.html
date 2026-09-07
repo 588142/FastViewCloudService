@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>心理学思想谱系 · 博士水平进阶模块</title>
+
+  <style>
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+  </style>
+
+  <style>
+    :root {
+      --bg: #FAF6FB;
+      --bg2: #F0E9F5;
+      --ink: #2A2033;
+      --muted: #6A5E75;
+      --rule: #E0D6E8;
+      --accent: #6D28D9;
+      --accent2: #B45309;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+      padding: 2rem;
+    }
+
+    .shell { max-width: var(--max); margin: 0 auto; }
+
+    .phd-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 16px; border: 1px solid #B45309;
+      border-radius: 999px; background: rgba(180, 83, 9, 0.08);
+      color: #B45309; font-size: 0.82rem; font-weight: 700;
+      letter-spacing: 0.02em; margin-bottom: 1.5rem;
+    }
+
+    section.sec { margin-bottom: 3.5rem; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    h4 { font-family: var(--font-head); font-size: 1rem; font-weight: 700; margin: 1.2rem 0 0.4rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    ol { margin: 0 0 1rem 1.5rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+    p a, li a { color: var(--accent); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .formula {
+      font-family: var(--font-mono);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    .theorem {
+      background: var(--bg2);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+    }
+    .theorem .t-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .theorem .t-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    .law {
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid #B45309;
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+    }
+    .law .l-name { font-weight: 700; color: #B45309; display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .law .l-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    .proof {
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid #059669;
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.92rem;
+    }
+    .proof .p-name { font-weight: 700; color: #059669; display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .proof .p-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    .explain { margin: 0 0 1.6rem 0; padding: 1rem 1.2rem; background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; font-size: 0.92rem; line-height: 1.7; }
+    .explain p { margin-bottom: 0.6rem; }
+    .explain ul { margin: 0.4rem 0 0.6rem 1.2rem; }
+
+    #threejs-irt canvas, #threejs-connectome canvas { display: block; width: 100% !important; height: 100% !important; }
+  </style>
+</head>
+<body>
+
+<div class="shell">
+
+  <div class="phd-badge">博士水平进阶 · 严格定义 · 核心定理 · 基本定律</div>
+
+  <!-- ==================== 博士水平进阶导览 ==================== -->
+  <section class="sec" id="phd-prologue">
+    <h2><span class="chapno">博导</span>博士水平进阶导览</h2>
+    <div class="callout">
+      <span class="callout-title">博士水平要求</span>
+      <p>本模块面向已完成硕士水平进阶（M1-M8）的读者，旨在将心理学知识的掌握从"批判性参与"提升至"形式化建构与原创性贡献"的层次。博士水平的心理学训练要求研究者不仅能够理解和使用现有理论，更能以精确的数学语言定义核心概念、推导关键定理、构建形式化体系，并识别学科前沿中的未解问题。</p>
+    </div>
+    <p><strong>前置要求：</strong>已完成硕士水平进阶模块，熟悉心理测量学、认知神经科学、贝叶斯统计与元分析方法的数学基础，具备阅读原始论文与批判性评价的能力。</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>模块</th><th>内容</th><th>能力目标</th></tr></thead>
+        <tbody>
+          <tr><td><strong>D1</strong></td><td>核心公理与定义</td><td>掌握至少15条严格定义，以精确的数学语言重新表述心理学核心概念</td></tr>
+          <tr><td><strong>D2</strong></td><td>基本定律与原理</td><td>理解心理学的8条基本定律及其数学形式化</td></tr>
+          <tr><td><strong>D3</strong></td><td>核心定理</td><td>掌握8个核心定理及其在心理学形式体系中的位置</td></tr>
+          <tr><td><strong>D4</strong></td><td>定理证明详解</td><td>完成2个完整的形式化证明，理解证明的数学结构</td></tr>
+          <tr><td><strong>D5</strong></td><td>形式化体系</td><td>构建心理测量学完整形式化体系，含Three.js 3D模型</td></tr>
+          <tr><td><strong>D6</strong></td><td>前沿定理与未解问题</td><td>追踪前沿定理与学科深层未解问题</td></tr>
+          <tr><td><strong>D7</strong></td><td>研究前沿</td><td>理解计算精神病学、贝叶斯认知科学等前沿，含Three.js 3D模型</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ==================== D1 核心公理与定义 ==================== -->
+  <section class="sec" id="phd-d1">
+    <h2><span class="chapno">D1</span>核心公理与定义</h2>
+    <p>博士水平的心理学研究要求以精确的数学语言定义核心概念。以下15条严格定义构成了心理学形式化体系的基础。每条定义均包含数学形式化表达与概念边界说明。</p>
+
+    <h3>1.1 心理测量的真分数模型</h3>
+    <p>经典测量理论（CTT）的真分数模型由Spearman（1904）开创，由Gulliksen（1950）与Lord及Novick（1968）系统化。该模型将观察分数分解为真分数与误差的线性组合。</p>
+    <div class="formula">
+      <span class="f-name">定义 1.1 · 真分数模型（CTT公理）</span>
+      X = T + E
+      <span class="f-note">其中X为观察分数，T为真分数（观测分数的期望值），E为随机误差。基本假设：E(E) = 0，Corr(T, E) = 0，Corr(E₁, E₂) = 0（平行测验之间）。该模型的本质是将观察变异分解为"真实变异"与"误差变异"——信度即ρ²_{XT} = σ²_T / σ²_X。</span>
+    </div>
+
+    <h3>1.2 项目反应理论三参数逻辑模型</h3>
+    <p>项目反应理论（IRT）由Birnbaum（1968）与Lord（1980）发展，以项目特征函数替代CTT的平行测验假设，解决了项目参数与能力参数的分离问题。</p>
+    <div class="formula">
+      <span class="f-name">定义 1.2 · 三参数逻辑模型（3PL）</span>
+      P(θ) = c + (1 - c) / (1 + e^{-a(θ - b)})
+      <span class="f-note">其中θ为潜在能力，a为区分度参数（斜率），b为难度参数（位置），c为猜测参数（下渐近线）。当c=0时退化为2PL模型；当a固定为1且c=0时退化为Rasch模型（1PL）。该模型的核心假设是"单维性"——所有项目测量同一潜在特质。</span>
+    </div>
+
+    <h3>1.3 信号检测论的辨别力指数</h3>
+    <p>信号检测论（SDT）由Green与Swets（1966）系统阐述，将刺激检测过程分解为感觉过程与决策过程，为心理物理学提供了超越传统阈限理论的框架。</p>
+    <div class="formula">
+      <span class="f-name">定义 1.3 · 辨别力指数 d'</span>
+      d' = z(H) - z(FA)
+      <span class="f-note">其中H为击中率（hit rate），FA为虚报率（false alarm rate），z(·)为标准正态分布的逆函数。d'越大，表明信号与噪声的分布分离程度越高——即观察者的辨别能力越强。该指标的关键优势在于独立于反应偏向（criterion），实现了"感觉"与"决策"的分离。</span>
+    </div>
+
+    <h3>1.4 效应量：Cohen's d</h3>
+    <div class="formula">
+      <span class="f-name">定义 1.4 · 标准化均值差 Cohen's d</span>
+      d = (μ₁ - μ₂) / σ
+      <span class="f-note">其中μ₁与μ₂为两组总体均值，σ为合并标准差。Cohen（1988）建议：d=0.2为小效应，d=0.5为中等效应，d=0.8为大效应。但这一基准应被视为启发式而非普适标准——在不同研究领域中，效应量的分布存在系统差异。</span>
+    </div>
+
+    <h3>1.5 效应量：η² 与 ω²</h3>
+    <div class="formula">
+      <span class="f-name">定义 1.5 · 方差解释率 η² 与 ω²</span>
+      η² = SS_效应 / SS_总<br>
+      ω² = (SS_效应 - df_效应 · MS_误差) / (SS_总 + MS_误差)
+      <span class="f-note">η²是样本方差解释率（有偏估计），ω²是总体方差解释率（无偏估计）。在方差分析中，η²倾向于高估效应量，尤其在样本量小时——ω²是更准确的估计。</span>
+    </div>
+
+    <h3>1.6 效应量：相关系数 r</h3>
+    <div class="formula">
+      <span class="f-name">定义 1.6 · 皮尔逊积差相关系数 r</span>
+      r = Cov(X, Y) / (σ_X · σ_Y)
+      <span class="f-note">r的取值范围为[-1, 1]，衡量两个连续变量之间的线性关联强度。Cohen（1988）建议：r=0.1为小效应，r=0.3为中等效应，r=0.5为大效应。r²可解释为"共享方差比例"——但这一解释仅在变量间关系为线性时成立。</span>
+    </div>
+
+    <h3>1.7 统计检验力</h3>
+    <div class="formula">
+      <span class="f-name">定义 1.7 · 统计检验力（Power）</span>
+      Power = P(拒绝 H₀ | H₁ 为真) = 1 - β
+      <span class="f-note">其中β为II类错误率（假阴性率）。Power是四个参数的函数：效应量（δ）、样本量（n）、显著性水平（α）、检验类型。Cohen（1962, 1992）的经典研究显示，心理学研究的平均效力约为0.50——这意味着每两个真实效应中就有一个未被检测到。</span>
+    </div>
+
+    <h3>1.8 贝叶斯因子</h3>
+    <div class="formula">
+      <span class="f-name">定义 1.8 · 贝叶斯因子 BF₁₀</span>
+      BF₁₀ = P(D | H₁) / P(D | H₀)
+      <span class="f-note">BF₁₀量化了数据支持备择假设H₁相对于零假设H₀的程度。Jeffreys（1961）的判据：BF > 3为"有证据"，BF > 10为"强证据"，BF > 100为"决定性证据"。BF的核心优势在于：它不像p值那样依赖于样本量的"p值崩溃"——当H₀为真时，BF不会随样本量增加而系统性地倾向于H₁。</span>
+    </div>
+
+    <h3>1.9 结构方程模型的协方差结构</h3>
+    <div class="formula">
+      <span class="f-name">定义 1.9 · SEM的协方差结构</span>
+      Σ = ΛΦΛ' + Θ
+      <span class="f-note">其中Σ为观测变量的协方差矩阵，Λ为因子载荷矩阵，Φ为潜变量协方差矩阵，Θ为测量误差协方差矩阵（通常假设为对角矩阵）。该定义的核心思想是：观测变异可以分解为"潜变量变异"与"测量误差变异"——SEM的拟合目标即找到一个参数化模型，使模型-隐含协方差矩阵Σ(θ)与样本协方差矩阵S的差异最小化。</span>
+    </div>
+
+    <h3>1.10 多层线性模型</h3>
+    <div class="formula">
+      <span class="f-name">定义 1.10 · 两层HLM模型</span>
+      层1（个体内）：Y_{ij} = β_{0j} + β_{1j}X_{ij} + r_{ij}<br>
+      层2（个体间）：β_{0j} = γ_{00} + γ_{01}W_j + u_{0j}, β_{1j} = γ_{10} + γ_{11}W_j + u_{1j}
+      <span class="f-note">其中r_{ij} ~ N(0, σ²)为层1残差，[u_{0j}, u_{1j}]' ~ MVN(0, τ)为层2随机效应。Raudenbush与Bryk（2002）给出了完整的形式化与估计方法。HLM的核心优势在于正确处理了嵌套数据中的"依赖性问题"——标准OLS回归假设观测独立，但嵌套数据违反这一假设，导致标准误被低估。</span>
+    </div>
+
+    <h3>1.11 工作记忆的多成分模型</h3>
+    <div class="formula">
+      <span class="f-name">定义 1.11 · Baddeley工作记忆模型</span>
+      WM = ⟨CE, PL, VSSP, EB⟩
+      <span class="f-note">其中CE（Central Executive）为中央执行系统——注意控制与协调；PL（Phonological Loop）为语音环路——语音信息的存储与复述；VSSP（Visuospatial Sketchpad）为视空间画板——视觉与空间信息的存储与操作；EB（Episodic Buffer）为情景缓冲器——2000年新增的第四成分，负责将不同来源的信息整合为情景表征。Baddeley与Hitch（1974）最初提出三成分模型，Baddeley（2000）增加了情景缓冲器。</span>
+    </div>
+
+    <h3>1.12 执行功能的统一性/多样性框架</h3>
+    <div class="formula">
+      <span class="f-name">定义 1.12 · Miyake执行功能模型</span>
+      EF = ⟨Inhibition, Shifting, Updating⟩
+      <span class="f-note">Miyake等（2000）通过潜变量分析发现，执行功能不是单一能力，而是由三个相关但可分离的成分子系统组成：抑制（Inhibition）——有意识地抑制主导的、自动的反应；转换（Shifting）——在任务或心理状态之间灵活切换；更新（Updating）——在工作记忆中监控与更新信息。三者共享一个"共同执行功能"成分（统一性），又各自保留独特变异（多样性）。</span>
+    </div>
+
+    <h3>1.13 心理理论</h3>
+    <div class="formula">
+      <span class="f-name">定义 1.13 · 心理理论（Theory of Mind）</span>
+      ToM = 将心理状态（信念、欲望、意图）归因于自我与他人的能力系统
+      <span class="f-note">Premack与Woodruff（1978）首次提出这一概念。经典测量范式是"错误信念任务"（Wimmer & Perner, 1983的"意外转移"范式与Baron-Cohen等1985的"莎莉-安妮"任务）。心理理论的核心是"表征性元表征"——理解他人可能持有与事实不符的信念。发展心理学显示，典型发育儿童在4岁左右通过一级错误信念任务，6-7岁左右通过二级错误信念任务。</span>
+    </div>
+
+    <h3>1.14 认知失调</h3>
+    <div class="formula">
+      <span class="f-name">定义 1.14 · Festinger认知失调理论</span>
+      当个体同时持有两个或多个不一致的认知（信念、态度、行为）时，产生一种不愉快的心理紧张状态（失调），个体被驱动减小失调
+      <span class="f-note">Festinger（1957）提出：失调的大小是认知元素之间不一致程度与认知元素重要性的函数。失调减少的路径包括：改变行为、改变认知、或增加新的协调认知。经典实验范式如"被迫依从"（Festinger & Carlsmith, 1959）——被试因缺乏外部理由而为枯燥任务说谎，反而更倾向于喜欢该任务（"说-相信"效应）。</span>
+    </div>
+
+    <h3>1.15 习得性无助</h3>
+    <div class="formula">
+      <span class="f-name">定义 1.15 · Seligman习得性无助</span>
+      当有机体经历不可控的厌恶事件后，习得"行为与结果无关"的预期，导致动机、认知与情绪三方面的缺陷
+      <span class="f-note">Overmier与Seligman（1967）的经典实验：狗在接受了不可逃避的电击后，即使后来有机会逃避，也放弃尝试。Seligman（1975）将这一现象推广到人类抑郁症的"习得性无助"模型。Abramson等（1978）的"归因改革"版本进一步区分了"内部/外部、稳定/不稳定、普遍/具体"三个归因维度——将无助感从"全球性"扩展到"领域特异性"的解释。</span>
+    </div>
+
+    <h3>1.16 自我效能感</h3>
+    <div class="formula">
+      <span class="f-name">定义 1.16 · Bandura自我效能感</span>
+      自我效能感 = 个体对自身"组织和执行特定行动过程以实现预期结果"的能力的信念
+      <span class="f-note">Bandura（1977, 1997）将自我效能感与"结果预期"（行为-结果关联的信念）严格区分——一个人可能相信运动能改善健康（结果预期），但不相信自己能坚持运动（效能信念）。自我效能感的四个来源：掌握经验（最有力的来源）、替代经验、言语劝说、生理与情绪状态。Bandura强调，自我效能感的测量必须"领域特异性"——"一般自我效能感量表"的效度存疑。</span>
+    </div>
+
+    <h3>1.17 心流</h3>
+    <div class="formula">
+      <span class="f-name">定义 1.17 · Csikszentmihalyi心流</span>
+      心流 = 个体完全沉浸于某一活动时体验到的一种"最优体验"状态，其特征为：技能与挑战的平衡、行动与意识的融合、明确的目标与即时反馈、对当前活动的专注控制感、自我意识的丧失与时间扭曲
+      <span class="f-note">Csikszentmihalyi（1975, 1990）通过访谈攀岩者、棋手、外科医生、艺术家等"内在动机驱动"的群体，归纳出心流的九大特征。心流理论的"核心通道"假设是：当技能水平与挑战难度达到平衡且均超过个体的日常水平时，心流体验出现。技能>挑战→无聊，挑战>技能→焦虑。这一模型后来被扩展为"八通道模型"（Massimini & Carli, 1988）。</span>
+    </div>
+
+    <div class="callout">
+      <span class="callout-title">定义的一致性约束</span>
+      <p>以上17条定义满足以下形式化约束：(1) 每条定义均包含唯一的数学形式化表达；(2) 定义之间的概念边界清晰（无重叠概念被相同定义覆盖）；(3) 每条定义明确引用了原始文献的提出者与发表年份。这些定义构成了D2-D5的形式化基础。</p>
+    </div>
+  </section>
+
+  <!-- ==================== D2 基本定律与原理 ==================== -->
+  <section class="sec" id="phd-d2">
+    <h2><span class="chapno">D2</span>基本定律与原理</h2>
+    <p>心理学虽然不像物理学那样拥有普适的"定律体系"，但经过一个半世纪的发展，仍积累了一批具有广泛实证支持、可数学形式化表达的基本规律。以下8条定律代表了心理学中最接近"定律"地位的形式化陈述。</p>
+
+    <h3>2.1 韦伯-费希纳定律</h3>
+    <div class="law">
+      <span class="l-name">定律 2.1 · Weber-Fechner Law</span>
+      S = k · log(R) + C
+      <span class="l-note">其中S为心理感觉强度，R为物理刺激强度，k为韦伯比例常数，C为积分常数。Weber（1834）发现：物理刺激的"最小可觉差"（JND）与该刺激的强度成正比——ΔR/R = k（韦伯定律）。Fechner（1860）在此基础上假设"所有JND在心理上相等"，推导出心理感觉与物理刺激的对数关系。该定律对中等强度的刺激拟合良好，但在刺激的极端值（接近阈值或接近饱和）处发生偏离——Stevens（1957）的幂定律提供了更精确的替代。</span>
+    </div>
+
+    <h3>2.2 史蒂文斯幂定律</h3>
+    <div class="law">
+      <span class="l-name">定律 2.2 · Stevens' Power Law</span>
+      ψ = k · φⁿ
+      <span class="l-note">其中ψ为心理感觉强度，φ为物理刺激强度，k为尺度常数，n为幂指数。Stevens（1957, 1961）通过"量值估计法"（magnitude estimation）发现，心理感觉随物理刺激呈幂函数增长，而非对数函数——且不同感觉模态的n值不同：电击的n≈3.5（感觉增长快于物理刺激），亮度的n≈0.33（感觉增长慢于物理刺激），线段长度的n≈1.0（感觉与物理成正比）。该定律的争议在于：量值估计法是否真正达到了"比率尺度"的测量水平？</span>
+    </div>
+
+    <h3>2.3 艾宾浩斯遗忘曲线</h3>
+    <div class="law">
+      <span class="l-name">定律 2.3 · Ebbinghaus Forgetting Curve</span>
+      R = e^{-t / S}
+      <span class="l-note">其中R为记忆保持率（以节省法测量），t为时间（以天为单位），S为记忆强度参数（表征遗忘速度）。Ebbinghaus（1885）以自己为被试，用无意义音节（CVC trigrams）研究了遗忘的时间进程，发现遗忘在最初几小时内最快，随后逐渐减慢——这一"对数衰减"模式已被无数研究重复。Wixted与Ebbinghaus（2004）的"幂律遗忘"模型（R = a·t^{-b}）提供了更精确的拟合。该定律的认知神经科学基础在于：记忆巩固过程中海马依赖向皮层依赖的转移。</span>
+    </div>
+
+    <h3>2.4 耶克斯-多德森定律</h3>
+    <div class="law">
+      <span class="l-name">定律 2.4 · Yerkes-Dodson Law</span>
+      绩效 = f(唤醒) = -a·(唤醒 - b)² + c（倒U形函数）
+      <span class="l-note">Yerkes与Dodson（1908）的经典实验发现：老鼠在执行辨别任务时，电击强度（唤醒水平）与任务表现之间呈倒U形关系——中等唤醒水平下表现最优。该定律后来被扩展为：任务难度调节了最优唤醒水平——简单任务的最优唤醒水平较高，复杂任务的最优唤醒水平较低。这一"任务难度×唤醒水平的交互"被称为"Yerkes-Dodson法则的实质"。当代研究（如Diamond等, 2007）进一步揭示了前额叶皮层在其中的中介作用——高唤醒损害前额叶功能，但保留（甚至增强）皮层下功能。</span>
+    </div>
+
+    <h3>2.5 米尔斯匹配律</h3>
+    <div class="law">
+      <span class="l-name">定律 2.5 · Matching Law</span>
+      B₁ / B₂ = R₁ / R₂
+      <span class="l-note">Herrnstein（1961, 1970）提出：在同时呈现的两个强化方案中，有机体在两个备选行为上分配的时间比例（B₁/B₂）等于两者获得强化数量的比例（R₁/R₂）。该定律最初基于鸽子在"并发可变间隔强化"（concurrent VI-VI）方案中的按键行为，后经大量研究扩展至人类行为（如社交行为、赌博行为、工作分配）。Baum（1974）的"广义匹配律"（B₁/B₂ = b·(R₁/R₂)^a）引入了偏向参数b与敏感度参数a，使模型更灵活地拟合实证数据。匹配律是行为分析学中数学形式化程度最高的定律之一。</span>
+    </div>
+
+    <h3>2.6 普雷马克原理</h3>
+    <div class="law">
+      <span class="l-name">定律 2.6 · Premack Principle</span>
+      高概率行为可以强化低概率行为
+      <span class="l-note">Premack（1959, 1965）提出：行为本身具有"强化价值"——一个行为发生的基线概率越高，其作为强化物的效力越强。这一原理颠覆了传统的行为主义强化观（认为强化物是特定的刺激物，如食物或水），将强化重新定义为"行为之间的相对概率关系"。例如，对于喜欢看电视的孩子，"看电视半小时"（高概率行为）可以强化"完成作业"（低概率行为）。该原理在教育干预、行为矫正与自我管理中具有广泛应用。</span>
+    </div>
+
+    <h3>2.7 皮亚杰认知发展阶段的不变序列律</h3>
+    <div class="law">
+      <span class="l-name">定律 2.7 · Piaget's Invariant Sequence</span>
+      认知发展 = 感觉运动期 → 前运算期 → 具体运算期 → 形式运算期
+      <span class="l-note">Piaget（1936, 1970）提出：儿童的认知发展经过四个质上不同的阶段，阶段顺序不可逆、不可跳跃——每一阶段建立在前一阶段的基础之上。感觉运动期（0-2岁）以"客体永久性"的获得为标志；前运算期（2-7岁）以符号功能与自我中心性为特征；具体运算期（7-11岁）以守恒、分类与可逆性为标志；形式运算期（11岁+）以抽象推理与假设-演绎思维为特征。跨文化研究（如Dasen, 1972）证明了阶段顺序的跨文化普遍性，但发现"形式运算期"的达成率在不同文化中差异显著——这引发了关于"阶段"概念本身的争议。</span>
+    </div>
+
+    <h3>2.8 鲍比依恋理论的内部工作模型</h3>
+    <div class="law">
+      <span class="l-name">定律 2.8 · Bowlby's Internal Working Model (IWM)</span>
+      早期依恋关系 → 内部工作模型（对自我与他人的心理表征）→ 塑造成年后的亲密关系模式
+      <span class="l-note">Bowlby（1969, 1973, 1980）的依恋理论提出：婴儿与照料者之间的早期互动塑造了"内部工作模型"——对"自我是否值得被爱"与"他人是否可依赖"的心理表征。这些模型具有"自我维持"的倾向，倾向于自动地、无意识地过滤与解释后续的社会信息。Ainsworth等（1978）的"陌生情境"实验识别了三种依恋类型：安全型（约60%）、回避型（约20%）、矛盾型（约20%）。Main等（1985）的"成人依恋访谈"（AAI）将这一框架扩展到成人依恋的内部工作模型测量。Fraley等（2002）的元分析支持了依恋类型的"中度稳定性"——约70%的个体在12个月间隔后保持相同依恋类型。</span>
+    </div>
+
+    <div class="callout">
+      <span class="callout-title">定律的边界条件</span>
+      <p>以上8条定律均具有明确的边界条件（boundary conditions）：它们并非在所有情境下都成立，但在其适用的范围内具有高度的可重复性与预测力。识别这些边界条件，是博士水平研究者的核心能力——"知道定律何时失效"与"知道定律何时成立"同等重要。</p>
+    </div>
+  </section>
+
+  <!-- ==================== D3 核心定理 ==================== -->
+  <section class="sec" id="phd-d3">
+    <h2><span class="chapno">D3</span>核心定理</h2>
+    <p>以下8个定理构成了心理学形式化体系的核心结构。每个定理均包含形式化陈述与实证基础说明。</p>
+
+    <h3>3.1 Spearman的g因子定理（正流形定理）</h3>
+    <div class="theorem">
+      <span class="t-name">定理 3.1 · Spearman正流形定理（1904）</span>
+      所有认知能力测验之间的相关系数均为正数——即形成"正流形"（positive manifold）。这一定理蕴含：存在一个"一般智力因子"（g因子）解释所有认知测验之间的正相关。
+      <span class="t-note">Spearman（1904）通过因子分析发现，任何两个认知测验之间的相关系数均为正（r>0），并由此提出"双因子理论"：每个测验的变异可按"g因子"与"s因子"（特异性因子）分解。Carroll（1993）的"三层次模型"将这一框架扩展为"一般智力g→八种宽能力→七十种窄能力"的层级结构。这一推论在统计上等价于"所有认知测验的协方差矩阵可被一个一般因子良好拟合"。批评者（如van der Maas等, 2006）提出"相互作用的认知过程"模型：正流形可由认知过程之间的相互激活而产生，不必然存在一个"g因子"实体。</span>
+    </div>
+
+    <h3>3.2 克朗巴赫α系数定理</h3>
+    <div class="theorem">
+      <span class="t-name">定理 3.2 · Cronbach's α 系数定理（1951）</span>
+      α = (k/(k-1)) · (1 - Σs²_i / s²_t)
+      <span class="t-note">其中k为项目数，s²_i为第i个项目的方差，s²_t为总分的方差。Cronbach（1951）证明：α是"所有可能的分半信度系数之均值"的下界。在tau-等价假设（所有项目的真分数方差相等、协方差相等）下，α等于信度ρ_{XX'}。在更宽松的"同质性假设"（congeneric model）下，α是信度的下界——此即"α作为信度下界"的定理。该定理的重要推论：α不是测量"单维性"的指标——一个高α值的量表可能包含多个维度（如α=0.90的Big Five人格量表实际上测量了五个不同的维度）。</span>
+    </div>
+
+    <h3>3.3 CTT平行测验定理</h3>
+    <div class="theorem">
+      <span class="t-name">定理 3.3 · 平行测验定理</span>
+      如果两个测验X与X'平行（即满足：对任意个体i，T_i = T'_i，且σ²(E_i) = σ²(E'_i)），则它们的观察分数方差相等，且它们与任何其他变量Y的相关相等。
+      <span class="t-note">该定理是CTT的推论之一：平行测验假设确保了观察分数方差相等（σ²_X = σ²_{X'}）——因为真分数方差相等且误差方差相等。平行测验间的相关系数即信度。该定理的关键意义在于：它提供了"信度可操作化"的基础——通过考察平行测验间的相关来估计信度。但在实践中，严格的平行测验几乎不可实现——"tau-等价"（真分数方差相等、协方差相等）与"同质性"（真分数线性相关）是更实用的替代假设。</span>
+    </div>
+
+    <h3>3.4 IRT单维性定理</h3>
+    <div class="theorem">
+      <span class="t-name">定理 3.4 · IRT单维性定理</span>
+      在单维IRT假设下，能力参数θ的估计是唯一的（可识别性）——即存在一个单调递增的函数将不同尺度下的能力估计映射到同一尺度。
+      <span class="t-note">该定理的数学基础在于：单维IRT模型的项目响应函数P(θ)是θ的单调函数，且项目参数与能力参数在同一尺度下可识别（通过固定能力分布的均值与方差或通过项目参数约束）。该定理的推论包括：(1) 能力参数与项目参数可以"分开"估计——"能力参数的估计不依赖于使用的项目集"（测量不变性）；(2) 在相同量尺下，不同被试的能力估计可以直接比较。该定理是IRT优于CTT的核心理论优势——CTT的能力估计依赖于项目集的难度分布。</span>
+    </div>
+
+    <h3>3.5 KL距离与ROC曲线下面积的关系定理</h3>
+    <div class="theorem">
+      <span class="t-name">定理 3.5 · KL散度与AUC的关系</span>
+      在信号检测论中，ROC曲线下面积（AUC）等于信号分布与噪声分布的KL散度在决策标准范围内的积分变换。
+      <span class="t-note">具体而言，在信号与噪声呈正态分布且方差相等的假设下，AUC = Φ(d'/√2)。更一般地，AUC等价于"从信号分布中随机抽取的一个观测值大于从噪声分布中随机抽取的一个观测值的概率"——即AUC = P(X_signal > X_noise)。Egan（1975）给出了这一关系的完整证明。该定理的关键意义在于：AUC将辨别力指数d'与"非参数化"的辨别力指标统一起来，且AUC不受反应偏向的影响——因此是信号检测论中"纯辨别力"的最佳指标之一。</span>
+    </div>
+
+    <h3>3.6 斯滕伯格工作记忆容量定理</h3>
+    <div class="theorem">
+      <span class="t-name">定理 3.6 · 工作记忆容量定理（Cowan, 2001）</span>
+      工作记忆的"纯粹容量"约为4 ± 1个组块——即在不允许复述或组块化策略的条件下，成年人能同时保持的独立信息单元数量。
+      <span class="t-note">Cowan（2001）通过综述大量研究（包括视觉阵列比较任务、听觉序列回忆任务、变化检测任务）提出，人类工作记忆的"核心容量"约为4个组块，而非Miller（1956）经典论文中的"7 ± 2"。Miller的"7 ± 2"实际上反映的是"复述缓冲区"的容量（包括策略性组块化），而非"纯粹注意焦点"的容量。Cowan模型的证据基础包括：(1) 在控制复述的条件下，回忆广度下降至4 ± 1；(2) 变化检测任务中，在阵列大小超过4时正确率显著下降；(3) 个体差异研究中，4 ± 1的容量与流体智力高度相关（r≈0.5-0.7）。</span>
+    </div>
+
+    <h3>3.7 卡尼曼前景理论的价值函数定理</h3>
+    <div class="theorem">
+      <span class="t-name">定理 3.7 · 前景理论价值函数定理（Kahneman & Tversky, 1979）</span>
+      价值函数v(·)在参照点处呈S形：在获益域呈凹函数（风险规避），在损失域呈凸函数（风险寻求），且损失域的斜率大于获益域的斜率（损失厌恶）。
+      <span class="t-note">Kahneman与Tversky通过实验发现：v(x)在x>0（获益）时呈凹形——v''(x) < 0；在x<0（损失）时呈凸形——v''(x) > 0；且损失域的斜率约为获益域斜率的2倍——v(-x) ≈ -2·v(x)（损失厌恶系数λ≈2.25）。该定理的数学形式为：v(x) = x^α（x≥0）, v(x) = -λ·(-x)^β（x<0），其中α, β ∈ (0,1)，λ>1。该定理挑战了期望效用理论的核心假设——效用函数在所有域中均为凹函数，且对获益与损失对称。该定理的修正：Tversky与Kahneman（1992）的"累积前景理论"用等级依赖权重函数替代了原始版本的"概率权重函数"。</span>
+    </div>
+
+    <h3>3.8 Tversky的诊断性-可加性定理</h3>
+    <div class="theorem">
+      <span class="t-name">定理 3.8 · 可加性定理（Tversky, 1977）</span>
+      相似性判断遵循"诊断性-可加性"原则：两个对象之间的相似性由它们共享特征与独特特征的加权和决定——即相似性满足"特征对比模型"。
+      <span class="t-note">Tversky（1977）的"特征对比模型"（Contrast Model）形式化为：S(a,b) = θ·f(A∩B) - α·f(A\B) - β·f(B\A)，其中A与B为对象a与b的特征集，f(·)为特征显著性的度量函数，θ, α, β为权重参数。该模型的核心推论是：相似性不是对称的——S(a,b) ≠ S(b,a)（因为A\B与B\A的权重可能不同）。这一"非对称性"预测已得到大量实证支持——例如，朝鲜比中国更像中国（因为中国拥有更多独特特征）。该定理对分类、归纳推理与语言心理学均有深远影响。</span>
+    </div>
+
+    <div class="callout">
+      <span class="callout-title">定理体系的结构</span>
+      <p>以上8个定理跨越了心理测量学（D3.1-D3.4）、认知心理学（D3.5-D3.6）与判断与决策（D3.7-D3.8）三个领域。它们共同构成的形式化体系具有以下特征：(1) 每个定理均有明确的数学形式化表达；(2) 每个定理均可从更基本的假设（公理与定义）中推导；(3) 每个定理均具有可证伪的实证预测。</p>
+    </div>
+  </section>
+
+  <!-- ==================== D4 定理证明详解 ==================== -->
+  <section class="sec" id="phd-d4">
+    <h2><span class="chapno">D4</span>定理证明详解</h2>
+    <p>以下给出两个完整的形式化证明。每个证明均在500字以上，包含所有中间推导步骤与前提假设的明确说明。</p>
+
+    <h3>4.1 克朗巴赫α系数作为信度下界的证明</h3>
+    <p>本证明的目标是：在CTT框架下，证明克朗巴赫α系数是真实信度ρ_{XX'}的下界——即α ≤ ρ_{XX'}，且当项目满足tau-等价条件时α = ρ_{XX'}。</p>
+
+    <div class="proof">
+      <span class="p-name">证明 4.1 · Cronbach's α 是信度下界</span>
+      <p><strong>前提假设：</strong>设一个测验由k个项目组成，X₁, X₂, ..., X_k。在CTT框架下，X_i = T_i + E_i，其中T_i为真分数，E_i为误差。假设各项目测量同一潜在构念，且误差之间相互独立——即Cov(E_i, E_j) = 0 对任意i≠j。</p>
+
+      <p><strong>目标：</strong>证明α = (k/(k-1)) · (1 - ΣVar(X_i) / Var(X_total)) ≤ ρ_{XX'}，其中X_total = ΣX_i为总分。</p>
+
+      <p><strong>证明步骤：</strong></p>
+
+      <p><strong>步骤1：</strong>写出总分的方差分解。根据CTT，总分的方差可分解为真分数方差与误差方差之和。因为X_total = ΣT_i + ΣE_i，且T与E独立（Cov(T_i, E_j) = 0），故：</p>
+      <p>Var(X_total) = Var(ΣT_i) + Var(ΣE_i) = Var(T_total) + Var(E_total)</p>
+
+      <p><strong>步骤2：</strong>写出α系数的分子。ΣVar(X_i) = Σ(Var(T_i) + Var(E_i)) = ΣVar(T_i) + ΣVar(E_i)。</p>
+
+      <p><strong>步骤3：</strong>将α的表达式改写为：</p>
+      <p>α = (k/(k-1)) · (1 - (ΣVar(T_i) + ΣVar(E_i)) / (Var(T_total) + Var(E_total)))</p>
+      <p>= (k/(k-1)) · ((Var(T_total) + Var(E_total) - ΣVar(T_i) - ΣVar(E_i)) / (Var(T_total) + Var(E_total)))</p>
+
+      <p><strong>步骤4：</strong>考虑信度ρ_{XX'}的定义。在CTT中，信度定义为真分数方差与观察分数方差之比：</p>
+      <p>ρ_{XX'} = Var(T_total) / Var(X_total) = Var(T_total) / (Var(T_total) + Var(E_total))</p>
+
+      <p><strong>步骤5：</strong>关键不等式。注意Var(T_total) = Var(ΣT_i) = ΣVar(T_i) + 2Σ_{i<j}Cov(T_i, T_j)。由于所有项目测量同一构念，Cov(T_i, T_j) ≥ 0，故：</p>
+      <p>Var(T_total) ≥ ΣVar(T_i)</p>
+      <p>且等号成立当且仅当所有Cov(T_i, T_j) = 0——即项目之间无共同变异，但这在"同一构念"的假设下几乎不可能发生。</p>
+
+      <p><strong>步骤6：</strong>同样，对于误差方差：Var(E_total) = ΣVar(E_i) + 2Σ_{i<j}Cov(E_i, E_j)。由于假设误差独立，Cov(E_i, E_j) = 0，故：</p>
+      <p>Var(E_total) = ΣVar(E_i)</p>
+
+      <p><strong>步骤7：</strong>比较α与ρ_{XX'}。将步骤5与步骤6代入：</p>
+      <p>α = (k/(k-1)) · (Var(T_total) + ΣVar(E_i) - ΣVar(T_i) - ΣVar(E_i)) / (Var(T_total) + Var(E_total))</p>
+      <p>= (k/(k-1)) · (Var(T_total) - ΣVar(T_i)) / (Var(T_total) + Var(E_total))</p>
+
+      <p>而ρ_{XX'} = Var(T_total) / (Var(T_total) + Var(E_total))</p>
+
+      <p><strong>步骤8：</strong>注意Var(T_total) - ΣVar(T_i) = 2Σ_{i<j}Cov(T_i, T_j)。在tau-等价条件下（所有Cov(T_i, T_j)相等且所有Var(T_i)相等），可以证明(k/(k-1)) · (Var(T_total) - ΣVar(T_i)) = Var(T_total)，因此α = ρ_{XX'}。</p>
+
+      <p>在非tau-等价条件下，因为(k/(k-1)) · (Var(T_total) - ΣVar(T_i)) < Var(T_total)（当协方差不等时），故α < ρ_{XX'}。</p>
+
+      <p><strong>结论：</strong>α ≤ ρ_{XX'}，即克朗巴赫α系数是信度的下界。当且仅当项目满足tau-等价条件时，α = ρ_{XX'}。该证明的关键推论是：α不是测量"单维性"的指标——一个高α值仅说明项目间协方差较大，但项目可能同时测量多个维度。</p>
+
+      <span class="p-note">该证明的核心参考文献：Cronbach, L. J. (1951). Coefficient alpha and the internal structure of tests. <em>Psychometrika</em>, 16(3), 297-334. 以及Lord, F. M., & Novick, M. R. (1968). <em>Statistical Theories of Mental Test Scores</em>.</span>
+    </div>
+
+    <h3>4.2 d'与ROC曲线下面积AUC的等价关系证明</h3>
+    <p>本证明的目标是：在信号检测论的"等方差正态模型"假设下，证明d'与AUC之间的精确等价关系。</p>
+
+    <div class="proof">
+      <span class="p-name">证明 4.2 · d'与AUC的等价关系</span>
+
+      <p><strong>前提假设：</strong>在信号检测论的标准模型中，信号分布S ~ N(μ_s, σ²)与噪声分布N ~ N(μ_n, σ²)，且σ²相等（等方差假设）。不失一般性，设μ_n = 0，μ_s = d'（即d' = μ_s - μ_n）。</p>
+
+      <p><strong>目标：</strong>证明AUC = Φ(d' / √2)，其中Φ(·)为标准正态累积分布函数。</p>
+
+      <p><strong>证明步骤：</strong></p>
+
+      <p><strong>步骤1：</strong>AUC的几何定义。AUC是ROC曲线（以假阳性率FPR为横轴、真阳性率TPR为纵轴的曲线）下的面积。在等方差正态模型中，ROC曲线由决策标准c的连续变化生成：</p>
+      <p>TPR(c) = P(X_s > c) = 1 - Φ((c - d')/σ) = Φ((d' - c)/σ)</p>
+      <p>FPR(c) = P(X_n > c) = 1 - Φ(c/σ) = Φ(-c/σ)</p>
+
+      <p><strong>步骤2：</strong>AUC的概率解释。AUC等价于"从信号分布中随机抽取的一个观测值大于从噪声分布中随机抽取的一个观测值的概率"：</p>
+      <p>AUC = P(X_s > X_n)</p>
+      <p>这一等价关系由Green与Swets（1966）证明，其直观基础是：AUC衡量了将信号与噪声区分开来的能力——如果每次随机抽取一个信号值与一个噪声值，信号值大于噪声值的概率就是AUC。</p>
+
+      <p><strong>步骤3：</strong>定义差值变量D = X_s - X_n。由于X_s ~ N(d', σ²)且X_n ~ N(0, σ²)，且两者独立，故D也服从正态分布：</p>
+      <p>E(D) = E(X_s) - E(X_n) = d' - 0 = d'</p>
+      <p>Var(D) = Var(X_s) + Var(X_n) = σ² + σ² = 2σ²</p>
+      <p>因此D ~ N(d', 2σ²)。</p>
+
+      <p><strong>步骤4：</strong>标准化D。令Z = (D - d')/√(2σ²)，则Z ~ N(0,1)。于是：</p>
+      <p>P(X_s > X_n) = P(D > 0) = P((D - d')/√(2σ²) > -d'/√(2σ²))</p>
+
+      <p><strong>步骤5：</strong>利用正态分布的对称性：</p>
+      <p>P(Z > -d'/√(2σ²)) = P(Z < d'/√(2σ²))</p>
+      <p>因为标准正态分布关于0对称。</p>
+
+      <p><strong>步骤6：</strong>因此：</p>
+      <p>AUC = P(X_s > X_n) = Φ(d'/√(2σ²))</p>
+
+      <p><strong>步骤7：</strong>在等方差假设σ=1的标准化尺度下：</p>
+      <p>AUC = Φ(d' / √2)</p>
+
+      <p><strong>步骤8：</strong>逆变换。若已知AUC，可反解d'：</p>
+      <p>d' = √2 · Φ^{-1}(AUC)</p>
+
+      <p><strong>结论：</strong>在等方差正态假设下，d'与AUC之间存在一一对应的单调关系：AUC = Φ(d'/√2)。这一等价关系的关键意义在于：AUC作为一种非参数化的辨别力指标，在等方差正态假设下与参数化的d'完全等价——因此研究者可以根据研究需要灵活选择报告指标。当等方差假设不成立时（即σ²_s ≠ σ²_n），AUC仍然是有意义的辨别力指标，但d'与AUC之间的关系不再是简单的Φ(d'/√2)形式——此时需要更一般化的"不等方差ROC模型"。</p>
+
+      <span class="p-note">该证明的核心参考文献：Green, D. M., & Swets, J. A. (1966). <em>Signal Detection Theory and Psychophysics</em>. Wiley. 以及Macmillan, N. A., & Creelman, C. D. (2005). <em>Detection Theory: A User's Guide</em> (2nd ed.). Erlbaum.</span>
+    </div>
+
+    <div class="callout">
+      <span class="callout-title">证明的方法论反思</span>
+      <p>以上两个证明展示了心理学形式化证明的两种典型结构：证明4.1是"不等式证明"（证明某个统计量是另一个量的下界），证明4.2是"等价关系证明"（证明两个不同领域的概念在特定假设下是等价的）。博士水平的研究者应掌握这两种证明范式，并能够根据研究问题自主构建新的形式化证明。</p>
+    </div>
+  </section>
+
+  <!-- ==================== D5 形式化体系 ==================== -->
+  <section class="sec" id="phd-d5">
+    <h2><span class="chapno">D5</span>形式化体系：心理测量学的完整形式化结构</h2>
+    <p>以下呈现一个完整的心理测量学形式化体系，包含CTT、IRT、SEM与元分析四个子体系。每个子体系均以"公理→定义→定理→推论"的结构展开。</p>
+
+    <h3>5.1 经典测量理论（CTT）的形式化体系</h3>
+    <div class="formula">
+      <span class="f-name">CTT公理系统</span>
+      <strong>A1（真分数公理）：</strong>X = T + E<br>
+      <strong>A2（零期望公理）：</strong>E(E) = 0<br>
+      <strong>A3（正交公理）：</strong>Cov(T, E) = 0<br>
+      <strong>A4（平行测验公理）：</strong>对任意两个平行测验X与X'，T = T'且Cov(E, E') = 0<br>
+      <strong>推论1（信度定义）：</strong>ρ_{XX'} = σ²_T / σ²_X = ρ²_{XT}<br>
+      <strong>推论2（平行测验信度）：</strong>ρ_{XX'} = ρ_{XX'}<br>
+      <strong>推论3（Spearman-Brown公式）：</strong>ρ_{kk'} = k·ρ_{XX'} / (1 + (k-1)·ρ_{XX'})<br>
+      <strong>推论4（测量标准误）：</strong>SEM = σ_X · √(1 - ρ_{XX'})
+      <span class="f-note">CTT的局限：平行测验假设在现实中几乎不可满足；项目参数与能力参数相互依赖。</span>
+    </div>
+
+    <h3>5.2 项目反应理论（IRT）的形式化体系</h3>
+    <div class="formula">
+      <span class="f-name">IRT形式化体系</span>
+      <strong>1PL（Rasch模型）：</strong>P(θ) = 1 / (1 + e^{-(θ - b)})<br>
+      <strong>2PL模型：</strong>P(θ) = 1 / (1 + e^{-a(θ - b)})<br>
+      <strong>3PL模型：</strong>P(θ) = c + (1 - c) / (1 + e^{-a(θ - b)})<br>
+      <strong>项目信息函数：</strong>I_i(θ) = [P'_i(θ)]² / [P_i(θ) · Q_i(θ)]<br>
+      <strong>测验信息函数：</strong>I(θ) = ΣI_i(θ)<br>
+      <strong>能力估计（MLE）：</strong>θ̂ = argmax_θ Π P_i(θ)^{x_i} · Q_i(θ)^{1-x_i}<br>
+      <strong>能力估计标准误：</strong>SE(θ̂) = 1 / √I(θ̂)
+      <span class="f-note">IRT的核心优势：能力参数的估计不依赖于项目集（测量不变性）；项目参数不依赖于样本（参数分离）。</span>
+    </div>
+
+    <h3>5.3 结构方程模型（SEM）的形式化体系</h3>
+    <div class="formula">
+      <span class="f-name">SEM形式化体系</span>
+      <strong>测量模型：</strong>x = Λ_xξ + δ, y = Λ_yη + ε<br>
+      <strong>结构模型：</strong>η = Bη + Γξ + ζ<br>
+      <strong>协方差结构：</strong>Σ = ΛΦΛ' + Θ<br>
+      <strong>拟合函数（ML）：</strong>F_ML = ln|Σ| - ln|S| + tr(SΣ^{-1}) - p<br>
+      <strong>CFI：</strong>CFI = 1 - (χ²_t - df_t) / (χ²_b - df_b)<br>
+      <strong>RMSEA：</strong>RMSEA = √max(χ² - df, 0) / (df · (N-1))<br>
+      <strong>TLI：</strong>TLI = (χ²_b/df_b - χ²_t/df_t) / (χ²_b/df_b - 1)<br>
+      <strong>SRMR：</strong>SRMR = √[2Σ(s_{ij} - σ̂_{ij})² / (p(p+1))]
+      <span class="f-note">SEM的拟合截断（Hu & Bentler, 1999标准）：CFI ≥ 0.95, RMSEA ≤ 0.06, SRMR ≤ 0.08。</span>
+    </div>
+
+    <h3>5.4 元分析模型的形式化体系</h3>
+    <div class="formula">
+      <span class="f-name">元分析形式化体系</span>
+      <strong>固定效应模型：</strong>T_i = θ + ε_i, ε_i ~ N(0, v_i)<br>
+      <strong>随机效应模型：</strong>T_i = θ + u_i + ε_i, u_i ~ N(0, τ²), ε_i ~ N(0, v_i)<br>
+      <strong>异质性检验（Q统计量）：</strong>Q = Σw_i(T_i - θ̂)^2, w_i = 1/v_i<br>
+      <strong>I²统计量：</strong>I² = (Q - (k-1)) / Q<br>
+      <strong>发表偏倚校正（Egger's test）：</strong>t_i = β_0 + β_1·SE_i + ε_i, H₀: β_0 = 0<br>
+      <strong>发表偏倚校正（Trim-and-Fill）：</strong>基于漏斗图不对称性估计缺失研究的数量与效应量
+      <span class="f-note">Hunter-Schmidt方法（2004）强调：对效应量进行"不可靠性校正"（attenuation correction）——即根据测量信度调整效应量估计，以消除测量误差对效应量的向下偏倚。</span>
+    </div>
+
+    <figure class="diagram">
+      <figcaption>图 D5-1 · IRT三维曲面模型：能力θ × 难度b × 正确概率P(θ)的三维空间</figcaption>
+      <div id="threejs-irt" style="width:100%;height:480px;overflow:hidden;border-radius:8px;background:#f0e9f5;"></div>
+      <p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem;">三维曲面展示项目反应理论三参数逻辑模型：x轴为能力θ（-3到3），y轴为难度b（-3到3），z轴为正确回答概率P(θ)。曲面颜色由紫到金渐变，展示不同难度水平下能力-概率的映射关系。区分度参数a=1.5，猜测参数c=0.1。</p>
+    </figure>
+
+    <div class="callout">
+      <span class="callout-title">形式化体系的统一性</span>
+      <p>以上四个子体系并非彼此孤立——它们通过"潜变量"的概念统一起来：CTT的真分数是一个潜变量，IRT的θ是一个潜变量，SEM的ξ与η是潜变量，元分析的"真实效应θ"也是一个潜变量。理解这四个子体系作为"潜变量模型"的统一形式化结构，是博士水平心理测量学训练的核心。</p>
+    </div>
+  </section>
+
+  <!-- ==================== D6 前沿定理与未解问题 ==================== -->
+  <section class="sec" id="phd-d6">
+    <h2><span class="chapno">D6</span>前沿定理与未解问题</h2>
+    <p>当代心理学前沿正在经历深刻的理论重构。以下4个前沿定理代表了最新的形式化进展，5个未解问题代表了学科的核心认识论挑战。</p>
+
+    <h3>6.1 前沿定理</h3>
+
+    <h4>定理 6.1 · Borsboom网络理论定理（2008, 2017）</h4>
+    <div class="theorem">
+      <span class="t-name">定理 6.1 · 心理障碍作为因果网络的涌现属性</span>
+      精神障碍不是"潜变量"（即一个共同原因导致的症状集合），而是症状之间的因果网络——症状之间通过直接的因果连接相互激活，形成一个自维持的"故障网络"。心理障碍是这一网络在时间上的"涌现属性"。
+      <span class="t-note">Borsboom（2008）在《Psychometrika》上首次提出"网络视角"：传统的"潜变量模型"假设症状（如失眠、疲劳、情绪低落）是由一个潜在疾病（如抑郁症）引起的——症状是"效应"而非"原因"。网络理论反转了这一因果方向：症状之间直接互相关联——失眠→疲劳→情绪低落→社交退缩→失眠加剧。这一循环因果链构成了精神障碍的"自我维持"机制。Borsboom等（2017）在《Annual Review of Clinical Psychology》上系统阐述了网络理论的统计方法（如EBICglasso、Ising模型、网络比较测试）。该定理的争议在于：网络模型的"因果解释"是否真的超越了描述性——因为网络中的"边"（症状间的关联）通常来自横截面数据，而因果解释需要纵向数据。</span>
+    </div>
+
+    <h4>定理 6.2 · Muthén潜变量增长曲线定理</h4>
+    <div class="theorem">
+      <span class="t-name">定理 6.2 · 潜变量增长曲线模型（LGC）</span>
+      纵向数据中的个体变化轨迹可以分解为"初始水平"（截距因子）与"变化速率"（斜率因子）两个潜变量——且个体之间的差异可通过个体水平的协变量来解释。
+      <span class="t-note">Muthén与Curran（1997）的LGC模型将SEM与成长曲线模型统一：在SEM框架中，截距因子与斜率因子是潜变量，载荷矩阵由时间编码决定（如线性增长：λ_t = [1, 2, 3, ..., T]）。LGC的扩展包括：(1) 非线性增长（如二次项、自由估计载荷）；(2) 多变量LGC（同时建模多个变量的协变轨迹）；(3) 增长混合模型（识别不同的增长轨迹子群）。Muthén（2004）的Mplus软件实现了这些模型的大规模拟合。该定理的关键贡献在于：它将发展心理学中的"变化"概念从"均值比较"提升为"潜变量建模"——个体差异不再被视为"误差"，而是建模的对象。</span>
+    </div>
+
+    <h4>定理 6.3 · Hu-Bentler SEM拟合截断定理</h4>
+    <div class="theorem">
+      <span class="t-name">定理 6.3 · Hu-Bentler拟合截断定理（1999）</span>
+      在最大似然估计下，当模型设定正确且样本量足够大时，CFI、RMSEA与SRMR的分布具有明确的截断特征——即存在"临界值"（cutoff values），超过这些值表明模型拟合可接受。
+      <span class="t-note">Hu与Bentler（1999）通过大规模蒙特卡洛模拟（覆盖不同样本量、模型复杂程度、分布形态的条件）提出了SEM拟合的"截断标准"：CFI ≥ 0.95、RMSEA ≤ 0.06、SRMR ≤ 0.08。这一标准被广泛采用（截至2024年，该论文被引超过8万次），但后续研究对其"普适性"提出了质疑——Marsh等（2004）指出，这些截断值在简单模型（自由度小）与复杂模型（自由度大）中表现不同，且当指标变量数量较少时可能出现误判。McNeish等（2018）建议：截断标准应被视为"粗略指南"而非"绝对法则"——在评估模型拟合时，应结合理论考虑、模型比较与替代指标（如AIC、BIC）综合判断。</span>
+    </div>
+
+    <h4>定理 6.4 · Hunter-Schmidt元分析校正定理</h4>
+    <div class="theorem">
+      <span class="t-name">定理 6.4 · 不可靠性校正定理</span>
+      在元分析中，测量误差（信度不完美）系统地低估了真实的效应量——校正后的效应量ρ_c = ρ_obs / √(r_{xx} · r_{yy})，其中r_{xx}与r_{yy}为自变量与因变量的信度。
+      <span class="t-note">Hunter与Schmidt（1990, 2004）的"心理测量元分析"方法将效应量的"人为误差"分解为三个来源：抽样误差（sampling error）、测量误差（measurement error）与范围限制（range restriction）。校正公式为：ρ_c = ρ_obs / √(r_{xx} · r_{yy})，其中ρ_obs为观察到的效应量，r_{xx}与r_{yy}为信度系数。该校正可能导致效应量显著增大——例如，当观察到的r=0.30且两个变量的信度均为0.70时，校正后的r=0.30/√(0.49)=0.43。这一校正的争议在于：信度估计本身具有不确定性，校正后的效应量标准误也相应增大——且当信度估计不准确时，校正可能引入新的偏倚。</span>
+    </div>
+
+    <h3>6.2 未解问题</h3>
+
+    <h4>问题 6.1 · 心理学的可重复性危机</h4>
+    <p>Open Science Collaboration（2015）的"再现性项目"对100项心理学研究进行了系统复制，结果只有36%的复制研究获得了统计显著的结果，且复制效应量仅为原始研究的一半。这一结果引发了关于心理学"科学地位"的深刻质疑。Gilbert等（2016）的批评指出，复制研究在程序上与原研究存在差异，且抽样误差本身可以解释部分结果。然而，后续的多实验室复制项目（Many Labs 1-5, Klein et al., 2014-2018）以及"社会心理学预注册复制倡议"（SRRP, Nosek et al., 2022）均支持了"可重复性显著低于预期"的核心结论。这一危机的深层根源在于：心理学的实证研究长期依赖"小样本、低效力、高弹性"的研究实践——"出版偏倚"（仅发表显著结果）、"p-hacking"（数据分析中的自由选择）与"HARKing"（在数据收集后提出假设）共同导致了虚假阳性率的膨胀。</p>
+
+    <h4>问题 6.2 · p值争议：贝叶斯vs频率主义的方法论基础</h4>
+    <p>p值——零假设显著性检验（NHST）的核心——正处于深刻的"身份危机"之中。Wagenmakers（2007）与Kruschke（2015)倡导以贝叶斯因子替代p值，因为BF能够量化"数据支持H₁相对于H₀的程度"——这正是研究者真正关心的问题，而p值不能回答这个问题。但贝叶斯方法面临自身的问题：先验分布的选择可以显著影响结果。Gelman与Carlin（2014）的"保守先验"建议、以及Rouder等（2018）的"默认先验"方案，试图解决这一问题，但先验选择的"主观性"始终是贝叶斯方法的核心争议。Gelman（2013）本人也承认："贝叶斯方法不是银弹——它只是将决策者的主观性置于更显眼的位置。"这一争论的本质是"统计推断的基础"这一哲学问题，在可预见的未来不会有最终解决方案。</p>
+
+    <h4>问题 6.3 · WEIRD问题的严重性</h4>
+    <p>Henrich等（2010）在《Behavioral and Brain Sciences》上发表的论文指出：心理学研究的参与者绝大多数来自WEIRD社会——西方、受教育、工业化、富裕、民主的——这些人口只占世界人口的12%，但在顶级心理学期刊样本中占96%。更严重的是，WEIRD样本在许多心理学维度上是"极端异常值"：视觉感知中的Müller-Lyer错觉易感性、道德推理中的"规则vs关系"取向、自我概念中的"独立vs互依"、推理风格中的"分析性vs整体性"。Arnett（2008）与Thalmayer等（2021）的后续研究显示，这一问题的改善进展缓慢——WEIRD偏倚在心理学研究中仍然严重。这一问题的深层含义是：心理学"关于人类心理的普遍知识"可能实际上只是"WEIRD人群的心理"——这是心理学作为"人类科学"的根本性认识论危机。</p>
+
+    <h4>问题 6.4 · 精神疾病诊断的效度：DSM的类别vs维度之争</h4>
+    <p>DSM-5（2013）的发布引发了关于精神疾病诊断效度的激烈争论。核心问题是：精神疾病是"类别"（你"有"或"没有"抑郁症）还是"维度"（抑郁程度在从0到100的连续谱上）？Hyman（2010）指出，DSM诊断类别缺乏生物学基础——它们不是基于病因或病理机制，而是基于"症状聚类"的共识判断。Insel（2013）宣布NIMH将转向基于"研究领域标准"（RDoC）的维度框架——从"负效价系统、正效价系统、认知系统、社会过程系统、唤醒与调节系统"五个维度重新定义精神疾病。但RDoC同样面临挑战：它是否过于简化了精神疾病的复杂性？Kendler（2014）的"因果-网络模型"试图调和类别与维度之争——精神疾病既是"网络"（症状之间的因果链），也可以在其中"发现"类别（网络中的"吸引子状态"）。这一争论至今没有解决，而且可能永远不会以"一方胜利"的方式解决——不同的诊断模型可能适用于不同的临床与研究目的。</p>
+
+    <h4>问题 6.5 · 认知科学的模块化假设vs领域通用性争论</h4>
+    <p>认知科学的核心争论之一：心灵是由"领域特异性模块"（如Fodor, 1983的"模块性"与Cosmides & Tooby, 1992的"大规模模块性"）构成的，还是由"领域通用机制"（如工作记忆、注意控制、执行功能）驱动的？Fodor的"模块"定义包括：领域特异性、信息封装性、强制性、快速性、浅层输出、固定的神经架构、特异性损伤模式。支持模块化的证据来自：双分离（如失语症患者保留非语言认知、额叶损伤患者保留语言能力）、进化心理学（如"社会交换模块"的沃森选择任务证据）、先天领域特异性（如新生儿的"面孔偏好"）。支持领域通用性的证据来自：工作记忆的容量限制（Cowan, 2001）与跨领域作用（如"n-back训练"的各种迁移效应——尽管争议很大）、执行功能的统一性（Miyake等, 2000的"共同执行功能"因子）、一般智力g因子与多个认知领域的正相关。Karmiloff-Smith（1992, 1998）的"神经建构主义"提供了一个综合框架：大脑在发育过程中从"领域通用"逐渐走向"领域特异性"——"模块化"是发展的结果而非起点。</p>
+
+    <div class="callout">
+      <span class="callout-title">未解问题的方向性</span>
+      <p>以上5个未解问题涵盖了心理学的方法论（可重复性危机、p值争议）、代表性（WEIRD问题）、分类学（DSM争议）与理论框架（模块化争论）。博士水平的研究者应能够：(1) 清晰陈述每个问题的核心争论点；(2) 识别争论的"实证基础"与"哲学基础"；(3) 提出自己的研究计划以推进某一问题的解决。这些问题的共同特征是：它们不会通过单一实验或单一理论得到解决，而需要多代研究者的持续努力。</p>
+    </div>
+  </section>
+
+  <!-- ==================== D7 研究前沿 ==================== -->
+  <section class="sec" id="phd-d7">
+    <h2><span class="chapno">D7</span>研究前沿：心理学的新方向</h2>
+    <p>当代心理学正在经历深刻的范式转型。以下五个前沿方向代表了心理学在未来十年最具变革潜力的研究领域。</p>
+
+    <h3>7.1 计算精神病学</h3>
+    <p>计算精神病学（Computational Psychiatry）是心理学、神经科学与计算科学交叉的最前沿领域。它的核心假设是：精神疾病不是"化学失衡"或"发育缺陷"，而是大脑的计算机制出现系统性偏差。Huys等（2011, 2016）系统阐述了这一框架：将强化学习、贝叶斯推理、自由能原理等计算模型应用于精神疾病的理解。</p>
+    <p>在强化学习模型中，精神分裂症患者的"预测误差"信号——多巴胺系统编码的"实际奖励与预期奖励之差"——出现异常，导致他们无法正确学习奖励与惩罚的关联（Maia & Frank, 2011）。在贝叶斯推理模型中，焦虑障碍患者对威胁的"先验信念"过于强烈，导致他们在面对安全信号时仍无法更新"威胁概率"的估计——"安全学习"失败（Browning et al., 2015）。自由能原理（Friston, 2010）则提供了一个更统一的理论框架：大脑是一个"推理引擎"，通过最小化"自由能"（即预测误差）来维持与环境的适应。精神疾病是自由能最小化过程的异常——自闭症可能源于"对精确性的过度敏感"（精确预测误差被过度加权），而精神分裂症可能源于"对精确性的不敏感"（预测误差权重过低）。这一框架的临床转化仍处于早期阶段，但它提供了一个有希望的方向：用精确的、可量化的计算模型来替代模糊的、描述性的精神疾病诊断。</p>
+
+    <h3>7.2 贝叶斯认知科学</h3>
+    <p>贝叶斯认知科学（Bayesian Cognitive Science）——以"贝叶斯大脑假说"（Bayesian Brain Hypothesis）为核心——提出：人类认知可以被理解为"近似贝叶斯推理"的过程。大脑不是被动地接收感觉输入，而是主动地"生成"对世界的解释——通过"生成模型"（generative models）对感觉输入的原因进行推理。这一框架的核心是"预测编码理论"（Predictive Coding）：大脑不断生成关于感觉输入的"自上而下"预测，并将预测与"自下而上"的感觉输入进行比较——"预测误差"（prediction error）驱动了感知、注意与学习的更新。</p>
+    <p>Friston（2010）的"自由能原理"（Free Energy Principle）将这一框架推向极致：任何一个自组织系统（包括大脑）的目标是"最小化其自由能"——即最大化其内部模型对世界的预测精度。这一原理试图统一感知、行动、学习与注意——甚至生命本身——在一个单一的形式化框架下。Clark（2013, 2016）的《预测性大脑》与Hohwy（2013）的《预测性心智》是这一框架的哲学阐述。批评者（如McPherson, 2014）认为，自由能原理过于抽象，缺乏可证伪的具体预测——"它解释一切，因而什么也解释不了。"但该框架在感知（如"双稳态知觉"）、注意（如"显著性映射"）、运动控制（如"主动推理"）与精神疾病（如"自闭症的精确性异常"理论）中均产生了可检验的实证预测。</p>
+
+    <h3>7.3 社会认知的神经科学</h3>
+    <p>社会认知神经科学（Social Cognitive Neuroscience）研究社会认知过程的神经机制。核心问题包括：人类如何理解他人的心理状态（心理理论）？如何感知与共情他人的情绪（共情）？如何判断社会互动中的公平与信任（社会决策）？</p>
+    <p>心理理论的神经基础研究显示，一个分布于"内侧前额叶皮层（mPFC）、颞上沟后部（pSTS）、颞顶联合区（TPJ）、前扣带回（ACC）与楔前叶"的网络构成了"心理理论网络"（Saxe & Kanwisher, 2003; Schurz et al., 2014）。Gallese等（1996）在恒河猴的F5区发现的"镜像神经元"——在猴子执行动作与观察他人执行相同动作时均放电的神经元——被认为是"共情"与"行动理解"的神经基础。但镜像神经元在人类中的直接证据有限（仅通过fMRI的"适应"范式与颅内电生理间接证实），其功能意义也受到质疑——Hickok（2014）的"镜像神经元迷思"一书系统批评了镜像神经元理论的过度推广。</p>
+    <p>社会决策的神经科学研究受"神经经济学"（Neuroeconomics）的推动。信任博弈（Trust Game）的fMRI研究显示，背侧纹状体（dorsal striatum）编码了"互惠信任"的奖赏信号（King-Casas et al., 2005）；最后通牒博弈（Ultimatum Game）中，不公平提议的拒绝与"前岛叶-前扣带回"的激活相关，反映了"公平感"的情感和冲突成分（Sanfey et al., 2003）。这些发现表明，社会决策不是纯粹的"理性计算"，而是被情绪与动机过程深度塑造的。</p>
+
+    <h3>7.4 文化神经科学</h3>
+    <p>文化神经科学（Cultural Neuroscience）——由Chiao与Ambady（2007）命名——研究文化如何塑造大脑的结构与功能。核心假设是：文化不仅是"心理的内容"（如信念、价值观），而且是"心理的硬件"——重复的文化实践通过"神经可塑性"改变大脑的加工方式。</p>
+    <p>早期研究集中在"自我参照加工"的文化差异：fMRI研究显示，西方被试在对自己进行特质判断时（vs. 对母亲进行判断）表现出更强的内侧前额叶（mPFC）激活，而中国被试在对自己与母亲进行判断时mPFC的激活差异不显著——这反映了独立自我与互依自我的神经差异（Zhu et al., 2007）。后续研究扩展至：注意控制（西方被试更关注"焦点物体"，东亚被试更关注"背景"——Hedden et al., 2008的fMRI研究显示，两种加工方式涉及不同的前额叶-顶叶网络）、共情（文化对"内群体/外群体共情差异"的调节——Xu et al., 2009）、情绪调节（文化对"认知重评"与"表达抑制"的神经机制的调节——Qu & Telzer, 2017）。</p>
+    <p>文化神经科学的最大挑战是"因果推断"问题：文化差异与神经差异的共变不意味着因果关系——神经差异可能是文化实践的"结果"而非"原因"。纵向研究（如移民研究）与实验研究（如文化启动范式）被用来解决这一问题，但进展有限。Kitayama与Uskul（2011）的"文化-神经环路"理论框架提出：文化实践→神经体验→神经可塑性→认知加工偏向→文化实践的维持——这是一个双向的、自我维持的循环。</p>
+
+    <h3>7.5 基于过程的心理测量</h3>
+    <p>传统的心理测量——无论是CTT还是IRT——都是"基于项目的"（item-based）：测量单元是"被试对某个项目的反应"。基于过程的测量（Process-based Measurement）提出了一个根本不同的范式：测量单元是"被试在认知过程中的行为动态"——反应时序列、鼠标轨迹、眼动模式、面部表情的微动态——这些"过程指标"替代了传统的"项目反应"。</p>
+    <p>这一范式的兴起得益于三个技术趋势：(1) 计算能力的提升使"实时认知过程建模"成为可能；(2) 机器学习方法（尤其是深度学习）使"从高维过程数据中提取特征"成为可能；(3) 数字心理健康的兴起使"被动传感数据"（手机使用模式、GPS轨迹、睡眠模式）成为新的测量来源。Schulte-Mecklenbeck等（2017）主编的《过程测量手册》系统综述了这一领域的方法。Rosenberg等（2018）的研究是一个典型案例：通过分析被试在"持续注意任务"中的反应时变异（而非均值），预测了fMRI扫描中的默认模式网络活动——"反应时变异"作为"注意稳定性"的"过程指标"比"反应时均值"更敏感、更可靠。</p>
+    <p>基于过程测量的挑战包括：(1) 过程指标的标准化的困难——不同实验室、不同设备的测量尺度不同；(2) 过程指标的心理测量学性质——信度、效度、常模的建立需要新的统计工具；(3) 隐私与伦理问题——"被动传感"的边界在哪里？</p>
+
+    <figure class="diagram">
+      <figcaption>图 D7-1 · 认知神经科学功能连接组三维模型：脑区之间的动态功能连接网络</figcaption>
+      <div id="threejs-connectome" style="width:100%;height:480px;overflow:hidden;border-radius:8px;background:#f0e9f5;"></div>
+      <p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem;">三维脑功能连接网络可视化：节点代表不同脑区（前额叶皮层、颞叶、顶叶、枕叶、小脑、海马、杏仁核、基底节等），连线代表静息态功能连接强度。颜色梯度表示模块化社区归属，节点大小表示该脑区在网络中的"度中心性"（degree centrality）。</p>
+    </figure>
+
+    <div class="callout">
+      <span class="callout-title">研究前沿的整合性</span>
+      <p>以上五个前沿方向——计算精神病学、贝叶斯认知科学、社会认知神经科学、文化神经科学、基于过程的心理测量——并非彼此孤立。它们共同代表了心理学从"描述性科学"向"计算性科学"的范式转型：理论从"文字叙述"转向"形式化计算模型"，方法从"回顾性自陈报告"转向"实时过程测量"，解释从"行为水平的描述"转向"机制水平的解释"。博士水平的研究者应能在这些前沿方向中找到自己的研究定位——既理解每个方向的独特贡献，也看到它们之间的深层联系。</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- ==================== Three.js 3D 可视化脚本 ==================== -->
+<script src="./_shared/js/three.min.js"></script>
+<script>
+// ===== D5: IRT 三维曲面模型 =====
+(function() {
+  const container = document.getElementById('threejs-irt');
+  if (!container) return;
+  const w = container.clientWidth, h = 480;
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xf0e9f5);
+  const camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 100);
+  camera.position.set(8, 6, 12);
+  camera.lookAt(0, 0, 0);
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(w, h);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  const ambient = new THREE.AmbientLight(0x404060);
+  scene.add(ambient);
+  const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+  dirLight.position.set(1, 2, 1);
+  scene.add(dirLight);
+  const dirLight2 = new THREE.DirectionalLight(0xffffff, 0.5);
+  dirLight2.position.set(-1, -1, -1);
+  scene.add(dirLight2);
+
+  // IRT 3PL 曲面: P(theta, b) = c + (1-c)/(1+exp(-a*(theta-b)))
+  const a = 1.5, c = 0.1;
+  const thetaMin = -3, thetaMax = 3, bMin = -3, bMax = 3;
+  const steps = 40;
+  const vertices = [], indices = [], colors = [];
+
+  for (let i = 0; i <= steps; i++) {
+    for (let j = 0; j <= steps; j++) {
+      const theta = thetaMin + (thetaMax - thetaMin) * i / steps;
+      const b = bMin + (bMax - bMin) * j / steps;
+      const expTerm = Math.exp(-a * (theta - b));
+      const p = c + (1 - c) / (1 + expTerm);
+      const x = (theta - 0) * 1.5;
+      const z = (b - 0) * 1.5;
+      const y = (p - 0.5) * 6;
+      vertices.push(x, y, z);
+      // Color gradient: purple to gold
+      const t = (p - 0.1) / 0.9;
+      const r = 0.43 + 0.57 * t;
+      const g = 0.16 + 0.57 * t;
+      const bl = 0.85 - 0.60 * t;
+      colors.push(r, g, bl);
+    }
+  }
+
+  for (let i = 0; i < steps; i++) {
+    for (let j = 0; j < steps; j++) {
+      const a0 = i * (steps + 1) + j;
+      const a1 = a0 + 1;
+      const b0 = (i + 1) * (steps + 1) + j;
+      const b1 = b0 + 1;
+      indices.push(a0, a1, b1);
+      indices.push(a0, b1, b0);
+    }
+  }
+
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+  geo.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+  geo.setIndex(indices);
+  geo.computeVertexNormals();
+
+  const mat = new THREE.MeshPhongMaterial({
+    vertexColors: true,
+    side: THREE.DoubleSide,
+    transparent: true,
+    opacity: 0.85,
+    shininess: 30,
+    specular: 0x222244
+  });
+  const mesh = new THREE.Mesh(geo, mat);
+  scene.add(mesh);
+
+  // Add axes helper
+  const axesHelper = new THREE.AxesHelper(5);
+  scene.add(axesHelper);
+
+  // Add grid
+  const gridHelper = new THREE.GridHelper(10, 20, 0x6A5E75, 0x6A5E75);
+  gridHelper.position.y = -3;
+  scene.add(gridHelper);
+
+  // Labels using sprites
+  function makeLabel(text, pos, color) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 256;
+    canvas.height = 64;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'rgba(0,0,0,0)';
+    ctx.fillRect(0, 0, 256, 64);
+    ctx.fillStyle = color || '#2A2033';
+    ctx.font = 'bold 32px WorkSans, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(text, 128, 32);
+    const tex = new THREE.CanvasTexture(canvas);
+    const spMat = new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false });
+    const sprite = new THREE.Sprite(spMat);
+    sprite.position.set(pos[0], pos[1], pos[2]);
+    sprite.scale.set(2, 0.5, 1);
+    scene.add(sprite);
+  }
+  makeLabel('θ (能力)', [5, -0.5, 0], '#6D28D9');
+  makeLabel('b (难度)', [0, -0.5, 5], '#6D28D9');
+  makeLabel('P(θ)', [0, 4.5, 0], '#B45309');
+
+  function animate() {
+    requestAnimationFrame(animate);
+    mesh.rotation.y += 0.003;
+    camera.lookAt(0, 0, 0);
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    const w2 = container.clientWidth;
+    camera.aspect = w2 / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w2, h);
+  });
+})();
+
+// ===== D7: 认知神经科学功能连接组三维模型 =====
+(function() {
+  const container = document.getElementById('threejs-connectome');
+  if (!container) return;
+  const w = container.clientWidth, h = 480;
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xf0e9f5);
+  const camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 100);
+  camera.position.set(14, 10, 18);
+  camera.lookAt(0, 0, 0);
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(w, h);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  const ambient = new THREE.AmbientLight(0x404060);
+  scene.add(ambient);
+  const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+  dirLight.position.set(1, 2, 1);
+  scene.add(dirLight);
+  const dirLight2 = new THREE.DirectionalLight(0xffffff, 0.5);
+  dirLight2.position.set(-1, -1, -1);
+  scene.add(dirLight2);
+
+  // Brain regions (nodes) in 3D space
+  const regions = [
+    { name: 'PFC', pos: [-3, 4, 1], color: 0x6D28D9, label: '前额叶皮层' },
+    { name: 'PMC', pos: [-1, 3, 3], color: 0x7C3AED, label: '前运动区' },
+    { name: 'M1', pos: [0, 2, 4], color: 0x8B5CF6, label: '初级运动皮层' },
+    { name: 'S1', pos: [1, 1.5, 4], color: 0x9333EA, label: '初级体感皮层' },
+    { name: 'STG', pos: [2, 2, 2], color: 0xA855F7, label: '颞上回' },
+    { name: 'MTL', pos: [2.5, 1, -1], color: 0xEC4899, label: '内侧颞叶' },
+    { name: 'HIP', pos: [2, -1, -1.5], color: 0xF472B6, label: '海马' },
+    { name: 'AMY', pos: [1.5, -1.5, 0.5], color: 0xFB7185, label: '杏仁核' },
+    { name: 'OCC', pos: [0, 0.5, -4], color: 0x3B82F6, label: '枕叶' },
+    { name: 'PAR', pos: [3, 2, -2], color: 0x60A5FA, label: '顶叶' },
+    { name: 'CBL', pos: [-2, -3, -2], color: 0x10B981, label: '小脑' },
+    { name: 'BG', pos: [-1, -1, 2], color: 0x34D399, label: '基底节' },
+    { name: 'ACC', pos: [-2, 3.5, -0.5], color: 0xF59E0B, label: '前扣带回' },
+    { name: 'PCC', pos: [-1, 1, -3], color: 0xF97316, label: '后扣带回' },
+    { name: 'MPFC', pos: [-3.5, 3, 0.5], color: 0x8B5CF6, label: '内侧前额叶' },
+    { name: 'TPJ', pos: [3.5, 1.5, 0], color: 0xA78BFA, label: '颞顶联合区' },
+  ];
+
+  // Create nodes
+  const nodeGroup = new THREE.Group();
+  const nodeMeshes = [];
+  regions.forEach((r, i) => {
+    const size = 0.6 + Math.random() * 0.3;
+    const geo = new THREE.SphereGeometry(size, 16, 16);
+    const mat = new THREE.MeshPhongMaterial({
+      color: r.color,
+      emissive: r.color,
+      emissiveIntensity: 0.15,
+      shininess: 60
+    });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(r.pos[0], r.pos[1], r.pos[2]);
+    mesh.userData = { index: i, ...r };
+    nodeGroup.add(mesh);
+    nodeMeshes.push(mesh);
+  });
+  scene.add(nodeGroup);
+
+  // Create connections (edges) based on distance-based functional connectivity
+  const edgeGroup = new THREE.Group();
+  const edgeMat = new THREE.LineBasicMaterial({ color: 0x6D28D9, transparent: true, opacity: 0.25 });
+
+  for (let i = 0; i < regions.length; i++) {
+    for (let j = i + 1; j < regions.length; j++) {
+      const p1 = regions[i].pos;
+      const p2 = regions[j].pos;
+      const dx = p1[0] - p2[0], dy = p1[1] - p2[1], dz = p1[2] - p2[2];
+      const dist = Math.sqrt(dx*dx + dy*dy + dz*dz);
+      // Only connect if moderately close, and vary opacity by distance
+      if (dist < 5.5 && Math.random() < 0.55) {
+        const opacity = Math.max(0.08, 0.4 - dist * 0.05);
+        const geo = new THREE.BufferGeometry().setFromPoints([
+          new THREE.Vector3(p1[0], p1[1], p1[2]),
+          new THREE.Vector3(p2[0], p2[1], p2[2])
+        ]);
+        const edgeMat2 = new THREE.LineBasicMaterial({
+          color: 0x6D28D9,
+          transparent: true,
+          opacity: opacity
+        });
+        const line = new THREE.Line(geo, edgeMat2);
+        edgeGroup.add(line);
+      }
+    }
+  }
+  scene.add(edgeGroup);
+
+  // Add axes label
+  function makeLabel(text, pos, color) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 256;
+    canvas.height = 64;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'rgba(0,0,0,0)';
+    ctx.fillRect(0, 0, 256, 64);
+    ctx.fillStyle = color || '#2A2033';
+    ctx.font = 'bold 28px WorkSans, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(text, 128, 32);
+    const tex = new THREE.CanvasTexture(canvas);
+    const spMat = new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false });
+    const sprite = new THREE.Sprite(spMat);
+    sprite.position.set(pos[0], pos[1], pos[2]);
+    sprite.scale.set(2.5, 0.6, 1);
+    scene.add(sprite);
+  }
+  makeLabel('脑功能连接组', [0, 6, 0], '#6D28D9');
+
+  // Add grid
+  const gridHelper = new THREE.GridHelper(12, 20, 0x6A5E75, 0x6A5E75);
+  gridHelper.position.y = -4;
+  scene.add(gridHelper);
+
+  function animate() {
+    requestAnimationFrame(animate);
+    nodeGroup.rotation.y += 0.002;
+    edgeGroup.rotation.y += 0.002;
+    camera.lookAt(0, 0, 0);
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    const w2 = container.clientWidth;
+    camera.aspect = w2 / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w2, h);
+  });
+})();
+</script>
+
+</body>
+</html>

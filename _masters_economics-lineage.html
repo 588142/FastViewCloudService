@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>经济思想谱系 · 硕士水平进阶模块 · 上篇</title>
+<style>
+:root {
+  --bg: #F8FAF6; --bg2: #EEF2EA; --ink: #222820; --muted: #62695C;
+  --rule: #DFE4D8; --accent: #4F7A28; --accent2: #B8793B;
+  --font-head: 'Lora','Songti SC','SimSun',serif;
+  --font: 'WorkSans','PingFang SC','Microsoft YaHei',sans-serif;
+  --font-mono: 'DMMono',monospace;
+  --max: 880px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:16px;scroll-behavior:smooth;}
+body{font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.75;padding:2rem 1.5rem;max-width:var(--max);margin:0 auto;}
+section.sec{margin-bottom:3.5rem;}
+h2{font-family:var(--font-head);font-size:1.5rem;font-weight:700;padding-bottom:0.5rem;border-bottom:2px solid var(--accent);margin-bottom:1.2rem;}
+h2 .chapno{color:var(--accent2);font-family:var(--font-mono);font-size:0.85rem;letter-spacing:0.1em;display:block;margin-bottom:0.3rem;}
+h3{font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin:1.6rem 0 0.6rem;}
+h4{font-family:var(--font-head);font-size:0.95rem;font-weight:700;margin:1.2rem 0 0.4rem;color:var(--accent);}
+p{margin-bottom:0.9rem;font-size:0.95rem;}
+ul{margin:0 0 1rem 1.3rem;font-size:0.95rem;}
+ol{margin:0 0 1rem 1.5rem;font-size:0.95rem;}
+li{margin-bottom:0.4rem;}
+strong{color:var(--ink);}
+.callout{border-left:4px solid var(--accent2);background:var(--bg2);padding:0.9rem 1.1rem;margin:1.2rem 0;font-size:0.92rem;border-radius:0 8px 8px 0;}
+.callout .callout-title{font-weight:700;color:var(--accent2);display:block;margin-bottom:0.3rem;font-size:0.85rem;}
+.table-wrap{overflow-x:auto;overflow-y:auto;max-height:800px;margin:1.2rem 0;border:1px solid var(--rule);border-radius:10px;}
+table{border-collapse:collapse;width:100%;font-size:0.88rem;}
+th{background:var(--bg2);text-align:left;padding:0.6rem 0.9rem;border-bottom:2px solid var(--rule);font-weight:700;white-space:nowrap;}
+td{padding:0.6rem 0.9rem;border-bottom:1px solid var(--rule);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:var(--bg2);}
+.formula{font-family:var(--font-mono);background:var(--bg);border:1px solid var(--rule);border-left:4px solid var(--accent2);border-radius:0 8px 8px 0;padding:0.8rem 1rem;margin:0.7rem 0;font-size:0.95rem;overflow-x:auto;}
+.formula .f-name{font-weight:700;color:var(--accent);display:block;font-size:0.78rem;letter-spacing:0.04em;margin-bottom:0.3rem;}
+.formula .f-note{color:var(--muted);font-size:0.8rem;display:block;margin-top:0.3rem;}
+.viz-container{width:100%;background:var(--bg2);border-radius:12px;position:relative;overflow:hidden;margin:1.2rem 0;border:1px solid var(--rule);}
+.viz-caption{font-size:0.82rem;color:var(--muted);text-align:center;padding:0.5rem 1rem 1rem;font-style:italic;}
+pre{background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:0.8rem 1rem;margin:0.7rem 0;font-size:0.85rem;overflow-x:auto;font-family:var(--font-mono);}
+.highlight{background:rgba(183,121,59,0.08);border-left:3px solid var(--accent2);padding:0.3rem 0.8rem;}
+footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:0.8rem;color:var(--muted);font-family:var(--font-mono);}
+.master-badge{display:inline-flex;align-items:center;gap:6px;margin:6px 0 2px;padding:5px 13px;border:1px solid #8B5CF6;border-radius:999px;background:rgba(139,92,246,0.10);color:#7C3AED;font-size:0.82rem;font-weight:700;letter-spacing:0.02em;}
+.ref-list{font-size:0.88rem;line-height:1.6;}
+.ref-list li{margin-bottom:0.3rem;}
+</style>
+</head>
+<body>
+
+<article>
+<header style="margin-bottom:2.5rem;">
+  <div style="font:700 0.75rem var(--font-mono);letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);margin-bottom:0.6rem;">思想图谱系列 · 第七辑 · 进阶</div>
+  <h1 style="font-family:var(--font-head);font-size:2rem;font-weight:700;line-height:1.25;">经济思想谱系 · 上篇</h1>
+  <p style="font-family:var(--font-head);font-style:italic;font-size:1.05rem;color:var(--muted);margin-top:0.5rem;">硕士水平进阶模块 · 从理解到研究</p>
+  <div class="master-badge">硕士水平 · 8 个进阶模块 · 1 个 Three.js 3D 模型 · 2 个 Chart.js 图表 · 1 个动画演示</div>
+  <p style="font-size:0.8rem;color:var(--muted);margin-top:0.9rem;font-family:var(--font-mono);">建议在完成 11 个本科生升级附录后系统性研读 · 面向微观经济学基础</p>
+</header>
+
+<main>
+
+<!-- ===== 硕士导览 ===== -->
+<section class="sec" id="masters-prologue">
+  <h2><span class="chapno">进阶级</span>硕士水平进阶导览</h2>
+
+  <div class="callout">
+    <span class="callout-title">学习目标</span>
+    <p>从本科到硕士的跃迁，核心在于从"理解理论"转向"生产知识"。本科阶段要求掌握现有理论体系的框架、术语和基本应用；硕士阶段则需要具备批判性审视理论前提、形式化表达经济思想、独立设计研究方案的能力。本模块的八个章节对应微观经济学基础领域中的八个核心方向，旨在帮助读者完成这一跃迁。</p>
+  </div>
+
+  <p>本进阶模块的设计遵循三条主线。第一，<strong>理论深度</strong>：从一般均衡到机制设计，从期望效用到行为经济学，每一模块都深入理论的内核，而非停留在表面描述。第二，<strong>方法意识</strong>：经济学不仅是理论的集合，更是一套研究方法的体系——从微观计量到实验经济学，从结构估计到简约式估计，理解方法才能理解理论的边界。第三，<strong>研究导向</strong>：每一模块都指向可研究的问题，最终在第八模块整合为论文选题、研究方向和进阶文献。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>模块</th><th>主题</th><th>核心内容</th><th>交互式可视化</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>M1</strong></td><td>高阶理论框架</td><td>一般均衡·博弈论·机制设计</td><td>Three.js 三维均衡空间</td></tr>
+        <tr><td><strong>M2</strong></td><td>形式化与数学基础</td><td>消费者理论·对偶性·期望效用</td><td>Chart.js 阿莱悖论图示</td></tr>
+        <tr><td><strong>M3</strong></td><td>核心论文精读</td><td>五篇里程碑论文的深度评论</td><td>—</td></tr>
+        <tr><td><strong>M4</strong></td><td>研究方法论</td><td>微观计量·实验经济学·结构估计</td><td>Chart.js 方法谱系图</td></tr>
+        <tr><td><strong>M5</strong></td><td>前沿议题</td><td>行为公共政策·市场设计·信息经济学</td><td>匹配机制动画演示</td></tr>
+        <tr><td><strong>M6</strong></td><td>跨学科交叉</td><td>心理学·法律·政治学</td><td>—</td></tr>
+        <tr><td><strong>M7</strong></td><td>批判性分析</td><td>理性假设·一般均衡·实验有效性</td><td>—</td></tr>
+        <tr><td><strong>M8</strong></td><td>研究实践与论文</td><td>选题·问题·文献·写作规范</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== M1 ===== -->
+<section class="sec" id="masters-m1">
+  <h2><span class="chapno">M1</span>高阶理论框架</h2>
+
+  <h3>1.1 一般均衡理论：Arrow-Debreu 模型</h3>
+  <p>一般均衡理论（General Equilibrium Theory）是微观经济学理论大厦的顶峰。与局部均衡仅分析单一市场不同，一般均衡考虑所有市场之间的相互依赖关系。瓦尔拉斯（Walras, 1874）在《纯粹经济学要义》中首次提出了这一构想，但直到一个世纪后，阿罗（Arrow）与德布鲁（Debreu）才在 1954 年的经典论文中给出了均衡存在性的严格数学证明。</p>
+
+  <p>Arrow-Debreu 模型的核心架构建立在以下公理之上。经济中存在 <em>n</em> 种商品和 <em>m</em> 个消费者，每个消费者 <em>i</em> 拥有初始禀赋 <em>ω<sub>i</sub></em> ∈ ℝ<sup><em>n</em></sup><sub>+</sub> 和偏好关系 <em>⪰<sub>i</sub></em>。偏好满足完备性、传递性、连续性、严格单调性和严格凸性。生产部门由 <em>k</em> 个企业构成，每个企业 <em>j</em> 拥有生产可能性集 <em>Y<sub>j</sub></em> ⊆ ℝ<sup><em>n</em></sup>。在价格向量 <em>p</em> ∈ ℝ<sup><em>n</em></sup><sub>+</sub> 下，消费者在预算约束 <em>p · x<sub>i</sub> ≤ p · ω<sub>i</sub> + Σ<sub>j</sub> θ<sub>ij</sub> π<sub>j</sub>(p)</em> 下最大化效用，企业在技术约束 <em>y<sub>j</sub> ∈ Y<sub>j</sub></em> 下最大化利润 <em>π<sub>j</sub>(p) = p · y<sub>j</sub></em>。</p>
+
+  <div class="formula">
+    <span class="f-name">超额需求函数与均衡条件</span>
+    z(p) = Σ<sub>i</sub> x<sub>i</sub>(p) − Σ<sub>i</sub> ω<sub>i</sub> − Σ<sub>j</sub> y<sub>j</sub>(p) = 0
+    <span class="f-note">均衡价格 p* 使所有市场的超额需求同时为零。瓦尔拉斯定律：p · z(p) ≡ 0，即 n 个市场中若有 n−1 个出清，则第 n 个自动出清</span>
+  </div>
+
+  <p>Arrow-Debreu 模型的重要性不仅在于存在性证明本身，更在于它所依赖的数学工具——角谷静夫不动点定理（Kakutani Fixed Point Theorem）——成为此后经济学形式化的标准方法。德布鲁在《价值理论》（1959）中进一步将这一框架公理化，确立了现代微观经济学的形式范式。</p>
+
+  <h3>1.2 福利经济学两大定理</h3>
+  <p>福利经济学第一定理指出：在完全竞争市场中，任何竞争均衡都是帕累托最优的。这一定理为亚当·斯密"看不见的手"提供了严格的数学证明。其核心逻辑是：竞争均衡中，所有消费者的边际替代率相等且等于边际转换率，满足了帕累托最优的一阶条件。然而，第一定理并未涉及分配公平——一个乞丐和一个亿万富翁的竞争均衡同样可以是帕累托最优的。</p>
+
+  <p>福利经济学第二定理则提供了分离效率与公平的理论基础：在凸性条件下，任何帕累托最优配置都可以通过适当的初始禀赋再分配和竞争市场来实现。这意味着社会可以将"蛋糕如何分配"的问题交给转移支付，而将"蛋糕做大"的任务交给市场。这一定理在理论上支持了"市场+再分配"的政策组合，如米尔顿·弗里德曼的负所得税方案和现代福利国家的税收转移体系。</p>
+
+  <h3>1.3 博弈论的扩展形式与纳什均衡的精炼</h3>
+  <p>纳什（Nash, 1950）定义的纳什均衡是博弈论的核心概念：在均衡状态下，没有任何参与者可以通过单方面改变策略而获益。然而，在动态博弈和多阶段博弈中，纳什均衡存在过多的问题——很多在直觉上不合理的结果也满足纳什均衡的定义。这促使了精炼（refinement）概念的提出。</p>
+
+  <p><strong>子博弈完美均衡（Subgame Perfect Equilibrium, SPE）</strong>由泽尔腾（Selten, 1965）提出。SPE 要求策略不仅在整博弈中构成纳什均衡，而且在每一个子博弈中也构成纳什均衡。逆向归纳法（Backward Induction）是求解 SPE 的标准方法。一个经典案例是"进入威胁"博弈：在位者威胁对进入者发动价格战，但这一威胁在子博弈中不可信——因为一旦进入发生，发动价格战同样损害在位者自身利益。SPE 剔除了这种"空头威胁"。</p>
+
+  <p><strong>贝叶斯纳什均衡（Bayesian Nash Equilibrium, BNE）</strong>由海萨尼（Harsanyi, 1967）创立。海萨尼引入了"类型"（type）概念和"海萨尼转换"（Harsanyi Transformation）——将不完全信息博弈转化为完全但不完美信息博弈。在 BNE 中，每个参与者根据自身类型和其他参与者的类型分布做出最优反应。拍卖理论是 BNE 最成功的应用领域：在密封投标拍卖中，每个竞标者根据自己对标的物的估值（私有类型）和对其他竞标者估值的信念来制定报价策略。</p>
+
+  <div class="formula">
+    <span class="f-name">贝叶斯纳什均衡的定义</span>
+    策略组合 σ* = (σ*<sub>1</sub>, …, σ*<sub>n</sub>) 是贝叶斯纳什均衡，当且仅当对每个参与者 i 和每种类型 θ<sub>i</sub> ∈ Θ<sub>i</sub>：
+    E<sub>θ<sub>−i</sub></sub>[ u<sub>i</sub>(σ*<sub>i</sub>(θ<sub>i</sub>), σ*<sub>−i</sub>(θ<sub>−i</sub>), θ<sub>i</sub>, θ<sub>−i</sub>) ] ≥ E<sub>θ<sub>−i</sub></sub>[ u<sub>i</sub>(a<sub>i</sub>, σ*<sub>−i</sub>(θ<sub>−i</sub>), θ<sub>i</sub>, θ<sub>−i</sub>) ], ∀ a<sub>i</sub> ∈ A<sub>i</sub>
+    <span class="f-note">其中 θ<sub>i</sub> 是参与者的私有类型，θ<sub>−i</sub> 是其他参与者的类型向量</span>
+  </div>
+
+  <h3>1.4 机制设计理论</h3>
+  <p>机制设计理论（Mechanism Design Theory）可以被视为"反向博弈论"——不是给定博弈规则求解均衡，而是给定目标结果设计博弈规则。赫维茨（Hurwicz, 1972）奠定了这一理论的基础，而迈尔森（Myerson, 1981）则通过显示原理（Revelation Principle）将其推向应用。</p>
+
+  <p>显示原理是机制设计理论中最深刻的结果之一：任何可以由某种复杂机制实现的社会选择函数，都可以由一个直接显示机制（参与者直接报告自己的类型）来实现，且在该直接机制中，诚实报告是均衡策略。这一原理极大地简化了机制设计问题的分析空间——设计者只需要考虑"激励相容的直接机制"即可。</p>
+
+  <p>迈尔森在 1981 年的论文中，运用显示原理推导了最优拍卖设计（Optimal Auction Design）的完整解。在独立私有价值的假设下，迈尔森证明：最优拍卖并非标准的英式拍卖，而是带有"保留价"（reserve price）的第二价格拍卖。保留价高于卖者自身的估值，其目的是为了从高估值竞标者那里抽取更多租金。这一结论对现实拍卖设计产生了深远影响——从无线频谱拍卖到艺术品拍卖，保留价的设计已成为标准实践。</p>
+
+  <div class="callout">
+    <span class="callout-title">关键学者</span>
+    <p>肯尼斯·阿罗（Kenneth Arrow, 1921–2017）、杰拉德·德布鲁（Gerard Debreu, 1921–2004）、莱因哈德·泽尔腾（Reinhard Selten, 1930–2016）、约翰·海萨尼（John Harsanyi, 1920–2000）、利奥尼德·赫维茨（Leonid Hurwicz, 1917–2008）、罗杰·迈尔森（Roger Myerson, 1951–）。其中阿罗、德布鲁、泽尔腾、海萨尼、迈尔森均为诺贝尔经济学奖得主。</p>
+  </div>
+
+  <!-- Three.js 3D: 一般均衡的三维可视化 -->
+  <h3>1.5 一般均衡的三维可视化：瓦拉斯均衡空间</h3>
+  <p>下图展示了一个简化的一般均衡三维空间。横轴代表商品 X 的数量，纵轴代表商品 Y 的效用，深度轴代表价格水平 P。蓝色曲面表示消费者在给定价格下的效用最大化轨迹，橙色曲面表示生产者利润最大化轨迹。两曲面的交线构成均衡路径，而交线上的红点标记了瓦拉斯均衡点——在该点处，所有市场同时出清。</p>
+
+  <div class="viz-container" style="height:440px;">
+    <canvas id="viz-3d-ge" style="width:100%;height:100%;display:block;"></canvas>
+  </div>
+  <div class="viz-caption">图 M1-1 · 一般均衡三维空间。蓝色曲面：消费者效用最大化轨迹；橙色曲面：生产者利润最大化轨迹；红色球体：瓦拉斯均衡点。视角自动旋转，揭示均衡在价格—数量—效用三维空间中的位置。</div>
+
+  <p>该三维模型直观展示了 Arrow-Debreu 一般均衡的核心几何直觉：在适当的价格向量 p* 下，消费者的最优消费计划与生产者的最优生产计划恰好相容，所有市场的超额需求同时为零。转动视角可以观察到，均衡点位于两个曲面的"交线"上——这正是瓦尔拉斯定律的几何表现：n 个市场同时出清。</p>
+</section>
+
+<!-- ===== M2 ===== -->
+<section class="sec" id="masters-m2">
+  <h2><span class="chapno">M2</span>形式化与数学基础</h2>
+
+  <h3>2.1 消费者理论的数学形式化</h3>
+  <p>现代消费者理论建立在偏好关系的公理化处理之上。设消费集 <em>X</em> ⊆ ℝ<sup><em>n</em></sup><sub>+</sub>，消费者偏好由二元关系 <em>⪰</em> 表示。德布鲁（Debreu, 1954）的表示定理（Representation Theorem）是这一领域的基础性贡献：如果偏好关系 <em>⪰</em> 满足完备性、传递性和连续性，则存在一个连续的效用函数 <em>u: X → ℝ</em> 使得 <em>x ⪰ y</em> 当且仅当 <em>u(x) ≥ u(y)</em>。</p>
+
+  <p>这一定理的重要意义在于，它为使用微积分方法分析消费者行为提供了合法性基础。一旦效用函数存在，消费者最优选择问题就可以表述为约束优化问题：</p>
+
+  <div class="formula">
+    <span class="f-name">消费者效用最大化问题</span>
+    max<sub>x ∈ X</sub> u(x)  s.t.  p · x ≤ w
+    <span class="f-note">一阶条件：∂u/∂x<sub>i</sub> = λ p<sub>i</sub>，即边际效用与价格之比在所有商品上相等</span>
+  </div>
+
+  <p>马歇尔需求函数 <em>x(p, w)</em> 和间接效用函数 <em>v(p, w) = u(x(p, w))</em> 是消费者理论的核心概念。罗伊恒等式（Roy's Identity）将两者联系起来：<em>x<sub>i</sub>(p, w) = −(∂v/∂p<sub>i</sub>)/(∂v/∂w)</em>。希克斯需求函数（补偿需求函数）<em>h(p, u)</em> 则从支出最小化问题导出，斯卢茨基方程（Slutsky Equation）揭示了价格变化的总效应 = 替代效应 + 收入效应。</p>
+
+  <div class="formula">
+    <span class="f-name">斯卢茨基方程</span>
+    ∂x<sub>i</sub>(p, w)/∂p<sub>j</sub> = ∂h<sub>i</sub>(p, u)/∂p<sub>j</sub> − x<sub>j</sub>(p, w) · ∂x<sub>i</sub>(p, w)/∂w
+    <span class="f-note">替代效应为负（希克斯需求定律），收入效应方向取决于商品是正常品还是劣等品</span>
+  </div>
+
+  <h3>2.2 生产者的对偶理论</h3>
+  <p>生产者的对偶性（Duality）是微观经济学中一个美妙的理论结构。企业的生产活动可以从四个角度等价描述：生产函数 <em>f(x)</em>、成本函数 <em>C(w, q)</em>、利润函数 <em>π(p, w)</em> 和条件要素需求函数 <em>x(w, q)</em>。谢泼德引理（Shephard's Lemma）和霍特林引理（Hotelling's Lemma）构成了对偶性中的核心关系。</p>
+
+  <div class="formula">
+    <span class="f-name">谢泼德引理与霍特林引理</span>
+    谢泼德引理：∂C(w, q)/∂w<sub>i</sub> = x<sub>i</sub>(w, q)（条件要素需求 = 成本函数对要素价格的偏导）
+    霍特林引理：∂π(p, w)/∂p = y(p, w)（供给函数 = 利润函数对产出价格的偏导）
+    <span class="f-note">对偶性使我们能够从成本函数或利润函数中恢复出生产函数的所有信息</span>
+  </div>
+
+  <p>对偶理论的实践意义在于：成本函数可以直接从可观测的要素价格和产出数据中估计，而不需要直接观测生产函数。这极大地便利了实证研究。在实证产业组织（Empirical IO）中，对偶方法被广泛应用于估计企业的市场势力和规模经济程度。</p>
+
+  <h3>2.3 不确定性下的选择</h3>
+  <p>冯·诺伊曼与摩根斯坦（von Neumann & Morgenstern, 1944）在《博弈论与经济行为》中提出的期望效用定理（Expected Utility Theorem）是不确定性经济学的基石。该定理从一组关于偏好的公理（完备性、传递性、连续性、独立性）出发，证明了存在一个效用函数 <em>u: ℝ → ℝ</em> 使得决策者对所有抽奖（lottery）的偏好可以通过期望效用 <em>U(L) = Σ<sub>i</sub> p<sub>i</sub> · u(x<sub>i</sub>)</em> 来排序。</p>
+
+  <p>独立性公理（Independence Axiom）是期望效用理论中最关键的假设，也是最受挑战的假设。它要求：如果抽奖 A 优于抽奖 B，则对任意抽奖 C 和概率 p，混合抽奖 pA + (1−p)C 优于 pB + (1−p)C。阿莱悖论（Allais Paradox, 1953）正是对这一公理的著名挑战。</p>
+
+  <!-- Chart.js: 期望效用函数与阿莱悖论 -->
+  <h3>2.4 期望效用理论与阿莱悖论图示</h3>
+  <p>下图展示了期望效用理论的核心机制以及阿莱悖论如何挑战独立性公理。左侧面板显示了期望效用函数曲线（在恒定绝对风险厌恶 CARA 假设下），右侧面板对比了阿莱悖论中两种选择情境下的期望效用差异，揭示了个体在风险决策中的系统性偏差。</p>
+
+  <div class="viz-container" style="height:400px;padding:15px;">
+    <canvas id="chart-allais" style="width:100%;height:100%;"></canvas>
+  </div>
+  <div class="viz-caption">图 M2-1 · 上：期望效用函数曲线（CARA 效用函数 u(w) = −e<sup>−αw</sup>），显示风险厌恶程度随财富变化的趋势。下：阿莱悖论两种选择情境的期望效用对比，红色虚线标示独立性公理被违反的临界点。</div>
+
+  <p>阿莱悖论的具体情境如下。情境一：选项 A 确定获得 100 万美元；选项 B 有 10% 概率获得 500 万美元、89% 概率获得 100 万美元、1% 概率获得 0。大多数人在此情境中选择 A（确定性效应）。情境二：选项 C 有 11% 概率获得 100 万美元、89% 概率获得 0；选项 D 有 10% 概率获得 500 万美元、90% 概率获得 0。大多数人在此情境中选择 D。这种偏好模式同时违反了独立性公理——因为两个情境中的选择差异无法用期望效用函数一致地表示。</p>
+
+  <p>卡尼曼和特沃斯基（Kahneman & Tversky, 1979）的前景理论（Prospect Theory）为阿莱悖论提供了更好的解释。前景理论的核心创新包括：价值函数在参考点附近呈 S 形（收益域凸、损失域凹）、概率权重函数（小概率被高估、大概率被低估）、损失厌恶（损失带来的痛苦约等于等量收益带来的快乐的 2 倍）。这些特征共同解释了阿莱悖论以及大量其他与期望效用理论相悖的实验证据。</p>
+
+  <div class="callout">
+    <span class="callout-title">关键学者</span>
+    <p>约翰·冯·诺伊曼（John von Neumann, 1903–1957）、奥斯卡·摩根斯坦（Oskar Morgenstern, 1902–1977）、莫里斯·阿莱（Maurice Allais, 1911–2010）、丹尼尔·卡尼曼（Daniel Kahneman, 1934–2024）、阿莫斯·特沃斯基（Amos Tversky, 1937–1996）。冯·诺伊曼与摩根斯坦奠定了博弈论与期望效用理论的基础；阿莱以悖论挑战了该理论；卡尼曼与特沃斯基以前景理论开创了行为经济学。</p>
+  </div>
+</section>
+
+<!-- ===== M3 ===== -->
+<section class="sec" id="masters-m3">
+  <h2><span class="chapno">M3</span>核心论文精读</h2>
+
+  <p>本模块精选五篇在经济思想史上具有里程碑意义的论文，每篇附 300 字以上的学术评论，涵盖研究背景、核心贡献、方法论意义和后续影响。</p>
+
+  <h3>3.1 Arrow-Debreu (1954) 《竞争经济的均衡存在性》</h3>
+  <div class="callout">
+    <span class="callout-title">论文信息</span>
+    <p>Arrow, K. J. & Debreu, G. (1954). Existence of an Equilibrium for a Competitive Economy. <em>Econometrica</em>, 22(3), 265–290.</p>
+  </div>
+  <p>这篇论文是现代一般均衡理论的奠基之作。在瓦尔拉斯 1874 年提出一般均衡概念后的八十年间，尽管学者们直觉上相信竞争均衡应当存在，但从未有人给出严格的数学证明。Arrow 和 Debreu 运用角谷静夫不动点定理，在偏好凸性、生产集凸性、严格正的价格等公理条件下，证明了竞争均衡的存在性。</p>
+  <p>从方法论角度看，这篇论文的贡献远远超出了存在性证明本身。它展示了如何将经济问题转化为数学形式系统，如何选择适当的数学工具（不动点定理），以及如何通过公理化的方式厘清经济假设的逻辑结构。德布鲁后来在《价值理论》（1959）中将这一方法发挥到极致，使得"公理化方法"成为现代经济学的标准范式。尽管一般均衡理论在实证应用中面临诸多挑战（如计算的复杂性、对凸性假设的依赖），但 Arrow-Debreu 框架仍然是经济理论家理解市场运行的基本参照系。正如哈恩（Hahn, 1973）所言："不了解一般均衡理论的经济学家，就像一个不懂牛顿力学的物理学家。"</p>
+
+  <h3>3.2 Harsanyi (1967) 《不完全信息博弈》</h3>
+  <div class="callout">
+    <span class="callout-title">论文信息</span>
+    <p>Harsanyi, J. C. (1967). Games with Incomplete Information Played by "Bayesian" Players. <em>Management Science</em>, 14(3), 159–182.</p>
+  </div>
+  <p>海萨尼在这篇论文中解决了博弈论中的一个根本性难题：如何分析参与者之间信息不对称的博弈？在此之前，博弈论主要处理完全信息博弈——每个参与者都知道所有人的支付函数，但这与现实严重不符。海萨尼的创造性贡献在于提出了"海萨尼转换"：将不完全信息博弈转化为完全但不完美信息博弈。具体做法是引入一个"虚拟的"自然（Nature）先行动，为每个参与者分配一个"类型"（type），然后参与者根据类型做出决策。</p>
+  <p>这一转换的重要性无论如何强调都不为过。它使经济学家能够分析大量现实世界中充满不确定性的互动场景——拍卖、谈判、合同、监管——在这些场景中，一方总是比另一方掌握更多信息。海萨尼的工作为信息经济学、拍卖理论、机制设计理论提供了统一的分析框架。蒂罗尔（Tirole, 1988）在《产业组织理论》中评价道："海萨尼转换是二十世纪经济学最具原创性的方法论贡献之一。"</p>
+
+  <h3>3.3 Myerson (1981) 《最优拍卖设计》</h3>
+  <div class="callout">
+    <span class="callout-title">论文信息</span>
+    <p>Myerson, R. B. (1981). Optimal Auction Design. <em>Mathematics of Operations Research</em>, 6(1), 58–73.</p>
+  </div>
+  <p>迈尔森的这篇论文是机制设计理论应用于拍卖问题的完美范例。在独立私有价值（Independent Private Values, IPV）的假设下，迈尔森运用显示原理将问题简化为寻找最优的直接显示机制。他证明了收益等价定理（Revenue Equivalence Theorem）——在标准假设下，英式拍卖、荷式拍卖、第一价格密封拍卖和第二价格密封拍卖产生相同的期望收益——并进一步推导了最优拍卖的结构：设置一个高于卖者估值的保留价，然后采用第二价格拍卖机制。</p>
+  <p>最优保留价的存在是迈尔森分析中最反直觉的结论之一。从效率角度看，保留价会造成"无效率排除"——某些估值高于卖者成本但低于保留价的竞标者被排除在外。但迈尔森证明，在卖者追求自身收益最大化的目标下，这种排除是理性的：保留价从高估值竞标者那里抽取的额外租金超过了排除低估值竞标者造成的损失。这一理论对实践产生了深远影响。1994 年美国联邦通信委员会（FCC）的无线频谱拍卖设计直接借鉴了迈尔森的理论成果，此后全球数十个国家的频谱拍卖、碳配额拍卖、艺术品拍卖都采用了保留价机制。</p>
+
+  <h3>3.4 Kahneman-Tversky (1979) 《前景理论》</h3>
+  <div class="callout">
+    <span class="callout-title">论文信息</span>
+    <p>Kahneman, D. & Tversky, A. (1979). Prospect Theory: An Analysis of Decision under Risk. <em>Econometrica</em>, 47(2), 263–291.</p>
+  </div>
+  <p>这篇论文是行为经济学的奠基之作，也是社会科学领域被引用次数最多的论文之一（截至 2024 年引用超过 10 万次）。卡尼曼和特沃斯基通过一系列精心设计的心理学实验，系统性地揭示了期望效用理论在预测人类决策时的系统性失败。他们提出了前景理论作为替代框架，其核心要素包括：</p>
+  <p>第一，价值函数（Value Function）在参考点（Reference Point）处发生转折，收益域呈凹形（风险规避）而损失域呈凸形（风险寻求），且在损失域的斜率更陡峭——损失厌恶系数约为 2。第二，决策权重函数（Decision Weighting Function）将客观概率转换为主观权重，小概率被高估（如购买彩票），大概率被低估（如不购买保险）。第三，框架效应（Framing Effect）表明，同一决策问题在不同的表述方式下会引发不同的选择——"存活率 90%" 比 "死亡率 10%" 更让人愿意接受手术。</p>
+  <p>前景理论的经济学意义在于：它并非边际修正，而是对理性人假设的根本性挑战。如果人类的决策是系统性地偏离理性的，那么以理性假设为基础的经济学理论大厦（从消费者理论到公司金融到公共政策）就需要重新审视。2002 年，卡尼曼因这一贡献获得诺贝尔经济学奖（特沃斯基于 1996 年去世，未能共享荣誉）。塞勒（Thaler, 2017 年诺贝尔奖得主）将前景理论扩展为"助推"（Nudge）理论，应用于公共政策设计。</p>
+
+  <h3>3.5 Akerlof (1970) 《柠檬市场》</h3>
+  <div class="callout">
+    <span class="callout-title">论文信息</span>
+    <p>Akerlof, G. A. (1970). The Market for "Lemons": Quality Uncertainty and the Market Mechanism. <em>Quarterly Journal of Economics</em>, 84(3), 488–500.</p>
+  </div>
+  <p>阿克洛夫的这篇论文是信息经济学最著名的开创性作品。它以二手车市场为切入点，揭示了信息不对称如何导致市场失灵。在二手车市场上，卖方比买方更了解车况。买方只能按平均质量出价，这导致优质车（"桃子"）的卖者不愿意以低于真实价值的价格出售而退出市场，市场上只剩下劣质车（"柠檬"）。这一过程持续下去，市场可能完全萎缩甚至消失。</p>
+  <p>"柠檬市场"揭示了一个令人不安却普遍存在的现象：信息不对称不仅能导致市场效率下降，还能导致市场彻底崩溃。这一洞察的应用范围远远超出了二手车市场。保险市场中，投保人比保险公司更了解自身风险，导致高风险个体驱逐低风险个体（逆向选择）。信贷市场中，借款人比银行更了解自身还款能力，高违约风险借款人更积极寻求贷款，推高利率，挤出低风险借款人。劳动力市场中，雇主无法准确判断求职者的能力，只能按平均生产力支付工资，导致高能力者退出市场。</p>
+  <p>阿克洛夫的论文还提出了解决信息不对称的三类方案：信号发送（Signaling，如斯彭斯的教育信号模型）、信息甄别（Screening，如斯蒂格利茨的保险市场模型）、声誉机制与第三方认证（如二手车鉴定、信用评级）。2001 年，阿克洛夫与斯彭斯（Spence）、斯蒂格利茨（Stiglitz）共同因信息经济学的贡献获得诺贝尔经济学奖。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>论文</th><th>发表年份</th><th>期刊</th><th>核心贡献</th><th>后续影响领域</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Arrow-Debreu</td><td>1954</td><td><em>Econometrica</em></td><td>一般均衡存在性证明</td><td>数理经济学、宏观经济学</td></tr>
+        <tr><td>Harsanyi</td><td>1967</td><td><em>Management Science</em></td><td>不完全信息博弈框架</td><td>博弈论、信息经济学</td></tr>
+        <tr><td>Myerson</td><td>1981</td><td><em>Math. of Operations Research</em></td><td>最优拍卖设计</td><td>机制设计、市场设计</td></tr>
+        <tr><td>Kahneman-Tversky</td><td>1979</td><td><em>Econometrica</em></td><td>前景理论</td><td>行为经济学、金融学</td></tr>
+        <tr><td>Akerlof</td><td>1970</td><td><em>QJE</em></td><td>柠檬市场理论</td><td>信息经济学、劳动经济学</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== M4 ===== -->
+<section class="sec" id="masters-m4">
+  <h2><span class="chapno">M4</span>研究方法论</h2>
+
+  <h3>4.1 微观计量方法</h3>
+  <p>微观计量经济学（Microeconometrics）是经济学实证研究的方法论基石。从最基础的 OLS 到前沿的因果推断方法，微观计量方法构成了经济学家"工具箱"的核心。以下逐一梳理最重要的方法及其在微观经济学研究中的应用。</p>
+
+  <p><strong>普通最小二乘法（OLS）</strong>是计量经济学的起点。在标准高斯-马尔可夫假设下，OLS 估计量是线性无偏估计量中方差最小的（BLUE）。然而，OLS 的有效性严重依赖于条件独立性假设——解释变量必须与误差项不相关。在大多数经济学应用中，这一假设因遗漏变量偏误、反向因果、测量误差等原因而难以满足。正是这一局限性催生了更复杂的因果推断方法。</p>
+
+  <p><strong>工具变量法（IV）</strong>是解决内生性问题的经典方法。一个有效的工具变量必须满足两个条件：相关性（与内生解释变量相关）和排他性（仅通过内生解释变量影响结果变量）。安格里斯特和克鲁格（Angrist & Krueger, 1991）使用出生季度作为教育年限的工具变量来估计教育回报率，是 IV 方法在劳动经济学中的经典应用。然而，寻找好的工具变量在实证研究中始终是最大的挑战——弱工具变量会导致估计量有偏且标准误巨大。</p>
+
+  <p><strong>双重差分法（DiD）</strong>是政策评估中使用最广泛的方法之一。DiD 通过比较处理组在政策实施前后的变化与对照组在同一时期的变化之差来识别因果效应。其核心假设是平行趋势假设——在无政策干预的情况下，处理组和对照组的结果变量应沿着平行路径变化。卡德和克鲁格（Card & Krueger, 1994）使用 DiD 方法研究最低工资对就业的影响，是这一方法的标杆性应用。</p>
+
+  <p><strong>断点回归设计（RDD）</strong>利用分配变量在阈值处的不连续性来识别因果效应。当处理状态由某个变量是否超过阈值决定时，在阈值附近的小邻域内，处理组和控制组在几乎所有维度上都是可比的，因此可以认为阈值的因果效应近似于随机实验。李（Lee, 2008）关于美国众议院选举中连任优势的研究是 RDD 的经典范例。RDD 的优势在于其识别假设相对较弱，被许多计量经济学家视为仅次于随机实验的"金牌标准"。</p>
+
+  <!-- Chart.js: 微观计量方法谱系对比图 -->
+  <h3>4.2 微观计量方法谱系</h3>
+  <p>下图对比了四种主要微观计量方法在核心维度上的差异：对内生性问题的处理能力、假设强度、外部有效性和应用场景。横轴代表方法的"因果识别强度"，纵轴代表"应用灵活度"。</p>
+
+  <div class="viz-container" style="height:420px;padding:15px;">
+    <canvas id="chart-methods" style="width:100%;height:100%;"></canvas>
+  </div>
+  <div class="viz-caption">图 M4-1 · 微观计量方法谱系对比图。气泡大小代表方法在经济学文献中的使用频率。颜色区分：绿色系为"因果推断"方法，橙色系为"结构估计"方法。横轴位置反映方法的因果识别强度，纵轴位置反映应用灵活度。</div>
+
+  <h3>4.3 实验经济学方法论</h3>
+  <p>实验经济学（Experimental Economics）是过去三十年经济学方法论中最具活力的发展之一。弗农·史密斯（Vernon Smith, 2002 年诺贝尔经济学奖得主）是这一领域的开创者。史密斯在 1960 年代至 1970 年代设计了一系列市场实验，验证了竞争均衡理论在受控实验室环境中的预测力。他发展的"诱导价值方法"（Induced Value Theory）为实验经济学提供了标准化的激励工具：通过向实验参与者支付与表现挂钩的现金报酬，实验者可以在实验室中"诱导"出参与者的真实偏好。</p>
+
+  <p>卡格尔（Kagel）和罗斯（Roth）编辑的《实验经济学手册》（1995）是这一领域的标准参考。该手册系统总结了实验经济学的方法论规范，包括：实验设计的内部有效性（随机分配、控制组）、激励机制的兼容性（真实激励而非假设性选择）、实验程序的标准化（双盲程序、计算机化实验）、以及数据的统计分析方法。实验经济学的方法论贡献在于：它证明了经济学理论可以在实验室中被检验，而不仅仅是"数学推导的产物"。</p>
+
+  <p>实验经济学面临的核心方法论挑战是<strong>外部有效性</strong>问题——实验室中观察到的行为模式能否推广到现实世界？学生志愿者作为实验参与者是否能代表真实市场的参与主体？实验室中的小额激励能否反映真实世界中的大额决策？列文（Levitt）和李斯特（List, 2007）在《经济文献杂志》上的综述文章对外部有效性提出了尖锐批评，引发了一场持续至今的方法论辩论。</p>
+
+  <h3>4.4 结构估计与简约式估计的争论</h3>
+  <p>实证经济学中存在着一个深刻的方法论分野：结构估计（Structural Estimation）与简约式估计（Reduced-Form Estimation）之争。简约式方法以 Angrist 和 Pischke（2009）的《基本无害的计量经济学》为代表，强调干净的研究设计、明确的因果识别策略、以及对理论模型的弱依赖。结构方法以 Rust（1987）关于公交车发动机更换的动态决策模型为代表，强调从理论模型出发，通过估计深层参数（如贴现因子、风险偏好、固定成本）来预测政策变化带来的新均衡结果。</p>
+
+  <p>这场争论的实质是"内部有效性"与"外部有效性"之间的权衡。简约式方法在识别特定政策在特定环境下的因果效应方面具有优势，但难以将结果外推到不同的政策环境。结构方法在预测反事实政策和政策变化的福利效应方面具有优势，但依赖于大量理论假设，且估计结果对假设的敏感性较高。近年来，两派方法正在走向融合。例如，在产业组织领域，学者们越来越多地使用"半结构方法"——在简约式估计的基础上，通过结构模型的逻辑来解释估计结果并预测反事实（如 Nevo & Whinston, 2010）。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>方法</th><th>核心优势</th><th>主要局限</th><th>代表学者</th><th>经典应用</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>OLS</strong></td><td>简单、透明、BLUE</td><td>内生性偏误</td><td>高斯、马尔可夫</td><td>描述性统计、基准回归</td></tr>
+        <tr><td><strong>IV</strong></td><td>处理内生性</td><td>弱工具变量</td><td>Angrist、Krueger</td><td>教育回报率</td></tr>
+        <tr><td><strong>DiD</strong></td><td>处理时间异质性</td><td>平行趋势假设</td><td>Card、Krueger</td><td>最低工资效应</td></tr>
+        <tr><td><strong>RDD</strong></td><td>近似随机实验</td><td>外部有效性有限</td><td>Lee、Imbens</td><td>选举效应</td></tr>
+        <tr><td><strong>结构估计</strong></td><td>预测反事实</td><td>模型假设强</td><td>Rust、Wolpin</td><td>动态决策</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== M5 ===== -->
+<section class="sec" id="masters-m5">
+  <h2><span class="chapno">M5</span>前沿议题</h2>
+
+  <h3>5.1 行为经济学的前沿：助推理论与行为公共政策</h3>
+  <p>塞勒（Thaler, 2017 年诺贝尔经济学奖得主）和桑斯坦（Sunstein）在 2008 年出版的《助推》（Nudge）一书中，系统阐述了"自由意志家长主义"（Libertarian Paternalism）的理念。其核心思想是：在不剥夺人们选择自由的前提下，通过改变"选择架构"（Choice Architecture）来引导人们做出更有利于自身福利的决策。这种干预被称为"助推"。</p>
+
+  <p>助推的经典案例包括：默认选项设置（如退休储蓄计划的自动加入而非自主选择加入）、社会规范信息的传递（如向居民告知邻居的平均用电量以降低自身用电量）、简化选择（如减少医疗保险方案的数量以降低选择困难）。这些干预的共同特点是：成本极低、不强制、但效果显著。英国行为洞察团队（BIT，俗称"助推小组"）是世界上第一个将行为经济学系统应用于公共政策的政府机构，自 2010 年成立以来，在税收、健康、教育、能源等领域实施了数百项助推干预。</p>
+
+  <p>行为公共政策面临的伦理争议不容忽视。批评者指出，助推本质上是一种"精英操纵"——政府利用行为科学的知识来引导公民做出政策制定者认为"正确"的选择，这与民主社会的自主原则存在张力。桑斯坦的回应是"透明性原则"：助推应当公开透明，公民应当能够意识到自己被助推，并自由选择退出。</p>
+
+  <h3>5.2 市场设计：Roth 的匹配市场理论</h3>
+  <p>埃尔文·罗斯（Alvin Roth, 2012 年诺贝尔经济学奖得主）的市场设计理论将博弈论和机制设计应用于现实世界的匹配问题。匹配市场（Matching Market）区别于传统的"价格-商品"市场：在匹配市场中，价格机制不能完全解决资源配置问题，因为"谁和谁匹配"本身至关重要——例如，医学院毕业生与住院医师培训项目的匹配、学生与学校的匹配、肾移植供体与受体的匹配。</p>
+
+  <p>罗斯最著名的贡献之一是重新设计了美国国家住院医师匹配项目（NRMP）。在旧的匹配机制下，医院和医学生都有动机策略性地操纵自己的偏好报告（例如，医院可能故意压低对某些学生的排名以期待在第二轮匹配中获得他们），导致匹配效率低下。罗斯证明了 Gale-Shapley 延迟接受算法（Deferred Acceptance Algorithm）在 NRMP 中的适用性，并设计了"医生提议"版本的算法，使得真实报告偏好成为占优策略。新机制自 1998 年实施以来，每年匹配约 4 万 名医学生，匹配率超过 95%，且参与者的策略性操纵行为大幅减少。</p>
+
+  <p>学校选择问题是市场设计的另一个重要应用领域。在波士顿、纽约、芝加哥等城市，公立学校入学分配长期采用"波士顿机制"（Boston Mechanism），但这一机制存在严重的策略操纵问题——家长必须根据学校的竞争激烈程度而非真实偏好来排序。罗斯等人为纽约市和波士顿设计了基于延迟接受算法的学校选择系统，使真实报告偏好成为最优策略，大幅提高了分配效率。</p>
+
+  <!-- 动画：市场匹配机制的动态演示 -->
+  <h3>5.3 市场匹配机制的动态演示</h3>
+  <p>下图使用动画演示了 Gale-Shapley 延迟接受算法在"学生-学校"匹配中的运行过程。左侧为学生队列，右侧为学校队列。每一步，学生向当前最偏好的学校提出申请，学校暂时保留排名靠前的申请者，拒绝其他申请者。被拒绝的学生继续向下一偏好学校提出申请，如此循环直到所有申请者要么被暂时接受、要么已申请完所有可选的学校。</p>
+
+  <div class="viz-container" style="height:450px;padding:15px;">
+    <canvas id="anim-matching" style="width:100%;height:100%;display:block;"></canvas>
+  </div>
+  <div class="viz-caption">图 M5-1 · Gale-Shapley 延迟接受算法动态演示。左侧方块代表学生（按偏好排序），右侧方块代表学校（带容量限制）。绿色连线表示当前匹配，红色连线表示被拒绝的申请，蓝色连线表示最终稳定匹配。动画自动循环运行。</div>
+
+  <h3>5.4 信息经济学前沿</h3>
+  <p>信息经济学的前沿发展已经超越了 Akerlof、Spence、Stiglitz 的经典框架。在<strong>甄别模型</strong>（Screening）方面，斯蒂格利茨（Stiglitz, 1975）和罗斯柴尔德（Rothschild）的贡献构成了现代保险市场理论的基础。在保险市场中，保险公司面临"双重信息不对称"：投保前是逆向选择（高风险个体更可能购买保险），投保后是道德风险（有保险的个体更可能从事高风险行为）。最优保险合约设计需要在激励相容和风险分担之间进行权衡。</p>
+
+  <p><strong>斯彭斯信号模型</strong>（Spence, 1973）是劳动力市场信息不对称分析的经典框架。在斯彭斯模型中，高能力劳动者通过"教育信号"（如名校文凭）来向雇主传递自己的真实能力。教育信号有效的条件是：高能力者获得教育的成本低于低能力者（"单交叉条件"）。斯彭斯模型的一个重要见解是：即使教育本身并不提高劳动者的生产力（即教育仅为信号而非人力资本投资），教育信号仍然可以存在——但这种"纯信号"均衡可能是社会无效率的，因为社会资源浪费在无生产力的教育支出上。</p>
+
+  <p>近年来，信息经济学与数字经济的融合产生了新的前沿议题。平台经济学中的数据隐私、算法定价中的信息不对称、推荐系统中的信息操纵——这些新问题在经典信息经济学框架中并未涵盖，需要新的理论工具。例如，在数字平台中，平台掌握用户的行为数据（信息优势），而用户对平台如何使用这些数据知之甚少（信息劣势），这种新型信息不对称如何影响市场效率和福利分配，是当前信息经济学研究的前沿方向。</p>
+
+  <div class="callout">
+    <span class="callout-title">关键学者</span>
+    <p>理查德·塞勒（Richard Thaler, 1945–）、卡斯·桑斯坦（Cass Sunstein, 1954–）、埃尔文·罗斯（Alvin Roth, 1951–）、劳埃德·沙普利（Lloyd Shapley, 1923–2016）、约瑟夫·斯蒂格利茨（Joseph Stiglitz, 1943–）、迈克尔·斯彭斯（Michael Spence, 1943–）。罗斯与沙普利因匹配市场设计获 2012 年诺贝尔经济学奖；塞勒因行为经济学获 2017 年诺贝尔经济学奖。</p>
+  </div>
+</section>
+
+<!-- ===== M6 ===== -->
+<section class="sec" id="masters-m6">
+  <h2><span class="chapno">M6</span>跨学科交叉</h2>
+
+  <h3>6.1 经济学与心理学：行为经济学</h3>
+  <p>经济学与心理学的交叉融合是过去三十年来经济学发展最重要的事件之一。传统经济学建立在"理性人"假设之上——人具有稳定的偏好、无限的信息处理能力和完美的自控力。心理学的研究则揭示，人类的认知系统存在一系列系统性的"偏差"（biases）和"启发式"（heuristics），这些认知特征在进化过程中可能是适应性的，但在现代经济决策中却导致系统性的偏差。</p>
+
+  <p>卡尼曼在《思考，快与慢》（2011）中将人类认知系统分为两个系统：系统1（直觉、快速、自动）和系统2（理性、缓慢、需要努力）。大多数日常决策由系统1完成，系统2只在必要时介入。这种"双系统"认知架构解释了为什么人类决策常常偏离理性经济模型的预测——系统1的启发式处理虽然高效，但在面对概率判断、复杂权衡和长期规划时容易出错。</p>
+
+  <p>行为经济学对经济学的影响是全方位的。在金融学中，行为金融学解释了股票市场的过度波动、动量效应、处置效应等异常现象（Shiller, 1981；Barberis & Thaler, 2003）。在公共经济学中，行为公共政策通过"助推"提高政策效率（Thaler & Sunstein, 2008）。在劳动经济学中，行为劳动经济学研究参考点依赖如何影响工资谈判和工作努力（Camerer & Malmendier, 2007）。行为经济学并未取代主流经济学，而是通过提供更现实的心理学基础来修正和丰富主流经济学。</p>
+
+  <h3>6.2 经济学与法律：法律经济学</h3>
+  <p>法律经济学（Law and Economics）是经济学方法在法律制度分析中的系统应用。罗纳德·科斯（Ronald Coase, 1991 年诺贝尔经济学奖得主）在《社会成本问题》（1960）中奠定了这一领域的理论基础。科斯定理的核心结论是：在交易成本为零的情况下，无论法律如何分配产权，当事人之间的谈判都能达到帕累托最优。但现实中交易成本为正，因此法律规则的初始分配至关重要——法律应当将权利的初始分配设定为"使交易成本最小化"或"模拟市场在无交易成本时可能达成的结果"。</p>
+
+  <p>理查德·波斯纳（Richard Posner, 1939–）是法律经济学最杰出的实践者和推广者。波斯纳在其 1973 年出版的《法律的经济分析》中，运用经济学的效率概念系统分析了几乎所有法律领域——侵权法、合同法、财产法、刑法、反垄断法、公司法、家庭法。波斯纳的核心论点是：普通法（Common Law）的规则在长期演化中趋向于效率——因为低效率的法律规则会被诉讼当事人通过选择适用更高效的法律制度而规避，或者在法官造法过程中被淘汰。</p>
+
+  <p>法律经济学的具体应用包括：侵权法中汉德公式（Hand Formula）——B &lt; PL 即侵权人有责任，其中 B 是预防成本，P 是事故概率，L 是事故损失——将侵权责任判定简化为成本收益分析。刑法的威慑理论——惩罚的预期成本（概率×严厉程度）必须超过犯罪的预期收益才能有效威慑犯罪。反垄断法的效率标准——企业合并是否应当被禁止取决于合并产生的效率收益是否超过其市场势力增长带来的福利损失。</p>
+
+  <h3>6.3 经济学与政治学：公共选择理论</h3>
+  <p>公共选择理论（Public Choice Theory）将经济学的分析方法应用于政治过程的研究。詹姆斯·布坎南（James Buchanan, 1986 年诺贝尔经济学奖得主）和戈登·塔洛克（Gordon Tullock, 1922–2014）是这一领域的奠基人。公共选择理论的核心洞见是：政治参与者（政治家、官僚、选民）与市场参与者一样，都是追求自身利益最大化的理性人——"政治市场"中同样存在供给与需求、寻租与竞争。</p>
+
+  <p>布坎南和塔洛克在《同意的计算》（1962）中运用博弈论和政治经济学分析，系统研究了宪法规则、投票规则、寻租行为和官僚机构的行为逻辑。他们的核心结论是：政治过程中不存在"仁慈的专制者"——政治家追求选票最大化（而非社会福利最大化），官僚追求预算最大化（而非效率最大化），选民则因"理性无知"（Rational Ignorance）而对政治信息投入不足——因为单张选票改变选举结果的可能性微乎其微，理性的选民选择在政治上保持无知。</p>
+
+  <p>公共选择理论对政策分析产生了深远影响。它提醒我们：政府干预不是免费的——政府失灵（Government Failure）与市场失灵同样普遍。在考虑政府是否应当干预市场时，不仅要比较"理想化的市场"与"理想化的政府"，还要比较"现实中的市场失灵"与"现实中的政府失灵"。这一方法论洞见是布坎南"宪法经济学"（Constitutional Economics）的核心——好的制度设计不是选择"市场"或"政府"，而是设计一套规则，使得在自利动机驱动下的政治参与者的行为能够产生接近社会最优的结果。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>跨学科领域</th><th>核心理论/概念</th><th>奠基学者</th><th>核心期刊</th><th>对经济学的影响</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>行为经济学</strong></td><td>前景理论、双系统、助推</td><td>Kahneman, Tversky, Thaler</td><td><em>J. of Economic Behavior & Organization</em></td><td>修正理性假设</td></tr>
+        <tr><td><strong>法律经济学</strong></td><td>科斯定理、汉德公式、效率</td><td>Coase, Posner, Calabresi</td><td><em>J. of Law & Economics</em></td><td>分析法律规则</td></tr>
+        <tr><td><strong>公共选择理论</strong></td><td>寻租、理性无知、政府失灵</td><td>Buchanan, Tullock, Downs</td><td><em>Public Choice</em></td><td>分析政治过程</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== M7 ===== -->
+<section class="sec" id="masters-m7">
+  <h2><span class="chapno">M7</span>批判性分析</h2>
+
+  <h3>7.1 理性假设的批判</h3>
+  <p>"理性人"假设是经济学理论大厦的基石，也是被攻击最多的目标。行为经济学通过大量的实验证据表明，人类决策系统性地偏离了理性假设的预测。但这场批判需要更细致的审视：</p>
+
+  <p>第一，<strong>有限理性 vs 生态理性</strong>。西蒙（Simon, 1955）提出的"有限理性"（Bounded Rationality）概念认为，人类认知能力的限制使得真正的"完全理性"不可能实现。但吉仁泽（Gigerenzer, 2000）的"生态理性"（Ecological Rationality）视角走得更远——他认为启发式（heuristics）并非偏差的来源，而是在不确定环境中高效决策的"适应性工具"。"快速节俭启发式"（Fast and Frugal Heuristics）在特定环境中的表现甚至优于复杂的优化模型。</p>
+
+  <p>第二，<strong>理性假设是否具有"近似正确性"</strong>。弗里德曼（Friedman, 1953）在《实证经济学方法论》中提出了"仿佛"（as if）论证：即使人们并不真正按照理性模型思考，只要市场行为的结果"仿佛"是按照理性模型做出的，理性假设就是可接受的。这一"工具主义"方法论立场在经济学中具有深远影响，但也受到实验经济学和神经经济学的挑战——当实验显示大脑的决策过程与理性模型的预测有系统性差异时，"仿佛"论证的说服力减弱。</p>
+
+  <p>第三，<strong>学习与进化能否消除非理性</strong>。一个经典的观点是：即使个体在一次性决策中表现出非理性，市场和进化会淘汰非理性的行为者，使得长期均衡趋向于理性。但行为经济学的研究表明，在金融市场等高度竞争的环境中，非理性行为（如过度交易、处置效应、注意力驱动的交易）仍然系统性地存在且持续，说明学习机制并不能完全消除非理性（Barberis & Thaler, 2003）。</p>
+
+  <h3>7.2 一般均衡理论的经验不相关性</h3>
+  <p>一般均衡理论在理论层面具有无可争议的美学价值，但它在经验层面面临严峻的挑战。布劳格（Blaug, 1992）在《经济学方法论》中提出了尖锐的批评：Arrow-Debreu 模型是一个"没有内容的骨架"——它证明了均衡存在性，但没有告诉我们均衡在何处、如何达到均衡、以及当经济偏离均衡时会发生什么。</p>
+
+  <p>具体批评包括：第一，<strong>唯一性与稳定性问题</strong>。Arrow-Debreu 模型不保证均衡的唯一性，也不保证均衡的稳定性。索南夏因-曼特尔-德布鲁定理（Sonnenschein-Mantel-Debreu Theorem）表明，在一般均衡框架中，超额需求函数几乎可以呈任何形式，这意味着多重均衡和均衡的不稳定性不仅可能，而且普遍存在。第二，<strong>时间与信息问题</strong>。Arrow-Debreu 模型要求所有市场在"开始时"同时出清，不存在交易在时间上的先后顺序——这显然与真实市场的时间结构不符。临时均衡（Temporary Equilibrium）理论和序列均衡（Sequential Equilibrium）理论试图解决这一问题，但尚未形成统一的理论框架。</p>
+
+  <p>第三，<strong>一般均衡的实证应用</strong>。可计算一般均衡（CGE）模型试图将一般均衡理论应用于实际政策分析，但 CGE 模型在参数校准、函数形式选择、数据需求等方面面临巨大困难，其预测结果对模型假设高度敏感。正如萨缪尔森（Samuelson, 1947）所言："经济学的悲剧在于，我们拥有最精美的理论，却缺乏最基础的实证数据。"</p>
+
+  <h3>7.3 实验经济学的内部有效性与外部有效性之争</h3>
+  <p>实验经济学的方法论基础建立在一个"折中"之上：为了获得内部有效性（因果识别的可靠性），牺牲外部有效性（结论的推广性）。但这一折中是否值得，取决于实验设计的具体特征。</p>
+
+  <p>从内部有效性来看，实验室实验具有无可比拟的优势：实验者可以随机分配处理组和控制组、控制环境变量、精确测量结果变量。但问题在于：<strong>实验者需求效应</strong>（实验参与者可能试图猜测实验目的并据此调整行为）、<strong>自我选择问题</strong>（参与实验的志愿者并非随机样本）、<strong>激励规模问题</strong>（实验室中的激励通常远小于真实决策中的激励）。</p>
+
+  <p>从外部有效性来看，主要的挑战包括：<strong>学生样本问题</strong>——大多数实验使用大学生作为参与者，而大学生的认知能力、风险偏好和社会经验与一般人群存在系统性差异（Levitt & List, 2007）。<strong>人工环境问题</strong>——实验室中的决策环境与真实市场中的决策环境存在本质差异，实验室中的"参与者在电脑前按键做选择"与真实世界中的"企业家在不确定环境中做百万级投资决策"不可同日而语。</p>
+
+  <p>近年来，<strong>田野实验</strong>（Field Experiment）作为实验室实验和自然实验之间的"中间路径"正在兴起。田野实验在真实环境中随机分配处理，结合了实验室实验的内部有效性和自然实验的外部有效性。杜夫洛（Duflo, 2019 年诺贝尔经济学奖得主）在印度和肯尼亚等发展中国家实施的田野实验，为发展经济学提供了大量高质量的因果证据。但田野实验同样面临成本高、道德约束多、可复制性有限等挑战。</p>
+
+  <h3>7.4 经济学帝国主义批判</h3>
+  <p>"经济学帝国主义"（Economic Imperialism）是指经济学方法（理性选择、最大化、均衡分析）被系统性地应用于传统上属于其他社会科学的领域——社会学（Becker, 1976 的"家庭经济分析"）、政治学（公共选择理论）、法学（法律经济学）、人类学（经济人类学）、甚至神学（宗教的经济分析）。</p>
+
+  <p>加里·贝克尔（Gary Becker, 1992 年诺贝尔经济学奖得主）是经济学帝国主义最杰出的代表。贝克尔将经济学方法应用于种族歧视、犯罪与惩罚、人力资本、家庭婚姻、生育决策等广泛的社会现象。他关于歧视的"厌恶系数"模型、关于犯罪的"理性选择"模型、关于婚姻的"市场匹配"模型，都是经济学方法跨学科应用的经典范例。</p>
+
+  <p>对经济学帝国主义的批判主要有三个维度。第一，<strong>本体论批判</strong>：并非所有人类行为都可以被还原为"最大化某种目标函数"的理性选择。社会规范、情感、文化身份、道德义务等非工具性因素在人类行为中具有独立的解释力，不能被简化为"偏好"或"约束"。第二，<strong>方法论批判</strong>：经济学方法在跨学科应用中往往忽视社会学、政治学、人类学已经积累的丰富的质性证据和理论洞见，以"模型简化"为名行"简化主义"之实。第三，<strong>政治批判</strong>：经济学帝国主义的扩张与"新自由主义"的政治议程在时间上重合，经济学的"效率"话语被用来论证市场在越来越多的社会领域中的主导地位，削弱了非市场价值（如公平、尊严、社群）在社会决策中的权重。</p>
+</section>
+
+<!-- ===== M8 ===== -->
+<section class="sec" id="masters-m8">
+  <h2><span class="chapno">M8</span>研究实践与论文</h2>
+
+  <h3>8.1 论文选题方向</h3>
+  <p>以下五个论文选题方向覆盖了微观经济学基础领域的主要前沿，每个方向都包含一个可研究的问题集和相应的文献指引。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>方向</th><th>研究问题</th><th>相关理论</th><th>建议方法</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>行为经济学与公共政策</strong></td><td>助推干预在发展中国家税务合规中的有效性</td><td>前景理论、社会规范</td><td>田野实验、DiD</td></tr>
+        <tr><td><strong>市场设计</strong></td><td>中国高考录取匹配机制的比较效率分析</td><td>延迟接受算法、策略证明性</td><td>机制比较、仿真</td></tr>
+        <tr><td><strong>信息经济学</strong></td><td>数字平台中的算法定价与信息不对称</td><td>信号模型、甄别模型</td><td>结构估计、RDD</td></tr>
+        <tr><td><strong>实验经济学</strong></td><td>不同文化背景下的最后通牒博弈行为差异</td><td>公平偏好、互惠性</td><td>实验室实验、跨文化比较</td></tr>
+        <tr><td><strong>博弈论应用</strong></td><td>平台经济中的跨边网络效应与平台竞争</td><td>双边市场、博弈论</td><td>理论建模、结构估计</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>8.2 十个可研究问题</h3>
+  <ol>
+    <li><strong>行为经济学</strong>：时间偏好中的"现在偏差"（Present Bias）如何影响中国居民的储蓄和退休规划决策？</li>
+    <li><strong>市场设计</strong>：中国高考"平行志愿"录取机制是否具有策略证明性？能否通过机制设计改进录取效率？</li>
+    <li><strong>信息经济学</strong>：在线教育平台上，课程评分和评论如何影响学生的选课行为？存在"评分膨胀"导致的信号失灵吗？</li>
+    <li><strong>博弈论</strong>：中国共享单车行业从"百团大战"到"两家独大"的竞争过程，是哪种博弈模型的典型体现？</li>
+    <li><strong>实验经济学</strong>：中国被试在独裁者博弈和最后通牒博弈中的行为模式是否与西方被试存在系统性差异？</li>
+    <li><strong>一般均衡</strong>：碳交易市场的建立如何通过一般均衡机制影响不同行业的产出和就业？</li>
+    <li><strong>机制设计</strong>：在公共品自愿供给中，有没有一种机制能同时实现激励相容和帕累托改进？</li>
+    <li><strong>法律经济学</strong>：中国《反垄断法》对平台经济"二选一"行为的规制是否提升了消费者福利？</li>
+    <li><strong>公共选择</strong>：中国地方官员的晋升激励如何影响城市基础设施投资的配置效率？</li>
+    <li><strong>跨学科交叉</strong>：大数据和人工智能如何改变经济学的研究范式——从"理论驱动"到"数据驱动"的转型？</li>
+  </ol>
+
+  <h3>8.3 进阶文献书目</h3>
+  <p>以下书目和论文覆盖了微观经济学基础领域的核心文献，按主题分类。建议读者按"理论-方法-应用"的顺序系统阅读。</p>
+
+  <h4>理论经典</h4>
+  <ul class="ref-list">
+    <li>Arrow, K. J. (1951). <em>Social Choice and Individual Values</em>. Yale University Press. — 社会选择理论的奠基之作，阿罗不可能定理的原始出处。</li>
+    <li>Debreu, G. (1959). <em>Theory of Value</em>. Yale University Press. — 一般均衡理论的公理化表述，现代微观经济学的标准范式。</li>
+    <li>Harsanyi, J. C. (1967). Games with Incomplete Information. <em>Management Science</em>, 14(3), 159–182. — 不完全信息博弈理论的奠基性论文。</li>
+    <li>Myerson, R. B. (1981). Optimal Auction Design. <em>Mathematics of Operations Research</em>, 6(1), 58–73. — 机制设计理论应用于拍卖设计的经典论文。</li>
+    <li>Kahneman, D. & Tversky, A. (1979). Prospect Theory. <em>Econometrica</em>, 47(2), 263–291. — 行为经济学的奠基之作。</li>
+    <li>Akerlof, G. A. (1970). The Market for "Lemons". <em>Quarterly Journal of Economics</em>, 84(3), 488–500. — 信息经济学的开创性论文。</li>
+    <li>Coase, R. H. (1960). The Problem of Social Cost. <em>Journal of Law and Economics</em>, 3, 1–44. — 法律经济学的奠基之作。</li>
+    <li>Buchanan, J. M. & Tullock, G. (1962). <em>The Calculus of Consent</em>. University of Michigan Press. — 公共选择理论的经典著作。</li>
+  </ul>
+
+  <h4>方法教材</h4>
+  <ul class="ref-list">
+    <li>Angrist, J. D. & Pischke, J.-S. (2009). <em>Mostly Harmless Econometrics</em>. Princeton University Press. — 简约式计量经济学的标准教材。</li>
+    <li>Angrist, J. D. & Pischke, J.-S. (2014). <em>Mastering 'Metrics</em>. Princeton University Press. — 因果推断方法的入门教材。</li>
+    <li>Camerer, C. (2003). <em>Behavioral Game Theory</em>. Princeton University Press. — 行为博弈论的标准参考。</li>
+    <li>Roth, A. E. & Sotomayor, M. (1990). <em>Two-Sided Matching</em>. Cambridge University Press. — 匹配市场理论的经典著作。</li>
+    <li>Mas-Colell, A., Whinston, M. D. & Green, J. R. (1995). <em>Microeconomic Theory</em>. Oxford University Press. — 研究生微观经济学标准教材（MWG）。</li>
+  </ul>
+
+  <h4>前沿综述</h4>
+  <ul class="ref-list">
+    <li>Barberis, N. & Thaler, R. (2003). A Survey of Behavioral Finance. In <em>Handbook of the Economics of Finance</em>. — 行为金融学的权威综述。</li>
+    <li>DellaVigna, S. (2009). Psychology and Economics: Evidence from the Field. <em>Journal of Economic Literature</em>, 47(2), 315–372. — 行为经济学田野实验的综述。</li>
+    <li>Einav, L. & Levin, J. (2014). Economics in the Age of Big Data. <em>Science</em>, 346(6210). — 大数据时代经济学方法论变革的前沿综述。</li>
+    <li>Kreps, D. M. (2013). <em>Microeconomic Foundations I: Choice and Competitive Markets</em>. Princeton University Press. — 微观经济学基础的前沿论述。</li>
+  </ul>
+
+  <h3>8.4 学术写作规范</h3>
+  <div class="callout">
+    <span class="callout-title">硕士论文写作要点</span>
+    <p>一篇合格的硕士论文应当具备以下特征：</p>
+    <ol>
+      <li><strong>明确的 research question</strong>：问题应当具体、可回答、有理论或实践意义。</li>
+      <li><strong>清晰的 identification strategy</strong>：说明如何从数据中识别因果效应，或如何从理论模型中得到可检验的推论。</li>
+      <li><strong>充分的文献对话</strong>：与已有文献建立清晰的对话关系——你的研究是"补充"、"修正"还是"挑战"已有结论？</li>
+      <li><strong>稳健性检验</strong>：对主要结果进行敏感性分析（更换样本、变量定义、估计方法等），证明结论的稳健性。</li>
+      <li><strong>诚实的局限性讨论</strong>：明确说明你的研究在数据、方法、外部有效性方面的局限。</li>
+    </ol>
+  </div>
+
+  <p>学术写作的经济学规范遵循以下原则。第一，<strong>精确性优于华丽性</strong>：经济学的学术写作追求的是"清晰"而非"文采"——每个术语都应当有明确的定义，每个论点都应当有逻辑支持。第二，<strong>透明性</strong>：数据来源、样本构建规则、变量定义、估计方法都应当详细说明，使其他研究者能够复制你的结果。第三，<strong>简洁性</strong>：能用一句话说清楚的事不要用两句话——经济学论文的篇幅通常远低于其他社会科学（一篇顶级期刊论文通常不超过 45 页，包括图表和参考文献）。</p>
+
+  <p>最后，引用以下学术生涯建议作为本模块的结尾。罗伯特·索洛（Robert Solow, 1987 年诺贝尔经济学奖得主）曾言："经济学家的工具箱应当宽广——但更重要的是，你应当知道何时使用哪件工具，以及何时工具无能为力。" 这是对经济学研究方法论最精辟的总结，也是从硕士走向独立研究者的最佳指南。</p>
+</section>
+
+</main>
+
+<footer>
+  经济思想谱系 · 硕士水平进阶模块 · 上篇 · 微观经济学基础 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-06
+</footer>
+</article>
+
+<!-- Three.js 3D 一般均衡空间 -->
+<script src="./_shared/js/three.min.js"></script>
+<script>
+(function(){
+  var container = document.getElementById('viz-3d-ge');
+  if(!container) return;
+  var w = container.clientWidth, h = container.clientHeight;
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xf8faf6);
+  var camera = new THREE.PerspectiveCamera(45, w/h, 0.1, 100);
+  camera.position.set(9, 7, 11);
+  camera.lookAt(0, 0, 0);
+  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(w, h);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  var ambient = new THREE.AmbientLight(0x404040);
+  scene.add(ambient);
+  var dir = new THREE.DirectionalLight(0xffffff, 0.8);
+  dir.position.set(5, 10, 7);
+  scene.add(dir);
+  var dir2 = new THREE.DirectionalLight(0xffffff, 0.3);
+  dir2.position.set(-5, -5, -5);
+  scene.add(dir2);
+
+  // 坐标轴
+  var axesHelper = new THREE.AxesHelper(7);
+  scene.add(axesHelper);
+  var gridHelper = new THREE.GridHelper(12, 12, 0x62695C, 0xDFE4D8);
+  gridHelper.position.y = -0.1;
+  scene.add(gridHelper);
+
+  function makeLabel(text, color, pos) {
+    var canvas = document.createElement('canvas');
+    canvas.width = 128; canvas.height = 64;
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = color;
+    ctx.font = 'bold 20px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText(text, 64, 40);
+    var tex = new THREE.CanvasTexture(canvas);
+    var mat = new THREE.SpriteMaterial({ map: tex, transparent: true });
+    var sprite = new THREE.Sprite(mat);
+    sprite.position.copy(pos);
+    sprite.scale.set(1.5, 0.75, 1);
+    scene.add(sprite);
+  }
+  makeLabel('价格 P', '#B8793B', new THREE.Vector3(0, 7.5, 0));
+  makeLabel('数量 Q', '#4F7A28', new THREE.Vector3(7.5, -0.5, 0));
+  makeLabel('效用 U', '#62695C', new THREE.Vector3(0, -0.5, 7.5));
+
+  // 消费者效用最大化曲面（蓝色）
+  var geom = new THREE.BufferGeometry();
+  var vertices = [], indices = [];
+  var res = 18;
+  for(var i=0; i<=res; i++) {
+    for(var j=0; j<=res; j++) {
+      var q = (i/res)*7 - 3.5; // 数量 -3.5 to 3.5
+      var p = (j/res)*7 - 3.5; // 价格 -3.5 to 3.5
+      var u = 5 - 0.5*Math.abs(q-1) - 0.4*Math.abs(p+0.5) + 0.3*Math.sin(q*0.6)*Math.cos(p*0.6) + 0.2*Math.cos(q*0.4+p*0.3);
+      u = Math.max(0.2, u);
+      vertices.push(q, u, p);
+    }
+  }
+  for(var i=0; i<res; i++) {
+    for(var j=0; j<res; j++) {
+      var a = i*(res+1)+j;
+      var b = i*(res+1)+j+1;
+      var c = (i+1)*(res+1)+j;
+      var d = (i+1)*(res+1)+j+1;
+      indices.push(a, b, c);
+      indices.push(b, d, c);
+    }
+  }
+  geom.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+  geom.setIndex(indices);
+  geom.computeVertexNormals();
+  var matDemand = new THREE.MeshPhongMaterial({
+    color: 0x4F7A28, transparent: true, opacity: 0.30, side: THREE.DoubleSide, wireframe: false
+  });
+  var demandMesh = new THREE.Mesh(geom, matDemand);
+  scene.add(demandMesh);
+
+  // 生产者利润最大化曲面（橙色）
+  var geom2 = new THREE.BufferGeometry();
+  var vertices2 = [];
+  for(var i=0; i<=res; i++) {
+    for(var j=0; j<=res; j++) {
+      var q = (i/res)*7 - 3.5;
+      var p = (j/res)*7 - 3.5;
+      var pi = 2 + 0.4*q + 0.3*p - 0.15*q*q - 0.12*p*p + 0.1*Math.sin(q+p);
+      pi = Math.max(0.2, Math.min(6, pi));
+      vertices2.push(q, pi, p);
+    }
+  }
+  geom2.setAttribute('position', new THREE.Float32BufferAttribute(vertices2, 3));
+  geom2.setIndex(indices);
+  geom2.computeVertexNormals();
+  var matSupply = new THREE.MeshPhongMaterial({
+    color: 0xB8793B, transparent: true, opacity: 0.30, side: THREE.DoubleSide, wireframe: false
+  });
+  var supplyMesh = new THREE.Mesh(geom2, matSupply);
+  scene.add(supplyMesh);
+
+  // 线框
+  var wireMat = new THREE.MeshBasicMaterial({ color: 0x4F7A28, wireframe: true, transparent: true, opacity: 0.12 });
+  var wireDemand = new THREE.Mesh(geom, wireMat);
+  scene.add(wireDemand);
+  var wireMat2 = new THREE.MeshBasicMaterial({ color: 0xB8793B, wireframe: true, transparent: true, opacity: 0.12 });
+  var wireSupply = new THREE.Mesh(geom2, wireMat2);
+  scene.add(wireSupply);
+
+  // 均衡点（红色球体）
+  var eqGeom = new THREE.SphereGeometry(0.35, 24, 24);
+  var eqMat = new THREE.MeshPhongMaterial({ color: 0xDC2626, emissive: 0xDC2626, emissiveIntensity: 0.3 });
+  var eqSphere = new THREE.Mesh(eqGeom, eqMat);
+  eqSphere.position.set(0.8, 3.5, -0.6);
+  scene.add(eqSphere);
+
+  // 均衡点发光晕
+  var glowGeom = new THREE.SphereGeometry(0.55, 16, 16);
+  var glowMat = new THREE.MeshBasicMaterial({ color: 0xDC2626, transparent: true, opacity: 0.15 });
+  var glowSphere = new THREE.Mesh(glowGeom, glowMat);
+  glowSphere.position.set(0.8, 3.5, -0.6);
+  scene.add(glowSphere);
+
+  // 标签
+  var labelCanvas = document.createElement('canvas');
+  labelCanvas.width = 128; labelCanvas.height = 64;
+  var lctx = labelCanvas.getContext('2d');
+  lctx.fillStyle = '#DC2626';
+  lctx.font = 'bold 16px monospace';
+  lctx.textAlign = 'center';
+  lctx.fillText('均衡点', 64, 40);
+  var labelTex = new THREE.CanvasTexture(labelCanvas);
+  var labelMat = new THREE.SpriteMaterial({ map: labelTex, transparent: true });
+  var labelSprite = new THREE.Sprite(labelMat);
+  labelSprite.position.set(0.8, 4.5, -0.6);
+  labelSprite.scale.set(1.8, 0.9, 1);
+  scene.add(labelSprite);
+
+  // 自动旋转
+  var angle = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    angle += 0.0025;
+    camera.position.x = 11 * Math.sin(angle);
+    camera.position.z = 11 * Math.cos(angle);
+    camera.lookAt(0, 0.5, 0);
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', function(){
+    var w2 = container.clientWidth, h2 = container.clientHeight;
+    camera.aspect = w2/h2;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w2, h2);
+  });
+})();
+</script>
+
+<!-- Chart.js -->
+<script src="./_shared/js/chart.umd.min.js"></script>
+<script>
+// M2: 期望效用与阿莱悖论
+(function(){
+  var ctx = document.getElementById('chart-allais');
+  if(!ctx) return;
+
+  // 数据
+  var wealth = [];
+  for(var i=0; i<=100; i++) wealth.push(i * 0.1); // 0 to 10
+
+  // CARA 效用函数: u(w) = 1 - exp(-alpha * w)
+  var alpha = 0.5;
+  var eu = [];
+  for(var i=0; i<wealth.length; i++) {
+    eu.push(1 - Math.exp(-alpha * wealth[i]));
+  }
+
+  // 阿莱悖论情境
+  // 情境A: 确定得100万
+  var uA = 1 - Math.exp(-alpha * 1);
+  // 情境B: 10% 500万, 89% 100万, 1% 0
+  var uB = 0.10 * (1 - Math.exp(-alpha * 5)) + 0.89 * (1 - Math.exp(-alpha * 1)) + 0.01 * (1 - Math.exp(-alpha * 0));
+  // 情境C: 11% 100万, 89% 0
+  var uC = 0.11 * (1 - Math.exp(-alpha * 1)) + 0.89 * (1 - Math.exp(-alpha * 0));
+  // 情境D: 10% 500万, 90% 0
+  var uD = 0.10 * (1 - Math.exp(-alpha * 5)) + 0.90 * (1 - Math.exp(-alpha * 0));
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: wealth.map(function(v){ return v.toFixed(1); }),
+      datasets: [
+        {
+          label: 'u(w) = 1 − e^(−αw)  CARA 效用函数',
+          data: eu,
+          borderColor: '#4F7A28',
+          borderWidth: 2.5,
+          tension: 0.3,
+          fill: false,
+          pointRadius: 0,
+          yAxisID: 'y'
+        },
+        {
+          label: 'EU(A) = ' + uA.toFixed(3),
+          data: [{x: 1, y: uA}],
+          borderColor: '#2563EB',
+          backgroundColor: '#2563EB',
+          pointRadius: 8,
+          pointStyle: 'triangle',
+          showLine: false,
+          yAxisID: 'y'
+        },
+        {
+          label: 'EU(B) = ' + uB.toFixed(3),
+          data: [{x: 1, y: uB}],
+          borderColor: '#DC2626',
+          backgroundColor: '#DC2626',
+          pointRadius: 8,
+          pointStyle: 'rectRot',
+          showLine: false,
+          yAxisID: 'y'
+        },
+        {
+          label: 'EU(C) = ' + uC.toFixed(3) + '  (11% 100万, 89% 0)',
+          data: [{x: 2, y: uC}],
+          borderColor: '#7C3AED',
+          backgroundColor: '#7C3AED',
+          pointRadius: 8,
+          pointStyle: 'diamond',
+          showLine: false,
+          yAxisID: 'y'
+        },
+        {
+          label: 'EU(D) = ' + uD.toFixed(3) + '  (10% 500万, 90% 0)',
+          data: [{x: 2, y: uD}],
+          borderColor: '#B8793B',
+          backgroundColor: '#B8793B',
+          pointRadius: 8,
+          pointStyle: 'star',
+          showLine: false,
+          yAxisID: 'y'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: { font: { size: 11 } }
+        },
+        annotation: undefined
+      },
+      scales: {
+        x: {
+          title: { display: true, text: '财富 (百万美元)', font: { size: 13 } },
+          grid: { color: '#DFE4D8' }
+        },
+        y: {
+          title: { display: true, text: '期望效用 EU', font: { size: 13 } },
+          grid: { color: '#DFE4D8' }
+        }
+      }
+    }
+  });
+})();
+
+// M4: 微观计量方法谱系对比图
+(function(){
+  var ctx = document.getElementById('chart-methods');
+  if(!ctx) return;
+
+  // 方法数据: [因果识别强度, 应用灵活度, 使用频率(气泡大小)]
+  var methods = [
+    { label: 'OLS', x: 2, y: 5, r: 18, color: '#6B7280' },
+    { label: 'IV', x: 4, y: 4, r: 16, color: '#4F7A28' },
+    { label: 'DiD', x: 5, y: 4.5, r: 17, color: '#2E7D32' },
+    { label: 'RDD', x: 7, y: 3.5, r: 14, color: '#1B5E20' },
+    { label: '结构估计', x: 3, y: 2, r: 12, color: '#B8793B' },
+    { label: '实验', x: 9, y: 3, r: 13, color: '#0D47A1' },
+    { label: '田野实验', x: 8, y: 4, r: 11, color: '#1565C0' },
+    { label: '匹配法', x: 4.5, y: 4.8, r: 10, color: '#558B2F' }
+  ];
+
+  new Chart(ctx, {
+    type: 'bubble',
+    data: {
+      datasets: methods.map(function(m) {
+        return {
+          label: m.label,
+          data: [{ x: m.x, y: m.y, r: m.r }],
+          backgroundColor: m.color,
+          borderColor: m.color,
+          borderWidth: 1
+        };
+      })
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'right',
+          labels: { font: { size: 11 }, padding: 8 }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return context.dataset.label + ' (识别强度: ' + context.parsed.x + ', 灵活度: ' + context.parsed.y + ')';
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          title: { display: true, text: '因果识别强度 →', font: { size: 13 } },
+          min: 0.5, max: 10,
+          grid: { color: '#DFE4D8' },
+          ticks: { stepSize: 1 }
+        },
+        y: {
+          title: { display: true, text: '应用灵活度 →', font: { size: 13 } },
+          min: 0.5, max: 6,
+          grid: { color: '#DFE4D8' },
+          ticks: { stepSize: 0.5 }
+        }
+      }
+    }
+  });
+})();
+</script>
+
+<!-- M5: 市场匹配机制动画 (Canvas) -->
+<script>
+(function(){
+  var canvas = document.getElementById('anim-matching');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W = canvas.width = canvas.clientWidth;
+  var H = canvas.height = canvas.clientHeight;
+
+  // 学生偏好: 每个学生对学校的排序
+  var students = [
+    { id: 'S1', prefs: [0, 2, 1], matched: -1, color: '#4F7A28' },
+    { id: 'S2', prefs: [1, 0, 2], matched: -1, color: '#2E7D32' },
+    { id: 'S3', prefs: [2, 1, 0], matched: -1, color: '#1B5E20' },
+    { id: 'S4', prefs: [0, 1, 2], matched: -1, color: '#558B2F' },
+    { id: 'S5', prefs: [1, 2, 0], matched: -1, color: '#43A047' },
+    { id: 'S6', prefs: [2, 0, 1], matched: -1, color: '#66BB6A' }
+  ];
+  var schools = [
+    { id: 'C1', cap: 2, matches: [], color: '#B8793B' },
+    { id: 'C2', cap: 2, matches: [], color: '#A0622B' },
+    { id: 'C3', cap: 2, matches: [], color: '#8B4F1D' }
+  ];
+
+  // 学校排序 (偏好)
+  var schoolPrefs = [
+    [0, 1, 2, 3, 4, 5],
+    [1, 3, 0, 2, 5, 4],
+    [2, 4, 1, 3, 0, 5]
+  ];
+
+  var step = 0;
+  var maxSteps = 12;
+  var animFrame = 0;
+  var phase = 'propose'; // propose | reject | accept | done
+
+  function resetMatch() {
+    for(var i=0; i<students.length; i++) students[i].matched = -1;
+    for(var j=0; j<schools.length; j++) schools[j].matches = [];
+    step = 0;
+    animFrame = 0;
+    phase = 'propose';
+  }
+
+  function runMatchingStep() {
+    if(phase === 'done') { resetMatch(); return; }
+    // 简化: 每个学生向最偏好且未拒绝过自己的学校申请
+    for(var i=0; i<students.length; i++) {
+      if(students[i].matched >= 0) continue;
+      var s = students[i];
+      // 找下一个偏好学校
+      for(var k=0; k<s.prefs.length; k++) {
+        var schoolIdx = s.prefs[k];
+        // 检查是否已被该校拒绝
+        if(!s.rejected) s.rejected = [];
+        if(s.rejected.indexOf(schoolIdx) >= 0) continue;
+        // 申请
+        schools[schoolIdx].matches.push(i);
+        break;
+      }
+    }
+
+    // 学校审核: 按偏好排序, 保留前 cap 名, 拒绝其余
+    for(var j=0; j<schools.length; j++) {
+      var sch = schools[j];
+      if(sch.matches.length === 0) continue;
+      // 按学校偏好排序申请者
+      sch.matches.sort(function(a, b) {
+        return schoolPrefs[j].indexOf(a) - schoolPrefs[j].indexOf(b);
+      });
+      // 保留前 cap 名, 拒绝其余
+      var accepted = sch.matches.slice(0, sch.cap);
+      var rejected = sch.matches.slice(sch.cap);
+      sch.matches = accepted;
+      for(var r=0; r<rejected.length; r++) {
+        var stuIdx = rejected[r];
+        if(!students[stuIdx].rejected) students[stuIdx].rejected = [];
+        students[stuIdx].rejected.push(j);
+      }
+    }
+
+    // 更新匹配状态
+    for(var j=0; j<schools.length; j++) {
+      for(var m=0; m<schools[j].matches.length; m++) {
+        var si = schools[j].matches[m];
+        students[si].matched = j;
+      }
+    }
+
+    // 检查是否所有学生都匹配了或都已无学校可申请
+    var allDone = true;
+    for(var i=0; i<students.length; i++) {
+      if(students[i].matched < 0) {
+        // 检查是否已申请所有学校
+        if(students[i].rejected && students[i].rejected.length >= students[i].prefs.length) {
+          // 无学校可去
+        } else {
+          allDone = false;
+        }
+      }
+    }
+    if(allDone) phase = 'done';
+    step++;
+  }
+
+  function drawMatching() {
+    ctx.clearRect(0, 0, W, H);
+    var pad = 40;
+    var leftX = 80;
+    var rightX = W - 80;
+    var topY = 60;
+    var itemH = Math.min(40, (H - topY - 40) / Math.max(students.length, schools.length));
+
+    // 标题
+    ctx.fillStyle = '#222820';
+    ctx.font = 'bold 14px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('Gale-Shapley 延迟接受算法 · 匹配过程', W/2, 25);
+
+    // 学生列
+    ctx.fillStyle = '#62695C';
+    ctx.font = '11px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('学生 (申请者)', leftX, topY - 10);
+
+    for(var i=0; i<students.length; i++) {
+      var s = students[i];
+      var y = topY + i * itemH + 5;
+      var matched = s.matched >= 0;
+
+      // 学生背景
+      ctx.fillStyle = matched ? s.color : '#EEF2EA';
+      ctx.strokeStyle = s.color;
+      ctx.lineWidth = 1.5;
+      roundRect(ctx, leftX - 30, y, 60, itemH - 4, 6);
+      ctx.fill();
+      ctx.stroke();
+
+      // 学生ID
+      ctx.fillStyle = matched ? '#FFFFFF' : '#222820';
+      ctx.font = 'bold 11px monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText(s.id, leftX, y + itemH/2 + 3);
+
+      // 匹配线
+      if(matched) {
+        var schIdx = s.matched;
+        var schY = topY + schIdx * itemH + 5 + itemH/2;
+        // 优先线
+        ctx.strokeStyle = s.color;
+        ctx.lineWidth = 2;
+        ctx.globalAlpha = 0.6;
+        ctx.beginPath();
+        ctx.moveTo(leftX + 30, y + itemH/2);
+        var midX = (leftX + 30 + rightX - 30) / 2;
+        ctx.lineTo(midX, y + itemH/2);
+        ctx.lineTo(midX, schY);
+        ctx.lineTo(rightX - 30, schY);
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+      }
+    }
+
+    // 学校列
+    ctx.fillStyle = '#62695C';
+    ctx.font = '11px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('学校 (容量=' + schools[0].cap + ')', rightX, topY - 10);
+
+    for(var j=0; j<schools.length; j++) {
+      var sch = schools[j];
+      var y = topY + j * itemH + 5;
+
+      ctx.fillStyle = '#EEF2EA';
+      ctx.strokeStyle = sch.color;
+      ctx.lineWidth = 1.5;
+      roundRect(ctx, rightX - 30, y, 60, itemH - 4, 6);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = '#222820';
+      ctx.font = 'bold 11px monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText(sch.id + ' (' + sch.matches.length + '/' + sch.cap + ')', rightX, y + itemH/2 + 3);
+    }
+
+    // 状态信息
+    ctx.fillStyle = '#62695C';
+    ctx.font = '11px sans-serif';
+    ctx.textAlign = 'center';
+    var statusText = phase === 'done' ? '已完成稳定匹配 ✓' : '第 ' + (step+1) + ' 轮匹配进行中...';
+    ctx.fillText(statusText, W/2, H - 15);
+  }
+
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  function loop() {
+    animFrame++;
+    if(animFrame % 60 === 0) {
+      runMatchingStep();
+    }
+    drawMatching();
+    requestAnimationFrame(loop);
+  }
+
+  resetMatch();
+  loop();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1105 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>国际关系思想谱系 · 思想图谱系列第二十四辑</title>
+
+  <style>
+
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+
+  </style>
+
+  <style>
+
+    :root {
+      --bg: #FBF8F3;
+      --bg2: #F3EDE1;
+      --ink: #2B2418;
+      --muted: #6E6352;
+      --rule: #E4DBC9;
+      --accent: #1E40AF;
+      --accent2: #0F766E;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:first-child { margin-left: 0; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .legacy .legacy-title { font-weight: 700; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .legacy ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; }
+    @media (max-width: 700px) { .legacy { grid-template-columns: 1fr; } }
+
+    .history { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; }
+    .history .history-title { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem; }
+    .history p { margin-bottom: 0.55rem; }
+    .history p:last-child { margin-bottom: 0; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+    p a, li a { color: var(--accent); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    .formula {
+      font-family: var(--font-mono);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidenav { position: static; max-height: none; }
+    }
+    @media print {
+      .sidenav { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      section.sec { break-inside: avoid-page; }
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="shell">
+
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">国际关系思想谱系</div>
+    <div class="brand-sub">思想图谱系列 · 第二十四辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+      <li><a href="#intro">导言 · 国际关系与和平</a></li>
+      <li><a href="#overview">第一章 · 总览：国际关系的演变</a></li>
+      <li><a href="#system">第二章 · 国际体系：从威斯特伐利亚到冷战</a></li>
+      <li><a href="#realism">第三章 · 现实主义：从修昔底德到摩根索</a></li>
+      <li><a href="#liberalism">第四章 · 自由主义与国际制度：从康德到基欧汉</a></li>
+      <li><a href="#constructivism">第五章 · 建构主义与观念：从温特到身份政治</a></li>
+      <li><a href="#globalization">第六章 · 全球化与当代秩序：从相互依存到多极化</a></li>
+      <li><a href="#summary">第七章 · 总结提炼：国际关系的启示</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第二十四辑</span>
+        <span class="series-links">
+          <a href="../思想图谱系列/index.html">系列目录</a>
+          <a href="../politics-lineage/politics-lineage.html">← 上一辑 · 政治学通论</a>
+          <a href="../life-science-lineage/life-science-lineage.html">下一辑 · 生命科学思想谱系 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>国际关系思想谱系</h1>
+      <p class="subtitle">从威斯特伐利亚到全球化——人类如何在无政府世界中寻求秩序与和平：国际体系、现实主义、自由主义、建构主义、国际制度与全球化、当代国际秩序，提炼“无政府之实、权力之衡、制度之序、观念之塑、相互依存之网、和平之愿”的国际关系规律</p>
+      <p class="meta">作者：詹家杨 · 2026-09-05 · 8 张思维导图 · 7 张对照表 · 20+ 人物语录 · 国际关系</p>
+    </header>
+
+    <main>
+      <!-- 导言 -->
+      <section class="sec" id="intro">
+        <h2>导言 · 国际关系与和平</h2>
+        <p>国际关系（international relations）研究国家之间、以及国家与非国家行为体之间的互动。与国内政治不同，国际体系处于“无政府状态”——没有世界政府来维持秩序。那么，人类如何在无政府世界中寻求秩序与和平？现实主义说靠权力制衡，自由主义说靠制度合作，建构主义说靠观念认同。本辑要追问的是：<strong>战争为何发生？和平如何可能？人类能否超越无政府状态？</strong></p>
+<figure class="diagram">
+          <figcaption>图 1a · 三大理论对比：国际关系的三种"眼镜"</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  subgraph REAL["现实主义"]
+    R1["核心假设：国家是理性行为体，追求权力最大化"]
+    R2["代表人物：摩根索 · 华尔兹 · 米尔斯海默"]
+    R3["关键词：安全困境·均势·霸权"]
+    R4["政策建议：增强军备·联盟制衡"]
+  end
+  subgraph LIB["自由主义"]
+    L1["核心假设：国家追求绝对收益，制度可促进合作"]
+    L2["代表人物：基欧汉 · 奈 · 多伊奇"]
+    L3["关键词：相互依存·国际制度·民主和平"]
+    L4["政策建议：经济合作·国际组织·民主推广"]
+  end
+  subgraph CON["建构主义"]
+    C1["核心假设：无政府状态是国家建构的"]
+    C2["代表人物：温特 · 芬尼莫尔 · 卡赞斯坦"]
+    C3["关键词：身份·规范·文化"]
+    C4["政策建议：对话·观念转变·身份重构"]
+  end
+  REAL -->|"批评"| LIB
+  LIB -->|"补充"| CON
+  classDef real fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef lib fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef con fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  class REAL,R1,R2,R3,R4 real;
+  class LIB,L1,L2,L3,L4 lib;
+  class CON,C1,C2,C3,C4 con;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：国际关系的三大理论</strong>——现实主义、自由主义、建构主义不是三种"意见"，而是三种分析国际关系的不同范式。它们对同一个问题的回答截然不同。</p>
+          <p><strong>现实主义：</strong>为什么会有战争？现实主义说，因为国家都在追求权力，在无政府状态下战争不可避免。修昔底德说"强者做他们能做的事，弱者忍受他们必须忍受的事"。现实主义的优点是冷静务实，缺点是大儒——它无法解释为什么国家也会合作。</p>
+          <p><strong>自由主义：</strong>为什么会有合作？自由主义说，因为国家发现了合作的收益。国际制度降低了交易成本，经济相互依存让战争的成本越来越高。民主和平论认为民主国家之间很少打仗。自由主义的优点是乐观，缺点是过于乐观——它低估了权力的作用。</p>
+          <p><strong>建构主义：</strong>为什么敌人可以变成朋友？建构主义说，因为国家之间的"关系"不是天生的，而是被建构出来的。亚历山大·温特说："无政府状态是国家建构的。"——国家之间可以相互视为敌人、竞争者或朋友。</p>
+          <p><strong>现实案例：</strong>中美关系的变化可以用三种理论分别解释。现实主义：中国崛起挑战美国霸权，冲突不可避免。自由主义：两国经济深度融合，合作才能双赢。建构主义：中美之间的"敌人"叙事是可以通过对话改变的。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>0.1 国际关系的定义：无政府状态下的互动</li>
+          <li>0.2 国际关系的七次转向：为战争→为均势→为联盟→为霸权→为制度→为相互依存→为共同体</li>
+          <li>0.3 国际关系与政治学、历史卷的关联</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>无政府状态</strong>：国际体系的基本特征</li>
+          <li><strong>主权国家</strong>：国际关系的基本行为体</li>
+          <li><strong>国际关系谱系</strong>：战争→均势→联盟→霸权→制度→相互依存→共同体</li>
+        </ul>
+<figure class="diagram">
+          <figcaption>图 0a · 国际关系基本概念树状图</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  ROOT["国际关系思想谱系"] --> A["三大主流理论"]
+  ROOT --> B["国际体系演变"]
+  ROOT --> C["核心概念"]
+  ROOT --> D["当代议题"]
+  A --> A1["现实主义\n权力 · 安全 · 国家利益"]
+  A --> A2["自由主义\n制度 · 合作 · 相互依存"]
+  A --> A3["建构主义\n观念 · 身份 · 规范"]
+  B --> B1["威斯特伐利亚体系\n1648 · 主权国家"]
+  B --> B2["维也纳体系\n1815 · 均势"]
+  B --> B3["凡尔赛-华盛顿体系\n1919 · 集体安全"]
+  B --> B4["雅尔塔体系\n1945 · 冷战两极"]
+  B --> B5["后冷战时代\n1991 · 多极化"]
+  C --> C1["主权 Sovereignty"]
+  C --> C2["均势 Balance of Power"]
+  C --> C3["安全困境 Security Dilemma"]
+  C --> C4["相互依存 Interdependence"]
+  C --> C5["软实力 Soft Power"]
+  D --> D1["全球化与逆全球化"]
+  D --> D2["气候变化"]
+  D --> D3["核不扩散"]
+  D --> D4["恐怖主义"]
+  D --> D5["网络空间"]
+  classDef root fill:#1E40AF,color:#fff,stroke:#1E40AF;
+  classDef cat fill:#2563EB,color:#fff,stroke:#2563EB;
+  classDef leaf fill:#DBEAFE,stroke:#3B82F6,color:#1E3A5F;
+  class ROOT root;
+  class A,B,C,D cat;
+  class A1,A2,A3,B1,B2,B3,B4,B5,C1,C2,C3,C4,C5,D1,D2,D3,D4,D5 leaf;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 0a 详解：国际关系的基本概念框架</strong>——国际关系是研究国家之间政治、经济、安全互动的学科，但它的核心问题其实只有一个：在无政府状态（没有世界政府）下，国家之间如何共存？</p>
+          <p><strong>三大主流理论：</strong>现实主义回答"国家争权力"，自由主义回答"国家能合作"，建构主义回答"国家想什么"。现实主义认为世界是零和博弈——你的安全就是我的威胁（安全困境）；自由主义认为通过制度和相互依存可以超越零和；建构主义更进一步——国家之间的敌友关系不是天生的，而是"建构"出来的。这三个理论就像三副眼镜，戴上不同的眼镜，看到的世界完全不同。</p>
+          <p><strong>国际体系演变：</strong>从1648年威斯特伐利亚和约确立主权原则开始，国际关系经历了五次体系转型。每一次转型都是战争的结果——三十年战争→威斯特伐利亚，拿破仑战争→维也纳，一战→凡尔赛，二战→雅尔塔，冷战结束→后冷战。理解这五次转型，就理解了国际关系的历史逻辑。</p>
+          <p><strong>安全困境：</strong>这是国际关系中最核心的概念。一个国家增强军备以求安全，但邻国感到威胁后也增强军备，结果所有国家都更不安全。这不是"坏人的问题"，而是"结构的问题"——在无政府状态下，即使都是善意国家，也可能陷入军备竞赛。冷战的美苏核竞赛是最典型的案例。</p>
+        </div>
+        <div class="callout">
+          <span class="callout-title">一条主线</span>
+          国际关系关注对象的七次转向：<strong>为战争</strong>（古希腊城邦战争与修昔底德，战争是国际政治的常态）→ <strong>为均势</strong>（威斯特伐利亚体系，大国以均势维持稳定）→ <strong>为联盟</strong>（拿破仑战争与维也纳体系，结盟制衡霸权）→ <strong>为霸权</strong>（一战二战与冷战，霸权与两极对抗）→ <strong>为制度</strong>（联合国与国际机制，制度约束行为）→ <strong>为相互依存</strong>（全球化，经济与安全交织）→ <strong>为共同体</strong>（人类命运共同体，超越零和博弈）。每一次转向，都是人类对“如何在无政府世界中共存”的一次重新回答。
+        </div>
+        <p>本辑沿国际关系的谱系展开——<strong>国际体系</strong>（威斯特伐利亚、维也纳、凡尔赛、雅尔塔）、<strong>现实主义</strong>（修昔底德、摩根索、沃尔兹）、<strong>自由主义与国际制度</strong>（康德、威尔逊、基欧汉）、<strong>建构主义与观念</strong>（温特、身份政治）、<strong>全球化与当代秩序</strong>（相互依存、多极化、人类命运共同体），看“无政府世界中的秩序”如何从均势制衡，长成覆盖全球的制度之网。它与第二十三辑《政治学通论》互为姊妹——政治学问“国内如何组织”，国际关系问“国家之间如何相处”；又与第十三辑《历史思想谱系》血脉相连——国际关系从历史中提炼规律，历史为国际关系提供案例。</p>
+        <figure class="diagram">
+          <figcaption>图 1 · 图 1 · 国际关系的七次转向图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["为战争"]
+  B["为均势"]
+  C["为联盟"]
+  D["为霸权"]
+  E["为制度"]
+  F["为相互依存"]
+  G["为共同体"]
+  A --> B
+  B --> C
+  C --> D
+  D --> E
+  E --> F
+  F --> G
+  classDef shift fill:#1E40AF,color:#fff,stroke:#1E40AF;
+  class A,B,C,D,E,F,G shift;
+          </pre>
+        </figure>
+      </section>
+      <section class="sec" id="overview">
+        <h2><span class="chapno">第一章</span>总览：国际关系的演变</h2>
+        <p>先看全景：国际关系的历史与战争史几乎同龄。修昔底德在《伯罗奔尼撒战争史》中写下“强者做其能做的事，弱者受其必须受的事”，奠定了现实主义的基调。1648年《威斯特伐利亚和约》确立主权国家体系，1815年维也纳体系以均势维持欧洲百年和平，1919年凡尔赛体系与国联尝试集体安全，1945年联合国与雅尔塔体系开启冷战两极格局。冷战后，全球化让世界进入相互依存的时代，多极化与人类命运共同体成为新的愿景。理解国际关系，就是理解人类如何在无政府世界中寻求秩序与和平。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 三大理论对比：国际关系的三种"眼镜"</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  subgraph REAL["现实主义"]
+    R1["核心假设：国家是理性行为体，追求权力最大化"]
+    R2["代表人物：摩根索 · 华尔兹 · 米尔斯海默"]
+    R3["关键词：安全困境·均势·霸权"]
+    R4["政策建议：增强军备·联盟制衡"]
+  end
+  subgraph LIB["自由主义"]
+    L1["核心假设：国家追求绝对收益，制度可促进合作"]
+    L2["代表人物：基欧汉 · 奈 · 多伊奇"]
+    L3["关键词：相互依存·国际制度·民主和平"]
+    L4["政策建议：经济合作·国际组织·民主推广"]
+  end
+  subgraph CON["建构主义"]
+    C1["核心假设：无政府状态是国家建构的"]
+    C2["代表人物：温特 · 芬尼莫尔 · 卡赞斯坦"]
+    C3["关键词：身份·规范·文化"]
+    C4["政策建议：对话·观念转变·身份重构"]
+  end
+  REAL -->|"批评"| LIB
+  LIB -->|"补充"| CON
+  classDef real fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef lib fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef con fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  class REAL,R1,R2,R3,R4 real;
+  class LIB,L1,L2,L3,L4 lib;
+  class CON,C1,C2,C3,C4 con;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：国际关系的三大理论</strong>——现实主义、自由主义、建构主义不是三种"意见"，而是三种分析国际关系的不同范式。它们对同一个问题的回答截然不同。</p>
+          <p><strong>现实主义：</strong>为什么会有战争？现实主义说，因为国家都在追求权力，在无政府状态下战争不可避免。修昔底德说"强者做他们能做的事，弱者忍受他们必须忍受的事"。现实主义的优点是冷静务实，缺点是大儒——它无法解释为什么国家也会合作。</p>
+          <p><strong>自由主义：</strong>为什么会有合作？自由主义说，因为国家发现了合作的收益。国际制度降低了交易成本，经济相互依存让战争的成本越来越高。民主和平论认为民主国家之间很少打仗。自由主义的优点是乐观，缺点是过于乐观——它低估了权力的作用。</p>
+          <p><strong>建构主义：</strong>为什么敌人可以变成朋友？建构主义说，因为国家之间的"关系"不是天生的，而是被建构出来的。亚历山大·温特说："无政府状态是国家建构的。"——国家之间可以相互视为敌人、竞争者或朋友。</p>
+          <p><strong>现实案例：</strong>中美关系的变化可以用三种理论分别解释。现实主义：中国崛起挑战美国霸权，冲突不可避免。自由主义：两国经济深度融合，合作才能双赢。建构主义：中美之间的"敌人"叙事是可以通过对话改变的。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>1.1 前现代国际关系：从城邦到帝国</li>
+          <li>1.2 威斯特伐利亚体系与现代国际关系</li>
+          <li>1.3 冷战与全球化时代</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>威斯特伐利亚体系</strong>：现代国际关系的起点</li>
+          <li><strong>均势</strong>：维持国际稳定的传统机制</li>
+          <li><strong>相互依存</strong>：全球化的核心特征</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>前现代国际关系（前5世纪–17世纪）</strong>：修昔底德《伯罗奔尼撒战争史》记录雅典与斯巴达的战争，提出“修昔底德陷阱”；中国春秋战国时期的合纵连横与朝贡体系提供了东方经验；罗马帝国与中华帝国以霸权维持区域秩序。</p>
+          <p><strong>威斯特伐利亚体系（1648）</strong>：《威斯特伐利亚和约》结束三十年战争，确立主权平等、领土完整与不干涉内政原则，现代国际关系由此开端。</p>
+          <p><strong>维也纳体系与集体安全（1815–1945）</strong>：维也纳会议（1815）以均势与大国协调维持欧洲百年和平；一战后国联（1920）尝试集体安全但失败；二战后联合国（1945）以安理会大国一致原则重建国际秩序。</p>
+          <p><strong>冷战与全球化（1945–）</strong>：雅尔塔体系形成美苏两极格局，冷战以核威慑与阵营对抗为特征；1991年苏联解体后美国一度独霸；全球化让经济、安全与环境议题交织，多极化与人类命运共同体成为新的愿景。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>修昔底德（约前460–前400）</strong>——《伯罗奔尼撒战争史》、现实主义源头。</p>
+        <p><strong>格劳秀斯（1583–1645）</strong>——国际法之父。</p>
+        <p><strong>威尔逊（1856–1924）</strong>——十四点计划、国联。</p>
+        <p><strong>摩根索（1904–1980）</strong>——《国家间政治》、古典现实主义。</p>
+        <p><strong>沃尔兹（1924–2013）</strong>——新现实主义、结构现实主义。</p>
+        <p><strong>基欧汉（1941–）</strong>——新自由主义、国际制度。</p>
+        <p><strong>温特（1958–）</strong>——建构主义。</p>
+        <figure class="diagram">
+          <figcaption>图 2 · 国际关系演变结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["国际关系"] --> A["前现代<br>城邦 · 帝国 · 朝贡"]
+  ROOT --> B["威斯特伐利亚<br>主权国家体系"]
+  ROOT --> C["维也纳与集体安全<br>均势 · 国联 · 联合国"]
+  ROOT --> D["冷战与全球化<br>两极 · 相互依存 · 多极化"]
+  classDef rootNode fill:#1E40AF,color:#fff,stroke:#1E40AF;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：国际体系演变速览</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>体系</th><th>时间</th><th>核心特征</th><th>代表机制</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>威斯特伐利亚</strong></td><td>1648</td><td>主权国家 · 均势</td><td>主权平等原则</td></tr>
+              <tr><td><strong>维也纳</strong></td><td>1815</td><td>大国协调 · 均势</td><td>欧洲协调</td></tr>
+              <tr><td><strong>凡尔赛</strong></td><td>1919</td><td>集体安全尝试</td><td>国际联盟</td></tr>
+              <tr><td><strong>雅尔塔</strong></td><td>1945</td><td>两极格局</td><td>联合国 · 安理会</td></tr>
+              <tr><td><strong>后冷战</strong></td><td>1991–</td><td>多极化 · 全球化</td><td>G20 · 区域组织</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="sec" id="system">
+        <h2><span class="chapno">第二章</span>国际体系：从威斯特伐利亚到冷战</h2>
+        <p>国际体系是国家之间互动的整体结构。威斯特伐利亚体系确立了主权国家作为基本行为体，维也纳体系以均势维持稳定，凡尔赛体系尝试集体安全，雅尔塔体系形成两极格局。体系的结构——是单极、两极还是多极——深刻影响国家的行为。沃尔兹的结构现实主义认为，体系结构决定国家行为：两极体系最稳定，多极体系最不稳定。本章的核心洞见是：<strong>国家行为不仅由国内因素决定，也由国际体系的结构塑造</strong>——理解体系，就是理解国家行为的宏观背景。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 三大理论对比：国际关系的三种"眼镜"</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  subgraph REAL["现实主义"]
+    R1["核心假设：国家是理性行为体，追求权力最大化"]
+    R2["代表人物：摩根索 · 华尔兹 · 米尔斯海默"]
+    R3["关键词：安全困境·均势·霸权"]
+    R4["政策建议：增强军备·联盟制衡"]
+  end
+  subgraph LIB["自由主义"]
+    L1["核心假设：国家追求绝对收益，制度可促进合作"]
+    L2["代表人物：基欧汉 · 奈 · 多伊奇"]
+    L3["关键词：相互依存·国际制度·民主和平"]
+    L4["政策建议：经济合作·国际组织·民主推广"]
+  end
+  subgraph CON["建构主义"]
+    C1["核心假设：无政府状态是国家建构的"]
+    C2["代表人物：温特 · 芬尼莫尔 · 卡赞斯坦"]
+    C3["关键词：身份·规范·文化"]
+    C4["政策建议：对话·观念转变·身份重构"]
+  end
+  REAL -->|"批评"| LIB
+  LIB -->|"补充"| CON
+  classDef real fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef lib fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef con fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  class REAL,R1,R2,R3,R4 real;
+  class LIB,L1,L2,L3,L4 lib;
+  class CON,C1,C2,C3,C4 con;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：国际关系的三大理论</strong>——现实主义、自由主义、建构主义不是三种"意见"，而是三种分析国际关系的不同范式。它们对同一个问题的回答截然不同。</p>
+          <p><strong>现实主义：</strong>为什么会有战争？现实主义说，因为国家都在追求权力，在无政府状态下战争不可避免。修昔底德说"强者做他们能做的事，弱者忍受他们必须忍受的事"。现实主义的优点是冷静务实，缺点是大儒——它无法解释为什么国家也会合作。</p>
+          <p><strong>自由主义：</strong>为什么会有合作？自由主义说，因为国家发现了合作的收益。国际制度降低了交易成本，经济相互依存让战争的成本越来越高。民主和平论认为民主国家之间很少打仗。自由主义的优点是乐观，缺点是过于乐观——它低估了权力的作用。</p>
+          <p><strong>建构主义：</strong>为什么敌人可以变成朋友？建构主义说，因为国家之间的"关系"不是天生的，而是被建构出来的。亚历山大·温特说："无政府状态是国家建构的。"——国家之间可以相互视为敌人、竞争者或朋友。</p>
+          <p><strong>现实案例：</strong>中美关系的变化可以用三种理论分别解释。现实主义：中国崛起挑战美国霸权，冲突不可避免。自由主义：两国经济深度融合，合作才能双赢。建构主义：中美之间的"敌人"叙事是可以通过对话改变的。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>2.1 国际体系的概念与类型</li>
+          <li>2.2 威斯特伐利亚体系与主权</li>
+          <li>2.3 维也纳体系与均势</li>
+          <li>2.4 两极体系与冷战</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>体系结构</strong>：单极 · 两极 · 多极</li>
+          <li><strong>主权</strong>：国际体系的基本单位</li>
+          <li><strong>均势</strong>：维持稳定的机制</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>国际体系的概念（20世纪）</strong>：沃尔兹在《国际政治理论》（1979）中提出结构现实主义——国际体系的结构（权力分配）决定国家行为；体系类型包括单极、两极与多极。</p>
+          <p><strong>威斯特伐利亚体系（1648）</strong>：三十年战争（1618–1648）后签订的《威斯特伐利亚和约》确立主权国家体系——每个国家在其领土内拥有最高权力，不干涉内政成为原则；这一体系延续至今。</p>
+          <p><strong>维也纳体系（1815）</strong>：拿破仑战争后，维也纳会议以均势与大国协调重建欧洲秩序；梅特涅主导的“欧洲协调”维持了近百年的相对和平。</p>
+          <p><strong>两极体系与冷战（1945–1991）</strong>：雅尔塔会议划分战后势力范围，美苏两极格局形成；冷战以核威慑、阵营对抗与代理人战争为特征；两极体系被认为具有高度的稳定性——核恐怖平衡防止了直接冲突。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>梅特涅（1773–1859）</strong>——维也纳体系、均势外交。</p>
+        <p><strong>威尔逊（1856–1924）</strong>——集体安全、国联。</p>
+        <p><strong>沃尔兹（1924–2013）</strong>——结构现实主义、体系理论。</p>
+        <p><strong>基辛格（1923–2023）</strong>——均势外交、现实主义实践。</p>
+        <figure class="diagram">
+          <figcaption>图 3 · 国际体系结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["国际体系"] --> A["威斯特伐利亚<br>主权国家 · 不干涉"]
+  ROOT --> B["维也纳<br>均势 · 大国协调"]
+  ROOT --> C["凡尔赛<br>集体安全 · 国联"]
+  ROOT --> D["雅尔塔<br>两极格局 · 冷战"]
+  classDef rootNode fill:#1E40AF,color:#fff,stroke:#1E40AF;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：体系结构对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>体系结构</th><th>权力分配</th><th>稳定性</th><th>代表时期</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>单极</strong></td><td>一国独霸</td><td>较稳定但易生霸权</td><td>后冷战初期</td></tr>
+              <tr><td><strong>两极</strong></td><td>两强对立</td><td>高度稳定（核威慑）</td><td>冷战时期</td></tr>
+              <tr><td><strong>多极</strong></td><td>多强并立</td><td>最不稳定</td><td>19世纪欧洲</td></tr>
+              <tr><td><strong>复合相互依存</strong></td><td>多元联系</td><td>新形态</td><td>全球化时代</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">修昔底德 · 约前460–前400</div>
+            <blockquote>强者做其能做的事，弱者受其必须受的事。<cite>——《伯罗奔尼撒战争史》</cite></blockquote>
+            <div class="legacy-who">沃尔兹 · 1924–2013</div>
+            <blockquote>国际政治的结构塑造国家的行为。<cite>——《国际政治理论》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">基辛格 · 1923–2023</div>
+            <blockquote>均势是国际秩序最古老也最有效的原则。<cite>——《大外交》</cite></blockquote>
+            <div class="legacy-who">梅特涅 · 1773–1859</div>
+            <blockquote>欧洲需要一个共同的秩序，而不是各自为政。<cite>——维也纳会议</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="realism">
+        <h2><span class="chapno">第三章</span>现实主义：从修昔底德到摩根索</h2>
+        <p>现实主义是国际关系最古老也最核心的理论传统。修昔底德写下“强者做其能做的事”，马基雅维利与霍布斯把国际政治视为权力斗争，摩根索在《国家间政治》中系统阐述古典现实主义——国家以权力界定利益。沃尔兹的结构现实主义把权力斗争归因于无政府体系本身。现实主义的核心洞见是：<strong>国际政治是权力政治，无政府状态使国家必须自助</strong>——和平不是靠善意，而是靠权力制衡。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 三大理论对比：国际关系的三种"眼镜"</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  subgraph REAL["现实主义"]
+    R1["核心假设：国家是理性行为体，追求权力最大化"]
+    R2["代表人物：摩根索 · 华尔兹 · 米尔斯海默"]
+    R3["关键词：安全困境·均势·霸权"]
+    R4["政策建议：增强军备·联盟制衡"]
+  end
+  subgraph LIB["自由主义"]
+    L1["核心假设：国家追求绝对收益，制度可促进合作"]
+    L2["代表人物：基欧汉 · 奈 · 多伊奇"]
+    L3["关键词：相互依存·国际制度·民主和平"]
+    L4["政策建议：经济合作·国际组织·民主推广"]
+  end
+  subgraph CON["建构主义"]
+    C1["核心假设：无政府状态是国家建构的"]
+    C2["代表人物：温特 · 芬尼莫尔 · 卡赞斯坦"]
+    C3["关键词：身份·规范·文化"]
+    C4["政策建议：对话·观念转变·身份重构"]
+  end
+  REAL -->|"批评"| LIB
+  LIB -->|"补充"| CON
+  classDef real fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef lib fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef con fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  class REAL,R1,R2,R3,R4 real;
+  class LIB,L1,L2,L3,L4 lib;
+  class CON,C1,C2,C3,C4 con;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：国际关系的三大理论</strong>——现实主义、自由主义、建构主义不是三种"意见"，而是三种分析国际关系的不同范式。它们对同一个问题的回答截然不同。</p>
+          <p><strong>现实主义：</strong>为什么会有战争？现实主义说，因为国家都在追求权力，在无政府状态下战争不可避免。修昔底德说"强者做他们能做的事，弱者忍受他们必须忍受的事"。现实主义的优点是冷静务实，缺点是大儒——它无法解释为什么国家也会合作。</p>
+          <p><strong>自由主义：</strong>为什么会有合作？自由主义说，因为国家发现了合作的收益。国际制度降低了交易成本，经济相互依存让战争的成本越来越高。民主和平论认为民主国家之间很少打仗。自由主义的优点是乐观，缺点是过于乐观——它低估了权力的作用。</p>
+          <p><strong>建构主义：</strong>为什么敌人可以变成朋友？建构主义说，因为国家之间的"关系"不是天生的，而是被建构出来的。亚历山大·温特说："无政府状态是国家建构的。"——国家之间可以相互视为敌人、竞争者或朋友。</p>
+          <p><strong>现实案例：</strong>中美关系的变化可以用三种理论分别解释。现实主义：中国崛起挑战美国霸权，冲突不可避免。自由主义：两国经济深度融合，合作才能双赢。建构主义：中美之间的"敌人"叙事是可以通过对话改变的。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>3.1 古典现实主义：从修昔底德到摩根索</li>
+          <li>3.2 结构现实主义：沃尔兹的体系理论</li>
+          <li>3.3 进攻性现实主义与防御性现实主义</li>
+          <li>3.4 对现实主义的批评</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>权力政治</strong>：国家以权力界定利益</li>
+          <li><strong>自助</strong>：无政府状态下国家必须自助</li>
+          <li><strong>安全困境</strong>：一国的安全追求导致他国的不安全</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>古典现实主义（前5世纪–20世纪中）</strong>：修昔底德记录雅典与斯巴达的权力斗争；马基雅维利与霍布斯把人性视为自私与权力欲；摩根索《国家间政治》（1948）提出现实主义六原则——政治受植根于人性的客观规律支配，国家以权力界定利益。</p>
+          <p><strong>结构现实主义（1979）</strong>：沃尔兹《国际政治理论》把现实主义从人性论转向体系论——无政府体系的结构迫使国家自助，权力分配决定国家行为；两极体系最稳定。</p>
+          <p><strong>进攻与防御现实主义（20世纪末）</strong>：米尔斯海默《大国政治的悲剧》（2001）提出进攻性现实主义——大国必然追求地区霸权；防御性现实主义则认为国家追求安全而非扩张，安全困境可以缓解。</p>
+          <p><strong>对现实主义的批评（20世纪中–）</strong>：自由主义批评现实主义忽视合作与制度；建构主义批评其忽视观念与身份；女性主义批评其忽视性别维度；批判理论批评其把现状自然化。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>修昔底德（约前460–前400）</strong>——现实主义源头。</p>
+        <p><strong>马基雅维利（1469–1527）</strong>——权力政治。</p>
+        <p><strong>霍布斯（1588–1679）</strong>——自然状态、自助。</p>
+        <p><strong>摩根索（1904–1980）</strong>——《国家间政治》、古典现实主义。</p>
+        <p><strong>沃尔兹（1924–2013）</strong>——结构现实主义。</p>
+        <p><strong>米尔斯海默（1947–）</strong>——进攻性现实主义。</p>
+        <figure class="diagram">
+          <figcaption>图 4 · 现实主义结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["现实主义"] --> A["古典现实主义<br>修昔底德 · 摩根索"]
+  ROOT --> B["结构现实主义<br>沃尔兹 · 体系结构"]
+  ROOT --> C["进攻性现实主义<br>米尔斯海默"]
+  ROOT --> D["防御性现实主义<br>安全困境可缓解"]
+  classDef rootNode fill:#1E40AF,color:#fff,stroke:#1E40AF;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：现实主义流派对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>流派</th><th>核心主张</th><th>代表人物</th><th>关键词</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>古典现实主义</strong></td><td>国家以权力界定利益</td><td>摩根索</td><td>权力政治</td></tr>
+              <tr><td><strong>结构现实主义</strong></td><td>体系结构决定行为</td><td>沃尔兹</td><td>自助 · 无政府</td></tr>
+              <tr><td><strong>进攻性现实主义</strong></td><td>大国必然追求霸权</td><td>米尔斯海默</td><td>权力最大化</td></tr>
+              <tr><td><strong>防御性现实主义</strong></td><td>国家追求安全而非扩张</td><td>杰维斯</td><td>安全困境</td></tr>
+              <tr><td><strong>新古典现实主义</strong></td><td>体系压力经国内因素传导</td><td>施韦勒</td><td>内外互动</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">修昔底德 · 约前460–前400</div>
+            <blockquote>战争的起因是恐惧、荣誉与利益。<cite>——《伯罗奔尼撒战争史》</cite></blockquote>
+            <div class="legacy-who">摩根索 · 1904–1980</div>
+            <blockquote>国际政治如同一切政治，是为权力的斗争。<cite>——《国家间政治》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">沃尔兹 · 1924–2013</div>
+            <blockquote>在无政府状态下，安全是国家的最高目标。<cite>——《国际政治理论》</cite></blockquote>
+            <div class="legacy-who">米尔斯海默 · 1947–</div>
+            <blockquote>大国注定要争夺权力。<cite>——《大国政治的悲剧》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="liberalism">
+        <h2><span class="chapno">第四章</span>自由主义与国际制度：从康德到基欧汉</h2>
+        <p>自由主义相信合作与制度可以超越权力政治。康德在《永久和平论》中提出民主国家之间不易开战，威尔逊以“十四点计划”推动集体安全，基欧汉在《霸权之后》中论证国际制度可以在霸权衰落之后继续维持合作。自由主义的核心洞见是：<strong>即使没有世界政府，国家也可以通过制度、相互依存与共同利益实现合作</strong>——和平不仅是权力的平衡，也是制度的成果。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 三大理论对比：国际关系的三种"眼镜"</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  subgraph REAL["现实主义"]
+    R1["核心假设：国家是理性行为体，追求权力最大化"]
+    R2["代表人物：摩根索 · 华尔兹 · 米尔斯海默"]
+    R3["关键词：安全困境·均势·霸权"]
+    R4["政策建议：增强军备·联盟制衡"]
+  end
+  subgraph LIB["自由主义"]
+    L1["核心假设：国家追求绝对收益，制度可促进合作"]
+    L2["代表人物：基欧汉 · 奈 · 多伊奇"]
+    L3["关键词：相互依存·国际制度·民主和平"]
+    L4["政策建议：经济合作·国际组织·民主推广"]
+  end
+  subgraph CON["建构主义"]
+    C1["核心假设：无政府状态是国家建构的"]
+    C2["代表人物：温特 · 芬尼莫尔 · 卡赞斯坦"]
+    C3["关键词：身份·规范·文化"]
+    C4["政策建议：对话·观念转变·身份重构"]
+  end
+  REAL -->|"批评"| LIB
+  LIB -->|"补充"| CON
+  classDef real fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef lib fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef con fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  class REAL,R1,R2,R3,R4 real;
+  class LIB,L1,L2,L3,L4 lib;
+  class CON,C1,C2,C3,C4 con;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：国际关系的三大理论</strong>——现实主义、自由主义、建构主义不是三种"意见"，而是三种分析国际关系的不同范式。它们对同一个问题的回答截然不同。</p>
+          <p><strong>现实主义：</strong>为什么会有战争？现实主义说，因为国家都在追求权力，在无政府状态下战争不可避免。修昔底德说"强者做他们能做的事，弱者忍受他们必须忍受的事"。现实主义的优点是冷静务实，缺点是大儒——它无法解释为什么国家也会合作。</p>
+          <p><strong>自由主义：</strong>为什么会有合作？自由主义说，因为国家发现了合作的收益。国际制度降低了交易成本，经济相互依存让战争的成本越来越高。民主和平论认为民主国家之间很少打仗。自由主义的优点是乐观，缺点是过于乐观——它低估了权力的作用。</p>
+          <p><strong>建构主义：</strong>为什么敌人可以变成朋友？建构主义说，因为国家之间的"关系"不是天生的，而是被建构出来的。亚历山大·温特说："无政府状态是国家建构的。"——国家之间可以相互视为敌人、竞争者或朋友。</p>
+          <p><strong>现实案例：</strong>中美关系的变化可以用三种理论分别解释。现实主义：中国崛起挑战美国霸权，冲突不可避免。自由主义：两国经济深度融合，合作才能双赢。建构主义：中美之间的"敌人"叙事是可以通过对话改变的。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>4.1 理想主义与集体安全：从康德到威尔逊</li>
+          <li>4.2 相互依存理论：从库珀到基欧汉</li>
+          <li>4.3 国际制度与国际机制</li>
+          <li>4.4 民主和平论</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>永久和平</strong>：康德的和平构想</li>
+          <li><strong>国际制度</strong>：维持合作的机制</li>
+          <li><strong>民主和平论</strong>：民主国家之间不易开战</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>理想主义与集体安全（18世纪–20世纪初）</strong>：康德《永久和平论》（1795）提出共和宪制、自由贸易与国际联盟三条件；威尔逊“十四点计划”（1918）推动国联与集体安全；理想主义在二战中受挫，催生现实主义复兴。</p>
+          <p><strong>相互依存理论（20世纪中–）</strong>：库珀提出“相互依存”概念；基欧汉与奈《权力与相互依存》（1977）提出复合相互依存——多渠道联系、议题无等级、军事力量作用下降。</p>
+          <p><strong>国际制度（20世纪80年代）</strong>：基欧汉《霸权之后》（1984）论证国际制度降低交易成本、促进合作；国际机制理论（克拉斯纳）研究制度如何塑造行为；联合国、WTO、IMF 等国际组织构成制度之网。</p>
+          <p><strong>民主和平论（20世纪80年代–）</strong>：多伊尔等学者发现民主国家之间几乎不发生战争；民主和平论引发关于民主与和平关系的广泛争论，成为自由主义的核心命题之一。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>康德（1724–1804）</strong>——《永久和平论》。</p>
+        <p><strong>威尔逊（1856–1924）</strong>——十四点计划、国联。</p>
+        <p><strong>库珀（1934–）</strong>——相互依存理论。</p>
+        <p><strong>基欧汉（1941–）</strong>——《霸权之后》、国际制度。</p>
+        <p><strong>奈（1937–）</strong>——软实力、复合相互依存。</p>
+        <p><strong>多伊尔（1944–）</strong>——民主和平论。</p>
+        <figure class="diagram">
+          <figcaption>图 5 · 自由主义与国际制度结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["自由主义与国际制度"] --> A["理想主义<br>康德 · 威尔逊 · 集体安全"]
+  ROOT --> B["相互依存<br>库珀 · 基欧汉 · 奈"]
+  ROOT --> C["国际制度<br>联合国 · WTO · IMF"]
+  ROOT --> D["民主和平论<br>多伊尔"]
+  classDef rootNode fill:#1E40AF,color:#fff,stroke:#1E40AF;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：自由主义理论对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>理论</th><th>核心主张</th><th>代表人物</th><th>关键词</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>理想主义</strong></td><td>集体安全可以维护和平</td><td>威尔逊</td><td>国联 · 十四点</td></tr>
+              <tr><td><strong>相互依存</strong></td><td>经济联系降低冲突可能</td><td>库珀 · 基欧汉 · 奈</td><td>复合相互依存</td></tr>
+              <tr><td><strong>国际制度</strong></td><td>制度促进合作</td><td>基欧汉</td><td>制度 · 机制</td></tr>
+              <tr><td><strong>民主和平论</strong></td><td>民主国家之间不易开战</td><td>多伊尔</td><td>民主 · 和平</td></tr>
+              <tr><td><strong>共和自由主义</strong></td><td>共和宪制促进和平</td><td>康德</td><td>永久和平</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">康德 · 1724–1804</div>
+            <blockquote>永久和平是理性的要求，也是历史的归宿。<cite>——《永久和平论》</cite></blockquote>
+            <div class="legacy-who">威尔逊 · 1856–1924</div>
+            <blockquote>世界必须为民主创造安全的环境。<cite>——十四点计划</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">基欧汉 · 1941–</div>
+            <blockquote>制度使合作成为可能，即使在没有霸权的时候。<cite>——《霸权之后》</cite></blockquote>
+            <div class="legacy-who">奈 · 1937–</div>
+            <blockquote>软实力是通过吸引而非强迫获得你想要的东西的能力。<cite>——《软实力》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="constructivism">
+        <h2><span class="chapno">第五章</span>建构主义与观念：从温特到身份政治</h2>
+        <p>建构主义挑战现实主义的物质主义假设，主张国际政治不仅是物质权力的分配，更是观念、身份与文化的建构。温特在《国际政治的社会理论》中提出“无政府状态是国家造就的”——无政府状态本身没有固定含义，它的意义由国家的互动建构：敌人、对手还是朋友。建构主义的核心洞见是：<strong>观念塑造利益，身份塑造行为</strong>——国际关系不仅是实力的较量，也是意义的争夺。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 三大理论对比：国际关系的三种"眼镜"</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  subgraph REAL["现实主义"]
+    R1["核心假设：国家是理性行为体，追求权力最大化"]
+    R2["代表人物：摩根索 · 华尔兹 · 米尔斯海默"]
+    R3["关键词：安全困境·均势·霸权"]
+    R4["政策建议：增强军备·联盟制衡"]
+  end
+  subgraph LIB["自由主义"]
+    L1["核心假设：国家追求绝对收益，制度可促进合作"]
+    L2["代表人物：基欧汉 · 奈 · 多伊奇"]
+    L3["关键词：相互依存·国际制度·民主和平"]
+    L4["政策建议：经济合作·国际组织·民主推广"]
+  end
+  subgraph CON["建构主义"]
+    C1["核心假设：无政府状态是国家建构的"]
+    C2["代表人物：温特 · 芬尼莫尔 · 卡赞斯坦"]
+    C3["关键词：身份·规范·文化"]
+    C4["政策建议：对话·观念转变·身份重构"]
+  end
+  REAL -->|"批评"| LIB
+  LIB -->|"补充"| CON
+  classDef real fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef lib fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef con fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  class REAL,R1,R2,R3,R4 real;
+  class LIB,L1,L2,L3,L4 lib;
+  class CON,C1,C2,C3,C4 con;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：国际关系的三大理论</strong>——现实主义、自由主义、建构主义不是三种"意见"，而是三种分析国际关系的不同范式。它们对同一个问题的回答截然不同。</p>
+          <p><strong>现实主义：</strong>为什么会有战争？现实主义说，因为国家都在追求权力，在无政府状态下战争不可避免。修昔底德说"强者做他们能做的事，弱者忍受他们必须忍受的事"。现实主义的优点是冷静务实，缺点是大儒——它无法解释为什么国家也会合作。</p>
+          <p><strong>自由主义：</strong>为什么会有合作？自由主义说，因为国家发现了合作的收益。国际制度降低了交易成本，经济相互依存让战争的成本越来越高。民主和平论认为民主国家之间很少打仗。自由主义的优点是乐观，缺点是过于乐观——它低估了权力的作用。</p>
+          <p><strong>建构主义：</strong>为什么敌人可以变成朋友？建构主义说，因为国家之间的"关系"不是天生的，而是被建构出来的。亚历山大·温特说："无政府状态是国家建构的。"——国家之间可以相互视为敌人、竞争者或朋友。</p>
+          <p><strong>现实案例：</strong>中美关系的变化可以用三种理论分别解释。现实主义：中国崛起挑战美国霸权，冲突不可避免。自由主义：两国经济深度融合，合作才能双赢。建构主义：中美之间的"敌人"叙事是可以通过对话改变的。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>5.1 建构主义的基本主张</li>
+          <li>5.2 温特：无政府状态是国家造就的</li>
+          <li>5.3 身份、规范与国际社会</li>
+          <li>5.4 对建构主义的批评</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>观念</strong>：国际政治的社会建构</li>
+          <li><strong>身份</strong>：国家行为的内在根据</li>
+          <li><strong>规范</strong>：国际社会的共享观念</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>建构主义的兴起（20世纪80–90年代）</strong>：温特《国际政治的社会理论》（1999）提出“无政府状态是国家造就的”——无政府状态有三种文化：霍布斯文化（敌人）、洛克文化（对手）、康德文化（朋友）。</p>
+          <p><strong>身份与利益（20世纪90年代–）</strong>：建构主义主张国家的身份（如大国、民主国家、发展中国家）塑造其利益认知；身份不是给定的，而是在互动中建构的。</p>
+          <p><strong>规范与国际社会（20世纪–）</strong>：英国学派（布尔、文森特）研究国际社会——国家共享规范与制度的共同体；规范研究（芬尼莫尔、西金克）分析国际规范如何传播与内化。</p>
+          <p><strong>对建构主义的批评（21世纪–）</strong>：现实主义批评其忽视权力与物质因素；实证主义批评其缺乏可检验性；后结构主义批评其仍以国家为中心。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>温特（1958–）</strong>——《国际政治的社会理论》、建构主义。</p>
+        <p><strong>布尔（1932–1985）</strong>——英国学派、国际社会。</p>
+        <p><strong>芬尼莫尔（1966–）</strong>——国际规范研究。</p>
+        <p><strong>卡赞斯坦（1945–）</strong>——安全文化、身份与安全。</p>
+        <figure class="diagram">
+          <figcaption>图 6 · 建构主义结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["建构主义"] --> A["观念建构<br>温特 · 无政府状态是国家造就的"]
+  ROOT --> B["身份与利益<br>身份塑造行为"]
+  ROOT --> C["规范与国际社会<br>布尔 · 芬尼莫尔"]
+  ROOT --> D["安全文化<br>卡赞斯坦"]
+  classDef rootNode fill:#1E40AF,color:#fff,stroke:#1E40AF;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：三种无政府文化对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>文化</th><th>角色定位</th><th>行为逻辑</th><th>代表思想家</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>霍布斯文化</strong></td><td>敌人</td><td>消灭或征服</td><td>霍布斯</td></tr>
+              <tr><td><strong>洛克文化</strong></td><td>对手</td><td>竞争但承认主权</td><td>洛克</td></tr>
+              <tr><td><strong>康德文化</strong></td><td>朋友</td><td>合作与互助</td><td>康德</td></tr>
+              <tr><td><strong>国际社会</strong></td><td>成员</td><td>共享规范与制度</td><td>布尔</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">温特 · 1958–</div>
+            <blockquote>无政府状态是国家造就的。<cite>——《国际政治的社会理论》</cite></blockquote>
+            <div class="legacy-who">布尔 · 1932–1985</div>
+            <blockquote>国家构成一个社会，因为它们共享规范与制度。<cite>——《无政府社会》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">卡赞斯坦 · 1945–</div>
+            <blockquote>安全政策深深植根于国家的文化认同。<cite>——《国家安全的文化》</cite></blockquote>
+            <div class="legacy-who">芬尼莫尔 · 1966–</div>
+            <blockquote>规范塑造国家的利益与行为。<cite>——《国际社会中的国家利益》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="globalization">
+        <h2><span class="chapno">第六章</span>全球化与当代秩序：从相互依存到多极化</h2>
+        <p>冷战后，全球化让世界进入相互依存的时代——贸易、金融、信息、人员以前所未有的规模跨国流动。全球化带来繁荣，也带来不平等、金融危机与全球性挑战（气候变化、传染病、恐怖主义）。当代国际秩序正在从单极走向多极化，新兴大国崛起，区域组织兴起，人类命运共同体理念提出超越零和博弈的愿景。本章的核心洞见是：<strong>全球化让世界既更紧密又更脆弱</strong>——全球性问题需要全球治理，而全球治理的合法性有待重建。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 三大理论对比：国际关系的三种"眼镜"</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  subgraph REAL["现实主义"]
+    R1["核心假设：国家是理性行为体，追求权力最大化"]
+    R2["代表人物：摩根索 · 华尔兹 · 米尔斯海默"]
+    R3["关键词：安全困境·均势·霸权"]
+    R4["政策建议：增强军备·联盟制衡"]
+  end
+  subgraph LIB["自由主义"]
+    L1["核心假设：国家追求绝对收益，制度可促进合作"]
+    L2["代表人物：基欧汉 · 奈 · 多伊奇"]
+    L3["关键词：相互依存·国际制度·民主和平"]
+    L4["政策建议：经济合作·国际组织·民主推广"]
+  end
+  subgraph CON["建构主义"]
+    C1["核心假设：无政府状态是国家建构的"]
+    C2["代表人物：温特 · 芬尼莫尔 · 卡赞斯坦"]
+    C3["关键词：身份·规范·文化"]
+    C4["政策建议：对话·观念转变·身份重构"]
+  end
+  REAL -->|"批评"| LIB
+  LIB -->|"补充"| CON
+  classDef real fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef lib fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef con fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  class REAL,R1,R2,R3,R4 real;
+  class LIB,L1,L2,L3,L4 lib;
+  class CON,C1,C2,C3,C4 con;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：国际关系的三大理论</strong>——现实主义、自由主义、建构主义不是三种"意见"，而是三种分析国际关系的不同范式。它们对同一个问题的回答截然不同。</p>
+          <p><strong>现实主义：</strong>为什么会有战争？现实主义说，因为国家都在追求权力，在无政府状态下战争不可避免。修昔底德说"强者做他们能做的事，弱者忍受他们必须忍受的事"。现实主义的优点是冷静务实，缺点是大儒——它无法解释为什么国家也会合作。</p>
+          <p><strong>自由主义：</strong>为什么会有合作？自由主义说，因为国家发现了合作的收益。国际制度降低了交易成本，经济相互依存让战争的成本越来越高。民主和平论认为民主国家之间很少打仗。自由主义的优点是乐观，缺点是过于乐观——它低估了权力的作用。</p>
+          <p><strong>建构主义：</strong>为什么敌人可以变成朋友？建构主义说，因为国家之间的"关系"不是天生的，而是被建构出来的。亚历山大·温特说："无政府状态是国家建构的。"——国家之间可以相互视为敌人、竞争者或朋友。</p>
+          <p><strong>现实案例：</strong>中美关系的变化可以用三种理论分别解释。现实主义：中国崛起挑战美国霸权，冲突不可避免。自由主义：两国经济深度融合，合作才能双赢。建构主义：中美之间的"敌人"叙事是可以通过对话改变的。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>6.1 全球化的浪潮与特征</li>
+          <li>6.2 全球治理与国际组织</li>
+          <li>6.3 多极化与新兴大国</li>
+          <li>6.4 人类命运共同体与和平愿景</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>全球化</strong>：经济、信息与人员的跨国流动</li>
+          <li><strong>全球治理</strong>：应对全球性问题的机制</li>
+          <li><strong>多极化</strong>：当代国际秩序的趋势</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>全球化的浪潮（20世纪90年代–）</strong>：冷战结束与信息技术革命加速全球化；贸易自由化、金融全球化、互联网普及让世界“扁平化”；弗里德曼《世界是平的》（2005）描绘全球化的图景。</p>
+          <p><strong>全球治理（20世纪90年代–）</strong>：全球性问题——气候变化、传染病、恐怖主义、金融危机——超越国家边界；联合国、WTO、IMF、世界银行与区域组织构成全球治理体系；罗西瑙提出“没有政府的治理”。</p>
+          <p><strong>多极化与新兴大国（21世纪–）</strong>：中国、印度、巴西等新兴大国崛起；G20 取代 G7 成为全球经济治理的主要平台；金砖国家等机制推动国际秩序变革。</p>
+          <p><strong>人类命运共同体（2013–）</strong>：中国提出构建人类命运共同体理念——合作共赢、共同发展、共同安全；这一理念主张超越零和博弈，以对话协商解决分歧，推动构建新型国际关系。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>罗西瑙（1924–2011）</strong>——全球治理、没有政府的治理。</p>
+        <p><strong>弗里德曼（1953–）</strong>——《世界是平的》。</p>
+        <p><strong>斯蒂格利茨（1943–）</strong>——全球化批评、公平贸易。</p>
+        <p><strong>基辛格（1923–2023）</strong>——《世界秩序》、多极化。</p>
+        <figure class="diagram">
+          <figcaption>图 7 · 全球化与当代秩序结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["全球化与当代秩序"] --> A["全球化<br>贸易 · 金融 · 信息"]
+  ROOT --> B["全球治理<br>联合国 · 国际组织"]
+  ROOT --> C["多极化<br>新兴大国 · G20"]
+  ROOT --> D["人类命运共同体<br>合作共赢 · 共同安全"]
+  classDef rootNode fill:#1E40AF,color:#fff,stroke:#1E40AF;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：全球化议题对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>议题</th><th>全球性挑战</th><th>治理机制</th><th>核心争论</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>贸易</strong></td><td>贸易摩擦 · 不平等</td><td>WTO</td><td>自由贸易 vs 保护主义</td></tr>
+              <tr><td><strong>金融</strong></td><td>金融危机 · 资本流动</td><td>IMF · 巴塞尔协议</td><td>监管 vs 自由</td></tr>
+              <tr><td><strong>气候</strong></td><td>气候变化 · 排放</td><td>《巴黎协定》</td><td>责任分担</td></tr>
+              <tr><td><strong>安全</strong></td><td>恐怖主义 · 核扩散</td><td>联合国安理会</td><td>主权 vs 干预</td></tr>
+              <tr><td><strong>公共卫生</strong></td><td>传染病 · 疫苗分配</td><td>WHO</td><td>全球合作 vs 各自为政</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">罗西瑙 · 1924–2011</div>
+            <blockquote>治理可以没有政府。<cite>——《没有政府的治理》</cite></blockquote>
+            <div class="legacy-who">弗里德曼 · 1953–</div>
+            <blockquote>世界是平的。<cite>——《世界是平的》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">斯蒂格利茨 · 1943–</div>
+            <blockquote>全球化可以带来繁荣，也可以带来不公。<cite>——《全球化及其不满》</cite></blockquote>
+            <div class="legacy-who">基辛格 · 1923–2023</div>
+            <blockquote>世界秩序需要共同的原则，否则将陷入混乱。<cite>——《世界秩序》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="summary">
+        <h2><span class="chapno">第七章</span>总结提炼：国际关系的启示</h2>
+        <p>回顾从威斯特伐利亚到全球化，可以提炼出国际关系的核心规律：<strong>无政府之实、权力之衡、制度之序、观念之塑、相互依存之网、和平之愿</strong>。国际关系不提供“世界大同”的乌托邦，它提供的是“如何在无政府世界中共存”的现实智慧——它直面权力的现实，也相信制度与观念的力量。理解国际关系，就是理解人类如何在无政府世界中寻求秩序与和平，也是理解我们作为世界公民的责任。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 三大理论对比：国际关系的三种"眼镜"</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  subgraph REAL["现实主义"]
+    R1["核心假设：国家是理性行为体，追求权力最大化"]
+    R2["代表人物：摩根索 · 华尔兹 · 米尔斯海默"]
+    R3["关键词：安全困境·均势·霸权"]
+    R4["政策建议：增强军备·联盟制衡"]
+  end
+  subgraph LIB["自由主义"]
+    L1["核心假设：国家追求绝对收益，制度可促进合作"]
+    L2["代表人物：基欧汉 · 奈 · 多伊奇"]
+    L3["关键词：相互依存·国际制度·民主和平"]
+    L4["政策建议：经济合作·国际组织·民主推广"]
+  end
+  subgraph CON["建构主义"]
+    C1["核心假设：无政府状态是国家建构的"]
+    C2["代表人物：温特 · 芬尼莫尔 · 卡赞斯坦"]
+    C3["关键词：身份·规范·文化"]
+    C4["政策建议：对话·观念转变·身份重构"]
+  end
+  REAL -->|"批评"| LIB
+  LIB -->|"补充"| CON
+  classDef real fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef lib fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef con fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  class REAL,R1,R2,R3,R4 real;
+  class LIB,L1,L2,L3,L4 lib;
+  class CON,C1,C2,C3,C4 con;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：国际关系的三大理论</strong>——现实主义、自由主义、建构主义不是三种"意见"，而是三种分析国际关系的不同范式。它们对同一个问题的回答截然不同。</p>
+          <p><strong>现实主义：</strong>为什么会有战争？现实主义说，因为国家都在追求权力，在无政府状态下战争不可避免。修昔底德说"强者做他们能做的事，弱者忍受他们必须忍受的事"。现实主义的优点是冷静务实，缺点是大儒——它无法解释为什么国家也会合作。</p>
+          <p><strong>自由主义：</strong>为什么会有合作？自由主义说，因为国家发现了合作的收益。国际制度降低了交易成本，经济相互依存让战争的成本越来越高。民主和平论认为民主国家之间很少打仗。自由主义的优点是乐观，缺点是过于乐观——它低估了权力的作用。</p>
+          <p><strong>建构主义：</strong>为什么敌人可以变成朋友？建构主义说，因为国家之间的"关系"不是天生的，而是被建构出来的。亚历山大·温特说："无政府状态是国家建构的。"——国家之间可以相互视为敌人、竞争者或朋友。</p>
+          <p><strong>现实案例：</strong>中美关系的变化可以用三种理论分别解释。现实主义：中国崛起挑战美国霸权，冲突不可避免。自由主义：两国经济深度融合，合作才能双赢。建构主义：中美之间的"敌人"叙事是可以通过对话改变的。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>7.1 国际关系六大规律回顾</li>
+          <li>7.2 国际关系与政治、历史的关系</li>
+          <li>7.3 国际关系精神的当代意义</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>无政府之实</strong>：国际体系没有世界政府</li>
+          <li><strong>权力之衡</strong>：权力制衡维持稳定</li>
+          <li><strong>制度之序</strong>：制度促进合作</li>
+          <li><strong>观念之塑</strong>：观念塑造身份与利益</li>
+          <li><strong>相互依存之网</strong>：全球化让世界相连</li>
+          <li><strong>和平之愿</strong>：超越零和博弈的愿景</li>
+        </ul>
+        <figure class="diagram">
+          <figcaption>图 8 · 国际关系六大规律图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["国际关系六大规律"] --> A["无政府之实<br>没有世界政府"]
+  ROOT --> B["权力之衡<br>权力制衡维持稳定"]
+  ROOT --> C["制度之序<br>制度促进合作"]
+  ROOT --> D["观念之塑<br>观念塑造身份"]
+  ROOT --> E["相互依存之网<br>全球化相连"]
+  ROOT --> F["和平之愿<br>超越零和博弈"]
+  classDef rootNode fill:#1E40AF,color:#fff,stroke:#1E40AF;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <div class="history">
+          <span class="history-title">六大规律的提炼</span>
+          <p><strong>无政府之实</strong>：从威斯特伐利亚到今天，国际体系始终没有世界政府。无政府之实的启示是：国际政治不同于国内政治，国家必须自助——理解这一现实，是理解一切国际问题的起点。</p>
+          <p><strong>权力之衡</strong>：从维也纳体系到冷战两极，权力制衡维持了相对稳定。权力之衡的启示是：和平不能只靠善意，也需要力量的平衡——但平衡只是手段，不是目的。</p>
+          <p><strong>制度之序</strong>：从国联到联合国，从 WTO 到《巴黎协定》，制度让合作成为可能。制度之序的启示是：即使没有世界政府，国家也可以通过制度约束行为、降低冲突——制度是秩序的载体。</p>
+          <p><strong>观念之塑</strong>：从温特的建构主义到国际规范研究，观念塑造身份与利益。观念之塑的启示是：国际关系不仅是实力的较量，也是意义的争夺——改变观念，就能改变行为。</p>
+          <p><strong>相互依存之网</strong>：全球化让经济、安全与环境议题交织。相互依存之网的启示是：没有国家能独善其身——全球性问题需要全球合作，这是时代的要求。</p>
+          <p><strong>和平之愿</strong>：从康德的永久和平到人类命运共同体，人类始终向往和平。和平之愿的启示是：战争不是宿命，和平需要构建——超越零和博弈，才能走向共同繁荣。</p>
+        </div>
+        <h3>对照表：国际关系六大规律的对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>规律</th><th>核心命题</th><th>代表人物</th><th>思想启示</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>无政府之实</strong></td><td>国际体系没有世界政府</td><td>沃尔兹</td><td>理解国际问题的起点</td></tr>
+              <tr><td><strong>权力之衡</strong></td><td>权力制衡维持稳定</td><td>梅特涅 · 基辛格</td><td>和平需要力量平衡</td></tr>
+              <tr><td><strong>制度之序</strong></td><td>制度促进合作</td><td>基欧汉 · 威尔逊</td><td>制度是秩序的载体</td></tr>
+              <tr><td><strong>观念之塑</strong></td><td>观念塑造身份与利益</td><td>温特 · 布尔</td><td>改变观念就能改变行为</td></tr>
+              <tr><td><strong>相互依存之网</strong></td><td>全球化让世界相连</td><td>基欧汉 · 奈</td><td>全球问题需要全球合作</td></tr>
+              <tr><td><strong>和平之愿</strong></td><td>超越零和博弈</td><td>康德 · 人类命运共同体</td><td>和平需要构建</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <span class="callout-title">国际关系精神三句话</span>
+          第一，<strong>国际关系是清醒的现实主义</strong>——它直面无政府状态与权力政治，不抱幻想；第二，<strong>国际关系是建设性的理想主义</strong>——它相信制度、观念与合作可以超越冲突；第三，<strong>国际关系最终通向和平的构建</strong>——从均势到制度，从相互依存到人类命运共同体，人类一直在学习如何共处。与第二十三辑《政治学通论》合观，政治学问“国内如何组织”，国际关系问“国家之间如何相处”；与第十三辑《历史思想谱系》对话，历史提供案例，国际关系提炼规律。这正是思想图谱系列的意义——既理解国内秩序，也理解国际秩序，一个完整的人，二者缺一不可。
+        </div>
+      </section>
+    </main>
+
+    
+      <section class="sec">
+        <h2>关联辑目</h2>
+        <div class="explain">
+          <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+          <ul>
+          <li><a href="../politics-lineage/politics-lineage.html">政治学通论</a></li>
+          <li><a href="../history-lineage/history-lineage.html">历史思想谱系</a></li>
+          <li><a href="../economics-lineage/economics-lineage.html">经济思想谱系·上篇</a></li>
+          <li><a href="../military-lineage/military-lineage.html">军事与战略思想谱系</a></li>
+          <li><a href="../law-lineage/law-lineage.html">法学思想谱系</a></li>
+          <li><a href="../liberalism-lineage/liberalism-lineage.html">自由主义谱系</a></li>
+          </ul>
+        </div>
+      </section>
+<footer>
+      国际关系思想谱系 · 思想图谱系列第二十四辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-05
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'PingFang SC, Microsoft YaHei, Helvetica, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>

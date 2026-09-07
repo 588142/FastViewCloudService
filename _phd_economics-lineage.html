@@ -1,0 +1,1064 @@
+<!-- ============================================================
+     博士水平进阶模块 · 经济思想谱系上篇
+     微观经济理论：严格定义、核心定理、基本定律
+     嵌入位置：硕士模块之后
+     ============================================================ -->
+<style>
+  /* ===== 博士模块专用样式 ===== */
+  .phd-level { border-top: 3px solid var(--accent2); padding-top: 1rem; margin-top: 2rem; }
+  .phd-level .phd-badge { display: inline-block; background: var(--accent2); color: #fff; font: 700 0.7rem var(--font-mono); letter-spacing: 0.12em; padding: 0.2rem 0.8rem; border-radius: 999px; margin-bottom: 0.8rem; }
+
+  /* 定理 (theorem) 块 */
+  .theorem {
+    font-family: var(--font);
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-left: 4px solid #1a5276;
+    border-radius: 0 8px 8px 0;
+    padding: 0.8rem 1rem;
+    margin: 0.7rem 0;
+    font-size: 0.95rem;
+    overflow-x: auto;
+  }
+  .theorem .t-name { font-weight: 700; color: #1a5276; display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+  .theorem .t-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+  /* 定律 (law) 块 */
+  .law {
+    font-family: var(--font);
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-left: 4px solid #8B4513;
+    border-radius: 0 8px 8px 0;
+    padding: 0.8rem 1rem;
+    margin: 0.7rem 0;
+    font-size: 0.95rem;
+    overflow-x: auto;
+  }
+  .law .l-name { font-weight: 700; color: #8B4513; display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+  .law .l-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+  /* 证明 (proof) 块 */
+  .proof {
+    font-family: var(--font);
+    background: #faf8f4;
+    border: 1px solid var(--rule);
+    border-left: 4px solid #6c3483;
+    border-radius: 0 8px 8px 0;
+    padding: 0.8rem 1rem;
+    margin: 0.7rem 0;
+    font-size: 0.93rem;
+    overflow-x: auto;
+  }
+  .proof .p-name { font-weight: 700; color: #6c3483; display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+  .proof .p-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+  .proof .p-qed { text-align: right; font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); margin-top: 0.5rem; }
+
+  /* 博士模块内嵌的公式块微调 */
+  .phd-level .formula { border-left-color: var(--accent2); }
+
+  /* 可视化容器 */
+  .viz-container { background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; margin: 1.2rem 0; position: relative; }
+  .viz-container canvas { display: block; width: 100%; height: 100%; }
+  .viz-caption { font-size: 0.82rem; color: var(--muted); text-align: center; margin: 0.4rem 0 1.2rem 0; font-style: italic; }
+
+  /* 三栏布局 */
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+  @media (max-width: 700px) { .three-col { grid-template-columns: 1fr; } }
+  .three-col .col { background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; padding: 0.8rem; }
+  .three-col .col h4 { font-family: var(--font-head); font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--accent2); }
+  .three-col .col p { font-size: 0.88rem; }
+
+  /* 定义列表 */
+  .def-list { margin: 0.7rem 0; }
+  .def-list dt { font-weight: 700; font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); margin-top: 0.6rem; }
+  .def-list dd { margin-left: 1.2rem; font-size: 0.9rem; color: var(--ink); margin-bottom: 0.3rem; }
+</style>
+
+<!-- ===== 博士水平进阶导览 ===== -->
+<section class="sec" id="phd-prologue">
+  <h2><span class="chapno">博导</span>博士水平进阶导览</h2>
+  <div class="callout">
+    <span class="callout-title">博士水平要求</span>
+    <p>从硕士到博士的跃迁，核心在于从"应用知识"转向"创造知识"。博士阶段要求：第一，<strong>独立研究能力</strong>——能够识别理论的边界与盲点，提出原创性研究问题；第二，<strong>原创贡献</strong>——在现有理论框架上做出可验证的增量贡献，或提出修正性理论；第三，<strong>前沿掌握</strong>——对当前研究前沿的脉络、关键文献和未解问题有系统性的理解。本模块的七个章节（D1–D7）围绕微观经济理论的核心体系展开，从公理体系到前沿问题，构建博士水平的完整知识框架。</p>
+  </div>
+
+  <p>本模块的设计遵循"严格性—形式化—前沿性"三条主线。D1 建立完整的公理与定义体系，D2 归纳基本定律与原理，D3 系统呈现核心定理及其逻辑关系，D4 提供两个完整的形式证明，D5 建构一般均衡的形式化体系并辅以三维可视化，D6 讨论前沿定理与未解问题，D7 展望当前研究前沿。每一模块都要求读者不仅"知道"结论，更能"复现"推导、"批判"前提、"拓展"边界。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>模块</th><th>主题</th><th>核心内容</th><th>交互式可视化</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>D1</strong></td><td>核心公理与定义</td><td>偏好关系·效用函数·需求·生产·均衡·福利</td><td>—</td></tr>
+        <tr><td><strong>D2</strong></td><td>基本定律与原理</td><td>边际递减·供求定律·福利定理·科斯定理·WARP</td><td>—</td></tr>
+        <tr><td><strong>D3</strong></td><td>核心定理</td><td>Arrow-Debreu·Debreu表示·福利定理·纳什存在性·Arrow不可能性</td><td>—</td></tr>
+        <tr><td><strong>D4</strong></td><td>定理证明详解</td><td>Arrow-Debreu均衡存在性·福利经济学第一定理</td><td>—</td></tr>
+        <tr><td><strong>D5</strong></td><td>形式化体系</td><td>一般均衡的完整形式体系·Edgeworth盒三维扩展</td><td>Three.js 3D Edgeworth 盒</td></tr>
+        <tr><td><strong>D6</strong></td><td>前沿定理与未解问题</td><td>Hurwicz·Maskin·Myerson·Wilson·SMD定理</td><td>—</td></tr>
+        <tr><td><strong>D7</strong></td><td>研究前沿</td><td>行为博弈·算法博弈·市场设计·实验经济学·神经经济学</td><td>Three.js 3D 均衡精炼空间</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============================================================
+     D1 · 核心公理与定义
+     ============================================================ -->
+<section class="sec phd-level" id="phd-d1">
+  <h2><span class="chapno">D1</span>核心公理与定义</h2>
+  <p>以下定义构成了现代微观经济理论公理体系的基础。每一概念都应当从"定义—公理条件—数学表达—经济含义"四个维度来理解。本模块共收录 <strong>15 条严格定义</strong>，覆盖消费者理论、生产者理论、博弈论和福利经济学的基本范畴。</p>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.1 · 偏好关系（Preference Relation）</span>
+    设消费集 <em>X</em> ⊆ ℝ<sup><em>n</em></sup><sub>+</sub>。偏好关系 <em>⪰</em> 是 <em>X</em> 上的二元关系，满足：
+    <br><strong>完备性（Completeness）：</strong>∀ <em>x</em>, <em>y</em> ∈ <em>X</em>, <em>x ⪰ y</em> 或 <em>y ⪰ x</em>（或两者同时成立）。
+    <br><strong>传递性（Transitivity）：</strong>∀ <em>x</em>, <em>y</em>, <em>z</em> ∈ <em>X</em>, 若 <em>x ⪰ y</em> 且 <em>y ⪰ z</em>, 则 <em>x ⪰ z</em>。
+    <br><strong>连续性（Continuity）：</strong>∀ <em>y</em> ∈ <em>X</em>, 集合 {<em>x</em> ∈ <em>X</em> : <em>x ⪰ y</em>} 和 {<em>x</em> ∈ <em>X</em> : <em>y ⪰ x</em>} 在 <em>X</em> 中是闭集。
+    <span class="f-note">完备性确保任何两个消费束都可比较；传递性保证偏好排序无循环；连续性保证效用函数的存在性。这三个条件合称"理性偏好公理"。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.2 · 效用函数存在性定理（Debreu 表示定理）</span>
+    若偏好关系 <em>⪰</em> 在 <em>X</em> ⊆ ℝ<sup><em>n</em></sup><sub>+</sub> 上满足完备性、传递性和连续性，则存在一个连续的实值函数 <em>u: X → ℝ</em>，使得 ∀ <em>x</em>, <em>y</em> ∈ <em>X</em>：
+    <br><em>x ⪰ y</em> ⇔ <em>u(x) ≥ u(y)</em>
+    <span class="f-note">该定理由德布鲁（Debreu, 1954）证明。效用函数在严格单调递增变换下是唯一的（序数性质）。对基数效用论而言，这一表示并不唯一——任何单调变换都保持偏好排序不变。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.3 · 马歇尔需求函数（Marshallian Demand）</span>
+    在价格 <em>p</em> ∈ ℝ<sup><em>n</em></sup><sub>++</sub> 和收入 <em>w</em> > 0 下，消费者的马歇尔需求对应为：
+    <br><em>x</em>(<em>p</em>, <em>w</em>) = arg max<sub><em>x</em> ∈ ℝ<sup><em>n</em></sup><sub>+</sub></sub> { <em>u</em>(<em>x</em>) : <em>p</em> · <em>x</em> ≤ <em>w</em> }
+    <span class="f-note">马歇尔需求（亦称瓦尔拉斯需求）是消费者在预算约束下最大化效用得到的最优消费束。若效用函数连续且预算集紧致，需求对应存在。若效用函数严格拟凹，则需求对应退化为单值函数。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.4 · 希克斯需求函数（Hicksian Demand）</span>
+    在价格 <em>p</em> ∈ ℝ<sup><em>n</em></sup><sub>++</sub> 和目标效用水平 <em>ū</em> 下，消费者的希克斯需求对应为：
+    <br><em>h</em>(<em>p</em>, <em>ū</em>) = arg min<sub><em>x</em> ∈ ℝ<sup><em>n</em></sup><sub>+</sub></sub> { <em>p</em> · <em>x</em> : <em>u</em>(<em>x</em>) ≥ <em>ū</em> }
+    <span class="f-note">希克斯需求（亦称补偿需求）是消费者在给定效用水平下最小化支出得到的最优消费束。希克斯需求关于价格是非增的，且满足补偿需求定律（compensated law of demand）。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.5 · Slutsky 方程（Slutsky Equation）</span>
+    马歇尔需求对价格的总效应可分解为替代效应和收入效应：
+    <br>∂<em>x<sub>i</sub></em>(<em>p</em>, <em>w</em>)/∂<em>p<sub>j</sub></em> = ∂<em>h<sub>i</sub></em>(<em>p</em>, <em>ū</em>)/∂<em>p<sub>j</sub></em> − <em>x<sub>j</sub></em>(<em>p</em>, <em>w</em>) · ∂<em>x<sub>i</sub></em>(<em>p</em>, <em>w</em>)/∂<em>w</em>
+    <span class="f-note">第一项是替代效应（希克斯替代项），衡量相对价格变化引起的需求变动（保持效用不变）；第二项是收入效应，衡量实际购买力变化引起的需求变动。Slutsky 方程揭示了需求定律成立的条件：若商品是正常品（收入效应为正），则替代效应与收入效应同向，需求曲线确定向下倾斜。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.6 · 生产函数（Production Function）</span>
+    生产函数 <em>f</em>: ℝ<sup><em>m</em></sup><sub>+</sub> → ℝ<sub>+</sub> 将投入向量 <em>z</em> ∈ ℝ<sup><em>m</em></sup><sub>+</sub> 映射为最大产出 <em>q</em> = <em>f</em>(<em>z</em>)。生产函数满足：
+    <br><strong>拟凹性（Quasi-Concavity）：</strong>∀ <em>z</em>, <em>z'</em> ∈ ℝ<sup><em>m</em></sup><sub>+</sub>, <em>f</em>(θ<em>z</em> + (1−θ)<em>z'</em>) ≥ min{<em>f</em>(<em>z</em>), <em>f</em>(<em>z'</em>)}，∀ θ ∈ [0, 1]。
+    <br><strong>一次齐次性（Constant Returns to Scale）：</strong><em>f</em>(λ<em>z</em>) = λ<em>f</em>(<em>z</em>) ∀ λ > 0（若规模报酬不变）。
+    <span class="f-note">拟凹性保证等产量线凸向原点，一次齐次性意味着规模报酬不变。柯布-道格拉斯函数 <em>f</em>(<em>K</em>, <em>L</em>) = <em>AK<sup>α</sup>L<sup>β</sup></em> 在 α + β = 1 时满足一次齐次性。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.7 · 成本函数（Cost Function）——对偶性</span>
+    在要素价格 <em>w</em> ∈ ℝ<sup><em>m</em></sup><sub>++</sub> 和产出水平 <em>q</em> 下，最小成本为：
+    <br><em>C</em>(<em>w</em>, <em>q</em>) = min<sub><em>z</em> ∈ ℝ<sup><em>m</em></sup><sub>+</sub></sub> { <em>w</em> · <em>z</em> : <em>f</em>(<em>z</em>) ≥ <em>q</em> }
+    <span class="f-note">成本函数与生产函数之间存在对偶性（Duality）：给定生产函数可唯一确定成本函数，反之亦然。成本函数关于要素价格 <em>w</em> 是一次齐次、非减且凹的。谢泼德引理（Shephard's Lemma）：∂<em>C</em>(<em>w</em>, <em>q</em>)/∂<em>w<sub>i</sub></em> = <em>z<sub>i</sub></em><sup>*</sup>(<em>w</em>, <em>q</em>)，即要素需求等于成本函数对要素价格的偏导数。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.8 · 利润函数（Profit Function）——Hotelling 引理</span>
+    在产品价格 <em>p</em> 和要素价格 <em>w</em> 下，竞争性企业的利润函数为：
+    <br>π(<em>p</em>, <em>w</em>) = max<sub><em>z</em> ∈ ℝ<sup><em>m</em></sup><sub>+</sub></sub> { <em>pf</em>(<em>z</em>) − <em>w</em> · <em>z</em> }
+    <span class="f-note"><strong>Hotelling 引理：</strong>∂π(<em>p</em>, <em>w</em>)/∂<em>p</em> = <em>q</em><sup>*</sup>(<em>p</em>, <em>w</em>)（供给函数）；∂π(<em>p</em>, <em>w</em>)/∂<em>w<sub>i</sub></em> = −<em>z<sub>i</sub></em><sup>*</sup>(<em>p</em>, <em>w</em>)（要素需求函数，负号表示要素需求与利润负相关）。利润函数关于 (<em>p</em>, <em>w</em>) 是一次齐次且凸的。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.9 · 纳什均衡（Nash Equilibrium）</span>
+    在 <em>n</em> 人策略博弈 Γ = {<em>N</em>, {<em>S<sub>i</sub></em>}<sub><em>i</em>∈<em>N</em></sub>, {<em>u<sub>i</sub></em>}<sub><em>i</em>∈<em>N</em></sub>} 中，策略组合 <em>s</em><sup>*</sup> = (<em>s</em><sub>1</sub><sup>*</sup>, …, <em>s<sub>n</sub></em><sup>*</sup>) 是纳什均衡，当且仅当 ∀ <em>i</em> ∈ <em>N</em> 且 ∀ <em>s<sub>i</sub></em> ∈ <em>S<sub>i</sub></em>：
+    <br><em>u<sub>i</sub></em>(<em>s<sub>i</sub></em><sup>*</sup>, <em>s</em><sub>−<em>i</em></sub><sup>*</sup>) ≥ <em>u<sub>i</sub></em>(<em>s<sub>i</sub></em>, <em>s</em><sub>−<em>i</em></sub><sup>*</sup>)
+    <span class="f-note">在纯策略纳什均衡中，每个参与者的策略是对其他参与者策略的最优反应。当纯策略纳什均衡不存在时，可考虑混合策略纳什均衡：参与者以概率分布 <em>σ<sub>i</sub></em> ∈ Δ(<em>S<sub>i</sub></em>) 随机化选择纯策略。纳什（Nash, 1950）证明了在有限博弈中混合策略纳什均衡总是存在。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.10 · 子博弈完美均衡（Subgame Perfect Equilibrium）</span>
+    在扩展式博弈 Γ<sup>E</sup> 中，策略组合 <em>σ</em><sup>*</sup> 是子博弈完美均衡，当且仅当它在每一个子博弈 Γ<sup>E</sup><sub>h</sub>（以信息集 <em>h</em> 为根节点的子博弈）中都构成纳什均衡。
+    <span class="f-note">由泽尔滕（Selten, 1965）提出。SPE 通过逆向归纳法（Backward Induction）求解，剔除了不可信威胁（non-credible threats）。在完全信息有限扩展式博弈中，SPE 与逆向归纳解等价。SPE 是纳什均衡的最基本精炼（refinement），此后发展出完美均衡、适当均衡、序贯均衡等更强的精炼概念。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.11 · 贝叶斯纳什均衡（Bayesian Nash Equilibrium）</span>
+    在不完全信息博弈 Γ<sup>B</sup> = {<em>N</em>, {<em>A<sub>i</sub></em>}, {Θ<sub><em>i</em></sub>}, {<em>u<sub>i</sub></em>}, {<em>p<sub>i</sub></em>}} 中，策略组合 <em>σ</em><sup>*</sup> = (<em>σ</em><sub>1</sub><sup>*</sup>, …, <em>σ<sub>n</sub></em><sup>*</sup>) 是贝叶斯纳什均衡，当且仅当 ∀ <em>i</em> ∈ <em>N</em>, ∀ <em>θ<sub>i</sub></em> ∈ Θ<sub><em>i</em></sub>, ∀ <em>a<sub>i</sub></em> ∈ <em>A<sub>i</sub></em>：
+    <br>E<sub>θ<sub>−<em>i</em></sub></sub>[ <em>u<sub>i</sub></em>(<em>σ</em><sub><em>i</em></sub><sup>*</sup>(<em>θ<sub>i</sub></em>), <em>σ</em><sub>−<em>i</em></sub><sup>*</sup>(<em>θ</em><sub>−<em>i</em></sub>), <em>θ<sub>i</sub></em>, <em>θ</em><sub>−<em>i</em></sub>) ] ≥ E<sub>θ<sub>−<em>i</em></sub></sub>[ <em>u<sub>i</sub></em>(<em>a<sub>i</sub></em>, <em>σ</em><sub>−<em>i</em></sub><sup>*</sup>(<em>θ</em><sub>−<em>i</em></sub>), <em>θ<sub>i</sub></em>, <em>θ</em><sub>−<em>i</em></sub>) ]
+    <span class="f-note">由海萨尼（Harsanyi, 1967–1968）通过"海萨尼转换"（Harsanyi Transformation）引入：将不完全信息博弈转化为完全但不完美信息博弈。每个参与者拥有私有类型 <em>θ<sub>i</sub></em>，关于他人类型的信念由先验分布 <em>p<sub>i</sub></em> 给出。BNE 要求每个类型下的策略都是对其他参与者类型依存策略的最优反应。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.12 · 帕累托最优（Pareto Optimality）</span>
+    配置 (<em>x</em>, <em>y</em>) ∈ ℝ<sup><em>n</em></sup><sub>+</sub><sup><em>I</em></sup> × ℝ<sup><em>n</em></sup><sub>+</sub><sup><em>J</em></sup> 是帕累托最优的，当且仅当不存在可行配置 (<em>x'</em>, <em>y'</em>) 使得：
+    <br>(i) ∀ <em>i</em>, <em>x'<sub>i</sub></em> ⪰<sub><em>i</em></sub> <em>x<sub>i</sub></em>；且 (ii) ∃ <em>i</em>, <em>x'<sub>i</sub></em> ≻<sub><em>i</em></sub> <em>x<sub>i</sub></em>
+    <span class="f-note">帕累托最优是福利经济学最基本的效率概念。一个帕累托改进（Pareto improvement）是使至少一人变好而不使任何人变差的变化。帕累托最优即不存在任何帕累托改进的空间。注意：帕累托最优不涉及分配公平——一个极端不平等的配置也可以是帕累托最优的。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.13 · 社会福利函数（Social Welfare Function）——Arrow 条件</span>
+    社会福利函数 <em>F</em>: ℛ<sup><em>n</em></sup> → ℛ 将个人偏好序 <em>R</em><sub>1</sub>, …, <em>R<sub>n</sub></em> 映射为社会偏好序 <em>R</em>。Arrow 要求 <em>F</em> 满足：
+    <br><strong>U（无限制域）：</strong>定义域包含所有可能的偏好序组合。
+    <br><strong>P（帕累托原则）：</strong>若 ∀ <em>i</em>, <em>x</em> ≻<sub><em>i</em></sub> <em>y</em>，则 <em>x</em> ≻ <em>y</em>。
+    <br><strong>I（无关方案独立性）：</strong>社会对 <em>x</em> 和 <em>y</em> 的排序仅取决于个人对 <em>x</em> 和 <em>y</em> 的排序，与对第三方案 <em>z</em> 的排序无关。
+    <br><strong>D（非独裁性）：</strong>不存在个人 <em>i</em> 使得 ∀ (<em>R</em><sub>1</sub>, …, <em>R<sub>n</sub></em>), <em>F</em>(<em>R</em><sub>1</sub>, …, <em>R<sub>n</sub></em>) = <em>R<sub>i</sub></em>。
+    <span class="f-note">Arrow（1951）证明了：同时满足 U、P、I、D 四个条件的社会福利函数不存在。这就是著名的 Arrow 不可能性定理（Arrow's Impossibility Theorem）。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.14 · 一般均衡（Walras 均衡）</span>
+    经济 <em>E</em> = {<em>I</em>, <em>J</em>, {⪰<sub><em>i</em></sub>}, {<em>ω<sub>i</sub></em>}, {<em>Y<sub>j</sub></em>}} 的 Walras 均衡由价格向量 <em>p</em><sup>*</sup> ∈ ℝ<sup><em>n</em></sup><sub>+</sub> 和配置 (<em>x</em><sup>*</sup>, <em>y</em><sup>*</sup>) 组成，满足：
+    <br>(i) <strong>消费者最优：</strong>∀ <em>i</em>, <em>x<sub>i</sub></em><sup>*</sup> ∈ arg max { <em>u<sub>i</sub></em>(<em>x<sub>i</sub></em>) : <em>p</em><sup>*</sup> · <em>x<sub>i</sub></em> ≤ <em>p</em><sup>*</sup> · <em>ω<sub>i</sub></em> + Σ<sub><em>j</em></sub> θ<sub><em>ij</em></sub> <em>p</em><sup>*</sup> · <em>y<sub>j</sub></em><sup>*</sup> }
+    <br>(ii) <strong>企业最优：</strong>∀ <em>j</em>, <em>y<sub>j</sub></em><sup>*</sup> ∈ arg max { <em>p</em><sup>*</sup> · <em>y<sub>j</sub></em> : <em>y<sub>j</sub></em> ∈ <em>Y<sub>j</sub></em> }
+    <br>(iii) <strong>市场出清：</strong>Σ<sub><em>i</em></sub> <em>x<sub>i</sub></em><sup>*</sup> ≤ Σ<sub><em>i</em></sub> <em>ω<sub>i</sub></em> + Σ<sub><em>j</em></sub> <em>y<sub>j</sub></em><sup>*</sup>
+    <span class="f-note">瓦尔拉斯（Walras, 1874）首次提出了一般均衡的构想。Arrow 与 Debreu（1954）给出了均衡存在性的严格数学证明。瓦尔拉斯定律（Walras' Law）：<em>p</em> · <em>z</em>(<em>p</em>) ≡ 0，即超额需求总值恒为零——若有 <em>n</em>−1 个市场出清，则第 <em>n</em> 个市场自动出清。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.15 · 边际替代率与边际技术替代率</span>
+    <strong>边际替代率（MRS, Marginal Rate of Substitution）：</strong>MRS<sub>xy</sub> = MU<sub>x</sub> / MU<sub>y</sub> = −d<em>y</em>/d<em>x</em>|<sub><em>u</em> = const</sub>
+    <br>消费者愿意用商品 <em>y</em> 替代商品 <em>x</em> 的比率。在最优消费点，MRS = <em>p<sub>x</sub></em> / <em>p<sub>y</sub></em>（边际替代率等于价格比）。
+    <br><strong>边际技术替代率（MRTS, Marginal Rate of Technical Substitution）：</strong>MRTS<sub>LK</sub> = MP<sub>L</sub> / MP<sub>K</sub> = −d<em>K</em>/d<em>L</em>|<sub><em>q</em> = const</sub>
+    <br>生产者用劳动替代资本而保持产出不变的比率。在最优生产点，MRTS = <em>w</em> / <em>r</em>（边际技术替代率等于要素价格比）。
+    <span class="f-note">MRS 递减（无差异曲线凸向原点）是拟凹偏好的表现；MRTS 递减（等产量线凸向原点）是生产函数拟凹性的表现。</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     D2 · 基本定律与原理
+     ============================================================ -->
+<section class="sec phd-level" id="phd-d2">
+  <h2><span class="chapno">D2</span>基本定律与原理</h2>
+  <p>以下定律是经济学经过两个多世纪积累的"稳定知识"。每一定律都应当从"陈述—形式化表达—前提条件—经验证据—反例与边界"五个维度来审视。本模块共收录 <strong>10 条基本定律</strong>。</p>
+
+  <div class="law">
+    <span class="l-name">定律 L2.1 · 边际效用递减定律（Law of Diminishing Marginal Utility）</span>
+    在给定时间段内，随着消费者对某种商品消费量的增加，每增加一单位消费所带来的额外满足感（边际效用）最终会递减。
+    <br>形式化：∀ <em>x</em>, ∂<em>u</em>(<em>x</em>)/∂<em>x<sub>k</sub></em> > 0 且 ∂²<em>u</em>(<em>x</em>)/∂<em>x<sub>k</sub></em>² < 0（在饱和点之前）。
+    <span class="l-note">提出者：赫尔曼·戈森（Hermann Gossen, 1854），后由杰文斯、门格尔、瓦尔拉斯独立重新发现。戈森第一定律，亦称"戈森定律"。边际效用递减是需求曲线向右下倾斜的微观基础。注意：该定律不适用于"成瘾性商品"（如毒品），后者的边际效用可能递增。</span>
+  </div>
+
+  <div class="law">
+    <span class="l-name">定律 L2.2 · 边际报酬递减定律（Law of Diminishing Marginal Returns）</span>
+    在短期生产中，保持至少一种生产要素固定不变，连续增加可变要素的投入量，可变要素的边际产出最终会递减。
+    <br>形式化：∀ <em>L</em> > <em>L</em><sub>0</sub>, ∂<em>f</em>(<em>K̄</em>, <em>L</em>)/∂<em>L</em> 递减且最终为负。
+    <span class="l-note">古典经济学家马尔萨斯、李嘉图、图尔哥等均独立观察到这一规律。该定律是短期生产的基本规律，解释了为什么企业面临上升的边际成本曲线。一个重要推论：在固定土地供给下，人口增长会导致人均产出下降——这正是马尔萨斯人口论的数学基础。</span>
+  </div>
+
+  <div class="law">
+    <span class="l-name">定律 L2.3 · 需求定律（Law of Demand）——Slutsky 方程形式</span>
+    在其他条件不变的情况下，一种商品的价格上升（下降）会导致该商品的需求量减少（增加）。Slutsky 方程给出了需求定律成立的充分条件：
+    <br>∂<em>x<sub>i</sub></em>(<em>p</em>, <em>w</em>)/∂<em>p<sub>i</sub></em> = ∂<em>h<sub>i</sub></em>(<em>p</em>, <em>ū</em>)/∂<em>p<sub>i</sub></em> − <em>x<sub>i</sub></em>(<em>p</em>, <em>w</em>) · ∂<em>x<sub>i</sub></em>(<em>p</em>, <em>w</em>)/∂<em>w</em>
+    <br>希克斯替代项 ∂<em>h<sub>i</sub></em>/∂<em>p<sub>i</sub></em> ≤ 0（补偿需求定律）。若商品是正常品（∂<em>x<sub>i</sub></em>/∂<em>w</em> > 0），则总效应 ∂<em>x<sub>i</sub></em>/∂<em>p<sub>i</sub></em> < 0。
+    <span class="l-note">需求定律并非恒成立——吉芬商品（Giffen Goods）在价格上升时需求量反而增加，因为收入效应超过替代效应。罗伯特·吉芬爵士（19世纪）观察到爱尔兰马铃薯饥荒期间，马铃薯价格上升导致消费量反而增加。这一"吉芬悖论"是需求定律的唯一理论反例，但在实证中极为罕见。</span>
+  </div>
+
+  <div class="law">
+    <span class="l-name">定律 L2.4 · 供给定律（Law of Supply）</span>
+    在其他条件不变的情况下，一种商品的价格上升（下降）会导致该商品的供给量增加（减少）。
+    <br>形式化：∂<em>q<sub>j</sub></em>(<em>p</em>)/∂<em>p</em> ≥ 0，其中 <em>q<sub>j</sub></em>(<em>p</em>) 是竞争性企业的供给函数。
+    <span class="l-note">供给定律的微观基础是边际成本递增。在竞争性市场中，企业的最优供给由 <em>p</em> = MC 决定，MC 曲线向上倾斜部分即为供给曲线。供给曲线向后弯曲（backward-bending supply）在劳动市场中存在——当工资足够高时，劳动者可能选择减少工作时间（收入效应超过替代效应），导致劳动供给曲线向后弯曲。</span>
+  </div>
+
+  <div class="law">
+    <span class="l-name">定律 L2.5 · 福利经济学第一定理（First Welfare Theorem）</span>
+    在完全竞争市场中，任何竞争均衡（Walras 均衡）都是帕累托最优的。
+    <br>形式化：若 (<em>p</em><sup>*</sup>, <em>x</em><sup>*</sup>, <em>y</em><sup>*</sup>) 是经济 <em>E</em> 的 Walras 均衡，则配置 (<em>x</em><sup>*</sup>, <em>y</em><sup>*</sup>) 是帕累托最优的。
+    <span class="l-note">这一定理为亚当·斯密"看不见的手"提供了严格的数学证明。证明思路：假设存在一个帕累托改进的可行配置，则至少有一个消费者能在这个新配置下得到更高的效用。但根据均衡定义，消费者已经在预算约束下实现了效用最大化，因此任何更优的消费束必定超出其预算约束——这与可行性矛盾。前提条件：完全竞争、无外部性、无公共品、完全信息。</span>
+  </div>
+
+  <div class="law">
+    <span class="l-name">定律 L2.6 · 福利经济学第二定理（Second Welfare Theorem）</span>
+    在凸性条件下，任何帕累托最优配置都可以通过适当的初始禀赋再分配和竞争市场来实现。
+    <br>形式化：若 (<em>x</em><sup>*</sup>, <em>y</em><sup>*</sup>) 是帕累托最优的，且偏好满足凸性、生产集是凸集，则存在价格向量 <em>p</em> 和转移支付 <em>T</em> = (T<sub>1</sub>, …, T<sub><em>I</em></sub>)，使得在初始禀赋经转移支付调整后，(<em>p</em>, <em>x</em><sup>*</sup>, <em>y</em><sup>*</sup>) 构成一个 Walras 均衡。
+    <span class="l-note">第二定理的意义在于分离了效率与公平：社会可以将分配问题交给一次性转移支付（lump-sum transfers），而将效率问题交给市场。这一定理为"市场+再分配"的混合经济体制提供了理论基础。弗里德曼的负所得税（Negative Income Tax）方案正是这一定理的政策实践。</span>
+  </div>
+
+  <div class="law">
+    <span class="l-name">定律 L2.7 · 科斯定理（Coase Theorem）</span>
+    在交易成本为零的情况下，无论产权如何初始分配，当事人之间的谈判都能达到帕累托最优的资源配置。
+    <br>形式化：若交易成本 <em>τ</em> = 0，则初始产权分配 <em>E</em><sub>0</sub> 不影响最终配置效率，仅影响收入分配。
+    <span class="l-note">由科斯（Coase, 1960）在《社会成本问题》中提出。科斯定理解释了为什么产权界定而非政府干预可能解决外部性问题。但现实中交易成本几乎总是为正，因此初始产权分配和制度设计至关重要。科斯定理的局限性：忽略了策略性讨价还价（strategic bargaining）、财富效应（wealth effects）和搭便车问题（free-rider problem）。</span>
+  </div>
+
+  <div class="law">
+    <span class="l-name">定律 L2.8 · 显示偏好弱公理（WARP, Weak Axiom of Revealed Preference）</span>
+    若消费束 <em>x</em><sup>0</sup> 在价格 <em>p</em><sup>0</sup> 下被选择而消费束 <em>x</em><sup>1</sup> 在 <em>p</em><sup>0</sup> 下也可负担，则在价格 <em>p</em><sup>1</sup> 下如果 <em>x</em><sup>1</sup> 被选择，则 <em>x</em><sup>0</sup> 在 <em>p</em><sup>1</sup> 下一定不可负担。
+    <br>形式化：若 <em>p</em><sup>0</sup> · <em>x</em><sup>0</sup> ≥ <em>p</em><sup>0</sup> · <em>x</em><sup>1</sup> 且 <em>x</em><sup>0</sup> ≠ <em>x</em><sup>1</sup>，则 <em>p</em><sup>1</sup> · <em>x</em><sup>1</sup> < <em>p</em><sup>1</sup> · <em>x</em><sup>0</sup>。
+    <span class="l-note">由萨缪尔森（Samuelson, 1938）提出，标志"显示偏好理论"（Revealed Preference Theory）的诞生。WARP 是消费者选择行为满足理性偏好的必要条件。萨缪尔森试图通过可观察的选择行为来推断偏好，从而避免"效用"这一无法直接观测的概念。WARP 对应传递性，但不完全等价于传递性。</span>
+  </div>
+
+  <div class="law">
+    <span class="l-name">定律 L2.9 · 显示偏好强公理（SARP, Strong Axiom of Revealed Preference）</span>
+    若消费束 <em>x</em><sup>0</sup> 直接或间接显示偏好于 <em>x</em><sup><em>k</em></sup>（通过一组选择链），则 <em>x</em><sup><em>k</em></sup> 不能直接或间接显示偏好于 <em>x</em><sup>0</sup>。
+    <span class="l-note">由豪撒克（Houthakker, 1950）提出。SARP 是 WARP 的传递闭包（transitive closure），等价于存在一个理性的、连续的、严格凸的偏好关系。SARP 是显示偏好理论中与效用最大化等价的充分必要条件。后来，列普斯（Richter, 1966）和克拉克（Clark, 1993）进一步将 SARP 推广为广义公理（GARP）。</span>
+  </div>
+
+  <div class="law">
+    <span class="l-name">定律 L2.10 · 萨伊定律（Say's Law）</span>
+    供给会创造自己的需求。生产行为本身创造了购买力，因此总供给过剩（general glut）在长期中不可能出现。
+    <br>形式化：总供给 ≡ 总需求，或 Σ<sub><em>i</em></sub> <em>p<sub>i</sub></em> · <em>q<sub>i</sub></em><sup>S</sup> ≡ Σ<sub><em>i</em></sub> <em>p<sub>i</sub></em> · <em>q<sub>i</sub></em><sup>D</sup>
+    <span class="l-note">由法国经济学家萨伊（Jean-Baptiste Say, 1803）在《政治经济学概论》中提出。萨伊定律是古典经济学"市场自动出清"信念的理论基础。凯恩斯在《通论》（1936）中对此进行了系统性批判：货币不是"面纱"，储蓄不一定立即转化为投资，有效需求不足可以导致长期非自愿失业。凯恩斯的批判标志着宏观经济学的诞生。萨伊定律在物物交换经济中成立，但在货币经济中因"储蓄—投资"机制可能断裂而失效。</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     D3 · 核心定理
+     ============================================================ -->
+<section class="sec phd-level" id="phd-d3">
+  <h2><span class="chapno">D3</span>核心定理</h2>
+  <p>以下定理是微观经济理论体系的"支柱"。每一定理都应当从"定理陈述—前提条件—结论—证明思路—关键文献—现实意义"六个维度来理解。本模块共收录 <strong>8 个核心定理</strong>，涵盖一般均衡、福利经济学、博弈论和社会选择理论。</p>
+
+  <div class="theorem">
+    <span class="t-name">定理 T3.1 · Arrow-Debreu 一般均衡存在性定理（Arrow-Debreu Existence Theorem）</span>
+    <strong>前提：</strong>经济 <em>E</em> = {<em>I</em>, <em>J</em>, {⪰<sub><em>i</em></sub>}, {<em>ω<sub>i</sub></em>}, {<em>Y<sub>j</sub></em>}} 满足：(1) 消费集 <em>X<sub>i</sub></em> = ℝ<sup><em>n</em></sup><sub>+</sub>；(2) 偏好 <em>⪰<sub>i</sub></em> 满足完备性、传递性、连续性、严格凸性、强单调性；(3) 初始禀赋 <em>ω<sub>i</sub></em> ∈ ℝ<sup><em>n</em></sup><sub>++</sub>；(4) 生产集 <em>Y<sub>j</sub></em> 是凸闭集，包含零向量，且满足自由处置（free disposal）；(5) 总生产集 <em>Y</em> = Σ<sub><em>j</em></sub> <em>Y<sub>j</sub></em> 是凸的且 <em>Y</em> ∩ (−<em>Y</em>) ⊆ {0}（无免费午餐）。
+    <br><strong>结论：</strong>存在一个价格向量 <em>p</em><sup>*</sup> ∈ ℝ<sup><em>n</em></sup><sub>+</sub> \ {0} 和可行配置 (<em>x</em><sup>*</sup>, <em>y</em><sup>*</sup>) 构成 Walras 均衡。
+    <br><strong>证明方法：</strong>使用角谷静夫不动点定理（Kakutani Fixed Point Theorem）或布劳威尔不动点定理（Brouwer Fixed Point Theorem），构造超额需求函数 <em>z</em>(<em>p</em>)，证明存在 <em>p</em><sup>*</sup> 使得 <em>z</em>(<em>p</em><sup>*</sup>) ≤ 0。
+    <span class="t-note">Arrow & Debreu (1954) "Existence of an Equilibrium for a Competitive Economy", <em>Econometrica</em> 22(3), 265–290。德布鲁因其在一般均衡理论方面的贡献获 1983 年诺贝尔经济学奖。这一存在性证明是"二战"后经济学形式化浪潮的标志性成果。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 T3.2 · Debreu 表示定理（Debreu Representation Theorem）</span>
+    <strong>前提：</strong>偏好关系 <em>⪰</em> 在消费集 <em>X</em> ⊆ ℝ<sup><em>n</em></sup> 上满足完备性、传递性和连续性（<em>X</em> 是连通且可分度量空间）。
+    <br><strong>结论：</strong>存在一个连续的实值函数 <em>u</em>: <em>X</em> → ℝ 使得 ∀ <em>x</em>, <em>y</em> ∈ <em>X</em>, <em>x</em> ⪰ <em>y</em> ⇔ <em>u</em>(<em>x</em>) ≥ <em>u</em>(<em>y</em>)。
+    <br><strong>证明思路：</strong>利用度量空间中的可数稠密集、理性和连续性的性质，构造 <em>u</em>(<em>x</em>) = <em>d</em>(<em>x</em>, <em>B</em><sup>c</sup>) − <em>d</em>(<em>x</em>, <em>W</em><sup>c</sup>) 或利用"中性商品"（numeraire）方法。
+    <span class="t-note">Debreu (1954) "Representation of a Preference Ordering by a Numerical Function", 收录于 Thrall, Coombs & Davis 编《Decision Processes》。该定理为基数效用论提供了严格的数学基础，但注意：<em>u</em> 在单调递增变换下不唯一——只有序数性质有经济含义。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 T3.3 · 福利经济学第一定理（First Fundamental Theorem of Welfare Economics）</span>
+    <strong>前提：</strong>经济满足局部非饱和性（local nonsatiation）。
+    <br><strong>结论：</strong>若 (<em>p</em><sup>*</sup>, <em>x</em><sup>*</sup>, <em>y</em><sup>*</sup>) 是 Walras 均衡，则配置 (<em>x</em><sup>*</sup>, <em>y</em><sup>*</sup>) 是帕累托最优的。
+    <br><strong>证明思路：</strong>反证法。假设存在帕累托改进的可行配置 (<em>x'</em>, <em>y'</em>)，则 ∃ <em>i</em> 使得 <em>x'<sub>i</sub></em> ≻<sub><em>i</em></sub> <em>x<sub>i</sub></em><sup>*</sup>。由均衡定义，<em>p</em><sup>*</sup> · <em>x'<sub>i</sub></em> > <em>p</em><sup>*</sup> · <em>ω<sub>i</sub></em> + Σ<sub><em>j</em></sub> θ<sub><em>ij</em></sub> <em>p</em><sup>*</sup> · <em>y<sub>j</sub></em><sup>*</sup>。对所有消费者求和得到 <em>p</em><sup>*</sup> · Σ<sub><em>i</em></sub> <em>x'<sub>i</sub></em> > <em>p</em><sup>*</sup> · (Σ<sub><em>i</em></sub> <em>ω<sub>i</sub></em> + Σ<sub><em>j</em></sub> <em>y<sub>j</sub></em><sup>*</sup>)。但 (<em>x'</em>, <em>y'</em>) 是可行配置，即 Σ<sub><em>i</em></sub> <em>x'<sub>i</sub></em> ≤ Σ<sub><em>i</em></sub> <em>ω<sub>i</sub></em> + Σ<sub><em>j</em></sub> <em>y'<sub>j</sub></em>。由企业利润最大化，<em>p</em><sup>*</sup> · <em>y'<sub>j</sub></em> ≤ <em>p</em><sup>*</sup> · <em>y<sub>j</sub></em><sup>*</sup>，代入得 <em>p</em><sup>*</sup> · Σ<sub><em>i</em></sub> <em>x'<sub>i</sub></em> ≤ <em>p</em><sup>*</sup> · (Σ<sub><em>i</em></sub> <em>ω<sub>i</sub></em> + Σ<sub><em>j</em></sub> <em>y<sub>j</sub></em><sup>*</sup>)，矛盾。故帕累托改进不存在。
+    <span class="t-note">福利经济学第一定理的核心贡献在于：它证明了"看不见的手"直觉在严格的数学框架下成立。但前提条件（完全竞争、无外部性、无公共品、完全信息）在现实中几乎从不满足。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 T3.4 · 福利经济学第二定理（Second Fundamental Theorem of Welfare Economics）</span>
+    <strong>前提：</strong>经济中所有消费者的偏好都满足凸性（即无差异曲线凸向原点），所有生产集都是凸集。
+    <br><strong>结论：</strong>对任意帕累托最优配置 (<em>x</em><sup>*</sup>, <em>y</em><sup>*</sup>)，存在价格向量 <em>p</em> 和财富再分配方案 <em>w'<sub>i</sub></em>（满足 Σ<sub><em>i</em></sub> <em>w'<sub>i</sub></em> = <em>p</em> · Σ<sub><em>i</em></sub> <em>ω<sub>i</sub></em> + Σ<sub><em>j</em></sub> <em>p</em> · <em>y<sub>j</sub></em><sup>*</sup>），使得在预算约束 <em>p</em> · <em>x<sub>i</sub></em> ≤ <em>w'<sub>i</sub></em> 下，(<em>x</em><sup>*</sup>, <em>y</em><sup>*</sup>) 是竞争均衡。
+    <br><strong>证明思路：</strong>利用超平面分离定理（Separating Hyperplane Theorem）。将帕累托最优配置的上等值集与生产可能性集分离，分离超平面的法向量即为均衡价格。再通过适当的转移支付调整初始财富分配。
+    <span class="t-note">第二定理在理论上支持了"效率与公平分离"的政策范式。但在实践中，一次性转移支付（lump-sum transfers）难以实现——政府无法在不对个体行为产生扭曲的前提下进行再分配，因为政府无法区分"先天禀赋差异"和"后天努力差异"。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 T3.5 · 纳什存在性定理（Nash Existence Theorem）</span>
+    <strong>前提：</strong>有限策略博弈 Γ = {<em>N</em>, {<em>S<sub>i</sub></em>}, {<em>u<sub>i</sub></em>}}，其中 <em>N</em> 有限，每个 <em>S<sub>i</sub></em> 有限。
+    <br><strong>结论：</strong>存在一个混合策略纳什均衡 <em>σ</em><sup>*</sup> ∈ Π<sub><em>i</em></sub> Δ(<em>S<sub>i</sub></em>)，即存在 <em>σ</em><sup>*</sup> 使得 ∀ <em>i</em> ∈ <em>N</em>, ∀ <em>σ<sub>i</sub></em> ∈ Δ(<em>S<sub>i</sub></em>)：
+    <br><em>u<sub>i</sub></em>(<em>σ<sub>i</sub></em><sup>*</sup>, <em>σ</em><sub>−<em>i</em></sub><sup>*</sup>) ≥ <em>u<sub>i</sub></em>(<em>σ<sub>i</sub></em>, <em>σ</em><sub>−<em>i</em></sub><sup>*</sup>)
+    <br><strong>证明思路：</strong>定义每个参与者的最优反应对应 <em>φ<sub>i</sub></em>(<em>σ</em><sub>−<em>i</em></sub>) = arg max <em>u<sub>i</sub></em>(·, <em>σ</em><sub>−<em>i</em></sub>)。构造复合对应 <em>φ</em>: Σ → Σ，其中 <em>φ</em>(<em>σ</em>) = Π<sub><em>i</em></sub> <em>φ<sub>i</sub></em>(<em>σ</em><sub>−<em>i</em></sub>)。由角谷静夫不动点定理，<em>φ</em> 存在不动点 <em>σ</em><sup>*</sup> ∈ <em>φ</em>(<em>σ</em><sup>*</sup>)，即 <em>σ</em><sup>*</sup> 是纳什均衡。
+    <span class="t-note">Nash (1950) "Equilibrium Points in <em>n</em>-Person Games", <em>Proceedings of the National Academy of Sciences</em> 36(1), 48–49。纳什的博士论文仅 27 页，却奠定了非合作博弈论的基础。纳什因此获 1994 年诺贝尔经济学奖。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 T3.6 · Myerson-Satterthwaite 定理（Myerson-Satterthwaite Theorem）</span>
+    <strong>前提：</strong>双边交易中，买方估值 <em>v</em> ∈ [<em>v̄</em>, <em>v̄</em>]，卖方成本 <em>c</em> ∈ [<em>c̄</em>, <em>c̄</em>]，<em>v</em> 和 <em>c</em> 独立分布，且 <em>v̄</em> > <em>c̄</em>（即可能有效率交易存在）。
+    <br><strong>结论：</strong>不存在任何贝叶斯激励相容（Bayesian incentive-compatible）、个体理性（individually rational）且预算平衡（budget-balanced）的机制，能够实现所有的有效率交易（即 <em>v</em> > <em>c</em> 时交易必然发生）。
+    <br><strong>直观含义：</strong>在私人信息条件下，有效交易不可能完全实现——任何激励相容的机制都会牺牲一部分效率。
+    <span class="t-note">Myerson & Satterthwaite (1983) "Efficient Mechanisms for Bilateral Trading", <em>Journal of Economic Theory</em> 29(2), 265–281。这一定理是机制设计理论中最具影响力的不可能性结果之一，解释了为什么现实中的交易成本无法完全消除。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 T3.7 · Gibbard-Satterthwaite 定理（Gibbard-Satterthwaite Theorem）</span>
+    <strong>前提：</strong>社会选择函数 <em>f</em>: ℒ<sup><em>n</em></sup> → <em>A</em>，其中 <em>A</em> 包含至少三个备选方案，<em>n</em> ≥ 2，<em>f</em> 的值域覆盖整个 <em>A</em>。
+    <br><strong>结论：</strong>若 <em>f</em> 是防策略的（strategy-proof，即诚实报告偏好是弱优势策略），则 <em>f</em> 是独裁的（存在 <em>i</em> 使得 <em>f</em>(<em>R</em><sub>1</sub>, …, <em>R<sub>n</sub></em>) = <em>R<sub>i</sub></em> 的 top-ranked 方案）。
+    <br><strong>证明思路：</strong>利用单调性（monotonicity）和帕累托原则，证明防策略性隐含单调性，而单调性+全覆盖→独裁。
+    <span class="t-note">Gibbard (1973) "Manipulation of Voting Schemes", <em>Econometrica</em> 41(4), 587–601; Satterthwaite (1975) "Strategy-proofness and Arrow's Conditions", <em>Journal of Economic Theory</em> 10(2), 187–217。这一定理是 Arrow 不可能性定理在投票理论中的直接对应：任何防操纵的投票规则都是独裁的。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 T3.8 · Arrow 不可能性定理（Arrow's Impossibility Theorem）</span>
+    <strong>前提：</strong>社会中有 <em>n</em> ≥ 2 个个体，备选方案集 <em>A</em> 包含至少三个方案。社会福利函数 <em>F</em>: ℛ<sup><em>n</em></sup> → ℛ 将个人偏好序组合映射为社会偏好序。
+    <br><strong>结论：</strong>不存在同时满足以下四个条件的社会福利函数：
+    <br>（U）无限制域：定义域包含所有可能的偏好序组合。
+    <br>（P）弱帕累托原则：若 ∀ <em>i</em>, <em>x</em> ≻<sub><em>i</em></sub> <em>y</em>，则 <em>x</em> ≻ <em>y</em>。
+    <br>（I）无关方案独立性：社会对 <em>x</em> 和 <em>y</em> 的排序仅取决于个人对 <em>x</em> 和 <em>y</em> 的排序。
+    <br>（D）非独裁性：不存在个人 <em>i</em> 使得社会偏好总是等于 <em>i</em> 的偏好。
+    <br><strong>证明思路：</strong>通过"(U, P, I) ⇒ 存在一个决定性个体"的递推论证。首先证明若存在一个"几乎决定性"的个体集，则可推出独裁者的存在。
+    <span class="t-note">Arrow (1951) 《Social Choice and Individual Values》。肯尼斯·阿罗因这一贡献获 1972 年诺贝尔经济学奖。Arrow 定理是"二战"后社会科学领域最深刻的形式化结果之一，它揭示了集体决策的固有困境——不存在完美的民主决策规则。</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     D4 · 定理证明详解
+     ============================================================ -->
+<section class="sec phd-level" id="phd-d4">
+  <h2><span class="chapno">D4</span>定理证明详解</h2>
+  <p>以下提供两个完整的形式化证明。博士水平要求不仅理解结论，还能复现推理过程并识别每一步的前提假设。</p>
+
+  <h3>证明 P4.1 · Arrow-Debreu 一般均衡存在性定理的证明概要</h3>
+  <p>本证明遵循 Arrow & Debreu (1954) 的原始框架，利用角谷静夫不动点定理。以下给出完整证明的逻辑链条。</p>
+
+  <div class="proof">
+    <span class="p-name">证明 P4.1 · Arrow-Debreu 均衡存在性</span>
+    <p><strong>步骤 1：规范化价格单纯形。</strong>定义价格单纯形 <em>P</em> = {<em>p</em> ∈ ℝ<sup><em>n</em></sup><sub>+</sub> : Σ<sub><em>k</em>=1</sub><sup><em>n</em></sup> <em>p<sub>k</sub></em> = 1}。由于瓦尔拉斯均衡在价格的正齐次性下不变（即 <em>p</em> 和 λ<em>p</em> 对应同一均衡），规范化不会改变均衡的存在性。</p>
+
+    <p><strong>步骤 2：构造截断经济。</strong>由于原始经济中的消费集和生产集可能无界，需构造一个有界的"截断经济"。选择足够大的正数 <em>M</em>，使得所有消费者的最优消费束都在"截断消费集" <em>X̂<sub>i</sub></em> = {<em>x<sub>i</sub></em> ∈ ℝ<sup><em>n</em></sup><sub>+</sub> : <em>x<sub>ik</sub></em> ≤ <em>M</em>} 内，所有利润最大化的生产计划都在"截断生产集" <em>Ŷ<sub>j</sub></em> = {<em>y<sub>j</sub></em> ∈ <em>Y<sub>j</sub></em> : <em>y<sub>jk</sub></em> ≥ −<em>M</em>} 内。存在性证明后需验证截断不改变均衡：即截断经济的均衡也在原始经济中构成均衡。</p>
+
+    <p><strong>步骤 3：定义消费者需求对应。</strong>对每个消费者 <em>i</em>，给定价格 <em>p</em> 和财富 <em>w<sub>i</sub></em>，定义截断预算集：
+    <br><em>B<sub>i</sub></em>(<em>p</em>, <em>w<sub>i</sub></em>) = {<em>x<sub>i</sub></em> ∈ <em>X̂<sub>i</sub></em> : <em>p</em> · <em>x<sub>i</sub></em> ≤ <em>w<sub>i</sub></em>}
+    <br>由于 <em>B<sub>i</sub></em> 是紧凸集且效用函数连续，消费者最优选择对应 <em>ξ<sub>i</sub></em>(<em>p</em>, <em>w<sub>i</sub></em>) = arg max { <em>u<sub>i</sub></em>(<em>x<sub>i</sub></em>) : <em>x<sub>i</sub></em> ∈ <em>B<sub>i</sub></em>(<em>p</em>, <em>w<sub>i</sub></em>) } 是上半连续（upper hemi-continuous）的凸值对应。</p>
+
+    <p><strong>步骤 4：定义企业供给对应。</strong>对每个企业 <em>j</em>，给定价格 <em>p</em>，定义利润最大化对应：
+    <br><em>η<sub>j</sub></em>(<em>p</em>) = arg max { <em>p</em> · <em>y<sub>j</sub></em> : <em>y<sub>j</sub></em> ∈ <em>Ŷ<sub>j</sub></em> }
+    <br>由生产集 <em>Ŷ<sub>j</sub></em> 的紧凸性和利润函数的连续性，<em>η<sub>j</sub></em> 是上半连续的凸值对应。</p>
+
+    <p><strong>步骤 5：定义财富分配。</strong>消费者 <em>i</em> 的总财富为：
+    <br><em>w<sub>i</sub></em>(<em>p</em>) = <em>p</em> · <em>ω<sub>i</sub></em> + Σ<sub><em>j</em></sub> θ<sub><em>ij</em></sub> · max{<em>p</em> · <em>y<sub>j</sub></em> : <em>y<sub>j</sub></em> ∈ <em>Ŷ<sub>j</sub></em>}</p>
+
+    <p><strong>步骤 6：构造超额需求对应。</strong>定义总超额需求对应：
+    <br><em>z</em>(<em>p</em>) = Σ<sub><em>i</em></sub> <em>ξ<sub>i</sub></em>(<em>p</em>, <em>w<sub>i</sub></em>(<em>p</em>)) − Σ<sub><em>i</em></sub> <em>ω<sub>i</sub></em> − Σ<sub><em>j</em></sub> <em>η<sub>j</sub></em>(<em>p</em>)
+    <br><em>z</em>(<em>p</em>) 是上半连续的凸值对应。由预算约束，瓦尔拉斯定律成立：<em>p</em> · <em>z</em> ≡ 0。</p>
+
+    <p><strong>步骤 7：构造价格调整对应。</strong>定义价格调整对应 <em>μ</em>: <em>P</em> → <em>P</em>：
+    <br><em>μ</em>(<em>p</em>) = { <em>p'</em> ∈ <em>P</em> : <em>p'</em> · <em>z</em>(<em>p</em>) ≥ <em>q</em> · <em>z</em>(<em>p</em>), ∀ <em>q</em> ∈ <em>P</em> }
+    <br>即 <em>μ</em>(<em>p</em>) 是将超额需求价值最大化的标准化价格向量集。可以证明 <em>μ</em> 是上半连续的凸值对应。</p>
+
+    <p><strong>步骤 8：应用角谷静夫不动点定理。</strong>对应 <em>φ</em>(<em>p</em>) = <em>μ</em>(<em>p</em>) × <em>z</em>(<em>p</em>) 是从紧凸集 <em>P</em> × <em>Z</em> 到自身（其中 <em>Z</em> 是超额需求的紧凸上界）的上半连续凸值对应。由角谷静夫不动点定理，存在 (<em>p</em><sup>*</sup>, <em>z</em><sup>*</sup>) ∈ <em>φ</em>(<em>p</em><sup>*</sup>, <em>z</em><sup>*</sup>)，即 <em>p</em><sup>*</sup> ∈ <em>μ</em>(<em>p</em><sup>*</sup>) 且 <em>z</em><sup>*</sup> ∈ <em>z</em>(<em>p</em><sup>*</sup>)。</p>
+
+    <p><strong>步骤 9：验证均衡条件。</strong>由 <em>p</em><sup>*</sup> ∈ <em>μ</em>(<em>p</em><sup>*</sup>) 和瓦尔拉斯定律，可得 <em>z</em>(<em>p</em><sup>*</sup>) ≤ 0（即所有市场出清）。由偏好强单调性，若 <em>z<sub>k</sub></em>(<em>p</em><sup>*</sup>) < 0，则 <em>p<sub>k</sub></em><sup>*</sup> = 0。因此 (<em>p</em><sup>*</sup>, <em>ξ</em>(<em>p</em><sup>*</sup>), <em>η</em>(<em>p</em><sup>*</sup>)) 构成瓦尔拉斯均衡。</p>
+
+    <p><strong>步骤 10：验证截断合理性。</strong>验证截断经济的均衡解满足原始约束条件，因此也是原始经济（非截断经济）的均衡。</p>
+    <div class="p-qed">█ 证毕</div>
+  </div>
+
+  <p>该证明是经济学形式化方法论的典范。Arrow 和 Debreu 将一般均衡问题转化为一个拓扑学中的不动点问题，其数学深度和经济学洞察的结合标志着"数学经济学"的成熟。后来，McKenzie (1959) 在更弱的条件下给出了另一种证明。</p>
+
+  <h3>证明 P4.2 · 福利经济学第一定理的完整证明</h3>
+  <p>以下给出福利经济学第一定理的完整、严格证明，每步注明所使用的假设。</p>
+
+  <div class="proof">
+    <span class="p-name">证明 P4.2 · 福利经济学第一定理</span>
+    <p><strong>设定：</strong>考虑经济 <em>E</em> = {<em>I</em>, <em>J</em>, {⪰<sub><em>i</em></sub>}, {<em>ω<sub>i</sub></em>}, {<em>Y<sub>j</sub></em>}}。设 (<em>p</em><sup>*</sup>, <em>x</em><sup>*</sup>, <em>y</em><sup>*</sup>) 是一个 Walras 均衡。证明目标是：配置 (<em>x</em><sup>*</sup>, <em>y</em><sup>*</sup>) 是帕累托最优的。</p>
+
+    <p><strong>定义：</strong>帕累托最优意味着不存在另一个可行配置 (<em>x'</em>, <em>y'</em>) 使得 (i) ∀ <em>i</em>, <em>x'<sub>i</sub></em> ⪰<sub><em>i</em></sub> <em>x<sub>i</sub></em><sup>*</sup>；(ii) ∃ <em>i</em>, <em>x'<sub>i</sub></em> ≻<sub><em>i</em></sub> <em>x<sub>i</sub></em><sup>*</sup>。</p>
+
+    <p><strong>假设：</strong>局部非饱和性（local nonsatiation）——对任意消费束 <em>x<sub>i</sub></em> 和任意邻域 <em>N</em>(<em>x<sub>i</sub></em>)，都存在 <em>x'<sub>i</sub></em> ∈ <em>N</em>(<em>x<sub>i</sub></em>) 使得 <em>x'<sub>i</sub></em> ≻<sub><em>i</em></sub> <em>x<sub>i</sub></em>。</p>
+
+    <p><strong>证明（反证法）：</strong></p>
+
+    <p><strong>第 1 步：</strong>假设存在一个帕累托改进的可行配置 (<em>x'</em>, <em>y'</em>)。则 ∃ <em>i</em><sub>0</sub> 使得 <em>x'<sub>i</sub></em><sub>0</sub> ≻<sub><em>i</em><sub>0</sub></sub> <em>x<sub>i</sub></em><sub>0</sub><sup>*</sup>，且 ∀ <em>i</em>, <em>x'<sub>i</sub></em> ⪰<sub><em>i</em></sub> <em>x<sub>i</sub></em><sup>*</sup>。</p>
+
+    <p><strong>第 2 步：</strong>由均衡定义，消费者 <em>i</em><sub>0</sub> 在预算约束 <em>p</em><sup>*</sup> · <em>x<sub>i</sub></em> ≤ <em>p</em><sup>*</sup> · <em>ω<sub>i</sub></em> + Σ<sub><em>j</em></sub> θ<sub><em>i</em><sub>0</sub><em>j</em></sub> <em>p</em><sup>*</sup> · <em>y<sub>j</sub></em><sup>*</sup> 下最大化效用。因此 <em>x'<sub>i</sub></em><sub>0</sub> ≻<sub><em>i</em><sub>0</sub></sub> <em>x<sub>i</sub></em><sub>0</sub><sup>*</sup> 意味着 <em>p</em><sup>*</sup> · <em>x'<sub>i</sub></em><sub>0</sub> > <em>p</em><sup>*</sup> · <em>ω<sub>i</sub></em><sub>0</sub> + Σ<sub><em>j</em></sub> θ<sub><em>i</em><sub>0</sub><em>j</em></sub> <em>p</em><sup>*</sup> · <em>y<sub>j</sub></em><sup>*</sup>。</p>
+
+    <p><strong>第 3 步：</strong>对 ∀ <em>i</em> ≠ <em>i</em><sub>0</sub>，由 <em>x'<sub>i</sub></em> ⪰<sub><em>i</em></sub> <em>x<sub>i</sub></em><sup>*</sup> 和局部非饱和性，在 <em>x'<sub>i</sub></em> 的任意邻域内存在 <em>x''<sub>i</sub></em> ≻<sub><em>i</em></sub> <em>x'<sub>i</sub></em>。若 <em>p</em><sup>*</sup> · <em>x'<sub>i</sub></em> ≤ <em>p</em><sup>*</sup> · <em>ω<sub>i</sub></em> + Σ<sub><em>j</em></sub> θ<sub><em>ij</em></sub> <em>p</em><sup>*</sup> · <em>y<sub>j</sub></em><sup>*</sup>，我们可以选择 <em>x''<sub>i</sub></em> ≻ <em>x'<sub>i</sub></em> 使其仍在预算约束内，但由均衡定义这不可能（因为 <em>x<sub>i</sub></em><sup>*</sup> 已经是预算约束下的最优选择）。因此必须 <em>p</em><sup>*</sup> · <em>x'<sub>i</sub></em> ≥ <em>p</em><sup>*</sup> · <em>ω<sub>i</sub></em> + Σ<sub><em>j</em></sub> θ<sub><em>ij</em></sub> <em>p</em><sup>*</sup> · <em>y<sub>j</sub></em><sup>*</sup>。</p>
+
+    <p><strong>第 4 步：</strong>对所有消费者求和：
+    <br>Σ<sub><em>i</em></sub> <em>p</em><sup>*</sup> · <em>x'<sub>i</sub></em> > Σ<sub><em>i</em></sub> <em>p</em><sup>*</sup> · <em>ω<sub>i</sub></em> + Σ<sub><em>j</em></sub> <em>p</em><sup>*</sup> · <em>y<sub>j</sub></em><sup>*</sup></p>
+
+    <p><strong>第 5 步：</strong>由配置可行性，Σ<sub><em>i</em></sub> <em>x'<sub>i</sub></em> ≤ Σ<sub><em>i</em></sub> <em>ω<sub>i</sub></em> + Σ<sub><em>j</em></sub> <em>y'<sub>j</sub></em>。两边点乘 <em>p</em><sup>*</sup>：
+    <br>Σ<sub><em>i</em></sub> <em>p</em><sup>*</sup> · <em>x'<sub>i</sub></em> ≤ Σ<sub><em>i</em></sub> <em>p</em><sup>*</sup> · <em>ω<sub>i</sub></em> + Σ<sub><em>j</em></sub> <em>p</em><sup>*</sup> · <em>y'<sub>j</sub></em></p>
+
+    <p><strong>第 6 步：</strong>由均衡中企业利润最大化，<em>p</em><sup>*</sup> · <em>y'<sub>j</sub></em> ≤ <em>p</em><sup>*</sup> · <em>y<sub>j</sub></em><sup>*</sup>（因为 <em>y<sub>j</sub></em><sup>*</sup> 是利润最大化点）。代入第 5 步：
+    <br>Σ<sub><em>i</em></sub> <em>p</em><sup>*</sup> · <em>x'<sub>i</sub></em> ≤ Σ<sub><em>i</em></sub> <em>p</em><sup>*</sup> · <em>ω<sub>i</sub></em> + Σ<sub><em>j</em></sub> <em>p</em><sup>*</sup> · <em>y<sub>j</sub></em><sup>*</sup></p>
+
+    <p><strong>第 7 步：</strong>第 4 步和第 6 步矛盾。因此假设错误，不存在帕累托改进的可行配置。故 (<em>x</em><sup>*</sup>, <em>y</em><sup>*</sup>) 是帕累托最优的。</p>
+    <div class="p-qed">█ 证毕</div>
+  </div>
+
+  <p>该证明的关键洞察在于：竞争均衡价格起到了"分离"作用——将消费者的可达消费束与不可达消费束分隔开来。任何帕累托改进都会使某些消费者的消费束超出其预算约束，从而与均衡定义矛盾。这一定理为"看不见的手"提供了严格的数学形式化，但也揭示了其局限：前提条件（完全竞争、无外部性等）在现实中几乎从不满足。</p>
+</section>
+
+<!-- ============================================================
+     D5 · 形式化体系
+     ============================================================ -->
+<section class="sec phd-level" id="phd-d5">
+  <h2><span class="chapno">D5</span>形式化体系：一般均衡的完整形式系统</h2>
+
+  <p>以下呈现一个完整的、形式化的一般均衡理论体系。该体系包含从原始数据到均衡条件的全部形式化要素，是 Arrow-Debreu 模型的公理化表述。博士水平要求能够从无到有地重建这一体系。</p>
+
+  <h3>5.1 经济的基本数据</h3>
+  <div class="formula">
+    <span class="f-name">经济系统 E = ⟨I, J, X, ⪰, ω, Y, θ⟩</span>
+    <strong>I</strong> = {1, …, <em>m</em>}：消费者集合（有限）
+    <br><strong>J</strong> = {1, …, <em>k</em>}：企业集合（有限）
+    <br><strong>X<sub>i</sub></strong> ⊆ ℝ<sup><em>n</em></sup><sub>+</sub>：消费者 <em>i</em> 的消费集（通常假设为 ℝ<sup><em>n</em></sup><sub>+</sub>）
+    <br><strong>⪰<sub>i</sub></strong>：消费者 <em>i</em> 在 <em>X<sub>i</sub></em> 上的偏好关系（完备、传递、连续、严格凸、强单调）
+    <br><strong>ω<sub>i</sub></strong> ∈ ℝ<sup><em>n</em></sup><sub>+</sub>：消费者 <em>i</em> 的初始禀赋
+    <br><strong>Y<sub>j</sub></strong> ⊆ ℝ<sup><em>n</em></sup>：企业 <em>j</em> 的生产可能性集（凸、闭、包含 0、自由处置）
+    <br><strong>θ<sub>ij</sub></strong> ∈ [0, 1]：消费者 <em>i</em> 持有企业 <em>j</em> 的股份份额，Σ<sub><em>i</em></sub> θ<sub><em>ij</em></sub> = 1 ∀ <em>j</em>
+    <span class="f-note">以上构成了经济的基本数据结构。所有均衡分析都建立在这组数据之上。注意：这里采用了"私有制经济"形式——消费者拥有企业股份，企业利润按股份比例分配给消费者。</span>
+  </div>
+
+  <h3>5.2 可行配置</h3>
+  <div class="formula">
+    <span class="f-name">可行配置</span>
+    配置 (<em>x</em>, <em>y</em>) = ((<em>x</em><sub>1</sub>, …, <em>x<sub>m</sub></em>), (<em>y</em><sub>1</sub>, …, <em>y<sub>k</sub></em>)) 是可行的，当且仅当：
+    <br>(i) ∀ <em>i</em>, <em>x<sub>i</sub></em> ∈ <em>X<sub>i</sub></em>（消费者的消费束在消费集内）
+    <br>(ii) ∀ <em>j</em>, <em>y<sub>j</sub></em> ∈ <em>Y<sub>j</sub></em>（企业的生产计划在生产集内）
+    <br>(iii) Σ<sub><em>i</em></sub> <em>x<sub>i</sub></em> ≤ Σ<sub><em>i</em></sub> <em>ω<sub>i</sub></em> + Σ<sub><em>j</em></sub> <em>y<sub>j</sub></em>（总消费 ≤ 总禀赋 + 总产出）
+    <span class="f-note">可行配置就是"物理上可能"的资源配置。条件 (iii) 是"资源约束"——总消费不能超过总可用资源。</span>
+  </div>
+
+  <h3>5.3 竞争均衡（Walras 均衡）</h3>
+  <div class="formula">
+    <span class="f-name">Walras 均衡</span>
+    价格向量 <em>p</em><sup>*</sup> ∈ ℝ<sup><em>n</em></sup><sub>+</sub> \ {0} 和可行配置 (<em>x</em><sup>*</sup>, <em>y</em><sup>*</sup>) 构成 Walras 均衡，当且仅当：
+    <br><strong>（I）消费者最优：</strong>∀ <em>i</em>, <em>x<sub>i</sub></em><sup>*</sup> 在预算集 <em>B<sub>i</sub></em>(<em>p</em><sup>*</sup>) = {<em>x<sub>i</sub></em> ∈ <em>X<sub>i</sub></em> : <em>p</em><sup>*</sup> · <em>x<sub>i</sub></em> ≤ <em>p</em><sup>*</sup> · <em>ω<sub>i</sub></em> + Σ<sub><em>j</em></sub> θ<sub><em>ij</em></sub> <em>p</em><sup>*</sup> · <em>y<sub>j</sub></em><sup>*</sup>} 中最大化 ⪰<sub><em>i</em></sub>。
+    <br><strong>（II）企业最优：</strong>∀ <em>j</em>, <em>y<sub>j</sub></em><sup>*</sup> 在 <em>Y<sub>j</sub></em> 中最大化利润 <em>p</em><sup>*</sup> · <em>y<sub>j</sub></em>。
+    <br><strong>（III）市场出清：</strong>Σ<sub><em>i</em></sub> <em>x<sub>i</sub></em><sup>*</sup> ≤ Σ<sub><em>i</em></sub> <em>ω<sub>i</sub></em> + Σ<sub><em>j</em></sub> <em>y<sub>j</sub></em><sup>*</sup>，且若 <em>p<sub>k</sub></em><sup>*</sup> > 0，则等式成立。
+    <span class="f-note">条件 (III) 的"补充条件"（若 <em>p<sub>k</sub></em> > 0 则等式成立）排除了免费商品市场出现"过剩"的情况——免费商品的过剩不影响均衡。</span>
+  </div>
+
+  <h3>5.4 超额需求与瓦尔拉斯定律</h3>
+  <div class="formula">
+    <span class="f-name">超额需求函数与瓦尔拉斯定律</span>
+    总超额需求函数：<em>z</em>(<em>p</em>) = Σ<sub><em>i</em></sub> <em>x<sub>i</sub></em>(<em>p</em>) − Σ<sub><em>i</em></sub> <em>ω<sub>i</sub></em> − Σ<sub><em>j</em></sub> <em>y<sub>j</sub></em>(<em>p</em>)
+    <br><strong>瓦尔拉斯定律：</strong><em>p</em> · <em>z</em>(<em>p</em>) ≡ 0，∀ <em>p</em> ∈ ℝ<sup><em>n</em></sup><sub>+</sub>
+    <br><strong>齐次性：</strong><em>z</em>(λ<em>p</em>) = <em>z</em>(<em>p</em>)，∀ λ > 0
+    <br><strong>连续性：</strong><em>z</em>(·) 在 ℝ<sup><em>n</em></sup><sub>++</sub> 上连续
+    <br><strong>边界条件：</strong>若 <em>p</em> → ∂ℝ<sup><em>n</em></sup><sub>+</sub>，则 ‖<em>z</em>(<em>p</em>)‖ → ∞
+    <span class="f-note">瓦尔拉斯定律是均衡存在性的关键：它意味着 <em>n</em> 个市场中只需 <em>n</em>−1 个出清，第 <em>n</em> 个自动出清。齐次性允许规范化价格（如令 Σ <em>p<sub>k</sub></em> = 1）。边界条件确保均衡价格严格为正（所有商品都是稀缺的）。</span>
+  </div>
+
+  <h3>5.5 Arrow-Debreu 存在性定理（完整形式化表述）</h3>
+  <div class="theorem">
+    <span class="t-name">定理 T5.1 · Arrow-Debreu 存在性定理（完整形式化）</span>
+    若经济 <em>E</em> = ⟨<em>I</em>, <em>J</em>, {<em>X<sub>i</sub></em>}, {⪰<sub><em>i</em></sub>}, {<em>ω<sub>i</sub></em>}, {<em>Y<sub>j</sub></em>}, {θ<sub><em>ij</em></sub>}⟩ 满足以下条件：
+    <br>(A1) ∀ <em>i</em>, <em>X<sub>i</sub></em> = ℝ<sup><em>n</em></sup><sub>+</sub>（消费集为非负象限）
+    <br>(A2) ∀ <em>i</em>, ⪰<sub><em>i</em></sub> 是完备、传递、连续、严格凸、强单调的
+    <br>(A3) ∀ <em>i</em>, <em>ω<sub>i</sub></em> ∈ ℝ<sup><em>n</em></sup><sub>++</sub>（每个消费者拥有每种商品的正数量）
+    <br>(A4) ∀ <em>j</em>, <em>Y<sub>j</sub></em> 是凸闭集，0 ∈ <em>Y<sub>j</sub></em>，且满足自由处置（<em>y</em> ∈ <em>Y<sub>j</sub></em> 且 <em>y'</em> ≤ <em>y</em> ⇒ <em>y'</em> ∈ <em>Y<sub>j</sub></em>）
+    <br>(A5) <em>Y</em> = Σ<sub><em>j</em></sub> <em>Y<sub>j</sub></em> 是凸的且 <em>Y</em> ∩ (−<em>Y</em>) ⊆ {0}（无可逆生产过程）
+    <br>(A6) ∃ <em>ŷ</em> ∈ ℝ<sup><em>n</em></sup> 使得 Σ<sub><em>i</em></sub> <em>ω<sub>i</sub></em> + <em>ŷ</em> ∈ ℝ<sup><em>n</em></sup><sub>++</sub> 且 <em>ŷ</em> ∈ <em>Y</em>（总禀赋可利用现有技术生产出正剩余）
+    <br>则存在一个 Walras 均衡 (<em>p</em><sup>*</sup>, <em>x</em><sup>*</sup>, <em>y</em><sup>*</sup>)。
+    <span class="t-note">Arrow & Debreu (1954) 的原始论文共 26 页，以上为公理化抽象。该定理被称为"一般均衡理论的基石"（Debreu, 1959, 《Value Theory》）。</span>
+  </div>
+
+  <h3>5.6 一般均衡的 Edgeworth 盒三维扩展：交互可视化</h3>
+  <p>下图展示了一个三维扩展的 Edgeworth 盒，这是两个消费者、两种商品经济的一般均衡几何表示。与传统 Edgeworth 盒不同，三维版本引入了福利维度（第三轴），直观展示均衡点沿帕累托边界的福利分布。</p>
+  <p>在三维空间中，Edgeworth 盒是两种商品在两个消费者之间的配置空间。盒子的宽度代表商品 1 的总量，高度代表商品 2 的总量。消费者 A 的消费量从原点 O<sub>A</sub> 计量，消费者 B 的消费量从 O<sub>B</sub> 计量。无差异曲面在三维空间中的交线构成契约曲线（Contract Curve），即所有帕累托最优配置的集合。竞争均衡出现在契约曲线与价格线的交点——在该点处，两个消费者的边际替代率相等且等于价格比。</p>
+
+  <div class="viz-container" style="height:480px;">
+    <canvas id="viz-3d-edgeworth" style="width:100%;height:100%;display:block;"></canvas>
+  </div>
+  <div class="viz-caption">图 D5-1 · Edgeworth 盒三维扩展。X-Y 平面：标准 Edgeworth 盒配置空间。Z 轴（福利维度）：消费者 A 的效用水平。蓝色曲面：消费者 A 的无差异曲面；橙色曲面：消费者 B 的无差异曲面（相对 O<sub>B</sub> 计量）。红色曲线：契约曲线（帕累托最优配置集）。绿色球体：竞争均衡点，在该点处 MRS<sub>A</sub> = MRS<sub>B</sub> = <em>p</em><sub>1</sub>/<em>p</em><sub>2</sub>。</div>
+
+  <p>该三维模型直观展示了福利经济学两大定理的几何内涵。第一定理：竞争均衡必然位于契约曲线上（绿球在红线上）。第二定理：契约曲线上的任何一点都可以通过适当的初始禀赋再分配和竞争市场来实现（即红线上的任何一点都可以成为某个竞争均衡的均衡点）。</p>
+</section>
+
+<!-- ============================================================
+     D6 · 前沿定理与未解问题
+     ============================================================ -->
+<section class="sec phd-level" id="phd-d6">
+  <h2><span class="chapno">D6</span>前沿定理与未解问题</h2>
+
+  <p>博士水平的核心能力之一是识别"已知的未知"——即当前理论体系的边界和未解决的问题。以下首先介绍四个重要前沿定理，然后讨论五个关键未解问题。</p>
+
+  <h3>6.1 前沿定理</h3>
+
+  <div class="theorem">
+    <span class="t-name">定理 T6.1 · Hurwicz 的机制设计不可能性定理（Hurwicz Impossibility Theorem）</span>
+    <strong>前提：</strong>经济环境中存在私人信息，至少有两个参与者。
+    <br><strong>结论：</strong>不存在任何经济机制（economic mechanism）同时满足以下三个条件：(i) 帕累托效率（Pareto efficiency），(ii) 个体理性（individual rationality），(iii) 激励相容（incentive compatibility）。
+    <br><strong>证明思路：</strong>利用私人信息下"搭便车"问题——任何帕累托有效的公共品供给机制都会导致参与者低估自己的真实偏好（即"搭便车"），从而无法同时满足激励相容和效率。
+    <span class="t-note">Hurwicz (1972) "On Informationally Decentralized Systems", 收录于 McGuire & Radner 编《Decision and Organization》。赫维茨因机制设计理论获 2007 年诺贝尔经济学奖。这一定理揭示了"效率、激励和参与"三者之间的不可能三角，是机制设计理论的基础性不可能性结果。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 T6.2 · Maskin 的单调性定理（Maskin's Monotonicity Theorem）</span>
+    <strong>前提：</strong>社会选择对应 <em>F</em>: Θ → <em>A</em>（其中 Θ 是环境参数空间，<em>A</em> 是结果集）。
+    <br><strong>结论：</strong>若 <em>F</em> 可以被纳什实施（Nash-implementable），则 <em>F</em> 满足单调性（Maskin monotonicity）：如果 <em>a</em> ∈ <em>F</em>(θ) 且在 θ' 中 <em>a</em> 相对于所有其他备选方案都未变差，则 <em>a</em> ∈ <em>F</em>(θ')。
+    <br>在 <em>n</em> ≥ 3 且满足无否决权（no veto power）的条件下，单调性是纳什可实施的充分必要条件。
+    <span class="t-note">Maskin (1977) / (1999) "Nash Equilibrium and Welfare Optimality", <em>Review of Economic Studies</em> 66(1), 23–38。Maskin 因机制设计理论获 2007 年诺贝尔经济学奖。这一定理为"什么社会目标可以通过博弈的纳什均衡来实施"提供了完整刻画。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 T6.3 · Myerson 的显示原理（Revelation Principle）</span>
+    <strong>前提：</strong>存在一个任意机制 Γ 实现了社会选择函数 <em>f</em>（即 Γ 的贝叶斯纳什均衡结果等于 <em>f</em>(θ)）。
+    <br><strong>结论：</strong>存在一个直接显示机制（direct revelation mechanism）Γ'，其中每个参与者直接报告自己的类型，且诚实报告（truth-telling）构成 Γ' 的贝叶斯纳什均衡，均衡结果等于 <em>f</em>(θ)。
+    <br><strong>证明思路：</strong>构造"代理人机制"——将原始机制中的均衡策略嵌入到直接机制中。每个参与者报告类型，直接机制自动模拟原始机制中的均衡策略。
+    <span class="t-note">Myerson (1979) "Incentive Compatibility and the Bargaining Problem", <em>Econometrica</em> 47(1), 61–73。显示原理是机制设计理论中最深刻的方法论工具——它将所有机制设计问题简化为"激励相容的直接机制"问题，极大地简化了分析空间。但它的局限性在于：它只保证存在一个直接机制，但不保证这个直接机制反映了原始机制的所有均衡。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 T6.4 · Wilson 的"Wilson 主义"（Wilson Doctrine）</span>
+    <strong>陈述：</strong>博弈论模型应当完全基于"可观察的"或"可实证的"变量，而不应依赖于关于参与者"共同知识"（common knowledge）的不可检验假设。
+    <br><strong>推论：</strong>拍卖理论中，最优拍卖设计应当对参与者的类型分布假设具有鲁棒性（robustness），即"细节无关"（detail-free）的机制。
+    <br><strong>影响：</strong>"Wilson 主义"推动了"鲁棒机制设计"（Robust Mechanism Design）和"非参数博弈论"（Nonparametric Game Theory）的发展。
+    <span class="t-note">Wilson (1987) "Game-Theoretic Analyses of Trading Processes", 收录于 Bewley 编《Advances in Economic Theory》。Wilson 因"对拍卖理论中非参数化博弈论的贡献"获 2020 年诺贝尔经济学奖。Wilson 主义对现代产业组织理论、拍卖设计和市场微结构理论产生了深远影响。</span>
+  </div>
+
+  <h3>6.2 未解问题</h3>
+
+  <div class="explain">
+    <p><strong>问题 1：一般均衡理论的经验可检验性——Sonnenchein-Mantel-Debreu 定理的破坏性含义</strong></p>
+    <p>Sonnenchein (1972)、Mantel (1974) 和 Debreu (1974) 的定理指出：在市场微观层面（个体偏好）可施加的任何约束，在宏观层面（总超额需求函数）几乎都不存在。具体而言，总超额需求函数只满足连续性、齐次零次性和瓦尔拉斯定律——除此之外，任何"看起来合理"的函数都可以作为某个经济的总超额需求函数。这意味着一般均衡理论几乎不产生任何可检验的预测——任何价格—数量数据都可以被"事后合理化"为某个经济的一般均衡。这一结果被称为"SMD 定理的破坏性含义"（Sonnenschein-Mantel-Debreu Critique）。它从根本上质疑了一般均衡理论作为实证理论的有效性。</p>
+  </div>
+
+  <div class="explain">
+    <p><strong>问题 2：有限理性下的一般均衡存在性</strong></p>
+    <p>标准 Arrow-Debreu 模型依赖于"完全理性"假设——消费者拥有完备的偏好、无限的认知能力和完美的信息。但行为经济学大量证据表明，人类决策存在系统性偏差（锚定效应、框架效应、损失厌恶等）。问题在于：当用有限理性行为替代完全理性假设时，一般均衡存在性定理是否仍然成立？目前，只有一些特殊情形下的结果（如"近似理性"下的近似均衡存在性）。一个统一的理论框架仍未建立。这是微观经济理论中最重大的开放性挑战之一。</p>
+  </div>
+
+  <div class="explain">
+    <p><strong>问题 3：行为经济学对理性假设的系统性挑战</strong></p>
+    <p>卡尼曼和特沃斯基的前景理论（Prospect Theory, 1979）揭示了期望效用理论（Expected Utility Theory）的系统性偏离。但行为经济学目前仍处于"发现异常"阶段，尚未形成能与新古典范式相竞争的统一理论框架。核心问题包括：(1) 如何将"参考点依赖"（reference dependence）和"损失厌恶"（loss aversion）形式化地融入一般均衡框架？(2) 行为偏差是"噪声"还是"系统性偏好"？(3) 面对行为偏差，福利分析的标准工具（消费者剩余、补偿变差）是否仍然有效？</p>
+  </div>
+
+  <div class="explain">
+    <p><strong>问题 4：市场设计中的偏好操纵问题</strong></p>
+    <p>在匹配市场（如肾交换、学校选择、住院医师匹配）中，参与者可能通过策略性报告偏好来操纵结果。虽然 Gale-Shapley 算法（1962）提供了"稳定匹配"的构造方法，但参与者可以通过"偏好修剪"（preference truncation）来获得更有利的匹配结果。问题在于：如何设计一个"防策略"（strategy-proof）的匹配机制，同时满足其他理想性质（稳定性、效率、公平性）？对于有约束的匹配问题（如学校选择中的学区限制），完全防策略的机制可能不存在——这是一个活跃的研究前沿。</p>
+  </div>
+
+  <div class="explain">
+    <p><strong>问题 5：匹配市场的稳定性与效率的权衡</strong></p>
+    <p>在匹配市场设计中，稳定性（stability）和效率（efficiency）之间可能存在不可调和的冲突。稳定性要求匹配不被任何参与者联盟"阻断"，而效率要求匹配结果不存在帕累托改进。但 Kesten (2010) 证明，在"学校选择"（school choice）问题中，没有任何匹配机制能同时满足稳定性、帕累托效率和防策略性。这一"不可能三角"意味着实际市场设计必然面临取舍——是优先保证稳定性（如 Boston 机制）还是优先保证效率（如 Top Trading Cycles 机制）？这一问题的现实重要性体现在：美国多个学区的学校选择机制改革正是基于这一理论权衡。</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     D7 · 研究前沿
+     ============================================================ -->
+<section class="sec phd-level" id="phd-d7">
+  <h2><span class="chapno">D7</span>研究前沿</h2>
+  <p>以下概述当前经济理论研究中最活跃的五个前沿领域。博士水平要求不仅了解已有的成果，还要能识别各领域的关键问题、方法争议和未来方向。</p>
+
+  <h3>7.1 行为博弈论的前沿</h3>
+  <p>传统博弈论假设参与者是"完全理性"的——能够进行无限层次的推理（iterated reasoning）。但实验证据表明，人类推理的深度有限——大多数人只进行 1–2 层推理。Camerer、Ho 和 Chong (2004) 的认知层级模型（Cognitive Hierarchy Model, CHM）将这一观察系统化：假设参与者分为不同认知层级，0 层参与者随机选择，<em>k</em> 层参与者假设所有其他参与者最多属于 <em>k</em>−1 层。CHM 在"美式选美"（Beauty Contest）博弈和"p-beauty contest"实验中取得了显著成功。Crawford 和 Iriberri (2007) 的 level-k 模型进一步区分了"标准 level-k"和"经验 level-k"——前者假设0层均匀随机，后者假设0层根据实际经验分布选择。当前前沿问题包括：(1) 认知层级如何随经验变化？(2) 能否将认知层级模型融入一般均衡框架？(3) 在策略互补性环境下，有限推理是否会放大市场波动？</p>
+
+  <h3>7.2 算法博弈论</h3>
+  <p>算法博弈论（Algorithmic Game Theory）是计算机科学与经济学的交叉学科，研究博弈论均衡的计算复杂性和机制设计算法的计算效率。Nisan 和 Ronen (1999) 的"算法机制设计"（Algorithmic Mechanism Design）是这一领域的奠基性工作。核心问题包括：(1) 纳什均衡的"计算难度"——Chen 和 Deng (2006) 证明，即使对于双人博弈，计算纳什均衡也是 PPAD-complete（多项式时间可归约但可能不存在多项式时间算法）。这意味着纳什均衡"存在"但可能"不可计算"——对理性假设的深刻挑战。(2) Price of Anarchy (PoA)——Koutsoupias 和 Papadimitriou (1999) 提出的概念，衡量"自利个体行为导致的效率损失"与"社会最优"之间的比值。Roughgarden 和 Tardos (2004) 在自私路由（selfish routing）问题中证明了 PoA 的上界。当前前沿：(1) Bayes-Nash PoA 的分析；(2) 多参数机制设计的计算复杂性；(3) 机器学习中的博弈论——如生成式对抗网络（GANs）的训练过程本质上是一个零和博弈。</p>
+
+  <h3>7.3 市场设计的最新进展</h3>
+  <p>市场设计（Market Design）是机制设计理论在现实世界中的实验场。Roth (2002) 因肾交换（Kidney Exchange）市场的设计获 2012 年诺贝尔经济学奖。肾交换的核心问题：如何将相容的捐赠者—患者配对组织成"交换环"（exchange cycles），使更多患者获得移植机会？Roth、Sönmez 和 Ünver (2004) 提出的"自上而下匹配"（Top Trading Cycles and Chains, TTC）算法是这一领域的标准方法。当前前沿：(1) 跨医院肾交换的"稳定性 vs 效率"权衡；(2) 学校选择机制中的"优先权操控"（preference manipulation）——如中国高考改革中的"平行志愿"机制设计；(3) 劳动力市场匹配——如住院医师、法学院毕业生、职业运动员的匹配设计；(4) 在线市场设计——如 Uber 的"动态定价"、Airbnb 的"信誉机制"、电商平台的"推荐系统"都是市场设计的实例。Abdulkadiroğlu 和 Sönmez (2003) 的"学校选择"（School Choice）框架已成为美国多个城市（纽约、波士顿、芝加哥）学区改革的理论基础。</p>
+
+  <h3>7.4 实验经济学的理论挑战</h3>
+  <p>实验经济学（Experimental Economics）由 Vernon Smith (1962) 开创，通过实验室控制来检验经济理论。Smith 因"实验经济学方法论的建立"获 2002 年诺贝尔经济学奖。实验方法面临的核心挑战包括：(1) Plott (1982) 的"发现 vs 验证"二分法——实验应该用于"发现新规律"（如市场设计中的"效率边界"）还是"验证已有理论"（如一般均衡的预测力）？(2) 外部有效性（external validity）问题——实验室结果能否推广到真实市场？(3) 实验中的"需求效应"（demand effects）——参与者的行为是否受实验者预期的影响？(4) 复制危机（replication crisis）——2010 年代以来，实验经济学领域大量经典实验的复制失败引发了方法论反思。Camerer 等人（2016, 2018）在"社会科学复制项目"中报告了实验经济学约 60% 的复制率，显著低于实验室实验的预期。当前前沿：(1) 大规模在线实验（如 Amazon Mechanical Turk、Prolific）的方法论改进；(2) 神经经济学实验方法（如 fMRI、眼动追踪）与传统实验的整合；(3) 实验数据的"元分析"（meta-analysis）方法。</p>
+
+  <h3>7.5 神经经济学</h3>
+  <p>神经经济学（Neuroeconomics）是经济学、心理学和神经科学的交叉学科，研究决策行为的神经基础。Glimcher (2003) 在《神经经济学：决策与大脑》中提出了神经经济学的核心命题：人类决策是大脑中"价值编码"（value coding）系统的最优输出。关键发现包括：(1) 多巴胺神经元的活动与"预期奖励"（expected reward）和"预测误差"（prediction error）高度相关——这为强化学习（reinforcement learning）模型提供了神经基础（Schultz, Dayan & Montague, 1997）；(2) 眶额皮层（OFC）和腹内侧前额叶皮层（vmPFC）编码了"主观价值"（subjective value）——不同的商品类型（如食物、金钱、艺术品）在 OFC 中编码为共同的"价值货币"（common currency）；(3) 前脑岛（anterior insula）的活动与"损失厌恶"（loss aversion）相关——损失厌恶越强、脑岛激活越强。当前前沿：(1) "社会神经经济学"——研究社会偏好（公平、利他、信任）的神经基础；(2) "计算精神病学"——将神经经济学模型应用于精神疾病（如成瘾、抑郁症）的决策异常；(3) 神经经济学对"理性选择理论"的修正——传统经济学不关心"大脑如何做决策"，但神经经济学认为，决策过程的神经机制对理解选择行为有不可替代的信息。</p>
+
+  <h3>7.6 博弈论均衡精炼的三维空间：策略×信念×收益</h3>
+  <p>下图展示了博弈论均衡精炼的三维概念空间。X 轴代表"策略空间"（从纯策略到混合策略），Y 轴代表"信念层级"（从共同知识到分层信念），Z 轴代表"收益结构"（从完全信息到不完全信息）。在这个三维空间中，不同均衡概念占据不同的区域：纳什均衡位于策略空间的中点；子博弈完美均衡（SPE）在"策略"维度上额外要求"子博弈完美性"；贝叶斯纳什均衡（BNE）引入了"信念"维度；序贯均衡（Sequential Equilibrium）和完美贝叶斯均衡（PBE）同时占据策略和信念两个维度。这一可视化有助于理解不同均衡精炼概念之间的逻辑关系——它们不是彼此替代，而是从不同维度对纳什均衡的精炼。</p>
+
+  <div class="viz-container" style="height:480px;">
+    <canvas id="viz-3d-equilibrium" style="width:100%;height:100%;display:block;"></canvas>
+  </div>
+  <div class="viz-caption">图 D7-1 · 博弈论均衡精炼三维空间。X 轴：策略空间（纯策略 → 混合策略）；Y 轴：信念层级（共同知识 → 分层信念）；Z 轴：收益结构（完全信息 → 不完全信息）。蓝色球体：纳什均衡（NE）；橙色球体：子博弈完美均衡（SPE）；绿色球体：贝叶斯纳什均衡（BNE）；红色球体：完美贝叶斯均衡（PBE）。各均衡概念在三维空间中的相对位置反映了它们对策略、信念和收益结构的不同假设。</div>
+
+  <p>该三维模型直观展示了为什么博弈论需要多种均衡概念——现实世界中的博弈在策略复杂性、信念深度和信息结构三个维度上变化，没有单一均衡概念能覆盖所有情形。研究前沿正在探索新的均衡概念，如"认知层次均衡"（Cognitive Hierarchy Equilibrium）、"行为博弈均衡"（Behavioral Game Theory Equilibrium）和"鲁棒均衡"（Robust Equilibrium），这些新概念试图在三维空间中找到更贴合人类实际决策行为的位置。</p>
+</section>
+
+<!-- ============================================================
+     Three.js 3D 可视化脚本
+     ============================================================ -->
+<script src="./_shared/js/three.min.js"></script>
+<script src="./_shared/js/OrbitControls.js"></script>
+<script>
+(function() {
+  // ============================================================
+  // 通用 Three.js 场景初始化
+  // ============================================================
+  function initScene(canvasId) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return null;
+    const container = canvas.parentElement;
+    const w = container.clientWidth;
+    const h = container.clientHeight;
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xF8FAF6);
+
+    const camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 100);
+    camera.position.set(6, 4, 8);
+    camera.lookAt(0, 0, 0);
+
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+    renderer.setSize(w, h);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.08;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 1.0;
+    controls.target.set(0, 0, 0);
+
+    // 光照
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+    scene.add(ambientLight);
+    const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    dirLight.position.set(5, 10, 7);
+    scene.add(dirLight);
+    const dirLight2 = new THREE.DirectionalLight(0xffffff, 0.3);
+    dirLight2.position.set(-5, -2, -5);
+    scene.add(dirLight2);
+
+    // 网格
+    const gridHelper = new THREE.GridHelper(8, 16, 0x62695C, 0x62695C);
+    gridHelper.position.y = -0.5;
+    scene.add(gridHelper);
+
+    // 响应式
+    const resizeObserver = new ResizeObserver(() => {
+      const cw = container.clientWidth;
+      const ch = container.clientHeight;
+      camera.aspect = cw / ch;
+      camera.updateProjectionMatrix();
+      renderer.setSize(cw, ch);
+    });
+    resizeObserver.observe(container);
+
+    return { scene, camera, renderer, controls, container, resizeObserver };
+  }
+
+  function animateScene(ctx) {
+    if (!ctx) return;
+    function loop() {
+      requestAnimationFrame(loop);
+      ctx.controls.update();
+      ctx.renderer.render(ctx.scene, ctx.camera);
+    }
+    loop();
+  }
+
+  // ============================================================
+  // D5 · Edgeworth 盒三维扩展
+  // ============================================================
+  function buildEdgeworthBox() {
+    const ctx = initScene('viz-3d-edgeworth');
+    if (!ctx) return;
+    const { scene } = ctx;
+
+    // Edgeworth 盒尺寸：宽度4，深度4，高度（福利轴）3
+    const boxW = 4, boxD = 4, boxH = 3;
+
+    // --- 盒子框架 ---
+    const boxGeo = new THREE.BoxGeometry(boxW, boxH, boxD);
+    const boxEdges = new THREE.EdgesGeometry(boxGeo);
+    const boxLines = new THREE.LineSegments(boxEdges, new THREE.LineBasicMaterial({ color: 0x62695C, transparent: true, opacity: 0.3 }));
+    boxLines.position.set(0, boxH/2, 0);
+    scene.add(boxLines);
+
+    // 原点 O_A (0,0,0) 和 O_B (4,0,4) 标记
+    const originMarker = new THREE.Mesh(
+      new THREE.SphereGeometry(0.12, 16, 16),
+      new THREE.MeshStandardMaterial({ color: 0x222820 })
+    );
+    originMarker.position.set(-0.3, 0, -0.3);
+    scene.add(originMarker);
+
+    // 轴标签（使用精灵文字）
+    function makeLabel(text, pos, color) {
+      const canvas = document.createElement('canvas');
+      canvas.width = 128;
+      canvas.height = 64;
+      const ctx2d = canvas.getContext('2d');
+      ctx2d.fillStyle = 'transparent';
+      ctx2d.fillRect(0, 0, 128, 64);
+      ctx2d.font = 'Bold 28px Arial';
+      ctx2d.textAlign = 'center';
+      ctx2d.textBaseline = 'middle';
+      ctx2d.fillStyle = color;
+      ctx2d.fillText(text, 64, 32);
+      const texture = new THREE.CanvasTexture(canvas);
+      const spriteMat = new THREE.SpriteMaterial({ map: texture, depthTest: false });
+      const sprite = new THREE.Sprite(spriteMat);
+      sprite.scale.set(0.8, 0.4, 1);
+      sprite.position.copy(pos);
+      scene.add(sprite);
+    }
+    makeLabel('A·商品1', new THREE.Vector3(2.5, -0.2, -0.8), '#4F7A28');
+    makeLabel('A·商品2', new THREE.Vector3(-0.8, -0.2, 2.5), '#4F7A28');
+    makeLabel('福利 U_A', new THREE.Vector3(-0.5, 2.0, -0.8), '#B8793B');
+
+    // --- 消费者 A 的无差异曲面（蓝色渐变）---
+    // 构造一个曲面 z = f(x,y) 表示效用水平
+    const aPts = [];
+    const aColors = [];
+    for (let i = 0; i <= 20; i++) {
+      for (let j = 0; j <= 20; j++) {
+        const x = (i / 20) * boxW;
+        const y = (j / 20) * boxD;
+        // 模拟柯布-道格拉斯效用 u = x^0.5 * y^0.5
+        const u = Math.sqrt(x * y) * 1.2;
+        const z = Math.min(u, boxH);
+        aPts.push(x, z, y);
+        // 蓝色渐变
+        const t = z / boxH;
+        aColors.push(0.2 + 0.3 * t, 0.4 + 0.3 * t, 0.7 + 0.2 * t);
+      }
+    }
+    const aGeo = new THREE.BufferGeometry();
+    aGeo.setAttribute('position', new THREE.Float32BufferAttribute(aPts, 3));
+    aGeo.setAttribute('color', new THREE.Float32BufferAttribute(aColors, 3));
+    const aIndices = [];
+    for (let i = 0; i < 20; i++) {
+      for (let j = 0; j < 20; j++) {
+        const idx = i * 21 + j;
+        aIndices.push(idx, idx + 1, idx + 21);
+        aIndices.push(idx + 1, idx + 22, idx + 21);
+      }
+    }
+    aGeo.setIndex(aIndices);
+    aGeo.computeVertexNormals();
+    const aMat = new THREE.MeshStandardMaterial({
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.55,
+      side: THREE.DoubleSide,
+      wireframe: false
+    });
+    const aMesh = new THREE.Mesh(aGeo, aMat);
+    aMesh.position.set(0, 0, 0);
+    scene.add(aMesh);
+
+    // 线框叠加
+    const aWire = new THREE.LineSegments(
+      new THREE.WireframeGeometry(aGeo),
+      new THREE.LineBasicMaterial({ color: 0x2E86C1, transparent: true, opacity: 0.15 })
+    );
+    aWire.position.set(0, 0, 0);
+    scene.add(aWire);
+
+    // --- 消费者 B 的无差异曲面（橙色渐变，从 O_B 方向计量）---
+    const bPts = [];
+    const bColors = [];
+    for (let i = 0; i <= 20; i++) {
+      for (let j = 0; j <= 20; j++) {
+        const x1 = (i / 20) * boxW;
+        const y1 = (j / 20) * boxD;
+        // B 的消费量从 O_B 计量：x1_B = boxW - x1, y1_B = boxD - y1
+        const bx = boxW - x1;
+        const by = boxD - y1;
+        const u = Math.sqrt(bx * by) * 1.2;
+        const z = Math.min(u, boxH);
+        bPts.push(x1, z, y1);
+        const t = z / boxH;
+        bColors.push(0.7 + 0.2 * t, 0.35 + 0.2 * t, 0.1 + 0.1 * t);
+      }
+    }
+    const bGeo = new THREE.BufferGeometry();
+    bGeo.setAttribute('position', new THREE.Float32BufferAttribute(bPts, 3));
+    bGeo.setAttribute('color', new THREE.Float32BufferAttribute(bColors, 3));
+    const bIndices = [];
+    for (let i = 0; i < 20; i++) {
+      for (let j = 0; j < 20; j++) {
+        const idx = i * 21 + j;
+        bIndices.push(idx, idx + 1, idx + 21);
+        bIndices.push(idx + 1, idx + 22, idx + 21);
+      }
+    }
+    bGeo.setIndex(bIndices);
+    bGeo.computeVertexNormals();
+    const bMat = new THREE.MeshStandardMaterial({
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.45,
+      side: THREE.DoubleSide,
+      wireframe: false
+    });
+    const bMesh = new THREE.Mesh(bGeo, bMat);
+    bMesh.position.set(0, 0, 0);
+    scene.add(bMesh);
+
+    // --- 契约曲线（红色）---
+    const curvePts = [];
+    for (let t = 0.05; t <= 0.95; t += 0.03) {
+      const x = t * boxW;
+      const y = t * boxD;
+      const u = Math.sqrt(x * y) * 1.2;
+      const z = Math.min(u, boxH);
+      curvePts.push(new THREE.Vector3(x, z, y));
+    }
+    const curveGeo = new THREE.BufferGeometry().setFromPoints(curvePts);
+    const curveMat = new THREE.LineBasicMaterial({ color: 0xE74C3C, linewidth: 2 });
+    const curveLine = new THREE.Line(curveGeo, curveMat);
+    scene.add(curveLine);
+
+    // 曲线上的点标记
+    for (let t = 0.1; t <= 0.9; t += 0.2) {
+      const x = t * boxW;
+      const y = t * boxD;
+      const u = Math.sqrt(x * y) * 1.2;
+      const z = Math.min(u, boxH);
+      const dot = new THREE.Mesh(
+        new THREE.SphereGeometry(0.06, 8, 8),
+        new THREE.MeshStandardMaterial({ color: 0xE74C3C })
+      );
+      dot.position.set(x, z, y);
+      scene.add(dot);
+    }
+
+    // --- 均衡点（绿色球体）---
+    const eqX = 0.55 * boxW, eqY = 0.55 * boxD;
+    const eqU = Math.sqrt(eqX * eqY) * 1.2;
+    const eqZ = Math.min(eqU, boxH);
+    const eqSphere = new THREE.Mesh(
+      new THREE.SphereGeometry(0.2, 20, 20),
+      new THREE.MeshStandardMaterial({ color: 0x27AE60, emissive: 0x27AE60, emissiveIntensity: 0.2 })
+    );
+    eqSphere.position.set(eqX, eqZ, eqY);
+    scene.add(eqSphere);
+
+    // 从均衡点垂直向下和水平的辅助线
+    const helperMat = new THREE.LineBasicMaterial({ color: 0x27AE60, transparent: true, opacity: 0.3, dashed: true });
+    const helperPts1 = [new THREE.Vector3(eqX, 0, eqY), new THREE.Vector3(eqX, eqZ, eqY)];
+    const helperGeo1 = new THREE.BufferGeometry().setFromPoints(helperPts1);
+    const helperLine1 = new THREE.Line(helperGeo1, helperMat);
+    scene.add(helperLine1);
+
+    animateScene(ctx);
+  }
+
+  // ============================================================
+  // D7 · 博弈论均衡精炼三维空间
+  // ============================================================
+  function buildEquilibriumSpace() {
+    const ctx = initScene('viz-3d-equilibrium');
+    if (!ctx) return;
+    const { scene } = ctx;
+
+    const size = 5;
+
+    // --- 坐标轴 ---
+    function makeAxisArrow(from, to, color, label) {
+      const dir = new THREE.Vector3().copy(to).sub(from);
+      const len = dir.length();
+      dir.normalize();
+      const arrow = new THREE.ArrowHelper(dir, from, len, color, 0.3, 0.15);
+      scene.add(arrow);
+      // 标签
+      const canvas = document.createElement('canvas');
+      canvas.width = 128;
+      canvas.height = 48;
+      const ctx2d = canvas.getContext('2d');
+      ctx2d.font = 'Bold 22px Arial';
+      ctx2d.textAlign = 'center';
+      ctx2d.textBaseline = 'middle';
+      ctx2d.fillStyle = '#' + color.toString(16).padStart(6, '0');
+      ctx2d.fillText(label, 64, 24);
+      const tex = new THREE.CanvasTexture(canvas);
+      const spriteMat = new THREE.SpriteMaterial({ map: tex, depthTest: false });
+      const sprite = new THREE.Sprite(spriteMat);
+      sprite.scale.set(1.5, 0.6, 1);
+      const labelPos = new THREE.Vector3().copy(to).multiplyScalar(1.15);
+      sprite.position.copy(labelPos);
+      scene.add(sprite);
+    }
+
+    // X轴：策略空间
+    makeAxisArrow(
+      new THREE.Vector3(-size/2, -size/2, -size/2),
+      new THREE.Vector3(size/2, -size/2, -size/2),
+      0x4F7A28, '策略空间'
+    );
+    // Y轴：信念层级
+    makeAxisArrow(
+      new THREE.Vector3(-size/2, -size/2, -size/2),
+      new THREE.Vector3(-size/2, size/2, -size/2),
+      0x2E86C1, '信念层级'
+    );
+    // Z轴：收益结构
+    makeAxisArrow(
+      new THREE.Vector3(-size/2, -size/2, -size/2),
+      new THREE.Vector3(-size/2, -size/2, size/2),
+      0xB8793B, '收益结构'
+    );
+
+    // --- 轴标签（小字）---
+    function makeSmallLabel(text, pos, color) {
+      const canvas = document.createElement('canvas');
+      canvas.width = 200;
+      canvas.height = 40;
+      const ctx2d = canvas.getContext('2d');
+      ctx2d.font = '16px Arial';
+      ctx2d.textAlign = 'center';
+      ctx2d.textBaseline = 'middle';
+      ctx2d.fillStyle = color;
+      ctx2d.fillText(text, 100, 20);
+      const tex = new THREE.CanvasTexture(canvas);
+      const spriteMat = new THREE.SpriteMaterial({ map: tex, depthTest: false });
+      const sprite = new THREE.Sprite(spriteMat);
+      sprite.scale.set(1.0, 0.2, 1);
+      sprite.position.copy(pos);
+      scene.add(sprite);
+    }
+    makeSmallLabel('纯策略 ← → 混合策略', new THREE.Vector3(0, -size/2 - 0.4, -size/2), '#4F7A28');
+    makeSmallLabel('共同知识 ← → 分层信念', new THREE.Vector3(-size/2 - 0.4, 0, -size/2), '#2E86C1');
+    makeSmallLabel('完全信息 ← → 不完全信息', new THREE.Vector3(-size/2, -size/2 - 0.4, 0), '#B8793B');
+
+    // --- 半透明立方体框架 ---
+    const cubeGeo = new THREE.BoxGeometry(size, size, size);
+    const cubeEdges = new THREE.EdgesGeometry(cubeGeo);
+    const cubeLines = new THREE.LineSegments(cubeEdges, new THREE.LineBasicMaterial({ color: 0x62695C, transparent: true, opacity: 0.2 }));
+    cubeLines.position.set(-size/2 + size/2, -size/2 + size/2, -size/2 + size/2);
+    // 实际上原点在 (-s/2, -s/2, -s/2)，所以立方体中心在 (0, 0, 0)
+    scene.add(cubeLines);
+
+    // 辅助网格
+    const gridHelper = new THREE.GridHelper(size, 10, 0x62695C, 0x62695C);
+    gridHelper.position.set(0, -size/2, 0);
+    gridHelper.material.transparent = true;
+    gridHelper.material.opacity = 0.15;
+    scene.add(gridHelper);
+
+    // --- 各均衡概念的位置 ---
+    // 纳什均衡 NE: 策略空间中间，信念低，收益结构中间
+    const nePos = new THREE.Vector3(0, -size/2 + 0.5, 0);
+    // 子博弈完美均衡 SPE: 策略空间高，信念低，收益结构中间
+    const spePos = new THREE.Vector3(size/2 - 0.5, -size/2 + 0.5, 0);
+    // 贝叶斯纳什均衡 BNE: 策略空间中间，信念中间，收益结构高
+    const bnePos = new THREE.Vector3(0, 0, size/2 - 0.5);
+    // 完美贝叶斯均衡 PBE: 策略空间高，信念高，收益结构高
+    const pbePos = new THREE.Vector3(size/2 - 0.5, size/2 - 0.5, size/2 - 0.5);
+
+    function addEquilibriumBall(pos, color, label, radius) {
+      const sphere = new THREE.Mesh(
+        new THREE.SphereGeometry(radius || 0.25, 20, 20),
+        new THREE.MeshStandardMaterial({ color: color, emissive: color, emissiveIntensity: 0.1 })
+      );
+      sphere.position.copy(pos);
+      scene.add(sphere);
+
+      // 标签
+      const canvas = document.createElement('canvas');
+      canvas.width = 128;
+      canvas.height = 48;
+      const ctx2d = canvas.getContext('2d');
+      ctx2d.font = 'Bold 18px Arial';
+      ctx2d.textAlign = 'center';
+      ctx2d.textBaseline = 'middle';
+      ctx2d.fillStyle = '#' + color.toString(16).padStart(6, '0');
+      ctx2d.fillText(label, 64, 24);
+      const tex = new THREE.CanvasTexture(canvas);
+      const spriteMat = new THREE.SpriteMaterial({ map: tex, depthTest: false });
+      const sprite = new THREE.Sprite(spriteMat);
+      sprite.scale.set(1.0, 0.4, 1);
+      sprite.position.set(pos.x, pos.y + 0.5, pos.z);
+      scene.add(sprite);
+    }
+
+    addEquilibriumBall(nePos, 0x2E86C1, 'NE', 0.25);
+	    addEquilibriumBall(spePos, 0xE67E22, 'SPE', 0.25);
+	    addEquilibriumBall(bnePos, 0x27AE60, 'BNE', 0.25);
+	    addEquilibriumBall(pbePos, 0xE74C3C, 'PBE', 0.28);
+
+	    // 连接线展示均衡概念的"精炼链"
+	    const chainMat = new THREE.LineBasicMaterial({ color: 0x7F8C8D, transparent: true, opacity: 0.3 });
+	    const chainPts = [nePos, spePos, pbePos, bnePos, nePos];
+	    const chainGeo = new THREE.BufferGeometry().setFromPoints(chainPts);
+	    const chainLine = new THREE.Line(chainGeo, chainMat);
+	    scene.add(chainLine);
+
+	    animateScene(ctx);
+	  }
+
+	  // ============================================================
+	  // 初始化所有可视化
+	  // ============================================================
+	  // 使用 setTimeout 确保 DOM 渲染完成
+	  setTimeout(function() {
+	    buildEdgeworthBox();
+	    buildEquilibriumSpace();
+	  }, 200);
+
+	  // 窗口大小变化时重新调整
+	  window.addEventListener('resize', function() {
+	    // resize 由 ResizeObserver 处理
+	  });
+
+	})();
+</script>

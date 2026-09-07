@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>收束 · 思想图谱系列总览 · 把一切收拢成一张图</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;700&family=JetBrains+Mono:wght@400;700&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #08060F;
+  --bg2: #0F0D1A;
+  --bg3: #181524;
+  --ink: #E8E4D9;
+  --muted: #7A7590;
+  --faint: #3A3750;
+  --rule: #1F1C30;
+  --gold: #C9A84C;
+  --gold-light: #E8D48B;
+  --gold-dim: #8A7A3C;
+  --c1: #4A6FA5; --c2: #7C5CBF; --c3: #3D8C40; --c4: #B84C4C;
+  --c5: #6B4C9E; --c6: #C44A7A; --c7: #2D8C5E; --c8: #C99030;
+  --font-serif: 'Noto Serif SC', serif;
+  --font-sans: 'Noto Sans SC', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-eng: 'Crimson Text', serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
+body {
+  font-family: var(--font-sans); color: var(--ink); background: var(--bg);
+  line-height: 1.8; overflow-x: hidden;
+}
+
+/* ===== ANIMATED BACKGROUND ===== */
+.cosmic-bg {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 50% 20%, #120E24 0%, #08060F 60%);
+}
+.cosmic-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='0.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+#particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.particle {
+  position: absolute; border-radius: 50%; background: #fff;
+  animation: float var(--d, 20s) ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: var(--o, 0.6); }
+  90% { opacity: var(--o, 0.6); }
+  100% { transform: translateY(calc(var(--dy, -100) * 1px)) translateX(calc(var(--dx, 50) * 1px)); opacity: 0; }
+}
+
+/* ===== REVEAL ON SCROLL ===== */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ===== HERO ===== */
+.hero {
+  position: relative; z-index: 1; min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; padding: 2rem;
+}
+.hero .orb {
+  position: absolute; width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(201,168,76,0.06), transparent 70%);
+  top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none;
+  animation: orbPulse 6s ease-in-out infinite alternate;
+}
+@keyframes orbPulse { 0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.5; } 100% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; } }
+.hero .kicker {
+  font-family: var(--font-eng); font-size: 0.8rem; font-style: italic;
+  letter-spacing: 0.3em; color: var(--gold); margin-bottom: 1.5rem; position: relative; z-index: 1;
+}
+.hero h1 {
+  font-family: var(--font-serif); font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 900; line-height: 1.1; position: relative; z-index: 1;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 30%, var(--gold) 60%, #A08030 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  letter-spacing: 0.06em;
+}
+.hero .subtitle {
+  font-family: var(--font-serif); font-size: clamp(1rem, 2vw, 1.4rem);
+  color: var(--muted); margin-top: 1rem; max-width: 700px; position: relative; z-index: 1;
+  font-style: italic; line-height: 1.6;
+}
+.hero .divider {
+  width: 60px; height: 1px; background: var(--gold-dim); margin: 1.8rem auto;
+  position: relative; z-index: 1;
+}
+.hero .stats-bar {
+  display: flex; gap: 2.8rem; margin-top: 0.5rem; position: relative; z-index: 1;
+  flex-wrap: wrap; justify-content: center;
+}
+.hero .stat { text-align: center; }
+.hero .stat-num {
+  font-family: var(--font-eng); font-size: 2.2rem; font-weight: 400; font-style: italic;
+  color: var(--gold); line-height: 1; letter-spacing: 0.02em;
+}
+.hero .stat-label { font-size: 0.7rem; color: var(--muted); margin-top: 0.3rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.hero .scroll-hint {
+  position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+  z-index: 1; color: var(--muted); text-align: center;
+  animation: bounce 2.5s ease-in-out infinite;
+}
+.hero .scroll-hint .arrow {
+  display: block; font-family: var(--font-eng); font-size: 1.2rem; font-style: italic; margin-bottom: 0.3rem;
+}
+.hero .scroll-hint .label { font-size: 0.65rem; letter-spacing: 0.2em; }
+@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(10px)} }
+
+/* ===== MAIN ===== */
+.main { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem 6rem; }
+
+/* ===== STAGE NAV ===== */
+.stage-nav {
+  display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: center;
+  margin-bottom: 3rem; padding: 0.8rem 1rem;
+  background: rgba(15,13,26,0.85); border: 1px solid var(--rule);
+  border-radius: 12px; backdrop-filter: blur(12px);
+  position: sticky; top: 0.5rem; z-index: 50;
+}
+.stage-nav a {
+  padding: 0.35rem 0.7rem; font-size: 0.72rem; color: var(--muted);
+  text-decoration: none; border-radius: 6px; transition: all 0.25s;
+  font-family: var(--font-mono); letter-spacing: 0.05em;
+}
+.stage-nav a:hover { color: var(--gold); background: var(--bg3); }
+.stage-nav a.active { color: var(--gold); background: rgba(201,168,76,0.1); }
+.stage-nav .nav-sep { width: 1px; height: 1.2em; background: var(--rule); margin: 0 0.35rem; align-self: center; }
+
+/* ===== SECTION HEADINGS ===== */
+section { margin-bottom: 5rem; }
+.section-header {
+  text-align: center; margin-bottom: 2.5rem;
+}
+.section-header .chap-num {
+  font-family: var(--font-eng); font-size: 0.8rem; font-style: italic;
+  color: var(--gold-dim); letter-spacing: 0.15em; margin-bottom: 0.5rem;
+}
+.section-header h2 {
+  font-family: var(--font-serif); font-size: 2rem; font-weight: 900;
+  letter-spacing: 0.04em;
+}
+.section-header .sep {
+  width: 40px; height: 1px; background: var(--gold-dim); margin: 0.8rem auto 0;
+}
+.section-intro {
+  text-align: center; max-width: 700px; margin: 0 auto 2rem;
+  font-size: 0.95rem; color: var(--muted);
+}
+
+/* ===== INTRODUCTION CHAPTER ===== */
+.intro-body {
+  max-width: 780px; margin: 0 auto;
+}
+.intro-body p {
+  font-size: 1rem; margin-bottom: 1.2rem; line-height: 2;
+  text-indent: 2em;
+}
+.intro-body p strong { color: var(--gold-light); font-weight: 700; }
+.intro-body .pull-quote {
+  font-family: var(--font-serif); font-size: 1.15rem; font-style: italic;
+  color: var(--gold); text-align: center; padding: 1.5rem 2rem;
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  margin: 2rem 0; text-indent: 0;
+}
+
+/* ===== DIAGRAM CONTAINER ===== */
+.diagram {
+  background: var(--bg2); border: 1px solid var(--rule); border-radius: 14px;
+  padding: 1.5rem; margin: 2rem 0; overflow-x: auto;
+}
+.diagram figcaption {
+  font-family: var(--font-mono); font-size: 0.72rem; color: var(--gold-dim);
+  margin-bottom: 1rem; text-align: center; letter-spacing: 0.08em;
+}
+.diagram pre.mermaid { text-align: center; }
+
+/* ===== CONSTELLATION SVG ===== */
+.constellation-wrap {
+  background: var(--bg2); border: 1px solid var(--rule); border-radius: 16px;
+  padding: 2rem 1.5rem; margin: 2rem 0; overflow-x: auto;
+  position: relative;
+}
+.constellation-wrap::before {
+  content: '✦ 思想图谱 · 三十六卷星图 ✦';
+  display: block; text-align: center;
+  font-family: var(--font-mono); font-size: 0.75rem; color: var(--gold-dim);
+  margin-bottom: 1.2rem; letter-spacing: 0.15em;
+}
+.constellation-wrap svg { width: 100%; height: auto; min-width: 900px; display: block; }
+.constellation-tooltip {
+  position: fixed; background: var(--bg3); border: 1px solid var(--gold-dim);
+  border-radius: 8px; padding: 0.5rem 0.8rem; font-size: 0.78rem;
+  color: var(--ink); pointer-events: none; opacity: 0;
+  transition: opacity 0.15s; z-index: 100;
+  font-family: var(--font-sans); line-height: 1.5;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+.constellation-tooltip.show { opacity: 1; }
+.constellation-tooltip .tt-vol { font-family: var(--font-mono); font-size: 0.65rem; color: var(--gold-dim); }
+
+/* ===== STAGE BLOCK ===== */
+.stage-block {
+  background: var(--bg2); border: 1px solid var(--rule); border-radius: 14px;
+  padding: 1.5rem; margin-bottom: 1.5rem;
+  transition: border-color 0.3s;
+}
+.stage-block:hover { border-color: rgba(201,168,76,0.2); }
+.stage-block .stage-header {
+  display: flex; align-items: center; gap: 1rem; margin-bottom: 0;
+  cursor: pointer; user-select: none;
+}
+.stage-block .stage-header .num {
+  font-family: var(--font-eng); font-size: 0.8rem; font-style: italic;
+  color: var(--gold); width: 40px; height: 40px; display: flex;
+  align-items: center; justify-content: center; flex-shrink: 0;
+  border: 1px solid var(--gold-dim); border-radius: 50%;
+  background: rgba(201,168,76,0.06);
+}
+.stage-block .stage-header .name {
+  font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700; flex: 1;
+}
+.stage-block .stage-header .vol-count {
+  font-family: var(--font-mono); font-size: 0.65rem; color: var(--muted);
+  background: var(--bg3); padding: 0.15rem 0.5rem; border-radius: 4px;
+}
+.stage-block .stage-header .toggle {
+  font-size: 0.75rem; color: var(--muted); transition: transform 0.3s;
+  font-family: var(--font-mono);
+}
+.stage-block.collapsed .stage-content { display: none; }
+.stage-block.collapsed .toggle { transform: rotate(-90deg); }
+.stage-block .stage-content { padding-top: 1.2rem; }
+.stage-block .stage-desc { font-size: 0.92rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.8; }
+.stage-block .stage-desc strong { color: var(--ink); }
+
+.vol-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 0.7rem; margin: 0.8rem 0;
+}
+.vol-card {
+  background: var(--bg3); border: 1px solid var(--rule); border-radius: 10px;
+  padding: 0.7rem 0.9rem; transition: all 0.25s; cursor: default;
+}
+.vol-card:hover {
+  border-color: var(--gold); transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(201,168,76,0.08);
+}
+.vol-card .vol-num {
+  font-family: var(--font-mono); font-size: 0.6rem; color: var(--gold-dim);
+  letter-spacing: 0.1em; margin-bottom: 0.2rem;
+}
+.vol-card .vol-name { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.1rem; line-height: 1.4; }
+.vol-card .vol-q { font-size: 0.72rem; color: var(--muted); font-style: italic; }
+
+/* ===== CROSS CONNECTIONS ===== */
+.conn-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.conn-card {
+  background: var(--bg2); border: 1px solid var(--rule); border-radius: 12px;
+  padding: 1.2rem; transition: all 0.25s;
+}
+.conn-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+.conn-card .conn-symbol {
+  font-family: var(--font-eng); font-size: 1.4rem; font-style: italic;
+  color: var(--gold-dim); margin-bottom: 0.3rem;
+}
+.conn-card .conn-title {
+  font-family: var(--font-serif); font-size: 1rem; font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.conn-card .conn-desc { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.6rem; line-height: 1.6; }
+.conn-card .conn-via {
+  font-size: 0.7rem; color: var(--gold-dim); font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+}
+.conn-card .conn-via span { display: inline-block; margin-right: 0.3rem; }
+
+/* ===== TABLE ===== */
+.table-wrap { overflow-x: auto; margin: 1.5rem 0; border: 1px solid var(--rule); border-radius: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.82rem; min-width: 650px; }
+th {
+  background: var(--bg3); text-align: left; padding: 0.6rem 0.8rem;
+  border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap;
+  color: var(--gold-dim); font-family: var(--font-mono); font-size: 0.7rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--bg3); }
+td.vol-no { font-family: var(--font-mono); color: var(--muted); width: 3rem; }
+td.vol-name { font-weight: 700; }
+td.vol-stage { white-space: nowrap; }
+.stage-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+
+/* ===== FOOTER ===== */
+.final-section {
+  text-align: center; padding: 3rem 0; margin-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+.final-section .final-quote {
+  font-family: var(--font-serif); font-size: 1.3rem; font-style: italic;
+  color: var(--gold); max-width: 600px; margin: 0 auto 1.5rem;
+  line-height: 1.8;
+}
+.final-section .final-attribution {
+  font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted);
+  letter-spacing: 0.15em;
+}
+.final-section .final-stats {
+  display: flex; gap: 2rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;
+}
+.final-section .final-stat {
+  font-family: var(--font-eng); font-size: 0.85rem; font-style: italic;
+  color: var(--muted);
+}
+.final-section .final-stat strong { color: var(--gold); font-family: var(--font-serif); font-style: normal; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 700px) {
+  .hero .stats-bar { gap: 1.5rem; }
+  .stage-nav { gap: 0.3rem; }
+  .stage-nav a { font-size: 0.65rem; padding: 0.25rem 0.5rem; }
+  .vol-grid { grid-template-columns: 1fr 1fr; }
+  .conn-grid { grid-template-columns: 1fr; }
+  .section-header h2 { font-size: 1.5rem; }
+  .stage-block .stage-header .name { font-size: 0.95rem; }
+}
+@media (max-width: 480px) {
+  .vol-grid { grid-template-columns: 1fr; }
+  .hero .stat-num { font-size: 1.6rem; }
+}
+
+/* ===== MERMAID OVERRIDES ===== */
+.mermaid { background: transparent !important; }
+.mermaid .label { font-family: var(--font-sans) !important; }
+.mermaid .cluster-label { font-family: var(--font-serif) !important; }
+</style>
+</head>
+<body>
+
+<div class="cosmic-bg"></div>
+<div id="particles"></div>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="orb"></div>
+  <div class="kicker">Thought Genealogy &middot; The Final Volume</div>
+  <h1>收束</h1>
+  <p class="subtitle">把一切收拢成一张图 · 最后的回望</p>
+  <div class="divider"></div>
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">36</div><div class="stat-label">卷</div></div>
+    <div class="stat"><div class="stat-num">8</div><div class="stat-label">阶段</div></div>
+    <div class="stat"><div class="stat-num">368</div><div class="stat-label">思维导图</div></div>
+    <div class="stat"><div class="stat-num">1,208</div><div class="stat-label">人物</div></div>
+    <div class="stat"><div class="stat-num">1</div><div class="stat-label">张图</div></div>
+  </div>
+  <div class="scroll-hint">
+    <span class="arrow">&darr;</span>
+    <span class="label">展开全景</span>
+  </div>
+</div>
+
+<!-- ===== MAIN ===== -->
+<div class="main">
+
+  <!-- ===== STAGE NAV ===== -->
+  <div class="stage-nav">
+    <a href="#stage1">奠基</a>
+    <a href="#stage2">社会</a>
+    <a href="#stage3">物质</a>
+    <a href="#stage4">文明</a>
+    <a href="#stage5">未来</a>
+    <a href="#stage6">内心</a>
+    <a href="#stage7">传承</a>
+    <a href="#stage8">收束</a>
+    <span class="nav-sep"></span>
+    <a href="../主题索引.html" title="跨卷人物索引 · 1197 个条目">人物索引</a>
+    <a href="../主题索引.html" title="跨卷主题索引">主题索引</a>
+    <a href="../index.html" title="阅读指南与目录">阅读指南</a>
+  </div>
+
+  <!-- ===== 导言 ===== -->
+  <section>
+    <div class="section-header">
+      <div class="chap-num">Prologue</div>
+      <h2>最后的回望</h2>
+      <div class="sep"></div>
+    </div>
+    <div class="intro-body">
+      <p>三十六卷，八个阶段，从奠基到收束。你走过的是一条从"如何思考"出发、穿越"人与人"和"人与物"的秩序、回望"时间之内"、眺望"时间之外"、回到"人自身"、思考"如何延续"——最终回到这里，把一切收拢成一张图的旅程。</p>
+      <p>这不是终点。收束的意思是：<strong>当你站在这里回望，你会发现每一卷都不是孤立的——它们是一棵树的分枝、一条河的支流、一张星图的星座。</strong></p>
+      <p>第八阶段的任务不是增加新知识，而是让你看清：你走过的路，本身就是一张完整的图。</p>
+      <div class="pull-quote">"知识不是一堆散落的珠子，而是一张网——牵动任何一根线，都会惊动所有角落。"</div>
+      <p>下面，我们从三个层次来回望这三十六卷：<strong>第一层</strong>，看星图——三十六卷在八阶段中的位置与关联；<strong>第二层</strong>，看阶段——每一阶段的核心问题与内部结构；<strong>第三层</strong>，看收束——所有线索如何汇聚成一张完整的图。</p>
+    </div>
+    <div class="diagram reveal">
+      <figcaption>图 0 · 八阶段总览 —— 从奠基到收束的完整旅程</figcaption>
+      <pre class="mermaid">
+flowchart LR
+  S1["奠基&lt;br&gt;如何思考"] --> S2["社会&lt;br&gt;人与人的秩序"]
+  S2 --> S3["物质&lt;br&gt;财富与自然"]
+  S3 --> S4["文明&lt;br&gt;历史与力量"]
+  S4 --> S5["未来&lt;br&gt;科技与智能"]
+  S5 --> S6["内心&lt;br&gt;审美与心灵"]
+  S6 --> S7["传承&lt;br&gt;文明延续"]
+  S7 --> S8["收束&lt;br&gt;一张图"]
+  style S1 fill:#4A6FA5,color:#fff
+  style S2 fill:#7C5CBF,color:#fff
+  style S3 fill:#3D8C40,color:#fff
+  style S4 fill:#B84C4C,color:#fff
+  style S5 fill:#6B4C9E,color:#fff
+  style S6 fill:#C44A7A,color:#fff
+  style S7 fill:#2D8C5E,color:#fff
+  style S8 fill:#C99030,color:#fff
+      </pre>
+    </div>
+  </section>
+
+  <!-- ===== 三十六卷星图 ===== -->
+  <section>
+    <div class="section-header">
+      <div class="chap-num">Chapter I</div>
+      <h2>三十六卷星图</h2>
+      <div class="sep"></div>
+    </div>
+    <p class="section-intro">三十六颗星，八组星座。每一颗星是一卷，每一道光是一条连接线——它们共同构成一张知识星图。悬停或点击星点可查看卷名。</p>
+
+    <div class="constellation-wrap reveal">
+      <svg viewBox="0 0 1000 620" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="sg"><stop offset="0%" stop-color="#C9A84C" stop-opacity="0.25"/><stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/></radialGradient>
+          <filter id="glow"><feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="glowStrong"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <!-- Stage backgrounds -->
+        <rect x="20" y="30" width="110" height="560" rx="6" fill="#4A6FA5" fill-opacity="0.05"/>
+        <rect x="145" y="30" width="150" height="560" rx="6" fill="#7C5CBF" fill-opacity="0.05"/>
+        <rect x="310" y="30" width="150" height="560" rx="6" fill="#3D8C40" fill-opacity="0.05"/>
+        <rect x="475" y="30" width="80" height="560" rx="6" fill="#B84C4C" fill-opacity="0.05"/>
+        <rect x="570" y="30" width="80" height="560" rx="6" fill="#6B4C9E" fill-opacity="0.05"/>
+        <rect x="665" y="30" width="150" height="560" rx="6" fill="#C44A7A" fill-opacity="0.05"/>
+        <rect x="830" y="30" width="60" height="560" rx="6" fill="#2D8C5E" fill-opacity="0.05"/>
+        <rect x="905" y="30" width="70" height="560" rx="6" fill="#C99030" fill-opacity="0.05"/>
+        <!-- Stage labels -->
+        <text x="75" y="55" text-anchor="middle" fill="#4A6FA5" font-size="11" font-family="monospace" font-weight="700">奠基</text>
+        <text x="220" y="55" text-anchor="middle" fill="#7C5CBF" font-size="11" font-family="monospace" font-weight="700">社会</text>
+        <text x="385" y="55" text-anchor="middle" fill="#3D8C40" font-size="11" font-family="monospace" font-weight="700">物质</text>
+        <text x="515" y="55" text-anchor="middle" fill="#B84C4C" font-size="11" font-family="monospace" font-weight="700">文明</text>
+        <text x="610" y="55" text-anchor="middle" fill="#6B4C9E" font-size="11" font-family="monospace" font-weight="700">未来</text>
+        <text x="740" y="55" text-anchor="middle" fill="#C44A7A" font-size="11" font-family="monospace" font-weight="700">内心</text>
+        <text x="860" y="55" text-anchor="middle" fill="#2D8C5E" font-size="11" font-family="monospace" font-weight="700">传承</text>
+        <text x="940" y="55" text-anchor="middle" fill="#C99030" font-size="11" font-family="monospace" font-weight="700">收束</text>
+        <!-- Cross-stage connection lines -->
+        <g stroke="#3A3760" stroke-width="0.4" stroke-dasharray="3,4" opacity="0.4">
+          <line x1="130" y1="310" x2="145" y2="310"/>
+          <line x1="295" y1="310" x2="310" y2="310"/>
+          <line x1="460" y1="310" x2="475" y2="310"/>
+          <line x1="555" y1="310" x2="570" y2="310"/>
+          <line x1="650" y1="310" x2="665" y2="310"/>
+          <line x1="815" y1="310" x2="830" y2="310"/>
+          <line x1="890" y1="310" x2="905" y2="310"/>
+        </g>
+        <!-- Stars (volumes) -->
+        <g font-size="9" text-anchor="middle" dominant-baseline="central" class="star-group">
+          <!-- Stage 1: 奠基 7 vols -->
+          <circle cx="55" cy="100" r="13" fill="#4A6FA5" filter="url(#glow)" class="star" data-vol="01" data-name="主义与思想 · 概念词典" data-q="什么是"主义"？" data-stage="奠基"/>
+          <text x="55" y="100" fill="#fff" font-size="8" font-family="monospace">01</text>
+          <circle cx="100" cy="140" r="13" fill="#4A6FA5" filter="url(#glow)" class="star" data-vol="02" data-name="真理的多维图景" data-q="什么是"真"？" data-stage="奠基"/>
+          <text x="100" y="140" fill="#fff" font-size="8" font-family="monospace">02</text>
+          <circle cx="50" cy="190" r="13" fill="#4A6FA5" filter="url(#glow)" class="star" data-vol="03" data-name="逻辑与论证" data-q="如何正确推理？" data-stage="奠基"/>
+          <text x="50" y="190" fill="#fff" font-size="8" font-family="monospace">03</text>
+          <circle cx="95" cy="235" r="13" fill="#4A6FA5" filter="url(#glow)" class="star" data-vol="04" data-name="数学思想谱系" data-q="数学如何构建抽象世界？" data-stage="奠基"/>
+          <text x="95" y="235" fill="#fff" font-size="8" font-family="monospace">04</text>
+          <circle cx="45" cy="290" r="13" fill="#4A6FA5" filter="url(#glow)" class="star" data-vol="05" data-name="西方哲学思想谱系" data-q="西方如何追问"存在"？" data-stage="奠基"/>
+          <text x="45" y="290" fill="#fff" font-size="8" font-family="monospace">05</text>
+          <circle cx="90" cy="340" r="13" fill="#4A6FA5" filter="url(#glow)" class="star" data-vol="06" data-name="东方思想谱系" data-q="东方如何追问"道"？" data-stage="奠基"/>
+          <text x="90" y="340" fill="#fff" font-size="8" font-family="monospace">06</text>
+          <circle cx="65" cy="395" r="13" fill="#4A6FA5" filter="url(#glow)" class="star" data-vol="07" data-name="宗教学与神话" data-q="人类如何追问神圣？" data-stage="奠基"/>
+          <text x="65" y="395" fill="#fff" font-size="8" font-family="monospace">07</text>
+          <!-- Stage 2: 社会 8 vols -->
+          <circle cx="170" cy="90" r="13" fill="#7C5CBF" filter="url(#glow)" class="star" data-vol="08" data-name="社会思想谱系" data-q="社会如何运作？" data-stage="社会"/>
+          <text x="170" y="90" fill="#fff" font-size="8" font-family="monospace">08</text>
+          <circle cx="240" cy="120" r="13" fill="#7C5CBF" filter="url(#glow)" class="star" data-vol="09" data-name="政治学通论" data-q="权力与秩序从何而来？" data-stage="社会"/>
+          <text x="240" y="120" fill="#fff" font-size="8" font-family="monospace">09</text>
+          <circle cx="180" cy="170" r="13" fill="#7C5CBF" filter="url(#glow)" class="star" data-vol="10" data-name="国际关系思想谱系" data-q="国家之间如何相处？" data-stage="社会"/>
+          <text x="180" y="170" fill="#fff" font-size="8" font-family="monospace">10</text>
+          <circle cx="250" cy="205" r="13" fill="#7C5CBF" filter="url(#glow)" class="star" data-vol="11" data-name="人类学思想谱系" data-q=""他者"如何让我们反思自身？" data-stage="社会"/>
+          <text x="250" y="205" fill="#fff" font-size="8" font-family="monospace">11</text>
+          <circle cx="170" cy="265" r="13" fill="#7C5CBF" filter="url(#glow)" class="star" data-vol="12" data-name="马克思主义谱系" data-q="左翼长河" data-stage="社会"/>
+          <text x="170" y="265" fill="#fff" font-size="8" font-family="monospace">12</text>
+          <circle cx="240" cy="300" r="13" fill="#7C5CBF" filter="url(#glow)" class="star" data-vol="13" data-name="自由主义谱系" data-q="右翼长河" data-stage="社会"/>
+          <text x="240" y="300" fill="#fff" font-size="8" font-family="monospace">13</text>
+          <circle cx="185" cy="360" r="13" fill="#7C5CBF" filter="url(#glow)" class="star" data-vol="14" data-name="法哲学思想谱系" data-q="正义与规则" data-stage="社会"/>
+          <text x="185" y="360" fill="#fff" font-size="8" font-family="monospace">14</text>
+          <circle cx="255" cy="395" r="13" fill="#7C5CBF" filter="url(#glow)" class="star" data-vol="15" data-name="伦理与道德思想谱系" data-q="善与恶" data-stage="社会"/>
+          <text x="255" y="395" fill="#fff" font-size="8" font-family="monospace">15</text>
+          <!-- Stage 3: 物质 9 vols -->
+          <circle cx="340" cy="85" r="13" fill="#3D8C40" filter="url(#glow)" class="star" data-vol="16" data-name="经济思想谱系（上）" data-q="财富如何创造？" data-stage="物质"/>
+          <text x="340" y="85" fill="#fff" font-size="8" font-family="monospace">16</text>
+          <circle cx="410" cy="110" r="13" fill="#3D8C40" filter="url(#glow)" class="star" data-vol="17" data-name="经济思想谱系（下）" data-q="增长、金融、平台、AI" data-stage="物质"/>
+          <text x="410" y="110" fill="#fff" font-size="8" font-family="monospace">17</text>
+          <circle cx="345" cy="160" r="13" fill="#3D8C40" filter="url(#glow)" class="star" data-vol="18" data-name="科学思想谱系" data-q="科学如何重塑世界观？" data-stage="物质"/>
+          <text x="345" y="160" fill="#fff" font-size="8" font-family="monospace">18</text>
+          <circle cx="415" cy="190" r="13" fill="#3D8C40" filter="url(#glow)" class="star" data-vol="19" data-name="生命科学思想谱系" data-q="生命如何演化？" data-stage="物质"/>
+          <text x="415" y="190" fill="#fff" font-size="8" font-family="monospace">19</text>
+          <circle cx="335" cy="245" r="13" fill="#3D8C40" filter="url(#glow)" class="star" data-vol="20" data-name="地理与环境思想谱系" data-q="空间与人类" data-stage="物质"/>
+          <text x="335" y="245" fill="#fff" font-size="8" font-family="monospace">20</text>
+          <circle cx="405" cy="275" r="13" fill="#3D8C40" filter="url(#glow)" class="star" data-vol="21" data-name="物理学" data-q="宇宙的基本规律" data-stage="物质"/>
+          <text x="405" y="275" fill="#fff" font-size="8" font-family="monospace">21</text>
+          <circle cx="340" cy="335" r="13" fill="#3D8C40" filter="url(#glow)" class="star" data-vol="22" data-name="天文学与宇宙学" data-q="宇宙的起源与演化" data-stage="物质"/>
+          <text x="340" y="335" fill="#fff" font-size="8" font-family="monospace">22</text>
+          <circle cx="410" cy="365" r="13" fill="#3D8C40" filter="url(#glow)" class="star" data-vol="23" data-name="化学" data-q="物质如何变化？" data-stage="物质"/>
+          <text x="410" y="365" fill="#fff" font-size="8" font-family="monospace">23</text>
+          <circle cx="375" cy="420" r="13" fill="#3D8C40" filter="url(#glow)" class="star" data-vol="24" data-name="医学与健康" data-q="身体如何守护？" data-stage="物质"/>
+          <text x="375" y="420" fill="#fff" font-size="8" font-family="monospace">24</text>
+          <!-- Stage 4: 文明 2 vols -->
+          <circle cx="505" cy="160" r="13" fill="#B84C4C" filter="url(#glow)" class="star" data-vol="25" data-name="历史思想谱系" data-q="人类如何理解过去？" data-stage="文明"/>
+          <text x="505" y="160" fill="#fff" font-size="8" font-family="monospace">25</text>
+          <circle cx="520" cy="270" r="13" fill="#B84C4C" filter="url(#glow)" class="star" data-vol="26" data-name="军事与战略思想谱系" data-q="最极端的冲突与智慧" data-stage="文明"/>
+          <text x="520" y="270" fill="#fff" font-size="8" font-family="monospace">26</text>
+          <!-- Stage 5: 未来 2 vols -->
+          <circle cx="600" cy="160" r="13" fill="#6B4C9E" filter="url(#glow)" class="star" data-vol="27" data-name="科技与人工智能" data-q="从石器到AGI" data-stage="未来"/>
+          <text x="600" y="160" fill="#fff" font-size="8" font-family="monospace">27</text>
+          <circle cx="615" cy="270" r="13" fill="#6B4C9E" filter="url(#glow)" class="star" data-vol="28" data-name="计算机科学" data-q="计算与信息" data-stage="未来"/>
+          <text x="615" y="270" fill="#fff" font-size="8" font-family="monospace">28</text>
+          <!-- Stage 6: 内心 6 vols -->
+          <circle cx="700" cy="100" r="13" fill="#C44A7A" filter="url(#glow)" class="star" data-vol="29" data-name="艺术与美学" data-q="什么是"美"？" data-stage="内心"/>
+          <text x="700" y="100" fill="#fff" font-size="8" font-family="monospace">29</text>
+          <circle cx="770" cy="130" r="13" fill="#C44A7A" filter="url(#glow)" class="star" data-vol="30" data-name="心理学思想谱系" data-q="心如何运作？" data-stage="内心"/>
+          <text x="770" y="130" fill="#fff" font-size="8" font-family="monospace">30</text>
+          <circle cx="710" cy="205" r="13" fill="#C44A7A" filter="url(#glow)" class="star" data-vol="31" data-name="文学与语言" data-q="语言如何创造意义？" data-stage="内心"/>
+          <text x="710" y="205" fill="#fff" font-size="8" font-family="monospace">31</text>
+          <circle cx="780" cy="235" r="13" fill="#C44A7A" filter="url(#glow)" class="star" data-vol="32" data-name="语言学" data-q="语言的科学规律" data-stage="内心"/>
+          <text x="780" y="235" fill="#fff" font-size="8" font-family="monospace">32</text>
+          <circle cx="720" cy="315" r="13" fill="#C44A7A" filter="url(#glow)" class="star" data-vol="33" data-name="传播与媒介" data-q="信息如何抵达人心？" data-stage="内心"/>
+          <text x="720" y="315" fill="#fff" font-size="8" font-family="monospace">33</text>
+          <circle cx="790" cy="345" r="13" fill="#C44A7A" filter="url(#glow)" class="star" data-vol="34" data-name="修辞与演说" data-q="如何以言成事？" data-stage="内心"/>
+          <text x="790" y="345" fill="#fff" font-size="8" font-family="monospace">34</text>
+          <!-- Stage 7: 传承 1 vol -->
+          <circle cx="860" cy="265" r="15" fill="#2D8C5E" filter="url(#glowStrong)" class="star" data-vol="35" data-name="教育思想谱系" data-q="文明的元机制" data-stage="传承"/>
+          <text x="860" y="265" fill="#fff" font-size="8" font-family="monospace">35</text>
+          <!-- Stage 8: 收束 1 vol -->
+          <circle cx="940" cy="265" r="18" fill="#C99030" filter="url(#glowStrong)" class="star" data-vol="36" data-name="系列总览 · 收束" data-q="把一切收拢成一张图" data-stage="收束"/>
+          <text x="940" y="265" fill="#fff" font-size="8" font-family="monospace" font-weight="700">36</text>
+        </g>
+        <!-- Intra-stage connection lines -->
+        <g stroke="#3A3760" stroke-width="0.5" opacity="0.5">
+          <line x1="55" y1="100" x2="100" y2="140"/>
+          <line x1="100" y1="140" x2="50" y2="190"/>
+          <line x1="50" y1="190" x2="95" y2="235"/>
+          <line x1="95" y1="235" x2="45" y2="290"/>
+          <line x1="45" y1="290" x2="90" y2="340"/>
+          <line x1="90" y1="340" x2="65" y2="395"/>
+          <line x1="170" y1="90" x2="240" y2="120"/>
+          <line x1="240" y1="120" x2="180" y2="170"/>
+          <line x1="180" y1="170" x2="250" y2="205"/>
+          <line x1="250" y1="205" x2="170" y2="265"/>
+          <line x1="170" y1="265" x2="240" y2="300"/>
+          <line x1="240" y1="300" x2="185" y2="360"/>
+          <line x1="185" y1="360" x2="255" y2="395"/>
+          <line x1="340" y1="85" x2="410" y2="110"/>
+          <line x1="410" y1="110" x2="345" y2="160"/>
+          <line x1="345" y1="160" x2="415" y2="190"/>
+          <line x1="415" y1="190" x2="335" y2="245"/>
+          <line x1="335" y1="245" x2="405" y2="275"/>
+          <line x1="405" y1="275" x2="340" y2="335"/>
+          <line x1="340" y1="335" x2="410" y2="365"/>
+          <line x1="410" y1="365" x2="375" y2="420"/>
+          <line x1="700" y1="100" x2="770" y2="130"/>
+          <line x1="770" y1="130" x2="710" y2="205"/>
+          <line x1="710" y1="205" x2="780" y2="235"/>
+          <line x1="780" y1="235" x2="720" y2="315"/>
+          <line x1="720" y1="315" x2="790" y2="345"/>
+        </g>
+        <!-- Cross-stage thematic connections -->
+        <g stroke="#C9A84C" stroke-width="0.3" opacity="0.15" stroke-dasharray="2,3">
+          <line x1="505" y1="160" x2="600" y2="160"/>
+          <line x1="600" y1="160" x2="700" y2="100"/>
+          <line x1="860" y1="265" x2="940" y2="265"/>
+          <line x1="65" y1="395" x2="170" y2="90"/>
+          <line x1="45" y1="290" x2="505" y2="160"/>
+          <line x1="95" y1="235" x2="615" y2="270"/>
+        </g>
+        <!-- Volume name labels -->
+        <g fill="#8A8698" font-size="6.5" font-family="monospace" opacity="0.6">
+          <text x="55" y="119">概念词典</text>
+          <text x="100" y="159">真理</text>
+          <text x="50" y="209">逻辑</text>
+          <text x="95" y="254">数学</text>
+          <text x="45" y="309">西方哲学</text>
+          <text x="90" y="359">东方思想</text>
+          <text x="65" y="414">宗教学</text>
+          <text x="170" y="109">社会思想</text>
+          <text x="240" y="139">政治学</text>
+          <text x="180" y="189">国际关系</text>
+          <text x="250" y="224">人类学</text>
+          <text x="170" y="284">马克思主义</text>
+          <text x="240" y="319">自由主义</text>
+          <text x="185" y="379">法哲学</text>
+          <text x="255" y="414">伦理学</text>
+          <text x="340" y="104">经济(上)</text>
+          <text x="410" y="129">经济(下)</text>
+          <text x="345" y="179">科学</text>
+          <text x="415" y="209">生命科学</text>
+          <text x="335" y="264">地理</text>
+          <text x="405" y="294">物理学</text>
+          <text x="340" y="354">天文学</text>
+          <text x="410" y="384">化学</text>
+          <text x="375" y="439">医学</text>
+          <text x="505" y="179">历史</text>
+          <text x="520" y="289">军事</text>
+          <text x="600" y="179">科技/AI</text>
+          <text x="615" y="289">计算机</text>
+          <text x="700" y="119">艺术美学</text>
+          <text x="770" y="149">心理学</text>
+          <text x="710" y="224">文学</text>
+          <text x="780" y="254">语言学</text>
+          <text x="720" y="334">传播媒介</text>
+          <text x="790" y="364">修辞演说</text>
+          <text x="860" y="286">教育</text>
+          <text x="940" y="289" fill="#C99030" opacity="0.9">总览</text>
+        </g>
+        <!-- Hover-sensitive invisible areas for tooltips -->
+        <g fill="transparent" stroke="none" class="star-hit">
+          <circle cx="55" cy="100" r="16" data-vol="01"/>
+          <circle cx="100" cy="140" r="16" data-vol="02"/>
+          <circle cx="50" cy="190" r="16" data-vol="03"/>
+          <circle cx="95" cy="235" r="16" data-vol="04"/>
+          <circle cx="45" cy="290" r="16" data-vol="05"/>
+          <circle cx="90" cy="340" r="16" data-vol="06"/>
+          <circle cx="65" cy="395" r="16" data-vol="07"/>
+          <circle cx="170" cy="90" r="16" data-vol="08"/>
+          <circle cx="240" cy="120" r="16" data-vol="09"/>
+          <circle cx="180" cy="170" r="16" data-vol="10"/>
+          <circle cx="250" cy="205" r="16" data-vol="11"/>
+          <circle cx="170" cy="265" r="16" data-vol="12"/>
+          <circle cx="240" cy="300" r="16" data-vol="13"/>
+          <circle cx="185" cy="360" r="16" data-vol="14"/>
+          <circle cx="255" cy="395" r="16" data-vol="15"/>
+          <circle cx="340" cy="85" r="16" data-vol="16"/>
+          <circle cx="410" cy="110" r="16" data-vol="17"/>
+          <circle cx="345" cy="160" r="16" data-vol="18"/>
+          <circle cx="415" cy="190" r="16" data-vol="19"/>
+          <circle cx="335" cy="245" r="16" data-vol="20"/>
+          <circle cx="405" cy="275" r="16" data-vol="21"/>
+          <circle cx="340" cy="335" r="16" data-vol="22"/>
+          <circle cx="410" cy="365" r="16" data-vol="23"/>
+          <circle cx="375" cy="420" r="16" data-vol="24"/>
+          <circle cx="505" cy="160" r="16" data-vol="25"/>
+          <circle cx="520" cy="270" r="16" data-vol="26"/>
+          <circle cx="600" cy="160" r="16" data-vol="27"/>
+          <circle cx="615" cy="270" r="16" data-vol="28"/>
+          <circle cx="700" cy="100" r="16" data-vol="29"/>
+          <circle cx="770" cy="130" r="16" data-vol="30"/>
+          <circle cx="710" cy="205" r="16" data-vol="31"/>
+          <circle cx="780" cy="235" r="16" data-vol="32"/>
+          <circle cx="720" cy="315" r="16" data-vol="33"/>
+          <circle cx="790" cy="345" r="16" data-vol="34"/>
+          <circle cx="860" cy="265" r="18" data-vol="35"/>
+          <circle cx="940" cy="265" r="22" data-vol="36"/>
+        </g>
+      </svg>
+      <div class="constellation-tooltip" id="tooltip"></div>
+    </div>
+  </section>
+
+  <!-- ===== 八阶段详解 ===== -->
+  <section>
+    <div class="section-header">
+      <div class="chap-num">Chapter II</div>
+      <h2>八阶段详解</h2>
+      <div class="sep"></div>
+    </div>
+    <p class="section-intro">点击各阶段标题展开/收起详情。每一阶段都是一次思维范式的转换——从"如何思考"到"把一切收拢成一张图"。</p>
+
+    <!-- Stage 1 -->
+    <div class="stage-block reveal" id="stage1">
+      <div class="stage-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <div class="num">I</div>
+        <div class="name">奠基 · 如何思考</div>
+        <span class="vol-count">7卷</span>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="stage-content">
+        <p class="stage-desc"><strong>全卷的"地基"</strong>——在我接触任何具体学问之前，必须先建立理性工具的可靠性。先厘清概念（主义与思想），再追问真理本身（真理的多维图景），然后掌握逻辑与数学这两套精确思维工具，最后站在东西方两大思想传统和宗教学的维度上，理解人类追问"存在"与"神圣"的多种方式。</p>
+        <div class="vol-grid">
+          <div class="vol-card"><div class="vol-num">VOL.01</div><div class="vol-name">主义与思想 · 概念词典</div><div class="vol-q">什么是"主义"？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.02</div><div class="vol-name">真理的多维图景</div><div class="vol-q">什么是"真"？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.03</div><div class="vol-name">逻辑与论证</div><div class="vol-q">如何正确推理？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.04</div><div class="vol-name">数学思想谱系</div><div class="vol-q">数学如何构建抽象世界？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.05</div><div class="vol-name">西方哲学思想谱系</div><div class="vol-q">西方如何追问"存在"？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.06</div><div class="vol-name">东方思想谱系</div><div class="vol-q">东方如何追问"道"？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.07</div><div class="vol-name">宗教学与神话</div><div class="vol-q">人类如何追问神圣？</div></div>
+        </div>
+        <div class="diagram">
+          <figcaption>图 1 · 奠基阶段结构</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  ROOT["奠基 · 如何思考"] --> A["概念工具&lt;br&gt;主义与思想"]
+  ROOT --> B["元追问&lt;br&gt;真理的多维图景"]
+  ROOT --> C["形式工具&lt;br&gt;逻辑 · 数学"]
+  ROOT --> D["思想传统&lt;br&gt;西方哲学 · 东方思想"]
+  ROOT --> E["神圣维度&lt;br&gt;宗教学与神话"]
+  style ROOT fill:#4A6FA5,color:#fff
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage 2 -->
+    <div class="stage-block reveal" id="stage2">
+      <div class="stage-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <div class="num">II</div>
+        <div class="name">社会 · 人与人的秩序</div>
+        <span class="vol-count">8卷</span>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="stage-content">
+        <p class="stage-desc"><strong>从个体到制度</strong>——掌握了思考工具之后，第一件要面对的现实就是人与人的关系。从"社会"如何运作开始，到"政治"的权力与秩序，再到"国际关系"的国家间博弈，"人类学"的他者反思。然后进入两条西方政治长河——马克思主义与自由主义，再用"法哲学"的正义与规则和"伦理学"的善与恶落下价值标尺。</p>
+        <div class="vol-grid">
+          <div class="vol-card"><div class="vol-num">VOL.08</div><div class="vol-name">社会思想谱系</div><div class="vol-q">社会如何运作？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.09</div><div class="vol-name">政治学通论</div><div class="vol-q">权力与秩序从何而来？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.10</div><div class="vol-name">国际关系思想谱系</div><div class="vol-q">国家之间如何相处？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.11</div><div class="vol-name">人类学思想谱系</div><div class="vol-q">"他者"如何让我们反思自身？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.12</div><div class="vol-name">马克思主义谱系</div><div class="vol-q">左翼长河</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.13</div><div class="vol-name">自由主义谱系</div><div class="vol-q">右翼长河</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.14</div><div class="vol-name">法哲学思想谱系</div><div class="vol-q">正义与规则</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.15</div><div class="vol-name">伦理与道德思想谱系</div><div class="vol-q">善与恶</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage 3 -->
+    <div class="stage-block reveal" id="stage3">
+      <div class="stage-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <div class="num">III</div>
+        <div class="name">物质 · 财富与自然</div>
+        <span class="vol-count">9卷</span>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="stage-content">
+        <p class="stage-desc"><strong>人与物质世界的关系</strong>——我们如何创造财富、又如何理解自然？经济（上、下）看财富的古典脉络与当代深水区，科学总领世界观的重塑，生命科学与地理揭示演化和空间，物理学、天文学、化学揭示宇宙的基本规律，医学守护人的身体。</p>
+        <div class="vol-grid">
+          <div class="vol-card"><div class="vol-num">VOL.16</div><div class="vol-name">经济思想谱系（上）</div><div class="vol-q">财富如何创造？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.17</div><div class="vol-name">经济思想谱系（下）</div><div class="vol-q">增长、金融、平台、AI</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.18</div><div class="vol-name">科学思想谱系</div><div class="vol-q">科学如何重塑世界观？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.19</div><div class="vol-name">生命科学思想谱系</div><div class="vol-q">生命如何演化？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.20</div><div class="vol-name">地理与环境思想谱系</div><div class="vol-q">空间与人类</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.21</div><div class="vol-name">物理学</div><div class="vol-q">宇宙的基本规律</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.22</div><div class="vol-name">天文学与宇宙学</div><div class="vol-q">宇宙的起源与演化</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.23</div><div class="vol-name">化学</div><div class="vol-q">物质如何变化？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.24</div><div class="vol-name">医学与健康</div><div class="vol-q">身体如何守护？</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage 4 -->
+    <div class="stage-block reveal" id="stage4">
+      <div class="stage-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <div class="num">IV</div>
+        <div class="name">文明 · 历史与力量</div>
+        <span class="vol-count">2卷</span>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="stage-content">
+        <p class="stage-desc"><strong>从时间纵深到冲突代价</strong>——看清了"当下"的人与物，还要知道"当下"是怎么来的。历史理解人类如何记录、理解与运用过去；军事战略直面人类最极端的冲突形式，理解"不战而胜、威慑和平"的战略智慧。</p>
+        <div class="vol-grid">
+          <div class="vol-card"><div class="vol-num">VOL.25</div><div class="vol-name">历史思想谱系</div><div class="vol-q">人类如何理解过去？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.26</div><div class="vol-name">军事与战略思想谱系</div><div class="vol-q">最极端的冲突与智慧</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage 5 -->
+    <div class="stage-block reveal" id="stage5">
+      <div class="stage-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <div class="num">V</div>
+        <div class="name">未来 · 科技与智能</div>
+        <span class="vol-count">2卷</span>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="stage-content">
+        <p class="stage-desc"><strong>从石器到AGI</strong>——回望了来路，就轮到去路。科技与人工智能串联六次技术跃迁，理解工具如何改造世界、又如何反过来重塑人。计算机科学揭开计算与信息的底层逻辑。这两卷既是"科学"的延伸，也是"内心"的引子——因为AI最终迫使我们重新回答"人是什么"。</p>
+        <div class="vol-grid">
+          <div class="vol-card"><div class="vol-num">VOL.27</div><div class="vol-name">科技与人工智能</div><div class="vol-q">从石器到AGI</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.28</div><div class="vol-name">计算机科学</div><div class="vol-q">计算与信息</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage 6 -->
+    <div class="stage-block reveal" id="stage6">
+      <div class="stage-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <div class="num">VI</div>
+        <div class="name">内心 · 审美与心灵</div>
+        <span class="vol-count">6卷</span>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="stage-content">
+        <p class="stage-desc"><strong>从美到意义</strong>——外部世界走完一圈，最终要回到人如何感受、如何理解自己。艺术与美学追问"美"，心理学剖析"心"，文学与语言教你用语言创造意义，语言学揭示语言的科学规律，传播与媒介教你理解信息如何抵达人心，修辞与演说教你如何以言成事。六卷共同构成"内心世界"的闭环。</p>
+        <div class="vol-grid">
+          <div class="vol-card"><div class="vol-num">VOL.29</div><div class="vol-name">艺术与美学</div><div class="vol-q">什么是"美"？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.30</div><div class="vol-name">心理学思想谱系</div><div class="vol-q">心如何运作？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.31</div><div class="vol-name">文学与语言</div><div class="vol-q">语言如何创造意义？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.32</div><div class="vol-name">语言学</div><div class="vol-q">语言的科学规律</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.33</div><div class="vol-name">传播与媒介</div><div class="vol-q">信息如何抵达人心？</div></div>
+          <div class="vol-card"><div class="vol-num">VOL.34</div><div class="vol-name">修辞与演说</div><div class="vol-q">如何以言成事？</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage 7 -->
+    <div class="stage-block reveal" id="stage7">
+      <div class="stage-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <div class="num">VII</div>
+        <div class="name">传承 · 文明延续</div>
+        <span class="vol-count">1卷</span>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="stage-content">
+        <p class="stage-desc"><strong>文明的元机制</strong>——认识了自己，最后要问的是这一切如何传递下去。教育是文明的"元机制"——从"有教无类"到"终身学习"，从"知识灌输"到"批判性思维"，教育回答了：我们如何把已经积累的一切，交给下一代？</p>
+        <div class="vol-grid">
+          <div class="vol-card"><div class="vol-num">VOL.35</div><div class="vol-name">教育思想谱系</div><div class="vol-q">文明的元机制</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage 8 -->
+    <div class="stage-block reveal" id="stage8">
+      <div class="stage-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <div class="num">VIII</div>
+        <div class="name">收束 · 把一切收拢成一张图</div>
+        <span class="vol-count">1卷</span>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="stage-content">
+        <p class="stage-desc"><strong>三十六卷之后，不再增加新知识，而是回望来路</strong>：把一切收拢成一张图。这就是你正在读的——系列总览，也是第八阶段唯一的、也是最后一卷。</p>
+        <div class="vol-grid">
+          <div class="vol-card"><div class="vol-num">VOL.36</div><div class="vol-name">系列总览 · 收束</div><div class="vol-q">把一切收拢成一张图</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 跨卷关联 ===== -->
+  <section>
+    <div class="section-header">
+      <div class="chap-num">Chapter III</div>
+      <h2>跨卷关联</h2>
+      <div class="sep"></div>
+    </div>
+    <p class="section-intro">三十六卷不是孤立的。以下核心主题跨越多个阶段，在不同卷中反复出现、互相照亮。</p>
+    <div class="conn-grid">
+      <div class="conn-card reveal">
+        <div class="conn-symbol">&sect;</div>
+        <div class="conn-title">自由</div>
+        <div class="conn-desc">从消极自由到积极自由，从政治自由到经济自由，贯穿政治学、自由主义、伦理学、法哲学。这是理解现代文明的核心线索。</div>
+        <div class="conn-via"><span>●</span> VOL.09 · 13 · 14 · 15</div>
+      </div>
+      <div class="conn-card reveal">
+        <div class="conn-symbol">&para;</div>
+        <div class="conn-title">正义</div>
+        <div class="conn-desc">从柏拉图的正义城邦到罗尔斯的正义即公平，跨越哲学、政治学、法哲学、伦理学。正义是制度设计的最高标尺。</div>
+        <div class="conn-via"><span>●</span> VOL.05 · 09 · 14 · 15</div>
+      </div>
+      <div class="conn-card reveal">
+        <div class="conn-symbol">&infin;</div>
+        <div class="conn-title">全球化</div>
+        <div class="conn-desc">从地理大发现到信息全球化，跨越历史、国际关系、地理、经济、传播媒介。世界从未像今天这样紧密相连。</div>
+        <div class="conn-via"><span>●</span> VOL.10 · 17 · 20 · 25 · 33</div>
+      </div>
+      <div class="conn-card reveal">
+        <div class="conn-symbol">&#8704;</div>
+        <div class="conn-title">人机关系</div>
+        <div class="conn-desc">从图灵测试到AGI伦理，跨越逻辑、计算机科学、科技AI、心理学、伦理学。AI正在重新定义"人"的边界。</div>
+        <div class="conn-via"><span>●</span> VOL.03 · 27 · 28 · 30 · 15</div>
+      </div>
+      <div class="conn-card reveal">
+        <div class="conn-symbol">&part;</div>
+        <div class="conn-title">演化</div>
+        <div class="conn-desc">从达尔文到社会达尔文主义，跨越生命科学、人类学、社会思想、心理学。演化是理解生命与社会的底层框架。</div>
+        <div class="conn-via"><span>●</span> VOL.08 · 11 · 19 · 30</div>
+      </div>
+      <div class="conn-card reveal">
+        <div class="conn-symbol">&lambda;</div>
+        <div class="conn-title">语言与意义</div>
+        <div class="conn-desc">从索绪尔到乔姆斯基，从文学创作到信息传播，跨越语言学、文学、传播、修辞。语言是思想的边界，也是意义的家园。</div>
+        <div class="conn-via"><span>●</span> VOL.31 · 32 · 33 · 34</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 知识树 ===== -->
+  <section>
+    <div class="section-header">
+      <div class="chap-num">Chapter IV</div>
+      <h2>知识树 · 把一切收拢</h2>
+      <div class="sep"></div>
+    </div>
+    <p class="section-intro">三十六卷、八阶段，本质上是一棵树的生长。根是"奠基"——概念工具与思维方法；干是"社会"与"物质"——人与人的秩序、人与物的关系；枝是"文明"与"未来"——时间的纵深与延伸；叶是"内心"——审美、情感与意义；果是"传承"——教育；而整棵树的存在，就是"收束"——你此刻看到的。</p>
+    <div class="diagram reveal">
+      <figcaption>图 2 · 知识树 —— 三十六卷的收束</figcaption>
+      <pre class="mermaid">
+flowchart TB
+  ROOT["🌳 知识树"] --> S1["根 · 奠基&lt;br&gt;概念 · 真理 · 逻辑&lt;br&gt;数学 · 哲学 · 东方思想 · 宗教学"]
+  S1 --> S2["干 · 社会&lt;br&gt;社会 · 政治 · 国际关系 · 人类学&lt;br&gt;马克思主义 · 自由主义 · 法哲学 · 伦理学"]
+  S1 --> S3["干 · 物质&lt;br&gt;经济 · 科学 · 生命科学 · 地理&lt;br&gt;物理 · 天文 · 化学 · 医学"]
+  S2 --> S4["枝 · 文明&lt;br&gt;历史 · 军事"]
+  S3 --> S5["枝 · 未来&lt;br&gt;科技/AI · 计算机"]
+  S4 --> S6["叶 · 内心&lt;br&gt;艺术 · 心理 · 文学 · 语言学&lt;br&gt;传播 · 修辞"]
+  S5 --> S6
+  S6 --> S7["果 · 传承&lt;br&gt;教育"]
+  S7 --> S8["🌞 收束&lt;br&gt;把一切收拢&lt;br&gt;成一张图"]
+  style ROOT fill:#C9A84C,color:#0C0B14
+  style S8 fill:#C99030,color:#fff
+      </pre>
+    </div>
+  </section>
+
+  <!-- ===== 三十六卷总表 ===== -->
+  <section>
+    <div class="section-header">
+      <div class="chap-num">Appendix</div>
+      <h2>三十六卷总表</h2>
+      <div class="sep"></div>
+    </div>
+    <p class="section-intro">完整索引：卷号、卷名、所属阶段与核心问题。</p>
+    <div class="table-wrap reveal">
+      <table>
+        <thead>
+          <tr><th>卷</th><th>卷名</th><th>阶段</th><th>核心之问</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="vol-no">01</td><td class="vol-name">主义与思想 · 概念词典</td><td class="vol-stage"><span class="stage-dot" style="background:#4A6FA5"></span>奠基</td><td>什么是"主义"？</td></tr>
+          <tr><td class="vol-no">02</td><td class="vol-name">真理的多维图景</td><td class="vol-stage"><span class="stage-dot" style="background:#4A6FA5"></span>奠基</td><td>什么是"真"？</td></tr>
+          <tr><td class="vol-no">03</td><td class="vol-name">逻辑与论证</td><td class="vol-stage"><span class="stage-dot" style="background:#4A6FA5"></span>奠基</td><td>如何正确推理？</td></tr>
+          <tr><td class="vol-no">04</td><td class="vol-name">数学思想谱系</td><td class="vol-stage"><span class="stage-dot" style="background:#4A6FA5"></span>奠基</td><td>数学如何构建抽象世界？</td></tr>
+          <tr><td class="vol-no">05</td><td class="vol-name">西方哲学思想谱系</td><td class="vol-stage"><span class="stage-dot" style="background:#4A6FA5"></span>奠基</td><td>西方如何追问"存在"？</td></tr>
+          <tr><td class="vol-no">06</td><td class="vol-name">东方思想谱系</td><td class="vol-stage"><span class="stage-dot" style="background:#4A6FA5"></span>奠基</td><td>东方如何追问"道"？</td></tr>
+          <tr><td class="vol-no">07</td><td class="vol-name">宗教学与神话</td><td class="vol-stage"><span class="stage-dot" style="background:#4A6FA5"></span>奠基</td><td>人类如何追问神圣？</td></tr>
+          <tr><td class="vol-no">08</td><td class="vol-name">社会思想谱系</td><td class="vol-stage"><span class="stage-dot" style="background:#7C5CBF"></span>社会</td><td>社会如何运作？</td></tr>
+          <tr><td class="vol-no">09</td><td class="vol-name">政治学通论</td><td class="vol-stage"><span class="stage-dot" style="background:#7C5CBF"></span>社会</td><td>权力与秩序从何而来？</td></tr>
+          <tr><td class="vol-no">10</td><td class="vol-name">国际关系思想谱系</td><td class="vol-stage"><span class="stage-dot" style="background:#7C5CBF"></span>社会</td><td>国家之间如何相处？</td></tr>
+          <tr><td class="vol-no">11</td><td class="vol-name">人类学思想谱系</td><td class="vol-stage"><span class="stage-dot" style="background:#7C5CBF"></span>社会</td><td>"他者"如何让我们反思自身？</td></tr>
+          <tr><td class="vol-no">12</td><td class="vol-name">马克思主义谱系</td><td class="vol-stage"><span class="stage-dot" style="background:#7C5CBF"></span>社会</td><td>左翼长河</td></tr>
+          <tr><td class="vol-no">13</td><td class="vol-name">自由主义谱系</td><td class="vol-stage"><span class="stage-dot" style="background:#7C5CBF"></span>社会</td><td>右翼长河</td></tr>
+          <tr><td class="vol-no">14</td><td class="vol-name">法哲学思想谱系</td><td class="vol-stage"><span class="stage-dot" style="background:#7C5CBF"></span>社会</td><td>正义与规则</td></tr>
+          <tr><td class="vol-no">15</td><td class="vol-name">伦理与道德思想谱系</td><td class="vol-stage"><span class="stage-dot" style="background:#7C5CBF"></span>社会</td><td>善与恶</td></tr>
+          <tr><td class="vol-no">16</td><td class="vol-name">经济思想谱系（上）</td><td class="vol-stage"><span class="stage-dot" style="background:#3D8C40"></span>物质</td><td>财富如何创造？</td></tr>
+          <tr><td class="vol-no">17</td><td class="vol-name">经济思想谱系（下）</td><td class="vol-stage"><span class="stage-dot" style="background:#3D8C40"></span>物质</td><td>增长、金融、平台、AI</td></tr>
+          <tr><td class="vol-no">18</td><td class="vol-name">科学思想谱系</td><td class="vol-stage"><span class="stage-dot" style="background:#3D8C40"></span>物质</td><td>科学如何重塑世界观？</td></tr>
+          <tr><td class="vol-no">19</td><td class="vol-name">生命科学思想谱系</td><td class="vol-stage"><span class="stage-dot" style="background:#3D8C40"></span>物质</td><td>生命如何演化？</td></tr>
+          <tr><td class="vol-no">20</td><td class="vol-name">地理与环境思想谱系</td><td class="vol-stage"><span class="stage-dot" style="background:#3D8C40"></span>物质</td><td>空间与人类</td></tr>
+          <tr><td class="vol-no">21</td><td class="vol-name">物理学</td><td class="vol-stage"><span class="stage-dot" style="background:#3D8C40"></span>物质</td><td>宇宙的基本规律</td></tr>
+          <tr><td class="vol-no">22</td><td class="vol-name">天文学与宇宙学</td><td class="vol-stage"><span class="stage-dot" style="background:#3D8C40"></span>物质</td><td>宇宙的起源与演化</td></tr>
+          <tr><td class="vol-no">23</td><td class="vol-name">化学</td><td class="vol-stage"><span class="stage-dot" style="background:#3D8C40"></span>物质</td><td>物质如何变化？</td></tr>
+          <tr><td class="vol-no">24</td><td class="vol-name">医学与健康</td><td class="vol-stage"><span class="stage-dot" style="background:#3D8C40"></span>物质</td><td>身体如何守护？</td></tr>
+          <tr><td class="vol-no">25</td><td class="vol-name">历史思想谱系</td><td class="vol-stage"><span class="stage-dot" style="background:#B84C4C"></span>文明</td><td>人类如何理解过去？</td></tr>
+          <tr><td class="vol-no">26</td><td class="vol-name">军事与战略思想谱系</td><td class="vol-stage"><span class="stage-dot" style="background:#B84C4C"></span>文明</td><td>最极端的冲突与智慧</td></tr>
+          <tr><td class="vol-no">27</td><td class="vol-name">科技与人工智能</td><td class="vol-stage"><span class="stage-dot" style="background:#6B4C9E"></span>未来</td><td>从石器到AGI</td></tr>
+          <tr><td class="vol-no">28</td><td class="vol-name">计算机科学</td><td class="vol-stage"><span class="stage-dot" style="background:#6B4C9E"></span>未来</td><td>计算与信息</td></tr>
+          <tr><td class="vol-no">29</td><td class="vol-name">艺术与美学</td><td class="vol-stage"><span class="stage-dot" style="background:#C44A7A"></span>内心</td><td>什么是"美"？</td></tr>
+          <tr><td class="vol-no">30</td><td class="vol-name">心理学思想谱系</td><td class="vol-stage"><span class="stage-dot" style="background:#C44A7A"></span>内心</td><td>心如何运作？</td></tr>
+          <tr><td class="vol-no">31</td><td class="vol-name">文学与语言</td><td class="vol-stage"><span class="stage-dot" style="background:#C44A7A"></span>内心</td><td>语言如何创造意义？</td></tr>
+          <tr><td class="vol-no">32</td><td class="vol-name">语言学</td><td class="vol-stage"><span class="stage-dot" style="background:#C44A7A"></span>内心</td><td>语言的科学规律</td></tr>
+          <tr><td class="vol-no">33</td><td class="vol-name">传播与媒介</td><td class="vol-stage"><span class="stage-dot" style="background:#C44A7A"></span>内心</td><td>信息如何抵达人心？</td></tr>
+          <tr><td class="vol-no">34</td><td class="vol-name">修辞与演说</td><td class="vol-stage"><span class="stage-dot" style="background:#C44A7A"></span>内心</td><td>如何以言成事？</td></tr>
+          <tr><td class="vol-no">35</td><td class="vol-name">教育思想谱系</td><td class="vol-stage"><span class="stage-dot" style="background:#2D8C5E"></span>传承</td><td>文明的元机制</td></tr>
+          <tr><td class="vol-no">36</td><td class="vol-name">系列总览 · 收束</td><td class="vol-stage"><span class="stage-dot" style="background:#C99030"></span>收束</td><td>把一切收拢成一张图</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== 终章 ===== -->
+  <section class="final-section">
+    <div class="final-quote reveal">
+      "三十六卷，不是终点。当你合上最后一页，真正的思考才刚刚开始。"
+    </div>
+    <div class="final-attribution">—— 思想图谱系列 · 第三十六辑 · 收束</div>
+    <div class="final-stats">
+      <div class="final-stat">36 <strong>卷</strong></div>
+      <div class="final-stat">8 <strong>阶段</strong></div>
+      <div class="final-stat">368 <strong>思维导图</strong></div>
+      <div class="final-stat">1,208 <strong>人物</strong></div>
+      <div class="final-stat">1 <strong>张图</strong></div>
+    </div>
+  </section>
+
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true, theme: 'dark', securityLevel: 'loose',
+  fontFamily: 'Noto Sans SC, PingFang SC, Microsoft YaHei, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+
+// ===== Particles =====
+(function(){
+  var c = document.getElementById('particles');
+  for(var i=0; i<60; i++){
+    var p = document.createElement('div');
+    p.className = 'particle';
+    var size = 0.5 + Math.random() * 1.5;
+    p.style.width = size + 'px';
+    p.style.height = size + 'px';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.top = Math.random() * 100 + '%';
+    p.style.setProperty('--d', (15 + Math.random() * 25) + 's');
+    p.style.setProperty('--o', (0.2 + Math.random() * 0.4));
+    p.style.setProperty('--dy', -(50 + Math.random() * 150));
+    p.style.setProperty('--dx', -(50 + Math.random() * 100));
+    p.style.animationDelay = (Math.random() * 20) + 's';
+    c.appendChild(p);
+  }
+})();
+
+// ===== Scroll Reveal =====
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.1 });
+  els.forEach(function(el){ observer.observe(el); });
+})();
+
+// ===== Star Constellation Tooltip =====
+(function(){
+  var tooltip = document.getElementById('tooltip');
+  var hits = document.querySelectorAll('.star-hit circle');
+  var stars = {};
+  document.querySelectorAll('.star-group .star').forEach(function(s){
+    stars[s.getAttribute('data-vol')] = {
+      name: s.getAttribute('data-name'),
+      q: s.getAttribute('data-q'),
+      stage: s.getAttribute('data-stage')
+    };
+  });
+  hits.forEach(function(h){
+    h.addEventListener('mouseenter', function(e){
+      var vol = this.getAttribute('data-vol');
+      var d = stars[vol];
+      if(!d) return;
+      tooltip.innerHTML = '<div class="tt-vol">VOL.' + vol + ' · ' + d.stage + '</div>' + d.name + '<br><span style="color:#8A8698;font-size:0.72rem;font-style:italic">' + d.q + '</span>';
+      tooltip.classList.add('show');
+    });
+    h.addEventListener('mousemove', function(e){
+      var x = e.clientX + 16;
+      var y = e.clientY + 10;
+      if(x + 220 > window.innerWidth) x = e.clientX - 220;
+      if(y + 80 > window.innerHeight) y = e.clientY - 80;
+      tooltip.style.left = x + 'px';
+      tooltip.style.top = y + 'px';
+    });
+    h.addEventListener('mouseleave', function(){
+      tooltip.classList.remove('show');
+    });
+  });
+})();
+
+// ===== Active Nav Highlight =====
+(function(){
+  var nav = document.querySelector('.stage-nav');
+  var links = nav.querySelectorAll('a');
+  var blocks = document.querySelectorAll('.stage-block');
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var id = e.target.id;
+        links.forEach(function(l){
+          l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  blocks.forEach(function(b){ observer.observe(b); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>医学与健康 · 思想图谱系列第33辑</title>
+
+  <style>
+    :root {
+      --bg: #FAF5F5;
+      --bg2: #F0E8E8;
+      --ink: #261C1C;
+      --muted: #705C5C;
+      --rule: #E2D4D4;
+      --accent: #B82525;
+      --accent2: #A67C2E;
+      --font-head: 'Georgia', 'Songti SC', 'STSong', 'SimSun', serif;
+      --font: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+      --font-mono: 'Consolas', 'JetBrains Mono', 'Courier New', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .explain { background: #F8F6EF; border: 1px solid var(--rule); border-radius: 10px; padding: 1rem 1.2rem; margin: 0.6rem 0; }
+    .explain p { margin-bottom: 0.5rem; font-size: 0.9rem; }
+    .explain strong { color: var(--accent); }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .table-wrap { overflow-x: auto; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    table th, table td { border: 1px solid var(--rule); padding: 0.5rem 0.7rem; text-align: left; }
+    table th { background: var(--bg2); font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: 0.78rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<div class="shell">
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">医学与健康</div>
+    <div class="brand-sub">思想图谱系列 · 第33辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+<li><a href="#intro">导言 · 医学：守护生命</a></li>
+<li><a href="#anatomy">第一章 · 人体解剖与生理</a></li>
+<li><a href="#germ">第二章 · 微生物与免疫</a></li>
+<li><a href="#modern">第三章 · 现代医学革命</a></li>
+<li><a href="#summary">第四章 · 总结：医学的挑战与未来</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第33辑</span>
+        <span class="series-links">
+          <a href="../index.html">系列目录</a>
+          <a href="../化学/化学.html">← 上一辑 · 化学</a>
+          <a href="../宗教学与神话/宗教学与神话.html">下一辑 · 宗教学与神话 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>医学与健康</h1>
+      <p class="subtitle">从希波克拉底到基因编辑——人类对抗疾病与延长生命的历程</p>
+      <p class="meta">作者：詹家杨 · 2026-09-06 · 5 章 · 14 张思维导图 · 24 个解释块 · 7 张对照表</p>
+    </header>
+
+<section class="sec" id="intro">
+        <h2><span class="chapno">导言 &middot; 医学：守护生命</span></h2>
+<p>医学既是科学，也是艺术。它以解剖学为基础，以生理学为理解，以病理学为诊断，以药理学为治疗，以流行病学为预防——构成一个完整的知识体系。</p>
+<figure class="diagram">
+          <figcaption>图 0 · 医学的架构</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["医学"] --> A["基础医学<br>解剖·生理·病理"]
+  ROOT --> B["临床医学<br>内科·外科·妇儿"]
+  ROOT --> C["预防医学<br>流行病·公共卫生"]
+  ROOT --> D["药学<br>药物研发"]
+  ROOT --> E["医学技术<br>影像·检验·手术"]
+  A --> B
+  C --> B
+  D --> B
+  E --> B
+  classDef root fill:#B82525,color:#fff,stroke:#B82525;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>医学的使命：</strong>医学是人类对抗疾病、维护健康、延长生命的系统性努力。从原始部落的巫医到现代循证医学，医学的核心始终是'治愈'。
+
+**中国案例**：中医是中国传统医学的瑰宝。《黄帝内经》奠定了中医理论基础，而《本草纲目》记载了1892种药物。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">希波克拉底 · 前460–前370</div>
+            <blockquote>首先，不要伤害。<cite>——希波克拉底誓言</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">奥斯勒 · 1849–1919</div>
+            <blockquote>医学是一门不确定的科学和概率的艺术。<cite>——奥斯勒</cite></blockquote>
+          </div>
+</div>
+<figure class="diagram">
+          <figcaption>图 0a · 医学基本概念树状图 —— 人体结构与功能 · 病因与病理 · 诊断技术 · 治疗手段 · 公共卫生</figcaption>
+          <div style="overflow-x:auto;text-align:center;">
+          <svg viewBox="0 0 720 560" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;height:auto;">
+            <defs>
+              <marker id="arl" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+                <path d="M1 1 L7 4 L1 7 Z" fill="#52525B"/>
+              </marker>
+            </defs>
+            <rect x="0" y="0" width="720" height="560" fill="#F7F7F8" rx="8"/>
+            <rect x="260" y="12" width="200" height="40" rx="20" fill="#334155"/>
+            <text x="360" y="38" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700" font-family="system-ui,sans-serif">医学</text>
+            <line x1="360" y1="52" x2="360" y2="66" stroke="#334155" stroke-width="2"/>
+            <line x1="72" y1="66" x2="648" y2="66" stroke="#52525B" stroke-width="1.5"/>
+            <line x1="72" y1="66" x2="72" y2="80" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl)"/>
+            <line x1="216" y1="66" x2="216" y2="80" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl)"/>
+            <line x1="360" y1="66" x2="360" y2="80" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl)"/>
+            <line x1="504" y1="66" x2="504" y2="80" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl)"/>
+            <line x1="648" y1="66" x2="648" y2="80" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl)"/>
+            <rect x="13" y="80" width="118" height="32" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+            <text x="72" y="101" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">人体结构与功能</text>
+            <rect x="164" y="80" width="104" height="32" rx="8" fill="#F2F7FF" stroke="#6F6FFF" stroke-width="1.5"/>
+            <text x="216" y="101" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">病因与病理</text>
+            <rect x="308" y="80" width="104" height="32" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+            <text x="360" y="101" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">诊断技术</text>
+            <rect x="452" y="80" width="104" height="32" rx="8" fill="#F2F7FF" stroke="#6F6FFF" stroke-width="1.5"/>
+            <text x="504" y="101" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">治疗手段</text>
+            <rect x="596" y="80" width="104" height="32" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+            <text x="648" y="101" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">公共卫生</text>
+            <rect x="11" y="124" width="122" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="72" y="141" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">解剖学</text>
+            <rect x="11" y="154" width="122" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="72" y="171" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">生理学</text>
+            <rect x="11" y="184" width="122" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="72" y="201" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">病理学</text>
+            <line x1="72" y1="112" x2="72" y2="124" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="72" y1="148" x2="72" y2="154" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="72" y1="178" x2="72" y2="184" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <rect x="155" y="124" width="122" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="216" y="141" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">病原微生物</text>
+            <rect x="155" y="154" width="122" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="216" y="171" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">遗传与免疫</text>
+            <rect x="155" y="184" width="122" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="216" y="201" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">环境与生活方式</text>
+            <line x1="216" y1="112" x2="216" y2="124" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="216" y1="148" x2="216" y2="154" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="216" y1="178" x2="216" y2="184" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <rect x="300" y="124" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="360" y="141" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">影像学</text>
+            <rect x="300" y="154" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="360" y="171" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">检验医学</text>
+            <rect x="300" y="184" width="120" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="360" y="201" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">问诊与体征</text>
+            <line x1="360" y1="112" x2="360" y2="124" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="360" y1="148" x2="360" y2="154" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="360" y1="178" x2="360" y2="184" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <rect x="444" y="124" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="504" y="141" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">药物</text>
+            <rect x="444" y="154" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="504" y="171" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">手术</text>
+            <rect x="444" y="184" width="120" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="504" y="201" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">现代生物疗法</text>
+            <line x1="504" y1="112" x2="504" y2="124" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="504" y1="148" x2="504" y2="154" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="504" y1="178" x2="504" y2="184" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <rect x="587" y="124" width="122" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="648" y="141" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">预防医学</text>
+            <rect x="587" y="154" width="122" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="648" y="171" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">流行病学</text>
+            <rect x="587" y="184" width="122" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="648" y="201" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">全球健康</text>
+            <line x1="648" y1="112" x2="648" y2="124" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="648" y1="148" x2="648" y2="154" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="648" y1="178" x2="648" y2="184" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <rect x="20" y="224" width="680" height="320" rx="10" fill="#EFEFF2" opacity="0.7"/>
+            <text x="360" y="250" text-anchor="middle" fill="#171717" font-size="14" font-weight="700" font-family="system-ui,sans-serif">专业名词释义</text>
+            <text x="44" y="274" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎医学（Medicine）</text>
+            <text x="44" y="292" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">人类维护健康、预防与治疗疾病的知识与实践体系，涵盖基础医学、临床医学与预防</text>
+            <text x="44" y="308" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">医学三大领域。其理念随时代演进，从"治病"走向"治未病"。</text>
+            <text x="44" y="340" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎解剖学（Anatomy）</text>
+            <text x="44" y="358" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">研究人体形态结构的科学，是医学的基石。1543年维萨里《人体构造》纠正盖伦</text>
+            <text x="44" y="374" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">的千年谬误；今天CT与MRI让解剖走向三维可视化与"活体化"。</text>
+            <text x="44" y="406" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎流行病学（Epidemiology）</text>
+            <text x="44" y="424" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">研究疾病在人群中的分布与影响因素的学科。1854年约翰·斯诺用霍乱地图锁定</text>
+            <text x="44" y="440" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">被污染的水泵，开创传染病流行病学；它是公共卫生决策的科学基础。</text>
+            <text x="44" y="472" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎循证医学（Evidence-based Medicine）</text>
+            <text x="44" y="490" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">以最佳临床证据、医生经验与患者意愿相结合进行决策。1992年萨基特正式提出</text>
+            <text x="44" y="506" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">这一概念，使医学从"凭经验"走向"凭证据"，如今已是临床医学的主流范式。</text>
+          </svg>
+          </div>
+        </figure>
+<div class="explain">
+          <p><strong>图 0a 详解：</strong>这幅概念树状图勾勒出医学知识体系的五大支柱。理解医学，先要理解"医学不是一门学科，而是一张分工精密的知识网络"——从认识人体结构，到查明疾病病因，再到诊断、治疗与预防，五个环节环环相扣、缺一不可。</p>
+          <p><strong>人体结构与功能：</strong>医学的起点是"认识自己"。解剖学研究人体的形态结构——206块骨骼、600余块肌肉、约860亿个神经元；生理学追问这些结构"如何工作"——心脏如何泵血、肺如何换气、肾如何滤过。16世纪维萨里以《人体构造》纠正盖伦的千年谬误，17世纪哈维以《心血运动论》证明血液循环，"眼见为实"的实证精神从此成为医学的底色；中国宋代宋慈所著《洗冤集录》是世界上最早的法医学专著，体现着同样的实证传统。</p>
+          <p><strong>病因与病理：</strong>疾病为何发生？19世纪前，人们归因于"瘴气"与"体液失衡"；巴斯德与科赫确立微生物致病学说后，结核杆菌、霍乱弧菌、流感病毒相继被锁定，病原微生物成为病因学的主角。20世纪，遗传学与免疫学揭示另一类病因——基因突变与免疫失调。今天的"病因"已是多因素的综合：病原体、遗传、环境与生活方式共同作用，这正是慢性病防控的认知基础。</p>
+          <p><strong>诊断技术：</strong>诊断是"从症状到病因"的推理艺术。望闻问切与体格检查是最古老的诊断方式；1895年伦琴发现X射线，影像学让医生第一次"看见"体内；检验医学通过血液、尿液与病原学检查提供客观证据。今天，CT、MRI、基因测序与人工智能影像分析，正把诊断推向更早、更准。</p>
+          <p><strong>治疗手段：</strong>治疗是医学的最终落点。药物从植物药（阿司匹林、青蒿素）走向靶向药与生物制剂；手术从华佗麻沸散时代的"快刀"走向微创与机器人辅助；现代生物疗法——疫苗、抗体、CAR-T细胞治疗——把人体自身的免疫力量转化为武器。</p>
+          <p><strong>公共卫生：</strong>医学的视野不止于个体。预防医学通过疫苗接种与健康生活方式"防病于未然"；流行病学追踪疾病在人群中的分布与传播，1854年约翰·斯诺用一张霍乱地图锁定被污染的水泵；全球健康关注跨国界的健康不平等——天花被全球协作根除、中国消除疟疾获世界卫生组织认证，都是公共卫生的胜利。</p>
+          <p><strong>现实案例：</strong>一次完整的就医流程就是这棵概念树的缩影：医生先依据解剖与生理知识判断"哪里出了问题"（人体结构与功能），再借助影像与检验寻找病因（诊断技术），确诊后选择药物或手术（治疗手段），而疫苗接种与健康宣教则把工作做在疾病发生之前（公共卫生）——五大分支共同支撑起"医学"这棵大树。</p>
+        </div>
+</section>
+<section class="sec" id="anatomy">
+        <h2><span class="chapno">第一章 &middot; 人体解剖与生理</span></h2>
+<p>人体解剖学是最古老的医学学科之一。理解人体结构是理解疾病和健康的第一步。从盖伦的动物解剖到现代CT/MRI成像，人类对自身结构的认识不断深化。</p>
+<figure class="diagram">
+          <figcaption>图 1 · 人体系统结构</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["人体系统"] --> A["骨骼系统<br>206块骨"]
+  ROOT --> B["肌肉系统<br>~600块肌肉"]
+  ROOT --> C["神经系统<br>~860亿神经元"]
+  ROOT --> D["循环系统<br>~10万km血管"]
+  ROOT --> E["呼吸·消化·泌尿·内分泌"]
+  A --> F["运动"]
+  C --> G["调控"]
+  D --> H["运输"]
+  classDef root fill:#B82525,color:#fff,stroke:#B82525;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>人体解剖：</strong>人体是自然界最复杂的机器。
+
+**维萨里**在1543年出版的《人体构造》是近代解剖学的奠基之作，纠正了盖伦流传千年的错误。
+
+**血液循环**：哈维在1628年发现血液循环，是生理学的里程碑。
+
+**中国案例**：中国宋代就有《洗冤集录》——世界上最早的法医学著作，比西方早300多年。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">维萨里 · 1514–1564</div>
+            <blockquote>人体构造是医学的基石。<cite>——《人体构造》</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">哈维 · 1578–1657</div>
+            <blockquote>心脏是生命的起点。<cite>——《心血运动论》</cite></blockquote>
+          </div>
+</div>
+<figure class="diagram">
+          <figcaption>图 1b · 人体八大系统协作图</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["人体八大系统协作"] --> A["运动系统<br>206块骨 · 600余块肌肉"]
+  ROOT --> B["神经与内分泌<br>统一指挥 · 激素调节"]
+  ROOT --> C["循环与呼吸<br>泵血运输 · 气体交换"]
+  ROOT --> D["消化与泌尿<br>摄取营养 · 排泄废物"]
+  ROOT --> E["生殖系统<br>繁衍后代 · 延续生命"]
+  B -- "发出指令" --> A
+  B -- "调节内环境" --> C
+  C -- "供氧供能" --> A
+  C -- "维持水盐平衡" --> D
+  D -- "提供养分原料" --> C
+  classDef root fill:#B82525,color:#fff,stroke:#B82525;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 1b 详解：</strong>人体是一个高度协同的系统工程。八大系统——运动、神经、循环、呼吸、消化、泌尿、内分泌、生殖——各司其职又彼此依存，任何一个系统都无法独立运转。</p>
+          <p><strong>三个功能集群：</strong>运动系统是"骨架与引擎"，支撑身体并产生运动；神经与内分泌系统是"指挥中心"——前者以电信号毫秒级下达指令，后者以激素实现持久调节；循环、呼吸、消化、泌尿四大系统构成"物质代谢链"——呼吸供氧、消化供能、循环运输、泌尿排泄，环环相扣。生殖系统则承担物种延续的使命。</p>
+          <ul>
+            <li><strong>结构支持：</strong>运动系统提供骨架与运动能力。</li>
+            <li><strong>调节指挥：</strong>神经系统毫秒级调控，内分泌系统持久调节。</li>
+            <li><strong>代谢运输：</strong>循环、呼吸、消化、泌尿构成完整的物质代谢链。</li>
+            <li><strong>整体观念：</strong>系统协作是健康的基础，与中医"五脏一体"的整体观不谋而合。</li>
+          </ul>
+          <p><strong>现实案例：</strong>一次跑步就是一场系统联合作战：大脑发出指令（神经），心跳加快泵血（循环），呼吸加深供氧（呼吸），肌肉消耗能量（运动），汗腺排汗散热（泌尿与皮肤），肾上腺素分泌提升状态（内分泌）。任何一环"掉链子"，全身都会受影响——这正是"整体医学"观念的生理学基础。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 1c · 从细胞到系统——生命的层次结构</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["生命的层次结构"] --> A["细胞<br>人体约37万亿个细胞"]
+  ROOT --> B["组织<br>上皮 · 结缔 · 肌肉 · 神经"]
+  ROOT --> C["器官<br>心脏 · 肝 · 肾 · 肺"]
+  ROOT --> D["系统<br>八大系统协同"]
+  ROOT --> E["个体<br>完整的人"]
+  A --> B
+  B --> C
+  C --> D
+  D --> E
+  classDef root fill:#B82525,color:#fff,stroke:#B82525;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 1c 详解：</strong>生命的结构按"细胞—组织—器官—系统—个体"逐层组装。人体约有37万亿个细胞，它们分工为四大基本组织——覆盖体表的上皮组织、支撑连接的结缔组织、收缩产生运动的肌肉组织、传递信号的神经组织；组织再构成器官，器官组成系统，系统协同构成完整的个体。</p>
+          <p><strong>深层含义：</strong>疾病可以在任何一个层次发生——基因突变发生在细胞层，炎症反应发生在组织层，心梗发生在器官层，而高血压、糖尿病这类"系统病"则横跨多个层次。现代医学的精准治疗，正努力从"器官层"下探到"细胞层与分子层"——靶向药针对特定基因突变，细胞治疗直接改造免疫细胞，这就是"从系统到分子"的医学纵深。</p>
+          <p><strong>现实案例：</strong>造血干细胞移植已让无数白血病患者重获新生——"细胞"这一生命的最小单位，正成为医学最大的希望；而器官移植（1967年南非巴纳德完成世界首例心脏移植）则让"器官"层面的修复成为可能——医学正在每个层次上建立自己的"修理术"。</p>
+        </div>
+<h3>深度解读：从盖伦到哈维——解剖学如何走向实证</h3>
+<div class="explain">
+          <p><strong>盖伦的千年权威：</strong>公元2世纪的古罗马医生盖伦通过解剖猴、猪等动物推断人体结构，提出"灵气说"与血液潮汐运动理论。中世纪欧洲禁止人体解剖，盖伦的学说被奉为金科玉律，统治西方医学近1500年。</p>
+          <p><strong>维萨里的突破：</strong>1543年，29岁的比利时医生维萨里出版《人体构造》，以人体解剖为依据纠正盖伦关于肝脏、心脏、骨骼的200多处错误，宣告近代解剖学诞生。同年，哥白尼发表《天体运行论》——解剖学与天文学几乎同时完成"向事实低头"的转变。</p>
+          <p><strong>哈维的定量方法：</strong>1628年，哈维通过计算证明：心脏每次搏动泵出的血量远超全身血液总量，血液必然在体内循环流动——是"循环"而非"潮汐"。哈维的伟大不仅在于发现本身，更在于用"测量与计算"研究生命，为实验生理学奠基。中国宋代宋慈《洗冤集录》以实地验尸为准绳，与这一实证传统遥相呼应。</p>
+        </div>
+<h3>深度解读：中医的脏腑经络观——另一种人体模型</h3>
+<div class="explain">
+          <p><strong>藏象学说：</strong>中医以《黄帝内经》为理论源头，发展出"藏象学说"——五脏（心、肝、脾、肺、肾）不仅是解剖器官，更是功能系统的代号。"心主血脉、藏神""肺主气、司呼吸""脾主运化"——中医的"脏腑"是功能轴心的人体模型，与现代生理学的系统思维异曲同工。</p>
+          <p><strong>经络系统：</strong>经络是中医独有的"信息与调节网络"，十二正经与奇经八脉联络脏腑、沟通内外。2010年，"针灸"被联合国教科文组织列入人类非物质文化遗产代表作名录；现代研究证实针刺可激活内源性镇痛系统、调节脑功能活动，但经络的解剖学实体至今仍是学术争论的课题。</p>
+          <p><strong>辨证论治：</strong>与西医"辨病"不同，中医强调"辨证"——同一疾病在不同人身上可表现为不同证型，用药随之调整。2020年新冠疫情中，中医"三药三方"参与救治，中西医结合成为中国抗疫方案的特色，也让世界重新审视这套古老的人体模型。</p>
+        </div>
+<h3>对照表：人体八大系统一览</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>系统</th><th>主要器官</th><th>核心功能</th><th>常见疾病</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>运动系统</strong></td><td>骨骼 · 肌肉 · 关节</td><td>支撑身体 · 产生运动</td><td>骨折 · 关节炎</td></tr>
+              <tr><td><strong>神经系统</strong></td><td>脑 · 脊髓 · 周围神经</td><td>信息传递 · 调控机体</td><td>脑卒中 · 帕金森病</td></tr>
+              <tr><td><strong>循环系统</strong></td><td>心脏 · 血管 · 血液</td><td>运输氧气养分 · 带走废物</td><td>冠心病 · 高血压</td></tr>
+              <tr><td><strong>呼吸系统</strong></td><td>鼻 · 气管 · 肺</td><td>气体交换</td><td>肺炎 · 哮喘</td></tr>
+              <tr><td><strong>消化系统</strong></td><td>胃肠 · 肝 · 胰</td><td>消化吸收 · 营养供给</td><td>胃炎 · 肝癌</td></tr>
+              <tr><td><strong>泌尿系统</strong></td><td>肾 · 输尿管 · 膀胱</td><td>排泄废物 · 维持水盐平衡</td><td>肾衰竭 · 尿路感染</td></tr>
+              <tr><td><strong>内分泌系统</strong></td><td>甲状腺 · 胰腺 · 垂体等</td><td>激素调节生长与代谢</td><td>糖尿病 · 甲亢</td></tr>
+              <tr><td><strong>生殖系统</strong></td><td>性腺及生殖器官</td><td>繁衍后代</td><td>不孕不育</td></tr>
+            </tbody>
+          </table>
+        </div>
+<h3>对照表：中医与西医的认知框架对比</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>中医</th><th>西医</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>理论体系</strong></td><td>阴阳五行 · 脏腑经络 · 气血津液</td><td>解剖学 · 生理学 · 病理学 · 微生物学</td></tr>
+              <tr><td><strong>健康观</strong></td><td>阴阳平衡 · 整体调治 · 治未病</td><td>内环境稳态 · 各系统功能正常</td></tr>
+              <tr><td><strong>诊断方法</strong></td><td>望闻问切 · 辨证论治</td><td>体格检查 · 影像学 · 实验室检验 · 病理活检</td></tr>
+              <tr><td><strong>治疗手段</strong></td><td>中药方剂 · 针灸 · 推拿 · 导引</td><td>药物 · 手术 · 放疗化疗 · 生物治疗</td></tr>
+              <tr><td><strong>优势</strong></td><td>慢性病调理 · 副作用相对小 · 个体化</td><td>诊断精准 · 急重症救治 · 循证依据充分</td></tr>
+              <tr><td><strong>局限</strong></td><td>大规模随机对照证据不足 · 标准化难</td><td>部分慢性病长期管理有限 · 费用较高</td></tr>
+            </tbody>
+          </table>
+        </div>
+<div class="callout">
+          <span class="callout-title">本章知识要点</span>
+          <ul>
+            <li>人体由细胞—组织—器官—系统—个体五个层次构成，八大系统协同运作。</li>
+            <li>解剖学以人体实证取代权威猜想：维萨里《人体构造》（1543）与哈维《心血运动论》（1628）是两大里程碑。</li>
+            <li>中医以脏腑经络模型理解人体、辨证论治强调个体化；中西医学各有所长、可以互补。</li>
+            <li>影像学与检验医学让诊断从"推测"走向"看见"，精准医疗正把治疗下探到分子层。</li>
+          </ul>
+        </div>
+</section>
+<section class="sec" id="germ">
+        <h2><span class="chapno">第二章 &middot; 微生物与免疫</span></h2>
+<p>微生物学彻底改变了医学。洗手消毒、无菌手术、抗生素、疫苗——这些基于微生物学原理的实践，使人类平均寿命从1900年的约30岁提高到今天的70岁以上。</p>
+<figure class="diagram">
+          <figcaption>图 2 · 传染病与免疫</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["传染病与免疫"] --> A["病原体<br>细菌·病毒·真菌·寄生虫"]
+  ROOT --> B["传播途径<br>空气·接触·血液·虫媒"]
+  ROOT --> C["免疫系统<br>先天免疫·获得性免疫"]
+  ROOT --> D["疫苗<br>主动免疫"]
+  ROOT --> E["抗生素与抗病毒"]
+  A --> F["历史上的大瘟疫"]
+  F --> F1["鼠疫 · 天花 · 流感<br>西班牙流感 (1918)"]
+  C --> G["疫苗原理<br>记忆B细胞/T细胞"]
+  D --> G
+  classDef root fill:#B82525,color:#fff,stroke:#B82525;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>微生物学的革命：</strong>直到19世纪，人们才意识到疾病由微生物引起。
+
+**巴斯德**（1822-1895）提出病菌学说，发明狂犬病疫苗和巴氏消毒法。**科赫**（1843-1910）发现结核杆菌，提出科赫法则。
+
+**疫苗**是医学史上最伟大的发明之一。天花通过全球疫苗接种于1980年被根除——这是人类首次消灭一种疾病。
+
+**中国案例**：2020年新冠疫情中，中国在短时间内研发出多种疫苗，截至2023年累计接种超过35亿剂次。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">巴斯德 · 1822–1895</div>
+            <blockquote>在观察领域，机会只偏爱有准备的头脑。<cite>——巴斯德</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">科赫 · 1843–1910</div>
+            <blockquote>要证明一种微生物是某种疾病的病因，必须满足四个条件。<cite>——科赫法则</cite></blockquote>
+          </div>
+</div>
+<figure class="diagram">
+          <figcaption>图 2b · 免疫应答的攻防战</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["免疫应答的攻防战"] --> P["病原体入侵<br>细菌 · 病毒 · 真菌 · 寄生虫"]
+  P --> L1["第一道防线<br>皮肤 · 黏膜 · 纤毛"]
+  L1 --> L2["第二道防线<br>吞噬细胞 · 炎症 · 发热"]
+  L2 --> L3["第三道防线<br>获得性免疫"]
+  L3 --> B1["体液免疫<br>B细胞 → 浆细胞 → 抗体"]
+  L3 --> B2["细胞免疫<br>T细胞杀伤被感染细胞"]
+  B1 --> M["免疫记忆<br>记忆B细胞 · 记忆T细胞"]
+  B2 --> M
+  M --> V["疫苗 · 人工主动免疫<br>让免疫系统"练兵"于未战"]
+  classDef root fill:#B82525,color:#fff,stroke:#B82525;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 2b 详解：</strong>免疫系统是人体的"国防军"，设有三道防线。</p>
+          <p><strong>三道防线：</strong>第一道是皮肤与黏膜屏障，把大多数病原体挡在体外；第二道是非特异性免疫——吞噬细胞吞食病原体，炎症反应与发热调动全身防御；第三道是获得性免疫——B细胞产生抗体"中和"体液中的病原体，T细胞直接杀伤被感染细胞，并留下记忆细胞。三道防线层层递进：前两道无差别迎战，第三道"精准打击"且能记住敌人。</p>
+          <ul>
+            <li><strong>屏障层：</strong>皮肤、黏膜、呼吸道纤毛——物理阻挡绝大多数入侵者。</li>
+            <li><strong>快速反应层：</strong>吞噬细胞、炎症、发热——数小时内无差别应战。</li>
+            <li><strong>精准打击层：</strong>体液免疫（抗体）与细胞免疫（T细胞），并留下免疫记忆。</li>
+            <li><strong>疫苗本质：</strong>让免疫系统在安全前提下完成"模拟演习"，产生记忆细胞。</li>
+          </ul>
+          <p><strong>现实案例：</strong>天花是唯一被人类根除的传染病——1980年世界卫生组织宣布全球消灭天花，靠的是1796年詹纳牛痘接种开创的疫苗之路。在中国，1960年代顾方舟研制出脊灰"糖丸"，使亿万儿童免于小儿麻痹；2020年新冠疫情中，中国迅速研发出多条技术路线的疫苗，截至2023年累计接种超过35亿剂次，为全球抗疫贡献了"中国方案"。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 2c · 人类与瘟疫的千年博弈</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["鼠疫<br>1347–1351 黑死病<br>欧洲约1/3人口死亡"] --> B["天花<br>1980年全球根除"]
+  B --> C["1918 西班牙流感<br>全球数千万人死亡"]
+  C --> D["艾滋病<br>1981年发现至今"]
+  D --> E["SARS<br>2002–2003 波及中国及全球"]
+  E --> F["COVID-19<br>2019年至今 · 全球大流行"]
+  classDef root fill:#B82525,color:#fff,stroke:#B82525;
+  class F root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 2c 详解：</strong>传染病与人类文明如影随形。14世纪的黑死病夺走欧洲约三分之一人口，也动摇了中世纪的社会结构；天花肆虐数千年，最终被疫苗接种在1980年彻底根除——这是人类对传染病唯一一次"全胜"。</p>
+          <p><strong>二十世纪的教训：</strong>1918年西班牙流感在一年内感染全球约三分之一人口，死亡人数超过一战；1981年艾滋病被发现，至今仍是全球重大公共卫生威胁；2003年SARS、2019年COVID-19相继暴发，提醒人类：在微生物面前，任何国家都无法独善其身。</p>
+          <p><strong>现实案例：</strong>新冠疫情中，中国采取"动态清零"策略——核酸检测、流调溯源、精准封控、疫苗大规模接种，将病毒传播链条快速切断，保护了亿万人民生命健康；同时积极向全球提供疫苗与物资，参与世界卫生组织疫苗共享计划，彰显了人类命运共同体的理念。</p>
+        </div>
+<h3>深度解读：从人痘到mRNA——疫苗的世纪之旅</h3>
+<div class="explain">
+          <p><strong>中国的免疫学先驱：</strong>人类最早的疫苗实践出现在中国。早在16世纪，中国民间已采用"人痘接种术"——把天花患者的痘痂研磨吹入健康人鼻腔，使其获得免疫力。这一方法经丝绸之路传入欧亚，1700年前后经土耳其传入英国，直接启发了詹纳。</p>
+          <p><strong>詹纳的牛痘实验：</strong>1796年，英国乡村医生詹纳观察到挤奶女工感染牛痘后不再得天花的现象，遂将牛痘疱液接种于8岁男孩菲普斯，两个月后以天花病毒挑战——男孩安然无恙。比人痘更安全的牛痘由此推广到全世界。</p>
+          <p><strong>从狂犬疫苗到mRNA疫苗：</strong>1885年，巴斯德用减毒狂犬病疫苗救活被疯狗咬伤的男孩迈斯特，疫苗学走向科学化；2020年新冠大流行中，mRNA疫苗不到一年即完成研发上市。中国方面，顾方舟1959年研制出脊灰"糖丸"，使中国脊灰发病率下降99%以上；2000年，世界卫生组织宣布西太平洋地区实现无脊灰——中国是主要贡献者。</p>
+        </div>
+<h3>深度解读：屠呦呦与青蒿素——向古籍要答案</h3>
+<div class="explain">
+          <p><strong>青蒿素的发现：</strong>疟疾由疟原虫引起、经按蚊叮咬传播，是历史上致死人数最多的寄生虫病之一。20世纪60年代，疟原虫对老药普遍产生抗药性。1969年，时年39岁的屠呦呦接受国家"523项目"任务，领导课题组筛选数千种中药，从东晋葛洪《肘后备急方》"青蒿一握，以水二升渍，绞取汁，尽服之"的记载中获得关键启示——低温提取才能保留有效成分。1972年，课题组成功分离出抗疟有效单体青蒿素，1973年临床验证疗效；如今青蒿素联合疗法仍是全球抗疟的一线方案。</p>
+          <p><strong>中国的世界贡献：</strong>2015年，屠呦呦因发现青蒿素获诺贝尔生理学或医学奖，成为首位获该奖的中国本土科学家。2021年6月30日，世界卫生组织宣布中国通过消除疟疾认证——从年报告约3000万病例到零本土感染，青蒿素功不可没。</p>
+        </div>
+<h3>对照表：传染病防控的四大手段</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>手段</th><th>原理</th><th>代表案例</th><th>适用范围</th><th>局限</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>疫苗</strong></td><td>人工主动免疫，建立群体免疫屏障</td><td>牛痘根除天花（1980）；中国消除脊灰（2000）</td><td>疫苗可预防的传染病</td><td>研发周期长；部分人群不宜接种</td></tr>
+              <tr><td><strong>抗生素</strong></td><td>杀灭或抑制细菌生长</td><td>青霉素治愈细菌性感染（1941）</td><td>细菌感染性疾病</td><td>对病毒无效；滥用催生耐药菌</td></tr>
+              <tr><td><strong>隔离检疫</strong></td><td>切断传播途径，阻断人际传播</td><td>威尼斯40天检疫；2020年武汉封城</td><td>高传染性急性传染病</td><td>社会成本高；需物资与信息配套</td></tr>
+              <tr><td><strong>公共卫生</strong></td><td>改善环境与习惯，从源头预防</td><td>斯诺锁定霍乱水泵（1854）；爱国卫生运动</td><td>粪口、虫媒、水源性疾病</td><td>见效慢；需长期投入与治理</td></tr>
+            </tbody>
+          </table>
+        </div>
+<h3>对照表：人类疫苗史上的重要疫苗</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>疫苗</th><th>预防疾病</th><th>技术类型</th><th>历史意义</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>人痘 / 牛痘</strong></td><td>天花</td><td>活病毒（减毒/异种）</td><td>1980年根除天花</td></tr>
+              <tr><td><strong>狂犬病疫苗</strong></td><td>狂犬病</td><td>减毒活疫苗（1885，巴斯德）</td><td>首个实验室疫苗</td></tr>
+              <tr><td><strong>卡介苗</strong></td><td>结核病</td><td>减毒活疫苗（1921）</td><td>全球新生儿普遍接种</td></tr>
+              <tr><td><strong>脊灰"糖丸"</strong></td><td>脊髓灰质炎</td><td>减毒活疫苗（1959，顾方舟）</td><td>中国2000年实现无脊灰</td></tr>
+              <tr><td><strong>乙肝疫苗</strong></td><td>乙型肝炎</td><td>重组蛋白疫苗（1986）</td><td>全球首支基因工程疫苗</td></tr>
+              <tr><td><strong>新冠疫苗</strong></td><td>COVID-19</td><td>灭活 / mRNA / 腺病毒载体等</td><td>人类历史上研发最快的疫苗</td></tr>
+            </tbody>
+          </table>
+        </div>
+<div class="callout">
+          <span class="callout-title">本章知识要点</span>
+          <ul>
+            <li>免疫系统有三道防线：屏障、非特异免疫、获得性免疫（体液+细胞+记忆）。</li>
+            <li>疫苗是"人工主动免疫"：人痘接种（中国）→ 牛痘（詹纳）→ 现代疫苗 → mRNA疫苗。</li>
+            <li>细菌可被抗生素杀灭，病毒对抗生素无效；耐药性是全球公共卫生难题。</li>
+            <li>中国贡献：顾方舟"糖丸"消除脊灰、屠呦呦青蒿素获诺奖、2021年通过消除疟疾认证。</li>
+          </ul>
+        </div>
+</section>
+<section class="sec" id="modern">
+        <h2><span class="chapno">第三章 &middot; 现代医学革命</span></h2>
+<p>现代医学在过去200年间的进步远超过去2000年的总和。无菌术、麻醉、抗生素、影像诊断、分子生物学——每一次革命都大幅提升了人类的健康水平。</p>
+<figure class="diagram">
+          <figcaption>图 3 · 现代医学里程碑</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["麻醉 1846<br>手术无痛"] --> B["无菌术 1867<br>李斯特"]
+  B --> C["X射线 1895<br>伦琴·影像诊断"]
+  C --> D["青霉素 1928<br>弗莱明·抗生素"]
+  D --> E["DNA双螺旋 1953<br>分子医学"]
+  E --> F["基因编辑 2012<br>CRISPR"]
+  E --> G["精准医疗<br>基因组·靶向药"]
+  classDef root fill:#B82525,color:#fff,stroke:#B82525;
+  class G root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>现代医学突破：</strong>1846年乙醚麻醉的成功，使外科手术从'野蛮截肢'变为精密的治疗手段。
+
+**抗菌药物**：青霉素的发现开启了抗生素时代，但抗生素滥用也带来了耐药性问题。
+
+**基因编辑**：CRISPR-Cas9技术使精确修改基因成为可能，为遗传病治疗带来希望。
+
+**中国案例**：中国在干细胞研究、器官移植、食管癌早筛等领域处于国际先进水平。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">弗莱明 · 1881–1955</div>
+            <blockquote>是意外发现了我，但只有仔细观察才能把握意外。<cite>——青霉素发现</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">李斯特 · 1827–1912</div>
+            <blockquote>没有手术感染，就没有死亡。<cite>——无菌手术之父</cite></blockquote>
+          </div>
+</div>
+<figure class="diagram">
+          <figcaption>图 3b · 现代医学革命的三大里程碑：麻醉 · 消毒 · 抗生素</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["现代医学革命的三大里程碑"] --> A["麻醉革命<br>1846 莫顿 · 乙醚公开演示"]
+  ROOT --> B["消毒与无菌术<br>1847 赛麦尔维斯 · 洗手<br>1867 李斯特 · 石炭酸"]
+  ROOT --> C["抗生素革命<br>1928 弗莱明 · 发现青霉素<br>1941 弗洛里 · 钱恩 · 临床应用"]
+  A --> E["手术告别剧痛"]
+  B --> F["手术告别感染"]
+  C --> G["细菌感染可以治愈"]
+  E --> H["现代外科的安全时代"]
+  F --> H
+  G --> H
+  classDef root fill:#B82525,color:#fff,stroke:#B82525;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 3b 详解：</strong>19世纪中叶，外科医生面临"三座大山"——疼痛、感染与出血。三大里程碑逐一攻克疼痛与感染，外科才从"野蛮的截肢表演"变成精细的治疗科学。</p>
+          <p><strong>麻醉革命：</strong>1846年10月16日，美国牙医威廉·莫顿在波士顿麻省总医院公开演示乙醚麻醉，患者在全无痛感中完成手术，"外科疼痛"从此终结。而中国东汉名医华佗早在约1800年前就使用"麻沸散"进行全身麻醉，是世界麻醉史上的先声。</p>
+          <p><strong>消毒革命：</strong>1847年，匈牙利医生赛麦尔维斯发现医生洗手后产妇产褥热死亡率骤降，却遭同行嘲笑；1867年，英国外科医生李斯特受巴斯德微生物学说启发，用石炭酸喷洒手术器械与创面，截肢手术死亡率从45%降至15%——"看不见的敌人"终于被制服。</p>
+          <p><strong>抗生素革命：</strong>1928年，弗莱明发现污染青霉菌的培养皿周围葡萄球菌被溶解——青霉素被发现；1941年，弗洛里与钱恩提纯青霉素并成功用于临床，二战中挽救了无数伤兵的生命。三大革命共同开启"现代外科安全时代"。</p>
+          <ul>
+            <li><strong>麻醉（1846）：</strong>莫顿乙醚演示，手术告别剧痛；华佗麻沸散是世界先声。</li>
+            <li><strong>消毒（1847/1867）：</strong>赛麦尔维斯洗手、李斯特石炭酸，手术告别感染。</li>
+            <li><strong>抗生素（1928/1941）：</strong>弗莱明发现、弗洛里与钱恩临床应用，细菌感染可治愈。</li>
+          </ul>
+        </div>
+<figure class="diagram">
+          <figcaption>图 3c · 从经验医学到循证医学</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["经验医学<br>以权威与惯例为准<br>盖伦 · 中世纪医学"] --> B["科学医学<br>解剖 · 生理 · 微生物<br>16–19世纪"]
+  B --> C["临床试验时代<br>1948 链霉素治疗结核<br>首个随机对照试验"]
+  C --> D["循证医学<br>1992 萨基特提出<br>系统评价 · 证据分级"]
+  D --> E["现代临床决策<br>证据 + 经验 + 患者意愿<br>指南 · 大数据 · AI"]
+  classDef root fill:#B82525,color:#fff,stroke:#B82525;
+  class E root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 3c 详解：</strong>医学从"听权威的"走向"看证据的"，是一场持续两个世纪的认知革命。</p>
+          <p><strong>经验医学时代：</strong>盖伦学说统治千年，放血、催吐被奉为万能疗法——医生依据传统与权威行事，疗效好坏无人系统验证。</p>
+          <p><strong>试验方法的诞生：</strong>1948年，英国医学研究委员会开展链霉素治疗肺结核的对照试验——患者随机分组，一组用药、一组对照，结果链霉素组死亡率显著下降。这是公认的第一个现代随机对照试验（RCT），由统计学家布拉德福德·希尔设计，随机分组与盲法思想从此成为临床试验的金标准。</p>
+          <p><strong>循证医学的确立：</strong>1992年，加拿大临床流行病学家大卫·萨基特正式提出"循证医学"（EBM）：临床决策应以当前最佳研究证据为核心，结合医生经验与患者意愿。1993年考克兰协作组织成立，系统评价开始为医生提供"证据地图"。</p>
+          <ul>
+            <li><strong>三要素：</strong>最佳研究证据 + 医生临床经验 + 患者意愿与价值观。</li>
+            <li><strong>证据分级：</strong>随机对照试验与系统评价为最高等级证据，专家意见与个案居末。</li>
+            <li><strong>工具化：</strong>临床指南、系统评价（Meta分析）、大数据与AI辅助决策。</li>
+          </ul>
+          <p><strong>现实案例：</strong>1997年中国循证医学中心在四川大学华西医院成立，推动国内临床决策从"习惯"转向"证据"。今天，从高血压指南到肿瘤诊疗规范，每一个推荐等级背后都有证据支撑——"凭什么这么治"成为现代医学的必答题。</p>
+        </div>
+<h3>深度解读：外科的百年进化——从"快刀手"到机器人</h3>
+<div class="explain">
+          <p><strong>"快"曾是唯一的救命稻草：</strong>在没有麻醉的年代，手术成败取决于速度。19世纪初，苏格兰外科医生李斯顿以"手术刀快如闪电"著称，传说一次截肢仅需28秒——但追求速度的代价是粗糙与剧痛。麻醉、消毒、抗生素相继问世后，"精准"与"安全"取代"快"成为外科的核心指标。</p>
+          <p><strong>止血与输血：</strong>1901年兰德施泰纳发现ABO血型，1914年抗凝剂使血液可以储存，二战催生大规模血库——如今一台肝移植手术需要输血数十个单位，背后是整整一个世纪的血型学与输血医学积累。同一时期，南丁格尔在克里米亚战争中改革战地医院卫生，伤员死亡率从42%降至2%，以实践印证了卫生与感染的关系，开创现代护理学。</p>
+          <p><strong>微创时代：</strong>1987年首例腹腔镜胆囊切除术成功，外科进入微创时代。中国外科也写下自己的篇章：1963年，上海第六人民医院陈中伟完成世界首例断肢再植术；今天，机器人辅助手术与5G远程手术在中国多家医院常态化开展，中国外科已跻身世界第一方阵。</p>
+        </div>
+<h3>深度解读：奥斯勒与现代医学教育——把病人放在第一位</h3>
+<div class="explain">
+          <p><strong>床边教学的先驱：</strong>19世纪末，威廉·奥斯勒（1849—1919）任教于约翰·霍普金斯医院，把医学生从讲堂带进病房，主张"医学是在病人床边学到的，而不是在书本里"。他编写的《医学原理与实践》成为一代又一代医学生的经典教材。</p>
+          <p><strong>科学与人性的统一：</strong>奥斯勒既拥抱细菌学说带来的科学革命，又坚持"医学是艺术"——他终生穿着标志性的高领礼服查房，用体贴的询问安抚焦虑的患者。他告诫医学生："不要对病人的话不以为然——患者也许不会说医学术语，但他说的永远是真实的。"</p>
+          <p><strong>对中国的启示：</strong>奥斯勒的医学人文传统深刻影响了现代医学教育。今天中国医学院校普遍开设"医患沟通"与"医学人文"课程；"有时去治愈，常常去帮助，总是去安慰"的特鲁多名言被镌刻在无数医院墙上——它强调的正是奥斯勒所说的"医生治病，也在治人"。2020年新冠疫情中，中国医护人员的逆行与坚守，让这一人文精神得到最生动的当代诠释。</p>
+        </div>
+<h3>对照表：四大医学革命里程碑</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>里程碑</th><th>关键人物</th><th>年代</th><th>核心贡献</th><th>深远影响</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>麻醉</strong></td><td>威廉·莫顿（乙醚公开演示）；华佗（麻沸散先声）</td><td>1846（东汉已有记载）</td><td>消除手术疼痛</td><td>外科从"速度竞赛"转向精细操作</td></tr>
+              <tr><td><strong>消毒与无菌术</strong></td><td>赛麦尔维斯（洗手）；李斯特（石炭酸）</td><td>1847 / 1867</td><td>证实并阻断"看不见的感染"</td><td>术后感染死亡率大幅下降，医院走向安全</td></tr>
+              <tr><td><strong>抗生素</strong></td><td>弗莱明（发现）；弗洛里与钱恩（提纯应用）</td><td>1928 / 1941</td><td>杀灭细菌性病原体</td><td>细菌性感染由绝症变可治愈；催生耐药性问题</td></tr>
+              <tr><td><strong>疫苗</strong></td><td>詹纳（牛痘）；中国医者（人痘接种）</td><td>1796（人痘更早）</td><td>人工主动免疫</td><td>1980年根除天花；现代疫苗预防数十种传染病</td></tr>
+            </tbody>
+          </table>
+        </div>
+<h3>对照表：医学史大事年表（1543–2003）</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>年代</th><th>事件</th><th>人物 / 机构</th><th>意义</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>1543</strong></td><td>《人体构造》出版</td><td>维萨里</td><td>近代解剖学诞生</td></tr>
+              <tr><td><strong>1628</strong></td><td>《心血运动论》</td><td>哈维</td><td>确立血液循环学说</td></tr>
+              <tr><td><strong>1796</strong></td><td>牛痘接种实验</td><td>詹纳</td><td>疫苗学开端</td></tr>
+              <tr><td><strong>1846</strong></td><td>乙醚麻醉公开演示</td><td>莫顿</td><td>外科告别疼痛</td></tr>
+              <tr><td><strong>1854</strong></td><td>霍乱地图</td><td>约翰·斯诺</td><td>流行病学奠基</td></tr>
+              <tr><td><strong>1860</strong></td><td>《护理札记》</td><td>南丁格尔</td><td>现代护理学诞生</td></tr>
+              <tr><td><strong>1867</strong></td><td>石炭酸消毒法</td><td>李斯特</td><td>无菌手术的开端</td></tr>
+              <tr><td><strong>1895</strong></td><td>发现X射线</td><td>伦琴</td><td>影像诊断的开端</td></tr>
+              <tr><td><strong>1928</strong></td><td>发现青霉素</td><td>弗莱明</td><td>抗生素时代来临</td></tr>
+              <tr><td><strong>1953</strong></td><td>发现DNA双螺旋</td><td>沃森 · 克里克（富兰克林提供关键数据）</td><td>分子医学的开端</td></tr>
+              <tr><td><strong>1978</strong></td><td>世界首例试管婴儿</td><td>英国</td><td>辅助生殖技术诞生</td></tr>
+              <tr><td><strong>2003</strong></td><td>人类基因组计划完成</td><td>六国协作（含中国）</td><td>精准医疗时代来临</td></tr>
+            </tbody>
+          </table>
+        </div>
+<div class="callout">
+          <span class="callout-title">本章知识要点</span>
+          <ul>
+            <li>三大革命：麻醉（1846）、消毒（1847/1867）、抗生素（1928/1941），共同开启外科安全时代。</li>
+            <li>循证医学：以最佳证据 + 医生经验 + 患者意愿决策；1948年链霉素试验是首个RCT。</li>
+            <li>现代外科从"快"走向"精准"：输血、微创、机器人；中国断肢再植（1963）载入史册。</li>
+            <li>奥斯勒倡导"以病人为中心"，医学人文与现代科学同样重要。</li>
+          </ul>
+        </div>
+</section>
+<section class="sec" id="summary">
+        <h2><span class="chapno">第四章 &middot; 总结：医学的挑战与未来</span></h2>
+<p>医学的终极目标不仅是治疗疾病，更是维护健康、提高生活质量。随着基因组学、基因编辑、人工智能、再生医学的发展，医学正在进入一个前所未有的新时代。</p>
+<figure class="diagram">
+          <figcaption>图 4 · 医学思想谱系</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["古代医学<br>希波克拉底·中医"] --> B["近代医学<br>解剖·生理·微生物"]
+  B --> C["现代医学<br>抗生素·疫苗·手术"]
+  C --> D["分子医学<br>基因组·靶向"]
+  D --> E["未来医学<br>基因治疗·AI·再生"]
+  classDef root fill:#B82525,color:#fff,stroke:#B82525;
+  class E root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>医学的未来挑战：</strong>1. 抗生素耐药性
+2. 慢性病（心血管、癌症、糖尿病）
+3. 老龄化社会的医疗需求
+4. 医疗资源不平等
+5. AI辅助诊断
+
+**跨辑关联**：本卷与生命科学、心理学、化学、科技与AI密切关联。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">特鲁多 · 1848–1915</div>
+            <blockquote>有时去治愈，常常去帮助，总是去安慰。<cite>——特鲁多名言</cite></blockquote>
+          </div>
+</div>
+<figure class="diagram">
+          <figcaption>图 4b · 医学的未来：基因 · AI · 精准医疗</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["基因组学<br>人类基因组计划 · 2003完成"] --> B["精准医疗<br>靶向药 · 基因检测 · 液体活检"]
+  B --> C["基因治疗与编辑<br>CRISPR · CAR-T细胞治疗"]
+  A --> D["人工智能<br>影像诊断 · 新药研发"]
+  D --> E["再生医学<br>干细胞 · 3D打印器官"]
+  C --> F["未来医学愿景<br>个性化预防 · 精准治疗 · 主动健康"]
+  E --> F
+  D --> F
+  classDef root fill:#B82525,color:#fff,stroke:#B82525;
+  class F root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 4b 详解：</strong>医学的未来图景由三条主线交织而成：基因组学与精准医疗、人工智能、再生医学。</p>
+          <p><strong>基因组学与精准医疗：</strong>2003年人类基因组计划完成，人类首次"读"出自身约30亿个碱基的遗传密码——中国承担了其中1%的测序任务。在此基础上，靶向药物直击癌症基因突变，液体活检从一滴血中捕捉肿瘤DNA，癌症治疗从"一刀切"走向"个体化"。2021年6月，中国首个CAR-T细胞治疗产品"奕凯达"获批上市，细胞免疫治疗在中国进入临床时代。</p>
+          <p><strong>人工智能：</strong>AI正成为医生的"第二双眼睛"：肺结节CT筛查、眼底影像诊断、病理切片分析、新药分子筛选——人工智能让诊断更早、更准、更快。中国多家三甲医院已部署AI辅助影像系统，在基层医疗中发挥着"拉平医疗鸿沟"的作用。</p>
+          <p><strong>再生医学：</strong>干细胞研究与3D生物打印让"器官再造"从科幻走向实验室，组织工程与器官移植的边界正在被重新定义。</p>
+          <ul>
+            <li><strong>精准化：</strong>基因组测序 + 靶向药 + 液体活检，让治疗"因人而异"。</li>
+            <li><strong>智能化：</strong>AI影像诊断与新药研发，让医疗"更快更准"。</li>
+            <li><strong>再生化：</strong>干细胞与3D打印，让"器官再造"成为可能。</li>
+          </ul>
+          <p><strong>现实案例：</strong>2012年CRISPR基因编辑技术问世，2017年美国FDA批准首个基因疗法治疗遗传性失明；中国科学家在β-地中海贫血基因治疗、CAR-T治疗血液肿瘤等领域取得多项世界级进展。但技术越强大，越需要伦理的缰绳——基因编辑的边界，正是下一节讨论的焦点。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 4c · 临床伦理的四大原则</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["尊重自主<br>知情同意 · 患者自决"] --> E["临床伦理决策<br>四原则的权衡与平衡"]
+  B["行善<br>以患者利益为先"] --> E
+  C["不伤害<br>首先，不要伤害"] --> E
+  D["公正<br>医疗资源公平分配"] --> E
+  classDef root fill:#B82525,color:#fff,stroke:#B82525;
+  class E root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 4c 详解：</strong>当代临床伦理学以四大原则为框架：尊重自主（尊重患者的知情同意与自决权）、行善（以患者利益为先）、不伤害（"首先，不要伤害"）、公正（医疗资源的公平分配）。四原则常需权衡——例如晚期肿瘤患者可以选择放弃有创抢救（尊重自主），医生则需评估治疗的利弊（行善与不伤害）；当稀缺的ICU床位需要分配时，公正原则便凸显出来。</p>
+          <p><strong>现实案例：</strong>新冠疫情中，中国在疫苗分配上坚持"应接尽接"与重点人群优先，兼顾效率与公平；而"基因编辑婴儿"事件则警示：当技术突破伦理底线时，再先进的技术也会被历史否定——医学伦理不是束缚，而是医学之所以值得信赖的根基。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 4d · 中国医学的千年传承</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["《黄帝内经》<br>战国至汉代 · 中医理论奠基"] --> B["张仲景《伤寒杂病论》<br>东汉 · 辨证论治确立"]
+  B --> C["李时珍《本草纲目》<br>明代 · 收载药物1892种"]
+  C --> D["中西医汇通<br>晚清民国 · 中西医结合探索"]
+  D --> E["当代中国医学<br>中西医并重 · 走向世界"]
+  classDef root fill:#B82525,color:#fff,stroke:#B82525;
+  class E root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 4d 详解：</strong>中国医学拥有独立的起源与绵延两千余年的传承谱系。</p>
+          <p><strong>理论奠基：</strong>成书于战国至汉代的《黄帝内经》奠定阴阳五行、脏腑经络的理论框架；东汉张仲景著《伤寒杂病论》确立"辨证论治"的临床范式，被后世尊为"医圣"。</p>
+          <p><strong>集大成者：</strong>明代李时珍历时27年编成《本草纲目》，收载药物1892种、药方11096首，被达尔文誉为"中国古代的百科全书"，刊行后传遍世界。</p>
+          <p><strong>当代传承：</strong>晚清以来中西医汇通兴起，1950年代后国家确立"中西医并重"方针；今天，青蒿素获诺贝尔奖、针灸申遗成功、中药循证研究走向国际——中国医学正以"传承精华、守正创新"的姿态融入现代科学体系。</p>
+          <ul>
+            <li><strong>独立起源：</strong>《黄帝内经》《伤寒杂病论》奠定了理论范式。</li>
+            <li><strong>药学高峰：</strong>《本草纲目》收载药物1892种，是世界药学巨著。</li>
+            <li><strong>当代融合：</strong>中西医并重，青蒿素与针灸成为"中国名片"。</li>
+          </ul>
+        </div>
+<h3>深度解读：基因编辑的伦理边界——科技越强大，责任越重大</h3>
+<div class="explain">
+          <p><strong>CRISPR的降临：</strong>2012年，杜德纳与沙尔庞捷发现CRISPR-Cas9基因编辑系统，让"改写基因"变得像"查找替换"一样简便，二人于2020年获诺贝尔化学奖。编辑体细胞可治疗疾病；编辑生殖细胞（精子、卵子、胚胎）则意味着修改"人类基因组"并遗传给后代——这是人类从未行使过的权力。</p>
+          <p><strong>贺建奎事件：</strong>2018年11月，中国科学家贺建奎宣布通过CRISPR编辑人类胚胎基因并诞生"基因编辑婴儿"，引发全球震动。此举跨越了科学伦理的红线：生殖系基因编辑的脱靶风险不可控，且被修改的基因将代代相传、无法撤销。中国有关部门随即依法作出处理；国际科学界也以《赫尔辛基宣言》等伦理框架重申底线：以治病救人为目的、以知情同意为前提、以风险可控为边界。</p>
+          <p><strong>法律护栏：</strong>2021年3月1日起施行的《中华人民共和国刑法修正案（十一）》明确将"非法植入基因编辑、克隆胚胎"入刑。技术决定"能不能"，伦理与法律决定"该不该"——这是医学永恒的双螺旋。</p>
+        </div>
+<h3>深度解读：中国对全球健康的贡献——从消除疟疾到援外医疗</h3>
+<div class="explain">
+          <p><strong>消除疟疾认证：</strong>2021年6月30日，世界卫生组织宣布中国通过消除疟疾认证——中国成为全球第40个、西太平洋地区首个获此认证的国家。从1950年代年报告3000万病例，到2021年实现零本土感染，青蒿素、防蚊措施、边境监测"三位一体"的防控经验被写入世界卫生组织推广手册，成为全球抗疟的教科书。</p>
+          <p><strong>援外医疗六十年：</strong>自1963年中国向阿尔及利亚派出首支援外医疗队以来，60余年间累计向70多个国家和地区派遣医疗队员约3万人次，诊治患者约2.9亿人次——"中国医生"成为非洲与亚洲许多地区最受信赖的名字。</p>
+          <p><strong>新冠疫情中的中国贡献：</strong>2020年新冠疫情暴发后，中国以举国体制快速控制本土疫情，同时向120多个国家和国际组织提供超过22亿剂新冠疫苗——科兴、国药等中国疫苗通过世界卫生组织紧急使用认证，成为全球抗疫公共产品的重要组成部分。</p>
+        </div>
+<h3>对照表：未来医学的四大方向</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>方向</th><th>核心技术</th><th>代表进展</th><th>应用前景</th><th>主要挑战</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>基因组医学</strong></td><td>基因测序 · 基因编辑</td><td>人类基因组计划（2003）；CRISPR（2012）</td><td>遗传病筛查与基因治疗</td><td>伦理边界 · 数据隐私</td></tr>
+              <tr><td><strong>人工智能</strong></td><td>深度学习 · 医疗大模型</td><td>AI影像辅助诊断 · 新药分子筛选</td><td>基层医疗普惠 · 精准诊断</td><td>数据质量 · 算法可解释性</td></tr>
+              <tr><td><strong>再生医学</strong></td><td>干细胞 · 3D生物打印</td><td>组织工程软骨 · 类器官培养</td><td>器官再造与移植替代</td><td>长期安全性 · 伦理争议</td></tr>
+              <tr><td><strong>数字医疗</strong></td><td>5G · 可穿戴设备 · 互联网医院</td><td>中国互联网医院已超千家</td><td>优质医疗资源均衡化</td><td>医保衔接 · 隐私安全</td></tr>
+            </tbody>
+          </table>
+        </div>
+<div class="callout">
+          <span class="callout-title">本章知识要点</span>
+          <ul>
+            <li>未来医学三条主线：基因组学与精准医疗、人工智能、再生医学。</li>
+            <li>临床伦理四原则：尊重自主、行善、不伤害、公正。</li>
+            <li>基因编辑的边界：体细胞治疗可行，生殖系编辑红线不可逾越（贺建奎事件教训）。</li>
+            <li>中国贡献：消除疟疾认证（2021）、援外医疗60余年、22亿剂新冠疫苗援助。</li>
+          </ul>
+        </div>
+</section>
+
+    <section class="sec">
+      <h2>关联辑目</h2>
+      <div class="explain">
+        <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+        <ul>
+<li><span class="rel-link" data-vol="vol15">生命科学</span></li>
+<li><span class="rel-link" data-vol="vol32">化学</span></li>
+<li><span class="rel-link" data-vol="vol6">心理学思想谱系</span></li>
+<li><span class="rel-link" data-vol="vol3">伦理与道德思想谱系</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      医学与健康 · 思想图谱系列第33辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-06
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+(function() {
+  if (window.mermaid) {
+    mermaid.initialize({
+      startOnLoad: true, theme: 'neutral', securityLevel: 'loose',
+      flowchart: { curve: 'basis', htmlLabels: true },
+      fontFamily: 'Segoe UI, PingFang SC, Microsoft YaHei, sans-serif'
+    });
+  }
+
+  var input = document.getElementById('searchInput');
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.sec'));
+  var tocLinks = Array.prototype.slice.call(document.querySelectorAll('#toc a'));
+
+  function applyFilter() {
+    var q = (input.value || '').trim().toLowerCase();
+    sections.forEach(function (sec) {
+      var hit = !q || sec.textContent.toLowerCase().indexOf(q) !== -1;
+      sec.classList.toggle('hidden-by-search', !hit);
+    });
+    tocLinks.forEach(function (a) {
+      var id = a.getAttribute('href').slice(1);
+      var sec = document.getElementById(id);
+      var visible = sec && !sec.classList.contains('hidden-by-search');
+      a.style.opacity = visible ? '' : '0.35';
+    });
+  }
+
+  if (input) { input.addEventListener('input', applyFilter); }
+})();
+</script>
+</body>
+</html>

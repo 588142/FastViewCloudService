@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+
+# 临时下载目录
+_dl/
+
+# Trae IDE 共享包缓存
+.trae-html-share-packages/
+
+# 备份文件（Git 已接管版本管理）
+*.bak

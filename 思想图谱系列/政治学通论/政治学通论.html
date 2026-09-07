@@ -1,0 +1,1061 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>政治学通论 · 思想图谱系列第二十三辑</title>
+
+  <style>
+
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+
+  </style>
+
+  <style>
+
+    :root {
+      --bg: #FBF8F3;
+      --bg2: #F3EDE1;
+      --ink: #2B2418;
+      --muted: #6E6352;
+      --rule: #E4DBC9;
+      --accent: #B91C1C;
+      --accent2: #92400E;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:first-child { margin-left: 0; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .legacy .legacy-title { font-weight: 700; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .legacy ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; }
+    @media (max-width: 700px) { .legacy { grid-template-columns: 1fr; } }
+
+    .history { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; }
+    .history .history-title { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem; }
+    .history p { margin-bottom: 0.55rem; }
+    .history p:last-child { margin-bottom: 0; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+    p a, li a { color: var(--accent); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    .formula {
+      font-family: var(--font-mono);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidenav { position: static; max-height: none; }
+    }
+    @media print {
+      .sidenav { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      section.sec { break-inside: avoid-page; }
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="shell">
+
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">政治学通论</div>
+    <div class="brand-sub">思想图谱系列 · 第二十三辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+      <li><a href="#intro">导言 · 政治与秩序</a></li>
+      <li><a href="#overview">第一章 · 总览：政治学的演变</a></li>
+      <li><a href="#concept">第二章 · 政治的概念：从城邦到国家</a></li>
+      <li><a href="#regime">第三章 · 政体类型：从亚里士多德到孟德斯鸠</a></li>
+      <li><a href="#legitimacy">第四章 · 权力与合法性：从马基雅维利到韦伯</a></li>
+      <li><a href="#democracy">第五章 · 民主与治理：从雅典到现代</a></li>
+      <li><a href="#ideology">第六章 · 意识形态与政治文化：从自由主义到社群主义</a></li>
+      <li><a href="#summary">第七章 · 总结提炼：政治学的启示</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第二十三辑</span>
+        <span class="series-links">
+          <a href="../index.html">系列目录</a>
+          <a href="../数学思想谱系/数学思想谱系.html">← 上一辑 · 数学思想谱系</a>
+          <a href="../国际关系思想谱系/国际关系思想谱系.html">下一辑 · 国际关系思想谱系 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>政治学通论</h1>
+      <p class="subtitle">从柏拉图到现代国家——人类如何组织权力、分配利益、实现秩序：政治的概念、政体类型、权力与合法性、民主与治理、意识形态与政治文化，提炼“权力之实、秩序之基、政体之辨、合法性之要、参与之度、治理之效”的政治规律</p>
+      <p class="meta">作者：詹家杨 · 2026-09-05 · 8 张思维导图 · 7 张对照表 · 20+ 人物语录 · 政治</p>
+    </header>
+
+    <main>
+      <!-- 导言 -->
+      <section class="sec" id="intro">
+        <h2>导言 · 政治与秩序</h2>
+        <p>政治（politics）来自希腊语 polis——“城邦”；政治学是研究权力如何产生、分配与行使的学问。前面各辑梳理了人类关于社会、法律与伦理的思想，而本辑要追问的是更根本的问题：<strong>人类为什么需要政治？权力如何获得合法性？秩序如何可能？</strong>当我们谈论国家、政府、民主、选举时，我们其实在谈论同一个问题——一群人如何共同生活而不陷入混乱。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 政治光谱：从极左到极右的意识形态分布</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  FARL["极左\n共产主义\n推翻资本主义\n消灭私有制"] --> L["左翼\n社会主义\n社会民主主义\n经济平等"]
+  L --> C["中间\n自由主义\n个人自由\n市场经济\n有限政府"]
+  C --> R["右翼\n保守主义\n传统秩序\n渐进改革"]
+  R --> FARR["极右\n法西斯主义\n民族至上\n专制统治"]
+  FARL ---|"经济平等"| L
+  L ---|"机会平等"| C
+  C ---|"秩序与稳定"| R
+  R ---|"民族优越"| FARR
+  classDef farl fill:#DC2626,color:#fff,stroke:#DC2626;
+  classDef l fill:#F97316,color:#fff,stroke:#F97316;
+  classDef c fill:#22C55E,color:#fff,stroke:#22C55E;
+  classDef r fill:#3B82F6,color:#fff,stroke:#3B82F6;
+  classDef farr fill:#7C3AED,color:#fff,stroke:#7C3AED;
+  class FARL farl;
+  class L l;
+  class C c;
+  class R r;
+  class FARR farr;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：政治光谱</strong>——"左"和"右"的区分源自1789年法国大革命，当时支持国王的坐在右边，支持革命的坐在左边。</p>
+          <p><strong>左翼 vs 右翼：</strong>左翼更关注经济平等（福利国家、累进税），右翼更关注个人自由（低税收、小政府）。左翼认为不平等是不公正的，右翼认为不平等是自由的自然结果。但左右翼在文化议题上也可能交叉：左翼在文化上更开放，右翼在文化上更保守。</p>
+          <p><strong>政治光谱的局限：</strong>简单的左右一维光谱无法捕捉复杂的政治立场。一个在经济上左翼但在文化上保守的人，应该放在哪里？这就是为什么政治学家引入了二维光谱：经济轴上左-右，社会/文化轴上威权-自由。</p>
+          <p><strong>现实案例：</strong>中国的政治光谱不同于西方。中国的主流政治话语强调"中国特色社会主义"——既不同于西方自由主义，也不同于传统社会主义。政治学中的"威权韧性"研究试图解释：为什么一些威权政体能长期稳定，而另一些会被推翻？答案涉及制度吸纳、经济绩效、意识形态、精英联盟等多个因素。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>0.1 政治的定义：polis——城邦</li>
+          <li>0.2 政治的七次转向：为城邦→为帝国→为神权→为君权→为民权→为阶级→为治理</li>
+          <li>0.3 政治学与社会卷、法哲学卷的关联</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>polis</strong>：政治的词源，意为“城邦”</li>
+          <li><strong>权力</strong>：政治的核心对象</li>
+          <li><strong>政治谱系</strong>：城邦→帝国→神权→君权→民权→阶级→治理</li>
+        </ul>
+<figure class="diagram">
+          <figcaption>图 0a · 政治学基本概念树状图</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  ROOT["政治学通论"] --> A["政治是什么"]
+  ROOT --> B["政治学分支"]
+  ROOT --> C["核心概念"]
+  ROOT --> D["政体类型"]
+  ROOT --> E["政治意识形态"]
+  A --> A1["分配权威性价值"]
+  A --> A2["谁得到什么、何时、如何"]
+  A --> A3["权力与决策"]
+  B --> B1["政治哲学\n应然"]
+  B --> B2["比较政治\n政体·制度·行为"]
+  B --> B3["国际关系\n国家间互动"]
+  B --> B4["公共政策\n政策制定与评估"]
+  C --> C1["权力\n影响他人行为的能力"]
+  C --> C2["合法性\n被统治者的自愿服从"]
+  C --> C3["主权\n国家的最高权威"]
+  C --> C4["正义\n社会制度的公平"]
+  D --> D1["民主\n人民主权"]
+  D --> D2["威权\n权力集中"]
+  D --> D3["极权\n全面控制"]
+  D --> D4["混合政体"]
+  E --> E1["自由主义"]
+  E --> E2["保守主义"]
+  E --> E3["社会主义"]
+  E --> E4["民族主义"]
+  E --> E5["无政府主义"]
+  classDef root fill:#1E40AF,color:#fff,stroke:#1E40AF;
+  classDef cat fill:#2563EB,color:#fff,stroke:#2563EB;
+  classDef leaf fill:#DBEAFE,stroke:#3B82F6,color:#1E3A5F;
+  class ROOT root;
+  class A,B,C,D,E cat;
+  class A1,A2,A3,B1,B2,B3,B4,C1,C2,C3,C4,D1,D2,D3,D4,E1,E2,E3,E4,E5 leaf;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 0a 详解：政治学的基本概念框架</strong>——政治学是研究"谁得到什么、何时、如何"的学科。拉斯韦尔的这句定义简短而深刻：政治学的核心是"权力"与"分配"。</p>
+          <p><strong>政治是什么？</strong>政治不仅是"政府的事"，也不仅是"选举和政党"。戴维·伊斯顿说，政治是"社会对权威性价值的分配"——任何涉及"谁有权决定什么、资源如何分配、规则如何制定"的活动都是政治。公司内部的人事斗争是政治，家庭中的决策也是政治——只不过"微观政治"的规模不同。政治学的独特之处在于它研究"权威性"（权威政令）的分配。</p>
+          <p><strong>权力 vs 合法性：</strong>韦伯说，权力是"在反对面前实现自己意志的能力"——即使别人不愿意，你也能强迫他。但权力不持久——靠压迫维持的政府迟早会倒台。合法性是"被统治者自愿服从的信念"——人们服从不是因为害怕，而是因为他们认为统治者有权统治。韦伯区分了三种合法性来源：传统（"一直如此"）、魅力（"领袖非凡"）、法理（"程序合法"）。现代民主国家主要依靠法理合法性。</p>
+          <p><strong>政体类型：</strong>亚里士多德按"谁统治"和"为谁统治"两个维度划分政体。一个人统治且为公共利益是"君主制"，为私利是"僭主制"；少数人统治且为公共利益是"贵族制"，为私利是"寡头制"；多数人统治且为公共利益是"共和制"，为私利是"民主制"。这个分类至今仍是比较政治学的出发点。</p>
+        </div>
+        <div class="callout">
+          <span class="callout-title">一条主线</span>
+          政治关注对象的七次转向：<strong>为城邦</strong>（古希腊城邦政治，公民直接参与）→ <strong>为帝国</strong>（罗马与中华帝国，统治广土众民）→ <strong>为神权</strong>（中世纪政教关系，权力来自上帝）→ <strong>为君权</strong>（绝对君主制，主权归于君主）→ <strong>为民权</strong>（启蒙与革命，主权在民）→ <strong>为阶级</strong>（马克思主义与社会主义，政治是阶级斗争）→ <strong>为治理</strong>（现代国家与全球治理，多元主体共治）。每一次转向，都是人类对“如何组织共同生活”的一次重新回答。
+        </div>
+        <p>本辑沿政治学的谱系展开——<strong>政治的概念</strong>（城邦、国家、权力）、<strong>政体类型</strong>（亚里士多德、孟德斯鸠）、<strong>权力与合法性</strong>（马基雅维利、韦伯）、<strong>民主与治理</strong>（雅典、代议制、现代治理）、<strong>意识形态与政治文化</strong>（自由主义、社群主义、政治文化），看“组织共同生活”的智慧如何从城邦议事，长成覆盖全球的现代政治体系。它与第三辑《马克思主义谱系》、第四辑《自由主义谱系》互为姊妹——本辑是政治学的通论框架，那两辑是左右两条政治长河；又与第十一辑《法哲学思想谱系》血脉相连——政治问“权力如何行使”，法律问“权力如何约束”。</p>
+        <figure class="diagram">
+          <figcaption>图 1 · 图 1 · 政治的七次转向图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["为城邦"]
+  B["为帝国"]
+  C["为神权"]
+  D["为君权"]
+  E["为民权"]
+  F["为阶级"]
+  G["为治理"]
+  A --> B
+  B --> C
+  C --> D
+  D --> E
+  E --> F
+  F --> G
+  classDef shift fill:#B91C1C,color:#fff,stroke:#B91C1C;
+  class A,B,C,D,E,F,G shift;
+          </pre>
+        </figure>
+      </section>
+      <section class="sec" id="overview">
+        <h2><span class="chapno">第一章</span>总览：政治学的演变</h2>
+        <p>先看全景：政治学几乎与文明同龄。古希腊城邦孕育了公民政治与政治哲学，柏拉图的《理想国》与亚里士多德的《政治学》奠定了政治学的基石。罗马以法律治理帝国，中世纪把政治置于神学之下，马基雅维利让政治学摆脱道德说教、直面权力现实。启蒙时代，洛克与卢梭以社会契约论重新奠基政治合法性，孟德斯鸠提出三权分立。十九世纪，马克思主义把政治理解为阶级斗争，韦伯以“合法性”与“官僚制”分析现代国家。二十世纪，行为主义让政治学成为经验科学，当代政治学直面全球化、民主危机与治理转型。理解政治学，就是理解人类如何组织权力、分配利益、实现秩序。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 政治光谱：从极左到极右的意识形态分布</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  FARL["极左\n共产主义\n推翻资本主义\n消灭私有制"] --> L["左翼\n社会主义\n社会民主主义\n经济平等"]
+  L --> C["中间\n自由主义\n个人自由\n市场经济\n有限政府"]
+  C --> R["右翼\n保守主义\n传统秩序\n渐进改革"]
+  R --> FARR["极右\n法西斯主义\n民族至上\n专制统治"]
+  FARL ---|"经济平等"| L
+  L ---|"机会平等"| C
+  C ---|"秩序与稳定"| R
+  R ---|"民族优越"| FARR
+  classDef farl fill:#DC2626,color:#fff,stroke:#DC2626;
+  classDef l fill:#F97316,color:#fff,stroke:#F97316;
+  classDef c fill:#22C55E,color:#fff,stroke:#22C55E;
+  classDef r fill:#3B82F6,color:#fff,stroke:#3B82F6;
+  classDef farr fill:#7C3AED,color:#fff,stroke:#7C3AED;
+  class FARL farl;
+  class L l;
+  class C c;
+  class R r;
+  class FARR farr;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：政治光谱</strong>——"左"和"右"的区分源自1789年法国大革命，当时支持国王的坐在右边，支持革命的坐在左边。</p>
+          <p><strong>左翼 vs 右翼：</strong>左翼更关注经济平等（福利国家、累进税），右翼更关注个人自由（低税收、小政府）。左翼认为不平等是不公正的，右翼认为不平等是自由的自然结果。但左右翼在文化议题上也可能交叉：左翼在文化上更开放，右翼在文化上更保守。</p>
+          <p><strong>政治光谱的局限：</strong>简单的左右一维光谱无法捕捉复杂的政治立场。一个在经济上左翼但在文化上保守的人，应该放在哪里？这就是为什么政治学家引入了二维光谱：经济轴上左-右，社会/文化轴上威权-自由。</p>
+          <p><strong>现实案例：</strong>中国的政治光谱不同于西方。中国的主流政治话语强调"中国特色社会主义"——既不同于西方自由主义，也不同于传统社会主义。政治学中的"威权韧性"研究试图解释：为什么一些威权政体能长期稳定，而另一些会被推翻？答案涉及制度吸纳、经济绩效、意识形态、精英联盟等多个因素。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>1.1 古典政治学：从城邦到帝国</li>
+          <li>1.2 近代政治学：从马基雅维利到启蒙</li>
+          <li>1.3 现代政治学：从阶级到治理</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>城邦</strong>：政治学的起点</li>
+          <li><strong>社会契约</strong>：近代政治合法性的基础</li>
+          <li><strong>治理</strong>：当代政治学的核心议题</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>古典政治学（前5世纪–5世纪）</strong>：柏拉图《理想国》追问“什么是正义的城邦”，亚里士多德《政治学》系统比较政体，提出“人是政治的动物”；罗马以法律与共和治理帝国，西塞罗发展自然法思想。</p>
+          <p><strong>中世纪与近代（5–18世纪）</strong>：奥古斯丁与阿奎那把政治置于神学之下；马基雅维利《君主论》（1513）让政治学直面权力现实；布丹提出主权概念；霍布斯、洛克、卢梭以社会契约论重新奠基政治合法性；孟德斯鸠提出三权分立。</p>
+          <p><strong>现代政治学（19–20世纪）</strong>：马克思主义把政治理解为阶级斗争与国家统治；韦伯以“合法性”“官僚制”“国家是合法垄断暴力的组织”分析现代国家；托克维尔研究民主在美国的实践。</p>
+          <p><strong>当代政治学（20世纪中–）</strong>：行为主义让政治学成为经验科学；罗尔斯《正义论》（1971）复兴规范政治哲学；亨廷顿研究政治秩序与文明冲突；当代政治学直面全球化、民粹主义、民主危机与全球治理。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>柏拉图（前428–前348）</strong>——《理想国》、哲人王。</p>
+        <p><strong>亚里士多德（前384–前322）</strong>——《政治学》、政体分类。</p>
+        <p><strong>马基雅维利（1469–1527）</strong>——《君主论》、政治现实主义。</p>
+        <p><strong>霍布斯（1588–1679）</strong>——《利维坦》、自然状态。</p>
+        <p><strong>洛克（1632–1704）</strong>——社会契约、有限政府。</p>
+        <p><strong>卢梭（1712–1778）</strong>——《社会契约论》、人民主权。</p>
+        <p><strong>孟德斯鸠（1689–1755）</strong>——三权分立。</p>
+        <p><strong>托克维尔（1805–1859）</strong>——《论美国的民主》。</p>
+        <p><strong>马克思（1818–1883）</strong>——政治是阶级斗争。</p>
+        <p><strong>韦伯（1864–1920）</strong>——合法性、官僚制。</p>
+        <p><strong>罗尔斯（1921–2002）</strong>——《正义论》。</p>
+        <p><strong>亨廷顿（1927–2008）</strong>——政治秩序、文明冲突。</p>
+        <figure class="diagram">
+          <figcaption>图 2 · 政治学演变结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["政治学"] --> A["古典政治学<br>柏拉图 · 亚里士多德 · 城邦"]
+  ROOT --> B["中世纪与近代<br>马基雅维利 · 社会契约 · 三权分立"]
+  ROOT --> C["现代政治学<br>马克思 · 韦伯 · 托克维尔"]
+  ROOT --> D["当代政治学<br>罗尔斯 · 亨廷顿 · 治理"]
+  classDef rootNode fill:#B91C1C,color:#fff,stroke:#B91C1C;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：政治学主要时期速览</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>时期</th><th>核心问题</th><th>代表人物</th><th>思想遗产</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>古典政治学</strong></td><td>什么是正义的城邦</td><td>柏拉图 · 亚里士多德</td><td>理想国 · 政体分类</td></tr>
+              <tr><td><strong>中世纪</strong></td><td>权力与神的关系</td><td>奥古斯丁 · 阿奎那</td><td>神权政治</td></tr>
+              <tr><td><strong>近代政治学</strong></td><td>政治合法性从何而来</td><td>马基雅维利 · 霍布斯 · 洛克 · 卢梭</td><td>社会契约 · 三权分立</td></tr>
+              <tr><td><strong>现代政治学</strong></td><td>国家与阶级的关系</td><td>马克思 · 韦伯 · 托克维尔</td><td>阶级斗争 · 合法性</td></tr>
+              <tr><td><strong>当代政治学</strong></td><td>如何实现正义与治理</td><td>罗尔斯 · 亨廷顿</td><td>正义论 · 政治秩序</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="sec" id="concept">
+        <h2><span class="chapno">第二章</span>政治的概念：从城邦到国家</h2>
+        <p>政治是什么？亚里士多德说“人是政治的动物”，政治是城邦中公民的共同生活；马基雅维利把政治理解为获取与保持权力的技艺；韦伯把国家定义为“在特定疆域内合法垄断暴力的组织”；施米特则说政治的本质是“敌友之分”。本章的核心洞见是：<strong>政治的核心是权力——谁拥有权力、如何行使权力、如何约束权力</strong>。理解政治的概念，就是理解人类共同生活的根本问题。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 政治光谱：从极左到极右的意识形态分布</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  FARL["极左\n共产主义\n推翻资本主义\n消灭私有制"] --> L["左翼\n社会主义\n社会民主主义\n经济平等"]
+  L --> C["中间\n自由主义\n个人自由\n市场经济\n有限政府"]
+  C --> R["右翼\n保守主义\n传统秩序\n渐进改革"]
+  R --> FARR["极右\n法西斯主义\n民族至上\n专制统治"]
+  FARL ---|"经济平等"| L
+  L ---|"机会平等"| C
+  C ---|"秩序与稳定"| R
+  R ---|"民族优越"| FARR
+  classDef farl fill:#DC2626,color:#fff,stroke:#DC2626;
+  classDef l fill:#F97316,color:#fff,stroke:#F97316;
+  classDef c fill:#22C55E,color:#fff,stroke:#22C55E;
+  classDef r fill:#3B82F6,color:#fff,stroke:#3B82F6;
+  classDef farr fill:#7C3AED,color:#fff,stroke:#7C3AED;
+  class FARL farl;
+  class L l;
+  class C c;
+  class R r;
+  class FARR farr;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：政治光谱</strong>——"左"和"右"的区分源自1789年法国大革命，当时支持国王的坐在右边，支持革命的坐在左边。</p>
+          <p><strong>左翼 vs 右翼：</strong>左翼更关注经济平等（福利国家、累进税），右翼更关注个人自由（低税收、小政府）。左翼认为不平等是不公正的，右翼认为不平等是自由的自然结果。但左右翼在文化议题上也可能交叉：左翼在文化上更开放，右翼在文化上更保守。</p>
+          <p><strong>政治光谱的局限：</strong>简单的左右一维光谱无法捕捉复杂的政治立场。一个在经济上左翼但在文化上保守的人，应该放在哪里？这就是为什么政治学家引入了二维光谱：经济轴上左-右，社会/文化轴上威权-自由。</p>
+          <p><strong>现实案例：</strong>中国的政治光谱不同于西方。中国的主流政治话语强调"中国特色社会主义"——既不同于西方自由主义，也不同于传统社会主义。政治学中的"威权韧性"研究试图解释：为什么一些威权政体能长期稳定，而另一些会被推翻？答案涉及制度吸纳、经济绩效、意识形态、精英联盟等多个因素。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>2.1 政治的词源与定义</li>
+          <li>2.2 国家：从城邦到民族国家</li>
+          <li>2.3 权力：政治的核心对象</li>
+          <li>2.4 政治与暴力的关系</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>polis 与 civitas</strong>：城邦与公民社会</li>
+          <li><strong>主权</strong>：国家的最高权力</li>
+          <li><strong>合法垄断暴力</strong>：韦伯的国家定义</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>政治的词源（前5世纪）</strong>：政治（politics）来自希腊语 polis（城邦）；亚里士多德在《政治学》中提出“人是政治的动物”——人只有在城邦中才能实现完整的人性。</p>
+          <p><strong>从城邦到国家（15–17世纪）</strong>：布丹（1576）提出主权概念——国家拥有最高的、不可分割的权力；《威斯特伐利亚和约》（1648）确立主权国家体系；民族国家成为现代政治的基本单位。</p>
+          <p><strong>权力的分析（16–20世纪）</strong>：马基雅维利直面权力的获取与保持；霍布斯把权力视为“获得未来利益的当前手段”；韦伯区分权力（Power）与权威（Authority），提出合法性的三种类型；福柯把权力分析扩展到知识、话语与规训。</p>
+          <p><strong>政治与暴力（20世纪）</strong>：韦伯定义国家为“合法垄断暴力的组织”；施米特认为政治的本质是“敌友之分”；阿伦特区分“权力”与“暴力”——权力来自共同行动，暴力则相反。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>亚里士多德（前384–前322）</strong>——人是政治的动物。</p>
+        <p><strong>布丹（1530–1596）</strong>——主权概念。</p>
+        <p><strong>马基雅维利（1469–1527）</strong>——政治现实主义。</p>
+        <p><strong>霍布斯（1588–1679）</strong>——权力与自然状态。</p>
+        <p><strong>韦伯（1864–1920）</strong>——国家、合法性、官僚制。</p>
+        <p><strong>施米特（1888–1985）</strong>——敌友之分。</p>
+        <p><strong>阿伦特（1906–1975）</strong>——权力与暴力之辨。</p>
+        <p><strong>福柯（1926–1984）</strong>——权力与知识。</p>
+        <figure class="diagram">
+          <figcaption>图 3 · 政治概念结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["政治的概念"] --> A["城邦<br>亚里士多德 · 公民共同生活"]
+  ROOT --> B["国家<br>主权 · 民族国家"]
+  ROOT --> C["权力<br>马基雅维利 · 韦伯 · 福柯"]
+  ROOT --> D["暴力<br>合法垄断 · 敌友之分"]
+  classDef rootNode fill:#B91C1C,color:#fff,stroke:#B91C1C;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：政治概念对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>思想家</th><th>核心主张</th><th>关键概念</th><th>历史地位</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>亚里士多德</strong></td><td>人是政治的动物</td><td>城邦 · 公民</td><td>政治学奠基者</td></tr>
+              <tr><td><strong>马基雅维利</strong></td><td>政治是权力的技艺</td><td>君主 · 权术</td><td>政治现实主义之父</td></tr>
+              <tr><td><strong>霍布斯</strong></td><td>自然状态是战争状态</td><td>利维坦 · 主权</td><td>近代政治哲学奠基</td></tr>
+              <tr><td><strong>韦伯</strong></td><td>国家合法垄断暴力</td><td>合法性 · 官僚制</td><td>现代国家理论</td></tr>
+              <tr><td><strong>施米特</strong></td><td>政治的本质是敌友</td><td>决断 · 例外状态</td><td>政治神学</td></tr>
+              <tr><td><strong>阿伦特</strong></td><td>权力来自共同行动</td><td>公共领域</td><td>共和主义复兴</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">亚里士多德 · 前384–前322</div>
+            <blockquote>人是政治的动物。<cite>——《政治学》</cite></blockquote>
+            <div class="legacy-who">马基雅维利 · 1469–1527</div>
+            <blockquote>目的总是为手段辩护。<cite>——《君主论》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">霍布斯 · 1588–1679</div>
+            <blockquote>人对人是狼。<cite>——《利维坦》</cite></blockquote>
+            <div class="legacy-who">韦伯 · 1864–1920</div>
+            <blockquote>政治是尽可能强大而缓慢地钻透厚木板。<cite>——《以政治为业》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="regime">
+        <h2><span class="chapno">第三章</span>政体类型：从亚里士多德到孟德斯鸠</h2>
+        <p>政体是政治权力的组织形式。亚里士多德按“谁统治”与“为谁统治”把政体分为六种：君主制、贵族制、共和制及其蜕变形态僭主制、寡头制、民主制。孟德斯鸠进一步区分共和、君主、专制三种政体，并提出三权分立作为自由的政治保障。本章的核心洞见是：<strong>政体没有放之四海而皆准的唯一答案，但好的政体必须平衡权力、保障自由</strong>——从雅典民主到现代代议制，人类一直在寻找最适合自己的政体形式。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 政治光谱：从极左到极右的意识形态分布</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  FARL["极左\n共产主义\n推翻资本主义\n消灭私有制"] --> L["左翼\n社会主义\n社会民主主义\n经济平等"]
+  L --> C["中间\n自由主义\n个人自由\n市场经济\n有限政府"]
+  C --> R["右翼\n保守主义\n传统秩序\n渐进改革"]
+  R --> FARR["极右\n法西斯主义\n民族至上\n专制统治"]
+  FARL ---|"经济平等"| L
+  L ---|"机会平等"| C
+  C ---|"秩序与稳定"| R
+  R ---|"民族优越"| FARR
+  classDef farl fill:#DC2626,color:#fff,stroke:#DC2626;
+  classDef l fill:#F97316,color:#fff,stroke:#F97316;
+  classDef c fill:#22C55E,color:#fff,stroke:#22C55E;
+  classDef r fill:#3B82F6,color:#fff,stroke:#3B82F6;
+  classDef farr fill:#7C3AED,color:#fff,stroke:#7C3AED;
+  class FARL farl;
+  class L l;
+  class C c;
+  class R r;
+  class FARR farr;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：政治光谱</strong>——"左"和"右"的区分源自1789年法国大革命，当时支持国王的坐在右边，支持革命的坐在左边。</p>
+          <p><strong>左翼 vs 右翼：</strong>左翼更关注经济平等（福利国家、累进税），右翼更关注个人自由（低税收、小政府）。左翼认为不平等是不公正的，右翼认为不平等是自由的自然结果。但左右翼在文化议题上也可能交叉：左翼在文化上更开放，右翼在文化上更保守。</p>
+          <p><strong>政治光谱的局限：</strong>简单的左右一维光谱无法捕捉复杂的政治立场。一个在经济上左翼但在文化上保守的人，应该放在哪里？这就是为什么政治学家引入了二维光谱：经济轴上左-右，社会/文化轴上威权-自由。</p>
+          <p><strong>现实案例：</strong>中国的政治光谱不同于西方。中国的主流政治话语强调"中国特色社会主义"——既不同于西方自由主义，也不同于传统社会主义。政治学中的"威权韧性"研究试图解释：为什么一些威权政体能长期稳定，而另一些会被推翻？答案涉及制度吸纳、经济绩效、意识形态、精英联盟等多个因素。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>3.1 亚里士多德的政体分类</li>
+          <li>3.2 波利比乌斯与混合政体</li>
+          <li>3.3 孟德斯鸠的三权分立</li>
+          <li>3.4 现代政体：民主、威权与混合</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>六种政体</strong>：亚里士多德的分类</li>
+          <li><strong>混合政体</strong>：罗马共和的智慧</li>
+          <li><strong>三权分立</strong>：孟德斯鸠的制度设计</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>亚里士多德的政体分类（前4世纪）</strong>：亚里士多德按统治者人数与统治目的，把政体分为六种——正宗政体（君主制、贵族制、共和制）与蜕变政体（僭主制、寡头制、民主制）；他认为混合政体最稳定。</p>
+          <p><strong>混合政体（前2世纪）</strong>：波利比乌斯分析罗马共和国的成功，认为其混合了执政官（君主）、元老院（贵族）与公民大会（民主）三种要素，形成制衡。</p>
+          <p><strong>孟德斯鸠的三权分立（1748）</strong>：孟德斯鸠在《论法的精神》中区分共和、君主、专制三种政体，主张立法、行政、司法三权分立并相互制衡，以保障政治自由；这一思想深刻影响了美国宪法。</p>
+          <p><strong>现代政体（20世纪–）</strong>：民主政体（总统制、议会制、半总统制）、威权政体与极权政体；亨廷顿以“第三波民主化”描述20世纪后期的民主浪潮；当代政治学关注民主的巩固、衰退与混合政体。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>亚里士多德（前384–前322）</strong>——六种政体分类。</p>
+        <p><strong>波利比乌斯（约前200–前118）</strong>——混合政体。</p>
+        <p><strong>孟德斯鸠（1689–1755）</strong>——三权分立。</p>
+        <p><strong>托克维尔（1805–1859）</strong>——民主的利弊。</p>
+        <p><strong>亨廷顿（1927–2008）</strong>——第三波民主化。</p>
+        <figure class="diagram">
+          <figcaption>图 4 · 政体类型结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["政体类型"] --> A["亚里士多德<br>六种政体 · 混合政体"]
+  ROOT --> B["波利比乌斯<br>罗马混合政体"]
+  ROOT --> C["孟德斯鸠<br>三权分立 · 政体三分类"]
+  ROOT --> D["现代政体<br>民主 · 威权 · 混合"]
+  classDef rootNode fill:#B91C1C,color:#fff,stroke:#B91C1C;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：政体类型对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>政体</th><th>统治者</th><th>核心特征</th><th>代表思想家</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>君主制</strong></td><td>一人</td><td>为公共利益统治</td><td>亚里士多德</td></tr>
+              <tr><td><strong>贵族制</strong></td><td>少数</td><td>为公共利益统治</td><td>亚里士多德</td></tr>
+              <tr><td><strong>共和制</strong></td><td>多数</td><td>为公共利益统治</td><td>亚里士多德</td></tr>
+              <tr><td><strong>僭主制</strong></td><td>一人</td><td>为私利统治</td><td>亚里士多德</td></tr>
+              <tr><td><strong>寡头制</strong></td><td>少数</td><td>为私利统治</td><td>亚里士多德</td></tr>
+              <tr><td><strong>民主制</strong></td><td>多数</td><td>为私利统治（古典含义）</td><td>亚里士多德</td></tr>
+              <tr><td><strong>混合政体</strong></td><td>混合</td><td>三要素制衡</td><td>波利比乌斯</td></tr>
+              <tr><td><strong>三权分立</strong></td><td>分权</td><td>立法·行政·司法制衡</td><td>孟德斯鸠</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">亚里士多德 · 前384–前322</div>
+            <blockquote>法治优于人治。<cite>——《政治学》</cite></blockquote>
+            <div class="legacy-who">波利比乌斯 · 约前200–前118</div>
+            <blockquote>混合政体是最稳定的政体。<cite>——《历史》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">孟德斯鸠 · 1689–1755</div>
+            <blockquote>要防止滥用权力，就必须以权力约束权力。<cite>——《论法的精神》</cite></blockquote>
+            <div class="legacy-who">托克维尔 · 1805–1859</div>
+            <blockquote>民主的多数也可能成为暴政。<cite>——《论美国的民主》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="legitimacy">
+        <h2><span class="chapno">第四章</span>权力与合法性：从马基雅维利到韦伯</h2>
+        <p>权力需要合法性——被统治者的自愿服从。马基雅维利直面权力的现实，主张君主既要有狮子般的勇猛，也要有狐狸般的狡猾；霍布斯以社会契约论证绝对主权的必要；洛克与卢梭则主张主权在民、政府须经同意。韦伯系统区分了合法性的三种类型：传统型、魅力型与法理型。本章的核心洞见是：<strong>权力若没有合法性，就只是赤裸的暴力；合法性是权力转化为权威的桥梁</strong>——理解合法性，就是理解人们为什么愿意服从。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 政治光谱：从极左到极右的意识形态分布</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  FARL["极左\n共产主义\n推翻资本主义\n消灭私有制"] --> L["左翼\n社会主义\n社会民主主义\n经济平等"]
+  L --> C["中间\n自由主义\n个人自由\n市场经济\n有限政府"]
+  C --> R["右翼\n保守主义\n传统秩序\n渐进改革"]
+  R --> FARR["极右\n法西斯主义\n民族至上\n专制统治"]
+  FARL ---|"经济平等"| L
+  L ---|"机会平等"| C
+  C ---|"秩序与稳定"| R
+  R ---|"民族优越"| FARR
+  classDef farl fill:#DC2626,color:#fff,stroke:#DC2626;
+  classDef l fill:#F97316,color:#fff,stroke:#F97316;
+  classDef c fill:#22C55E,color:#fff,stroke:#22C55E;
+  classDef r fill:#3B82F6,color:#fff,stroke:#3B82F6;
+  classDef farr fill:#7C3AED,color:#fff,stroke:#7C3AED;
+  class FARL farl;
+  class L l;
+  class C c;
+  class R r;
+  class FARR farr;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：政治光谱</strong>——"左"和"右"的区分源自1789年法国大革命，当时支持国王的坐在右边，支持革命的坐在左边。</p>
+          <p><strong>左翼 vs 右翼：</strong>左翼更关注经济平等（福利国家、累进税），右翼更关注个人自由（低税收、小政府）。左翼认为不平等是不公正的，右翼认为不平等是自由的自然结果。但左右翼在文化议题上也可能交叉：左翼在文化上更开放，右翼在文化上更保守。</p>
+          <p><strong>政治光谱的局限：</strong>简单的左右一维光谱无法捕捉复杂的政治立场。一个在经济上左翼但在文化上保守的人，应该放在哪里？这就是为什么政治学家引入了二维光谱：经济轴上左-右，社会/文化轴上威权-自由。</p>
+          <p><strong>现实案例：</strong>中国的政治光谱不同于西方。中国的主流政治话语强调"中国特色社会主义"——既不同于西方自由主义，也不同于传统社会主义。政治学中的"威权韧性"研究试图解释：为什么一些威权政体能长期稳定，而另一些会被推翻？答案涉及制度吸纳、经济绩效、意识形态、精英联盟等多个因素。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>4.1 马基雅维利与政治现实主义</li>
+          <li>4.2 社会契约论：从霍布斯到卢梭</li>
+          <li>4.3 韦伯的三种合法性类型</li>
+          <li>4.4 合法性与现代国家</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>合法性</strong>：权力被自愿服从的根据</li>
+          <li><strong>社会契约</strong>：合法性的近代论证</li>
+          <li><strong>三种合法性</strong>：传统型 · 魅力型 · 法理型</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>马基雅维利（1513）</strong>：马基雅维利《君主论》直面权力的现实逻辑——君主应同时具备“狮子的勇猛”与“狐狸的狡猾”；他主张政治应摆脱道德说教，以效果论成败，被视为政治现实主义的奠基人。</p>
+          <p><strong>社会契约论（17–18世纪）</strong>：霍布斯《利维坦》（1651）认为自然状态是“一切人对一切人的战争”，人们通过契约把权力交给主权者；洛克主张政府权力来自被统治者的同意，人民有权反抗暴政；卢梭《社会契约论》（1762）提出“人民主权”，公意是合法性的最终来源。</p>
+          <p><strong>韦伯的三种合法性（1919）</strong>：韦伯在《以政治为业》中区分合法性的三种类型——传统型（基于古老习俗，如世袭君主）、魅力型（基于领袖的个人魅力，如革命领袖）、法理型（基于理性规则与法律，如现代官僚国家）；现代国家以法理型合法性为基础。</p>
+          <p><strong>合法性危机（20世纪–）</strong>：哈贝马斯提出“合法性危机”——晚期资本主义国家面临系统与生活世界的冲突；当代政治学关注民主的合法性、民粹主义对既有秩序的挑战，以及全球治理的合法性赤字。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>马基雅维利（1469–1527）</strong>——《君主论》、政治现实主义。</p>
+        <p><strong>霍布斯（1588–1679）</strong>——《利维坦》、绝对主权。</p>
+        <p><strong>洛克（1632–1704）</strong>——有限政府、同意。</p>
+        <p><strong>卢梭（1712–1778）</strong>——人民主权、公意。</p>
+        <p><strong>韦伯（1864–1920）</strong>——三种合法性类型。</p>
+        <p><strong>哈贝马斯（1929–）</strong>——合法性危机。</p>
+        <figure class="diagram">
+          <figcaption>图 5 · 权力与合法性结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["权力与合法性"] --> A["马基雅维利<br>权力现实 · 狮子与狐狸"]
+  ROOT --> B["社会契约<br>霍布斯 · 洛克 · 卢梭"]
+  ROOT --> C["韦伯<br>传统 · 魅力 · 法理"]
+  ROOT --> D["合法性危机<br>哈贝马斯 · 当代挑战"]
+  classDef rootNode fill:#B91C1C,color:#fff,stroke:#B91C1C;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：合法性理论对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>思想家</th><th>合法性来源</th><th>核心主张</th><th>关键词</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>马基雅维利</strong></td><td>权力与效果</td><td>政治应直面现实</td><td>现实主义</td></tr>
+              <tr><td><strong>霍布斯</strong></td><td>契约与主权</td><td>绝对主权保障和平</td><td>利维坦</td></tr>
+              <tr><td><strong>洛克</strong></td><td>被统治者的同意</td><td>有限政府 · 反抗权</td><td>同意</td></tr>
+              <tr><td><strong>卢梭</strong></td><td>公意</td><td>人民主权</td><td>公意</td></tr>
+              <tr><td><strong>韦伯</strong></td><td>传统 · 魅力 · 法理</td><td>现代国家以法理为基础</td><td>合法性类型</td></tr>
+              <tr><td><strong>哈贝马斯</strong></td><td>交往理性</td><td>合法性危机</td><td>公共领域</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">马基雅维利 · 1469–1527</div>
+            <blockquote>君主必须同时是狮子和狐狸。<cite>——《君主论》</cite></blockquote>
+            <div class="legacy-who">霍布斯 · 1588–1679</div>
+            <blockquote>没有剑的契约只是一纸空文。<cite>——《利维坦》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">卢梭 · 1712–1778</div>
+            <blockquote>人生而自由，却无往不在枷锁之中。<cite>——《社会契约论》</cite></blockquote>
+            <div class="legacy-who">韦伯 · 1864–1920</div>
+            <blockquote>政治是分享权力的斗争。<cite>——《以政治为业》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="democracy">
+        <h2><span class="chapno">第五章</span>民主与治理：从雅典到现代</h2>
+        <p>民主是“人民的统治”。雅典的公民大会让公民直接参与决策，近代代议制让民主适用于广土众民，现代民主国家以选举、政党与法治为支柱。但民主也面临挑战：多数暴政、参与冷漠、金钱政治、民粹主义。治理（governance）的概念把视野从“政府统治”扩展到“多元主体共治”——政府、市场、社会共同参与公共事务。本章的核心洞见是：<strong>民主不仅是选举程序，更是一种生活方式与治理艺术</strong>——好的民主需要参与、制衡与公共精神。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 政治光谱：从极左到极右的意识形态分布</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  FARL["极左\n共产主义\n推翻资本主义\n消灭私有制"] --> L["左翼\n社会主义\n社会民主主义\n经济平等"]
+  L --> C["中间\n自由主义\n个人自由\n市场经济\n有限政府"]
+  C --> R["右翼\n保守主义\n传统秩序\n渐进改革"]
+  R --> FARR["极右\n法西斯主义\n民族至上\n专制统治"]
+  FARL ---|"经济平等"| L
+  L ---|"机会平等"| C
+  C ---|"秩序与稳定"| R
+  R ---|"民族优越"| FARR
+  classDef farl fill:#DC2626,color:#fff,stroke:#DC2626;
+  classDef l fill:#F97316,color:#fff,stroke:#F97316;
+  classDef c fill:#22C55E,color:#fff,stroke:#22C55E;
+  classDef r fill:#3B82F6,color:#fff,stroke:#3B82F6;
+  classDef farr fill:#7C3AED,color:#fff,stroke:#7C3AED;
+  class FARL farl;
+  class L l;
+  class C c;
+  class R r;
+  class FARR farr;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：政治光谱</strong>——"左"和"右"的区分源自1789年法国大革命，当时支持国王的坐在右边，支持革命的坐在左边。</p>
+          <p><strong>左翼 vs 右翼：</strong>左翼更关注经济平等（福利国家、累进税），右翼更关注个人自由（低税收、小政府）。左翼认为不平等是不公正的，右翼认为不平等是自由的自然结果。但左右翼在文化议题上也可能交叉：左翼在文化上更开放，右翼在文化上更保守。</p>
+          <p><strong>政治光谱的局限：</strong>简单的左右一维光谱无法捕捉复杂的政治立场。一个在经济上左翼但在文化上保守的人，应该放在哪里？这就是为什么政治学家引入了二维光谱：经济轴上左-右，社会/文化轴上威权-自由。</p>
+          <p><strong>现实案例：</strong>中国的政治光谱不同于西方。中国的主流政治话语强调"中国特色社会主义"——既不同于西方自由主义，也不同于传统社会主义。政治学中的"威权韧性"研究试图解释：为什么一些威权政体能长期稳定，而另一些会被推翻？答案涉及制度吸纳、经济绩效、意识形态、精英联盟等多个因素。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>5.1 雅典民主与直接民主</li>
+          <li>5.2 代议制民主与现代国家</li>
+          <li>5.3 民主的挑战：多数暴政与民粹主义</li>
+          <li>5.4 治理：从统治到共治</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>直接民主</strong>：雅典公民大会</li>
+          <li><strong>代议制</strong>：现代民主的主要形式</li>
+          <li><strong>治理</strong>：多元主体共治</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>雅典民主（前5世纪）</strong>：雅典的公民大会、五百人议事会与陪审法庭构成直接民主；伯里克利称雅典民主为“全希腊的学校”；但雅典民主也以“多数暴政”处死苏格拉底，引发对民主的反思。</p>
+          <p><strong>代议制民主（18–19世纪）</strong>：美国制宪会议（1787）建立代议制共和；托克维尔《论美国的民主》（1835）分析民主在美国的实践与乡镇自治；密尔《代议制政府》（1861）为代议制辩护，主张扩大参与。</p>
+          <p><strong>民主的扩展（20世纪）</strong>：普选权逐步扩展——妇女选举权、民权运动；亨廷顿描述“第三波民主化”（1974–1990年代）；民主从西方扩展到全球。</p>
+          <p><strong>治理转型（20世纪中–）</strong>：治理（governance）概念兴起——公共事务由多元主体共同参与；新公共管理运动引入市场机制；数字治理、参与式预算、协商民主拓展了民主的形式；当代政治学直面民主衰退与民粹主义。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>伯里克利（约前495–前429）</strong>——雅典民主的黄金时代。</p>
+        <p><strong>托克维尔（1805–1859）</strong>——《论美国的民主》。</p>
+        <p><strong>密尔（1806–1873）</strong>——《代议制政府》、自由论。</p>
+        <p><strong>熊彼特（1883–1950）</strong>——精英民主论。</p>
+        <p><strong>达尔（1915–2014）</strong>——多元民主。</p>
+        <p><strong>亨廷顿（1927–2008）</strong>——第三波民主化。</p>
+        <figure class="diagram">
+          <figcaption>图 6 · 民主与治理结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["民主与治理"] --> A["雅典民主<br>直接民主 · 公民大会"]
+  ROOT --> B["代议制<br>选举 · 政党 · 法治"]
+  ROOT --> C["民主挑战<br>多数暴政 · 民粹主义"]
+  ROOT --> D["治理<br>多元共治 · 协商民主"]
+  classDef rootNode fill:#B91C1C,color:#fff,stroke:#B91C1C;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：民主理论对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>理论</th><th>核心主张</th><th>代表人物</th><th>关键词</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>直接民主</strong></td><td>公民直接参与决策</td><td>伯里克利 · 雅典</td><td>公民大会</td></tr>
+              <tr><td><strong>代议制民主</strong></td><td>人民通过代表行使权力</td><td>密尔 · 美国制宪者</td><td>选举 · 代表</td></tr>
+              <tr><td><strong>精英民主</strong></td><td>民主是选择精英的程序</td><td>熊彼特</td><td>竞争性选举</td></tr>
+              <tr><td><strong>多元民主</strong></td><td>权力分散于多元集团</td><td>达尔</td><td>多头政体</td></tr>
+              <tr><td><strong>协商民主</strong></td><td>通过对话达成共识</td><td>哈贝马斯</td><td>交往理性</td></tr>
+              <tr><td><strong>治理</strong></td><td>多元主体共治</td><td>罗西瑙 · 全球治理</td><td>共治 · 网络</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">伯里克利 · 约前495–前429</div>
+            <blockquote>我们的制度被称为民主，因为权力掌握在多数人手中。<cite>——《伯罗奔尼撒战争史》</cite></blockquote>
+            <div class="legacy-who">托克维尔 · 1805–1859</div>
+            <blockquote>民主的多数也可能成为暴政。<cite>——《论美国的民主》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">密尔 · 1806–1873</div>
+            <blockquote>唯一配得上自由这个名称的，是以自己的方式追求自己的善。<cite>——《论自由》</cite></blockquote>
+            <div class="legacy-who">达尔 · 1915–2014</div>
+            <blockquote>民主是一种把权力分散给许多人的制度。<cite>——《多头政体》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="ideology">
+        <h2><span class="chapno">第六章</span>意识形态与政治文化：从自由主义到社群主义</h2>
+        <p>意识形态是政治行动的观念体系——它告诉人们世界应当如何、权力应当如何组织。自由主义主张个人自由与有限政府，社会主义主张平等与公有制，保守主义珍视传统与秩序，民族主义强调共同体认同，社群主义批评自由主义的原子化个人。政治文化则是公民对政治的态度与价值观——阿尔蒙德区分了参与型、臣民型与狭隘型政治文化。本章的核心洞见是：<strong>政治不仅由制度塑造，也由观念与文化塑造</strong>——理解意识形态与政治文化，就是理解政治行为背后的观念世界。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 政治光谱：从极左到极右的意识形态分布</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  FARL["极左\n共产主义\n推翻资本主义\n消灭私有制"] --> L["左翼\n社会主义\n社会民主主义\n经济平等"]
+  L --> C["中间\n自由主义\n个人自由\n市场经济\n有限政府"]
+  C --> R["右翼\n保守主义\n传统秩序\n渐进改革"]
+  R --> FARR["极右\n法西斯主义\n民族至上\n专制统治"]
+  FARL ---|"经济平等"| L
+  L ---|"机会平等"| C
+  C ---|"秩序与稳定"| R
+  R ---|"民族优越"| FARR
+  classDef farl fill:#DC2626,color:#fff,stroke:#DC2626;
+  classDef l fill:#F97316,color:#fff,stroke:#F97316;
+  classDef c fill:#22C55E,color:#fff,stroke:#22C55E;
+  classDef r fill:#3B82F6,color:#fff,stroke:#3B82F6;
+  classDef farr fill:#7C3AED,color:#fff,stroke:#7C3AED;
+  class FARL farl;
+  class L l;
+  class C c;
+  class R r;
+  class FARR farr;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：政治光谱</strong>——"左"和"右"的区分源自1789年法国大革命，当时支持国王的坐在右边，支持革命的坐在左边。</p>
+          <p><strong>左翼 vs 右翼：</strong>左翼更关注经济平等（福利国家、累进税），右翼更关注个人自由（低税收、小政府）。左翼认为不平等是不公正的，右翼认为不平等是自由的自然结果。但左右翼在文化议题上也可能交叉：左翼在文化上更开放，右翼在文化上更保守。</p>
+          <p><strong>政治光谱的局限：</strong>简单的左右一维光谱无法捕捉复杂的政治立场。一个在经济上左翼但在文化上保守的人，应该放在哪里？这就是为什么政治学家引入了二维光谱：经济轴上左-右，社会/文化轴上威权-自由。</p>
+          <p><strong>现实案例：</strong>中国的政治光谱不同于西方。中国的主流政治话语强调"中国特色社会主义"——既不同于西方自由主义，也不同于传统社会主义。政治学中的"威权韧性"研究试图解释：为什么一些威权政体能长期稳定，而另一些会被推翻？答案涉及制度吸纳、经济绩效、意识形态、精英联盟等多个因素。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>6.1 意识形态的概念与功能</li>
+          <li>6.2 主要意识形态：自由主义、社会主义、保守主义</li>
+          <li>6.3 民族主义与社群主义</li>
+          <li>6.4 政治文化：从阿尔蒙德到英格尔哈特</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>意识形态</strong>：政治行动的观念体系</li>
+          <li><strong>政治文化</strong>：公民的政治态度与价值观</li>
+          <li><strong>社群主义</strong>：对自由主义的批评</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>意识形态的概念（18–19世纪）</strong>：特拉西（1796）首创“意识形态”一词，意为“观念的科学”；马克思把意识形态理解为阶级利益的观念表达；曼海姆区分意识形态与乌托邦。</p>
+          <p><strong>主要意识形态（18–20世纪）</strong>：自由主义（洛克、斯密、密尔）主张个人自由与有限政府；社会主义（圣西门、马克思）主张平等与公有制；保守主义（柏克）珍视传统、秩序与渐进改革；无政府主义反对一切国家。</p>
+          <p><strong>民族主义与社群主义（19–20世纪）</strong>：民族主义主张民族共同体是政治合法性的基础；安德森称民族为“想象的共同体”；社群主义（桑德尔、麦金太尔、泰勒）批评自由主义的原子化个人，主张共同体与共同善优先。</p>
+          <p><strong>政治文化研究（20世纪中–）</strong>：阿尔蒙德与维巴《公民文化》（1963）比较五国的政治文化，区分参与型、臣民型与狭隘型；英格尔哈特提出“后物质主义价值观”转向；当代政治文化研究关注信任、极化与民粹主义。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>柏克（1729–1797）</strong>——保守主义奠基。</p>
+        <p><strong>马克思（1818–1883）</strong>——意识形态批判。</p>
+        <p><strong>曼海姆（1893–1947）</strong>——《意识形态与乌托邦》。</p>
+        <p><strong>阿尔蒙德（1911–2002）</strong>——政治文化研究。</p>
+        <p><strong>安德森（1936–）</strong>——想象的共同体。</p>
+        <p><strong>桑德尔（1953–）</strong>——社群主义。</p>
+        <p><strong>英格尔哈特（1941–）</strong>——后物质主义价值观。</p>
+        <figure class="diagram">
+          <figcaption>图 7 · 意识形态与政治文化结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["意识形态与政治文化"] --> A["自由主义<br>个人自由 · 有限政府"]
+  ROOT --> B["社会主义<br>平等 · 公有制"]
+  ROOT --> C["保守主义<br>传统 · 秩序"]
+  ROOT --> D["民族主义与社群主义<br>共同体 · 共同善"]
+  ROOT --> E["政治文化<br>阿尔蒙德 · 英格尔哈特"]
+  classDef rootNode fill:#B91C1C,color:#fff,stroke:#B91C1C;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：意识形态对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>意识形态</th><th>核心主张</th><th>代表人物</th><th>关键词</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>自由主义</strong></td><td>个人自由 · 有限政府</td><td>洛克 · 密尔</td><td>自由 · 权利</td></tr>
+              <tr><td><strong>社会主义</strong></td><td>平等 · 公有制</td><td>马克思 · 圣西门</td><td>平等 · 阶级</td></tr>
+              <tr><td><strong>保守主义</strong></td><td>传统 · 秩序 · 渐进</td><td>柏克</td><td>传统 · 权威</td></tr>
+              <tr><td><strong>民族主义</strong></td><td>民族共同体优先</td><td>安德森</td><td>想象的共同体</td></tr>
+              <tr><td><strong>社群主义</strong></td><td>共同善优先</td><td>桑德尔 · 麦金太尔</td><td>共同体 · 德性</td></tr>
+              <tr><td><strong>无政府主义</strong></td><td>反对国家</td><td>巴枯宁 · 克鲁泡特金</td><td>自治 · 互助</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">柏克 · 1729–1797</div>
+            <blockquote>社会是活着的人、死去的人与未出生者之间的契约。<cite>——《法国革命论》</cite></blockquote>
+            <div class="legacy-who">马克思 · 1818–1883</div>
+            <blockquote>不是人们的意识决定人们的存在，而是人们的社会存在决定人们的意识。<cite>——《政治经济学批判》序言</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">安德森 · 1936–</div>
+            <blockquote>民族是一个想象的共同体。<cite>——《想象的共同体》</cite></blockquote>
+            <div class="legacy-who">桑德尔 · 1953–</div>
+            <blockquote>我们不是无牵无挂的自我，而是被共同体塑造的自我。<cite>——《自由主义与正义的局限》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="summary">
+        <h2><span class="chapno">第七章</span>总结提炼：政治学的启示</h2>
+        <p>回顾从城邦到现代国家，可以提炼出政治学的核心规律：<strong>权力之实、秩序之基、政体之辨、合法性之要、参与之度、治理之效</strong>。政治学不提供“完美社会”的蓝图，它提供的是“如何组织共同生活”的清醒智慧——它直面权力的现实，追问秩序的根据，比较政体的优劣，衡量参与的边界。理解政治学，就是理解人类如何组织权力、分配利益、实现秩序，也是理解我们作为公民的责任。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 政治光谱：从极左到极右的意识形态分布</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  FARL["极左\n共产主义\n推翻资本主义\n消灭私有制"] --> L["左翼\n社会主义\n社会民主主义\n经济平等"]
+  L --> C["中间\n自由主义\n个人自由\n市场经济\n有限政府"]
+  C --> R["右翼\n保守主义\n传统秩序\n渐进改革"]
+  R --> FARR["极右\n法西斯主义\n民族至上\n专制统治"]
+  FARL ---|"经济平等"| L
+  L ---|"机会平等"| C
+  C ---|"秩序与稳定"| R
+  R ---|"民族优越"| FARR
+  classDef farl fill:#DC2626,color:#fff,stroke:#DC2626;
+  classDef l fill:#F97316,color:#fff,stroke:#F97316;
+  classDef c fill:#22C55E,color:#fff,stroke:#22C55E;
+  classDef r fill:#3B82F6,color:#fff,stroke:#3B82F6;
+  classDef farr fill:#7C3AED,color:#fff,stroke:#7C3AED;
+  class FARL farl;
+  class L l;
+  class C c;
+  class R r;
+  class FARR farr;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：政治光谱</strong>——"左"和"右"的区分源自1789年法国大革命，当时支持国王的坐在右边，支持革命的坐在左边。</p>
+          <p><strong>左翼 vs 右翼：</strong>左翼更关注经济平等（福利国家、累进税），右翼更关注个人自由（低税收、小政府）。左翼认为不平等是不公正的，右翼认为不平等是自由的自然结果。但左右翼在文化议题上也可能交叉：左翼在文化上更开放，右翼在文化上更保守。</p>
+          <p><strong>政治光谱的局限：</strong>简单的左右一维光谱无法捕捉复杂的政治立场。一个在经济上左翼但在文化上保守的人，应该放在哪里？这就是为什么政治学家引入了二维光谱：经济轴上左-右，社会/文化轴上威权-自由。</p>
+          <p><strong>现实案例：</strong>中国的政治光谱不同于西方。中国的主流政治话语强调"中国特色社会主义"——既不同于西方自由主义，也不同于传统社会主义。政治学中的"威权韧性"研究试图解释：为什么一些威权政体能长期稳定，而另一些会被推翻？答案涉及制度吸纳、经济绩效、意识形态、精英联盟等多个因素。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>7.1 政治学六大规律回顾</li>
+          <li>7.2 政治学与社会、法律、伦理的关系</li>
+          <li>7.3 政治精神的当代意义</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>权力之实</strong>：政治的核心是权力</li>
+          <li><strong>秩序之基</strong>：政治追求共同生活的秩序</li>
+          <li><strong>政体之辨</strong>：比较政体的优劣</li>
+          <li><strong>合法性之要</strong>：权力需要自愿服从的根据</li>
+          <li><strong>参与之度</strong>：公民参与的边界</li>
+          <li><strong>治理之效</strong>：多元主体共治</li>
+        </ul>
+        <figure class="diagram">
+          <figcaption>图 8 · 政治学六大规律图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["政治学六大规律"] --> A["权力之实<br>政治的核心是权力"]
+  ROOT --> B["秩序之基<br>共同生活的秩序"]
+  ROOT --> C["政体之辨<br>比较政体优劣"]
+  ROOT --> D["合法性之要<br>权力需要自愿服从"]
+  ROOT --> E["参与之度<br>公民参与的边界"]
+  ROOT --> F["治理之效<br>多元主体共治"]
+  classDef rootNode fill:#B91C1C,color:#fff,stroke:#B91C1C;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <div class="history">
+          <span class="history-title">六大规律的提炼</span>
+          <p><strong>权力之实</strong>：从马基雅维利到韦伯，政治学始终直面权力的现实。权力之实的启示是：政治不是道德说教，而是对权力如何产生、分配与行使的清醒认识——回避权力，就是放弃政治。</p>
+          <p><strong>秩序之基</strong>：从霍布斯的“利维坦”到现代国家，政治的根本目的是建立秩序。秩序之基的启示是：没有秩序的自由是混乱，没有自由的秩序是奴役——好的政治在二者之间寻找平衡。</p>
+          <p><strong>政体之辨</strong>：从亚里士多德到孟德斯鸠，政治学比较政体的优劣。政体之辨的启示是：政体没有唯一答案，但好的政体必须平衡权力、保障自由——制度设计是政治学的核心技艺。</p>
+          <p><strong>合法性之要</strong>：从社会契约到韦伯的三种合法性，政治学追问权力为何被服从。合法性之要的启示是：权力若没有合法性，就只是赤裸的暴力——合法性是权力转化为权威的桥梁。</p>
+          <p><strong>参与之度</strong>：从雅典民主到现代治理，政治学衡量公民参与的边界。参与之度的启示是：民主不仅是选举程序，更是一种生活方式——公民的参与塑造政治的品质。</p>
+          <p><strong>治理之效</strong>：从统治到治理，政治学关注公共事务的多元共治。治理之效的启示是：面对复杂问题，政府、市场与社会需要协同——好的治理是共同治理。</p>
+        </div>
+        <h3>对照表：政治学六大规律的对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>规律</th><th>核心命题</th><th>代表人物</th><th>思想启示</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>权力之实</strong></td><td>政治的核心是权力</td><td>马基雅维利 · 韦伯</td><td>回避权力就是放弃政治</td></tr>
+              <tr><td><strong>秩序之基</strong></td><td>政治追求共同生活的秩序</td><td>霍布斯 · 亚里士多德</td><td>在自由与秩序间平衡</td></tr>
+              <tr><td><strong>政体之辨</strong></td><td>比较政体的优劣</td><td>亚里士多德 · 孟德斯鸠</td><td>好的政体平衡权力保障自由</td></tr>
+              <tr><td><strong>合法性之要</strong></td><td>权力需要自愿服从的根据</td><td>洛克 · 卢梭 · 韦伯</td><td>合法性是权力转化为权威的桥梁</td></tr>
+              <tr><td><strong>参与之度</strong></td><td>公民参与的边界</td><td>托克维尔 · 密尔</td><td>参与塑造政治品质</td></tr>
+              <tr><td><strong>治理之效</strong></td><td>多元主体共治</td><td>罗西瑙 · 哈贝马斯</td><td>好的治理是共同治理</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <span class="callout-title">政治精神三句话</span>
+          第一，<strong>政治是不可避免的</strong>——只要人共同生活，就需要组织权力与分配利益；第二，<strong>政治需要清醒与审慎</strong>——它直面权力的现实，却不忘追问合法性与正义；第三，<strong>政治最终通向公民责任</strong>——好的政治需要好的公民，参与是公民的权利也是义务。与第三辑《马克思主义谱系》、第四辑《自由主义谱系》合观，本辑是政治学的通论框架，那两辑是左右两条政治长河；与第十一辑《法哲学思想谱系》对话，政治问“权力如何行使”，法律问“权力如何约束”。这正是思想图谱系列的意义——先理解社会如何运作，再理解政治如何组织，一个完整的人，二者缺一不可。
+        </div>
+      </section>
+    </main>
+
+    
+      <section class="sec">
+        <h2>关联辑目</h2>
+        <div class="explain">
+          <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+          <ul>
+          <li><a href="../西方哲学思想谱系/西方哲学思想谱系.html">西方哲学思想谱系</a></li>
+          <li><a href="../经济思想谱系/经济思想谱系.html">经济思想谱系·上篇</a></li>
+          <li><a href="../历史思想谱系/历史思想谱系.html">历史思想谱系</a></li>
+          <li><a href="../法哲学思想谱系/法哲学思想谱系.html">法学思想谱系</a></li>
+          <li><a href="../国际关系思想谱系/国际关系思想谱系.html">国际关系思想谱系</a></li>
+          <li><a href="../自由主义谱系/自由主义谱系.html">自由主义谱系</a></li>
+          <li><a href="../马克思主义谱系/马克思主义谱系.html">马克思主义谱系</a></li>
+          <li><a href="../政治基础概念1/政治基础概念1.html">政治基础概念速查</a></li>
+          </ul>
+        </div>
+      </section>
+<footer>
+      政治学通论 · 思想图谱系列第二十三辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-05
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'PingFang SC, Microsoft YaHei, Helvetica, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>

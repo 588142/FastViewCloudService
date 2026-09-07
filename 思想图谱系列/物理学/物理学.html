@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>物理学思想谱系 · 思想图谱系列第30辑</title>
+
+  <style>
+    :root {
+      --bg: #F5F7FA;
+      --bg2: #E8EDF4;
+      --ink: #1E2430;
+      --muted: #5C6475;
+      --rule: #D4DAE8;
+      --accent: #1A56DB;
+      --accent2: #B88A2E;
+      --font-head: 'Georgia', 'Songti SC', 'STSong', 'SimSun', serif;
+      --font: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+      --font-mono: 'Consolas', 'JetBrains Mono', 'Courier New', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .explain { background: #F8F6EF; border: 1px solid var(--rule); border-radius: 10px; padding: 1rem 1.2rem; margin: 0.6rem 0; }
+    .explain p { margin-bottom: 0.5rem; font-size: 0.9rem; }
+    .explain strong { color: var(--accent); }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .table-wrap { overflow-x: auto; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    table th, table td { border: 1px solid var(--rule); padding: 0.5rem 0.7rem; text-align: left; }
+    table th { background: var(--bg2); font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: 0.78rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<div class="shell">
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">物理学思想谱系</div>
+    <div class="brand-sub">思想图谱系列 · 第30辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+<li><a href="#intro">导言 · 物理学是什么</a></li>
+<li><a href="#ancient">第一章 · 古典物理学的奠基</a></li>
+<li><a href="#mechanics">第二章 · 牛顿力学与经典世界观</a></li>
+<li><a href="#thermo">第三章 · 热力学与统计物理</a></li>
+<li><a href="#em">第四章 · 电磁学与光</a></li>
+<li><a href="#relativity">第五章 · 相对论与宇宙观革命</a></li>
+<li><a href="#quantum">第六章 · 量子力学与当代前沿</a></li>
+<li><a href="#summary">第七章 · 总结：物理学的思维方式</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第30辑</span>
+        <span class="series-links">
+          <a href="../index.html">系列目录</a>
+          <a href="../科技与人工智能思想谱系/科技与人工智能思想谱系.html">← 上一辑 · 科技与人工智能思想谱系</a>
+          <a href="../天文学与宇宙学/天文学与宇宙学.html">下一辑 · 天文学与宇宙学 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>物理学思想谱系</h1>
+      <p class="subtitle">从经典力学到量子革命——物质、能量与宇宙规律的探索之路</p>
+      <p class="meta">作者：詹家杨 · 2026-09-06 · 8 章 · 15 张思维导图 · 27 个解释块 · 3 张对照表</p>
+    </header>
+
+<section class="sec" id="intro">
+        <h2><span class="chapno">导言 &middot; 物理学是什么</span></h2>
+<p><strong>核心追问</strong>：苹果为什么会落地？光是什么？时间能倒流吗？宇宙的终极命运如何？</p><p>物理学从古希腊的自然哲学出发，经过牛顿的科学革命、麦克斯韦的电磁统一、爱因斯坦的时空革命、量子力学的概率革命，到今天粒子物理标准模型和宇宙学的黄金时代，构成了一条壮阔的知识链条。</p>
+<figure class="diagram">
+          <figcaption>图 0 · 物理学大厦全景</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["物理学"] --> A["经典物理学<br>~1687-1900"]
+  ROOT --> B["近代物理学<br>1900-"]
+  A --> A1["牛顿力学<br>力·运动·引力"]
+  A --> A2["热力学与统计物理<br>温度·熵·概率"]
+  A --> A3["电磁学<br>电·磁·光"]
+  B --> B1["相对论<br>时空·引力·光速"]
+  B --> B2["量子力学<br>微观·概率·波粒"]
+  B --> B3["当代前沿<br>粒子·宇宙·复杂"]
+  A1 --> B1
+  A3 --> B2
+  classDef root fill:#1A56DB,color:#fff,stroke:#1A56DB;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 0 详解：</strong>物理学是研究物质、能量、空间、时间及其相互作用的自然科学。它试图回答一些最根本的问题：宇宙由什么构成？物质为何运动？时间有起点吗？
+
+物理学的独特之处在于它使用数学语言精确描述自然规律，并通过实验验证理论。从伽利略的自由落体实验到 LHC 的希格斯粒子发现，物理学的每一步进展都建立在理论与实验的对话之上。
+
+**学科分支：** 经典物理学包括牛顿力学、热力学和电磁学，处理日常尺度的现象；近代物理学包括相对论和量子力学，分别处理高速和微观世界；当代前沿则涵盖粒子物理、宇宙学和复杂系统。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">费曼 · 1918–1988</div>
+            <blockquote> physicists have the habit of taking the simplest example of any phenomenon and calling it 'physics', leaving the more complicated examples to become 'other sciences'. <cite>——《物理定律的本性》</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">爱因斯坦 · 1879–1955</div>
+            <blockquote>The most incomprehensible thing about the universe is that it is comprehensible.<cite>——爱因斯坦名言</cite></blockquote>
+          </div>
+</div>
+<figure class="diagram">
+          <figcaption>图 0a · 物理学基本概念树状图 —— 物理学的五支谱系与核心概念</figcaption>
+          <div style="overflow-x:auto;text-align:center;">
+          <svg viewBox="0 0 720 560" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;height:auto;">
+            <defs>
+              <marker id="arl" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+                <path d="M1 1 L7 4 L1 7 Z" fill="#52525B"/>
+              </marker>
+            </defs>
+            <rect x="0" y="0" width="720" height="560" fill="#F7F7F8" rx="8"/>
+            <rect x="260" y="12" width="200" height="40" rx="20" fill="#334155"/>
+            <text x="360" y="38" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700" font-family="system-ui,sans-serif">物理学</text>
+            <line x1="360" y1="52" x2="360" y2="68" stroke="#334155" stroke-width="2"/>
+            <line x1="72" y1="68" x2="648" y2="68" stroke="#52525B" stroke-width="1.5"/>
+            <line x1="72" y1="68" x2="72" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl)"/>
+            <line x1="216" y1="68" x2="216" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl)"/>
+            <line x1="360" y1="68" x2="360" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl)"/>
+            <line x1="504" y1="68" x2="504" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl)"/>
+            <line x1="648" y1="68" x2="648" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl)"/>
+            <rect x="20" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+            <text x="72" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">经典力学</text>
+            <rect x="164" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#6F6FFF" stroke-width="1.5"/>
+            <text x="216" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">热学与统计</text>
+            <rect x="308" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+            <text x="360" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">电磁学与光</text>
+            <rect x="452" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#6F6FFF" stroke-width="1.5"/>
+            <text x="504" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">相对论</text>
+            <rect x="596" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+            <text x="648" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">量子力学</text>
+            <rect x="12" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="72" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">运动学</text>
+            <rect x="12" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="72" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">牛顿三定律</text>
+            <rect x="12" y="190" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="72" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">万有引力</text>
+            <rect x="12" y="220" width="120" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="72" y="237" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">守恒定律</text>
+            <line x1="72" y1="116" x2="72" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="72" y1="154" x2="72" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="72" y1="184" x2="72" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="72" y1="214" x2="72" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <rect x="156" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="216" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">温度与热</text>
+            <rect x="156" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="216" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">热力学定律</text>
+            <rect x="156" y="190" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="216" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">熵与概率</text>
+            <rect x="156" y="220" width="120" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="216" y="237" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">统计力学</text>
+            <line x1="216" y1="116" x2="216" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="216" y1="154" x2="216" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="216" y1="184" x2="216" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="216" y1="214" x2="216" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <rect x="300" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="360" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">电与磁</text>
+            <rect x="300" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="360" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">电磁感应</text>
+            <rect x="300" y="190" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="360" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">麦克斯韦方程</text>
+            <rect x="300" y="220" width="120" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="360" y="237" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">光与电磁波</text>
+            <line x1="360" y1="116" x2="360" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="360" y1="154" x2="360" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="360" y1="184" x2="360" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="360" y1="214" x2="360" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <rect x="444" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="504" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">狭义相对论</text>
+            <rect x="444" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="504" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">时空观</text>
+            <rect x="444" y="190" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="504" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">质能等价</text>
+            <rect x="444" y="220" width="120" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="504" y="237" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">广义相对论与引力</text>
+            <line x1="504" y1="116" x2="504" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="504" y1="154" x2="504" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="504" y1="184" x2="504" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="504" y1="214" x2="504" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <rect x="588" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="648" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">波粒二象性</text>
+            <rect x="588" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="648" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">不确定性原理</text>
+            <rect x="588" y="190" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="648" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">量子纠缠</text>
+            <rect x="588" y="220" width="120" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="648" y="237" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">标准模型</text>
+            <line x1="648" y1="116" x2="648" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="648" y1="154" x2="648" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="648" y1="184" x2="648" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <line x1="648" y1="214" x2="648" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arl)"/>
+            <rect x="30" y="268" width="660" height="292" rx="10" fill="#EFEFF2" opacity="0.7"/>
+            <text x="360" y="293" text-anchor="middle" fill="#171717" font-size="14" font-weight="700" font-family="system-ui,sans-serif">专业名词释义</text>
+            <text x="50" y="320" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎物理学（Physics）</text>
+            <text x="50" y="336" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">研究物质、能量、空间与时间及其相互作用的自然科学，核心方法</text>
+            <text x="50" y="352" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">是"数学建模＋实验验证"，追求精确而可检验的自然规律。</text>
+            <text x="50" y="385" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎经典力学（Classical Mechanics）</text>
+            <text x="50" y="401" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">以牛顿三定律与万有引力为基础，描述宏观低速物体的运动，是工</text>
+            <text x="50" y="417" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">程机械、航空航天与天体力学共同的理论基石。</text>
+            <text x="50" y="450" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎相对论（Relativity）</text>
+            <text x="50" y="466" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">爱因斯坦创立：狭义相对论统一时空与光速，广义相对论把引力解</text>
+            <text x="50" y="482" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">释为时空弯曲，预言黑洞、引力波与宇宙膨胀。</text>
+            <text x="50" y="515" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎量子力学（Quantum Mechanics）</text>
+            <text x="50" y="531" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">描述微观世界的概率性规律：波粒二象性、不确定性原理，支撑半</text>
+            <text x="50" y="547" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">导体、激光、核能与量子信息等现代技术。</text>
+          </svg>
+          </div>
+        </figure>
+<div class="explain">
+          <p><strong>图 0a 详解：</strong>这张概念树把物理学的知识版图拆解为五大分支。理解这棵树，就是理解物理学家眼中的世界结构——它从"万物如何运动"出发，一路追问到"宇宙如何演化"。树根"物理学"通过一条横干连出五个分支，每个分支下再挂出核心概念，五个分支恰好对应本书七章的三条主线。</p>
+          <p><strong>经典力学——运动与力的科学：</strong>研究宏观物体如何运动、力如何改变运动。运动学描述运动本身（位置、速度、加速度），牛顿三定律揭示力与运动的因果关系，万有引力把天上与地上的运动统一起来，守恒定律（动量、能量、角动量）则从"变化"中找出"不变"。这是物理学的第一座大厦，也是工程与航天的地基。</p>
+          <p><strong>热学与统计——从宏观到微观的桥梁：</strong>温度与热是最直接的日常经验；热力学定律给出能量转换的宏观约束（第一定律），并指出过程的方向性（第二定律：熵增）。统计物理则追问"为什么"：热是大量分子无规则运动的集体表现，熵是微观状态数目的对数。温度、定律、熵与概率，把看不见的分子世界与摸得着的热现象连成一体。</p>
+          <p><strong>电磁学与光——看不见的场与看得见的波：</strong>电与磁起初是两种独立现象，麦克斯韦方程组把它们统一为电磁场，并预言电磁波以光速传播——光从此被证明是电磁波。这一支从库仑、奥斯特、法拉第走向麦克斯韦，最终催生了电力、通信与整个现代信息文明。</p>
+          <p><strong>相对论——时空观的革命：</strong>狭义相对论把时间与空间绑成四维时空，并揭示光速是宇宙的极限速度；广义相对论进一步把引力解释为时空的弯曲，预言黑洞、引力波与宇宙膨胀。这一支回答的是"世界如何存在"，而不只是"物体如何运动"。</p>
+          <p><strong>量子力学——微观世界的概率法则：</strong>波粒二象性告诉我们微观客体既是波又是粒子，不确定性原理划定了知识的基本界限，标准模型则用基本粒子与三种基本力描绘物质的最深结构。这一支支撑着半导体、激光、核能与正在到来的量子信息技术。</p>
+          <ul>
+            <li><strong>要点速记：</strong>五支谱系＝经典力学（运动与力）· 热学与统计（能量与概率）· 电磁学与光（场与波）· 相对论（时空与引力）· 量子力学（微观与信息）。</li>
+            <li><strong>现实案例：</strong>五支并非彼此隔绝——北斗卫星同时用到经典力学（轨道计算）与相对论（时钟修正），芯片工业同时依赖量子力学（能带理论）与电磁学（电路与光刻）。物理学的力量，正在于把五支谱系织成一张统一的网。</li>
+          </ul>
+        </div>
+</section>
+<section class="sec" id="ancient">
+        <h2><span class="chapno">第一章 &middot; 古典物理学的奠基</span></h2>
+<p>古典物理学时期（约前4世纪-17世纪）是人类用理性方法探索自然规律的起点。古希腊人提出了'世界由什么构成'的哲学问题，阿基米德将其转化为数学和实验，但真正的突破要等到文艺复兴时期，伽利略和开普勒分别从实验和观测两个方向为牛顿力学铺平了道路。</p>
+<figure class="diagram">
+          <figcaption>图 1 · 古典物理学奠基者谱系</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["古典物理学奠基"] --> A["亚里士多德<br>运动分类 · 四元素说"]
+  ROOT --> B["阿基米德<br>浮力 · 杠杆 · 数学"]
+  ROOT --> C["伽利略<br>实验方法 · 落体 · 天文"]
+  ROOT --> D["开普勒<br>行星三定律"]
+  C --> E["牛顿<br>力学三定律 · 万有引力"]
+  D --> E
+  A -.->|"被伽利略推翻"| C
+  classDef root fill:#1A56DB,color:#fff,stroke:#1A56DB;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 1 详解：</strong>古典物理学经历了从思辨到实验的转变。
+
+**亚里士多德（前384-322）** 认为物体运动需要力维持，重的物体下落更快——这些观点统治了西方近两千年，但后来被伽利略推翻。
+
+**阿基米德（前287-212）** 是古典时代最伟大的数学家-物理学家，他发现了浮力原理（阿基米德原理）和杠杆原理。传说他通过浴缸中的排水量发现王冠掺假，赤身跑上大街高喊'尤里卡'。
+
+**伽利略（1564-1642）** 被称为'近代科学之父'，他引入实验方法，通过斜面实验推翻亚里士多德的运动理论，证明自由落体加速度与重量无关。他还用望远镜发现木星卫星，支持日心说。
+
+**开普勒（1571-1630）** 利用第谷的精确观测数据，推导出行星运动三定律，为牛顿的万有引力提供基础。</p>
+        </div>
+<div class="explain">
+          <p><strong>伽利略的实验方法创新：</strong>伽利略在比萨斜塔上扔铁球的故事可能只是传说，但他真正的贡献在于实验方法的设计。他意识到自由落体太快而无法直接测量，于是设计了斜面实验——让球沿斜面滚下，通过'稀释'重力来测量加速度。这一'理想化实验'方法成为物理学的标准工具。
+
+**中国案例**：中国古代的《墨经》中记载了关于杠杆、滑轮、浮力等物理知识的早期观察，战国时期的墨家学派对光学也有研究（小孔成像），但未能发展出系统的实验方法，停留在经验总结层面。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 1a · 古典物理学的科学方法：从思辨到实验</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["科学方法的确立"] --> A["思辨传统<br>亚里士多德 · 目的论"]
+  ROOT --> B["观测测量传统<br>托勒密 · 阿基米德"]
+  ROOT --> C["实验传统<br>伽利略 · 斜面实验"]
+  A -.->|"被实验检验推翻"| C
+  B --> C
+  C --> D["数学化<br>开普勒定律 · 牛顿《原理》"]
+  classDef root fill:#1A56DB,color:#fff,stroke:#1A56DB;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 1a 详解：</strong>古典物理学的历史，本质上是"科学方法"从无到有的历史。思辨传统依靠逻辑与常识，能构造自洽的体系，却无法判别真假；实验传统的兴起，为理论装上"检验的闸门"。</p>
+          <p><strong>思辨传统（亚里士多德）：</strong>亚里士多德用"四因说"解释自然：事物运动是追求其"自然位置"的目的论过程，石头下落是因为它想回到大地。这套解释逻辑自洽、符合直觉，却因此统治西方近两千年，直到伽利略用实验撕开缺口。</p>
+          <p><strong>实验传统（伽利略）：</strong>伽利略开创"理想化实验"：让球沿斜面滚下，把重力"稀释"到可测量的程度，总结出匀加速运动规律，并推理出自由落体与重量无关；他又用望远镜实测木星卫星支持日心说——实验开始成为物理学的最高法庭。</p>
+          <p><strong>数学化（开普勒与牛顿）：</strong>开普勒用第谷二十年的观测数据拟合出行星三定律；牛顿以微积分为工具，把三定律与万有引力写成《自然哲学的数学原理》。至此，"实验＋数学"的双轮方法定型，物理学成为真正的定量科学。</p>
+          <ul>
+            <li><strong>要点速记：</strong>思辨 → 观测 → 实验 → 数学化，是古典物理学的四级上升台阶；每一次跃迁都意味着对前一种方法"权威"的削减。</li>
+            <li><strong>现实案例：</strong>元代学者赵友钦在《革象新书》中记载了著名的"小罅光景"实验：他在楼房上下两间屋内布置千余盏灯，通过改变光源大小、距离与孔洞形状，系统研究小孔成像规律——这是世界科学史上罕见的大型定量光学实验。可惜这种实证精神在中国古代未能发展为普适方法，正从反面说明：实验方法的确立，比任何单个发现都更重要。</li>
+          </ul>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 从目的论到机械论：世界观的第一次翻转：</strong>古典物理学的奠基，不只是知识的增加，更是一次世界观的翻转。亚里士多德的宇宙是有目的、有等级、有中心的：重物天然向下，天体天然旋转，万物各安其位。伽利略与牛顿的宇宙则是机械的：物体按惯性匀速直线运动，只有外力才能改变它，地球不再是中心，宇宙没有上下之分。</p>
+          <p>这场翻转有两次关键推进。第一次是<strong>惯性观念的诞生</strong>：亚里士多德认为"运动需要力维持"，伽利略由斜面实验的极限推理指出"无外力时物体保持匀速运动"，牛顿将其精确表述为第一定律——力从此从"运动的维持者"变成"运动状态改变的制造者"。第二次是<strong>天地统一</strong>：牛顿用同一条万有引力定律解释苹果落地与月球绕地，"月上世界"与"月下世界"的千年隔阂就此打通。</p>
+          <p>此后两百余年，机械论世界观成为近代科学的默认底色：宇宙是一架精确的钟，上帝是上紧发条的钟表匠。直到量子力学出现，这幅图景才再次被改写——但"用简单原理解释复杂现象"的信条，正是从这场翻转中遗传给后世物理学的基因。</p>
+        </div>
+<h3>对照表：亚里士多德 · 伽利略 · 牛顿运动观对比</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>比较维度</th><th>亚里士多德（前384-前322）</th><th>伽利略（1564-1642）</th><th>牛顿（1643-1727）</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>运动观</strong></td><td>自然运动（趋向"自然位置"）与强迫运动之分；地上的运动最终都会停止</td><td>惯性思想萌芽：无外力时物体保持匀速直线运动</td><td>第一定律（惯性定律）精确表述：不受外力时保持静止或匀速直线运动</td></tr>
+              <tr><td><strong>力与运动</strong></td><td>力是维持运动的原因，撤去力运动即停止</td><td>力是改变运动状态的原因（已接近正确）</td><td>F=ma：力是产生加速度（改变运动状态）的原因</td></tr>
+              <tr><td><strong>落体运动</strong></td><td>重的物体下落更快，速度与重量成正比</td><td>真空中一切物体同时落地，与重量无关</td><td>万有引力 F=G·m₁m₂/r² 统一解释落体与天体运动</td></tr>
+              <tr><td><strong>时空观</strong></td><td>宇宙有限且有中心（地球），空间有上下之别</td><td>空间均匀，惯性运动相对恒星系而言</td><td>绝对空间与绝对时间：独立于物质，均匀流逝</td></tr>
+              <tr><td><strong>方法论</strong></td><td>思辨与逻辑演绎，依赖常识与目的论解释</td><td>实验＋数学，理想化实验，望远镜实测</td><td>数学原理（微积分）＋实验验证，写成《原理》</td></tr>
+              <tr><td><strong>历史地位</strong></td><td>思辨物理学的巅峰，统治西方近两千年</td><td>"近代科学之父"，开创实验科学传统</td><td>经典力学奠基人，完成"天地统一"</td></tr>
+            </tbody>
+          </table>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">伽利略 · 1564–1642</div>
+            <blockquote>科学的真理不应该在古代圣人的蒙着灰尘的书上去找，而应该在实验和以实验为基础的理论中去找。<cite>——伽利略《关于两门新科学的对话》</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">开普勒 · 1571–1630</div>
+            <blockquote>大自然喜爱简单，它用最少的理由来展示自己。<cite>——开普勒《宇宙的和谐》</cite></blockquote>
+          </div>
+</div>
+<div class="legacy">
+<div>
+            <div class="legacy-who">阿基米德 · 前287–前212</div>
+            <blockquote>给我一个支点，我可以撬动地球。<cite>——阿基米德名言</cite></blockquote>
+          </div>
+</div>
+</section>
+<section class="sec" id="mechanics">
+        <h2><span class="chapno">第二章 &middot; 牛顿力学与经典世界观</span></h2>
+<p>牛顿力学不仅是物理学的基础，更是整个近代科学世界观的范式。它确立了如下信念：自然规律是普适的、数学化的、可预测的——'拉普拉斯妖'的思想实验就是这种决定论的极致表达。牛顿力学在工程、航天、天体力学等领域至今仍广泛应用。</p>
+<figure class="diagram">
+          <figcaption>图 2 · 牛顿力学核心结构</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["牛顿力学"] --> A["三定律"]
+  ROOT --> B["万有引力"]
+  ROOT --> C["经典守恒律"]
+  A --> A1["惯性定律<br>F=0 → v=const"]
+  A --> A2["F=ma<br>力与加速度"]
+  A --> A3["作用=反作用"]
+  B --> B1["F=G·m₁m₂/r²<br>万有引力普适"]
+  C --> C1["动量守恒"]
+  C --> C2["能量守恒"]
+  C --> C3["角动量守恒"]
+  B1 --> C
+  A1 -.->|"为后续"| B1
+  classDef root fill:#1A56DB,color:#fff,stroke:#1A56DB;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 2 详解：</strong>牛顿在1687年出版的《自然哲学的数学原理》（简称《原理》）中提出了三大运动定律和万有引力定律，完成了物理学史上第一次伟大统一。
+
+**第一定律（惯性定律）**：任何物体都将保持静止或匀速直线运动，除非外力迫使其改变。亚里士多德认为运动需要力维持，牛顿纠正了这一延续两千年的错误。
+
+**第二定律（F=ma）**：物体的加速度与所受合力成正比，与质量成反比。这是经典力学的核心方程。
+
+**第三定律（作用与反作用）**：两个物体之间的作用力与反作用力大小相等、方向相反。
+
+**万有引力**：任何两个有质量的物体之间都存在相互吸引力，引力大小与质量乘积成正比、与距离平方成反比。牛顿用这一条定律同时解释了苹果落地和月球绕地运动，完成了'天地统一'。
+
+**中国案例**：中国早在战国时期就有关于力学现象的记载。《墨经》中提到了'力，形之所以奋也'（力是使物体运动的原因），但未能发展出定量的力学体系。明清时期，西方传教士将牛顿力学传入中国，但直到19世纪末才被系统接受。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 2a · 牛顿三大定律与守恒定律体系</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["牛顿力学体系"] --> A["三大定律"]
+  ROOT --> B["万有引力"]
+  ROOT --> C["守恒定律"]
+  A --> A1["第一定律·惯性<br>惯性参考系"]
+  A --> A2["第二定律<br>F = ma"]
+  A --> A3["第三定律<br>作用与反作用"]
+  B --> B1["F = G·m₁m₂/r²<br>天地统一"]
+  C --> C1["动量守恒"]
+  C --> C2["能量守恒"]
+  C --> C3["角动量守恒"]
+  B1 --> C2
+  A2 --> C1
+  classDef root fill:#1A56DB,color:#fff,stroke:#1A56DB;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 2a 详解：</strong>牛顿力学不是三条孤立的定律，而是一套自洽的体系：三大定律定义了"力"是什么，万有引力给出了"力"的实例，守恒定律则把运动规律提升为不变量。</p>
+          <p><strong>三定律构成闭环：</strong>第一定律定义了惯性参考系——在这样的参考系中，不受力的物体保持匀速直线运动；第二定律 F=ma 是动力学核心，把力、质量、加速度连成一条方程；第三定律保证系统的动量守恒——你推墙时墙也在推你。三定律配合微积分，足以求解从抛体到行星的任何力学问题。</p>
+          <p><strong>守恒定律的深层意义：</strong>动量守恒可由第三定律推出（内力成对抵消），角动量守恒对应空间旋转对称性，能量守恒对应时间平移对称性——20世纪诺特定理揭示了"对称性决定守恒律"，守恒定律从此成为比具体方程更根本的原理。嫦娥五号上升器在月面起飞靠发动机喷流反推，正是动量守恒的实践；卫星靠陀螺仪保持姿态，靠的是角动量守恒。</p>
+          <ul>
+            <li><strong>要点速记：</strong>三定律回答"力是什么"，万有引力回答"力从何来"，守恒定律回答"什么不变"——三者合起来，就是经典力学的完整世界观。</li>
+            <li><strong>现实案例：</strong>中国北斗卫星导航系统是牛顿力学的教科书式应用：55颗在轨卫星的轨道预报，核心仍是万有引力与开普勒方程，再叠加相对论修正。长征五号遥五火箭把"嫦娥五号"送入地月转移轨道，霍曼转移轨道上每一处的速度增量都由牛顿第二定律算出——从火箭发射到卫星定轨，人类飞向太空的每一步都踩在牛顿的肩上。</li>
+          </ul>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 绝对时空与拉普拉斯妖：经典世界观的光与影：</strong>牛顿力学的成功催生了两个极端信念。其一，时空是绝对的：空间像一只无限大的箱子，时间像一条均匀流逝的河，与其中发生的一切无关——牛顿用著名的"水桶实验"论证绝对空间的存在。其二，宇宙是决定论的：拉普拉斯设想的"妖"只要知道某一瞬间所有粒子的位置和动量，就能用牛顿方程推出全部过去与未来。</p>
+          <p>这套世界观在两百多年里几乎无可动摇，却也埋下两道裂缝。第一道裂缝在<strong>引力本身</strong>：万有引力是"超距作用"，力的传递不需要时间——牛顿自己也承认"这太荒谬了"，却无法给出解释。第二道裂缝在<strong>光的传播</strong>：如果光需要介质（以太），"绝对空间"就有了可观测的候选者——迈克尔逊-莫雷实验偏偏测不到以太漂移，为狭义相对论埋下伏笔。</p>
+          <p>拉普拉斯妖从未被真正反驳——在经典力学内部它是自洽的。但热力学第二定律表明宏观过程不可逆，量子力学更宣告"位置与动量不可能同时精确已知"。决定论的完美宇宙，最终被物理学自身的发展打开了缺口。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">牛顿 · 1643–1727</div>
+            <blockquote>如果说我看得比别人更远些，那是因为我站在巨人的肩膀上。<cite>——牛顿致胡克信</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">牛顿 · 1643–1727</div>
+            <blockquote>我并不知道我在世人眼中是什么模样，对我来说，我好像只是一个在海边玩耍的男孩，不时为发现一块更光滑的卵石或更美丽的贝壳而欣喜，而真理的大海在我面前还完全未被发现。<cite>——牛顿晚年自述</cite></blockquote>
+          </div>
+</div>
+<div class="legacy">
+<div>
+            <div class="legacy-who">拉格朗日 · 1736–1813</div>
+            <blockquote>牛顿是世界上最幸运的人，因为宇宙的体系只能被发现一次。<cite>——拉格朗日评价牛顿</cite></blockquote>
+          </div>
+</div>
+</section>
+<section class="sec" id="thermo">
+        <h2><span class="chapno">第三章 &middot; 热力学与统计物理</span></h2>
+<p>热力学定律是人类从蒸汽机实践中提炼出的普适规律，其意义远超工程学。熵的概念揭示了宇宙演化的方向，而统计力学则成功地将宏观现象还原为微观粒子的统计行为——这是物理学'还原论'方法的巨大胜利。</p>
+<figure class="diagram">
+          <figcaption>图 3 · 热力学核心概念</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["热力学"] --> A["四大定律"]
+  ROOT --> B["状态函数"]
+  ROOT --> C["统计力学"]
+  A --> A1["第零定律<br>热平衡传递性"]
+  A --> A2["第一定律<br>能量守恒 ΔU=Q+W"]
+  A --> A3["第二定律<br>熵增 ΔS≥0"]
+  A --> A4["第三定律<br>绝对零度不可达"]
+  B --> B1["温度 T"]
+  B --> B2["内能 U"]
+  B --> B3["熵 S"]
+  B --> B4["压强 p · 体积 V"]
+  C --> C1["玻尔兹曼<br>S=k·lnΩ"]
+  C --> C2["麦克斯韦-玻尔兹曼分布"]
+  A3 --> C1
+  classDef root fill:#1A56DB,color:#fff,stroke:#1A56DB;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 3 详解：</strong>热力学研究热、功、温度与能量转换的规律，起源于18世纪蒸汽机的发明。
+
+**第一定律**：能量既不能被创造，也不能被消灭，只能从一种形式转化为另一种形式。热机从高温热源吸热，一部分转化为功，一部分排向低温热源。
+
+**第二定律**：孤立系统的熵永远增加。这意味着自然过程是有方向性的——热量自发地从高温流向低温，而不是反过来。这是物理学的'时间箭头'。
+
+**第三定律**：绝对零度（-273.15°C）只能无限接近，永远无法达到。
+
+**统计力学**：玻尔兹曼给出了熵的微观解释：S = k·lnΩ，其中Ω是系统的微观状态数。熵越大，系统越混乱。
+
+**中国案例**：热力学在中国的传播与工业化进程密切相关。1950-60年代，中国的热机工程师通过改进蒸汽轮机和内燃机的热效率，为工业化提供了动力。今天，中国在超临界发电机组方面处于世界领先水平，热效率超过45%。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 3a · 热力学四定律与熵增的宇宙图景</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["热力学体系"] --> A["第零定律<br>温度与热平衡"]
+  ROOT --> B["第一定律<br>ΔU = Q + W<br>能量守恒"]
+  ROOT --> C["第二定律<br>ΔS ≥ 0<br>熵增原理"]
+  ROOT --> D["第三定律<br>绝对零度不可达"]
+  C --> E["统计解释<br>S = k·lnΩ"]
+  C --> F["时间箭头<br>宇宙演化方向"]
+  E --> F
+  F --> G["热寂 · 熵的宇宙图景"]
+  classDef root fill:#1A56DB,color:#fff,stroke:#1A56DB;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 3a 详解：</strong>热力学四定律构成一条从"工程经验"通向"宇宙法则"的阶梯：第零定律为"温度"定下可操作的定义，第一定律保证能量不灭，第二定律给出过程的方向，第三定律划定低温的极限。</p>
+          <p><strong>四定律各司其职：</strong>第零定律（热平衡的传递性）让"温度计"成为可能；第一定律 ΔU=Q+W 表明热机不能凭空创造能量——焦耳用近四十年实验测定热功当量，把热从"神秘流体"（热质说）改造成一种能量形式；第二定律 ΔS≥0 则指出能量虽然守恒却会"贬值"——卡诺早已证明热机效率存在上限，只取决于高低温热源的温度；第三定律告诉我们绝对零度（-273.15℃）只能逼近而不可到达。</p>
+          <p><strong>熵的宇宙图景：</strong>玻尔兹曼给出熵的微观解释 S=k·lnΩ：熵是系统微观状态数的对数，熵增就是系统自发走向更可能的状态。由此推论：如果宇宙是孤立系统，它的熵将持续增加，直到所有温差消失、所有运动停息——这就是"热寂"图景。我们为什么记住过去而非未来？时间的箭头，很可能正来自熵增。</p>
+          <ul>
+            <li><strong>要点速记：</strong>四定律＝温度的定义（零）＋能量不灭（一）＋方向性（二）＋低温极限（三）；第二定律是唯一"只增不减"的物理定律。</li>
+            <li><strong>现实案例：</strong>中国的超超临界火电机组把锅炉蒸汽参数提升到 600℃、30MPa 以上，发电煤耗已降至世界最低纪录（约 276 克/千瓦时），正是"卡诺效率上限"推动的工程极致；中国散裂中子源（CSNS，广东东莞）用中子散射研究材料内部结构，2018 年建成开放以来已支撑数百项能源与航天材料研究——热力学与统计物理是这些技术共同的理论母体。</li>
+          </ul>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 麦克斯韦妖与信息：熵的百年思想实验：</strong>1871 年，麦克斯韦设想了一个"妖"：它守在两个容器之间的小门旁，让快分子单向通过、慢分子反向通过——这样无需做功就能把冷热分离，熵减小，热力学第二定律似乎被推翻。这个思想实验困扰物理学一百多年。</p>
+          <p>破解之道来自信息论。1961 年兰道尔原理指出：任何信息的擦除都必然耗散能量、产生至少 kT·ln2 的热量。麦克斯韦妖要分辨分子快慢，就必须记录信息，最终总账仍然熵增——妖自己也被第二定律"同化"了。香农 1948 年建立信息熵 H=-Σp·log₂p 时，正是直接借用了玻尔兹曼熵 S=k·lnΩ 的形式：热力学中的"混乱度"与通信中的"信息量"，在数学上是一回事。</p>
+          <p>这一支脉络至今生机勃勃：从"可逆计算"到"量子热力学"，从黑洞信息悖论（霍金辐射与贝肯斯坦熵）到人工智能中的能量与信息权衡——麦克斯韦妖提醒我们，能量、信息、概率本是物理学同一条河流的三条支流。熵的观念早已溢出物理课堂，成为信息时代的基础语言。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">玻尔兹曼 · 1844–1906</div>
+            <blockquote>S = k · log W<cite>——玻尔兹曼（熵公式，刻于其墓碑）</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">开尔文 · 1824–1907</div>
+            <blockquote>热力学是一座宏大的建筑，它建立在两个基石之上：能量守恒和熵增原理。<cite>——开尔文勋爵</cite></blockquote>
+          </div>
+</div>
+<div class="legacy">
+<div>
+            <div class="legacy-who">卡诺 · 1796–1832</div>
+            <blockquote>要制造出最好的热机，就要使工作物质在尽可能高的温度下吸热、在尽可能低的温度下放热。<cite>——卡诺《关于火的动力的思考》</cite></blockquote>
+          </div>
+</div>
+</section>
+<section class="sec" id="em">
+        <h2><span class="chapno">第四章 &middot; 电磁学与光</span></h2>
+<p>电磁学是人类对自然力的第二次成功统一。麦克斯韦方程组不仅预言了电磁波，还直接引出了爱因斯坦的狭义相对论——因为该方程组在伽利略变换下不再协变，爱因斯坦意识到需要一种新的时空观。电磁学也是现代文明的物质基础，从电灯到智能手机，都离不开电磁学原理。</p>
+<figure class="diagram">
+          <figcaption>图 4 · 电磁学统一图景</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["电磁学"] --> A["静电学<br>库仑力 · 电场"]
+  ROOT --> B["静磁学<br>磁场 · 安培力"]
+  ROOT --> C["变化的场<br>电磁感应"]
+  A --> D["麦克斯韦方程组"]
+  B --> D
+  C --> D
+  D --> E["电磁波<br>c=1/√(μ₀ε₀)"]
+  E --> F["光是一种电磁波<br>赫兹实验验证"]
+  D --> G["狭义相对论<br>光速不变"]
+  classDef root fill:#1A56DB,color:#fff,stroke:#1A56DB;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 4 详解：</strong>电磁学是物理学中第二次伟大的统一（第一次是牛顿统一天地力学）。
+
+**核心人物**：
+- 库仑（1736-1806）测量了电荷之间的作用力，建立库仑定律
+- 奥斯特（1777-1851）发现电流能产生磁场
+- 法拉第（1791-1867）发现电磁感应，发明发电机
+- 麦克斯韦（1831-1879）用四个方程统一电、磁、光
+
+**麦克斯韦方程组**是物理学史上最优雅的方程之一，它揭示了：变化的电场产生磁场，变化的磁场产生电场，两者相互激发形成电磁波，并以光速传播。麦克斯韦由此预言光是一种电磁波，赫兹后来用实验证实。
+
+**技术影响**：电磁学直接催生了发电机、电动机、无线电、雷达、手机等核心技术。
+
+**中国案例**：中国在电磁学领域有重要贡献。2016年，中国科学家在量子通信领域取得突破——'墨子号'量子科学实验卫星实现了千公里级量子纠缠分发，这是基于电磁学原理的前沿应用。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 4a · 从电到光的统一之路</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["电与磁的发现"] --> A["静电·库仑定律<br>1785"]
+  ROOT --> B["电流·奥斯特实验<br>1820"]
+  ROOT --> C["电磁感应·法拉第<br>1831"]
+  A --> D["麦克斯韦方程组<br>1864"]
+  B --> D
+  C --> D
+  D --> E["预言电磁波<br>光速 c 登场"]
+  E --> F["赫兹实验证实<br>1888"]
+  F --> G["光电磁统一<br>→ 现代技术文明"]
+  classDef root fill:#1A56DB,color:#fff,stroke:#1A56DB;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 4a 详解：</strong>电与光的统一之路，是人类历史上最成功的"理论先于实验"的案例之一：麦克斯韦用笔和方程预言了电磁波，九年后赫兹才在实验室里真正看到它。</p>
+          <p><strong>每一步都是跨越：</strong>库仑定律（1785）把静电学变成定量科学；奥斯特实验（1820）发现电流的磁效应，打通"电生磁"；法拉第（1831）发现电磁感应，实现"磁生电"并造出第一台发电机——这三步用了半个世纪。麦克斯韦（1864）以四个方程完成总统一：变化的电场产生磁场，变化的磁场产生电场，两者相互激发、以光速 c=1/√(μ₀ε₀) 传播——于是"光是一种电磁波"成为必然结论。赫兹（1888）用火花放电实验证实电磁波存在，无线电时代随即开启。</p>
+          <p><strong>统一的价值：</strong>四个方程不仅统一了电、磁、光，还暴露了牛顿力学的问题：方程组在伽利略变换下形式不协变，而光速却恒定不变——爱因斯坦正是从这里出发建立了狭义相对论。电磁学由此成为连接经典与近代两大物理体系的枢纽。</p>
+          <ul>
+            <li><strong>要点速记：</strong>静电（库仑）→ 电流生磁（奥斯特）→ 磁生电（法拉第）→ 方程组统一（麦克斯韦）→ 实验证实（赫兹），五步走完"电→光"的全部逻辑。</li>
+            <li><strong>现实案例：</strong>中国特高压输电技术是全球电磁工程的名片：昌吉-古泉 ±1100 千伏直流输电工程（2019 年投运）把新疆的电力送到 3300 多公里外的安徽，输送容量 1200 万千瓦，是电压等级最高、输电距离最远的输电工程；2020 年建成的张北柔性直流电网把张家口的风光绿电直送北京冬奥会场馆，实现"张北的风点亮北京的灯"——它们都是法拉第电磁感应与麦克斯韦方程组在工业尺度上的当代回声。</li>
+          </ul>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 两朵乌云与普朗克常数：十九世纪物理学的尾声：</strong>1900 年，开尔文勋爵在演讲中说：物理学的天空只剩下两朵"乌云"。一朵是迈克尔逊-莫雷实验测不到以太，另一朵是黑体辐射的紫外灾难——他没有想到，这两朵乌云分别孕育了相对论和量子力学。</p>
+          <p>黑体辐射问题看似冷僻：任何发热物体都会发光，经典理论却无法同时解释光谱的高频与低频端。1900 年 12 月，普朗克大胆假设：能量不是连续取值的，而是按 E=hν 一份一份地发射与吸收——h 即普朗克常数，人类第一次把"量子"引入物理学。普朗克本人称这是"绝望之举"，他花了十几年想把它收回经典框架，却越陷越深；直到 1905 年爱因斯坦用光量子解释光电效应，量子概念才真正站稳。</p>
+          <p>普朗克常数 h≈6.626×10⁻³⁴ J·s 本身就带着"尺度感"：在宏观世界里它小到可以忽略，所以经典力学"恰好"成立；只有在原子尺度，量子效应才不可回避。物理学不是被新理论"推翻"，而是被更普适的理论"包含"——这条规律，在电磁学的故事里第一次表现得淋漓尽致。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">麦克斯韦 · 1831–1879</div>
+            <blockquote>一项伟大的科学真理，要从它被认知到被充分应用，往往需要经历一个漫长的过程。<cite>——麦克斯韦《电磁通论》</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">法拉第 · 1791–1867</div>
+            <blockquote>一旦科学插上幻想的翅膀，它就能赢得胜利。<cite>——法拉第实验笔记</cite></blockquote>
+          </div>
+</div>
+<div class="legacy">
+<div>
+            <div class="legacy-who">赫兹 · 1857–1894</div>
+            <blockquote>电磁波看不见，但它确实存在。<cite>——赫兹验证电磁波实验</cite></blockquote>
+          </div>
+</div>
+</section>
+<section class="sec" id="relativity">
+        <h2><span class="chapno">第五章 &middot; 相对论与宇宙观革命</span></h2>
+<p>相对论彻底改变了人类对时空的理解。时间不再是绝对均匀的流逝，而是与空间纠缠在一起，构成四维'时空'。引力不再是神秘的超距作用，而是时空弯曲的几何效应。广义相对论还在宇宙学中发挥着核心作用——从大爆炸到黑洞，从引力波到暗能量，相对论是理解宇宙的关键工具。</p>
+<figure class="diagram">
+          <figcaption>图 5 · 相对论的核心思想</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["爱因斯坦相对论"] --> A["狭义相对论 1905"]
+  ROOT --> B["广义相对论 1915"]
+  A --> A1["光速不变原理"]
+  A --> A2["相对性原理"]
+  A --> A3["E=mc²<br>质能等价"]
+  A --> A4["尺缩钟慢<br>时间膨胀"]
+  B --> B1["等效原理<br>引力=加速"]
+  B --> B2["时空弯曲<br>质量告诉时空如何弯曲<br>时空告诉质量如何运动"]
+  B --> B3["引力波<br>2016年LIGO首次探测"]
+  B2 --> B4["黑洞 · 宇宙学"]
+  classDef root fill:#1A56DB,color:#fff,stroke:#1A56DB;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 5 详解：</strong>相对论是爱因斯坦对牛顿力学的革命性修正。
+
+**狭义相对论（1905）** 基于两个简单原理：
+1. 物理定律在所有惯性系中形式相同
+2. 光速在真空中恒定不变（约30万公里/秒）
+
+由此推导出惊人的结论：运动速度越快，时间越慢（时间膨胀）；长度沿运动方向收缩；质量与能量等价——E=mc²，一克物质蕴含的能量相当于2万吨TNT炸药。
+
+**广义相对论（1915）** 将引力解释为时空弯曲：质量告诉时空如何弯曲，弯曲的时空告诉质量如何运动。这一理论预言了黑洞、引力波和宇宙膨胀。
+
+**中国案例**：中国的'天琴计划'和'太极计划'正在致力于引力波探测。2019年，中国天眼FAST（世界上最大的单口径射电望远镜）开始运行，在脉冲星和快速射电暴研究中取得重要成果。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 5a · 狭义与广义相对论对比图</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["相对论"] --> A["狭义相对论 1905"]
+  ROOT --> B["广义相对论 1915"]
+  A --> A1["光速不变原理"]
+  A --> A2["狭义相对性原理"]
+  A --> A3["时空关联<br>尺缩 · 钟慢 · 质能等价"]
+  B --> B1["等效原理"]
+  B --> B2["引力 = 时空弯曲"]
+  B --> B3["预言与验证<br>水星进动 · 光线偏折<br>引力波 · 黑洞"]
+  A --> B
+  classDef root fill:#1A56DB,color:#fff,stroke:#1A56DB;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 5a 详解：</strong>相对论分两步：狭义相对论（1905）回答"光速为什么恒定"，广义相对论（1915）回答"引力到底是什么"。两者共享一个信念——物理定律不因观测者的状态而改变，但时空观必须为此改写。</p>
+          <p><strong>狭义相对论的两条原理：</strong>光速不变原理（真空光速对一切惯性系恒定，约 30 万公里/秒）与狭义相对性原理（物理定律在所有惯性系中形式相同）。由此推出的结论惊世骇俗：运动钟变慢（时间膨胀）、运动尺缩短（长度收缩）、质量与能量等价 E=mc²。这些效应在低速下微乎其微，但在卫星导航中却是必须修正的现实。</p>
+          <p><strong>广义相对论的引力几何化：</strong>等效原理（引力与加速不可区分）启发爱因斯坦：引力不是"力"，而是时空的弯曲——质量告诉时空如何弯曲，弯曲的时空告诉质量如何运动。水星近日点每世纪多进动 43 角秒、1919 年爱丁顿在日食中观测到星光偏折、2015 年 LIGO 首次探测到引力波、2019 年事件视界望远镜拍下黑洞照片——广义相对论从预言走向铁证。</p>
+          <ul>
+            <li><strong>要点速记：</strong>狭义相对论＝光速不变＋相对性原理；广义相对论＝等效原理＋引力几何化。前者处理高速，后者处理强引力。</li>
+            <li><strong>现实案例：</strong>北斗卫星导航系统必须做相对论修正：卫星轨道速度约 3.9 公里/秒，狭义相对论使星载原子钟每天慢约 7 微秒；而卫星距地约 2 万公里，引力较弱，广义相对论又使时钟每天快约 45 微秒——两项相抵，星钟每天比地面快约 38 微秒。若不修正，定位误差每天会漂移约 11 公里。爱因斯坦的时空观，就这样精确地活在每一部手机的位置服务里。</li>
+          </ul>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 双生子佯谬与时间的弹性：</strong>一对双生子，哥哥乘近光速飞船远行，回到地球时比弟弟年轻——这就是著名的"双生子佯谬"。它看似矛盾：运动是相对的，凭什么哥哥的时间变慢？</p>
+          <p>关键在于：哥哥的旅程必须掉头（加速），他经历了非惯性过程，而弟弟始终留在惯性系中——狭义相对论只对惯性系成立。广义相对论进一步给出更优雅的表述：掉头瞬间，哥哥所在飞船的时空参照系发生剧烈变化，他会"看见"地球的时钟猛跳。更惊人的是，等效原理告诉我们：引力越强的地方时间越慢。1971 年，铯原子钟装上民航客机环球飞行，实测结果与理论预言吻合；今天 GPS 卫星上的原子钟如果不受广义相对论修正，每天就会快约 45 微秒。</p>
+          <p>时间的弹性不是科幻——中国"天琴计划"与"太极计划"正在筹建空间引力波探测星座，用激光干涉测量引力波引起的微小时空扰动；FAST"中国天眼"则通过监测毫秒脉冲星，像看宇宙的"标准时钟"一样检验广义相对论的预言。时间不再是牛顿笔下均匀流逝的河，而是随速度与引力弯曲的、真实可测的物理量。</p>
+        </div>
+<h3>对照表：经典物理学 · 相对论 · 量子力学的世界观对比</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>经典物理学</th><th>相对论</th><th>量子力学</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>时空观</strong></td><td>绝对时空：空间与时间独立于物质，均匀流逝</td><td>时空统一为四维整体；狭义相对论中时空平直，广义相对论中时空被物质弯曲</td><td>时空仍是"舞台"，但测量过程不可忽略，观测者与系统不可完全分离</td></tr>
+              <tr><td><strong>物质观</strong></td><td>粒子有确定的轨迹与状态；物质与"场"分立</td><td>质能等价 E=mc²；引力不再是一种力，而是时空几何</td><td>波粒二象性；量子态可叠加；场量子化（标准模型粒子）</td></tr>
+              <tr><td><strong>因果与决定论</strong></td><td>严格决定论：给定初始条件可精确预言未来（拉普拉斯妖）</td><td>因果性保留在光锥之内；决定论成立，但"同时"是相对的</td><td>原则上概率性的因果：不确定性原理 Δx·Δp≥ħ/2，测量导致态坍缩</td></tr>
+              <tr><td><strong>适用范围</strong></td><td>宏观、低速（v≪c）、弱引力</td><td>高速、强引力、宇宙尺度；v≪c 时自动退化为经典极限</td><td>微观、低温、极端条件；宏观极限下退化为经典统计</td></tr>
+              <tr><td><strong>核心方程</strong></td><td>F=ma；F=G·m₁m₂/r²</td><td>爱因斯坦场方程；E=mc²</td><td>薛定谔方程 iħ∂ψ/∂t=Ĥψ</td></tr>
+              <tr><td><strong>现实印记</strong></td><td>桥梁、机械、天体力学</td><td>卫星导航修正、引力波探测、黑洞成像</td><td>半导体、激光、核能、量子信息</td></tr>
+            </tbody>
+          </table>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 等效原理：从电梯思想实验到引力波探测：</strong>1907 年，爱因斯坦在伯尔尼专利局写下他"一生中最快乐的想法"：一个在自由下落的电梯里的人，感受不到重力——苹果和他一起下落，他既无失重感也无超重感，电梯里的一切实验都像在无引力的太空；反过来，在加速上升的火箭里，你会感到"重力"。这就是等效原理：引力与加速度在局域不可区分。</p>
+          <p>等效原理是通向广义相对论的第一块跳板：既然引力等效于加速，而狭义相对论说加速必然导致时间变慢，那么引力也必然导致时间变慢——越靠近大质量天体，时间流逝越慢。这一推论已被实验反复检验：1976 年重力探测器 A 用氢原子钟验证了引力时间膨胀，2016 年发射的法国 MICROSCOPE 卫星把等效原理的检验精度推到 10⁻¹⁵ 量级；而 LIGO 与中国的"天琴""太极"计划要探测的引力波，正是时空弯曲的涟漪——等效原理的当代回声。</p>
+          <p>今天，等效原理已不是书斋里的思想实验：高精度原子钟、卫星重力测量（如中国"天琴一号"验证的空间惯性基准技术）都在日常尺度上使用它的推论。从爱因斯坦 1907 年的"电梯"，到 2015 年 LIGO 听到的"时空涟漪"，物理学证明了一个道理——最深刻的革命，常常从一个最简单的思想实验开始。</p>
+          <ul>
+            <li><strong>要点速记：</strong>引力 ≡ 加速度（局域）→ 引力使时间变慢 → 时空被质量弯曲 → 引力波是弯曲的涟漪。一条链，从思想实验通到大科学装置。</li>
+          </ul>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">爱因斯坦 · 1879–1955</div>
+            <blockquote>上帝不掷骰子。<cite>——爱因斯坦对量子力学的著名回应</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">爱因斯坦 · 1879–1955</div>
+            <blockquote>想象力比知识更重要，因为知识是有限的，而想象力概括着世界的一切。<cite>——爱因斯坦《论科学》</cite></blockquote>
+          </div>
+</div>
+<div class="legacy">
+<div>
+            <div class="legacy-who">霍金 · 1942–2018</div>
+            <blockquote>爱因斯坦错了——上帝不仅掷骰子，他还把骰子掷到我们看不见的地方。<cite>——霍金《时间简史》</cite></blockquote>
+          </div>
+</div>
+</section>
+<section class="sec" id="quantum">
+        <h2><span class="chapno">第六章 &middot; 量子力学与当代前沿</span></h2>
+<p>量子力学不仅改变了物理学，也深刻影响了哲学（决定论vs概率论）、技术（半导体、激光、核能）和我们的世界观。尽管量子力学取得了惊人的实验验证，其哲学含义至今仍在争论中。当代物理学的最大挑战是统一量子力学和广义相对论——即'量子引力'理论，这是物理学尚未完成的'圣杯'。</p>
+<figure class="diagram">
+          <figcaption>图 6 · 量子力学框架</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["量子力学"] --> A["波粒二象性<br>光：粒子·波动<br>物质：德布罗意波"]
+  ROOT --> B["不确定性原理<br>Δx·Δp ≥ ħ/2"]
+  ROOT --> C["薛定谔方程<br>iħ·∂ψ/∂t = Ĥψ"]
+  ROOT --> D["量子态与测量<br>叠加·坍缩·纠缠"]
+  A --> C
+  C --> E["量子力学诠释"]
+  E --> E1["哥本哈根<br>波函数坍缩"]
+  E --> E2["多世界<br>平行宇宙"]
+  E --> E3["隐变量<br>贝尔不等式"]
+  D --> F["量子技术"]
+  F --> F1["量子计算"]
+  F --> F2["量子通信"]
+  F --> F3["量子传感"]
+  classDef root fill:#1A56DB,color:#fff,stroke:#1A56DB;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 6 详解：</strong>量子力学是20世纪最富革命性的物理理论，它揭示了微观世界的奇异规律。
+
+**核心概念**：
+1. 波粒二象性：光和物质同时具有粒子和波动性质
+2. 不确定性原理：无法同时精确知道粒子的位置和动量
+3. 量子叠加：一个粒子可以同时处于多个状态
+4. 量子纠缠：两个粒子可以跨越遥远距离'心有灵犀'
+
+**量子力学诠释**：物理学家对量子力学'到底意味着什么'存在分歧。哥本哈根诠释认为观测导致波函数坍缩；多世界诠释认为每次测量都分裂出平行宇宙；隐变量理论认为量子力学背后还有更深层的确定性规律。
+
+**中国案例**：中国在量子技术领域处于世界前沿。2021年，中国的'九章'量子计算机在特定问题上达到百万亿倍于经典计算机的速度；'墨子号'量子卫星实现了千公里级量子密钥分发。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 6a · 量子力学的诠释之争与第二次量子革命</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["量子力学百年"] --> A["形式体系<br>薛定谔方程 · 不确定性原理"]
+  ROOT --> B["诠释之争"]
+  B --> B1["哥本哈根诠释<br>玻尔 · 波函数坍缩"]
+  B --> B2["多世界诠释<br>埃弗雷特 · 平行世界"]
+  B --> B3["隐变量理论<br>贝尔不等式检验"]
+  ROOT --> C["第二次量子革命"]
+  C --> C1["量子计算<br>九章 · 祖冲之号"]
+  C --> C2["量子通信<br>墨子号 · 京沪干线"]
+  C --> C3["量子精密测量"]
+  classDef root fill:#1A56DB,color:#fff,stroke:#1A56DB;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 6a 详解：</strong>量子力学诞生一百年，经历了两次大爆发：第一次是 1925-1927 年的形式革命（海森堡矩阵力学、薛定谔波动力学、玻恩概率诠释），第二次是 1990 年代至今的"第二次量子革命"——不再只是解释自然，而是主动利用叠加与纠缠制造新技术。</p>
+          <p><strong>诠释之争：理论相同，含义各异：</strong>薛定谔方程与不确定性原理是各派共享的"硬件"，但"波函数坍缩意味着什么"众说纷纭。哥本哈根诠释（玻尔、海森堡）把波函数看作观测前的概率幅，测量瞬间"坍缩"；多世界诠释（埃弗雷特 1957）说根本没有坍缩，每次测量宇宙都分裂；隐变量理论（德布罗意-玻姆）则相信背后存在确定的"导航波"。1964 年贝尔不等式把这些争论变成可检验的实验——1982 年阿斯佩实验与 2022 年诺贝尔物理学奖（阿斯佩、克劳泽、蔡林格）的纠缠实验表明：局域隐变量被排除，自然界确实"非定域"。</p>
+          <p><strong>第二次量子革命：</strong>量子计算利用叠加态并行计算，量子通信利用纠缠分发密钥，量子精密测量把海森堡极限推向实用。中国的"墨子号"量子卫星（2016）实现了千公里级量子密钥分发与 1200 公里纠缠分发，"九章"（2020）与"祖冲之号"（2021）分别在光量子与超导两条路线展示量子计算优越性，京沪干线（2017）建成 2000 多公里量子保密通信骨干网——量子技术正从实验室走向国家的技术底座。</p>
+          <ul>
+            <li><strong>要点速记：</strong>第一次量子革命"发现"量子（解释自然），第二次量子革命"制造"量子（利用叠加与纠缠），中间相隔近一个世纪。</li>
+            <li><strong>现实案例：</strong>位于四川锦屏山的中国锦屏地下实验室（2400 米岩层屏蔽宇宙线，世界最深的岩石覆盖地下实验室）正在搜寻暗物质粒子；广东江门的江门中微子实验 JUNO 以两万吨液闪探测器测量中微子质量顺序——这些大科学装置研究的正是标准模型的边界，是量子力学与粒子物理通向未知的前沿哨站。</li>
+          </ul>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · EPR 佯谬：从"幽灵"到诺奖的百年长跑：</strong>1935 年，爱因斯坦与波多尔斯基、罗森发表 EPR 论文，质疑量子力学不完备：如果两个粒子纠缠，测量其中一个会瞬间"决定"另一个的状态——即使它们相距数光年，这不是"幽灵般的超距作用"吗？爱因斯坦坚信存在更深层的隐变量，让每个粒子预先就有确定状态。</p>
+          <p>1964 年贝尔证明：任何局域隐变量理论都必然满足贝尔不等式，而量子力学违反它——争论从此可以实验裁决。1982 年阿斯佩用钙原子纠缠光子实验给出决定性证据，2015 年荷兰代尔夫特实验进一步堵住漏洞，2022 年诺贝尔奖正式授予三位实验先驱。结论清晰而惊悚：量子纠缠是真实的，自然不存在"局域隐变量"。</p>
+          <p>这场争论直接催生了量子信息科学：纠缠既然不能被局域隐变量解释，就干脆用来做事——量子密钥分发保证"窃听必然被发现"，量子隐形传态则把未知量子态从一个位置搬到另一个位置。中国团队 2017 年通过"墨子号"把纠缠光子分发到相距 1200 公里的地面站，2021 年在《自然》报告了融合"墨子号"与京沪干线的 4600 公里天地一体化量子通信网络——爱因斯坦当年不肯相信的"幽灵"，今天已成为中国科技的名片。</p>
+        </div>
+<h3>对照表：自然界四种基本力</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>基本力</th><th>相对强度（引力=1）</th><th>作用范围</th><th>传递粒子</th><th>典型现象</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>强核力</strong></td><td>约 10³⁸</td><td>约 10⁻¹⁵ 米（原子核尺度）</td><td>胶子（8 种）</td><td>夸克结合成质子、中子；原子核稳定；太阳核聚变的能量来源</td></tr>
+              <tr><td><strong>电磁力</strong></td><td>约 10³⁶</td><td>无限远</td><td>光子</td><td>原子与分子结合、电流、光、摩擦力；一切化学与生命过程</td></tr>
+              <tr><td><strong>弱核力</strong></td><td>约 10²⁵</td><td>约 10⁻¹⁸ 米</td><td>W±、Z⁰ 玻色子</td><td>β 衰变；太阳核聚变的第一步（质子-质子链）；产生中微子</td></tr>
+              <tr><td><strong>引力</strong></td><td>1</td><td>无限远</td><td>引力子（理论上，尚未发现）</td><td>天体运动、黑洞、星系与宇宙结构、重物下落</td></tr>
+            </tbody>
+          </table>
+        </div>
+<div class="explain">
+          <p><strong>力的统一之梦：</strong>麦克斯韦统一电与磁，温伯格、萨拉姆、格拉肖（1979 年诺贝尔物理学奖）统一电磁力与弱核力为"电弱力"；强核力由量子色动力学描述，与电弱力同属标准模型。唯独引力仍游离在外：广义相对论是经典理论，与量子力学水火不容。四种力能否在极高能量下统一为一种力（大统一理论），弦论与圈量子引力各自给出候选答案——这是当代物理学尚未完成的圣杯，也是下一代实验（如宇宙线观测与引力波探测）要回答的问题。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">玻尔 · 1885–1962</div>
+            <blockquote>如果量子力学没有让你感到困惑，那你就还没有理解它。<cite>——玻尔</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">薛定谔 · 1887–1961</div>
+            <blockquote>一只猫被关在钢盒子里，里面有放射性物质和毒气——在打开盒子之前，猫既是活的又是死的。<cite>——薛定谔的猫思想实验</cite></blockquote>
+          </div>
+</div>
+<div class="legacy">
+<div>
+            <div class="legacy-who">费曼 · 1918–1988</div>
+            <blockquote>我想我可以有把握地说，没有人真正理解量子力学。<cite>——费曼《QED》</cite></blockquote>
+          </div>
+</div>
+</section>
+<section class="sec" id="summary">
+        <h2><span class="chapno">第七章 &middot; 总结：物理学的思维方式</span></h2>
+<p>物理学是人类理解自然最锋利的工具。它教会我们：世界是可知的，但我们的知识永远是不完整的；自然规律是普适的，但我们的理论总是在不断被修正。物理学精神的核心——怀疑、实验、数学、开放——应该成为每一个受过教育的人的思维方式。</p>
+<figure class="diagram">
+          <figcaption>图 7 · 物理学思想谱系总览</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  subgraph 经典
+    A1["牛顿力学<br>~1687"]
+    A2["热力学<br>~1850"]
+    A3["电磁学<br>~1865"]
+  end
+  subgraph 近代
+    B1["狭义相对论<br>1905"]
+    B2["广义相对论<br>1915"]
+    B3["量子力学<br>1925"]
+  end
+  subgraph 前沿
+    C1["粒子物理<br>标准模型"]
+    C2["宇宙学<br>ΛCDM"]
+    C3["量子引力<br>未完成"]
+  end
+  A1 --> B1
+  A3 --> B3
+  B1 --> B2
+  B2 --> C2
+  B3 --> C1
+  B3 --> C3
+  B2 --> C3
+  classDef root fill:#1A56DB,color:#fff,stroke:#1A56DB;
+  class C3 root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 7 详解：</strong>物理学的历史是一部不断统一和革命的历史。从牛顿统一天地力学，到麦克斯韦统一电磁学，到爱因斯坦统一时空与引力，再到粒子物理标准模型统一电磁力、弱力和强力——每一步都是对自然更深刻的理解。
+
+**物理学的思维方式**：
+1. 简化与理想化：忽略次要因素，抓住核心机制
+2. 数学化：用方程精确描述自然规律
+3. 实验验证：所有理论必须接受实验检验
+4. 还原论：复杂现象背后往往有简单原理
+
+**未解决的问题**：
+- 暗物质和暗能量是什么？
+- 如何统一量子力学和引力？
+- 时间的方向性从何而来？
+- 宇宙的终极命运是什么？
+
+**跨辑关联**：本卷与数学思想谱系（数学是物理的语言）、科学与技术谱系、科技与AI谱系密切关联。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 7a · 物理学的思维方式与世界观总图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["物理学的思维方式"] --> A["观察与实验<br>实证精神"]
+  ROOT --> B["数学与模型<br>精确表述"]
+  ROOT --> C["统一与还原<br>大统一之梦"]
+  ROOT --> D["怀疑与开放<br>可错性"]
+  A --> E["世界图景<br>从机械宇宙到量子宇宙"]
+  B --> E
+  C --> E
+  D --> E
+  classDef root fill:#1A56DB,color:#fff,stroke:#1A56DB;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 7a 详解：</strong>物理学的思维方式可以浓缩为四句话：以观察实验为法庭，以数学语言为文法，以统一还原为目标，以怀疑开放为气质。这四者共同塑造了现代科学的世界图景——从机械的钟表宇宙，到弯曲的时空，再到概率的量子海洋。</p>
+          <p><strong>观察与实验：</strong>物理学只相信可重复的检验。伽利略的斜面、法拉第的线圈、LIGO 的干涉仪——实验装置越来越大，精神始终如一：理论可以大胆，但必须面对判决。中国的"中国天眼"FAST（500 米口径球面射电望远镜，贵州）已发现数百颗脉冲星并捕获大量快速射电暴，正在为引力波脉冲星计时阵列贡献数据。</p>
+          <p><strong>数学与模型：</strong>从开普勒的椭圆到薛定谔方程，物理学的每一次飞跃都是数学语言的升级。今日中国空间站的微重力科学实验（冷原子物理、材料科学、生命科学）正在验证量子与流体的各种模型，高海拔宇宙线观测站 LHAASO（四川稻城）2021 年宣布发现 12 个超高能伽马射线源，把宇宙线加速模型推向 PeV 能区。</p>
+          <p><strong>统一与还原：</strong>牛顿统一天地，麦克斯韦统一电光磁，爱因斯坦统一时空引力，标准模型统一三种基本力——物理学相信世界有一个底层答案。这种信念也反向激励工程：中国散裂中子源、上海光源、合肥"人造太阳"EAST 托卡马克，都是"从基础研究长出现实力量"的当代样板。</p>
+          <ul>
+            <li><strong>要点速记：</strong>实证（观察实验）＋精确（数学模型）＋统一（还原论）＋开放（可错性），四根支柱撑起物理学的世界观；任何一根缺失，科学都会退化为教条或空谈。</li>
+            <li><strong>现实案例：</strong>FAST 发现的第一颗毫秒脉冲星、天宫空间站的微重力燃烧实验、LHAASO 测到的"超高能伽马泡"——这些近在身边的成就，正是"物理思维方式"从书斋走向大科学装置、再走进你我生活的证据。</li>
+          </ul>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 物理学的可错性与科学精神：</strong>物理学最伟大的品格，是它公开承认自己可能出错。波普尔用"可证伪性"划界：一个理论必须敢于预言那些可能被实验推翻的结论，才配称为科学。牛顿力学没有"错"，它只是在新的领域（高速、微观）失效——新理论必须把旧理论作为极限情形包含进来，这就是科学的自我修正机制。</p>
+          <p>这套机制在当代中国同样在生长：从"两弹一星"时期钱学森、于敏团队在极端条件下用纸笔推演核武器方程，到如今锦屏地下实验室、江门中微子实验、EAST 托卡马克、LHAASO 等大科学装置向世界开放合作，中国物理学的关键词正从"追赶"变成"并跑"与"领跑"。但比装置更重要的是态度：接受实验判决、愿意修正自我、保持对未知的敬畏——这些从伽利略到费曼一脉相承的品格，是物理学留给人类最珍贵的遗产。</p>
+          <p>回望整条思想谱系：古典力学的机械宇宙、热力学的熵增箭头、电磁学的场统一、相对论的弯曲时空、量子力学的概率世界——五次世界观革命，同一个方法论内核。物理学告诉我们：世界是可知的，但我们的知识永远可错；自然规律是普适的，但我们的理论永远在路上——这既是最冷静的谦逊，也是最热烈的乐观。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">费曼 · 1918–1988</div>
+            <blockquote>物理学的终极目标不是发现一切，而是发现我们所能发现的一切的限度。<cite>——《物理定律的本性》</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">温伯格 · 1933–2021</div>
+            <blockquote>宇宙越显得可以被理解，它也就越显得没有意义。<cite>——《最初三分钟》</cite></blockquote>
+          </div>
+</div>
+</section>
+
+    <section class="sec">
+      <h2>关联辑目</h2>
+      <div class="explain">
+        <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+        <ul>
+<li><span class="rel-link" data-vol="vol16">数学思想</span></li>
+<li><span class="rel-link" data-vol="vol17">科学与技术思想谱系</span></li>
+<li><span class="rel-link" data-vol="vol18">科技与AI思想谱系</span></li>
+<li><span class="rel-link" data-vol="vol31">天文学与宇宙学</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      物理学思想谱系 · 思想图谱系列第30辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-06
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+(function() {
+  if (window.mermaid) {
+    mermaid.initialize({
+      startOnLoad: true, theme: 'neutral', securityLevel: 'loose',
+      flowchart: { curve: 'basis', htmlLabels: true },
+      fontFamily: 'Segoe UI, PingFang SC, Microsoft YaHei, sans-serif'
+    });
+  }
+
+  var input = document.getElementById('searchInput');
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.sec'));
+  var tocLinks = Array.prototype.slice.call(document.querySelectorAll('#toc a'));
+
+  function applyFilter() {
+    var q = (input.value || '').trim().toLowerCase();
+    sections.forEach(function (sec) {
+      var hit = !q || sec.textContent.toLowerCase().indexOf(q) !== -1;
+      sec.classList.toggle('hidden-by-search', !hit);
+    });
+    tocLinks.forEach(function (a) {
+      var id = a.getAttribute('href').slice(1);
+      var sec = document.getElementById(id);
+      var visible = sec && !sec.classList.contains('hidden-by-search');
+      a.style.opacity = visible ? '' : '0.35';
+    });
+  }
+
+  if (input) { input.addEventListener('input', applyFilter); }
+})();
+</script>
+</body>
+</html>

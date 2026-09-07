@@ -1,0 +1,1011 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>军事与战略思想谱系 · 思想图谱系列第十四辑</title>
+
+  <style>
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+  </style>
+
+  <style>
+    :root {
+      --bg: #F6F5F1;
+      --bg2: #ECE9DF;
+      --ink: #26251F;
+      --muted: #6B6759;
+      --rule: #DCD9CB;
+      --accent: #4A5D3A;
+      --accent2: #B08D2E;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:first-child { margin-left: 0; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .legacy .legacy-title { font-weight: 700; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .legacy ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; }
+    @media (max-width: 700px) { .legacy { grid-template-columns: 1fr; } }
+
+    .history { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; }
+    .history .history-title { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem; }
+    .history p { margin-bottom: 0.55rem; }
+    .history p:last-child { margin-bottom: 0; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    .formula {
+      font-family: var(--font-mono);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidenav { position: static; max-height: none; }
+    }
+    @media print {
+      .sidenav { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      section.sec { break-inside: avoid-page; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="shell">
+
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">军事与战略思想谱系</div>
+    <div class="brand-sub">思想图谱系列 · 第十四辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+      <li><a href="#intro">导言 · 从战争到战略</a></li>
+      <li><a href="#overview">第一章 · 总览：军事思想的演变</a></li>
+      <li><a href="#ancient-china">第二章 · 中国古代军事思想</a></li>
+      <li><a href="#western-classic">第三章 · 西方古典与近代军事思想</a></li>
+      <li><a href="#modern-war">第四章 · 现代战争思想</a></li>
+      <li><a href="#people-war">第五章 · 东方战争智慧与人民战争</a></li>
+      <li><a href="#frontier">第六章 · 当代军事与战略前沿</a></li>
+      <li><a href="#summary">第七章 · 总结提炼：军事思想的启示</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第十四辑</span>
+        <span class="series-links">
+          <a href="../index.html">系列目录</a>
+          <a href="../历史思想谱系/历史思想谱系.html">← 上一辑 · 历史思想谱系</a>
+          <a href="../社会思想谱系/社会思想谱系.html">下一辑 · 社会思想谱系 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>军事与战略思想谱系</h1>
+      <p class="subtitle">从孙子到 AI 战争——人类如何思考战争、驾驭暴力、追求和平：以中国古代兵家、西方古典与近代军事、现代战争思想、人民战争、当代军事前沿为脉络，提炼"道胜于术、不战而胜、民心为本、技术变革、威慑和平"的军事规律</p>
+      <p class="meta">作者：詹家杨 · 2026-09-05 · 7 张思维导图 · 7 张对照表 · 30+ 人物语录 · 军事思想</p>
+    </header>
+
+    <main>
+      <!-- 导言 -->
+      <section class="sec" id="intro">
+        <h2>导言 · 从战争到战略</h2>
+        <p>军事思想（military thought）是人类对战争与暴力的<strong>系统思考</strong>——它既包括如何打赢战争（战略与战术），也包括如何看待战争（战争观），还包括如何避免战争（威慑与和平）。军事思想史追问四个根本问题：<strong>战争从哪里来</strong>（起源论）、<strong>战争有无规律</strong>（规律论）、<strong>战争为谁而战</strong>（价值论）、<strong>战争如何结束与避免</strong>（和平论）。它不教人"好战"，而是回答"人类为何战争、又如何驾驭战争"。</p>
+        <div class="callout">
+          <span class="callout-title">一条主线</span>
+          军事思想的主线，是"战争为谁而战"的几次转向：<strong>为生存</strong>（部落冲突：争夺生存资源）→ <strong>为权力</strong>（帝国征服：争夺领土霸权）→ <strong>为信仰</strong>（宗教战争：圣战与十字军）→ <strong>为国家</strong>（民族国家：主权与民族战争）→ <strong>为意识形态</strong>（冷战：主义之争与代理人战争）→ <strong>为算法</strong>（AI 时代：信息战与认知战）。每一次转向，都是人类重新回答"战争是毁灭还是工具、是艺术还是科学"。
+        </div>
+        <p>本辑以军事思想自身的演变为线索——<strong>中国古代兵家</strong>（道胜于术）、<strong>西方古典与近代</strong>（战争是政治的延续）、<strong>现代战争</strong>（总体战与核威慑）、<strong>人民战争</strong>（民心为本）、<strong>当代前沿</strong>（信息战与 AI 战争），看人类如何从"杀伐之术"走向"战略之道"，再走向"和平之学"。</p>
+      </section>
+
+      <!-- 第一章 总览 -->
+      <section class="sec" id="overview">
+        <h2><span class="chapno">第一章</span>总览：军事思想的演变</h2>
+        <p>先看全景：人类从部落冲突中学会组织，从冷兵器时代走向火器时代，从线式战术走向机械化战争，从核威慑走向信息战与 AI 战争。东方以《孙子兵法》"不战而屈人之兵"为最高境界，西方以克劳塞维茨"战争是政治的延续"为经典定义。军事思想从"术"（战术技巧）走向"道"（战略哲学），再走向"学"（军事科学）——它既是杀伐之术，也是治国之道，更是和平之学。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>中国军事传统</strong>：孙子著《孙子兵法》"兵者，国之大事"；吴起、孙膑发展先秦兵家；曹操注《孙子》；戚继光《纪效新书》抗倭练兵；毛泽东军事思想把战争升华为"人民战争"——从"兵者诡道"到"兵民是胜利之本"。</p>
+          <p><strong>西方军事传统</strong>：修昔底德《伯罗奔尼撒战争史》分析战争根源；马基雅维利《君主论》论战争与政治；克劳塞维茨《战争论》"战争是政治的延续"；约米尼《战争艺术概论》把战争当作科学；马汉《海权论》、杜黑《制空权》开辟海权与空权时代。</p>
+          <p><strong>军事思想的转向</strong>：从"歼灭战"到"威慑战"，从"消耗战"到"信息战"，从"人海战术"到"无人化战争"——技术不断改变战争形态，而思想决定战争的方向。军事思想始终回答同一个问题：人类如何用最小的代价赢得战争、又如何避免战争。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>孙子（约前 545–前 470）</strong>——兵圣。《孙子兵法》"不战而屈人之兵"。</p>
+        <p><strong>吴起（前 440–前 381）</strong>——兵家代表。《吴子》"内修文德，外治武备"。</p>
+        <p><strong>孙膑（约前 380–前 320）</strong>——战国兵家。"围魏救赵"。</p>
+        <p><strong>曹操（155–220）</strong>——注《孙子》者。乱世枭雄，以法治军。</p>
+        <p><strong>戚继光（1528–1588）</strong>——抗倭名将。《纪效新书》练兵之法。</p>
+        <p><strong>修昔底德（约前 460–前 400）</strong>——战争分析先驱。恐惧、荣誉、利益三因。</p>
+        <p><strong>马基雅维利（1469–1527）</strong>——近代政治军事之父。《君主论》论战争。</p>
+        <p><strong>克劳塞维茨（1780–1831）</strong>——西方军事理论巅峰。《战争论》。</p>
+        <p><strong>约米尼（1779–1869）</strong>——战争科学论者。《战争艺术概论》。</p>
+        <p><strong>马汉（1840–1914）</strong>——海权论之父。控制海洋即控制世界。</p>
+        <p><strong>杜黑（1869–1930）</strong>——制空权论者。空军决定战争胜负。</p>
+        <p><strong>毛泽东（1893–1976）</strong>——人民战争思想集大成者。《论持久战》。</p>
+
+        <figure class="diagram">
+          <figcaption>图 1 · 军事思想演变结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["军事思想"] --> A["术<br>战术 · 阵法 · 兵器"]
+  ROOT --> B["道<br>战略 · 战争观 · 哲学"]
+  ROOT --> C["学<br>军事科学 · 理论化"]
+  ROOT --> D["东方传统<br>孙子 → 毛泽东"]
+  ROOT --> E["西方传统<br>修昔底德 → 克劳塞维茨"]
+  ROOT --> F["现代转向<br>海权 · 空权 · 核威慑 · AI"]
+  classDef rootNode fill:#4A5D3A,color:#fff,stroke:#4A5D3A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">不战而屈人之兵</span>
+          最高胜利 = 不战 + 屈人之兵（孙子）
+          <span class="f-note">孙子把"不战而胜"置于"百战百胜"之上——军事的最高境界不是毁灭，而是以谋略与威慑达成目标。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">战争是政治的延续</span>
+          战争 = 政治（以其他手段的继续）（克劳塞维茨）
+          <span class="f-note">克劳塞维茨把战争从"暴力游戏"提升为"政治工具"——战争服务于政治目的，政治决定战争的方向与限度。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">战争是科学的艺术</span>
+          军事 = 科学（规律）+ 艺术（天才）
+          <span class="f-note">约米尼主张战争有规律可循、可教可学；但克劳塞维茨强调战争充满摩擦与偶然，需要天才的直觉——二者互补。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">威慑与平衡</span>
+          和平 = 威慑（让对方不敢打）+ 平衡（均势）
+          <span class="f-note">从均势外交到核威慑，军事思想最终指向"以战止战"——让战争的成本高到无人敢于发动。</span>
+        </div>
+
+        <h3>对照表：中西方军事思想传统</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>中国军事思想</th><th>西方军事思想</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>经典</strong></td><td>《孙子兵法》</td><td>《战争论》</td></tr>
+              <tr><td><strong>最高境界</strong></td><td>不战而屈人之兵</td><td>歼灭敌军主力</td></tr>
+              <tr><td><strong>战争观</strong></td><td>兵者诡道 · 慎战</td><td>政治延续 · 必然性</td></tr>
+              <tr><td><strong>重心</strong></td><td>谋略 · 人心 · 道义</td><td>力量 · 组织 · 技术</td></tr>
+              <tr><td><strong>代表</strong></td><td>孙子 · 吴起 · 毛泽东</td><td>修昔底德 · 克劳塞维茨 · 马汉</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">孙子 · 约前 545–前 470</div>
+            <blockquote>兵者，国之大事，死生之地，存亡之道，不可不察也。<cite>——《孙子兵法·计篇》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">克劳塞维茨 · 1780–1831</div>
+            <blockquote>战争是政治通过另一种手段的继续。<cite>——《战争论》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">孙子 · 约前 545–前 470</div>
+            <blockquote>不战而屈人之兵，善之善者也。<cite>——《孙子兵法·谋攻篇》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">马汉 · 1840–1914</div>
+            <blockquote>谁控制了海洋，谁就控制了世界贸易；谁控制了世界贸易，谁就控制了世界财富。<cite>——《海权对历史的影响》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">毛泽东 · 1893–1976</div>
+            <blockquote>兵民是胜利之本。<cite>——《论持久战》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">军事思想的遗产</div>
+            <ul>
+              <li>"不战而屈人之兵"确立慎战与谋略传统</li>
+              <li>"战争是政治的延续"把战争纳入政治理性</li>
+              <li>海权、空权、核威慑拓展战争的空间维度</li>
+              <li>人民战争证明：民心是战争胜负的根本</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第二章 中国古代军事思想 -->
+      <section class="sec" id="ancient-china">
+        <h2><span class="chapno">第二章</span>中国古代军事思想：从孙子到戚继光</h2>
+        <p><strong>定义</strong>：中国古代军事思想以《孙子兵法》为巅峰，涵盖先秦兵家（孙子、吴起、孙膑）、秦汉至唐宋的战争实践（韩信、曹操、李靖）、明清的军事总结（戚继光）。其核心是"道天地将法"的体系化思考，强调"不战而屈人之兵"的最高境界、"知己知彼"的认知原则、"以正合以奇胜"的战术智慧。它不仅是战争之术，更是治国与处世的哲学——"兵者，国之大事"。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>春秋战国（前 770–前 221）</strong>：礼崩乐坏，战争频繁，兵家兴起。《孙子兵法》成书于春秋末期，为兵学之祖。</p>
+          <p><strong>战国兵家</strong>：吴起《吴子》"内修文德，外治武备"；孙膑"围魏救赵"、"减灶诱敌"。</p>
+          <p><strong>秦汉</strong>：韩信"背水一战"、"十面埋伏"；曹操注《孙子》，"以法治军"。</p>
+          <p><strong>唐宋</strong>：李靖《唐李问对》，"以正合以奇胜"；《武经七书》确立兵学经典。</p>
+          <p><strong>明清</strong>：戚继光《纪效新书》《练兵实纪》抗倭，火器与阵法结合，练兵与练将并重。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>孙子（约前 545–前 470）</strong>——兵圣。《孙子兵法》十三篇，兵学之祖。</p>
+        <p><strong>吴起（前 440–前 381）</strong>——兵家代表。与孙子并称"孙吴"。</p>
+        <p><strong>孙膑（约前 380–前 320）</strong>——战国兵家。围魏救赵，兵法传世。</p>
+        <p><strong>韩信（约前 231–前 196）</strong>——兵仙。暗度陈仓、背水一战。</p>
+        <p><strong>曹操（155–220）</strong>——注《孙子》者。以法治军，唯才是举。</p>
+        <p><strong>李靖（571–649）</strong>——大唐军神。灭东突厥，著《唐李问对》。</p>
+        <p><strong>岳飞（1103–1142）</strong>——精忠报国。岳家军"冻死不拆屋，饿死不掳掠"。</p>
+        <p><strong>戚继光（1528–1588）</strong>——抗倭名将。鸳鸯阵，练新军。</p>
+
+        <figure class="diagram">
+          <figcaption>图 2 · 中国古代军事思想结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["中国古代军事思想"] --> A["先秦兵家<br>孙子 · 吴起 · 孙膑"]
+  ROOT --> B["秦汉<br>韩信 · 曹操"]
+  ROOT --> C["唐宋<br>李靖 · 武经七书"]
+  ROOT --> D["明清<br>戚继光 · 火器阵法"]
+  ROOT --> E["核心原则<br>道天地将法"]
+  ROOT --> F["最高境界<br>不战而屈人之兵"]
+  classDef rootNode fill:#4A5D3A,color:#fff,stroke:#4A5D3A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">五事七计</span>
+          胜负 = 道 + 天 + 地 + 将 + 法
+          <span class="f-note">孙子以"道天地将法"五事评估战争：道义、天时、地利、将才、法度——道义（民心）居首。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">知己知彼</span>
+          知彼知己，百战不殆
+          <span class="f-note">认知是战争的第一要素——不了解敌我双方，再强的兵力也会陷入盲目。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">以正合以奇胜</span>
+          战术 = 正兵（正面牵制）+ 奇兵（出其不意）
+          <span class="f-note">韩信背水一战、孙膑围魏救赵，都是"以奇胜"的经典——奇正相生，变化无穷。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">兵贵神速</span>
+          用兵 = 速战速决 + 以逸待劳
+          <span class="f-note">"兵之情主速，乘人之不及"——时间与机动是冷兵器时代最稀缺的战略资源。</span>
+        </div>
+
+        <h3>对照表：先秦兵家比较</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>孙子</th><th>吴起</th><th>孙膑</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>著作</strong></td><td>《孙子兵法》</td><td>《吴子》</td><td>《孙膑兵法》</td></tr>
+              <tr><td><strong>核心</strong></td><td>谋略 · 不战而胜</td><td>文武并重 · 治军</td><td>因势利导 · 奇正</td></tr>
+              <tr><td><strong>战争观</strong></td><td>慎战 · 国之大事</td><td>内修文德 · 外治武备</td><td>贵势 · 贵先</td></tr>
+              <tr><td><strong>名战例</strong></td><td>（理论奠基）</td><td>（治军典范）</td><td>围魏救赵 · 马陵之战</td></tr>
+              <tr><td><strong>影响</strong></td><td>兵学之祖</td><td>与孙子并称"孙吴"</td><td>战国兵家代表</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">孙子 · 约前 545–前 470</div>
+            <blockquote>知彼知己，百战不殆。<cite>——《孙子兵法·谋攻篇》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">孙子 · 约前 545–前 470</div>
+            <blockquote>兵者，诡道也。能而示之不能，用而示之不用。<cite>——《孙子兵法·计篇》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">吴起 · 前 440–前 381</div>
+            <blockquote>内修文德，外治武备。<cite>——《吴子·图国》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">孙膑 · 约前 380–前 320</div>
+            <blockquote>围魏救赵，攻其必救。<cite>——《孙膑兵法》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">岳飞 · 1103–1142</div>
+            <blockquote>文臣不爱钱，武臣不惜死，天下太平矣。<cite>——《宋史·岳飞传》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">戚继光 · 1528–1588</div>
+            <blockquote>练兵之法，必先练心；练心之法，必先明理。<cite>——《纪效新书》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">曹操 · 155–220</div>
+            <blockquote>吾任天下之智力，以道御之，无所不可。<cite>——《三国志·武帝纪》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">中国古代军事思想的遗产</div>
+            <ul>
+              <li>"道天地将法"确立体系化的战略思维</li>
+              <li>"不战而屈人之兵"成为慎战的最高智慧</li>
+              <li>"知己知彼"奠定军事认知论基础</li>
+              <li>"以正合以奇胜"成为战术变化之源</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第三章 西方古典与近代军事思想 -->
+      <section class="sec" id="western-classic">
+        <h2><span class="chapno">第三章</span>西方古典与近代军事思想：从修昔底德到拿破仑</h2>
+        <p><strong>定义</strong>：西方军事思想从古希腊的战争分析出发，经罗马的军团制度、中世纪的骑士战争，到近代的常备军与拿破仑战争，最终由克劳塞维茨《战争论》与约米尼《战争艺术概论》完成理论化。其核心是"战争是政治的延续"（克劳塞维茨）与"战争是科学的艺术"（约米尼），强调集中兵力、内线作战、歼灭敌军主力——西方军事思想由此从"经验"走向"理论"。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>古希腊（前 5 世纪）</strong>：希波战争、伯罗奔尼撒战争；修昔底德分析战争根源——恐惧、荣誉、利益。</p>
+          <p><strong>罗马（前 3 世纪–5 世纪）</strong>：军团制度、职业化军队，"条条大路通罗马"的军事后勤与工程能力。</p>
+          <p><strong>中世纪（5–15 世纪）</strong>：骑士战争、城堡攻防、十字军东征；火药传入改变战争形态。</p>
+          <p><strong>近代（16–18 世纪）</strong>：三十年战争、常备军兴起；腓特烈大帝的斜线战术；马基雅维利《君主论》论战争与政治。</p>
+          <p><strong>拿破仑战争（1803–1815）</strong>：拿破仑以机动、集中、歼灭战横扫欧洲，成为军事天才的巅峰。</p>
+          <p><strong>理论化（19 世纪）</strong>：克劳塞维茨《战争论》（1832）、约米尼《战争艺术概论》（1838）——西方军事科学诞生。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>修昔底德（约前 460–前 400）</strong>——战争分析之父。恐惧、荣誉、利益三因。</p>
+        <p><strong>亚历山大（前 356–前 323）</strong>——马其顿征服者。以少胜多，东征至印度。</p>
+        <p><strong>凯撒（前 100–前 44）</strong>——罗马统帅。"我来了，我看见了，我征服了"。</p>
+        <p><strong>马基雅维利（1469–1527）</strong>——近代政治军事之父。《君主论》《战争的艺术》。</p>
+        <p><strong>腓特烈大帝（1712–1786）</strong>——普鲁士军事改革者。斜线战术。</p>
+        <p><strong>拿破仑（1769–1821）</strong>——军事天才。机动、集中、歼灭战。</p>
+        <p><strong>克劳塞维茨（1780–1831）</strong>——战争哲学大师。《战争论》。</p>
+        <p><strong>约米尼（1779–1869）</strong>——战争科学论者。《战争艺术概论》。</p>
+
+        <figure class="diagram">
+          <figcaption>图 3 · 西方军事思想结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["西方军事思想"] --> A["古希腊<br>修昔底德 · 战争三因"]
+  ROOT --> B["罗马<br>军团制度 · 职业化"]
+  ROOT --> C["中世纪<br>骑士战争 · 火药传入"]
+  ROOT --> D["近代<br>马基雅维利 · 腓特烈"]
+  ROOT --> E["拿破仑<br>机动 · 集中 · 歼灭"]
+  ROOT --> F["理论化<br>克劳塞维茨 · 约米尼"]
+  classDef rootNode fill:#4A5D3A,color:#fff,stroke:#4A5D3A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">战争三因（修昔底德）</span>
+          战争根源 = 恐惧 + 荣誉 + 利益
+          <span class="f-note">修昔底德最早系统分析战争根源——恐惧（安全困境）、荣誉（尊严）、利益（资源），至今仍是国际关系分析的经典框架。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">战争是政治的延续</span>
+          战争 = 政治 + 暴力（克劳塞维茨）
+          <span class="f-note">克劳塞维茨强调战争服务于政治目的，受政治制约——"战争不是盲目的激情，而是理智的运用"。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">集中兵力</span>
+          胜利 = 在决定点集中优势兵力
+          <span class="f-note">拿破仑的机动与集中、克劳塞维茨的"重心"理论——在关键地点形成局部优势，是西方军事的核心法则。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">歼灭战</span>
+          目标 = 消灭敌军主力 + 摧毁其抵抗意志
+          <span class="f-note">与东方"不战而胜"不同，西方古典军事以"歼灭敌军主力"为直接目标——决战决定胜负。</span>
+        </div>
+
+        <h3>对照表：克劳塞维茨 vs 约米尼</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>克劳塞维茨</th><th>约米尼</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>著作</strong></td><td>《战争论》</td><td>《战争艺术概论》</td></tr>
+              <tr><td><strong>战争观</strong></td><td>政治延续 · 充满摩擦</td><td>科学规律 · 可教可学</td></tr>
+              <tr><td><strong>重心</strong></td><td>精神 · 意志 · 天才</td><td>几何 · 内线 · 集中</td></tr>
+              <tr><td><strong>方法</strong></td><td>哲学思辨</td><td>经验归纳</td></tr>
+              <tr><td><strong>影响</strong></td><td>战略哲学巅峰</td><td>军校教材经典</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">修昔底德 · 约前 460–前 400</div>
+            <blockquote>使战争不可避免的真正原因是雅典势力的增长，以及由此引起的斯巴达的恐惧。<cite>——《伯罗奔尼撒战争史》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">凯撒 · 前 100–前 44</div>
+            <blockquote>我来了，我看见了，我征服了。<cite>——泽拉战役捷报</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">马基雅维利 · 1469–1527</div>
+            <blockquote>战争是君主唯一不应寄希望于他人的艺术。<cite>——《君主论》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">拿破仑 · 1769–1821</div>
+            <blockquote>在战争中，精神对物质的比是三比一。<cite>——拿破仑军事格言</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">克劳塞维茨 · 1780–1831</div>
+            <blockquote>战争是迫使敌人服从我们意志的暴力行为。<cite>——《战争论》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">约米尼 · 1779–1869</div>
+            <blockquote>战争的艺术是科学的，但它的运用需要天才。<cite>——《战争艺术概论》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">亚历山大 · 前 356–前 323</div>
+            <blockquote>把世界当作自己的故乡，把好人当作自己的同胞。<cite>——东征格言</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">西方古典与近代军事思想的遗产</div>
+            <ul>
+              <li>"战争三因"成为国际关系分析的经典框架</li>
+              <li>"战争是政治的延续"确立战争从属于政治</li>
+              <li>集中兵力、歼灭战成为近代战争的核心法则</li>
+              <li>军事从"经验"走向"理论"与"科学"</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四章 现代战争思想 -->
+      <section class="sec" id="modern-war">
+        <h2><span class="chapno">第四章</span>现代战争思想：从总体战到核威慑</h2>
+        <p><strong>定义</strong>：现代战争思想诞生于工业革命与两次世界大战——战争从"军队对军队"扩展为"国家对国家"的总体战，从陆地扩展到海洋与天空，最终进入核威慑时代。其核心命题是：技术如何改变战争形态（海权、空权、装甲战、核威慑），以及人类如何在毁灭性武器面前避免战争（威慑理论、军备控制）。现代军事思想由此从"如何打赢战争"转向"如何避免毁灭"。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>工业革命（19 世纪）</strong>：铁路、电报、机枪、毒气改变战争——后勤与火力革命。</p>
+          <p><strong>海权论（1890）</strong>：马汉《海权对历史的影响》——控制海洋即控制世界。</p>
+          <p><strong>制空权（1921）</strong>：杜黑《制空权》——空军决定战争胜负。</p>
+          <p><strong>一战（1914–1918）</strong>：堑壕战、总体战雏形；鲁登道夫《总体战》提出全民动员。</p>
+          <p><strong>二战（1939–1945）</strong>：闪电战（古德里安）、装甲战、战略轰炸、原子弹——战争进入核时代。</p>
+          <p><strong>冷战（1947–1991）</strong>：核威慑、相互确保摧毁（MAD）、军备控制——"以核止核"。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>马汉（1840–1914）</strong>——海权论之父。控制海洋即控制世界。</p>
+        <p><strong>杜黑（1869–1930）</strong>——制空权论者。空军决定战争胜负。</p>
+        <p><strong>鲁登道夫（1865–1937）</strong>——总体战理论家。全民动员、总体战争。</p>
+        <p><strong>富勒（1878–1966）</strong>——装甲战先驱。"机械化战争"。</p>
+        <p><strong>古德里安（1888–1954）</strong>——闪电战之父。装甲集群突击。</p>
+        <p><strong>利德尔·哈特（1895–1970）</strong>——间接路线战略家。《战略论》。</p>
+        <p><strong>艾森豪威尔（1890–1969）</strong>——盟军统帅。诺曼底登陆。</p>
+        <p><strong>麦克纳马拉（1916–2009）</strong>——核威慑与军控推动者。相互确保摧毁。</p>
+
+        <figure class="diagram">
+          <figcaption>图 4 · 现代战争思想结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["现代战争思想"] --> A["海权时代<br>马汉 · 控制海洋"]
+  ROOT --> B["空权时代<br>杜黑 · 制空权"]
+  ROOT --> C["总体战<br>鲁登道夫 · 全民动员"]
+  ROOT --> D["机械化战争<br>富勒 · 古德里安 · 闪电战"]
+  ROOT --> E["核威慑<br>MAD · 军备控制"]
+  ROOT --> F["间接路线<br>利德尔·哈特"]
+  classDef rootNode fill:#4A5D3A,color:#fff,stroke:#4A5D3A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">海权论（马汉）</span>
+          大国兴衰 = 制海权（海军 + 商船 + 基地）
+          <span class="f-note">马汉论证：谁控制海洋，谁就控制贸易与财富——海权决定大国命运，深刻影响美国、日本的海军战略。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">制空权（杜黑）</span>
+          制空权 = 胜利的关键
+          <span class="f-note">杜黑预言空军将独立决定战争胜负——战略轰炸、夺取制空权成为现代战争的首要目标。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">总体战（鲁登道夫）</span>
+          战争 = 全民 + 全资源 + 全领域
+          <span class="f-note">鲁登道夫把战争从"军队的事"扩展为"全民的事"——经济、工业、宣传都成为战场。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">核威慑（MAD）</span>
+          和平 = 相互确保摧毁（让对方不敢先动手）
+          <span class="f-note">核武器的毁灭性使"打赢战争"失去意义——威慑取代实战，军备控制成为大国博弈的常态。</span>
+        </div>
+
+        <h3>对照表：海权 vs 陆权 vs 空权</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>海权论</th><th>陆权论</th><th>空权论</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>代表</strong></td><td>马汉</td><td>麦金德</td><td>杜黑</td></tr>
+              <tr><td><strong>核心</strong></td><td>控制海洋</td><td>控制心脏地带</td><td>控制天空</td></tr>
+              <tr><td><strong>关键力量</strong></td><td>海军 · 商船</td><td>陆军 · 铁路</td><td>空军 · 轰炸机</td></tr>
+              <tr><td><strong>名言</strong></td><td>谁控制海洋谁控制世界</td><td>谁统治心脏地带谁统治世界岛</td><td>制空权是胜利关键</td></tr>
+              <tr><td><strong>影响</strong></td><td>美日海军扩张</td><td>欧亚大陆地缘博弈</td><td>空军独立成军</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">马汉 · 1840–1914</div>
+            <blockquote>海权是历史兴衰的钥匙。<cite>——《海权对历史的影响》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">杜黑 · 1869–1930</div>
+            <blockquote>制空权是胜利的钥匙，没有制空权就没有胜利。<cite>——《制空权》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">鲁登道夫 · 1865–1937</div>
+            <blockquote>战争是民族生存意志的最高表现，必须动员一切力量。<cite>——《总体战》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">利德尔·哈特 · 1895–1970</div>
+            <blockquote>真正的目的是使敌人失去平衡，而不是正面强攻。<cite>——《战略论》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">古德里安 · 1888–1954</div>
+            <blockquote>不要用拳头去打，要用指尖去戳——集中力量于一点。<cite>——装甲战原则</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">现代战争思想的遗产</div>
+            <ul>
+              <li>海权、空权、总体战拓展战争的空间与广度</li>
+              <li>机械化战争与闪电战改变战争的速度与形态</li>
+              <li>核威慑使"打赢战争"失去意义，威慑取代实战</li>
+              <li>军备控制成为大国博弈与和平的常态机制</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第五章 东方战争智慧与人民战争 -->
+      <section class="sec" id="people-war">
+        <h2><span class="chapno">第五章</span>东方战争智慧与人民战争：从《孙子兵法》到毛泽东军事思想</h2>
+        <p><strong>定义</strong>：东方战争智慧以《孙子兵法》为源头，在近现代由毛泽东军事思想推向新高度。其核心是"人民战争"——战争不仅是军队的对抗，更是政治、经济、人心的全面较量；"农村包围城市"的革命道路、"敌进我退，敌驻我扰，敌疲我打，敌退我追"的游击战十六字诀、"兵民是胜利之本"的群众路线。它把战争从"将帅的艺术"变成"人民的战争"，是东方智慧在现代的创造性转化。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>近代冲击（1840–1911）</strong>：鸦片战争、甲午战争，传统军事思想面对西方军事技术的冲击。</p>
+          <p><strong>土地革命（1927–1937）</strong>：红军创建，游击战十六字诀，"农村包围城市"道路确立。</p>
+          <p><strong>抗日战争（1937–1945）</strong>：《论持久战》战略指导，敌后游击战与人民战争。</p>
+          <p><strong>解放战争（1946–1949）</strong>：运动战、歼灭战，三大战役以少胜多。</p>
+          <p><strong>抗美援朝（1950–1953）</strong>：人民战争与现代化战争的结合，以弱胜强。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>毛泽东（1893–1976）</strong>——人民战争思想集大成者。《论持久战》。</p>
+        <p><strong>朱德（1886–1976）</strong>——红军总司令。人民军队缔造者。</p>
+        <p><strong>彭德怀（1898–1974）</strong>——解放军将领。百团大战、抗美援朝。</p>
+        <p><strong>刘伯承（1892–1986）</strong>——军事理论家。伏击战大师。</p>
+        <p><strong>粟裕（1907–1984）</strong>——战神。淮海战役指挥者。</p>
+        <p><strong>林彪（1907–1971）</strong>——军事将领。平型关大捷、辽沈战役。</p>
+        <p><strong>陈赓（1903–1961）</strong>——传奇将领。上党战役、援越抗法。</p>
+
+        <figure class="diagram">
+          <figcaption>图 5 · 人民战争思想结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["人民战争思想"] --> A["人民战争<br>兵民是胜利之本"]
+  ROOT --> B["革命道路<br>农村包围城市"]
+  ROOT --> C["游击战<br>十六字诀"]
+  ROOT --> D["战略指导<br>论持久战"]
+  ROOT --> E["作战方式<br>运动战 · 歼灭战"]
+  ROOT --> F["群众路线<br>军民鱼水情"]
+  classDef rootNode fill:#4A5D3A,color:#fff,stroke:#4A5D3A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">人民战争</span>
+          战争 = 人民（政治动员）+ 军队（武装斗争）
+          <span class="f-note">毛泽东把战争从"军队的事"变为"人民的事"——"战争的伟力之最深厚的根源，存在于民众之中"。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">农村包围城市</span>
+          革命道路 = 农村根据地 + 武装斗争 + 土地革命
+          <span class="f-note">在半殖民地半封建的中国，走"农村包围城市、武装夺取政权"的道路——这是中国革命的独特路径。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">游击战十六字诀</span>
+          敌进我退 · 敌驻我扰 · 敌疲我打 · 敌退我追
+          <span class="f-note">以弱对强的战术智慧——不与敌人拼消耗，而是调动敌人、寻找战机、积小胜为大胜。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">论持久战</span>
+          抗战 = 战略防御 → 战略相持 → 战略反攻
+          <span class="f-note">《论持久战》科学预判战争三阶段，批驳"亡国论"与"速胜论"——战略耐心与全局眼光。</span>
+        </div>
+
+        <h3>对照表：孙子兵法 vs 毛泽东军事思想</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>《孙子兵法》</th><th>毛泽东军事思想</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>时代</strong></td><td>春秋战国</td><td>近现代中国革命</td></tr>
+              <tr><td><strong>主体</strong></td><td>将帅 · 诸侯</td><td>人民 · 军队</td></tr>
+              <tr><td><strong>最高境界</strong></td><td>不战而屈人之兵</td><td>人民战争 · 兵民胜利之本</td></tr>
+              <tr><td><strong>战术</strong></td><td>以正合以奇胜</td><td>游击战十六字诀</td></tr>
+              <tr><td><strong>继承关系</strong></td><td>兵学之源</td><td>创造性转化 · 推向人民战争</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">毛泽东 · 1893–1976</div>
+            <blockquote>敌进我退，敌驻我扰，敌疲我打，敌退我追。<cite>——游击战十六字诀</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">毛泽东 · 1893–1976</div>
+            <blockquote>战争的伟力之最深厚的根源，存在于民众之中。<cite>——《论持久战》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">朱德 · 1886–1976</div>
+            <blockquote>革命军队的纪律，是建立在自觉的基础之上的。<cite>——人民军队建设</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">粟裕 · 1907–1984</div>
+            <blockquote>指挥员的决心，来源于对敌我情况的正确判断。<cite>——淮海战役指挥经验</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">刘伯承 · 1892–1986</div>
+            <blockquote>五行不定，输得干干净净。<cite>——军事指挥格言</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">人民战争思想的遗产</div>
+            <ul>
+              <li>人民战争证明：民心是战争胜负的根本</li>
+              <li>农村包围城市是独特的革命道路</li>
+              <li>游击战十六字诀是以弱胜强的战术智慧</li>
+              <li>《论持久战》体现战略耐心与全局眼光</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第六章 当代军事与战略前沿 -->
+      <section class="sec" id="frontier">
+        <h2><span class="chapno">第六章</span>当代军事与战略前沿：信息战、AI 战争与混合战争</h2>
+        <p><strong>定义</strong>：当代军事思想面对信息化与智能化革命——战争形态从"平台中心战"转向"网络中心战"，从"火力制胜"转向"信息制胜"，从"有人战争"转向"无人战争"。核心命题包括：信息战与认知战（争夺人心与认知）、AI 战争（自主武器系统）、太空战与网络战、混合战争（常规+非常规+信息+经济）、以及无人化与智能化战争带来的伦理与治理问题。军事思想由此进入"算法与人心"的新战场。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>海湾战争（1991）</strong>：信息化战争雏形，"外科手术式打击"，精确制导改变战争。</p>
+          <p><strong>网络战</strong>：网络攻击成为第五战场——瘫痪电网、金融、指挥系统。</p>
+          <p><strong>无人机战争</strong>：反恐战争中的无人机打击，战争进入"无人化"。</p>
+          <p><strong>AI 军事化</strong>：自主武器系统、算法战、智能决策辅助。</p>
+          <p><strong>混合战争（2014）</strong>：克里米亚事件——常规+信息+代理+经济战的混合形态。</p>
+          <p><strong>太空军事化</strong>：太空部队成立，卫星成为战略资产。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>博伊德（1927–1997）</strong>——OODA 循环之父。观察-判断-决策-行动。</p>
+        <p><strong>阿尔文·托夫勒（1928–2016）</strong>——未来学家。第三次浪潮战争。</p>
+        <p><strong>约翰·阿奎拉（1940–）</strong>——网络战理论家。网络中心战。</p>
+        <p><strong>彼得·辛格（1974–）</strong>——机器人战争研究者。《机器人战争》。</p>
+        <p><strong>伊恩·莫里斯（1960–）</strong>——战争与文明史家。战争塑造文明。</p>
+        <p><strong>弗兰克·霍夫曼（1964–）</strong>——混合战争理论家。混合威胁。</p>
+
+        <figure class="diagram">
+          <figcaption>图 6 · 当代军事前沿结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["当代军事前沿"] --> A["信息战<br>网络中心战 · 认知战"]
+  ROOT --> B["AI 战争<br>自主武器 · 算法战"]
+  ROOT --> C["太空战<br>卫星 · 太空部队"]
+  ROOT --> D["混合战争<br>常规+信息+代理"]
+  ROOT --> E["无人化<br>无人机 · 机器人"]
+  ROOT --> F["伦理治理<br>AI 武器 · 军控"]
+  classDef rootNode fill:#4A5D3A,color:#fff,stroke:#4A5D3A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">OODA 循环（博伊德）</span>
+          制胜 = 观察 → 判断 → 决策 → 行动（快于对手）
+          <span class="f-note">博伊德提出：在信息时代，谁能在更短的循环内完成"观察-判断-决策-行动"，谁就掌握战场主动权。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">网络中心战</span>
+          战斗力 = 信息优势 + 网络连接 + 精确打击
+          <span class="f-note">从"平台中心"转向"网络中心"——信息共享使分散的部队形成整体战斗力。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">认知战</span>
+          新战场 = 人心 + 认知 + 信息
+          <span class="f-note">当代战争不仅争夺领土，更争夺认知——假信息、算法操纵、舆论战成为"认知域"武器。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">混合战争</span>
+          战争 = 常规 + 非常规 + 信息 + 经济 + 代理
+          <span class="f-note">霍夫曼提出"混合威胁"——对手同时使用正规军、游击队、网络攻击、经济施压与信息战，模糊战争与和平的界限。</span>
+        </div>
+
+        <h3>对照表：传统战争 vs 信息战争 vs AI 战争</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>传统战争</th><th>信息战争</th><th>AI 战争</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>核心资源</strong></td><td>兵力 · 火力</td><td>信息 · 网络</td><td>算法 · 数据</td></tr>
+              <tr><td><strong>作战主体</strong></td><td>士兵 · 将帅</td><td>网络部队 · 信息员</td><td>自主系统 · AI</td></tr>
+              <tr><td><strong>制胜关键</strong></td><td>集中兵力 · 歼灭</td><td>信息优势 · 认知</td><td>算法速度 · 自主决策</td></tr>
+              <tr><td><strong>战场</strong></td><td>陆地 · 海洋 · 天空</td><td>网络 · 电磁 · 认知</td><td>太空 · 算法 · 无人</td></tr>
+              <tr><td><strong>伦理挑战</strong></td><td>战争法 · 人道</td><td>隐私 · 主权</td><td>自主杀伤 · 责任归属</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">博伊德 · 1927–1997</div>
+            <blockquote>观察、判断、决策、行动——比对手更快地完成循环。<cite>——OODA 循环理论</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">阿尔文·托夫勒 · 1928–2016</div>
+            <blockquote>第三次浪潮的战争，是知识、信息与速度的战争。<cite>——《战争与反战争》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">彼得·辛格 · 1974–</div>
+            <blockquote>机器人战争正在改变"谁在打仗、为何打仗、如何打仗"。<cite>——《机器人战争》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">弗兰克·霍夫曼 · 1964–</div>
+            <blockquote>混合威胁模糊了战争与和平、常规与非常规的界限。<cite>——《冲突中的混合战争》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">伊恩·莫里斯 · 1960–</div>
+            <blockquote>战争塑造了文明，而文明也在驯化战争。<cite>——《战争！为什么有人受益有人遭殃》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">当代军事前沿的启示</div>
+            <ul>
+              <li>信息与算法成为新的战略资源</li>
+              <li>认知战使"人心"成为新战场</li>
+              <li>无人化与 AI 战争带来伦理与治理挑战</li>
+              <li>混合战争模糊战争与和平的界限</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第七章 总结提炼 -->
+      <section class="sec" id="summary">
+        <h2><span class="chapno">第七章</span>总结提炼：军事思想的启示</h2>
+        <p>回顾从孙子到 AI 战争，可以提炼出军事思想的核心规律：<strong>道胜于术、不战而胜、民心为本、技术变革、威慑和平</strong>。战争不是目的，而是政治的工具；最好的胜利是不战而胜；人民是战争胜负的根本；技术不断改变战争形态，但战争的本质——政治与人心——不变；核威慑与军备控制证明，人类有能力避免自我毁灭。</p>
+
+        <figure class="diagram">
+          <figcaption>图 7 · 军事思想五大规律图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["军事思想五大规律"] --> A["道胜于术<br>谋略高于蛮力"]
+  ROOT --> B["不战而胜<br>最高胜利是避免战争"]
+  ROOT --> C["民心为本<br>兵民是胜利之本"]
+  ROOT --> D["技术变革<br>技术改变战争形态"]
+  ROOT --> E["威慑和平<br>以战止战 · 军控"]
+  classDef rootNode fill:#4A5D3A,color:#fff,stroke:#4A5D3A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <div class="history">
+          <span class="history-title">五大规律的提炼</span>
+          <p><strong>道胜于术</strong>：军事的最高境界不是蛮力，而是谋略与道义。孙子"不战而屈人之兵"、克劳塞维茨"战争是政治的延续"——道义、政治、谋略高于单纯的武力。</p>
+          <p><strong>不战而胜</strong>：最好的胜利是避免战争。从孙子"上兵伐谋"到核威慑时代的"以核止核"——军事思想最终指向"以战止战"。</p>
+          <p><strong>民心为本</strong>：人民是战争胜负的根本。刘邦得民心得天下，毛泽东"兵民是胜利之本"——民心向背决定战争走向。</p>
+          <p><strong>技术变革</strong>：技术不断改变战争形态。从冷兵器到火器、从海权到空权、从机械化到信息化、从有人到无人——技术改变战争，但战争的本质不变。</p>
+          <p><strong>威慑和平</strong>：人类有能力避免自我毁灭。核威慑、军备控制、国际法——军事思想的最终价值，是让战争的成本高到无人敢于发动，让和平成为理性的选择。</p>
+        </div>
+
+        <h3>对照表：军事思想六个时代的对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>时代</th><th>核心命题</th><th>代表思想</th><th>历史启示</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>中国古代</strong></td><td>谋略与道义</td><td>孙子 · 不战而屈人之兵</td><td>道胜于术 · 慎战</td></tr>
+              <tr><td><strong>西方古典</strong></td><td>战争与政治</td><td>克劳塞维茨 · 战争论</td><td>战争是政治的延续</td></tr>
+              <tr><td><strong>近代</strong></td><td>集中与歼灭</td><td>拿破仑 · 约米尼</td><td>集中兵力 · 歼灭战</td></tr>
+              <tr><td><strong>现代</strong></td><td>总体战与核威慑</td><td>马汉 · 杜黑 · 鲁登道夫</td><td>技术变革 · 威慑和平</td></tr>
+              <tr><td><strong>人民战争</strong></td><td>民心与群众</td><td>毛泽东 · 论持久战</td><td>民心为本 · 人民战争</td></tr>
+              <tr><td><strong>当代前沿</strong></td><td>信息与算法</td><td>博伊德 · 霍夫曼</td><td>认知战 · AI 战争 · 混合战争</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">军事思想精神三句话</span>
+          第一，<strong>战争是政治的工具，不是目的</strong>——从克劳塞维茨到毛泽东，军事思想始终把战争置于政治与民心之下，让暴力服从理性；第二，<strong>最好的胜利是不战而胜</strong>——从孙子"上兵伐谋"到核威慑"以核止核"，军事的最高境界是避免战争、以战止战；第三，<strong>技术改变战争，人心决定胜负</strong>——从冷兵器到 AI 战争，战争形态不断变革，但民心向背与政治道义始终是胜负的根本。军事思想不是好战之学，而是和平之学——它让人类在毁灭的边缘学会克制，在暴力的尽头寻找秩序。这正是它超越时代、通向文明的路径。
+        </div>
+      </section>
+    </main>
+
+    
+      <section class="sec">
+        <h2>关联辑目</h2>
+        <div class="explain">
+          <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+          <ul>
+          <li><a href="../历史思想谱系/历史思想谱系.html">历史思想谱系</a></li>
+          <li><a href="../政治学通论/政治学通论.html">政治学通论</a></li>
+          <li><a href="../科技与人工智能思想谱系/科技与人工智能思想谱系.html">科技与AI思想谱系</a></li>
+          <li><a href="../国际关系思想谱系/国际关系思想谱系.html">国际关系思想谱系</a></li>
+          <li><a href="../法哲学思想谱系/法哲学思想谱系.html">法学思想谱系</a></li>
+          </ul>
+        </div>
+      </section>
+<footer>
+      军事与战略思想谱系 · 思想图谱系列第十四辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-05
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'PingFang SC, Microsoft YaHei, Helvetica, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+﻿
+===== index.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 主题索引.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 人物索引.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 阅读指南.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 系列总览.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 升级总结2026.html =====
+  ✓ 标签闭合平衡
+  #chart-blocks: 高度OK (inline)
+  #chart-chars: 高度OK (inline)
+  ✓ 所有可视化容器高度有效
+
+===== 东方思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 人类学思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 传播与媒介思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 伦理与道德思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 修辞与演说思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 军事与战略思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 化学.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 医学与健康.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 历史思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 国际关系思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 地理与环境思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 天文学与宇宙学.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 宗教学与神话.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 心理学思想谱系.html =====
+  ✓ 标签闭合平衡
+  [JS引用缺元素] ['dprime-slider', 'dprime-value', 'replay-btn']
+  #chart-psych-emotion: 高度OK (父级inline)
+  #chart-psych-learning: 高度OK (父级inline)
+  #chart-psych-roc: 高度OK (父级inline)
+  #psych-chart-icc: 高度OK (inline)
+  #psych-chart-methods: 高度OK (inline)
+  #psych-chart-pvalue: 高度OK (inline)
+  #psych-threejs-container: 高度OK (inline)
+  #threejs-connectome: 高度OK (inline)
+  #threejs-irt: 高度OK (inline)
+  #viz-psych-3d: 高度OK (inline)
+  #viz-psych-stages: 高度OK (inline)
+  ✓ 所有可视化容器高度有效
+
+===== 政治基础概念1.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 政治学通论.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 教育思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 数学思想谱系.html =====
+  ✓ 标签闭合平衡
+  [JS引用缺元素] ['limit-status', 'reset-limit-btn']
+  #chart-math-functions: 高度OK (父级inline)
+  #chart-math-limit: 高度OK (父级inline)
+  #math-chart-methods: 高度OK (inline)
+  #math-chart-pnp: 高度OK (inline)
+  #math-chart-settheory: 高度OK (inline)
+  #math-threejs-container: 高度OK (inline)
+  #phd-three-hott: 高度OK (.phd-three-container)
+  #phd-three-settheory: 高度OK (.phd-three-container)
+  #viz-math-3d: 高度OK (inline)
+  #viz-math-transform: 高度OK (inline)
+  ✓ 所有可视化容器高度有效
+
+===== 文学与语言思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 法哲学思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 物理学.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 生命科学思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 真理的多维图景.html =====
+  ✓ 标签闭合平衡
+  [#canvas-m5: 无高度!]
+  [#chart-m2: 无高度!]
+  [#chart-m4: 无高度!]
+  #paradigm-shift-3d: 高度OK (inline)
+  [#three-container-d5: 无高度!]
+  [#three-container-d7: 无高度!]
+  [#three-container-m1: 无高度!]
+  #truth-curve-chart: 高度OK (父级inline)
+  #truth-space-3d: 高度OK (inline)
+  #truth-spectrum-chart: 高度OK (父级inline)
+
+===== 社会思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 科学思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 科技与人工智能思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 经济思想谱系.html =====
+  ✓ 标签闭合平衡
+  #chart-adas: 高度OK (inline)
+  #chart-allais: 高度OK (inline)
+  #chart-equilibrium: 高度OK (inline)
+  #chart-islm: 高度OK (inline)
+  #chart-marginal: 高度OK (inline)
+  #chart-methods: 高度OK (inline)
+  #chart-production: 高度OK (inline)
+  #viz-3d-edgeworth: 高度OK (inline)
+  #viz-3d-equilibrium: 高度OK (inline)
+  #viz-3d-ge: 高度OK (inline)
+  #viz-3d-supply-demand: 高度OK (inline)
+  ✓ 所有可视化容器高度有效
+
+===== 经济思想谱系下篇.html =====
+  ✓ 标签闭合平衡
+  #chart-econometrics-genealogy: 高度OK (inline)
+  #chart-growth-path: 高度OK (inline)
+  #chart-irf: 高度OK (inline)
+  #chart-minsky: 高度OK (inline)
+  #chart-monetary: 高度OK (inline)
+  #chart-phillips-laffer: 高度OK (inline)
+  #chart-solow: 高度OK (inline)
+  #viz-3d-dsge: 高度OK (inline)
+  #viz-3d-dsge-irf: 高度OK (inline)
+  #viz-3d-hank: 高度OK (inline)
+  #viz-3d-islmbp: 高度OK (inline)
+  ✓ 所有可视化容器高度有效
+
+===== 自由主义谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 艺术与美学思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 西方哲学思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 计算机科学.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 语言学.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 逻辑与论证思想谱系.html =====
+    多余闭合 </li>
+  [#chart-complexity: 无高度!]
+  [#chart-methodology: 无高度!]
+  #three-container: 高度OK (#three-container)
+
+===== 马克思主义谱系.html =====
+  ✓ 标签闭合平衡
+  #capital-cycle-3d: 高度OK (inline)
+  #marx-adaptation-chart: 高度OK (父级inline)
+  #marx-space-3d: 高度OK (inline)
+  #marx-spectrum-chart: 高度OK (父级inline)
+  #masters-marx-3d: 高度OK (inline)
+  #masters-methodology-chart: 高度OK (父级inline)
+  #masters-profit-rate-chart: 高度OK (父级inline)
+  #phd-crisis-3d: 高度OK (inline)
+  #phd-reproduction-3d: 高度OK (inline)
+  ✓ 所有可视化容器高度有效

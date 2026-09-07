@@ -1,0 +1,849 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文学与语言思想谱系 · 思想图谱系列第二十一辑</title>
+
+  <style>
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+  </style>
+
+  <style>
+    :root {
+      --bg: #FBF8F3;
+      --bg2: #F3EDE1;
+      --ink: #2B2418;
+      --muted: #6E6352;
+      --rule: #E4DBC9;
+      --accent: #9F1239;
+      --accent2: #0F766E;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:first-child { margin-left: 0; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .legacy .legacy-title { font-weight: 700; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .legacy ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; }
+    @media (max-width: 700px) { .legacy { grid-template-columns: 1fr; } }
+
+    .history { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; }
+    .history .history-title { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem; }
+    .history p { margin-bottom: 0.55rem; }
+    .history p:last-child { margin-bottom: 0; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+    p a, li a { color: var(--accent); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    .formula {
+      font-family: var(--font-mono);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidenav { position: static; max-height: none; }
+    }
+    @media print {
+      .sidenav { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      section.sec { break-inside: avoid-page; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="shell">
+
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">文学与语言思想谱系</div>
+    <div class="brand-sub">思想图谱系列 · 第二十一辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+      <li><a href="#intro">导言 · 语言与文学</a></li>
+      <li><a href="#overview">第一章 · 总览：文学与语言的演变</a></li>
+      <li><a href="#language">第二章 · 语言与思维：从索绪尔到乔姆斯基</a></li>
+      <li><a href="#eastern">第三章 · 东方文学传统：从诗经到鲁迅</a></li>
+      <li><a href="#western">第四章 · 西方文学传统：从荷马到现代主义</a></li>
+      <li><a href="#theory">第五章 · 文学理论：从亚里士多德诗学到解构</a></li>
+      <li><a href="#contemporary">第六章 · 当代文学与语言：数字时代与 AI 写作</a></li>
+      <li><a href="#summary">第七章 · 总结提炼：文学的启示</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第二十一辑</span>
+        <span class="series-links">
+          <a href="../思想图谱系列/index.html">系列目录</a>
+          <a href="../logic-lineage/logic-lineage.html">← 上一辑 · 逻辑与论证思想谱系</a>
+          <a href="../math-lineage/math-lineage.html">下一辑 · 数学思想谱系 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>文学与语言思想谱系</h1>
+      <p class="subtitle">从《诗经》到 AI 写作——人类如何用语言创造意义、安顿心灵：语言与思维、东方文学传统、西方文学传统、文学理论、数字时代与 AI 写作，提炼"语言之根、形象之思、人性之镜、时代之声、自由之魂"的文学规律</p>
+      <p class="meta">作者：詹家杨 · 2026-09-05 · 8 张思维导图 · 7 张对照表 · 30+ 人物语录 · 文学</p>
+    </header>
+
+    <main>
+      <!-- 导言 -->
+      <section class="sec" id="intro">
+        <h2>导言 · 语言与文学</h2>
+        <p>文学（literature）来自拉丁语 littera——"字母、文字"；语言（language）则是人类独有的符号系统。语言让思想得以表达，文学让语言得以升华。前面二十辑梳理了人类关于世界、社会、心灵与美的种种思想，而本辑要追问的是更根本的问题：<strong>这些思想是如何被语言承载、又被文学照亮？</strong>当我们读到"落霞与孤鹜齐飞，秋水共长天一色"时，打动我们的不只是字面意思，而是语言创造出的整个意境。</p>
+
+        <h3>本章大纲</h3>
+        <ul>
+          <li>0.1 文学与语言的定义：littera——字母、文字</li>
+          <li>0.2 文学的七次转向：为神→为王→为人→为自我→为大众→为语言→为算法</li>
+          <li>0.3 文学与语言的关系：与艺术卷、逻辑卷的关联</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>littera</strong>：文学的词源，意为“字母、文字”</li>
+          <li><strong>语言符号</strong>：语言让思想得以表达，文学让语言得以升华</li>
+          <li><strong>文学谱系</strong>：语言与思维→东方文学→西方文学→文学理论→当代文学</li>
+        </ul>
+        <div class="callout">
+          <span class="callout-title">一条主线</span>
+          文学关注对象的七次转向：<strong>为神</strong>（史诗与宗教文学：荷马、但丁，文学服务于信仰）→ <strong>为王</strong>（宫廷与教化：诗经"风雅颂"、汉赋）→ <strong>为人</strong>（文艺复兴与人文主义：莎士比亚、塞万提斯）→ <strong>为自我</strong>（浪漫主义与现代主义：歌德、卡夫卡，文学转向内心）→ <strong>为大众</strong>（现实主义与批判：托尔斯泰、鲁迅，文学直面社会）→ <strong>为语言</strong>（结构主义与解构：文学成为语言实验）→ <strong>为算法</strong>（当代：数字文学与 AI 写作）。每一次转向，都是人类对"如何用语言安顿自己"的一次重新回答。
+        </div>
+        <p>本辑沿文学与语言的谱系展开——<strong>语言与思维</strong>（索绪尔、萨丕尔-沃尔夫、维特根斯坦、乔姆斯基）、<strong>东方文学传统</strong>（诗经、楚辞、唐诗宋词、四大名著、鲁迅）、<strong>西方文学传统</strong>（荷马、但丁、莎士比亚、托尔斯泰、现代主义）、<strong>文学理论</strong>（亚里士多德诗学、浪漫主义、新批评、结构主义、解构）、<strong>当代文学与语言</strong>（数字文学、AI 写作），看"用语言创造意义"的艺术如何从口传史诗，长成横跨东西方、贯穿人类全部情感的文学殿堂。它与第九辑《艺术与美学思想谱系》互为姊妹——艺术卷问"美是什么"，本辑问"语言如何创造美"；又与第二十辑《逻辑与论证思想谱系》形成张力——逻辑追求精确，文学拥抱歧义，二者共同构成人类表达的两极。</p>
+
+        <figure class="diagram">
+          <figcaption>图 1 · 文学的七次转向图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["为神<br>史诗与宗教 · 荷马 · 但丁"] --> B["为王<br>诗经风雅颂 · 汉赋"]
+  B --> C["为人<br>文艺复兴 · 莎士比亚"]
+  C --> D["为自我<br>浪漫主义 · 现代主义"]
+  D --> E["为大众<br>现实主义 · 托尔斯泰 · 鲁迅"]
+  E --> F["为语言<br>结构主义 · 解构"]
+  F --> G["为算法<br>数字文学 · AI写作"]
+  classDef shift fill:#9F1239,color:#fff,stroke:#9F1239;
+  class A,B,C,D,E,F,G shift;
+          </pre>
+        </figure>
+      </section>
+
+      <!-- 第一章 总览 -->
+      <section class="sec" id="overview">
+        <h2><span class="chapno">第一章</span>总览：文学与语言的演变</h2>
+        <p>先看全景：文学几乎与语言同龄。中国在《诗经》中开启"风雅颂"的诗歌传统，屈原以《离骚》开创浪漫主义先河；希腊在荷马史诗中奠定西方文学的源头，雅典悲剧把人的命运搬上舞台。中世纪，但丁以《神曲》沟通天堂与人间；文艺复兴，莎士比亚让文学抵达人性的深处。近代，歌德、托尔斯泰让文学成为时代的镜子；现代主义，卡夫卡、普鲁斯特让文学转向内心的迷宫。与此同时，语言从索绪尔的结构主义到乔姆斯基的生成语法，成为理解思维的科学。当代，数字文学与 AI 写作正在重新定义"作者"与"文本"。理解文学与语言，就是理解人类如何用符号创造意义、用故事安顿心灵。</p>
+
+        <h3>本章大纲</h3>
+        <ul>
+          <li>1.1 古典文学：从诗经到荷马</li>
+          <li>1.2 中世纪与文艺复兴</li>
+          <li>1.3 现代主义与当代文学</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>风雅颂</strong>：《诗经》的三大体裁</li>
+          <li><strong>史诗与悲剧</strong>：西方文学的源头</li>
+          <li><strong>意识流</strong>：现代主义的核心技法</li>
+        </ul>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>古典文学（前8世纪–5世纪）</strong>：中国《诗经》（约前11–前6世纪）是中国最早的诗歌总集，孔子言"不学诗，无以言"；屈原《离骚》（前3世纪）开创楚辞传统。希腊荷马史诗（约前8世纪）《伊利亚特》《奥德赛》是西方文学的源头；索福克勒斯《俄狄浦斯王》把悲剧艺术推向高峰。</p>
+          <p><strong>中世纪与文艺复兴（5–17世纪）</strong>：但丁《神曲》（1321）以意大利语写作，被誉为"中世纪文学的顶峰"；文艺复兴时期，莎士比亚（1564–1616）以三十余部戏剧抵达人性深处，塞万提斯《堂吉诃德》（1605）开启现代小说。</p>
+          <p><strong>启蒙与浪漫主义（18–19世纪）</strong>：歌德《浮士德》贯穿一生，成为德国文学的巅峰；华兹华斯主张"诗是强烈情感的自然流露"；19 世纪现实主义以巴尔扎克《人间喜剧》、托尔斯泰《战争与和平》、陀思妥耶夫斯基《罪与罚》直面社会与灵魂。</p>
+          <p><strong>现代主义（20世纪初）</strong>：卡夫卡《变形记》、普鲁斯特《追忆似水年华》、乔伊斯《尤利西斯》、艾略特《荒原》以意识流、象征与碎片化挑战传统叙事；拉美魔幻现实主义以马尔克斯《百年孤独》让文学获得世界性回声。</p>
+          <p><strong>中国现当代文学（20世纪）</strong>：鲁迅以《呐喊》《彷徨》开启中国现代文学；沈从文、张爱玲、钱锺书各成一家；莫言 2012 年获诺贝尔文学奖，让中国文学走向世界。</p>
+          <p><strong>当代文学与语言（20世纪中–）</strong>：索绪尔的结构主义语言学重塑文学理论；罗兰·巴特宣布"作者之死"；数字文学、网络文学与 AI 写作正在重新定义"创作"。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>荷马（约前8世纪）</strong>——史诗、《伊利亚特》《奥德赛》。</p>
+        <p><strong>屈原（约前340–前278）</strong>——《离骚》、楚辞、浪漫主义先河。</p>
+        <p><strong>但丁（1265–1321）</strong>——《神曲》、意大利语文学。</p>
+        <p><strong>莎士比亚（1564–1616）</strong>——戏剧、人性深处的探索。</p>
+        <p><strong>歌德（1749–1832）</strong>——《浮士德》、德国文学巅峰。</p>
+        <p><strong>托尔斯泰（1828–1910）</strong>——《战争与和平》《安娜·卡列尼娜》。</p>
+        <p><strong>鲁迅（1881–1936）</strong>——《呐喊》《彷徨》、中国现代文学之父。</p>
+        <p><strong>卡夫卡（1883–1924）</strong>——《变形记》、现代主义先驱。</p>
+        <p><strong>索绪尔（1857–1913）</strong>——结构主义语言学、能指与所指。</p>
+        <p><strong>乔姆斯基（1928–）</strong>——生成语法、普遍语法。</p>
+        <p><strong>马尔克斯（1927–2014）</strong>——《百年孤独》、魔幻现实主义。</p>
+        <p><strong>莫言（1955–）</strong>——诺贝尔文学奖、中国当代文学。</p>
+
+        <figure class="diagram">
+          <figcaption>图 2 · 文学与语言演变结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["文学与语言"] --> A["语言与思维<br>索绪尔 · 萨丕尔-沃尔夫 · 乔姆斯基"]
+  ROOT --> B["东方文学<br>诗经 · 楚辞 · 唐诗宋词 · 四大名著 · 鲁迅"]
+  ROOT --> C["西方文学<br>荷马 · 但丁 · 莎士比亚 · 托尔斯泰 · 现代主义"]
+  ROOT --> D["文学理论<br>诗学 · 浪漫主义 · 新批评 · 结构主义 · 解构"]
+  ROOT --> E["当代文学<br>数字文学 · 网络文学 · AI写作"]
+  classDef rootNode fill:#9F1239,color:#fff,stroke:#9F1239;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>对照表：文学与语言主要时期速览</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>时期</th><th>核心问题</th><th>代表人物</th><th>思想遗产</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>古典文学</strong></td><td>文学如何安顿命运</td><td>荷马 · 屈原 · 索福克勒斯</td><td>史诗 · 楚辞 · 悲剧</td></tr>
+              <tr><td><strong>中世纪与文艺复兴</strong></td><td>文学如何沟通神与人</td><td>但丁 · 莎士比亚 · 塞万提斯</td><td>神曲 · 戏剧 · 现代小说</td></tr>
+              <tr><td><strong>启蒙与浪漫主义</strong></td><td>情感如何表达</td><td>歌德 · 华兹华斯 · 拜伦</td><td>浮士德 · 抒情诗</td></tr>
+              <tr><td><strong>现实主义</strong></td><td>文学如何直面社会</td><td>巴尔扎克 · 托尔斯泰 · 陀思妥耶夫斯基</td><td>人间喜剧 · 批判现实主义</td></tr>
+              <tr><td><strong>现代主义</strong></td><td>内心如何呈现</td><td>卡夫卡 · 普鲁斯特 · 乔伊斯 · 艾略特</td><td>意识流 · 象征 · 荒诞</td></tr>
+              <tr><td><strong>当代文学</strong></td><td>作者与文本的关系</td><td>罗兰·巴特 · 马尔克斯 · 莫言</td><td>作者之死 · 魔幻现实主义</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 第二章 语言与思维 -->
+      <section class="sec" id="language">
+        <h2><span class="chapno">第二章</span>语言与思维：从索绪尔到乔姆斯基</h2>
+        <p>语言是文学的材料，也是思维的载体。索绪尔开创结构主义语言学，指出语言是一个符号系统——每个词都由"能指"（声音形象）与"所指"（概念）构成，意义来自符号之间的差异。萨丕尔与沃尔夫提出语言相对论：语言塑造思维，说不同语言的人以不同的方式理解世界。维特根斯坦则把语言视为"游戏"，意义即用法。乔姆斯基发现人类语言背后有共同的"普遍语法"，语言能力是人类心灵的一面镜子。本章的核心洞见是：<strong>语言不是思想的容器，而是思想本身</strong>——学会语言，就是学会一种看世界的方式。</p>
+
+        <h3>本章大纲</h3>
+        <ul>
+          <li>2.1 索绪尔的结构主义语言学</li>
+          <li>2.2 萨丕尔-沃尔夫假说</li>
+          <li>2.3 维特根斯坦的语言游戏</li>
+          <li>2.4 乔姆斯基的生成语法</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>能指与所指</strong>：声音形象与概念</li>
+          <li><strong>语言与言语</strong>：系统与使用</li>
+          <li><strong>语言相对论</strong>：语言塑造思维</li>
+          <li><strong>生成语法</strong>：有限规则生成无限句子</li>
+        </ul>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>索绪尔的结构主义（1916）</strong>：索绪尔在《普通语言学教程》（由学生整理出版）中提出语言（langue）与言语（parole）之分、共时与历时之分；他认为语言符号是任意的，意义来自系统内部的差异——"语言是形式，不是实质"。</p>
+          <p><strong>萨丕尔-沃尔夫假说（20世纪上半叶）</strong>：萨丕尔与沃尔夫提出语言相对论——语言的结构影响使用者的思维与世界观；沃尔夫以霍皮语为例，说明不同语言对时间、空间的不同切分。</p>
+          <p><strong>维特根斯坦的语言游戏（1953）</strong>：维特根斯坦在《哲学研究》中放弃早期"语言图像论"，提出"语言游戏"——语言的意义在于其在生活形式中的用法；"一个词的意义，就是它在语言中的用法"。</p>
+          <p><strong>乔姆斯基的生成语法（1957）</strong>：乔姆斯基在《句法结构》中提出生成语法——有限的规则可以生成无限的句子；他主张"普遍语法"存在于人类心灵之中，语言能力是天赋的、普遍的。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>索绪尔（1857–1913）</strong>——结构主义语言学、能指与所指、语言与言语。</p>
+        <p><strong>萨丕尔（1884–1939）</strong>——语言相对论、语言与文化。</p>
+        <p><strong>沃尔夫（1897–1941）</strong>——萨丕尔-沃尔夫假说。</p>
+        <p><strong>维特根斯坦（1889–1951）</strong>——语言游戏、意义即用法。</p>
+        <p><strong>乔姆斯基（1928–）</strong>——生成语法、普遍语法、深层结构。</p>
+
+        <figure class="diagram">
+          <figcaption>图 3 · 语言与思维结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["语言与思维"] --> A["索绪尔<br>结构主义 · 能指与所指"]
+  ROOT --> B["萨丕尔-沃尔夫<br>语言相对论 · 语言塑造思维"]
+  ROOT --> C["维特根斯坦<br>语言游戏 · 意义即用法"]
+  ROOT --> D["乔姆斯基<br>生成语法 · 普遍语法"]
+  classDef rootNode fill:#9F1239,color:#fff,stroke:#9F1239;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>公式速查：语言学术语速查</h3>
+        <div class="formula"><span class="f-name">能指与所指</span>能指（signifier）＝声音形象；所指（signified）＝概念。二者关系是任意的。<span class="f-note">索绪尔 · 语言符号的双面结构。</span></div>
+        <div class="formula"><span class="f-name">语言与言语</span>语言（langue）＝社会共有的符号系统；言语（parole）＝个人的具体言说。<span class="f-note">语言是系统，言语是使用。</span></div>
+        <div class="formula"><span class="f-name">萨丕尔-沃尔夫假说</span>语言结构影响思维与世界观——"语言是思维的牢笼，也是思维的翅膀"。<span class="f-note">强式：语言决定思维；弱式：语言影响思维。</span></div>
+        <div class="formula"><span class="f-name">生成语法</span>有限的规则系统生成无限的句子：S → NP + VP。<span class="f-note">乔姆斯基 · 语言能力的创造性。</span></div>
+
+        <h3>对照表：语言学家对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>语言学家</th><th>核心贡献</th><th>关键概念</th><th>历史地位</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>索绪尔</strong></td><td>结构主义语言学</td><td>能指/所指 · 语言/言语</td><td>现代语言学之父</td></tr>
+              <tr><td><strong>萨丕尔</strong></td><td>语言与文化</td><td>语言相对论</td><td>美国描写语言学代表</td></tr>
+              <tr><td><strong>沃尔夫</strong></td><td>语言相对论</td><td>语言塑造思维</td><td>萨丕尔-沃尔夫假说</td></tr>
+              <tr><td><strong>维特根斯坦</strong></td><td>语言哲学</td><td>语言游戏 · 意义即用法</td><td>分析哲学的代表</td></tr>
+              <tr><td><strong>乔姆斯基</strong></td><td>生成语法</td><td>普遍语法 · 深层结构</td><td>认知科学之父之一</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">索绪尔 · 1857–1913</div>
+            <blockquote>语言是形式，不是实质。<cite>——《普通语言学教程》</cite></blockquote>
+            <div class="legacy-who">维特根斯坦 · 1889–1951</div>
+            <blockquote>我的语言的界限，就是我的世界的界限。<cite>——《逻辑哲学论》</cite></blockquote>
+            <blockquote>一个词的意义，就是它在语言中的用法。<cite>——《哲学研究》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">乔姆斯基 · 1928–</div>
+            <blockquote>语言是心灵的一面镜子。<cite>——《语言与心灵》</cite></blockquote>
+            <div class="legacy-who">萨丕尔 · 1884–1939</div>
+            <blockquote>语言是文化的载体，也是文化的塑造者。<cite>——《语言论》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第三章 东方文学传统 -->
+      <section class="sec" id="eastern">
+        <h2><span class="chapno">第三章</span>东方文学传统：从诗经到鲁迅</h2>
+        <p>东方文学以中国为轴心，绵延三千年。《诗经》以"风雅颂"奠定诗歌的源头，屈原以《离骚》开启浪漫主义的先河；唐诗宋词把汉语的韵律推向巅峰，李白"天生我材必有用"的豪放与杜甫"安得广厦千万间"的沉郁交相辉映；明清小说以四大名著抵达叙事的巅峰；鲁迅以《呐喊》唤醒沉睡的国民。东方文学的核心，始终是"言志"与"载道"——文学既是个体情感的抒发，也是家国天下的关怀。理解东方文学，就是理解中国人如何用语言安顿心灵、表达理想。</p>
+
+        <h3>本章大纲</h3>
+        <ul>
+          <li>3.1 诗经与楚辞</li>
+          <li>3.2 唐诗宋词</li>
+          <li>3.3 明清小说与四大名著</li>
+          <li>3.4 中国现当代文学</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>言志与载道</strong>：东方文学的核心精神</li>
+          <li><strong>风雅颂与赋比兴</strong>：《诗经》的体裁与手法</li>
+          <li><strong>四大名著</strong>：中国叙事文学的巅峰</li>
+        </ul>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>诗经与楚辞（前11–前3世纪）</strong>：《诗经》收录西周至春秋诗歌 305 篇，分风、雅、颂三部分，孔子言"不学诗，无以言"；屈原《离骚》以香草美人象征理想，开创楚辞与浪漫主义传统，"路漫漫其修远兮，吾将上下而求索"成为千古绝唱。</p>
+          <p><strong>唐诗宋词（7–13世纪）</strong>：唐诗是中国诗歌的黄金时代——李白"诗仙"、杜甫"诗圣"、王维"诗佛"；宋词以苏轼、李清照、辛弃疾为代表，苏轼"大江东去"开豪放一派，李清照"寻寻觅觅"为婉约之宗。</p>
+          <p><strong>明清小说（14–19世纪）</strong>：四大名著——《三国演义》《水浒传》《西游记》《红楼梦》——把中国叙事文学推向巅峰；曹雪芹《红楼梦》"满纸荒唐言，一把辛酸泪"，被誉为中国古典小说的最高峰。</p>
+          <p><strong>中国现当代文学（20世纪）</strong>：鲁迅《狂人日记》是中国第一篇现代白话小说，《呐喊》《彷徨》以"立人"为宗旨；沈从文《边城》、张爱玲《倾城之恋》、钱锺书《围城》各成一家；莫言 2012 年获诺贝尔文学奖。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>屈原（约前340–前278）</strong>——《离骚》、楚辞、浪漫主义先河。</p>
+        <p><strong>李白（701–762）</strong>——诗仙、豪放飘逸。</p>
+        <p><strong>杜甫（712–770）</strong>——诗圣、沉郁顿挫、诗史。</p>
+        <p><strong>苏轼（1037–1101）</strong>——豪放词宗、旷达人生。</p>
+        <p><strong>李清照（1084–约1155）</strong>——婉约词宗、易安体。</p>
+        <p><strong>曹雪芹（约1715–约1763）</strong>——《红楼梦》、中国古典小说巅峰。</p>
+        <p><strong>鲁迅（1881–1936）</strong>——《呐喊》《彷徨》、中国现代文学之父。</p>
+        <p><strong>王国维（1877–1927）</strong>——《人间词话》、境界说。</p>
+        <p><strong>沈从文（1902–1988）</strong>——《边城》、乡土文学。</p>
+        <p><strong>张爱玲（1920–1995）</strong>——《倾城之恋》、都市文学。</p>
+        <p><strong>莫言（1955–）</strong>——诺贝尔文学奖、高密东北乡。</p>
+
+        <figure class="diagram">
+          <figcaption>图 4 · 东方文学传统结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["东方文学"] --> A["诗经与楚辞<br>风雅颂 · 屈原 · 浪漫主义"]
+  ROOT --> B["唐诗宋词<br>李白 · 杜甫 · 苏轼 · 李清照"]
+  ROOT --> C["明清小说<br>四大名著 · 曹雪芹"]
+  ROOT --> D["现当代文学<br>鲁迅 · 沈从文 · 张爱玲 · 莫言"]
+  classDef rootNode fill:#9F1239,color:#fff,stroke:#9F1239;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>对照表：东方文学经典对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>作品/作家</th><th>时代</th><th>文体</th><th>文学地位</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>《诗经》</strong></td><td>西周–春秋</td><td>诗歌总集</td><td>中国诗歌的源头</td></tr>
+              <tr><td><strong>屈原《离骚》</strong></td><td>战国</td><td>楚辞</td><td>浪漫主义先河</td></tr>
+              <tr><td><strong>李白</strong></td><td>盛唐</td><td>诗歌</td><td>诗仙 · 豪放飘逸</td></tr>
+              <tr><td><strong>杜甫</strong></td><td>盛唐–中唐</td><td>诗歌</td><td>诗圣 · 诗史</td></tr>
+              <tr><td><strong>苏轼</strong></td><td>北宋</td><td>词</td><td>豪放词宗</td></tr>
+              <tr><td><strong>曹雪芹《红楼梦》</strong></td><td>清代</td><td>长篇小说</td><td>中国古典小说巅峰</td></tr>
+              <tr><td><strong>鲁迅</strong></td><td>现代</td><td>小说 · 杂文</td><td>中国现代文学之父</td></tr>
+              <tr><td><strong>莫言</strong></td><td>当代</td><td>长篇小说</td><td>诺贝尔文学奖 2012</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">屈原 · 约前340–前278</div>
+            <blockquote>路漫漫其修远兮，吾将上下而求索。<cite>——《离骚》</cite></blockquote>
+            <div class="legacy-who">李白 · 701–762</div>
+            <blockquote>天生我材必有用，千金散尽还复来。<cite>——《将进酒》</cite></blockquote>
+            <div class="legacy-who">杜甫 · 712–770</div>
+            <blockquote>安得广厦千万间，大庇天下寒士俱欢颜。<cite>——《茅屋为秋风所破歌》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">曹雪芹 · 约1715–约1763</div>
+            <blockquote>满纸荒唐言，一把辛酸泪。都云作者痴，谁解其中味？<cite>——《红楼梦》</cite></blockquote>
+            <div class="legacy-who">鲁迅 · 1881–1936</div>
+            <blockquote>其实地上本没有路，走的人多了，也便成了路。<cite>——《故乡》</cite></blockquote>
+            <div class="legacy-who">王国维 · 1877–1927</div>
+            <blockquote>古今之成大事业、大学问者，必经过三种之境界。<cite>——《人间词话》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四章 西方文学传统 -->
+      <section class="sec" id="western">
+        <h2><span class="chapno">第四章</span>西方文学传统：从荷马到现代主义</h2>
+        <p>西方文学以希腊为源头，绵延两千八百年。荷马史诗以"愤怒"与"漂泊"奠定叙事的原型，雅典悲剧把人的命运搬上舞台；但丁以《神曲》沟通神与人，莎士比亚让文学抵达人性的深处；歌德以《浮士德》追问灵魂的救赎，托尔斯泰与陀思妥耶夫斯基让小说成为灵魂的解剖室；现代主义以卡夫卡、普鲁斯特、乔伊斯挑战传统叙事，拉美魔幻现实主义让文学获得世界性回声。西方文学的核心，始终是"认识你自己"——从德尔斐神庙的箴言到现代主义的内心迷宫，文学一直在追问：人是什么？</p>
+
+        <h3>本章大纲</h3>
+        <ul>
+          <li>4.1 希腊与罗马文学</li>
+          <li>4.2 中世纪与文艺复兴</li>
+          <li>4.3 浪漫主义与现实主义</li>
+          <li>4.4 现代主义与魔幻现实主义</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>认识你自己</strong>：西方文学的核心追问</li>
+          <li><strong>模仿说</strong>：文学是对现实的模仿</li>
+          <li><strong>意识流与荒诞</strong>：现代主义的核心技法</li>
+        </ul>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>希腊与罗马（前8世纪–5世纪）</strong>：荷马史诗《伊利亚特》《奥德赛》是西方文学的源头；索福克勒斯《俄狄浦斯王》把悲剧艺术推向高峰；维吉尔《埃涅阿斯纪》连接希腊与罗马。</p>
+          <p><strong>中世纪与文艺复兴（5–17世纪）</strong>：但丁《神曲》（1321）以意大利语写作，沟通天堂、炼狱与地狱；莎士比亚（1564–1616）《哈姆雷特》《李尔王》抵达人性深处；塞万提斯《堂吉诃德》（1605）以反讽开启现代小说。</p>
+          <p><strong>启蒙与浪漫主义（18–19世纪）</strong>：歌德《浮士德》追问灵魂的救赎；华兹华斯、拜伦、雪莱以抒情诗表达"强烈情感的自然流露"；雨果《悲惨世界》以浪漫主义关怀社会。</p>
+          <p><strong>现实主义与批判（19世纪）</strong>：巴尔扎克《人间喜剧》以九十余部作品描绘法国社会；托尔斯泰《战争与和平》《安娜·卡列尼娜》是"生活的百科全书"；陀思妥耶夫斯基《罪与罚》《卡拉马佐夫兄弟》深入灵魂的深渊。</p>
+          <p><strong>现代主义与后现代（20世纪）</strong>：卡夫卡《变形记》以荒诞揭示异化；普鲁斯特《追忆似水年华》以意识流重建时间；乔伊斯《尤利西斯》以一天写尽一生；艾略特《荒原》呈现现代文明的荒芜；马尔克斯《百年孤独》以魔幻现实主义让文学获得世界性回声。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>荷马（约前8世纪）</strong>——《伊利亚特》《奥德赛》、史诗。</p>
+        <p><strong>索福克勒斯（约前496–前406）</strong>——《俄狄浦斯王》、悲剧。</p>
+        <p><strong>但丁（1265–1321）</strong>——《神曲》、意大利语文学。</p>
+        <p><strong>莎士比亚（1564–1616）</strong>——《哈姆雷特》、人性深处。</p>
+        <p><strong>塞万提斯（1547–1616）</strong>——《堂吉诃德》、现代小说。</p>
+        <p><strong>歌德（1749–1832）</strong>——《浮士德》、德国文学巅峰。</p>
+        <p><strong>托尔斯泰（1828–1910）</strong>——《战争与和平》《安娜·卡列尼娜》。</p>
+        <p><strong>陀思妥耶夫斯基（1821–1881）</strong>——《罪与罚》《卡拉马佐夫兄弟》。</p>
+        <p><strong>卡夫卡（1883–1924）</strong>——《变形记》、现代主义先驱。</p>
+        <p><strong>普鲁斯特（1871–1922）</strong>——《追忆似水年华》、意识流。</p>
+        <p><strong>马尔克斯（1927–2014）</strong>——《百年孤独》、魔幻现实主义。</p>
+
+        <figure class="diagram">
+          <figcaption>图 5 · 西方文学传统结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["西方文学"] --> A["希腊与罗马<br>荷马 · 索福克勒斯 · 悲剧"]
+  ROOT --> B["中世纪与文艺复兴<br>但丁 · 莎士比亚 · 塞万提斯"]
+  ROOT --> C["浪漫主义与现实主义<br>歌德 · 托尔斯泰 · 陀思妥耶夫斯基"]
+  ROOT --> D["现代主义<br>卡夫卡 · 普鲁斯特 · 乔伊斯 · 马尔克斯"]
+  classDef rootNode fill:#9F1239,color:#fff,stroke:#9F1239;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>对照表：西方文学经典对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>作品/作家</th><th>时代</th><th>文体</th><th>文学地位</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>荷马史诗</strong></td><td>约前8世纪</td><td>史诗</td><td>西方文学源头</td></tr>
+              <tr><td><strong>索福克勒斯</strong></td><td>前5世纪</td><td>悲剧</td><td>希腊悲剧高峰</td></tr>
+              <tr><td><strong>但丁《神曲》</strong></td><td>14世纪</td><td>长诗</td><td>中世纪文学顶峰</td></tr>
+              <tr><td><strong>莎士比亚</strong></td><td>16–17世纪</td><td>戏剧</td><td>英语文学巅峰</td></tr>
+              <tr><td><strong>塞万提斯</strong></td><td>17世纪</td><td>长篇小说</td><td>现代小说开端</td></tr>
+              <tr><td><strong>歌德《浮士德》</strong></td><td>18–19世纪</td><td>诗剧</td><td>德国文学巅峰</td></tr>
+              <tr><td><strong>托尔斯泰</strong></td><td>19世纪</td><td>长篇小说</td><td>批判现实主义高峰</td></tr>
+              <tr><td><strong>卡夫卡</strong></td><td>20世纪初</td><td>小说</td><td>现代主义先驱</td></tr>
+              <tr><td><strong>马尔克斯</strong></td><td>20世纪</td><td>长篇小说</td><td>魔幻现实主义代表</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">莎士比亚 · 1564–1616</div>
+            <blockquote>生存还是毁灭，这是一个问题。<cite>——《哈姆雷特》</cite></blockquote>
+            <div class="legacy-who">歌德 · 1749–1832</div>
+            <blockquote>你若要喜爱你自己的价值，你就得给世界创造价值。<cite>——《浮士德》</cite></blockquote>
+            <div class="legacy-who">托尔斯泰 · 1828–1910</div>
+            <blockquote>幸福的家庭都是相似的，不幸的家庭各有各的不幸。<cite>——《安娜·卡列尼娜》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">陀思妥耶夫斯基 · 1821–1881</div>
+            <blockquote>美将拯救世界。<cite>——《白痴》</cite></blockquote>
+            <div class="legacy-who">卡夫卡 · 1883–1924</div>
+            <blockquote>一本书必须是一把能劈开我们心中冰海的斧头。<cite>——致友人书简</cite></blockquote>
+            <div class="legacy-who">马尔克斯 · 1927–2014</div>
+            <blockquote>生命中曾经有过的所有灿烂，终究都要用寂寞来偿还。<cite>——《百年孤独》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第五章 文学理论 -->
+      <section class="sec" id="theory">
+        <h2><span class="chapno">第五章</span>文学理论：从亚里士多德诗学到解构</h2>
+        <p>文学不仅被创作，也被理解。亚里士多德在《诗学》中提出"模仿说"，认为诗比历史更哲学；浪漫主义转向"表现说"，把文学视为情感的自然流露；新批评聚焦文本本身，主张细读；结构主义把文学视为符号系统，发展出叙事学；解构主义则宣告"作者之死"，让意义在读者与文本之间流动。文学理论的演变，是从"文学是什么"到"意义在哪里"的追问。本章的核心洞见是：<strong>文学的意义不是固定的，而是被创作、被阅读、被时代共同塑造的</strong>——理解理论，就是理解我们如何理解文学。</p>
+
+        <h3>本章大纲</h3>
+        <ul>
+          <li>5.1 模仿说与表现说</li>
+          <li>5.2 新批评与文本细读</li>
+          <li>5.3 结构主义与叙事学</li>
+          <li>5.4 解构与接受美学</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>mimesis 与 catharsis</strong>：模仿与净化</li>
+          <li><strong>意图谬误与感受谬误</strong>：新批评的排除项</li>
+          <li><strong>作者之死</strong>：罗兰·巴特</li>
+          <li><strong>延异</strong>：德里达的解构核心</li>
+        </ul>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>亚里士多德的《诗学》（前4世纪）</strong>：亚里士多德提出文学是"模仿"（mimesis），悲剧通过怜悯与恐惧实现"净化"（catharsis）；他主张"诗比历史更哲学、更严肃"——诗揭示普遍，历史只记录特殊。</p>
+          <p><strong>浪漫主义的表现说（18–19世纪）</strong>：华兹华斯在《抒情歌谣集》序言中提出"诗是强烈情感的自然流露"；浪漫主义把文学的中心从"模仿世界"转向"表现自我"。</p>
+          <p><strong>新批评（20世纪上半叶）</strong>：艾略特、兰色姆等主张"文本中心"——文学批评应聚焦文本本身的语言、结构与张力，而非作者生平或时代背景；"意图谬误"与"感受谬误"被排除在外。</p>
+          <p><strong>结构主义与叙事学（20世纪中）</strong>：普罗普分析民间故事的叙事功能，格雷马斯建立"行动元"模型，托多罗夫、热奈特发展叙事学；结构主义把文学视为一个可分析的符号系统。</p>
+          <p><strong>解构与接受美学（20世纪后半叶）</strong>：德里达提出"解构"，认为文本意义永远在延异（différance）中滑动；罗兰·巴特宣布"作者之死"；姚斯、伊瑟尔的接受美学把读者置于意义生产的中心。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>亚里士多德（前384–前322）</strong>——《诗学》、模仿说、悲剧净化。</p>
+        <p><strong>华兹华斯（1770–1850）</strong>——浪漫主义、诗是强烈情感的自然流露。</p>
+        <p><strong>艾略特（1888–1965）</strong>——新批评、客观对应物。</p>
+        <p><strong>普罗普（1895–1970）</strong>——叙事功能、民间故事形态学。</p>
+        <p><strong>罗兰·巴特（1915–1980）</strong>——作者之死、文本理论。</p>
+        <p><strong>德里达（1930–2004）</strong>——解构、延异。</p>
+        <p><strong>姚斯（1921–1997）</strong>——接受美学、期待视野。</p>
+
+        <figure class="diagram">
+          <figcaption>图 6 · 文学理论流派结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["文学理论"] --> A["模仿说<br>亚里士多德 · 诗学"]
+  ROOT --> B["表现说<br>浪漫主义 · 华兹华斯"]
+  ROOT --> C["文本中心<br>新批评 · 细读"]
+  ROOT --> D["结构主义<br>叙事学 · 普罗普"]
+  ROOT --> E["解构与接受美学<br>德里达 · 罗兰·巴特 · 姚斯"]
+  classDef rootNode fill:#9F1239,color:#fff,stroke:#9F1239;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>对照表：文学理论流派对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>流派</th><th>核心主张</th><th>代表人物</th><th>关键词</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>模仿说</strong></td><td>文学是对现实的模仿</td><td>亚里士多德</td><td>mimesis · 净化</td></tr>
+              <tr><td><strong>表现说</strong></td><td>文学是情感的自然流露</td><td>华兹华斯 · 雪莱</td><td>抒情 · 天才</td></tr>
+              <tr><td><strong>新批评</strong></td><td>文本是自足的意义整体</td><td>艾略特 · 兰色姆</td><td>细读 · 张力 · 反讽</td></tr>
+              <tr><td><strong>结构主义</strong></td><td>文学是符号系统</td><td>普罗普 · 格雷马斯 · 热奈特</td><td>叙事功能 · 行动元</td></tr>
+              <tr><td><strong>解构主义</strong></td><td>意义永远在滑动</td><td>德里达 · 罗兰·巴特</td><td>延异 · 作者之死</td></tr>
+              <tr><td><strong>接受美学</strong></td><td>读者参与意义生产</td><td>姚斯 · 伊瑟尔</td><td>期待视野 · 空白</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">亚里士多德 · 前384–前322</div>
+            <blockquote>诗比历史更哲学、更严肃——诗揭示普遍，历史只记录特殊。<cite>——《诗学》</cite></blockquote>
+            <div class="legacy-who">华兹华斯 · 1770–1850</div>
+            <blockquote>诗是强烈情感的自然流露。<cite>——《抒情歌谣集》序言</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">罗兰·巴特 · 1915–1980</div>
+            <blockquote>作者已死。<cite>——《作者之死》</cite></blockquote>
+            <div class="legacy-who">德里达 · 1930–2004</div>
+            <blockquote>文本之外，别无他物。<cite>——《论文字学》</cite></blockquote>
+            <div class="legacy-who">姚斯 · 1921–1997</div>
+            <blockquote>一部作品的意义，在读者的期待视野中生成。<cite>——接受美学</cite></blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第六章 当代文学与语言 -->
+      <section class="sec" id="contemporary">
+        <h2><span class="chapno">第六章</span>当代文学与语言：数字时代与 AI 写作</h2>
+        <p>当代，文学与语言正经历前所未有的变革。数字技术让文学跨越纸面——网络文学、电子游戏叙事、跨媒介改编成为新的文学形态；人工智能则让"写作"第一次脱离人类——大语言模型可以生成诗歌、小说与评论。与此同时，麦克卢汉的"媒介即讯息"提醒我们：媒介本身就在重塑内容与感知。本章的核心洞见是：<strong>文学的形式在变，但文学的本质未变</strong>——无论载体是羊皮纸还是屏幕，无论作者是人还是 AI，文学始终是人类用语言安顿心灵的方式。</p>
+
+        <h3>本章大纲</h3>
+        <ul>
+          <li>6.1 网络文学与数字文学</li>
+          <li>6.2 媒介理论：媒介即讯息</li>
+          <li>6.3 AI 写作与人机共创</li>
+          <li>6.4 跨媒介叙事</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>媒介即讯息</strong>：麦克卢汉</li>
+          <li><strong>地球村</strong>：全球化的传播图景</li>
+          <li><strong>AI 写作</strong>：重新定义“作者”与“创造力”</li>
+        </ul>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>网络文学与数字文学（1990年代–）</strong>：互联网让文学创作大众化——中国网络文学以起点中文网（2002）为标志，形成庞大的创作与阅读生态；电子文学、超文本文学探索叙事的非线性可能。</p>
+          <p><strong>媒介理论（1960年代–）</strong>：麦克卢汉提出"媒介即讯息"——真正影响文明的不是内容，而是媒介本身；"地球村"预言了全球化的传播图景。</p>
+          <p><strong>AI 写作的兴起（2010年代–）</strong>：从早期的模板生成到 GPT 等大语言模型，AI 已能生成流畅的诗歌、小说与评论；AI 写作引发关于"作者"、"创造力"与"版权"的深刻争论。</p>
+          <p><strong>跨媒介叙事（21世纪）</strong>：IP 改编让文学、影视、游戏、动漫相互转化；"讲故事"成为跨媒介的核心能力，文学的价值从"文本"扩展到"世界构建"。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>麦克卢汉（1911–1980）</strong>——媒介即讯息、地球村。</p>
+        <p><strong>卡尔维诺（1923–1985）</strong>——《看不见的城市》、后现代叙事。</p>
+        <p><strong>博尔赫斯（1899–1986）</strong>——《小径分岔的花园》、迷宫叙事。</p>
+        <p><strong>刘慈欣（1963–）</strong>——《三体》、中国科幻的巅峰。</p>
+
+        <figure class="diagram">
+          <figcaption>图 7 · 当代文学与语言结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["当代文学与语言"] --> A["数字文学<br>网络文学 · 超文本"]
+  ROOT --> B["媒介理论<br>麦克卢汉 · 媒介即讯息"]
+  ROOT --> C["AI写作<br>大语言模型 · 人机共创"]
+  ROOT --> D["跨媒介叙事<br>IP改编 · 世界构建"]
+  classDef rootNode fill:#9F1239,color:#fff,stroke:#9F1239;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>对照表：当代文学与语言对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>形态</th><th>核心特征</th><th>代表人物/平台</th><th>对文学的影响</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>网络文学</strong></td><td>大众创作 · 连载更新</td><td>起点中文网 · 晋江文学城</td><td>文学创作民主化</td></tr>
+              <tr><td><strong>电子文学</strong></td><td>超文本 · 非线性</td><td>电子文学组织（ELO）</td><td>叙事形式的实验</td></tr>
+              <tr><td><strong>媒介理论</strong></td><td>媒介即讯息</td><td>麦克卢汉</td><td>理解媒介对感知的重塑</td></tr>
+              <tr><td><strong>AI 写作</strong></td><td>大模型生成 · 人机共创</td><td>GPT · 文心一言 · Claude</td><td>重新定义"作者"与"创造力"</td></tr>
+              <tr><td><strong>跨媒介叙事</strong></td><td>IP 改编 · 世界构建</td><td>《三体》 · 漫威宇宙</td><td>文学价值的延伸</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">麦克卢汉 · 1911–1980</div>
+            <blockquote>媒介即讯息。<cite>——《理解媒介》</cite></blockquote>
+            <div class="legacy-who">博尔赫斯 · 1899–1986</div>
+            <blockquote>天堂应该是图书馆的模样。<cite>——《关于天赐的诗》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">卡尔维诺 · 1923–1985</div>
+            <blockquote>经典是那些你总在重读的书。<cite>——《为什么读经典》</cite></blockquote>
+            <div class="legacy-who">刘慈欣 · 1963–</div>
+            <blockquote>给岁月以文明，而不是给文明以岁月。<cite>——《三体》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第七章 总结提炼 -->
+      <section class="sec" id="summary">
+        <h2><span class="chapno">第七章</span>总结提炼：文学的启示</h2>
+        <p>回顾从《诗经》到 AI 写作，可以提炼出文学与语言的核心规律：<strong>语言之根、形象之思、人性之镜、时代之声、自由之魂</strong>。文学不提供关于"世界是什么"的答案，它提供的是"人如何感受世界"的永恒方式——它让抽象的情感有了具体的形象，让个体的经验成为普遍的共鸣。理解文学与语言，就是理解人类如何用符号创造意义、用故事安顿心灵，也是理解我们如何成为有情感、有想象、有自由的人。</p>
+
+        <h3>本章大纲</h3>
+        <ul>
+          <li>7.1 文学五大规律回顾</li>
+          <li>7.2 文学与语言的关系</li>
+          <li>7.3 文学精神的当代意义</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>语言之根</strong>：语言是思想的载体</li>
+          <li><strong>形象之思</strong>：以形象表达情感</li>
+          <li><strong>人性之镜</strong>：文学是认识自我的镜子</li>
+          <li><strong>时代之声</strong>：文学回应时代问题</li>
+          <li><strong>自由之魂</strong>：文学是想象力的自由</li>
+        </ul>
+
+        <figure class="diagram">
+          <figcaption>图 8 · 文学五大规律图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["文学五大规律"] --> A["语言之根<br>语言是思想与文化的载体"]
+  ROOT --> B["形象之思<br>以具体形象表达普遍情感"]
+  ROOT --> C["人性之镜<br>文学是认识自我的镜子"]
+  ROOT --> D["时代之声<br>文学回应时代的问题"]
+  ROOT --> E["自由之魂<br>文学是想象力的自由"]
+  classDef rootNode fill:#9F1239,color:#fff,stroke:#9F1239;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <div class="history">
+          <span class="history-title">五大规律的提炼</span>
+          <p><strong>语言之根</strong>：索绪尔揭示语言是符号系统，乔姆斯基发现普遍语法，维特根斯坦指出意义即用法。语言之根的启示是：语言不是思想的容器，而是思想本身——掌握一门语言，就是获得一种看世界的方式；文学则是语言之美的最高形态。</p>
+          <p><strong>形象之思</strong>：从"落霞与孤鹜齐飞"到"生存还是毁灭"，文学以具体形象表达普遍情感。形象之思的启示是：抽象的道理容易遗忘，具体的形象才能打动人心——好的表达，是把思想变成画面。</p>
+          <p><strong>人性之镜</strong>：从俄狄浦斯到哈姆雷特，从贾宝玉到阿Q，文学是认识自我的镜子。人性之镜的启示是：文学让我们在别人的命运中看见自己——它扩展了我们的经验，让我们活过千百种人生。</p>
+          <p><strong>时代之声</strong>：杜甫的诗史、托尔斯泰的百科全书、鲁迅的呐喊，都是时代的声音。时代之声的启示是：伟大的文学总是回应时代的问题——它既是时代的镜子，也是时代的灯塔。</p>
+          <p><strong>自由之魂</strong>：从屈原的求索到卡夫卡的荒诞，从博尔赫斯的迷宫到刘慈欣的宇宙，文学是想象力的自由。自由之魂的启示是：在现实的重压下，文学是灵魂的出口——它让我们超越此时此地，抵达更广阔的可能。</p>
+        </div>
+
+        <h3>对照表：文学五大规律的对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>规律</th><th>核心命题</th><th>代表人物</th><th>思想启示</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>语言之根</strong></td><td>语言是思想的载体</td><td>索绪尔 · 乔姆斯基 · 维特根斯坦</td><td>掌握语言就是获得一种世界观</td></tr>
+              <tr><td><strong>形象之思</strong></td><td>以形象表达情感</td><td>王勃 · 李白 · 莎士比亚</td><td>好的表达是把思想变成画面</td></tr>
+              <tr><td><strong>人性之镜</strong></td><td>文学是认识自我的镜子</td><td>索福克勒斯 · 曹雪芹 · 鲁迅</td><td>在别人的命运中看见自己</td></tr>
+              <tr><td><strong>时代之声</strong></td><td>文学回应时代问题</td><td>杜甫 · 托尔斯泰 · 鲁迅</td><td>文学是时代的镜子与灯塔</td></tr>
+              <tr><td><strong>自由之魂</strong></td><td>文学是想象力的自由</td><td>屈原 · 博尔赫斯 · 刘慈欣</td><td>文学是灵魂的出口</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">文学精神三句话</span>
+          第一，<strong>文学是语言之美的最高形态</strong>——它把日常的语言锻造成永恒的艺术；第二，<strong>文学是认识人性最直接的入口</strong>——哲学告诉我们"人是什么"，文学让我们"看见人"；第三，<strong>文学最终通向自由</strong>——想象力的自由、情感的自由、灵魂的自由。与第九辑《艺术与美学思想谱系》合观，艺术卷问"美是什么"，本辑问"语言如何创造美"；与第二十辑《逻辑与论证思想谱系》对话，逻辑追求精确、文学拥抱歧义，二者共同构成人类表达的两极。这正是思想图谱系列的意义——先学会正确地思考，再学会深情地表达，一个完整的人，二者缺一不可。
+        </div>
+      </section>
+    </main>
+
+    
+      <section class="sec">
+        <h2>关联辑目</h2>
+        <div class="explain">
+          <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+          <ul>
+          <li><a href="../art-aesthetics-lineage/art-aesthetics-lineage.html">艺术与美学思想谱系</a></li>
+          <li><a href="../philosophy-lineage/philosophy-lineage.html">西方哲学思想谱系</a></li>
+          <li><a href="../history-lineage/history-lineage.html">历史思想谱系</a></li>
+          <li><a href="../rhetoric-lineage/rhetoric-lineage.html">修辞与演说思想谱系</a></li>
+          <li><a href="../media-lineage/media-lineage.html">传播与媒介思想谱系</a></li>
+          <li><a href="../psych-lineage/psych-lineage.html">心理学思想谱系</a></li>
+          </ul>
+        </div>
+      </section>
+<footer>
+      文学与语言思想谱系 · 思想图谱系列第二十一辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-05
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'PingFang SC, Microsoft YaHei, Helvetica, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>

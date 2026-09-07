@@ -1,0 +1,1031 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>地理与环境思想谱系 · 思想图谱系列第二十六辑</title>
+
+  <style>
+
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+
+  </style>
+
+  <style>
+
+    :root {
+      --bg: #FBF8F3;
+      --bg2: #F3EDE1;
+      --ink: #2B2418;
+      --muted: #6E6352;
+      --rule: #E4DBC9;
+      --accent: #166534;
+      --accent2: #A16207;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:first-child { margin-left: 0; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .legacy .legacy-title { font-weight: 700; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .legacy ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; }
+    @media (max-width: 700px) { .legacy { grid-template-columns: 1fr; } }
+
+    .history { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; }
+    .history .history-title { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem; }
+    .history p { margin-bottom: 0.55rem; }
+    .history p:last-child { margin-bottom: 0; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+    p a, li a { color: var(--accent); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    .formula {
+      font-family: var(--font-mono);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidenav { position: static; max-height: none; }
+    }
+    @media print {
+      .sidenav { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      section.sec { break-inside: avoid-page; }
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="shell">
+
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">地理与环境思想谱系</div>
+    <div class="brand-sub">思想图谱系列 · 第二十六辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+      <li><a href="#intro">导言 · 地理与环境</a></li>
+      <li><a href="#overview">第一章 · 总览：地理与环境的演变</a></li>
+      <li><a href="#origin">第二章 · 地理的起源：从托勒密到大航海</a></li>
+      <li><a href="#map">第三章 · 地图与空间：从制图学到地理信息系统</a></li>
+      <li><a href="#human">第四章 · 人地关系：从环境决定论到可能论</a></li>
+      <li><a href="#environment">第五章 · 环境思想：从资源保护到生态主义</a></li>
+      <li><a href="#sustainability">第六章 · 可持续发展：从布伦特兰到气候变化</a></li>
+      <li><a href="#summary">第七章 · 总结提炼：地理与环境的启示</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第二十六辑</span>
+        <span class="series-links">
+          <a href="../思想图谱系列/index.html">系列目录</a>
+          <a href="../life-science-lineage/life-science-lineage.html">← 上一辑 · 生命科学思想谱系</a>
+          <a href="../media-lineage/media-lineage.html">下一辑 · 传播与媒介思想谱系 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>地理与环境思想谱系</h1>
+      <p class="subtitle">从托勒密到气候变化——人类如何认识家园、改造环境、直面危机：地理的起源、地图与空间、人地关系、环境思想、可持续发展与气候变化，提炼“家园之知、空间之眼、人地之系、环境之忧、可持续之路”的地理与环境规律</p>
+      <p class="meta">作者：詹家杨 · 2026-09-05 · 8 张思维导图 · 7 张对照表 · 20+ 人物语录 · 地理与环境</p>
+    </header>
+
+    <main>
+      <!-- 导言 -->
+      <section class="sec" id="intro">
+        <h2>导言 · 地理与环境</h2>
+        <p>地理（geography）来自希腊语 geo——“大地”与 graphein——“书写”；地理学是书写大地的学问。前面各辑梳理了人类关于世界、社会与生命的种种思想，而本辑要追问的是更根本的问题：<strong>人类如何认识自己的家园？又如何改造与守护它？</strong>当我们谈论地图、气候、资源、城市、环境危机时，我们其实在谈论同一个问题——人与大地如何相处。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 人地关系的思想演变：从决定论到可持续发展</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  DET["环境决定论\n19世纪末-20世纪初\n自然环境决定人类命运"] --> POS["可能论\n20世纪初-20世纪中\n人选择利用环境的方式"]
+  POS --> MOD["人类中心主义\n20世纪中-20世纪末\n技术征服自然"]
+  MOD --> SUS["可持续发展\n1987至今\n既满足当代又不损害后代"]
+  SUS --> DEEP["深层生态学\n1990年代至今\n自然本身有内在价值"]
+  DET -->|"批评"| POS
+  POS -->|"反思"| MOD
+  MOD -->|"危机"| SUS
+  SUS -->|"深化"| DEEP
+  classDef det fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef pos fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef mod fill:#DBEAFE,stroke:#3B82F6,color:#1E3A5F;
+  classDef sus fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef deep fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  class DET det;
+  class POS pos;
+  class MOD mod;
+  class SUS sus;
+  class DEEP deep;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：人地关系思想的演变</strong>——从"自然决定人"到"人征服自然"再到"人自然共生"，人类对自身与地球关系的理解经历了深刻转变。</p>
+          <p><strong>环境决定论：</strong>拉采尔等学者认为，自然环境决定人类文明的特质——热带地区因为炎热导致懒惰，温带地区因为四季分明造就勤劳。这种理论的问题在于：它忽略了人类文化的自主性，而且容易被滥用。纳粹的"生存空间"理论就是一例。</p>
+          <p><strong>可持续发展：</strong>1987年布伦特兰报告提出了最经典的可持续发展定义："既满足当代人的需要，又不对后代人满足其需要的能力构成危害。"这个定义包含两个关键概念：需要（尤其是穷人的基本需要）和限制（技术和社会组织对环境能力的限制）。</p>
+          <p><strong>现实案例：</strong>中国的"退耕还林"政策（1999年启动）是可持续发展思想的具体实践。黄土高原植被覆盖率从30%提高到60%以上，同时通过生态补偿机制保障了农民收入。环境与发展不是零和博弈，好的制度可以双赢。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>0.1 地理的定义：geo——大地、graphein——书写</li>
+          <li>0.2 地理与环境的七次转向：为描述→为探险→为测量→为解释→为环境→为生态→为可持续</li>
+          <li>0.3 地理与环境同科学卷、生命科学卷的关联</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>geo 与 graphein</strong>：地理的词源，意为“书写大地”</li>
+          <li><strong>人地关系</strong>：地理学的核心问题</li>
+          <li><strong>地理与环境谱系</strong>：描述→探险→测量→解释→环境→生态→可持续</li>
+        </ul>
+<figure class="diagram">
+          <figcaption>图 0a · 地理学基本概念树状图</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  ROOT["地理学思想谱系"] --> A["两大分支"]
+  ROOT --> B["核心概念"]
+  ROOT --> C["技术演进"]
+  ROOT --> D["环境思想"]
+  A --> A1["自然地理学\n气候·地貌·水文·土壤·植被"]
+  A --> A2["人文地理学\n人口·城市·经济·文化·政治"]
+  B --> B1["空间 Space"]
+  B --> B2["地方 Place"]
+  B --> B3["尺度 Scale"]
+  B --> B4["区域 Region"]
+  B --> B5["景观 Landscape"]
+  C --> C1["托勒密地图\n公元2世纪"]
+  C --> C2["大航海时代\n15-16世纪"]
+  C --> C3["地理信息系统\n1960年代"]
+  C --> C4["遥感与GPS\n1970年代"]
+  C --> C5["数字地球\n21世纪"]
+  D --> D1["环境决定论\n地理决定文明"]
+  D --> D2["可能论\n人选择环境"]
+  D --> D3["可持续发展\n1987布伦特兰"]
+  D --> D4["生态主义\n深层生态学"]
+  classDef root fill:#0F766E,color:#fff,stroke:#0F766E;
+  classDef cat fill:#14B8A6,color:#fff,stroke:#14B8A6;
+  classDef leaf fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  class ROOT root;
+  class A,B,C,D cat;
+  class A1,A2,B1,B2,B3,B4,B5,C1,C2,C3,C4,C5,D1,D2,D3,D4 leaf;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 0a 详解：地理学的基本概念框架</strong>——地理学不是"背地图"，而是研究人类活动与自然环境之间关系的学科。</p>
+          <p><strong>两大分支：</strong>自然地理研究地球的自然系统（气候、地貌、水文、土壤、植被），人文地理研究人类在空间中的组织方式（城市、经济、文化、政治）。地理学的独特之处在于它处于自然科学和社会科学的交叉点上——它既研究岩石圈的物理过程，也研究全球化的空间逻辑。</p>
+          <p><strong>空间 vs 地方：</strong>这是地理学最关键的概念区分。"空间"是抽象的、中性的、可测量的坐标系统；"地方"是充满意义的、被人赋予情感和认同的具体空间。你家的地址是"空间"，但"家"是"地方"。地理学家段义孚说："空间是自由，地方是安全。"</p>
+          <p><strong>环境决定论 vs 可能论：</strong>环境决定论认为自然环境决定人类文明——热带地区文明落后是因为气候炎热。但可能论反驳：环境提供可能性，人类通过文化和技术做出选择。日本和英国都是岛国，发展道路完全不同——这不是环境决定的，而是文化选择的。</p>
+        </div>
+        <div class="callout">
+          <span class="callout-title">一条主线</span>
+          地理与环境关注对象的七次转向：<strong>为描述</strong>（古希腊地理与托勒密，地理是记录大地）→ <strong>为探险</strong>（大航海与地理大发现，地理是发现新世界）→ <strong>为测量</strong>（制图学与经纬度，地理是精确测量）→ <strong>为解释</strong>（洪堡与李特尔，地理是解释人地关系）→ <strong>为环境</strong>（环境决定论与可能论，地理是理解环境对人的塑造）→ <strong>为生态</strong>（环境运动与生态学，地理是守护家园）→ <strong>为可持续</strong>（气候变化与可持续发展，地理是规划未来）。每一次转向，都是人类对“如何与大地相处”的一次重新回答。
+        </div>
+        <p>本辑沿地理与环境的谱系展开——<strong>地理的起源</strong>（托勒密、大航海、制图学）、<strong>地图与空间</strong>（墨卡托、GIS、遥感）、<strong>人地关系</strong>（环境决定论、可能论、景观）、<strong>环境思想</strong>（资源保护、生态主义、环境伦理）、<strong>可持续发展</strong>（布伦特兰、气候变化、双碳目标），看“书写大地”的学问如何从托勒密的世界地图，长成守护地球家园的现代科学。它与第八辑《科学思想谱系》血脉相连——科学卷问“自然如何运作”，本辑问“人与大地如何相处”；又与第二十五辑《生命科学思想谱系》遥相呼应——生命科学问“生命如何演化”，地理与环境问“家园如何守护”。</p>
+        <figure class="diagram">
+          <figcaption>图 1 · 图 1 · 地理与环境的七次转向图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["为描述"]
+  B["为探险"]
+  C["为测量"]
+  D["为解释"]
+  E["为环境"]
+  F["为生态"]
+  G["为可持续"]
+  A --> B
+  B --> C
+  C --> D
+  D --> E
+  E --> F
+  F --> G
+  classDef shift fill:#166534,color:#fff,stroke:#166534;
+  class A,B,C,D,E,F,G shift;
+          </pre>
+        </figure>
+      </section>
+      <section class="sec" id="overview">
+        <h2><span class="chapno">第一章</span>总览：地理与环境的演变</h2>
+        <p>先看全景：地理学与人类对家园的认识同龄。古希腊的埃拉托色尼测量地球周长，托勒密绘制世界地图；大航海时代，哥伦布、麦哲伦用航行改写世界图景；制图学让空间成为可测量的对象，洪堡与李特尔把地理学建成一门科学。二十世纪，环境决定论让位于可能论，生态学与环保运动让人类直面环境危机，GIS 与遥感让地理学进入数字时代。当代，气候变化与可持续发展成为地理学的核心议题。理解地理与环境，就是理解人类如何认识家园、改造环境、直面危机。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 人地关系的思想演变：从决定论到可持续发展</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  DET["环境决定论\n19世纪末-20世纪初\n自然环境决定人类命运"] --> POS["可能论\n20世纪初-20世纪中\n人选择利用环境的方式"]
+  POS --> MOD["人类中心主义\n20世纪中-20世纪末\n技术征服自然"]
+  MOD --> SUS["可持续发展\n1987至今\n既满足当代又不损害后代"]
+  SUS --> DEEP["深层生态学\n1990年代至今\n自然本身有内在价值"]
+  DET -->|"批评"| POS
+  POS -->|"反思"| MOD
+  MOD -->|"危机"| SUS
+  SUS -->|"深化"| DEEP
+  classDef det fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef pos fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef mod fill:#DBEAFE,stroke:#3B82F6,color:#1E3A5F;
+  classDef sus fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef deep fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  class DET det;
+  class POS pos;
+  class MOD mod;
+  class SUS sus;
+  class DEEP deep;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：人地关系思想的演变</strong>——从"自然决定人"到"人征服自然"再到"人自然共生"，人类对自身与地球关系的理解经历了深刻转变。</p>
+          <p><strong>环境决定论：</strong>拉采尔等学者认为，自然环境决定人类文明的特质——热带地区因为炎热导致懒惰，温带地区因为四季分明造就勤劳。这种理论的问题在于：它忽略了人类文化的自主性，而且容易被滥用。纳粹的"生存空间"理论就是一例。</p>
+          <p><strong>可持续发展：</strong>1987年布伦特兰报告提出了最经典的可持续发展定义："既满足当代人的需要，又不对后代人满足其需要的能力构成危害。"这个定义包含两个关键概念：需要（尤其是穷人的基本需要）和限制（技术和社会组织对环境能力的限制）。</p>
+          <p><strong>现实案例：</strong>中国的"退耕还林"政策（1999年启动）是可持续发展思想的具体实践。黄土高原植被覆盖率从30%提高到60%以上，同时通过生态补偿机制保障了农民收入。环境与发展不是零和博弈，好的制度可以双赢。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>1.1 古典地理学：从埃拉托色尼到托勒密</li>
+          <li>1.2 大航海与近代地理学</li>
+          <li>1.3 现代地理学：从环境到可持续</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>地理大发现</strong>：改写世界图景的航行</li>
+          <li><strong>人地关系</strong>：地理学的核心问题</li>
+          <li><strong>可持续发展</strong>：当代地理学的使命</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>古典地理学（前3世纪–2世纪）</strong>：埃拉托色尼（约前276–前194）测量地球周长，首创“地理学”一词；托勒密《地理学》（约150）绘制世界地图，其经纬度体系沿用千年。</p>
+          <p><strong>大航海与近代地理学（15–19世纪）</strong>：哥伦布（1492）发现新大陆，麦哲伦船队（1519–1522）完成环球航行；墨卡托（1569）发明投影法；洪堡《宇宙》与李特尔《地学通论》把地理学建成科学。</p>
+          <p><strong>现代地理学（20世纪）</strong>：环境决定论让位于可能论；地理学分为自然地理与人文地理；计量革命与 GIS 让地理学进入数字时代；环境运动与生态学让地理学直面环境危机。</p>
+          <p><strong>当代地理学（20世纪中–）</strong>：布伦特兰报告（1987）提出可持续发展；气候变化成为全球议题；《巴黎协定》（2015）确立减排目标；地理学成为应对全球环境挑战的核心科学。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>埃拉托色尼（约前276–前194）</strong>——测量地球周长、地理学之父。</p>
+        <p><strong>托勒密（约100–170）</strong>——《地理学》、世界地图。</p>
+        <p><strong>哥伦布（1451–1506）</strong>——发现新大陆。</p>
+        <p><strong>麦哲伦（约1480–1521）</strong>——环球航行。</p>
+        <p><strong>墨卡托（1512–1594）</strong>——墨卡托投影。</p>
+        <p><strong>洪堡（1769–1859）</strong>——近代地理学奠基者。</p>
+        <p><strong>李特尔（1779–1859）</strong>——《地学通论》。</p>
+        <p><strong>布伦特兰（1939–）</strong>——《我们共同的未来》。</p>
+        <figure class="diagram">
+          <figcaption>图 2 · 地理与环境演变结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["地理与环境"] --> A["古典地理学<br>埃拉托色尼 · 托勒密"]
+  ROOT --> B["大航海与近代<br>哥伦布 · 麦哲伦 · 洪堡"]
+  ROOT --> C["现代地理学<br>GIS · 环境运动 · 生态学"]
+  ROOT --> D["当代地理学<br>气候变化 · 可持续发展"]
+  classDef rootNode fill:#166534,color:#fff,stroke:#166534;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：地理学主要时期速览</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>时期</th><th>核心问题</th><th>代表人物</th><th>思想遗产</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>古典地理学</strong></td><td>大地是什么样</td><td>埃拉托色尼 · 托勒密</td><td>经纬度 · 世界地图</td></tr>
+              <tr><td><strong>大航海</strong></td><td>世界有多大</td><td>哥伦布 · 麦哲伦</td><td>地理大发现</td></tr>
+              <tr><td><strong>近代地理学</strong></td><td>人地如何相关</td><td>洪堡 · 李特尔</td><td>近代地理学</td></tr>
+              <tr><td><strong>现代地理学</strong></td><td>环境如何变化</td><td>GIS · 卡逊</td><td>数字地理 · 环保</td></tr>
+              <tr><td><strong>当代地理学</strong></td><td>如何可持续发展</td><td>布伦特兰</td><td>可持续发展</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="sec" id="origin">
+        <h2><span class="chapno">第二章</span>地理的起源：从托勒密到大航海</h2>
+        <p>地理学的起点是对大地的认识。古希腊人用几何与天文测量地球，托勒密绘制世界地图；中世纪，阿拉伯地理学家保存并发展地理知识；大航海时代，欧洲人用航行改写世界图景——哥伦布发现新大陆，麦哲伦完成环球航行，世界第一次被完整地认识。本章的核心洞见是：<strong>地理的每一次进步，都是人类视野的一次扩展</strong>——从地中海的一隅到全球的图景，地理学让人类第一次看见自己的家园。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 人地关系的思想演变：从决定论到可持续发展</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  DET["环境决定论\n19世纪末-20世纪初\n自然环境决定人类命运"] --> POS["可能论\n20世纪初-20世纪中\n人选择利用环境的方式"]
+  POS --> MOD["人类中心主义\n20世纪中-20世纪末\n技术征服自然"]
+  MOD --> SUS["可持续发展\n1987至今\n既满足当代又不损害后代"]
+  SUS --> DEEP["深层生态学\n1990年代至今\n自然本身有内在价值"]
+  DET -->|"批评"| POS
+  POS -->|"反思"| MOD
+  MOD -->|"危机"| SUS
+  SUS -->|"深化"| DEEP
+  classDef det fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef pos fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef mod fill:#DBEAFE,stroke:#3B82F6,color:#1E3A5F;
+  classDef sus fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef deep fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  class DET det;
+  class POS pos;
+  class MOD mod;
+  class SUS sus;
+  class DEEP deep;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：人地关系思想的演变</strong>——从"自然决定人"到"人征服自然"再到"人自然共生"，人类对自身与地球关系的理解经历了深刻转变。</p>
+          <p><strong>环境决定论：</strong>拉采尔等学者认为，自然环境决定人类文明的特质——热带地区因为炎热导致懒惰，温带地区因为四季分明造就勤劳。这种理论的问题在于：它忽略了人类文化的自主性，而且容易被滥用。纳粹的"生存空间"理论就是一例。</p>
+          <p><strong>可持续发展：</strong>1987年布伦特兰报告提出了最经典的可持续发展定义："既满足当代人的需要，又不对后代人满足其需要的能力构成危害。"这个定义包含两个关键概念：需要（尤其是穷人的基本需要）和限制（技术和社会组织对环境能力的限制）。</p>
+          <p><strong>现实案例：</strong>中国的"退耕还林"政策（1999年启动）是可持续发展思想的具体实践。黄土高原植被覆盖率从30%提高到60%以上，同时通过生态补偿机制保障了农民收入。环境与发展不是零和博弈，好的制度可以双赢。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>2.1 古希腊地理学：从埃拉托色尼到托勒密</li>
+          <li>2.2 中世纪地理学：阿拉伯与中国的贡献</li>
+          <li>2.3 大航海与地理大发现</li>
+          <li>2.4 世界图景的改写</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>地球周长</strong>：埃拉托色尼的测量</li>
+          <li><strong>托勒密体系</strong>：古典世界地图</li>
+          <li><strong>地理大发现</strong>：世界图景的改写</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>古希腊地理学（前3世纪–2世纪）</strong>：埃拉托色尼用日影测量地球周长，误差不足 1%；托勒密《地理学》以经纬度定位地点，绘制世界地图，其体系沿用至大航海时代。</p>
+          <p><strong>中世纪地理学（8–15世纪）</strong>：阿拉伯地理学家伊德里西绘制世界地图；中国明代郑和七下西洋（1405–1433）远达非洲东岸；《马可·波罗游记》激发欧洲人对东方的想象。</p>
+          <p><strong>大航海与地理大发现（15–16世纪）</strong>：哥伦布（1492）横渡大西洋发现新大陆；达·伽马（1498）绕过好望角抵达印度；麦哲伦船队（1519–1522）完成人类首次环球航行，证明地球是圆的。</p>
+          <p><strong>世界图景的改写（16世纪–）</strong>：新大陆的发现改写欧洲的世界观——世界不再是“三大洲”，而是全球的海洋与大陆；地理大发现开启了全球化、殖民与物种交换（哥伦布大交换）的时代。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>埃拉托色尼（约前276–前194）</strong>——测量地球周长。</p>
+        <p><strong>托勒密（约100–170）</strong>——《地理学》、经纬度。</p>
+        <p><strong>伊德里西（1100–1165）</strong>——阿拉伯世界地图。</p>
+        <p><strong>郑和（1371–1433）</strong>——七下西洋。</p>
+        <p><strong>哥伦布（1451–1506）</strong>——发现新大陆。</p>
+        <p><strong>麦哲伦（约1480–1521）</strong>——环球航行。</p>
+        <figure class="diagram">
+          <figcaption>图 3 · 地理起源结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["地理的起源"] --> A["古希腊<br>埃拉托色尼 · 托勒密"]
+  ROOT --> B["中世纪<br>伊德里西 · 郑和"]
+  ROOT --> C["大航海<br>哥伦布 · 麦哲伦"]
+  ROOT --> D["世界图景<br>全球视野 · 哥伦布大交换"]
+  classDef rootNode fill:#166534,color:#fff,stroke:#166534;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：地理发现对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>发现</th><th>时间</th><th>人物</th><th>意义</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>地球周长</strong></td><td>约前240</td><td>埃拉托色尼</td><td>地理学之父</td></tr>
+              <tr><td><strong>世界地图</strong></td><td>约150</td><td>托勒密</td><td>经纬度体系</td></tr>
+              <tr><td><strong>郑和下西洋</strong></td><td>1405–1433</td><td>郑和</td><td>东方航海壮举</td></tr>
+              <tr><td><strong>发现新大陆</strong></td><td>1492</td><td>哥伦布</td><td>改写世界图景</td></tr>
+              <tr><td><strong>环球航行</strong></td><td>1519–1522</td><td>麦哲伦船队</td><td>证明地球是圆的</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">埃拉托色尼 · 约前276–前194</div>
+            <blockquote>大地是球形的，我们可以测量它。<cite>——地理学</cite></blockquote>
+            <div class="legacy-who">托勒密 · 约100–170</div>
+            <blockquote>地理学是描绘整个已知世界的学问。<cite>——《地理学》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">哥伦布 · 1451–1506</div>
+            <blockquote>世界比我们想象的要大得多。<cite>——航海日志</cite></blockquote>
+            <div class="legacy-who">麦哲伦 · 约1480–1521</div>
+            <blockquote>我们证明了地球是圆的。<cite>——环球航行</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="map">
+        <h2><span class="chapno">第三章</span>地图与空间：从制图学到地理信息系统</h2>
+        <p>地图是地理学的语言。从托勒密的经纬网到墨卡托投影，从手绘地图到卫星遥感，地图把三维的大地压缩为二维的符号，让空间成为可测量、可分析的对象。二十世纪，GIS（地理信息系统）把地图数字化，遥感卫星从太空俯瞰地球，空间分析成为理解世界的强大工具。本章的核心洞见是：<strong>地图不是中立的，它既是科学的工具，也是权力的表达</strong>——谁绘制地图，谁就定义世界。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 人地关系的思想演变：从决定论到可持续发展</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  DET["环境决定论\n19世纪末-20世纪初\n自然环境决定人类命运"] --> POS["可能论\n20世纪初-20世纪中\n人选择利用环境的方式"]
+  POS --> MOD["人类中心主义\n20世纪中-20世纪末\n技术征服自然"]
+  MOD --> SUS["可持续发展\n1987至今\n既满足当代又不损害后代"]
+  SUS --> DEEP["深层生态学\n1990年代至今\n自然本身有内在价值"]
+  DET -->|"批评"| POS
+  POS -->|"反思"| MOD
+  MOD -->|"危机"| SUS
+  SUS -->|"深化"| DEEP
+  classDef det fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef pos fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef mod fill:#DBEAFE,stroke:#3B82F6,color:#1E3A5F;
+  classDef sus fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef deep fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  class DET det;
+  class POS pos;
+  class MOD mod;
+  class SUS sus;
+  class DEEP deep;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：人地关系思想的演变</strong>——从"自然决定人"到"人征服自然"再到"人自然共生"，人类对自身与地球关系的理解经历了深刻转变。</p>
+          <p><strong>环境决定论：</strong>拉采尔等学者认为，自然环境决定人类文明的特质——热带地区因为炎热导致懒惰，温带地区因为四季分明造就勤劳。这种理论的问题在于：它忽略了人类文化的自主性，而且容易被滥用。纳粹的"生存空间"理论就是一例。</p>
+          <p><strong>可持续发展：</strong>1987年布伦特兰报告提出了最经典的可持续发展定义："既满足当代人的需要，又不对后代人满足其需要的能力构成危害。"这个定义包含两个关键概念：需要（尤其是穷人的基本需要）和限制（技术和社会组织对环境能力的限制）。</p>
+          <p><strong>现实案例：</strong>中国的"退耕还林"政策（1999年启动）是可持续发展思想的具体实践。黄土高原植被覆盖率从30%提高到60%以上，同时通过生态补偿机制保障了农民收入。环境与发展不是零和博弈，好的制度可以双赢。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>3.1 制图学的历史：从托勒密到墨卡托</li>
+          <li>3.2 投影与地图的局限</li>
+          <li>3.3 GIS 与遥感：数字时代的空间</li>
+          <li>3.4 地图与权力</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>墨卡托投影</strong>：航海地图的里程碑</li>
+          <li><strong>GIS</strong>：地理信息系统</li>
+          <li><strong>地图与权力</strong>：地图是权力的表达</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>制图学的历史（2世纪–16世纪）</strong>：托勒密建立经纬度体系；墨卡托（1569）发明等角投影，让航海直线成为直线；中国裴秀提出“制图六体”，绘制《禹贡地域图》。</p>
+          <p><strong>投影与地图的局限（16世纪–）</strong>：任何地图投影都有变形——墨卡托投影夸大高纬度面积，让欧洲显得更大；彼得斯投影（1973）以面积等积纠正这种“欧洲中心”的扭曲，引发关于地图政治学的争论。</p>
+          <p><strong>GIS 与遥感（20世纪中–）</strong>：GIS（地理信息系统）把空间数据数字化，支持叠加分析、缓冲区分析等；遥感卫星（Landsat 1972、北斗、GPS）从太空观测地球；谷歌地球让全球空间触手可及。</p>
+          <p><strong>地图与权力（20世纪–）</strong>：地图从来不是中立的——国界、地名、投影都体现权力关系；哈雷把地图用于科学，殖民者用地图划分疆域；当代地理学反思地图背后的权力与偏见。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>裴秀（224–271）</strong>——制图六体、中国制图学之父。</p>
+        <p><strong>墨卡托（1512–1594）</strong>——墨卡托投影。</p>
+        <p><strong>彼得斯（1916–2002）</strong>——彼得斯投影。</p>
+        <p><strong>哈雷（1656–1742）</strong>——科学制图。</p>
+        <p><strong>古德柴尔德（1944–）</strong>——GIS 之父。</p>
+        <figure class="diagram">
+          <figcaption>图 4 · 地图与空间结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["地图与空间"] --> A["制图学<br>托勒密 · 裴秀 · 墨卡托"]
+  ROOT --> B["投影与局限<br>变形 · 彼得斯投影"]
+  ROOT --> C["GIS与遥感<br>地理信息系统 · 卫星"]
+  ROOT --> D["地图与权力<br>国界 · 地名 · 偏见"]
+  classDef rootNode fill:#166534,color:#fff,stroke:#166534;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：制图技术对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>技术</th><th>核心特征</th><th>代表人物</th><th>意义</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>经纬网</strong></td><td>定位系统</td><td>托勒密</td><td>地图科学化</td></tr>
+              <tr><td><strong>制图六体</strong></td><td>中国制图理论</td><td>裴秀</td><td>东方制图学</td></tr>
+              <tr><td><strong>墨卡托投影</strong></td><td>等角投影</td><td>墨卡托</td><td>航海地图</td></tr>
+              <tr><td><strong>彼得斯投影</strong></td><td>面积等积</td><td>彼得斯</td><td>地图政治学</td></tr>
+              <tr><td><strong>GIS</strong></td><td>数字空间分析</td><td>古德柴尔德</td><td>空间科学</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">墨卡托 · 1512–1594</div>
+            <blockquote>地图是世界的缩影。<cite>——制图学</cite></blockquote>
+            <div class="legacy-who">裴秀 · 224–271</div>
+            <blockquote>制图六体，是绘制地图的法则。<cite>——《禹贡地域图》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">彼得斯 · 1916–2002</div>
+            <blockquote>地图应当忠实于面积，而不是忠实于偏见。<cite>——彼得斯投影</cite></blockquote>
+            <div class="legacy-who">古德柴尔德 · 1944–</div>
+            <blockquote>GIS 让我们以新的方式看见世界。<cite>——地理信息科学</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="human">
+        <h2><span class="chapno">第四章</span>人地关系：从环境决定论到可能论</h2>
+        <p>人与环境的关系是地理学的核心问题。环境决定论认为环境决定人类的命运——热带使人懒惰，温带使人进取；可能论则主张环境提供可能，人类做出选择；景观学派研究人类活动在大地上留下的痕迹；当代地理学强调人地关系的互动与共生。本章的核心洞见是：<strong>环境不是命运，而是舞台</strong>——人类既被环境塑造，也塑造环境，人地关系是动态的、双向的。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 人地关系的思想演变：从决定论到可持续发展</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  DET["环境决定论\n19世纪末-20世纪初\n自然环境决定人类命运"] --> POS["可能论\n20世纪初-20世纪中\n人选择利用环境的方式"]
+  POS --> MOD["人类中心主义\n20世纪中-20世纪末\n技术征服自然"]
+  MOD --> SUS["可持续发展\n1987至今\n既满足当代又不损害后代"]
+  SUS --> DEEP["深层生态学\n1990年代至今\n自然本身有内在价值"]
+  DET -->|"批评"| POS
+  POS -->|"反思"| MOD
+  MOD -->|"危机"| SUS
+  SUS -->|"深化"| DEEP
+  classDef det fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef pos fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef mod fill:#DBEAFE,stroke:#3B82F6,color:#1E3A5F;
+  classDef sus fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef deep fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  class DET det;
+  class POS pos;
+  class MOD mod;
+  class SUS sus;
+  class DEEP deep;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：人地关系思想的演变</strong>——从"自然决定人"到"人征服自然"再到"人自然共生"，人类对自身与地球关系的理解经历了深刻转变。</p>
+          <p><strong>环境决定论：</strong>拉采尔等学者认为，自然环境决定人类文明的特质——热带地区因为炎热导致懒惰，温带地区因为四季分明造就勤劳。这种理论的问题在于：它忽略了人类文化的自主性，而且容易被滥用。纳粹的"生存空间"理论就是一例。</p>
+          <p><strong>可持续发展：</strong>1987年布伦特兰报告提出了最经典的可持续发展定义："既满足当代人的需要，又不对后代人满足其需要的能力构成危害。"这个定义包含两个关键概念：需要（尤其是穷人的基本需要）和限制（技术和社会组织对环境能力的限制）。</p>
+          <p><strong>现实案例：</strong>中国的"退耕还林"政策（1999年启动）是可持续发展思想的具体实践。黄土高原植被覆盖率从30%提高到60%以上，同时通过生态补偿机制保障了农民收入。环境与发展不是零和博弈，好的制度可以双赢。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>4.1 环境决定论：环境塑造人类</li>
+          <li>4.2 可能论：人类做出选择</li>
+          <li>4.3 景观与区域：人地互动的痕迹</li>
+          <li>4.4 当代人地关系：共生与危机</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>环境决定论</strong>：环境决定人类命运</li>
+          <li><strong>可能论</strong>：环境提供可能，人类做出选择</li>
+          <li><strong>人地关系</strong>：动态的双向互动</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>环境决定论（19世纪–20世纪初）</strong>：拉采尔与森普尔主张环境决定人类的文化与命运；地理环境决定论一度流行，但被批评为简化与偏见——它无法解释相似环境下不同的文明。</p>
+          <p><strong>可能论（20世纪初）</strong>：法国地理学家维达尔·白兰士与白吕纳提出可能论——环境提供一系列可能，人类在其中做出选择；人地关系不是单向决定，而是双向互动。</p>
+          <p><strong>景观与区域（20世纪）</strong>：索尔的文化景观学派研究人类活动在大地上的痕迹——农业景观、城市景观、道路网络；区域地理学综合研究特定区域的人地关系。</p>
+          <p><strong>当代人地关系（20世纪中–）</strong>：人类活动成为改变地球的主导力量——人类世（Anthropocene）概念提出；城市化、工业化、气候变化让人地关系进入危机与共生的新阶段。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>拉采尔（1844–1904）</strong>——环境决定论。</p>
+        <p><strong>维达尔·白兰士（1845–1918）</strong>——可能论。</p>
+        <p><strong>索尔（1889–1975）</strong>——文化景观学派。</p>
+        <p><strong>白吕纳（1869–1930）</strong>——人地关系研究。</p>
+        <p><strong>克鲁岑（1933–2021）</strong>——人类世概念。</p>
+        <figure class="diagram">
+          <figcaption>图 5 · 人地关系结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["人地关系"] --> A["环境决定论<br>拉采尔 · 环境塑造人类"]
+  ROOT --> B["可能论<br>维达尔 · 人类做出选择"]
+  ROOT --> C["景观学派<br>索尔 · 人地互动痕迹"]
+  ROOT --> D["人类世<br>克鲁岑 · 共生与危机"]
+  classDef rootNode fill:#166534,color:#fff,stroke:#166534;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：人地关系理论对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>理论</th><th>核心主张</th><th>代表人物</th><th>关键词</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>环境决定论</strong></td><td>环境决定人类命运</td><td>拉采尔 · 森普尔</td><td>决定 · 命运</td></tr>
+              <tr><td><strong>可能论</strong></td><td>环境提供可能，人类选择</td><td>维达尔·白兰士</td><td>可能 · 选择</td></tr>
+              <tr><td><strong>文化景观</strong></td><td>人类活动留下痕迹</td><td>索尔</td><td>景观</td></tr>
+              <tr><td><strong>区域地理</strong></td><td>综合研究特定区域</td><td>哈特向</td><td>区域</td></tr>
+              <tr><td><strong>人类世</strong></td><td>人类成为地质力量</td><td>克鲁岑</td><td>人类世</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">维达尔·白兰士 · 1845–1918</div>
+            <blockquote>环境提供可能，人类做出选择。<cite>——可能论</cite></blockquote>
+            <div class="legacy-who">索尔 · 1889–1975</div>
+            <blockquote>景观是文化在大地上的烙印。<cite>——文化景观学派</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">克鲁岑 · 1933–2021</div>
+            <blockquote>人类已成为改变地球的地质力量。<cite>——人类世</cite></blockquote>
+            <div class="legacy-who">白吕纳 · 1869–1930</div>
+            <blockquote>人地关系是地理学的核心。<cite>——人地关系研究</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="environment">
+        <h2><span class="chapno">第五章</span>环境思想：从资源保护到生态主义</h2>
+        <p>环境思想追问人类如何对待自然。从梭罗的瓦尔登湖到缪尔的荒野保护，从利奥波德的大地伦理到卡逊的《寂静的春天》，从深层生态学到环境正义，人类对环境的态度经历了从征服到守护的转变。本章的核心洞见是：<strong>环境问题不仅是科学问题，更是价值问题</strong>——我们如何对待自然，反映了我们如何理解自己。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 人地关系的思想演变：从决定论到可持续发展</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  DET["环境决定论\n19世纪末-20世纪初\n自然环境决定人类命运"] --> POS["可能论\n20世纪初-20世纪中\n人选择利用环境的方式"]
+  POS --> MOD["人类中心主义\n20世纪中-20世纪末\n技术征服自然"]
+  MOD --> SUS["可持续发展\n1987至今\n既满足当代又不损害后代"]
+  SUS --> DEEP["深层生态学\n1990年代至今\n自然本身有内在价值"]
+  DET -->|"批评"| POS
+  POS -->|"反思"| MOD
+  MOD -->|"危机"| SUS
+  SUS -->|"深化"| DEEP
+  classDef det fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef pos fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef mod fill:#DBEAFE,stroke:#3B82F6,color:#1E3A5F;
+  classDef sus fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef deep fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  class DET det;
+  class POS pos;
+  class MOD mod;
+  class SUS sus;
+  class DEEP deep;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：人地关系思想的演变</strong>——从"自然决定人"到"人征服自然"再到"人自然共生"，人类对自身与地球关系的理解经历了深刻转变。</p>
+          <p><strong>环境决定论：</strong>拉采尔等学者认为，自然环境决定人类文明的特质——热带地区因为炎热导致懒惰，温带地区因为四季分明造就勤劳。这种理论的问题在于：它忽略了人类文化的自主性，而且容易被滥用。纳粹的"生存空间"理论就是一例。</p>
+          <p><strong>可持续发展：</strong>1987年布伦特兰报告提出了最经典的可持续发展定义："既满足当代人的需要，又不对后代人满足其需要的能力构成危害。"这个定义包含两个关键概念：需要（尤其是穷人的基本需要）和限制（技术和社会组织对环境能力的限制）。</p>
+          <p><strong>现实案例：</strong>中国的"退耕还林"政策（1999年启动）是可持续发展思想的具体实践。黄土高原植被覆盖率从30%提高到60%以上，同时通过生态补偿机制保障了农民收入。环境与发展不是零和博弈，好的制度可以双赢。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>5.1 荒野保护：从梭罗到缪尔</li>
+          <li>5.2 大地伦理：利奥波德</li>
+          <li>5.3 环保运动：从卡逊到地球日</li>
+          <li>5.4 深层生态学与环境正义</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>大地伦理</strong>：利奥波德的环境伦理</li>
+          <li><strong>寂静的春天</strong>：现代环保运动的起点</li>
+          <li><strong>环境正义</strong>：环境负担的公平分配</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>荒野保护（19世纪）</strong>：梭罗《瓦尔登湖》（1854）倡导简朴生活与自然亲近；缪尔推动约塞米蒂与优胜美地国家公园的建立，被誉为“国家公园之父”。</p>
+          <p><strong>大地伦理（1949）</strong>：利奥波德《沙乡年鉴》提出大地伦理——人类是大地共同体的一员，应当尊重土地、水、植物与动物；他主张“像山一样思考”。</p>
+          <p><strong>环保运动（1962–）</strong>：卡逊《寂静的春天》（1962）揭示 DDT 对生态的破坏，催生现代环保运动；1970年首个地球日；《联合国人类环境宣言》（1972）确立环境保护的全球议程。</p>
+          <p><strong>深层生态学与环境正义（20世纪70年代–）</strong>：奈斯提出深层生态学——自然有独立于人类的内在价值；环境正义运动关注环境负担的不公平分配——污染与风险往往由弱势群体承担。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>梭罗（1817–1862）</strong>——《瓦尔登湖》。</p>
+        <p><strong>缪尔（1838–1914）</strong>——国家公园之父。</p>
+        <p><strong>利奥波德（1887–1948）</strong>——《沙乡年鉴》、大地伦理。</p>
+        <p><strong>卡逊（1907–1964）</strong>——《寂静的春天》。</p>
+        <p><strong>奈斯（1912–2009）</strong>——深层生态学。</p>
+        <figure class="diagram">
+          <figcaption>图 6 · 环境思想结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["环境思想"] --> A["荒野保护<br>梭罗 · 缪尔"]
+  ROOT --> B["大地伦理<br>利奥波德"]
+  ROOT --> C["环保运动<br>卡逊 · 地球日"]
+  ROOT --> D["深层生态学与环境正义<br>奈斯 · 公平"]
+  classDef rootNode fill:#166534,color:#fff,stroke:#166534;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：环境思想对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>思想</th><th>核心主张</th><th>代表人物</th><th>关键词</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>荒野保护</strong></td><td>保护荒野与自然</td><td>梭罗 · 缪尔</td><td>国家公园</td></tr>
+              <tr><td><strong>大地伦理</strong></td><td>人是大地共同体的一员</td><td>利奥波德</td><td>大地伦理</td></tr>
+              <tr><td><strong>环保运动</strong></td><td>保护环境免受污染</td><td>卡逊</td><td>寂静的春天</td></tr>
+              <tr><td><strong>深层生态学</strong></td><td>自然有内在价值</td><td>奈斯</td><td>生态中心</td></tr>
+              <tr><td><strong>环境正义</strong></td><td>环境负担公平分配</td><td>布伦特兰 · 民权运动</td><td>公平 · 正义</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">梭罗 · 1817–1862</div>
+            <blockquote>我步入丛林，因为我希望活得有意义。<cite>——《瓦尔登湖》</cite></blockquote>
+            <div class="legacy-who">利奥波德 · 1887–1948</div>
+            <blockquote>像山一样思考。<cite>——《沙乡年鉴》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">卡逊 · 1907–1964</div>
+            <blockquote>大自然中的一切都是相互联系的。<cite>——《寂静的春天》</cite></blockquote>
+            <div class="legacy-who">缪尔 · 1838–1914</div>
+            <blockquote>荒野是世界的救赎。<cite>——环保运动</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="sustainability">
+        <h2><span class="chapno">第六章</span>可持续发展：从布伦特兰到气候变化</h2>
+        <p>可持续发展是当代地理与环境思想的核心。布伦特兰报告（1987）把可持续发展定义为“既满足当代人的需要，又不损害后代人满足其需要的能力”；《里约宣言》（1992）确立全球议程；《巴黎协定》（2015）为应对气候变化确立目标。气候变化、生物多样性丧失、资源枯竭构成三重危机。本章的核心洞见是：<strong>发展不是无限的，而是有边界的</strong>——地球的承载力是发展的底线，可持续是唯一的选择。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 人地关系的思想演变：从决定论到可持续发展</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  DET["环境决定论\n19世纪末-20世纪初\n自然环境决定人类命运"] --> POS["可能论\n20世纪初-20世纪中\n人选择利用环境的方式"]
+  POS --> MOD["人类中心主义\n20世纪中-20世纪末\n技术征服自然"]
+  MOD --> SUS["可持续发展\n1987至今\n既满足当代又不损害后代"]
+  SUS --> DEEP["深层生态学\n1990年代至今\n自然本身有内在价值"]
+  DET -->|"批评"| POS
+  POS -->|"反思"| MOD
+  MOD -->|"危机"| SUS
+  SUS -->|"深化"| DEEP
+  classDef det fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef pos fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef mod fill:#DBEAFE,stroke:#3B82F6,color:#1E3A5F;
+  classDef sus fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef deep fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  class DET det;
+  class POS pos;
+  class MOD mod;
+  class SUS sus;
+  class DEEP deep;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：人地关系思想的演变</strong>——从"自然决定人"到"人征服自然"再到"人自然共生"，人类对自身与地球关系的理解经历了深刻转变。</p>
+          <p><strong>环境决定论：</strong>拉采尔等学者认为，自然环境决定人类文明的特质——热带地区因为炎热导致懒惰，温带地区因为四季分明造就勤劳。这种理论的问题在于：它忽略了人类文化的自主性，而且容易被滥用。纳粹的"生存空间"理论就是一例。</p>
+          <p><strong>可持续发展：</strong>1987年布伦特兰报告提出了最经典的可持续发展定义："既满足当代人的需要，又不对后代人满足其需要的能力构成危害。"这个定义包含两个关键概念：需要（尤其是穷人的基本需要）和限制（技术和社会组织对环境能力的限制）。</p>
+          <p><strong>现实案例：</strong>中国的"退耕还林"政策（1999年启动）是可持续发展思想的具体实践。黄土高原植被覆盖率从30%提高到60%以上，同时通过生态补偿机制保障了农民收入。环境与发展不是零和博弈，好的制度可以双赢。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>6.1 可持续发展的提出：布伦特兰报告</li>
+          <li>6.2 气候变化：从科学到政治</li>
+          <li>6.3 双碳目标与绿色转型</li>
+          <li>6.4 生态文明与地球家园</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>可持续发展</strong>：既满足当代又不损害后代</li>
+          <li><strong>气候变化</strong>：当代最大的环境挑战</li>
+          <li><strong>双碳目标</strong>：碳达峰与碳中和</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>可持续发展的提出（1987）</strong>：布伦特兰报告《我们共同的未来》提出可持续发展的经典定义；《里约宣言》（1992）与《21世纪议程》确立全球可持续发展议程。</p>
+          <p><strong>气候变化：从科学到政治（1988–）</strong>：IPCC（1988）评估气候变化科学；《京都议定书》（1997）确立减排目标；《巴黎协定》（2015）确立“将升温控制在1.5℃以内”的目标；气候变化从科学议题成为全球政治议题。</p>
+          <p><strong>双碳目标与绿色转型（2020–）</strong>：中国提出“2030年前碳达峰、2060年前碳中和”目标；可再生能源（太阳能、风能）成本大幅下降；绿色转型成为全球共识，也面临能源安全与公正转型的挑战。</p>
+          <p><strong>生态文明与地球家园（21世纪–）</strong>：中国提出生态文明理念——人与自然和谐共生；联合国《2030年可持续发展议程》（2015）确立17个可持续发展目标；人类命运共同体理念把环境保护纳入全球合作。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>布伦特兰（1939–）</strong>——《我们共同的未来》。</p>
+        <p><strong>洛夫洛克（1919–2022）</strong>——盖亚假说。</p>
+        <p><strong>戈尔（1948–）</strong>——《难以忽视的真相》。</p>
+        <p><strong>古特雷斯（1949–）</strong>——联合国气候议程。</p>
+        <figure class="diagram">
+          <figcaption>图 7 · 可持续发展结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["可持续发展"] --> A["布伦特兰<br>既满足当代又不损害后代"]
+  ROOT --> B["气候变化<br>IPCC · 巴黎协定"]
+  ROOT --> C["双碳目标<br>碳达峰 · 碳中和"]
+  ROOT --> D["生态文明<br>人与自然和谐共生"]
+  classDef rootNode fill:#166534,color:#fff,stroke:#166534;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：可持续发展里程碑对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>里程碑</th><th>时间</th><th>核心内容</th><th>意义</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>布伦特兰报告</strong></td><td>1987</td><td>可持续发展的定义</td><td>全球共识</td></tr>
+              <tr><td><strong>里约宣言</strong></td><td>1992</td><td>全球环境议程</td><td>里约精神</td></tr>
+              <tr><td><strong>京都议定书</strong></td><td>1997</td><td>减排目标</td><td>首个气候条约</td></tr>
+              <tr><td><strong>巴黎协定</strong></td><td>2015</td><td>1.5℃目标</td><td>全球气候治理</td></tr>
+              <tr><td><strong>双碳目标</strong></td><td>2020</td><td>碳达峰 · 碳中和</td><td>绿色转型</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">布伦特兰 · 1939–</div>
+            <blockquote>可持续发展是既满足当代又不损害后代的道路。<cite>——《我们共同的未来》</cite></blockquote>
+            <div class="legacy-who">洛夫洛克 · 1919–2022</div>
+            <blockquote>地球是一个自我调节的生命系统。<cite>——盖亚假说</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">戈尔 · 1948–</div>
+            <blockquote>气候变化是人类面临的最大道德挑战。<cite>——《难以忽视的真相》</cite></blockquote>
+            <div class="legacy-who">古特雷斯 · 1949–</div>
+            <blockquote>气候危机是一场人类危机。<cite>——联合国气候议程</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="summary">
+        <h2><span class="chapno">第七章</span>总结提炼：地理与环境的启示</h2>
+        <p>回顾从托勒密到气候变化，可以提炼出地理与环境的核心规律：<strong>家园之知、空间之眼、人地之系、环境之忧、可持续之路</strong>。地理与环境不提供“征服自然”的野心，它提供的是“认识家园、守护家园”的智慧——它让我们看见自己在大地上的位置，也让我们明白人类与地球的命运与共。理解地理与环境，就是理解我们是谁、我们住在哪里、我们如何与大地相处。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 人地关系的思想演变：从决定论到可持续发展</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  DET["环境决定论\n19世纪末-20世纪初\n自然环境决定人类命运"] --> POS["可能论\n20世纪初-20世纪中\n人选择利用环境的方式"]
+  POS --> MOD["人类中心主义\n20世纪中-20世纪末\n技术征服自然"]
+  MOD --> SUS["可持续发展\n1987至今\n既满足当代又不损害后代"]
+  SUS --> DEEP["深层生态学\n1990年代至今\n自然本身有内在价值"]
+  DET -->|"批评"| POS
+  POS -->|"反思"| MOD
+  MOD -->|"危机"| SUS
+  SUS -->|"深化"| DEEP
+  classDef det fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef pos fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef mod fill:#DBEAFE,stroke:#3B82F6,color:#1E3A5F;
+  classDef sus fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef deep fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  class DET det;
+  class POS pos;
+  class MOD mod;
+  class SUS sus;
+  class DEEP deep;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：人地关系思想的演变</strong>——从"自然决定人"到"人征服自然"再到"人自然共生"，人类对自身与地球关系的理解经历了深刻转变。</p>
+          <p><strong>环境决定论：</strong>拉采尔等学者认为，自然环境决定人类文明的特质——热带地区因为炎热导致懒惰，温带地区因为四季分明造就勤劳。这种理论的问题在于：它忽略了人类文化的自主性，而且容易被滥用。纳粹的"生存空间"理论就是一例。</p>
+          <p><strong>可持续发展：</strong>1987年布伦特兰报告提出了最经典的可持续发展定义："既满足当代人的需要，又不对后代人满足其需要的能力构成危害。"这个定义包含两个关键概念：需要（尤其是穷人的基本需要）和限制（技术和社会组织对环境能力的限制）。</p>
+          <p><strong>现实案例：</strong>中国的"退耕还林"政策（1999年启动）是可持续发展思想的具体实践。黄土高原植被覆盖率从30%提高到60%以上，同时通过生态补偿机制保障了农民收入。环境与发展不是零和博弈，好的制度可以双赢。</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>7.1 地理与环境五大规律回顾</li>
+          <li>7.2 地理与环境同科学、生命科学的关系</li>
+          <li>7.3 地理与环境精神的当代意义</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>家园之知</strong>：认识我们居住的大地</li>
+          <li><strong>空间之眼</strong>：以空间视角理解世界</li>
+          <li><strong>人地之系</strong>：人与环境双向互动</li>
+          <li><strong>环境之忧</strong>：直面环境危机</li>
+          <li><strong>可持续之路</strong>：守护地球家园</li>
+        </ul>
+        <figure class="diagram">
+          <figcaption>图 8 · 地理与环境五大规律图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["地理与环境五大规律"] --> A["家园之知<br>认识我们居住的大地"]
+  ROOT --> B["空间之眼<br>以空间视角理解世界"]
+  ROOT --> C["人地之系<br>人与环境双向互动"]
+  ROOT --> D["环境之忧<br>直面环境危机"]
+  ROOT --> E["可持续之路<br>守护地球家园"]
+  classDef rootNode fill:#166534,color:#fff,stroke:#166534;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <div class="history">
+          <span class="history-title">五大规律的提炼</span>
+          <p><strong>家园之知</strong>：从托勒密到 GIS，地理学始终在认识我们居住的大地。家园之知的启示是：认识家园是守护家园的前提——只有知道我们住在哪里，才知道如何保护它。</p>
+          <p><strong>空间之眼</strong>：地图与 GIS 让我们以空间的视角理解世界。空间之眼的启示是：许多问题——从城市拥堵到疾病传播——只有放在空间里才能理解；空间思维是通识教育的重要维度。</p>
+          <p><strong>人地之系</strong>：从环境决定论到可能论，人地关系是动态的双向互动。人地之系的启示是：环境不是命运，而是舞台——人类既被环境塑造，也塑造环境。</p>
+          <p><strong>环境之忧</strong>：从《寂静的春天》到气候变化，人类直面环境危机。环境之忧的启示是：环境问题不仅是科学问题，更是价值问题——我们如何对待自然，反映了我们如何理解自己。</p>
+          <p><strong>可持续之路</strong>：从布伦特兰到双碳目标，可持续发展是唯一的选择。可持续之路的启示是：发展是有边界的——地球的承载力是发展的底线，守护地球就是守护我们自己。</p>
+        </div>
+        <h3>对照表：地理与环境五大规律的对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>规律</th><th>核心命题</th><th>代表人物</th><th>思想启示</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>家园之知</strong></td><td>认识我们居住的大地</td><td>埃拉托色尼 · 托勒密</td><td>认识家园是守护的前提</td></tr>
+              <tr><td><strong>空间之眼</strong></td><td>以空间视角理解世界</td><td>墨卡托 · 古德柴尔德</td><td>空间思维是通识维度</td></tr>
+              <tr><td><strong>人地之系</strong></td><td>人与环境双向互动</td><td>维达尔 · 索尔</td><td>环境是舞台不是命运</td></tr>
+              <tr><td><strong>环境之忧</strong></td><td>直面环境危机</td><td>卡逊 · 利奥波德</td><td>环境问题是价值问题</td></tr>
+              <tr><td><strong>可持续之路</strong></td><td>守护地球家园</td><td>布伦特兰</td><td>发展有边界</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <span class="callout-title">地理与环境精神三句话</span>
+          第一，<strong>地理是家园之学</strong>——它让我们看见自己在大地上的位置，理解我们与地球的关系；第二，<strong>地理是空间之眼</strong>——它教我们以空间的视角理解世界，看见联系与格局；第三，<strong>地理最终通向守护</strong>——从认识家园到守护家园，从环境之忧到可持续之路，地理学是面向未来的学问。与第八辑《科学思想谱系》合观，科学卷问“自然如何运作”，本辑问“人与大地如何相处”；与第二十五辑《生命科学思想谱系》对话，生命科学问“生命如何演化”，地理与环境问“家园如何守护”。这正是思想图谱系列的意义——既理解自然的规律，也理解家园的珍贵，一个完整的人，二者缺一不可。
+        </div>
+      </section>
+    </main>
+
+    
+      <section class="sec">
+        <h2>关联辑目</h2>
+        <div class="explain">
+          <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+          <ul>
+          <li><a href="../history-lineage/history-lineage.html">历史思想谱系</a></li>
+          <li><a href="../economics-lineage/economics-lineage.html">经济思想谱系·上篇</a></li>
+          <li><a href="../politics-lineage/politics-lineage.html">政治学通论</a></li>
+          <li><a href="../ir-lineage/ir-lineage.html">国际关系思想谱系</a></li>
+          <li><a href="../life-science-lineage/life-science-lineage.html">生命科学思想谱系</a></li>
+          <li><a href="../anthropology-lineage/anthropology-lineage.html">人类学思想谱系</a></li>
+          </ul>
+        </div>
+      </section>
+<footer>
+      地理与环境思想谱系 · 思想图谱系列第二十六辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-05
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'PingFang SC, Microsoft YaHei, Helvetica, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>

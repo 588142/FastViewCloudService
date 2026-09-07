@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>化学 · 思想图谱系列第32辑</title>
+
+  <style>
+    :root {
+      --bg: #F8F6F2;
+      --bg2: #EEEAE0;
+      --ink: #242018;
+      --muted: #6E6858;
+      --rule: #E0DCCE;
+      --accent: #2E7D32;
+      --accent2: #A87D2E;
+      --font-head: 'Georgia', 'Songti SC', 'STSong', 'SimSun', serif;
+      --font: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+      --font-mono: 'Consolas', 'JetBrains Mono', 'Courier New', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .explain { background: #F8F6EF; border: 1px solid var(--rule); border-radius: 10px; padding: 1rem 1.2rem; margin: 0.6rem 0; }
+    .explain p { margin-bottom: 0.5rem; font-size: 0.9rem; }
+    .explain strong { color: var(--accent); }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .table-wrap { overflow-x: auto; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    table th, table td { border: 1px solid var(--rule); padding: 0.5rem 0.7rem; text-align: left; }
+    table th { background: var(--bg2); font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: 0.78rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<div class="shell">
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">化学</div>
+    <div class="brand-sub">思想图谱系列 · 第32辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+<li><a href="#intro">导言 · 化学：万物之变</a></li>
+<li><a href="#atom">第一章 · 原子理论与元素周期表</a></li>
+<li><a href="#bond">第二章 · 化学键与分子结构</a></li>
+<li><a href="#reaction">第三章 · 化学反应与能量</a></li>
+<li><a href="#organic">第四章 · 有机化学与高分子</a></li>
+<li><a href="#summary">第五章 · 总结：化学的思维方式</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第32辑</span>
+        <span class="series-links">
+          <a href="../index.html">系列目录</a>
+          <a href="../天文学与宇宙学/天文学与宇宙学.html">← 上一辑 · 天文学与宇宙学</a>
+          <a href="../医学与健康/医学与健康.html">下一辑 · 医学与健康 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>化学</h1>
+      <p class="subtitle">从炼金术到分子世界——物质的组成、结构与变化</p>
+      <p class="meta">作者：詹家杨 · 2026-09-06 · 6 章 · 16 张思维导图 · 26 个解释块 · 5 张对照表</p>
+    </header>
+
+<section class="sec" id="intro">
+        <h2><span class="chapno">导言 &middot; 化学：万物之变</span></h2>
+<p>化学是研究物质的组成、结构、性质和变化规律的科学。从空气和水的组成，到药物的分子设计，到新材料的合成，化学无处不在。</p>
+<figure class="diagram">
+          <figcaption>图 0 · 化学的层级</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["化学"] --> A["原子<br>元素周期表"]
+  ROOT --> B["分子<br>化学键"]
+  ROOT --> C["化学反应<br>能量·速率"]
+  ROOT --> D["物质状态<br>固·液·气·等离子"]
+  ROOT --> E["化学分支"]
+  E --> E1["无机化学"]
+  E --> E2["有机化学"]
+  E --> E3["物理化学"]
+  E --> E4["分析化学"]
+  E --> E5["生物化学"]
+  classDef root fill:#2E7D32,color:#fff,stroke:#2E7D32;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>化学的地位：</strong>化学是'中心科学'——连接物理（原子与分子）和生物（生命过程）。从炼金术的千年探索到现代分子科学，化学揭示了物质变化的基本规律。
+
+**中国贡献**：中国古代的炼丹术和陶瓷、火药、造纸等化学工艺，积累了丰富的经验化学知识。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">门捷列夫 · 1834–1907</div>
+            <blockquote>元素的性质随着原子量的递增呈现周期性变化。<cite>——元素周期律</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">鲍林 · 1901–1994</div>
+            <blockquote>化学键是化学家理解物质世界的基石。<cite>——《化学键的本质》</cite></blockquote>
+          </div>
+</div>
+<h3>化学概念全景图</h3>
+<figure class="diagram">
+          <figcaption>图 0a · 化学基本概念树状图 —— 化学的定义·核心分支·基本概念·现实应用</figcaption>
+          <div style="overflow-x:auto;text-align:center;">
+          <svg viewBox="0 0 720 560" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;height:auto;">
+            <defs>
+              <marker id="ar0" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+                <path d="M1 1 L7 4 L1 7 Z" fill="#52525B"/>
+              </marker>
+            </defs>
+            <rect x="0" y="0" width="720" height="560" fill="#F7F7F8" rx="8"/>
+            <rect x="260" y="12" width="200" height="40" rx="20" fill="#334155"/>
+            <text x="360" y="38" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700" font-family="system-ui,sans-serif">化学</text>
+            <line x1="360" y1="52" x2="360" y2="68" stroke="#334155" stroke-width="2"/>
+            <line x1="72" y1="68" x2="648" y2="68" stroke="#52525B" stroke-width="1.5"/>
+            <line x1="72" y1="68" x2="72" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#ar0)"/>
+            <line x1="216" y1="68" x2="216" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#ar0)"/>
+            <line x1="360" y1="68" x2="360" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#ar0)"/>
+            <line x1="504" y1="68" x2="504" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#ar0)"/>
+            <line x1="648" y1="68" x2="648" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#ar0)"/>
+            <rect x="14" y="82" width="116" height="34" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+            <text x="72" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">原子与元素</text>
+            <rect x="172" y="82" width="88" height="34" rx="8" fill="#F2F7FF" stroke="#6F6FFF" stroke-width="1.5"/>
+            <text x="216" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">化学键</text>
+            <rect x="308" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+            <text x="360" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">化学反应</text>
+            <rect x="452" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#6F6FFF" stroke-width="1.5"/>
+            <text x="504" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">有机化学</text>
+            <rect x="590" y="82" width="116" height="34" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+            <text x="648" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">化学与社会</text>
+            <rect x="12" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="72" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">原子结构</text>
+            <rect x="12" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="72" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">元素周期律</text>
+            <rect x="12" y="190" width="120" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="72" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">同位素与核素</text>
+            <line x1="72" y1="116" x2="72" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#ar0)"/>
+            <line x1="72" y1="154" x2="72" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#ar0)"/>
+            <line x1="72" y1="184" x2="72" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#ar0)"/>
+            <rect x="162" y="130" width="108" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="216" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">离子键</text>
+            <rect x="162" y="160" width="108" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="216" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">共价键</text>
+            <rect x="162" y="190" width="108" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="216" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">金属键</text>
+            <rect x="162" y="220" width="108" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="216" y="237" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">分子间作用力</text>
+            <line x1="216" y1="116" x2="216" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#ar0)"/>
+            <line x1="216" y1="154" x2="216" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#ar0)"/>
+            <line x1="216" y1="184" x2="216" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#ar0)"/>
+            <line x1="216" y1="214" x2="216" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#ar0)"/>
+            <rect x="300" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="360" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">反应类型</text>
+            <rect x="300" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="360" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">化学平衡</text>
+            <rect x="300" y="190" width="120" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="360" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">反应速率与能量</text>
+            <line x1="360" y1="116" x2="360" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#ar0)"/>
+            <line x1="360" y1="154" x2="360" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#ar0)"/>
+            <line x1="360" y1="184" x2="360" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#ar0)"/>
+            <rect x="450" y="130" width="108" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="504" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">碳骨架</text>
+            <rect x="450" y="160" width="108" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="504" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">官能团</text>
+            <rect x="450" y="190" width="108" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="504" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">高分子</text>
+            <line x1="504" y1="116" x2="504" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#ar0)"/>
+            <line x1="504" y1="154" x2="504" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#ar0)"/>
+            <line x1="504" y1="184" x2="504" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#ar0)"/>
+            <rect x="590" y="130" width="116" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="648" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">材料</text>
+            <rect x="590" y="160" width="116" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="648" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">能源</text>
+            <rect x="590" y="190" width="116" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="648" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">医药与环境</text>
+            <line x1="648" y1="116" x2="648" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#ar0)"/>
+            <line x1="648" y1="154" x2="648" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#ar0)"/>
+            <line x1="648" y1="184" x2="648" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#ar0)"/>
+            <rect x="30" y="255" width="660" height="280" rx="10" fill="#EFEFF2" opacity="0.7"/>
+            <text x="360" y="280" text-anchor="middle" fill="#171717" font-size="14" font-weight="700" font-family="system-ui,sans-serif">专业名词释义</text>
+            <text x="50" y="305" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎化学（Chemistry）</text>
+            <text x="50" y="322" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">研究物质的组成、结构、性质及其变化规律的自然科学。从炼金术与古代工艺到现代分子</text>
+            <text x="50" y="338" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">科学，化学始终在回答"物质是什么、物质如何变化"这两个根本问题。</text>
+            <text x="50" y="366" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎原子序数（Atomic Number）</text>
+            <text x="50" y="383" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">原子核内质子数，决定元素的种类与在周期表中的位置。质子数相同而中子数不同的原子</text>
+            <text x="50" y="399" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">互为同位素——氢、氘、氚质量不同，化学性质几乎相同。</text>
+            <text x="50" y="427" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎化学键（Chemical Bond）</text>
+            <text x="50" y="444" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">原子间相互结合的作用力，分离子键、共价键与金属键三类，本质是静电作用。鲍林在</text>
+            <text x="50" y="460" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">《化学键的本质》中系统阐明其量子力学基础，"结构决定性质"由此成为化学的主线。</text>
+            <text x="50" y="488" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎化学平衡（Chemical Equilibrium）</text>
+            <text x="50" y="505" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">可逆反应正逆速率相等时的动态平衡。勒夏特列原理：改变浓度、温度或压强，平衡向</text>
+            <text x="50" y="521" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">削弱改变的方向移动——合成氨工业正是这一原理最成功的应用。</text>
+          </svg>
+          </div>
+        </figure>
+<div class="explain">
+          <p><strong>图 0a 详解：</strong>这棵概念树把化学的基本框架浓缩为五个分支——原子与元素、化学键、化学反应、有机化学、化学与社会。它既是全卷的阅读地图，也是理解"化学在做什么"的捷径。</p>
+          <ul>
+            <li><strong>原子与元素——化学的"字母表"：</strong>化学研究的起点是物质由什么构成。19 世纪初，道尔顿提出原子论，把物质还原为不可再分的原子；门捷列夫以元素周期律把元素整理成一张"地图"。今天我们知道，原子由质子、中子与电子构成，原子序数决定元素身份，同位素则让同一元素拥有不同"重量"。理解原子与元素，是进入化学世界的第一道门。</li>
+            <li><strong>化学键——原子之间的"胶水"：</strong>单质与化合物中的原子并非孤零零地存在，它们靠化学键彼此结合。离子键来自电子得失（如食盐 NaCl），共价键来自电子共享（如水 H₂O），金属键是金属晶体中自由电子的"海洋"。氢键等分子间作用力虽然更弱，却塑造了水的独特性质与 DNA 的双螺旋。鲍林说，化学键是化学家理解物质世界的基石。</li>
+            <li><strong>化学反应——物质世界的"变化学"：</strong>燃烧、发酵、光合、呼吸、冶炼、合成——一切物质变化都是化学反应。化合与分解、置换与复分解、氧化还原，是反应的基本类型；质量守恒与能量守恒为它们划定了边界；反应速率与化学平衡则告诉我们反应"多快"与"多彻底"。拉瓦锡以天平确立了质量守恒定律，化学由此成为定量科学。</li>
+            <li><strong>有机化学——碳基生命的化学：</strong>有机化学是含碳化合物的化学。碳原子能彼此相连成链、成环，形成数百万种化合物。碳骨架决定分子的基本框架，官能团（-OH、-COOH、-NH₂ 等）决定分子的"性格"。高分子化学把简单的小分子连成塑料、纤维与橡胶；生命分子——糖、蛋白质、核酸——则是自然界最精巧的有机分子。</li>
+            <li><strong>化学与社会——从实验室到人间烟火：</strong>化学的终点不是方程式，而是人的生活。材料化学提供钢铁、半导体与稀土新材料；能源化学支撑电池、氢能与光伏；医药化学合成治病救人的药物；环境化学则守护空气、水与土壤。从侯德榜的制碱法到屠呦呦的青蒿素，化学始终以"制造有用之物"回应人类的需求。</li>
+          </ul>
+          <p><strong>现实案例：</strong>这五个分支不是各自孤立的抽屉——现代化学的前沿恰恰发生在它们的交叉处：钙钛矿太阳能电池（材料×能源）、药物分子的靶向设计（有机×医药）、电化学储能（反应×能源）。真正的化学发现，常常诞生于分支与分支的接缝上。</p>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 化学革命的里程碑：</strong>化学成为一门现代科学，经历了两次关键转折。第一次是 18 世纪末的"化学革命"：拉瓦锡用精密的定量实验推翻了燃素说，确立了氧化学说与质量守恒定律——化学第一次有了可靠的"语言"（化学方程式）与"底线"（质量守恒）。第二次是 19 世纪初的原子-分子论：道尔顿的原子论、阿伏伽德罗的分子假说，让化学有了统一的微观图像。此后，门捷列夫的元素周期表把化学知识组织成体系，物理化学（热力学、动力学）把化学纳入定量规律，量子化学则把化学键的奥秘还原为电子的运动。波义耳把化学从炼金术的迷信中解放出来，拉瓦锡把它变成定量科学，门捷列夫给它一张"地图"，而现代化学家则拥有了设计分子的能力——这四步，就是化学作为一门"中心科学"的成长史。</p>
+        </div>
+<div class="callout">
+          <span class="callout-title">贯穿全卷的四条思想主线</span>
+          ① 实物不灭——质量守恒与能量守恒（拉瓦锡、迈耶与焦耳）；② 元素有序——周期律与电子排布（门捷列夫、玻尔）；③ 结构决定性质——化学键与分子结构（鲍林）；④ 反应可调控——速率、平衡与催化剂（勒夏特列、哈伯）。本卷五章正是沿着这四条主线展开的。
+        </div>
+</section>
+<section class="sec" id="atom">
+        <h2><span class="chapno">第一章 &middot; 原子理论与元素周期表</span></h2>
+<p>原子理论是化学的基石。从道尔顿的原子论到现代量子力学模型，人类对原子结构的认识不断深化。元素周期表以惊人的简洁性总结了元素之间的周期性规律。</p>
+<figure class="diagram">
+          <figcaption>图 1 · 原子结构模型演变</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["道尔顿<br>原子论 1808<br>原子是实心球"] --> B["汤姆孙<br>葡萄干模型 1897<br>电子"]
+  B --> C["卢瑟福<br>核式模型 1911<br>原子核"]
+  C --> D["玻尔<br>量子化轨道 1913"]
+  D --> E["量子力学模型<br>电子云·轨道"]
+  E --> F["元素周期表<br>门捷列夫→现代"]
+  classDef root fill:#2E7D32,color:#fff,stroke:#2E7D32;
+  class F root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>元素周期表：</strong>元素周期表是化学的'地图'。门捷列夫在1869年提出周期律时，大胆预测了尚未发现的元素——镓、钪、锗——并在15年内全部被证实。
+
+现代周期表有118个元素，其中94个元素天然存在，其余为人造元素。周期表以最简洁的方式总结了元素的化学行为。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">卢瑟福 · 1871–1937</div>
+            <blockquote>所有的科学，要么是物理学，要么是集邮。<cite>——卢瑟福（对化学的调侃）</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">居里夫人 · 1867–1934</div>
+            <blockquote>没有什么可恐惧的，只有需要理解的。<cite>——居里夫人</cite></blockquote>
+          </div>
+</div>
+<h3>深度升级 · 原子结构认识史：从道尔顿到量子模型</h3>
+<figure class="diagram">
+          <figcaption>图 1a · 原子结构认识史 —— 从道尔顿的实心球到量子力学电子云</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["道尔顿 1808<br>原子是实心球<br>不可再分"] --> B["汤姆孙 1897<br>葡萄干模型<br>发现电子"]
+  B --> C["卢瑟福 1911<br>核式模型<br>α粒子散射实验"]
+  C --> D["玻尔 1913<br>量子化轨道<br>解释氢原子光谱"]
+  D --> E["量子力学模型<br>薛定谔方程<br>电子云与轨道"]
+  E --> F["现代原子观<br>质子·中子·电子<br>夸克与标准模型"]
+  classDef root fill:#2E7D32,color:#fff,stroke:#2E7D32;
+  class F root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 1a 详解：</strong>原子结构认识史是化学史上最激动人心的一条主线——从道尔顿的"实心球"到今天的量子力学图像，人类对"物质的最小单元"的想象被实验一次次修正。</p>
+          <ul>
+            <li><strong>道尔顿（1808）</strong>——原子是"不可再分"的实心球。他的原子论解释了质量守恒与定比定律，但把原子想象成坚硬的球体。</li>
+            <li><strong>汤姆孙（1897）</strong>——发现电子，实心球裂开了。电子带负电，原子必须含正电荷——"葡萄干布丁"模型诞生。</li>
+            <li><strong>卢瑟福（1911）</strong>——α 粒子散射实验：少数 α 粒子被大角度弹回，说明原子内部有一个极小的、带正电的核——核式模型确立，原子其实是"空旷"的。</li>
+            <li><strong>玻尔（1913）</strong>——把量子化引入原子：电子只能在特定轨道上运动，解释了氢原子光谱的分立谱线。</li>
+            <li><strong>量子力学模型</strong>——薛定谔方程给出电子的"概率云"，电子不再有确定轨道，只有原子轨道与电子云。这是今天化学家描述原子的标准语言。</li>
+          </ul>
+          <p><strong>现实案例：</strong>居里夫人从数吨沥青铀矿中分离出钋与镭，正是基于"元素以不同方式衰变"的原子观念；她用简陋的棚屋和精密的放射性测量，为原子核科学开辟了道路。中国化学家张青莲院士长期测定同位素原子量——他测定的铟（In）等元素的相对原子质量被国际纯粹与应用化学联合会（IUPAC）采用为国际标准，把量子力学模型所描述的"原子质量"做到了极致精确。</p>
+        </div>
+<h3>深度解读 · 概念辨析：原子序数、质量数与同位素</h3>
+<div class="explain">
+          <p><strong>三个概念常被混淆，却各有严格定义：</strong>原子序数 = 核内质子数，它唯一地决定元素的种类与在周期表中的位置；质量数 = 质子数 + 中子数，是原子质量的近似整数；同位素 = 质子数相同、中子数不同的原子，它们化学性质几乎相同，但质量不同。氢的三种同位素——氕（¹H）、氘（²H，重氢）、氚（³H，超重氢）——质量相差可达三倍，化学性质却几乎一致。同位素的应用无处不在：碳-14 测定考古年代、碘-131 用于甲状腺诊疗、铀-235 是核能燃料。中国化学家张青莲主持测定铟、锑（Sb）、铱（Ir）等元素的相对原子质量，其精确值被 IUPAC 采纳为国际标准——这是中国化学对基础数据的重大贡献。</p>
+        </div>
+<h3>对比表 · 元素周期表三大分区</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>分区</th><th>周期表位置</th><th>电子排布特点</th><th>典型物理性质</th><th>典型化学性质</th><th>典型元素</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>金属</strong></td><td>左下方（占周期表约 80%）</td><td>最外层电子数少（1–3 个），易失去电子</td><td>有金属光泽、延展性、导电导热</td><td>与非金属化合时易失电子形成阳离子</td><td>钠、铁、铜、铝、金</td></tr>
+              <tr><td><strong>非金属</strong></td><td>右上方（含氢与稀有气体）</td><td>最外层电子数多（4–7 个），易得到电子</td><td>多为气体或脆性固体，一般不导电</td><td>与金属化合时易得电子形成阴离子</td><td>氧、氮、氯、碳、硫</td></tr>
+              <tr><td><strong>类金属（准金属）</strong></td><td>金属与非金属交界处的"阶梯线"两侧</td><td>最外层电子数居中，得失电子能力相当</td><td>性质介于金属与非金属之间</td><td>可显金属性或非金属性，导电性介于导体与绝缘体之间（半导体）</td><td>硅、锗、砷、锑、碲</td></tr>
+            </tbody>
+          </table>
+        </div>
+<h3>深度升级 · 元素周期表的"家族"分区</h3>
+<figure class="diagram">
+          <figcaption>图 1b · 元素周期表的家族分区 —— 主族·副族·镧系锕系</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["元素周期表<br>118 个元素"] --> A["碱金属<br>Li · Na · K<br>最活泼金属"]
+  ROOT --> B["碱土金属<br>Be · Mg · Ca"]
+  ROOT --> C["过渡金属<br>Fe · Cu · 稀土<br>可变价态"]
+  ROOT --> D["卤素<br>F · Cl · Br<br>活泼非金属"]
+  ROOT --> E["稀有气体<br>He · Ne · Ar<br>化学性质稳定"]
+  ROOT --> F["镧系 · 锕系<br>稀土元素"]
+  classDef root fill:#2E7D32,color:#fff,stroke:#2E7D32;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 1b 详解：</strong>周期表不仅是"元素清单"，更是一幅按电子排布规律排布的"家族图谱"——同一族元素最外层电子数相同，化学性质相似。</p>
+          <ul>
+            <li><strong>碱金属与碱土金属</strong>——最外层 1–2 个电子，极易失电子，是最活泼的金属家族；钠遇水剧烈反应、钾甚至自燃，正是"最外层电子少"的直接后果。</li>
+            <li><strong>过渡金属</strong>——可变价态、颜色丰富、多为优良催化剂与结构材料；铁、铜、钛以及稀土元素都属于这个大家族。</li>
+            <li><strong>卤素与稀有气体</strong>——卤素最外层 7 个电子，极易得电子；稀有气体最外层电子达到 8（氦为 2）的稳定构型，化学性质极不活泼。</li>
+            <li><strong>镧系与锕系</strong>——即稀土元素与放射性元素。镧系元素电子填充在 4f 轨道上，化学性质非常相似，分离困难，用途却极其广泛。</li>
+          </ul>
+          <p><strong>现实案例：</strong>周期律是"可预测"的科学——门捷列夫 1869 年留下空位预言镓、钪、锗三种元素，此后 15 年内全部被发现，性质与预言惊人吻合。今天，中国把周期表"底部"的稀土变成了战略资源：中国稀土储量与产量长期居世界前列，稀土元素（镧、铈、钕、镨等）制成的钕铁硼永磁材料驱动风力发电机与新能源汽车电机，发光材料点亮屏幕与照明——"化学的字母表"正在改写高端制造的版图。</p>
+        </div>
+</section>
+<section class="sec" id="bond">
+        <h2><span class="chapno">第二章 &middot; 化学键与分子结构</span></h2>
+<p>分子结构决定了物质的宏观性质。金刚石的硬度、石墨的润滑性、水的独特性质——都源于原子之间的键合方式。分子结构理论是材料科学和药物设计的基础。</p>
+<figure class="diagram">
+          <figcaption>图 2 · 化学键类型</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["化学键"] --> A["离子键<br>电子转移<br>NaCl"]
+  ROOT --> B["共价键<br>电子共享<br>H₂O·CO₂"]
+  ROOT --> C["金属键<br>电子海<br>Fe·Cu"]
+  ROOT --> D["分子间力<br>氢键·范德华力"]
+  A --> E["晶体结构<br>离子晶体"]
+  B --> F["分子结构<br>VSEPR理论"]
+  D --> G["水的特殊性质<br>高比热·表面张力"]
+  classDef root fill:#2E7D32,color:#fff,stroke:#2E7D32;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>化学键的本质：</strong>化学键是原子之间相互结合的力。鲍林因研究化学键的本质获得诺贝尔化学奖。
+
+**氢键**虽然弱于共价键，但对生命至关重要：它使水在0°C结冰（密度降低，冰浮于水），使DNA双螺旋结构稳定。
+
+**中国案例**：中国科学家在超分子化学和分子机器领域取得重要进展，2016年田禾团队在分子机器研究中获得突破。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">鲍林 · 1901–1994</div>
+            <blockquote>结构决定性质，性质决定功能。<cite>——化学的基本原则</cite></blockquote>
+          </div>
+</div>
+<h3>深度升级 · 化学键类型与分子结构家族</h3>
+<figure class="diagram">
+          <figcaption>图 2a · 化学键类型与分子结构家族 —— 四类作用力的成键方式·代表物质·宏观后果</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["化学键"] --> A["离子键<br>电子得失<br>NaCl · CaO"]
+  ROOT --> B["共价键<br>电子共享<br>H₂O · CO₂ · N₂"]
+  ROOT --> C["金属键<br>自由电子海<br>Fe · Cu · 合金"]
+  ROOT --> D["分子间作用力<br>氢键 · 范德华力"]
+  B --> B1["极性键 / 非极性键<br>电负性差"]
+  B --> B2["配位键<br>铜氨配离子"]
+  D --> D1["水的高比热<br>DNA 双螺旋 · 蛋白质折叠"]
+  A --> A1["离子晶体<br>高熔点 · 熔融导电"]
+  C --> C1["金属晶体<br>延展性 · 导电导热"]
+  classDef root fill:#2E7D32,color:#fff,stroke:#2E7D32;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 2a 详解：</strong>化学键是原子结合的方式，也是"结构决定性质"的起点。四类作用力强弱不同、成因各异，共同构成从食盐到 DNA 的一切物质。</p>
+          <ul>
+            <li><strong>离子键</strong>——电子得失形成阴阳离子，静电吸引与排斥的平衡把它们结合成离子晶体（如 NaCl）。离子晶体熔沸点高、熔融或溶于水后能导电。</li>
+            <li><strong>共价键</strong>——原子共享电子对。按电子云重叠方式分为 σ 键与 π 键；按电子对偏向分为极性键与非极性键；配位键则是"一方提供电子对"的特殊共价键，如铜氨配离子 Cu(NH₃)₄²⁺。</li>
+            <li><strong>金属键</strong>——金属阳离子浸泡在"自由电子海"中，这解释了金属的导电、导热与延展性。</li>
+            <li><strong>分子间作用力</strong>——氢键与范德华力比化学键弱一到两个数量级，却决定物质的熔沸点与溶解性：水的反常膨胀、DNA 双螺旋的配对、蛋白质的折叠，都依赖氢键。</li>
+          </ul>
+          <p><strong>现实案例：</strong>石墨烯是"最强化学键"的传奇——它由碳原子以 sp² 共价键铺成单层二维网格，强度约为钢的 200 倍，却只有纸张厚度的百万分之一。2004 年，安德烈·海姆与康斯坦丁·诺沃肖洛夫用胶带"撕"出石墨烯并获得 2010 年诺贝尔物理学奖；此后中国科学家在石墨烯的液相剥离、化学气相沉积等规模化制备技术上持续突破，为柔性电子与电池材料提供了"中国方案"。</p>
+        </div>
+<h3>深度升级 · 碳的同素异形体：结构决定性质</h3>
+<figure class="diagram">
+          <figcaption>图 2b · 碳的同素异形体 —— 金刚石·石墨·富勒烯·石墨烯</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["碳的同素异形体"] --> A["金刚石<br>sp³ 正四面体<br>最硬天然矿物"]
+  ROOT --> B["石墨<br>sp² 层状结构<br>润滑 · 导电"]
+  ROOT --> C["富勒烯 C₆₀<br>足球状笼形分子"]
+  ROOT --> D["石墨烯<br>单层二维材料"]
+  A --> A1["切割工具 · 钻头"]
+  B --> B1["铅笔 · 电极 · 润滑剂"]
+  D --> D1["柔性电子 · 超级电容"]
+  classDef root fill:#2E7D32,color:#fff,stroke:#2E7D32;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 2b 详解：</strong>"结构决定性质"最极致的演示，是碳的同素异形体——同样是碳原子，仅仅因为连接方式不同，就造出最硬的天然矿物（金刚石）与最软的矿物之一（石墨）。</p>
+          <ul>
+            <li><strong>金刚石</strong>——每个碳以 sp³ 杂化与四个邻居形成三维网络，硬度为天然物质之最，是切割与钻探的工具材料。</li>
+            <li><strong>石墨</strong>——碳以 sp² 杂化成平面层，层间靠范德华力结合，层内却可导电——所以它既是铅笔芯，又是电极材料与润滑剂。</li>
+            <li><strong>富勒烯 C₆₀</strong>——1985 年发现的"足球分子"，60 个碳原子构成笼状结构，开启了纳米碳材料时代。</li>
+            <li><strong>石墨烯</strong>——单层石墨，强度极高、导电导热性能优异，被视为柔性电子与超级电容器的明星材料。</li>
+          </ul>
+          <p><strong>现实案例：</strong>中国在碳材料研究上贡献卓著：石墨烯的规模化制备与锂电池导电浆料应用、富勒烯的化学修饰、碳纳米管纤维等方向均有世界级成果；华为、比亚迪等企业的石墨烯散热膜已用于手机与新能源汽车电池管理。</p>
+        </div>
+<h3>深度解读 · 鲍林与化学键理论</h3>
+<div class="explain">
+          <p><strong>莱纳斯·鲍林是 20 世纪最伟大的化学家之一：</strong>1939 年出版的《化学键的本质》把量子力学引入化学。他提出杂化轨道理论——碳的 sp³、sp²、sp 杂化分别解释了甲烷的正四面体、乙烯的平面结构与乙炔的直线结构；他又以共振论描述无法用单一路易斯结构表示的分子（如苯、碳酸根离子），指出真实结构是多种极限结构的"共振杂化"。鲍林还首创电负性标度，用原子间的电负性差预测键的极性。他因此获得 1954 年诺贝尔化学奖，并因呼吁禁止核试验获得 1962 年诺贝尔和平奖——他是迄今唯一两次独享诺贝尔奖的人。鲍林的工作标志着化学从"经验描述"走向"原理推导"：分子的形状、键的强弱、反应的倾向，都可以从电子的行为推演出来。</p>
+        </div>
+<h3>深度解读 · 水：最普通也最特殊的分子</h3>
+<div class="explain">
+          <p><strong>水是宇宙中最常见的溶剂，也是最反常的液体——这一切都源于氢键：</strong>水分子中 O-H 键极性很强，氢原子"裸露"的正电端能与邻近水分子的氧形成氢键，使水分子彼此"牵手"。氢键带来四大反常性质：① 比热高——水的比热约为铁的十倍，能调节气候与体温；② 冰密度小于水——0°C 结冰时体积膨胀，冰浮于水面，湖底的生物得以存活；③ 表面张力大——水黾能"踩"在水面上，毛细现象让水沿植物导管上升；④ 溶解能力强——被誉为"万能溶剂"，生命化学反应几乎都在水中进行。水的沸点（100°C）比同族的硫化氢（约 -60°C）高出约 160°C，正是氢键的功劳。没有氢键，液态水环境将不复存在——水分子间看似"弱"的作用力，成就了最强的生命基础。</p>
+        </div>
+<h3>对比表 · 化学键类型对比</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>键型</th><th>成键方式</th><th>成键微粒</th><th>强度与晶体特征</th><th>典型性质</th><th>典型物质</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>离子键</strong></td><td>电子得失，阴阳离子间静电作用</td><td>阳离子与阴离子</td><td>强；离子晶体熔沸点高</td><td>熔融或溶于水后导电</td><td>NaCl、CaO、K₂S</td></tr>
+              <tr><td><strong>共价键</strong></td><td>原子间共享电子对</td><td>原子（共享电子对）</td><td>强；分子晶体熔沸点较低</td><td>一般不以离子形式导电</td><td>H₂O、CO₂、N₂、金刚石</td></tr>
+              <tr><td><strong>金属键</strong></td><td>自由电子与金属阳离子的静电作用</td><td>金属阳离子与自由电子</td><td>中等到强；金属晶体</td><td>导电导热、延展性、金属光泽</td><td>Fe、Cu、Al、合金</td></tr>
+            </tbody>
+          </table>
+        </div>
+<h3>对比表 · 四种晶体类型</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>晶体类型</th><th>构成微粒</th><th>微粒间作用力</th><th>熔沸点</th><th>导电性</th><th>实例</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>离子晶体</strong></td><td>阳离子与阴离子</td><td>离子键</td><td>较高</td><td>熔融或溶于水后导电</td><td>NaCl、CaO</td></tr>
+              <tr><td><strong>分子晶体</strong></td><td>分子</td><td>分子间作用力（范德华力、氢键）</td><td>较低</td><td>一般不导电</td><td>冰、干冰、碘</td></tr>
+              <tr><td><strong>原子晶体（共价晶体）</strong></td><td>原子</td><td>共价键</td><td>很高</td><td>一般不导电（硅为半导体）</td><td>金刚石、晶体硅、SiO₂</td></tr>
+              <tr><td><strong>金属晶体</strong></td><td>金属阳离子与自由电子</td><td>金属键</td><td>高低不等</td><td>良好导体</td><td>Fe、Cu、Al</td></tr>
+            </tbody>
+          </table>
+        </div>
+</section>
+<section class="sec" id="reaction">
+        <h2><span class="chapno">第三章 &middot; 化学反应与能量</span></h2>
+<p>化学反应是化学的核心——新物质通过反应生成，能量的转换通过反应实现。从燃烧到光合作用，从电池到药物合成，化学反应驱动着物质世界的所有变化。</p>
+<figure class="diagram">
+          <figcaption>图 3 · 化学反应类型</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["化学反应"] --> A["合成反应<br>A+B→AB"]
+  ROOT --> B["分解反应<br>AB→A+B"]
+  ROOT --> C["置换反应<br>A+BC→AC+B"]
+  ROOT --> D["氧化还原<br>电子转移"]
+  ROOT --> E["酸碱反应<br>质子转移"]
+  D --> F["燃烧·呼吸·光合"]
+  E --> G["pH · 中和"]
+  classDef root fill:#2E7D32,color:#fff,stroke:#2E7D32;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>化学反应的本质：</strong>化学反应是原子重新排列的过程。质量守恒、能量守恒、电荷守恒是化学反应的基本规律。
+
+**催化剂**能加速反应但不被消耗。酶是生物催化剂，其效率远高于人工催化剂。
+
+**中国案例**：中国石化工业中的催化裂化技术是全球领先的，将重油转化为汽油等轻质产品。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">拉瓦锡 · 1743–1794</div>
+            <blockquote>物质既不能创造也不能消灭，只是形式发生了变化。<cite>——质量守恒定律</cite></blockquote>
+          </div>
+</div>
+<h3>深度升级 · 化学反应的能量与平衡</h3>
+<figure class="diagram">
+          <figcaption>图 3a · 化学反应的能量与平衡 —— 速率·限度·能量三要素</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["化学反应"] --> A["能量变化<br>放热 · 吸热"]
+  ROOT --> B["反应速率<br>浓度 · 温度 · 压强 · 催化剂"]
+  ROOT --> C["化学平衡<br>可逆反应 · 勒夏特列原理"]
+  A --> A1["燃烧·中和放热<br>光合作用吸热"]
+  B --> B1["活化能<br>催化剂降低活化能"]
+  C --> C1["合成氨 N₂+3H₂ ⇌ 2NH₃<br>高压 · 铁催化剂"]
+  classDef root fill:#2E7D32,color:#fff,stroke:#2E7D32;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 3a 详解：</strong>化学反应的两大基本问题是"快慢"（动力学）与"限度"（平衡），而能量变化则是反应的"燃料表"。</p>
+          <ul>
+            <li><strong>能量变化</strong>——放热反应（燃烧、中和、氧化）与吸热反应（光合、分解、碳酸钙煅烧）。能量守恒要求：反应吸收或放出的热等于反应物与生成物总能量之差。</li>
+            <li><strong>反应速率</strong>——受浓度、温度、压强与催化剂影响。活化能是反应必须翻越的"能量山"，催化剂通过降低活化能加快反应而不被消耗。</li>
+            <li><strong>化学平衡</strong>——可逆反应达到动态平衡后，正逆速率相等。勒夏特列原理（改变条件，平衡向削弱改变的方向移动）是工业化学的"方向盘"。</li>
+            <li><strong>工业合成氨</strong>——N₂+3H₂⇌2NH₃ 是平衡原理的教科书级应用：高压、铁催化剂，同时兼顾速率与产率。这项 1913 年实现的工艺养活了世界约一半的人口。</li>
+          </ul>
+          <p><strong>现实案例：</strong>哈伯与博施因合成氨研究分别获得 1918 年与 1931 年诺贝尔奖；而中国化学家侯德榜在 1943 年发明"侯氏制碱法"（联合制碱法），把合成氨工业与纯碱（碳酸钠）生产联合起来，同时产出纯碱与氯化铵，原料利用率接近 100%，至今仍是世界制碱工业的主流工艺之一。侯德榜的著作《纯碱制造》被誉为制碱工业的"圣经"。</p>
+        </div>
+<h3>深度解读 · 氧化还原与电化学：从伏打电堆到锂电池</h3>
+<div class="explain">
+          <p><strong>氧化还原反应的本质是电子转移</strong>——有电子得失或偏移的反应都是氧化还原反应。1800 年伏打把锌片与铜片浸在盐水中做成电堆，人类第一次把化学能直接变成电流；今天的电池仍然遵循同样的原理：负极失电子（氧化）、正极得电子（还原），外电路输送电子做功。锂电池是这条脉络的当代顶点：锂是最轻的金属，锂离子在正负极间往返"摇椅式"迁移，实现反复充放电。中国的锂电池产业从实验室走到全球第一——2023 年中国锂电池出货量约占全球 70%，宁德时代等企业把动力电池的能量密度推向 300 Wh/kg 以上，支撑起全球最大的新能源汽车市场。从伏打的两片金属到电动车里的锂离子电池，原理未变，而人类驾驭电子的能力已经翻天覆地。</p>
+        </div>
+<h3>对比表 · 化学反应类型对比</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>反应类型</th><th>特点</th><th>通式</th><th>能量与条件</th><th>实例</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>化合反应</strong></td><td>多变一</td><td>A+B→AB</td><td>多为放热</td><td>2H₂+O₂→2H₂O（氢气燃烧）</td></tr>
+              <tr><td><strong>分解反应</strong></td><td>一变多</td><td>AB→A+B</td><td>常需加热，多为吸热</td><td>2H₂O₂→2H₂O+O₂↑（二氧化锰催化）</td></tr>
+              <tr><td><strong>置换反应</strong></td><td>单质与化合物作用生成新单质与新化合物</td><td>A+BC→AC+B</td><td>取决于金属活泼性顺序</td><td>Fe+CuSO₄→FeSO₄+Cu</td></tr>
+              <tr><td><strong>复分解反应</strong></td><td>两种化合物交换成分</td><td>AB+CD→AD+CB</td><td>生成沉淀、气体或水之一方可发生</td><td>HCl+NaOH→NaCl+H₂O</td></tr>
+              <tr><td><strong>氧化还原反应</strong></td><td>电子转移，化合价变化</td><td>广义，可涵盖上述类型</td><td>常伴随明显能量变化</td><td>2Na+Cl₂→2NaCl</td></tr>
+            </tbody>
+          </table>
+        </div>
+<h3>深度升级 · 化学能的转换：燃烧·光合·电池</h3>
+<figure class="diagram">
+          <figcaption>图 3b · 化学能的转换 —— 热能·光能·电能·生物能</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["化学能"] --> A["热能<br>燃烧 · 爆炸"]
+  ROOT --> B["光能<br>光合作用 · 发光"]
+  ROOT --> C["电能<br>原电池 · 蓄电池"]
+  ROOT --> D["生物能<br>呼吸作用 · ATP"]
+  A --> A1["化石燃料 · 火箭推进"]
+  B --> B1["光合成有机物<br>6CO₂+6H₂O→C₆H₁₂O₆+6O₂"]
+  C --> C1["锂离子电池 · 氢燃料电池"]
+  D --> D1["生命活动的动力"]
+  classDef root fill:#2E7D32,color:#fff,stroke:#2E7D32;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 3b 详解：</strong>化学反应的本质是旧键断裂、新键生成，而键能之差就表现为能量的吸收与释放——化学能由此可以转化为热、光、电与生物能。</p>
+          <ul>
+            <li><strong>化学能→热能</strong>——燃烧是最古老的能量转化：碳氢化合物与氧气反应，化学键蕴含的能量以热与光的形式释放，驱动蒸汽机、内燃机与火箭。</li>
+            <li><strong>光能→化学能</strong>——光合作用是地球上最重要的吸热反应：植物把太阳能固定为有机物中的化学能，6CO₂+6H₂O 在叶绿体中转化为葡萄糖与氧气，这是整个生物圈的能量源头。</li>
+            <li><strong>化学能→电能</strong>——原电池把氧化还原反应"拆开"：电子在负极产生、经外电路到达正极做功，电能由此获得。锂离子电池、氢燃料电池都是这一原理的现代形态。</li>
+            <li><strong>化学能→生物能</strong>——呼吸作用（细胞氧化葡萄糖）为生命供能，能量暂存于 ATP 的"高能键"中，随用随取。</li>
+          </ul>
+          <p><strong>现实案例：</strong>中国是全球光伏与储能产业的领跑者：光伏电池把光能转化为电能（2023 年中国光伏装机量居世界第一），而与之配套的电化学储能——锂电池——把不稳定的太阳能"储存"进电池。从硅片到电解液，从正负极材料到电池回收，中国已建成全球最完整的"光-电-储"化学产业链。</p>
+        </div>
+<h3>对比表 · 三大酸碱理论</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>理论</th><th>提出者与年代</th><th>酸的定义</th><th>碱的定义</th><th>适用范围与局限</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>阿伦尼乌斯理论</strong></td><td>阿伦尼乌斯，1887</td><td>溶于水能电离出 H⁺ 的化合物</td><td>溶于水能电离出 OH⁻ 的化合物</td><td>仅限水溶液；氨溶于水呈碱性却无 OH⁻ 从分子中解离，难以解释</td></tr>
+              <tr><td><strong>布朗斯特-劳里理论</strong></td><td>布朗斯特与劳里，1923</td><td>能给出质子（H⁺）的物质</td><td>能接受质子的物质</td><td>适用于质子转移反应，不再受溶剂限制；NH₃ 因此被正确归类为碱</td></tr>
+              <tr><td><strong>路易斯理论</strong></td><td>路易斯，1923</td><td>能接受电子对的物质</td><td>能给出电子对的物质</td><td>最广义的酸碱理论，涵盖配合物与非质子体系，如 BF₃（酸）与 NH₃（碱）的配位</td></tr>
+            </tbody>
+          </table>
+        </div>
+</section>
+<section class="sec" id="organic">
+        <h2><span class="chapno">第四章 &middot; 有机化学与高分子</span></h2>
+<p>有机化学是生命和现代文明的化学基础。从塑料到药物，从合成纤维到液晶屏幕，有机化学的产品无处不在。碳基化学的多样性是生命能够存在的关键条件。</p>
+<figure class="diagram">
+          <figcaption>图 4 · 有机化合物家族</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["有机化学"] --> A["烃类<br>烷·烯·炔·芳香"]
+  ROOT --> B["官能团<br>-OH·-COOH·-NH₂"]
+  ROOT --> C["聚合物<br>塑料·橡胶·纤维"]
+  ROOT --> D["生物分子<br>糖·蛋白质·DNA"]
+  A --> B --> C
+  B --> D
+  C --> E["合成材料<br>聚乙烯·尼龙"]
+  D --> F["生命分子<br>DNA双螺旋"]
+  classDef root fill:#2E7D32,color:#fff,stroke:#2E7D32;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>有机化学：</strong>有机化学是碳的化学。碳原子能形成稳定的长链和环状结构，这是生命分子多样性的基础。
+
+**高分子**：塑料、橡胶、纤维都是高分子聚合物。中国是世界最大的塑料生产和消费国，2023年产量超过1.1亿吨。
+
+**药物化学**：有机合成是制药工业的基础。青蒿素——中国科学家屠呦呦发现的抗疟药物——是天然有机化学的杰出成就。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">凯库勒 · 1829–1896</div>
+            <blockquote>苯环的结构——一条蛇咬住自己的尾巴的梦。<cite>——凯库勒发现苯环结构</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">屠呦呦 · 1930–</div>
+            <blockquote>青蒿素是传统中医药给世界的礼物。<cite>——屠呦呦诺贝尔奖演讲</cite></blockquote>
+          </div>
+</div>
+<h3>深度升级 · 从简单分子到功能高分子</h3>
+<figure class="diagram">
+          <figcaption>图 4a · 从简单分子到功能高分子 —— 碳骨架·官能团·聚合反应·功能材料</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["有机化学"] --> A["碳骨架<br>链状 · 环状 · 芳香"]
+  ROOT --> B["官能团<br>-OH · -COOH · -NH₂"]
+  ROOT --> C["聚合反应<br>加聚 · 缩聚"]
+  A --> A1["结构异构 · 命名"]
+  B --> B1["醇 · 酸 · 酯 · 胺"]
+  C --> C1["塑料 · 纤维 · 橡胶"]
+  C1 --> D["功能高分子<br>导电 · 医用 · 可降解"]
+  classDef root fill:#2E7D32,color:#fff,stroke:#2E7D32;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 4a 详解：</strong>有机化学的核心叙事是"从小分子到大分子"——碳骨架搭建框架，官能团赋予性格，聚合反应把小分子连成高分子，功能高分子再进入医药、电子与环保。</p>
+          <ul>
+            <li><strong>碳骨架</strong>——碳原子可连成直链、支链、环状与芳香环，配合单键、双键、三键与官能团位置，产生结构异构与几何异构，这是有机化合物多达数千万种的根源。</li>
+            <li><strong>官能团</strong>——羟基（-OH）、羧基（-COOH）、氨基（-NH₂）、酯基（-COOR）等决定分子与谁反应、如何反应：醇的氧化、酸的中和、酯化与水解。</li>
+            <li><strong>聚合反应</strong>——加聚（乙烯→聚乙烯）不损失小分子，缩聚（己二酸+己二胺→尼龙 66）同时生成小分子副产物。塑料、合成纤维、合成橡胶三大合成材料由此而来。</li>
+            <li><strong>功能高分子</strong>——导电高分子（聚苯胺）、医用可降解材料（聚乳酸 PLA）、智能响应材料，把高分子从"结构材料"推向"功能器件"。</li>
+          </ul>
+          <p><strong>现实案例：</strong>1965 年，中国科学家在世界上首次人工全合成结晶牛胰岛素——把 51 个氨基酸按正确顺序与构型连成具有生物活性的蛋白质分子，标志着人类可以"从原子出发制造生命大分子"。2015 年，屠呦呦因发现青蒿素获诺贝尔生理学或医学奖：她受东晋葛洪《肘后备急方》"青蒿一握，以水二升渍，绞取汁"的启发，改用乙醚低温萃取，成功获得抗疟活性物质——有机化学的分离、结构鉴定与合成方法，在这里与中医药智慧相遇。</p>
+        </div>
+<h3>深度升级 · 有机化学的百年历程：从尿素到青蒿素</h3>
+<figure class="diagram">
+          <figcaption>图 4b · 有机化学的百年历程 —— 从打破生命力论到药物合成</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["维勒 1828<br>合成尿素<br>打破生命力论"] --> B["凯库勒 1865<br>苯环结构<br>有机结构理论"]
+  B --> C["合成染料工业<br>煤焦油化学"]
+  C --> D["高分子时代<br>塑料 · 尼龙 · 合成橡胶"]
+  D --> E["药物合成<br>阿司匹林 · 抗生素"]
+  E --> F["青蒿素 1972<br>中国科学家<br>屠呦呦 · 诺奖 2015"]
+  classDef root fill:#2E7D32,color:#fff,stroke:#2E7D32;
+  class F root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 4b 详解：</strong>有机化学从"生命力论"的迷雾中走出来，只用了不到两百年。</p>
+          <ul>
+            <li><strong>维勒（1828）</strong>——在实验室从无机物氰酸铵合成尿素，首次打破"有机物只能由生命力制造"的信条。</li>
+            <li><strong>凯库勒（1865）</strong>——提出苯的环状结构。传说他梦见蛇咬住自己的尾巴由此悟出苯环——这个故事未必完全真实，但苯环结构确实让有机化学有了"骨架"。</li>
+            <li><strong>合成染料与高分子</strong>——19 世纪煤焦油化学催生合成染料工业（德国拜耳、巴斯夫的起点）；20 世纪，聚乙烯、尼龙、合成橡胶把化学带入"塑料时代"。</li>
+            <li><strong>药物合成</strong>——阿司匹林（1897）、青霉素的提纯与全合成、青蒿素（1972），有机合成成为制药工业的引擎。</li>
+          </ul>
+          <p><strong>现实案例：</strong>中国的有机合成实力体现在"中国药"的现代化上：青蒿素衍生物（蒿甲醚、双氢青蒿素）由国内团队开发并出口全球；人工合成结晶牛胰岛素（1965）、酵母丙氨酸转移核糖核酸的人工合成（1981）都出自中国团队——中国在"从头合成生命分子"的赛道上始终站在世界前列。</p>
+        </div>
+<h3>深度解读 · 从凯库勒的梦到结构化学</h3>
+<div class="explain">
+          <p><strong>苯的分子式是 C₆H₆</strong>——碳氢比低得反常，说明它必定高度不饱和却异常稳定。凯库勒 1865 年提出的环状结构解释了这一矛盾：6 个碳围成六元环，单双键交替。但现代结构化学走得更远：X 射线衍射与中子衍射证明苯环中 6 个 C-C 键完全等价（键长均为 0.139 nm，介于单键与双键之间）——苯的 π 电子是"离域"的，均匀分布在整个环上，这正是鲍林共振论与分子轨道理论要描述的对象。结构化学把凯库勒的"梦"变成了可测量的现实：今天，解析一个分子的三维结构（如蛋白质、催化剂、药物靶点）已成为化学与生命科学的日常工具，中国的同步辐射光源（上海光源）每年支撑数千项结构研究。</p>
+        </div>
+<h3>深度解读 · 高分子时代的隐忧：塑料与环境</h3>
+<div class="explain">
+          <p><strong>塑料是 20 世纪最伟大的材料发明，也成为 21 世纪最棘手的环境问题：</strong>聚乙烯、聚丙烯等合成高分子化学性质极其稳定，在自然环境中可存留数百年；全球每年约有 800 万吨塑料进入海洋，微塑料已进入食物链与人体组织。应对之道恰恰在化学内部：① 可降解高分子——聚乳酸（PLA，由玉米淀粉发酵制得）、聚羟基脂肪酸酯（PHA）可在特定条件下降解；② 化学回收——把废塑料"裂解"回单体或油品，实现碳的循环利用；③ 源头设计——从分子层面设计更易回收的单一材料结构，减少多层复合。中国已于 2020 年出台升级版"限塑令"，并推动塑料污染全链条治理。塑料的麻烦由化学造成，解决方案也由化学提供——这是"绿色化学"最现实的战场。</p>
+        </div>
+</section>
+<section class="sec" id="summary">
+        <h2><span class="chapno">第五章 &middot; 总结：化学的思维方式</span></h2>
+<p>化学教会我们：物质世界是可理解的，分子是可以设计的，反应是可以控制的。化学是连接基础科学和应用技术的桥梁，也是解决能源、环境、健康等人类重大挑战的关键工具。</p>
+<figure class="diagram">
+          <figcaption>图 5 · 化学思想谱系</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["炼金术<br>古代化学"] --> B["近代化学<br>拉瓦锡·道尔顿"]
+  B --> C["元素周期律<br>门捷列夫"]
+  C --> D["物理化学<br>热力学·动力学"]
+  D --> E["现代化学<br>量子化学·分子设计"]
+  E --> F["前沿<br>纳米·绿色·合成生物"]
+  classDef root fill:#2E7D32,color:#fff,stroke:#2E7D32;
+  class F root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>化学与跨学科：</strong>化学是'中心科学'，与物理、生物、材料、医药、环境深度交叉。
+
+**跨辑关联**：本卷与物理学思想谱系（原子结构）、生命科学（生物化学）、地理与环境（环境化学）密切关联。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">伍德沃德 · 1917–1979</div>
+            <blockquote>有机合成既是一门科学，也是一门艺术。<cite>——伍德沃德</cite></blockquote>
+          </div>
+</div>
+<h3>深度升级 · 化学的思维方式与社会价值</h3>
+<figure class="diagram">
+          <figcaption>图 5a · 化学的思维方式与社会价值 —— 三重表征·守恒·结构决定性质·平衡观</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["化学的思维方式"] --> A["三重表征<br>宏观 · 微观 · 符号"]
+  ROOT --> B["守恒思想<br>质量 · 能量 · 电荷"]
+  ROOT --> C["结构决定性质<br>性质决定用途"]
+  ROOT --> D["平衡与限度<br>化学平衡观"]
+  A --> E["能源转型<br>锂电池 · 氢能 · 光伏"]
+  B --> F["绿色化学<br>原子经济性"]
+  C --> G["新材料<br>稀土 · 石墨烯 · 超导"]
+  D --> H["医药与环境<br>药物设计 · 污染治理"]
+  classDef root fill:#2E7D32,color:#fff,stroke:#2E7D32;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 5a 详解：</strong>化学不仅提供知识，更提供一套独特的思维方式——它教你同时用三只眼睛看世界。</p>
+          <ul>
+            <li><strong>三重表征</strong>——宏观（看见的现象）、微观（看不见的粒子）与符号（方程式）三位一体：看到铁生锈，要想到 Fe 失电子、氧气得电子，写成 4Fe+3O₂=2Fe₂O₃。</li>
+            <li><strong>守恒思想</strong>——质量、能量、电荷、元素种类在反应前后守恒。守恒是化学计算的基石，也是"物质不灭"的现代表述。</li>
+            <li><strong>结构决定性质</strong>——这是贯穿全卷的主线：金刚石与石墨同为碳，一个极硬一个软；正丁烷与异丁烷分子式相同，沸点却相差约 11°C。</li>
+            <li><strong>平衡与限度</strong>——反应不是"非黑即白"，而是有方向、有限度、可调控的过程。绿色化学进一步要求：从源头减少污染，实现原子经济性。</li>
+          </ul>
+          <p><strong>现实案例：</strong>中国锂电池与新能源产业是"化学思维×社会价值"的最佳注脚：从原材料（碳酸锂、磷酸铁锂、三元材料）到电芯制造再到回收利用，整条产业链都是电化学、材料化学与工程化学的结晶。2023 年中国新能源汽车产量占全球 60% 以上，动力电池装车量世界第一；中国稀土新材料（永磁电机、发光材料、催化材料）则把"元素周期表"变成高端制造的硬通货。</p>
+        </div>
+<h3>深度解读 · 绿色化学与"双碳"目标</h3>
+<div class="explain">
+          <p><strong>绿色化学诞生于 20 世纪 90 年代</strong>，核心是"从源头消除污染"：设计反应时尽量做到原子经济（原料原子尽可能多地进入产物）、使用无毒溶剂与可再生原料、减少能源消耗。十二条原则中最著名的是原子经济性——理想的反应没有副产物，原子利用率 100%。中国承诺"2030 年前碳达峰、2060 年前碳中和"，化学是其中的关键角色：碳捕集利用与封存（CCUS）把 CO₂ 变成甲醇等化学品；电解水制氢把可再生能源变成绿氢；可降解塑料（PLA、PHA）替代一次性石油基塑料；催化剂让传统高耗能工艺变低碳。化学不是环境的敌人，而是环境问题的解决方案提供者——这是化学家对"双碳"时代的回答。</p>
+        </div>
+<h3>深度升级 · 化学与相邻学科：一张交叉之网</h3>
+<figure class="diagram">
+          <figcaption>图 5b · 化学与相邻学科 —— 作为"中心科学"的交叉网络</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["化学<br>中心科学"] --> A["物理学<br>原子 · 量子力学"]
+  ROOT --> B["生物学<br>生物化学 · 分子生物学"]
+  ROOT --> C["材料科学<br>高分子 · 纳米材料"]
+  ROOT --> D["医药学<br>药物化学 · 药理学"]
+  ROOT --> E["环境科学<br>污染治理 · 监测"]
+  ROOT --> F["信息与计算<br>计算化学 · AI 辅助设计"]
+  classDef root fill:#2E7D32,color:#fff,stroke:#2E7D32;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 5b 详解：</strong>化学被称为"中心科学"，因为它处在物理学（物质微观规律）与生物学（生命过程）的交汇点上，又向材料、医药、环境、信息不断伸出触角。</p>
+          <ul>
+            <li><strong>化学×物理学</strong>——量子化学用薛定谔方程计算分子的电子结构，X 射线衍射与冷冻电镜让化学家"看见"分子与蛋白质的三维结构。</li>
+            <li><strong>化学×生物学</strong>——生物化学揭示酶如何催化、DNA 如何复制；化学生物学用探针分子追踪细胞内的化学事件，为疾病诊断提供工具。</li>
+            <li><strong>化学×材料与医药</strong>——材料基因组计划用高通量计算筛选新材料；AI 辅助药物设计把候选分子的筛选周期从数年缩短到数月。</li>
+            <li><strong>化学×环境与信息</strong>——环境化学监控与修复空气、水、土壤；计算化学与机器学习正在重塑催化剂的发现方式。</li>
+          </ul>
+          <p><strong>现实案例：</strong>中国科学家在这些交叉点上屡有建树：中科院化学所在碳基纳米材料、单分子科学等领域保持世界领先；上海光源（同步辐射）支撑蛋白质结构、催化机理等数千项研究；国内 AI 制药企业（如晶泰科技）把量子化学计算与机器学习结合，用于药物晶型预测与分子设计——化学的边界，正在被交叉学科不断推远。</p>
+        </div>
+</section>
+
+    <section class="sec">
+      <h2>关联辑目</h2>
+      <div class="explain">
+        <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+        <ul>
+<li><span class="rel-link" data-vol="vol30">物理学思想谱系</span></li>
+<li><span class="rel-link" data-vol="vol15">生命科学</span></li>
+<li><span class="rel-link" data-vol="vol33">医学与健康</span></li>
+<li><span class="rel-link" data-vol="vol14">地理与环境</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      化学 · 思想图谱系列第32辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-06
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+(function() {
+  if (window.mermaid) {
+    mermaid.initialize({
+      startOnLoad: true, theme: 'neutral', securityLevel: 'loose',
+      flowchart: { curve: 'basis', htmlLabels: true },
+      fontFamily: 'Segoe UI, PingFang SC, Microsoft YaHei, sans-serif'
+    });
+  }
+
+  var input = document.getElementById('searchInput');
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.sec'));
+  var tocLinks = Array.prototype.slice.call(document.querySelectorAll('#toc a'));
+
+  function applyFilter() {
+    var q = (input.value || '').trim().toLowerCase();
+    sections.forEach(function (sec) {
+      var hit = !q || sec.textContent.toLowerCase().indexOf(q) !== -1;
+      sec.classList.toggle('hidden-by-search', !hit);
+    });
+    tocLinks.forEach(function (a) {
+      var id = a.getAttribute('href').slice(1);
+      var sec = document.getElementById(id);
+      var visible = sec && !sec.classList.contains('hidden-by-search');
+      a.style.opacity = visible ? '' : '0.35';
+    });
+  }
+
+  if (input) { input.addEventListener('input', applyFilter); }
+})();
+</script>
+</body>
+</html>

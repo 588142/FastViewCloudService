@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>计算机科学 · 思想图谱系列第36辑</title>
+
+  <style>
+    :root {
+      --bg: #F5F6FA;
+      --bg2: #E8EAF4;
+      --ink: #1C1F2E;
+      --muted: #5A5E75;
+      --rule: #D2D6E8;
+      --accent: #6D28D9;
+      --accent2: #B88A2E;
+      --font-head: 'Georgia', 'Songti SC', 'STSong', 'SimSun', serif;
+      --font: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+      --font-mono: 'Consolas', 'JetBrains Mono', 'Courier New', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .explain { background: #F8F6EF; border: 1px solid var(--rule); border-radius: 10px; padding: 1rem 1.2rem; margin: 0.6rem 0; }
+    .explain p { margin-bottom: 0.5rem; font-size: 0.9rem; }
+    .explain strong { color: var(--accent); }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .table-wrap { overflow-x: auto; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    table th, table td { border: 1px solid var(--rule); padding: 0.5rem 0.7rem; text-align: left; }
+    table th { background: var(--bg2); font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: 0.78rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<div class="shell">
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">计算机科学</div>
+    <div class="brand-sub">思想图谱系列 · 第36辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+<li><a href="#intro">导言 · 计算改变世界</a></li>
+<li><a href="#theory">第一章 · 计算理论</a></li>
+<li><a href="#algo">第二章 · 算法与数据结构</a></li>
+<li><a href="#ai">第三章 · 人工智能与机器学习</a></li>
+<li><a href="#future">第四章 · 总结：计算的未来</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第36辑</span>
+        <span class="series-links">
+          <a href="../index.html">系列目录</a>
+          <a href="../语言学/语言学.html">← 上一辑 · 语言学</a>
+          <a href="../series-overview/系列总览.html">下一辑 · 系列总览 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>计算机科学</h1>
+      <p class="subtitle">从图灵机到人工智能——计算、算法与信息革命</p>
+      <p class="meta">作者：詹家杨 · 2026-09-06 · 5 章 · 10 张思维导图 · 25 个解释块 · 8 张对照表</p>
+    </header>
+
+<section class="sec" id="intro">
+        <h2><span class="chapno">导言 &middot; 计算改变世界</span></h2>
+<p>计算机科学是20世纪最年轻、发展最快的学科之一。从图灵机到人工智能，计算机科学在不到100年的时间里彻底改变了人类社会的每一个方面。</p>
+<figure class="diagram">
+          <figcaption>图 0 · 计算机科学的结构</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["计算机科学"] --> A["理论计算机<br>计算理论·算法·复杂度"]
+  ROOT --> B["软件工程<br>编程·系统·架构"]
+  ROOT --> C["人工智能<br>机器学习·NLP·CV"]
+  ROOT --> D["系统与网络<br>OS·分布式·安全"]
+  ROOT --> E["数据技术<br>数据库·大数据"]
+  A --> B
+  B --> C
+  B --> D
+  B --> E
+  classDef root fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>计算机科学的本质：</strong>计算机科学不是关于计算机的科学，而是关于计算的科学——它研究什么是可计算的、如何高效计算。
+
+**图灵**在1936年提出了图灵机模型，奠定了计算理论的基础。图灵机虽然简单，却能模拟任何计算过程。
+
+**中国贡献**：中国在超级计算机领域长期领先——神威·太湖之光在2016-2017年位居世界第一，全部使用国产处理器。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">图灵 · 1912–1954</div>
+            <blockquote>我们只能预见一小段距离，但可以看到那里有很多事情要做。<cite>——《计算机器与智能》</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">高德纳 · 1938–</div>
+            <blockquote>计算机科学既是艺术也是科学。<cite>——《计算机程序设计艺术》</cite></blockquote>
+          </div>
+</div>
+<figure class="diagram">
+          <figcaption>图 0a · 计算机科学基本概念树状图 —— 计算理论·硬件体系·软件工程·算法与数据·人工智能</figcaption>
+          <div style="overflow-x:auto;text-align:center;">
+            <svg viewBox="0 0 720 560" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;height:auto;">
+              <defs>
+                <marker id="cs-arl" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+                  <path d="M1 1 L7 4 L1 7 Z" fill="#52525B"/>
+                </marker>
+              </defs>
+              <rect x="0" y="0" width="720" height="560" fill="#F7F7F8" rx="8"/>
+              <rect x="210" y="12" width="300" height="40" rx="20" fill="#334155"/>
+              <text x="360" y="38" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700" font-family="system-ui,sans-serif">计算机科学</text>
+              <line x1="360" y1="52" x2="360" y2="68" stroke="#334155" stroke-width="2"/>
+              <line x1="72" y1="68" x2="648" y2="68" stroke="#52525B" stroke-width="1.5"/>
+              <line x1="72" y1="68" x2="72" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#cs-arl)"/>
+              <line x1="216" y1="68" x2="216" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#cs-arl)"/>
+              <line x1="360" y1="68" x2="360" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#cs-arl)"/>
+              <line x1="504" y1="68" x2="504" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#cs-arl)"/>
+              <line x1="648" y1="68" x2="648" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#cs-arl)"/>
+              <rect x="14" y="82" width="116" height="34" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+              <text x="72" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">计算理论</text>
+              <rect x="164" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#6F6FFF" stroke-width="1.5"/>
+              <text x="216" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">硬件体系</text>
+              <rect x="308" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+              <text x="360" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">软件工程</text>
+              <rect x="452" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#6F6FFF" stroke-width="1.5"/>
+              <text x="504" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">算法与数据</text>
+              <rect x="596" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+              <text x="648" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">人工智能</text>
+              <rect x="12" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+              <text x="72" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">可计算性</text>
+              <rect x="12" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+              <text x="72" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">计算复杂性</text>
+              <line x1="72" y1="116" x2="72" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#cs-arl)"/>
+              <line x1="72" y1="154" x2="72" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#cs-arl)"/>
+              <rect x="156" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+              <text x="216" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">冯诺依曼架构</text>
+              <rect x="156" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+              <text x="216" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">存储与网络</text>
+              <line x1="216" y1="116" x2="216" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#cs-arl)"/>
+              <line x1="216" y1="154" x2="216" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#cs-arl)"/>
+              <rect x="300" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+              <text x="360" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">编程语言</text>
+              <rect x="300" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+              <text x="360" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">操作系统</text>
+              <rect x="300" y="190" width="120" height="24" rx="6" fill="#EFEFF2"/>
+              <text x="360" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">软件方法</text>
+              <line x1="360" y1="116" x2="360" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#cs-arl)"/>
+              <line x1="360" y1="154" x2="360" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#cs-arl)"/>
+              <line x1="360" y1="184" x2="360" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#cs-arl)"/>
+              <rect x="444" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+              <text x="504" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">经典算法</text>
+              <rect x="444" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+              <text x="504" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">数据结构</text>
+              <rect x="444" y="190" width="120" height="24" rx="6" fill="#EFEFF2"/>
+              <text x="504" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">数据库</text>
+              <line x1="504" y1="116" x2="504" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#cs-arl)"/>
+              <line x1="504" y1="154" x2="504" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#cs-arl)"/>
+              <line x1="504" y1="184" x2="504" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#cs-arl)"/>
+              <rect x="588" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+              <text x="648" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">机器学习</text>
+              <rect x="588" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+              <text x="648" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">深度学习</text>
+              <rect x="588" y="190" width="120" height="24" rx="6" fill="#EFEFF2"/>
+              <text x="648" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">大模型</text>
+              <line x1="648" y1="116" x2="648" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#cs-arl)"/>
+              <line x1="648" y1="154" x2="648" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#cs-arl)"/>
+              <line x1="648" y1="184" x2="648" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#cs-arl)"/>
+              <rect x="30" y="268" width="660" height="280" rx="10" fill="#EFEFF2" opacity="0.7"/>
+              <text x="360" y="292" text-anchor="middle" fill="#171717" font-size="14" font-weight="700" font-family="system-ui,sans-serif">五大支柱速览</text>
+              <text x="50" y="318" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎计算理论</text>
+              <text x="50" y="336" fill="#52525B" font-size="11" font-family="system-ui,sans-serif">研究"什么可计算、如何高效计算"——图灵机、停机问题、P vs NP；姚期智凭此支的工作获 2000 年图灵奖。</text>
+              <text x="50" y="366" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎硬件体系</text>
+              <text x="50" y="384" fill="#52525B" font-size="11" font-family="system-ui,sans-serif">冯·诺依曼"存储程序"架构是通用计算机蓝本；摩尔定律刻画芯片演进，神威·太湖之光以国产处理器问鼎全球超算。</text>
+              <text x="50" y="414" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎软件工程</text>
+              <text x="50" y="432" fill="#52525B" font-size="11" font-family="system-ui,sans-serif">编程语言 · 操作系统 · 软件方法三足鼎立；从机器码到 Python 与开源鸿蒙，本质是对复杂性的管理。</text>
+              <text x="50" y="462" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎算法与数据</text>
+              <text x="50" y="480" fill="#52525B" font-size="11" font-family="system-ui,sans-serif">"算法 + 数据结构 = 程序"（沃斯）；数据库（B+ 树、OceanBase）与推荐算法（字节跳动）支撑信息社会运转。</text>
+              <text x="50" y="510" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎人工智能</text>
+              <text x="50" y="528" fill="#52525B" font-size="11" font-family="system-ui,sans-serif">从符号主义到深度学习与多模态大模型；监督 · 无监督 · 强化三大流派是 AI 的方法论内核。</text>
+            </svg>
+          </div>
+        </figure>
+<div class="explain">
+          <p><strong>图 0a 详解：</strong>这张概念树把计算机科学拆解为五大支柱——计算理论、硬件体系、软件工程、算法与数据、人工智能。五者不是孤立的：计算理论给出"能算什么"，硬件体系提供"在哪里算"，软件工程解决"如何可靠地算"，算法与数据回答"怎样高效地算"，人工智能则探索"能否让机器自己算"。整棵树构成一张理解这门学科的地图：上层是思想，中层是方法，下层是系统。</p>
+          <p><strong>计算理论支：</strong>计算理论是计算机科学的地基，回答两个根本问题：什么可以被计算？计算要付出多大代价？图灵在1936年提出图灵机，用"读写头 + 无限纸带"精确刻画了"可计算"的边界；丘奇同时期提出λ演算，并证明了它与图灵机等价（丘奇-图灵论题）。在这一支上，停机问题揭示了计算机存在永远无法判定的问题，P vs NP问题至今悬而未决，被列为克雷数学研究所的千禧年七大难题之一。华人科学家姚期智正是在可计算性与密码学上的奠基性工作，于2000年成为首位获图灵奖的华人学者。</p>
+          <p><strong>硬件体系支：</strong>硬件体系是计算思想的物理载体。冯·诺依曼1945年提出"存储程序"架构——把指令与数据一同存放在内存中，这一设计至今仍是几乎所有通用计算机的蓝本。此后，晶体管、集成电路、微处理器依次登场，摩尔定律刻画了芯片性能指数级增长的神话；存储（从打孔卡到固态硬盘）与网络（从局域网到5G、云数据中心）构成现代计算的物理底座。中国的神威·太湖之光全部采用国产申威处理器，2016-2017年问鼎全球超算榜首；华为昇腾AI芯片则为大模型训练提供国产算力。</p>
+          <p><strong>软件工程支：</strong>软件工程把"算法"变成"可靠运行的软件系统"。编程语言是人类与机器沟通的桥梁——从机器语言、汇编，到C、Java、Python，抽象层次不断提升。操作系统管理着硬件资源与进程调度，Linux 是服务器世界的基石，而中国开源的 OpenHarmony（开源鸿蒙）正在构建全新的国产基础软件生态。软件方法学则回答"如何组织团队写出可靠的软件"：结构化编程、面向对象、敏捷开发一脉相承。软件工程的本质是对复杂性的管理——这正是迪杰斯特拉所说的"程序设计的任务就是驾驭复杂度"。</p>
+          <p><strong>算法与数据支：</strong>"算法 + 数据结构 = 程序"——这是瑞士计算机科学家沃斯给出的经典公式。算法是解决问题的步骤，数据结构是组织数据的方式，二者互为表里：好的数据结构能让算法事半功倍。经典算法（排序、搜索、图算法、动态规划）是每个程序员的必修课；数据库（关系模型、B+ 树索引、分布式存储）则承载着信息社会的全部记录。字节跳动的推荐系统、阿里巴巴的 OceanBase 分布式数据库、腾讯微信支付的实时交易，背后都是算法与数据结构的极致工程。</p>
+          <p><strong>人工智能支：</strong>人工智能的目标是让机器具备感知、推理与学习能力。它经历了符号主义（1956年达特茅斯会议开启）、统计学习（反向传播与支持向量机）、深度学习（2012年 AlexNet 引爆）三次浪潮，如今大语言模型（GPT、文心一言、DeepSeek）正以惊人的速度改变世界。机器学习三大流派——监督学习、无监督学习、强化学习——构成其方法论内核。中国 AI 企业在模型、芯片（昇腾、寒武纪）、应用（人脸识别、智能驾驶）全链条布局，已跻身全球第一梯队。</p>
+          <p><strong>现实案例：</strong>这张树状图同时是一张"职业地图"——计算理论研究者、芯片架构师、程序员、数据科学家、AI 研究员，分别对应五个分支。理解五者之间的关系，就能理解为什么人们常说：计算机科学不是关于计算机的科学，而是关于计算的科学。</p>
+        </div>
+<div class="callout">
+          <span class="callout-title">延伸视野 · "存储程序"的发明权之争</span>
+          <p>现代计算机的"存储程序"思想通常归于冯·诺依曼，但历史真相更复杂：ENIAC 的两位工程师埃克特与莫奇利早已萌生类似想法，数学家诺伊曼则在 1945 年的《EDVAC 报告初稿》中把它系统化并传播开来。科学史界因此常提及"冯·诺依曼瓶颈"——指令与数据共用一条总线，成为计算机性能的经典瓶颈。理解这段公案，有助于我们区分"思想的提出"与"思想的传播"在科学史上的不同角色。</p>
+        </div>
+<h3>本卷阅读指南</h3>
+<div class="explain">
+          <p><strong>全书结构：</strong>本卷共五章。导言用一张概念树勾勒学科全景；第一章"计算理论"回答"什么是计算"——它定义了学科的边界；第二章"算法与数据结构"回答"如何高效计算"——它是程序设计的内功；第三章"人工智能与机器学习"回答"机器能否自己学习"——它是当下最激动人心的前沿；第四章"总结"把视线投向量子计算、神经形态与 AI 安全的未来。各章相互独立又层层递进，可按兴趣跳读。</p>
+          <p><strong>每章三件套：</strong>每个正文章节都配有<strong>思维导图</strong>（图1–图4a）快速建立整体印象，<strong>详解块</strong>深入讲解核心概念与真实案例，<strong>代表人物语录</strong>（legacy 块）则以先贤之言点睛。导言的概念树（图 0a）建议反复观看——它是理解整卷的"地图"。</p>
+          <p><strong>阅读建议：</strong>零基础读者可从第二章读起（算法最直观、案例最生活化）；对数学感兴趣者建议精读第一章；关注产业动态的读者可直接进入第三章，再回头补读前两章。每个 explain 块末尾的"现实案例"都标注了中国实践（神威·太湖之光、九章、OceanBase、文心一言等），可作为延伸检索的起点。</p>
+        </div>
+<h3>全书关键术语速查</h3>
+<p>以下术语将在后续各章反复出现，先建立直观印象，不必急于记牢。</p>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>术语</th><th>英文</th><th>一句话解释</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>计算</strong></td><td>Computing</td><td>按照明确规则对信息进行处理的过程</td></tr>
+              <tr><td><strong>算法</strong></td><td>Algorithm</td><td>解决问题的有限、明确的指令序列</td></tr>
+              <tr><td><strong>程序</strong></td><td>Program</td><td>用编程语言写成、可被机器执行的算法</td></tr>
+              <tr><td><strong>操作系统</strong></td><td>Operating System</td><td>管理硬件资源与应用软件的基础软件层</td></tr>
+              <tr><td><strong>数据与信息</strong></td><td>Data / Information</td><td>符号记录是数据，有意义的内容才是信息</td></tr>
+              <tr><td><strong>摩尔定律</strong></td><td>Moore's Law</td><td>集成电路晶体管数量约每两年翻一番的经验规律</td></tr>
+              <tr><td><strong>冯·诺依曼瓶颈</strong></td><td>Von Neumann Bottleneck</td><td>指令与数据共用一条总线导致的性能限制</td></tr>
+              <tr><td><strong>机器学习</strong></td><td>Machine Learning</td><td>让程序从数据中自动学出规则而非人工编码</td></tr>
+            </tbody>
+          </table>
+        </div>
+</section>
+<section class="sec" id="theory">
+        <h2><span class="chapno">第一章 &middot; 计算理论</span></h2>
+<p>计算理论回答了计算机科学的最根本问题：什么是计算，什么可以计算，如何高效计算。这些问题的答案不仅决定了计算机的边界，也深刻影响了我们对知识和智能的理解。</p>
+<figure class="diagram">
+          <figcaption>图 1 · 计算理论核心</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["计算理论"] --> A["图灵机<br>计算的数学模型"]
+  ROOT --> B["可计算性<br>哪些问题可算"]
+  ROOT --> C["复杂度<br>哪些问题可高效算"]
+  ROOT --> D["P vs NP<br>千禧年问题"]
+  A --> B
+  B --> C
+  C --> D
+  B --> E["停机问题<br>不可判定"]
+  classDef root fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>计算理论：</strong>图灵在1936年的论文《论可计算数》中提出了图灵机模型，并证明了'停机问题'不可判定——不存在一个通用算法能判断任何程序是否会终止。
+
+**P vs NP**是计算机科学最重要的未解决问题：如果P=NP，那么许多看似困难的问题（如旅行商问题）都能在多项式时间内求解。这被认为是千禧年七大数学难题之一。
+
+**中国案例**：中国数学家姚期智（2000年图灵奖得主）在计算理论、密码学方面做出了奠基性贡献。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">图灵 · 1912–1954</div>
+            <blockquote>机器能思考吗？<cite>——图灵测试</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">冯·诺依曼 · 1903–1957</div>
+            <blockquote>计算机不需要巨大的聪明，只需要巨大的耐心。<cite>——冯·诺依曼</cite></blockquote>
+          </div>
+</div>
+<figure class="diagram">
+          <figcaption>图 1a · 从图灵机到量子计算：计算模型演进</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["计算模型演进"] --> A["图灵机<br>1936 · 图灵"]
+  ROOT --> B["λ 演算<br>1936 · 丘奇"]
+  ROOT --> C["随机存取机 RAM<br>图灵机的真实化"]
+  ROOT --> D["量子计算<br>1985 · 多伊奇"]
+  A --> A1["停机问题<br>不可判定"]
+  A --> A2["丘奇-图灵论题<br>可计算性的等价"]
+  B --> B1["函数式编程<br>Lisp · Haskell"]
+  C --> C1["冯·诺依曼架构<br>存储程序计算机"]
+  D --> D1["量子比特 · 叠加 · 纠缠"]
+  D --> D2["九章 · 祖冲之号<br>中国量子计算机"]
+  classDef root fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 1a 详解：</strong>计算模型的演进史，就是人类对"计算是什么"的理解不断深化的历史。从图灵机的纸带到量子比特的叠加态，四个里程碑勾勒出一条清晰的主线：先定义计算的边界，再让模型逼近真实机器，最后突破经典物理的极限。</p>
+          <p><strong>图灵机与停机问题：</strong>1936年，图灵发表《论可计算数及其在判定问题上的应用》，提出图灵机——一条无限长的纸带、一个读写头、一张状态表。这个极简装置却能执行任何可计算的函数，成为"算法"一词的数学定义。图灵随即证明停机问题不可判定：不存在一个通用程序能判断另一个程序是否会终止。这一结果不仅是数学史上的里程碑，也划定了计算机能力的根本边界——有些问题不是"太难"，而是"原则上不可解"。</p>
+          <p><strong>λ 演算与函数式传统：</strong>几乎同时，普林斯顿的逻辑学家丘奇提出λ演算，用"函数抽象"与"函数应用"两个操作表达全部计算。图灵与丘奇随后证明了图灵机与λ演算等价——这就是"丘奇-图灵论题"：一切直觉上可计算的函数，都能被图灵机计算。λ演算的优雅直接孕育了函数式编程语言：1958年的 Lisp、1990年的 Haskell，乃至今天深度学习框架中无处不在的自动求导，都是这一支的血脉。</p>
+          <p><strong>随机存取机与冯·诺依曼架构：</strong>图灵机是思想实验，真正的计算机还需要把"内存随机访问"与"存储程序"变成工程现实。1945年，冯·诺依曼在《EDVAC报告初稿》中系统阐述了存储程序架构：程序与数据同存于内存，中央处理器逐条取指执行。1949年问世的EDSAC是第一台完整的存储程序计算机。此后数十年，从晶体管到集成电路、从单核到多核，硬件不断演化，但"存储程序"这一骨架始终未变——包括今天每一台智能手机。</p>
+          <p><strong>量子计算：第三次范式跃迁：</strong>1985年，物理学家多伊奇提出量子图灵机，把计算模型从经典物理学推进到量子力学。量子比特可以同时处于0和1的叠加态，量子纠缠让多个比特协同演化，使得某些问题（如大整数分解）可能获得指数级加速。中国的量子计算走在世界前列：2020年，潘建伟团队的光量子计算机"九章"在求解高斯玻色采样问题上比当时最快的超级计算机快一百万亿倍；2021年，"祖冲之号"实现了56比特超导量子计算的里程碑。</p>
+          <p><strong>现实案例：</strong>图灵机不仅是理论模型——1997年卡斯帕罗夫输给"深蓝"，2016年李世石输给 AlphaGo，本质上都是"可计算性问题"被工程化攻克的结果。而量子计算若走向实用，将直接影响 RSA 加密体系的安全——这正是计算模型演进与普通人生活交汇的节点。</p>
+        </div>
+<h3>深度解读：可计算性、可判定性与计算复杂性</h3>
+<div class="explain">
+          <p><strong>三个层次的问题：</strong>计算理论把问题分成三层。第一层是<strong>可计算性</strong>：存在算法能解决它吗？停机问题是"不可计算"的经典代表；第二层是<strong>可判定性</strong>：在形式化系统内部，命题能否被判定真假？哥德尔1931年的不完备定理与图灵1936年的停机问题互为表里，共同宣告了希尔伯特"判定问题"纲领的失败；第三层是<strong>计算复杂性</strong>：即使可计算，需要多少时间与空间？复杂度类 P（多项式时间可解）与 NP（多项式时间可验证）构成了现代密码学的地基。</p>
+          <p><strong>P vs NP：</strong>直观地说：如果一个问题"验证答案很容易"（NP），是否意味着"找到答案"也不会太难（P）？几乎所有计算机科学家相信 P≠NP，但至今无人证明。若 P=NP，现有加密体系将瞬间崩溃；若 P≠NP，则意味着人类可以放心地把秘密交给算法。2012年，姚期智、多伊奇等共同论证了量子计算与经典复杂度的深刻联系——复杂度理论正从数学走向物理。</p>
+          <p><strong>中国贡献：</strong>姚期智（图灵奖首位华人得主）在伪随机数生成、密码学与通信复杂性上的工作，为现代安全协议提供了理论保证。他2004年全职回到清华大学创建"姚班"，为中国计算机科学培养了大批顶尖人才——从理论到产业的传承，构成了中国计算科学崛起的另一条主线。</p>
+        </div>
+<h3>对照表：三种计算模型</h3>
+<p>图灵机、λ 演算与量子计算分别代表了"机械操作"、"函数抽象"与"量子叠加"三种理解计算的方式。理解它们的差异，是把握计算理论全貌的捷径。</p>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>计算模型</th><th>提出者</th><th>提出时间</th><th>核心思想</th><th>现实对应</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>图灵机</strong></td><td>艾伦·图灵</td><td>1936</td><td>读写头在无限纸带上按状态表操作符号，形式化定义"可计算"</td><td>一切通用电子计算机的理论原型</td></tr>
+              <tr><td><strong>λ 演算</strong></td><td>阿隆佐·丘奇</td><td>1936</td><td>函数抽象与应用两个基本操作，表达全部计算</td><td>Lisp、Haskell 等函数式语言</td></tr>
+              <tr><td><strong>量子计算</strong></td><td>大卫·多伊奇（量子图灵机）</td><td>1985</td><td>量子比特叠加与纠缠，特定问题指数级加速</td><td>中国"九章"光量子计算机、"祖冲之号"超导量子计算机</td></tr>
+            </tbody>
+          </table>
+        </div>
+<h3>计算理论编年表</h3>
+<ul>
+          <li><strong>1936</strong>：图灵发表《论可计算数》，提出图灵机；丘奇发表λ演算，二人共同确立"可计算"的精确含义。</li>
+          <li><strong>1937</strong>：香农在硕士论文《继电器与开关电路的符号分析》中把布尔代数与电路接通——逻辑从此可以"通电"。</li>
+          <li><strong>1945</strong>：冯·诺依曼发表《EDVAC 报告初稿》，系统阐述"存储程序"架构。</li>
+          <li><strong>1949</strong>：英国剑桥大学的 EDSAC 成为第一台完整运行存储程序的计算设备。</li>
+          <li><strong>1965</strong>：摩尔提出"集成电路上晶体管数量约每两年翻一番"的经验定律，此后半个世纪基本应验。</li>
+          <li><strong>1971</strong>：英特尔发布第一颗商用微处理器 4004，计算机开始走向个人化。</li>
+          <li><strong>2000</strong>：姚期智因伪随机数生成、密码学与通信复杂性等贡献获图灵奖，成为首位华人得主。</li>
+          <li><strong>2019–2021</strong>：谷歌宣称"量子霸权"；中国"九章""祖冲之号"两条量子计算路线相继达成里程碑。</li>
+        </ul>
+<h3>概念辨析：什么是"图灵完备"？</h3>
+<div class="explain">
+          <p><strong>定义：</strong>一个计算系统如果能模拟任何图灵机的行为，就称它"图灵完备"（Turing Complete）。图灵完备意味着：只要给它足够的时间和内存，它能计算任何可计算函数。判定标准非常苛刻——但它意外地遍地开花：λ演算、JavaScript、Python、SQL 的递归查询、Excel 的公式系统、电子游戏《我的世界》中的红石电路、《魔兽世界》的宏命令系统，都被证明是图灵完备的。</p>
+          <p><strong>为什么重要：</strong>图灵完备把"表达能力"与"计算能力"挂钩：一门语言只要具备条件分支、循环（或递归）与变量，原则上就能写任何程序。这也解释了为什么"换个语言重写系统"往往只是换件衣服——核心算法复杂度不变。理解图灵完备，就能理解"语言之争"（C 还是 Python？）远没有表面上那么重要：真正重要的是算法与数据结构的选择。</p>
+          <p><strong>边界：</strong>图灵完备也有代价：图灵完备的系统必定能表达停机问题（即无法保证程序终止）。因此验证"程序会不会死循环"原则上是不可能的——这正是形式化验证只能做"近似"的根本原因。</p>
+        </div>
+<h3>思考与延伸</h3>
+<div class="explain">
+          <p>以下问题适合与同学讨论或在计算机科学导论课中展开，均没有标准答案：</p>
+          <ul>
+            <li>如果有一天 P=NP 被证明，你的网上银行密码、区块链和 HTTPS 加密将面临什么？——提示：RSA 与椭圆曲线加密都建立在"分解/离散对数困难"的假设上。</li>
+            <li>杀毒软件能否做到"检测一切病毒"？——提示：把"病毒"定义为任意程序，检测就等价于判定程序行为，而这与停机问题同构。</li>
+            <li>量子计算会"取代"经典计算机吗？——提示：量子加速目前只对少数问题有效；常识推理、数据库事务、交互界面仍由经典计算主导。</li>
+            <li>"图灵测试"在今天还有效吗？——提示：ChatGPT 已能骗过不少人类裁判，但"通过测试"与"真正理解"之间的鸿沟（中文房间论证）依然存在。</li>
+          </ul>
+        </div>
+<div class="callout">
+          <span class="callout-title">延伸视野 · 香农：连接逻辑与信息的"架桥人"</span>
+          <p>克劳德·香农的一生横跨了本卷的两条主线：1937 年，他在硕士论文《继电器与开关电路的符号分析》中证明布尔代数可以直接用电路实现——"逻辑"从此可以通电，这为数字电路奠定了数学基础；1948 年，他发表《通信的数学理论》，创立信息论，用"比特"（bit）量化信息，定义了信息的数学本质。香农还是"学习机器"的早期探索者——他设计的机械老鼠"忒修斯"能"学会"走迷宫，被后世视为最早的"AI 原型"之一。理解香农，就理解了计算理论、硬件与信息科学为何同源。</p>
+        </div>
+<h3>本章术语速查</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>术语</th><th>英文</th><th>一句话解释</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>图灵机</strong></td><td>Turing Machine</td><td>用读写头与无限纸带形式化"可计算"的抽象机器</td></tr>
+              <tr><td><strong>可计算性</strong></td><td>Computability</td><td>某问题是否存在算法求解的性质</td></tr>
+              <tr><td><strong>停机问题</strong></td><td>Halting Problem</td><td>判断任意程序是否终止的不可判定问题</td></tr>
+              <tr><td><strong>λ 演算</strong></td><td>Lambda Calculus</td><td>仅用函数抽象与应用表达全部计算的符号系统</td></tr>
+              <tr><td><strong>丘奇-图灵论题</strong></td><td>Church-Turing Thesis</td><td>一切可计算函数都等价于图灵机可计算的函数</td></tr>
+              <tr><td><strong>P 类问题</strong></td><td>Polynomial Time</td><td>存在多项式时间算法求解的问题类</td></tr>
+              <tr><td><strong>NP 类问题</strong></td><td>Nondeterministic Polynomial</td><td>答案可在多项式时间内验证的问题类</td></tr>
+              <tr><td><strong>量子比特</strong></td><td>Qubit</td><td>可同时处于 0 和 1 叠加态的量子信息单位</td></tr>
+            </tbody>
+          </table>
+        </div>
+</section>
+<section class="sec" id="algo">
+        <h2><span class="chapno">第二章 &middot; 算法与数据结构</span></h2>
+<p>算法是计算机解决问题的步骤。好的算法能让计算机在几秒内完成原本需要几亿年的计算。算法分析的核心是评估算法的效率——时间复杂度和空间复杂度。</p>
+<figure class="diagram">
+          <figcaption>图 2 · 算法核心分类</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["算法"] --> A["排序算法<br>快速·归并·堆"]
+  ROOT --> B["搜索算法<br>二分·BFS·DFS"]
+  ROOT --> C["图算法<br>最短路径·最小生成树"]
+  ROOT --> D["动态规划<br>最优子结构"]
+  ROOT --> E["数据结构"]
+  E --> E1["数组·链表·栈·队列"]
+  E --> E2["树·堆·哈希表"]
+  E --> E3["图"]
+  classDef root fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>算法与数据结构：</strong>算法是计算机科学的核心。'算法+数据结构=程序'——这是计算机科学的基本公式。
+
+**排序算法**是算法的经典入门。快速排序的平均时间复杂度为O(n log n)，是最常用的排序算法之一。
+
+**图算法**：Dijkstra最短路径算法是导航系统的核心。Google Maps使用改进的图算法来计算最优路线。
+
+**中国案例**：中国在算法竞赛中表现优异。2023年，中国选手以绝对优势获得国际信息学奥林匹克竞赛金牌。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">高德纳 · 1938–</div>
+            <blockquote>算法是计算机科学的核心和灵魂。<cite>——《计算机程序设计艺术》</cite></blockquote>
+          </div>
+</div>
+<figure class="diagram">
+          <figcaption>图 2a · 算法设计的五大范式</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["算法设计五大范式"] --> A["分治法<br>Divide and Conquer"]
+  ROOT --> B["动态规划<br>Dynamic Programming"]
+  ROOT --> C["贪心算法<br>Greedy"]
+  ROOT --> D["回溯法<br>Backtracking"]
+  ROOT --> E["分支限界<br>Branch and Bound"]
+  A --> A1["快速排序 · 归并排序<br>二分查找"]
+  B --> B1["最长公共子序列 · 背包问题<br>编辑距离"]
+  C --> C1["霍夫曼编码 · 最小生成树<br>Prim · Kruskal"]
+  D --> D1["八皇后 · 数独求解<br>图的着色"]
+  E --> E1["旅行商问题 · 整数规划<br>最优装载"]
+  classDef root fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 2a 详解：</strong>算法设计不是灵感乍现的玄学，而是一门有章可循的工程科学。五大范式——分治、动态规划、贪心、回溯、分支限界——几乎覆盖了所有经典算法问题的解题套路。掌握范式，等于拿到了算法题的"万能钥匙"。</p>
+          <p><strong>分治法：</strong>把大问题拆成若干规模更小的同类子问题，分别解决后合并结果。快速排序每次选一个基准把数组一分为二，归并排序则把数组对半切开再有序合并——两者都是 O(n log n) 的典范。二分查找每次砍掉一半搜索空间，是分治思想最朴素的应用。分治的威力在于：把指数级的问题空间压缩为对数级或线性对数级的操作。</p>
+          <p><strong>动态规划：</strong>当子问题重叠时，分治会重复计算——动态规划则把每个子问题的答案存下来（备忘录），用空间换时间。背包问题、最长公共子序列、编辑距离（文本差异比较的核心）都是经典案例。动态规划的关键是找到"状态转移方程"：当前结果如何由更小的子问题递推而来。DNA 序列比对、语音识别中的维特比算法、拼写纠错，背后都是动态规划。</p>
+          <p><strong>贪心算法：</strong>每一步都做当前看起来最优的选择，期望局部最优累积为全局最优。霍夫曼编码（数据压缩）、Dijkstra 最短路径、最小生成树的 Prim 与 Kruskal 算法都是贪心的杰作。贪心的迷人之处在于简单高效，危险之处在于并非所有问题都适用——它必须满足"贪心选择性质"与"最优子结构"，否则就会掉进局部最优的陷阱。</p>
+          <p><strong>回溯法与分支限界：</strong>搜索类问题（八皇后、数独、图的着色）需要在解空间中遍历，回溯法"走不通就回头"，是深度优先搜索的典型形态；分支限界则在广度搜索中不断剪掉不可能更优的分支，是求解旅行商问题等组合优化的标准武器。今天的编译器、定理证明器、芯片布线工具，仍在大量使用这两类搜索技术。</p>
+          <p><strong>现实案例：</strong>导航软件的最短路径（百度地图、高德地图）依赖 Dijkstra 及 A* 算法；压缩软件（7-Zip、WinRAR）依赖霍夫曼与 LZ 系列算法；字节跳动的个性化推荐在召回与排序阶段大量运用动态规划与贪心思想——算法范式早已渗透进每个人的手机。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 2b · 数据结构家族图</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["数据结构家族"] --> A["线性结构"]
+  ROOT --> B["树形结构"]
+  ROOT --> C["图结构"]
+  ROOT --> D["散列结构"]
+  ROOT --> E["数据库专用结构"]
+  A --> A1["数组 · 链表"]
+  A --> A2["栈 · 队列"]
+  B --> B1["二叉树 · 二叉搜索树"]
+  B --> B2["堆 · 并查集"]
+  C --> C1["邻接表 · 邻接矩阵"]
+  C --> C2["最短路径 · 最小生成树"]
+  D --> D1["哈希表 · 布隆过滤器"]
+  E --> E1["B+ 树 · LSM 树"]
+  E --> E2["倒排索引"]
+  classDef root fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 2b 详解：</strong>数据结构是算法的"弹药库"：同样是存储一堆数据，选数组还是链表、选二叉树还是哈希表，直接决定程序快慢的百倍千倍之差。"程序 = 算法 + 数据结构"（沃斯）这句话的真正含义是：数据结构决定了算法的可能性空间。</p>
+          <p><strong>线性与树形结构：</strong>数组随机访问快、插入删除慢；链表反之。栈（后进先出）支撑函数调用与浏览器"后退"按钮，队列（先进先出）支撑打印任务与消息系统。树形结构让查找与排序更高效：二叉搜索树 O(log n) 查找，堆（优先队列）是任务调度与 Top-K 问题的利器，并查集则高效处理"连通性"问题——社交网络的"可能认识的人"背后就有它的身影。</p>
+          <p><strong>散列与数据库结构：</strong>哈希表用散列函数把键映射到桶，实现 O(1) 平均查找——Redis 与 Memcached 缓存的核心。布隆过滤器用少量空间判断"元素是否可能存在"，是防止缓存穿透的标准答案。数据库则是数据结构的集大成者：MySQL 的 InnoDB 用 B+ 树支撑范围查询，LSM 树（日志结构合并树）是 RocksDB、TiDB 等写入密集型引擎的选择；Elasticsearch 的倒排索引让全文检索快到毫秒级。</p>
+          <p><strong>现实案例：</strong>阿里巴巴自研的 OceanBase 分布式数据库在 2021 年 TPC-C 基准测试中创造了每秒 7.07 亿次事务处理的纪录，其底层正是 B+ 树、LSM 树与分布式一致性协议的精密组合；微信的十亿级用户消息存储、支付宝的账户流水，都依赖这些结构在"快"与"可靠"之间取得平衡。</p>
+        </div>
+<h3>深度解读：算法分析——大 O 记号与高德纳的《计算机程序设计艺术》</h3>
+<div class="explain">
+          <p><strong>大 O 记号：</strong>算法效率用"输入规模 n 趋于无穷时操作次数的增长阶"来衡量：O(1) 常数、O(log n) 对数、O(n) 线性、O(n log n)、O(n²) 平方、O(2ⁿ) 指数。从 O(n²) 改进到 O(n log n)，意味着数据规模扩大一百倍时，耗时从一万倍降到约两百倍——这就是为什么排序算法的改进能撬动整个软件工业。高德纳（Donald Knuth，中文名高德纳）1968 年起出版的《计算机程序设计艺术》（TAOCP）首次以严格的数学语言系统化算法分析，被比尔·盖茨称为"如果你认为自己真的懂计算机编程，就请读这本书"。</p>
+          <p><strong>算法分析的现实意义：</strong>2000 年前后，Google 用 PageRank 算法（本质上是图上迭代的幂方法）取代了按关键词频次的简单检索，把搜索从 O(n) 的粗糙匹配提升为对全网结构 O(n log n) 量级的排序计算——同样的数据量，算法选择的差异决定了"能用"与"不能用"。如今大模型训练动辄数万亿参数，闪存与 GPU 之间的调度同样是数据结构与算法优化出的空间。</p>
+          <p><strong>中国的算法力量：</strong>中国是算法竞赛强国：在国际大学生程序设计竞赛（ICPC）与信息学奥赛（IOI）中屡获金牌；从 DeepSeek 的 MoE 路由、阿里 PAI 的分布式调度到抖音的编解码算法，中国工程师正把"算法复杂度"优化到极致，用同样的算力服务十倍的用户。</p>
+        </div>
+<h3>对照表：编程语言四大范式</h3>
+<p>编程语言是算法的载体，也是思维方式的镜子：不同的范式教会我们不同的抽象方式。理解范式差异，比学会一门具体语言更重要。</p>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>范式</th><th>核心思想</th><th>典型语言</th><th>代表特性</th><th>典型应用</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>命令式</strong></td><td>按顺序执行指令、修改内存状态</td><td>C、Python、Go</td><td>变量、循环、赋值、指针</td><td>操作系统、系统工具、脚本自动化</td></tr>
+              <tr><td><strong>面向对象</strong></td><td>对象封装状态与行为，通过消息协作</td><td>Java、C++、C#</td><td>类、继承、多态、封装</td><td>大型企业应用、Android、游戏引擎</td></tr>
+              <tr><td><strong>函数式</strong></td><td>纯函数、不可变数据、避免副作用</td><td>Haskell、Lisp、Clojure</td><td>高阶函数、惰性求值、Monad</td><td>并发系统、金融模型、AI 框架底层</td></tr>
+              <tr><td><strong>逻辑式</strong></td><td>声明事实与规则，机器自动推理</td><td>Prolog、Datalog</td><td>回溯、合一（Unification）</td><td>专家系统、自然语言处理、数据库查询优化</td></tr>
+            </tbody>
+          </table>
+        </div>
+<p>补充说明：现代主流语言多为"多范式"——Python 同时支持命令式与面向对象，也吸收了函数式特性；Java 8 起引入 Lambda 表达式。范式之间并非对立，而是不同场景下的不同"思维工具"。</p>
+<h3>算法与数据结构编年表</h3>
+<ul>
+          <li><strong>1945</strong>：冯·诺依曼提出合并排序（Merge Sort），这个方案直到今天仍是工业界排序的基石。</li>
+          <li><strong>1958</strong>：麦卡锡发明 Lisp，链表结构成为"列表处理语言"的天然伴侣。</li>
+          <li><strong>1959–1962</strong>：Dijkstra 提出最短路径算法；霍尔提出快速排序（QuickSort）；克努特与普拉特等提出 KMP 字符串匹配。</li>
+          <li><strong>1968</strong>：高德纳《计算机程序设计艺术》第一卷出版，算法分析成为一门严格学科。</li>
+          <li><strong>1970</strong>：科德提出关系数据模型，为关系数据库（Oracle、MySQL）奠定数学基础。</li>
+          <li><strong>1972</strong>：里奇在贝尔实验室开发 C 语言；两年后 Unix 用 C 重写，操作系统走向可移植。</li>
+          <li><strong>1985</strong>：Tarjan 等发明斐波那契堆、并查集路径压缩分析，图算法理论渐趋完备。</li>
+          <li><strong>2021</strong>：阿里巴巴 OceanBase 以每秒 7.07 亿次事务处理刷新 TPC-C 世界纪录——数据库结构工程的巅峰展示。</li>
+        </ul>
+<h3>概念辨析：排序算法的复杂度全景</h3>
+<div class="explain">
+          <p><strong>为什么都学排序：</strong>排序是算法设计的"磨刀石"——冒泡、选择、插入（O(n²)）教会初学者基础操作；希尔排序展示增量思想的魅力；归并、快速、堆排序（O(n log n)）是分治与堆结构的典范；计数、基数排序（O(n+k)）则揭示"以空间换时间"的另一种思路。没有任何一个问题像排序这样，把复杂度分析、数据结构与工程权衡完整地串联起来。</p>
+          <p><strong>几个常被误解的事实：</strong>快速排序的平均复杂度是 O(n log n)，但最坏情况是 O(n²)——为此现代实现（如 C++ 的 std::sort）会在退化时切换为堆排序；归并排序稳定但需要 O(n) 额外空间；堆排序原地完成但不稳定。稳定性（相等元素保持原相对顺序）在数据库排序、股票成交顺序等场景中是硬需求——所以 Java 的 Arrays.sort 对对象使用稳定的归并排序（TimSort）。</p>
+          <p><strong>现实注脚：</strong>Python 的 sort 与 Java 的 TimSort 都源于 Tim Peters 2002 年为 Python 设计的混合排序（插入排序 + 归并排序），利用真实数据"近似有序"的特点做到接近 O(n) 的最优表现——算法工程的价值不在于发明新理论，而在于把理论裁剪到现实数据的形状上。</p>
+        </div>
+<h3>思考与延伸</h3>
+<div class="explain">
+          <p>以下问题适合编程实践后在小组中讨论：</p>
+          <ul>
+            <li>为什么哈希表的平均查找是 O(1)？最坏情况呢？——提示：散列冲突（如"哈希碰撞攻击"）可把哈希表退化回链表，Java 的 HashMap 因此引入红黑树兜底。</li>
+            <li>什么情况下贪心算法会"翻车"？——提示：0-1 背包问题用贪心按价值密度排序并不总能得到最优解，而分数背包问题却可以。</li>
+            <li>抖音的推荐"为什么刷不完"？——提示：推荐系统是"召回（候选生成，常用向量检索与协同过滤）—排序（深度模型打分）—重排（多样性、去重）"三层流水线，每层都是数据结构与算法的组合。</li>
+            <li>如果让你为十亿条记录设计查询，你会选 B+ 树还是哈希索引？——提示：B+ 树擅长范围查询与顺序遍历，哈希索引只有精确匹配时最快——这决定了 MySQL 与 Redis 的分工。</li>
+          </ul>
+        </div>
+<div class="callout">
+          <span class="callout-title">延伸视野 · 高德纳：为排版算法而发明 TeX</span>
+          <p>高德纳写《计算机程序设计艺术》（TAOCP）时，出版商无法排印其中的数学符号——于是他干脆自己设计了一套排版系统 TeX（1978 年起，历经十年打磨）。TeX 至今仍是学术界排印论文的事实标准，高德纳为此悬赏：任何人发现 TeX 的 bug，奖励 1.024 美元（2 的 10 次方分）。他还提出"文学化编程"（Literate Programming）：程序应当首先为人类可读而写。冷知识：TAOCP 计划写七卷，从 1968 年写到今天仍未完成——因为算法世界的知识增长，始终跑在作者的前面。</p>
+        </div>
+<h3>本章术语速查</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>术语</th><th>英文</th><th>一句话解释</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>时间复杂度</strong></td><td>Time Complexity</td><td>算法耗时随输入规模增长的变化趋势</td></tr>
+              <tr><td><strong>大 O 记号</strong></td><td>Big-O Notation</td><td>刻画算法操作次数增长上界的数学记号</td></tr>
+              <tr><td><strong>分治法</strong></td><td>Divide &amp; Conquer</td><td>拆分—求解—合并的经典解题范式</td></tr>
+              <tr><td><strong>动态规划</strong></td><td>Dynamic Programming</td><td>用备忘录消除重叠子问题的重复计算</td></tr>
+              <tr><td><strong>贪心算法</strong></td><td>Greedy Algorithm</td><td>每步取局部最优、期望累积为全局最优</td></tr>
+              <tr><td><strong>B+ 树</strong></td><td>B+ Tree</td><td>数据库最常用的多路平衡搜索树索引</td></tr>
+              <tr><td><strong>哈希表</strong></td><td>Hash Table</td><td>通过散列函数实现 O(1) 平均查找的键值结构</td></tr>
+              <tr><td><strong>倒排索引</strong></td><td>Inverted Index</td><td>从词项映射到文档列表的全文检索结构</td></tr>
+            </tbody>
+          </table>
+        </div>
+</section>
+<section class="sec" id="ai">
+        <h2><span class="chapno">第三章 &middot; 人工智能与机器学习</span></h2>
+<p>人工智能是计算机科学中最激动人心的领域。从1956年达特茅斯会议到2023年大语言模型的爆发，AI正在重塑每一个行业。但AI也带来了深刻的伦理挑战——偏见、隐私、工作岗位替代、以及更远的'对齐问题'。</p>
+<figure class="diagram">
+          <figcaption>图 3 · AI 的谱系</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["人工智能"] --> A["符号主义<br>专家系统·逻辑推理"]
+  ROOT --> B["机器学习<br>监督·无监督·强化"]
+  ROOT --> C["深度学习<br>CNN·RNN·Transformer"]
+  ROOT --> D["大语言模型<br>GPT·BERT·LLaMA"]
+  B --> C
+  C --> D
+  D --> E["AGI<br>通用人工智能"]
+  A --> F["AI伦理<br>偏见·安全·对齐"]
+  D --> F
+  classDef root fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>人工智能的突破：</strong>AI经历了两次'寒冬'和三次'春天'。
+
+**深度学习革命**：2012年AlexNet在ImageNet竞赛中大幅领先，开启了深度学习时代。
+
+**大语言模型**：GPT-3（2020）展示了惊人的语言生成能力，ChatGPT（2022）成为史上最快达到1亿用户的应用程序。
+
+**中国案例**：中国在AI领域处于全球领先行列。百度文心一言、阿里通义千问、字节豆包、清华智谱等大模型各有特色。中国在AI专利数量和论文引用量方面均居世界前列。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">明斯基 · 1927–2016</div>
+            <blockquote>人工智能是让计算机做那些需要人类智能才能做的事情。<cite>——明斯基</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">辛顿 · 1947–</div>
+            <blockquote>深度学习是人工智能的未来。<cite>——辛顿</cite></blockquote>
+          </div>
+</div>
+<figure class="diagram">
+          <figcaption>图 3a · 人工智能的三次浪潮与机器学习三大流派</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["人工智能"] --> A["第一次浪潮<br>1956–1974 · 符号主义"]
+  ROOT --> B["第二次浪潮<br>1980–1995 · 知识工程"]
+  ROOT --> C["第三次浪潮<br>2006– · 深度学习"]
+  ROOT --> D["机器学习三大流派"]
+  D --> D1["监督学习<br>分类 · 回归"]
+  D --> D2["无监督学习<br>聚类 · 降维"]
+  D --> D3["强化学习<br>试错 · 奖励"]
+  A --> A1["达特茅斯会议 · 逻辑推理<br>跳棋程序 · 通用问题求解器"]
+  B --> B1["反向传播 · 决策树<br>专家系统商业化"]
+  C --> C1["AlexNet · Transformer<br>GPT · 文心一言 · DeepSeek"]
+  classDef root fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 3a 详解：</strong>人工智能的历史不是一条直线，而是"春天—寒冬—春天"的螺旋。三次浪潮对应三次技术范式的更替：符号推理、统计学习、深度学习。理解浪潮的起落，才能理解今天大模型为何"突然"爆发。</p>
+          <p><strong>第一次浪潮（1956–1974）：</strong>1956年达特茅斯会议正式命名"人工智能"。麦卡锡、明斯基、香农等人相信：智能可以还原为符号操作。纽厄尔与西蒙的"逻辑理论家"程序证明了定理，通用问题求解器（GPS）试图模拟人脑解题。但棋类游戏的组合爆炸与机器翻译的失败（1957年"心有余而力不足"被翻译成"精神是愿意的，但是肉是弱的"）让乐观破灭，1974年前后欧美政府大幅削减经费，第一次"AI寒冬"到来。</p>
+          <p><strong>第二次浪潮（1980–1995）：</strong>专家系统让 AI 第一次"赚钱"：DEC 公司的 XCON 系统每年节省数千万美元。日本 1981 年启动第五代计算机计划，欧美随之跟进。但知识获取的瓶颈——把专家经验一条条手工编码——最终让第二代 AI 再度停滞。值得注意的是：1986年辛顿等人把反向传播算法推广到多层神经网络，1989年吴恩达等人的卷积网络已能识别手写数字，这些被主流忽视的种子，将在二十年后发芽。</p>
+          <p><strong>第三次浪潮（2006–）：</strong>深度学习三巨头辛顿、本吉奥、勒昆从 2006 年起让深层网络变得可训练。2012年 AlexNet 在 ImageNet 竞赛上以碾压性优势夺冠，GPU 算力、大数据与算法三者共振。2017年"注意力机制"论文《Attention Is All You Need》提出 Transformer，从此语言模型走上尺度扩张之路：GPT-3（2020）、ChatGPT（2022）、以及中国阵营的文心一言、通义千问、DeepSeek、豆包、GLM 相继登场。2023 年 DeepSeek 以远低于同行的成本训练出高性能模型，2024 年更以"DeepSeek-R1"展示了强化学习驱动的推理能力，震动全球。</p>
+          <p><strong>机器学习三大流派：</strong>无论浪潮如何更替，机器学习的方法论始终是三大流派：监督学习（从带标签数据学习映射，支撑图像识别与语音识别）、无监督学习（从无标签数据发现结构，支撑推荐与异常检测）、强化学习（在与环境的试错中最大化奖励，支撑游戏与机器人）。AlphaGo 击败李世石，正是监督学习+强化学习+深度网络的合奏。</p>
+          <p><strong>现实案例：</strong>旷视与商汤的人脸识别（监督学习）、抖音的信息流推荐（无监督协同过滤与深度排序）、腾讯"绝悟"与 OpenDILab 在电竞中的强化学习、百度 Apollo 与小马智行的自动驾驶——中国 AI 产业在三大流派的每个赛道都有世界级应用。</p>
+        </div>
+<h3>深度解读：AI 的伦理困境——从图灵测试到对齐问题</h3>
+<div class="explain">
+          <p><strong>图灵测试的遗产：</strong>1950年，图灵在《计算机器与智能》中提出"模仿游戏"：如果一台机器能让人类裁判无法区分它与真人的对话，就应认为它能"思考"。图灵测试把哲学问题（机器能否思考）转化为可操作的行为标准。但哲学家塞尔 1980 年提出"中文房间"思想实验：一个不懂中文的人按规则手册操纵符号，也能"通过"中文测试——符号操作不等于理解。这一争论至今未决：大语言模型到底是在"理解"语言，还是在"操纵"符号？</p>
+          <p><strong>偏见、隐私与滥用：</strong>训练数据中的历史偏见会被模型放大——招聘系统可能歧视女性，司法辅助系统可能误判少数族裔。中国的《生成式人工智能服务管理暂行办法》（2023）与欧盟《人工智能法案》（2024）都试图为 AI 立规。技术中立论已经过时：算法本身就是价值观的载体。</p>
+          <p><strong>对齐问题：</strong>所谓"对齐"，就是让 AI 的目标与人类价值观一致。辛顿 2023 年辞去谷歌职务公开警告 AI 风险，2024 年他与霍普菲尔德因"用物理学方法训练人工神经网络"获得诺贝尔物理学奖——这既是肯定，也是警示。今天，AI 安全已成为独立的研究领域：可解释性、红队测试、宪法 AI、可控性研究，都在回答同一个问题：我们能否造出既强大又安全的智能？</p>
+        </div>
+<h3>对照表：机器学习三大流派</h3>
+<p>三大流派的本质区别在于"学习的信号从哪来"：来自标签、来自数据自身结构，还是来自环境的奖励。这是选择算法路线时的第一判断。</p>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>流派</th><th>数据要求</th><th>学习方式</th><th>典型算法</th><th>应用场景</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>监督学习</strong></td><td>带标签的数据（输入-输出对）</td><td>从样本学习输入到输出的映射</td><td>线性回归、SVM、随机森林、CNN、Transformer</td><td>图像识别、语音识别、机器翻译、信用风控</td></tr>
+              <tr><td><strong>无监督学习</strong></td><td>无标签数据</td><td>发现数据内在结构与分布</td><td>K-means、PCA、自编码器、生成对抗网络</td><td>用户画像、异常检测、推荐系统、数据降维</td></tr>
+              <tr><td><strong>强化学习</strong></td><td>环境交互 + 奖励信号（无需标签）</td><td>试错中最大化长期累积奖励</td><td>Q-learning、DQN、PPO、AlphaGo 系</td><td>游戏 AI、机器人控制、自动驾驶、量化交易</td></tr>
+            </tbody>
+          </table>
+        </div>
+<p>中国实践注脚：商汤、旷视的计算机视觉以监督学习为主；阿里巴巴的"猜你喜欢"深度结合无监督与监督排序；腾讯"绝悟"、小马智行与百度 Apollo 则将强化学习推向真实世界。</p>
+<h3>人工智能编年表</h3>
+<ul>
+          <li><strong>1950</strong>：图灵发表《计算机器与智能》，提出"模仿游戏"（后称图灵测试）。</li>
+          <li><strong>1956</strong>：达特茅斯会议召开，"人工智能"一词诞生。</li>
+          <li><strong>1986</strong>：辛顿等发表《通过反向传播算法的学习表征》，多层神经网络的训练问题被解决。</li>
+          <li><strong>1997</strong>：IBM 深蓝击败国际象棋世界冠军卡斯帕罗夫。</li>
+          <li><strong>2012</strong>：AlexNet 在 ImageNet 竞赛夺冠，深度学习时代开启。</li>
+          <li><strong>2016</strong>：AlphaGo 以 4:1 战胜围棋世界冠军李世石；次年"绝艺"（腾讯）与"星阵"等中国围棋 AI 相继登场。</li>
+          <li><strong>2017</strong>：谷歌团队发表《Attention Is All You Need》，Transformer 架构问世。</li>
+          <li><strong>2022</strong>：ChatGPT 发布，60 天月活破亿，成为史上增长最快的消费应用。</li>
+          <li><strong>2023–2024</strong>：DeepSeek、文心一言、通义千问、豆包、GLM 等国产大模型密集发布；中国出台《生成式人工智能服务管理暂行办法》；辛顿获诺贝尔物理学奖。</li>
+        </ul>
+<h3>概念辨析：人工智能、机器学习、深度学习与生成式 AI</h3>
+<div class="explain">
+          <p><strong>层层嵌套的四个概念：</strong>人工智能（AI）是最大圈层——让机器表现智能的一切研究，1956 年诞生，早期以符号推理为主；机器学习（ML）是 AI 的子集——不写死规则，而是从数据中自动学出规则，包括监督、无监督、强化三大流派；深度学习（DL）是机器学习的一个分支——用多层神经网络自动学习特征表示，2012 年后成为主流；生成式 AI（GenAI）则是深度学习在内容生成上的应用——根据提示生成文本、图像、音频、视频，GPT、文生图模型（如 Stable Diffusion）、Sora 都属于这一层。</p>
+          <p><strong>为什么容易混淆：</strong>媒体常把"AI"当"大模型"的同义词，但专家系统、机器人控制、知识图谱同样属于 AI；而大模型（LLM）只是生成式 AI 的一类。辨清层级，有助于判断一条新闻的分量：是"AI 的进步"还是"深度学习在某任务上的进步"——两者的意义大不相同。</p>
+          <p><strong>与中国产业的对应：</strong>AI 层：科大讯飞语音、海康威视视觉；机器学习层：蚂蚁集团风控、字节推荐；深度学习层：商汤、旷视、地平线；生成式 AI 层：文心一言、通义千问、DeepSeek、Kimi（月之暗面）、MiniMax——中国在每一层都有世界级玩家。</p>
+        </div>
+<h3>思考与延伸</h3>
+<div class="explain">
+          <p>以下问题适合在读书会或课堂辩论中讨论：</p>
+          <ul>
+            <li>大语言模型"理解"语言吗？——提示：参考塞尔"中文房间"论证；也可以对比"统计关联"与"因果理解"（大模型在反事实推理上常失败）。</li>
+            <li>训练数据有偏见，模型能"不偏"吗？——提示：去偏（debiasing）技术只能缓解无法根除；关键问题是"谁来定义公平"。</li>
+            <li>AI 会取代哪些职业？——提示：历史上"电梯操作员""打字员"曾消失，但"程序员"这类把需求翻译成系统的岗位，短期内更像被 AI 增强而非取代。</li>
+            <li>如果你的照片被用于训练人脸识别系统，需要你的同意吗？——提示：个人信息保护法（2021）与《生成式人工智能服务管理暂行办法》都涉及数据合规，可检索具体条款。</li>
+          </ul>
+        </div>
+<div class="callout">
+          <span class="callout-title">延伸视野 · AlphaGo 之后：中国的围棋与游戏 AI</span>
+          <p>2016 年 AlphaGo 以 4:1 战胜李世石、2017 年以 3:0 完胜当时的世界第一柯洁，围棋 AI 的传奇迅速从 DeepMind 扩展到中国。腾讯的"绝艺"（FineArt）2017 年在日本 UEC 杯世界计算机围棋大赛中夺冠；商汤科技的"绝悟"（SenseDota）转战电子竞技，在《王者荣耀》职业测试中达到顶尖人类水平。围棋 AI 背后的技术组合——蒙特卡洛树搜索 + 深度神经网络——随后被 AlphaZero 推广为"通用游戏智能"，并启发了 2024 年 DeepSeek-R1 用强化学习让大模型学会"深度思考"。AI 的棋局，从棋盘走向了现实世界。</p>
+        </div>
+<h3>本章术语速查</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>术语</th><th>英文</th><th>一句话解释</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>神经网络</strong></td><td>Neural Network</td><td>多层参数化非线性函数的组合，可逼近任意连续函数</td></tr>
+              <tr><td><strong>反向传播</strong></td><td>Backpropagation</td><td>利用链式法则从输出向输入逐层计算梯度的训练算法</td></tr>
+              <tr><td><strong>过拟合</strong></td><td>Overfitting</td><td>模型记住了训练样本却在新数据上表现差</td></tr>
+              <tr><td><strong>Transformer</strong></td><td>Transformer</td><td>基于自注意力机制、可并行训练的深度网络架构</td></tr>
+              <tr><td><strong>大语言模型</strong></td><td>LLM</td><td>在海量文本上预训练、按提示生成文本的巨型模型</td></tr>
+              <tr><td><strong>强化学习</strong></td><td>Reinforcement Learning</td><td>智能体与环境试错互动、最大化累积奖励</td></tr>
+              <tr><td><strong>图灵测试</strong></td><td>Turing Test</td><td>以对话能否混淆人类裁判来判定机器"智能"的测试</td></tr>
+              <tr><td><strong>对齐</strong></td><td>Alignment</td><td>让 AI 的目标与人类价值观保持一致</td></tr>
+            </tbody>
+          </table>
+        </div>
+</section>
+<section class="sec" id="future">
+        <h2><span class="chapno">第四章 &middot; 总结：计算的未来</span></h2>
+<p>计算机科学从数学逻辑中诞生，经过硬件革命、软件革命、互联网革命、AI革命，正在进入一个全新的时代。理解计算思维——抽象、分解、算法、模式识别——已经成为21世纪的基本素养。</p>
+<figure class="diagram">
+          <figcaption>图 4 · 计算机科学思想谱系</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["计算理论<br>图灵·哥德尔"] --> B["硬件革命<br>冯·诺依曼·集成电路"]
+  B --> C["软件革命<br>操作系统·互联网"]
+  C --> D["AI革命<br>深度学习·大模型"]
+  D --> E["未来<br>量子计算·AGI·脑机"]
+  classDef root fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class E root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>计算机科学的未来：</strong>计算机科学的发展远未结束。
+
+**量子计算**：利用量子叠加和纠缠原理，可能在特定问题上实现指数级加速。
+
+**脑机接口**：Neuralink等公司正在探索直接连接大脑和计算机的可能性。
+
+**AGI**：通用人工智能——能够像人类一样学习和推理的AI——是许多AI研究者的终极目标。
+
+**跨辑关联**：本卷与数学思想、逻辑与论证、科技与AI、传播与媒介密切关联。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">维纳 · 1894–1964</div>
+            <blockquote>我们改变世界的方式，最终将改变我们自己。<cite>——《控制论》</cite></blockquote>
+          </div>
+</div>
+<figure class="diagram">
+          <figcaption>图 4a · 计算的未来：量子 · 神经形态 · AI 安全</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["计算的未来"] --> A["量子计算<br>叠加 · 纠缠 · 量子霸权"]
+  ROOT --> B["神经形态计算<br>存算一体 · 类脑芯片"]
+  ROOT --> C["AI 安全与对齐<br>可控 · 可解释"]
+  ROOT --> D["脑机接口<br>脑机融合"]
+  ROOT --> E["生物与光计算<br>DNA 计算 · 光子芯片"]
+  A --> A1["九章 · 祖冲之号<br>IBM · Google"]
+  B --> B1["清华类脑芯片<br>天机芯片"]
+  C --> C1["对齐问题 · 价值对齐<br>AI 治理 · 立法"]
+  D --> D1["康复医疗 · 意念打字"]
+  E --> E1["光子计算 · 低功耗"]
+  classDef root fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 4a 详解：</strong>计算机科学的未来不是单一方向，而是多条技术路线并行狂奔。量子计算突破经典物理的极限，神经形态计算向大脑学习，AI 安全为技术装上刹车，脑机接口打通人与机器的边界，生物与光计算则寻找硅基之外的介质。</p>
+          <p><strong>量子计算的产业竞赛：</strong>中国已建成"九章"（光量子）与"祖冲之号"（超导）两条技术路线，2024 年"祖冲之三号"把超导量子比特扩展到 105 比特并刷新随机电路采样纪录；IBM、Google 与微软同样在押注容错量子计算。业界共识是：量子计算不会替代经典计算机，而是与之协同——在密码破解、药物分子模拟、材料设计等特定问题上提供指数级加速。</p>
+          <p><strong>神经形态与类脑芯片：</strong>冯·诺依曼架构中"算"与"存"分离，造成"内存墙"瓶颈；神经形态计算把存储与计算融合在神经元/突触结构中。清华大学施路平团队 2019 年发布"天机"类脑芯片，是首个同时支持脉冲神经网络与人工神经网络的异构融合芯片，登上了《自然》杂志封面。存算一体、忆阻器、光互连——硬件正在向大脑的架构靠拢。</p>
+          <p><strong>AI 安全与治理：</strong>随着大模型能力逼近人类水平，"对齐"已从学术话题上升为国家战略。中国发布《生成式人工智能服务管理暂行办法》（2023）、《人工智能安全治理框架》（2024），与美国、欧盟一道探索 AI 治理的全球规则。技术越强大，"安全"越不是附加项，而是第一性约束。</p>
+          <p><strong>脑机接口：</strong>Neuralink 于 2024 年完成首例人体植入，患者用意念玩电子游戏；中国"北脑二号"（2024）在高精度运动解码方面达到国际领先水平，2023 年宣武医院团队实现国内首例高通量柔性脑机接口手术。脑机接口短期目标是瘫痪患者的康复，远期则指向"人机融合"这一深刻议题。</p>
+          <p><strong>现实案例：</strong>从神威·太湖之光（全球首台全国产处理器超算，2016-2017 年连续两届 Top500 榜首）、天河三号的原型验证，到开源鸿蒙（OpenHarmony）构建的国产基础软件生态、华为昇腾 910B 提供的国产大模型算力，中国正在量子、超算、芯片、系统软件、AI 应用的全链条上参与"计算的未来"的定义。</p>
+        </div>
+<h3>深度解读：计算思维——21 世纪的基本素养</h3>
+<div class="explain">
+          <p><strong>什么是计算思维：</strong>2006 年，卡内基梅隆大学周以真教授提出"计算思维"（Computational Thinking）概念：用计算机科学的概念来解决问题、设计系统、理解人类行为。它包含四大支柱——<strong>抽象</strong>（忽略无关细节，抓住问题本质）、<strong>分解</strong>（把大问题拆成可处理的小问题）、<strong>算法设计</strong>（把解决步骤形式化）、<strong>模式识别</strong>（从经验中发现规律并复用）。计算思维不是"学会编程"，而是"像计算机科学家一样思考"——它适用于任何需要精确表达与系统分析的领域。</p>
+          <p><strong>从图灵到今天的百年回望：</strong>1936 年图灵写下《论可计算数》时，没有人想到那个"纸带机器"会孕育出改变世界的产业。今天，从扫码支付、精准导航、机器翻译到疫苗研发中的蛋白质结构预测（AlphaFold），计算已经渗透进人类生活的每一个毛孔。计算机科学的每一次跃迁——理论、硬件、软件、网络、AI——都在把"不可能"变成"日常"。</p>
+          <p><strong>给读者的建议：</strong>学习计算机科学，最重要的是理解三件事：第一，计算是有边界的（可计算性），理解边界才能避免徒劳；第二，效率是分层的（复杂性），理解复杂度才能做出取舍；第三，工具会过时，但思想长存——图灵机、冯·诺依曼架构、图算法、机器学习，这些"思想的骨架"会以各种形态在未来延续。这正是"思想图谱系列"编撰本卷的初衷。</p>
+        </div>
+<h3>计算的未来编年表</h3>
+<ul>
+          <li><strong>2006</strong>：周以真在《ACM 通讯》发表《计算思维》，把计算思维推向通识教育。</li>
+          <li><strong>2016</strong>：神威·太湖之光以全部国产处理器登顶全球超算 Top500 榜首。</li>
+          <li><strong>2019</strong>：清华大学"天机"类脑芯片登上《自然》封面；谷歌宣称实现"量子霸权"。</li>
+          <li><strong>2020–2021</strong>：中国"九章"光量子计算机与"祖冲之号"超导量子计算机相继达成里程碑。</li>
+          <li><strong>2023</strong>：开源鸿蒙（OpenHarmony）发布至 4.0 版本，国产基础软件生态成形。</li>
+          <li><strong>2024</strong>："祖冲之三号"实现 105 比特超导量子计算；中国"北脑二号"实现高精度运动解码；DeepSeek 以低成本高性能震动全球 AI 界。</li>
+        </ul>
+<h3>概念辨析：三种"计算机架构"的对话</h3>
+<div class="explain">
+          <p><strong>冯·诺依曼架构：</strong>程序与数据共享内存、CPU 逐条取指执行——通用、成熟、软件生态庞大，但"内存墙"（处理器与内存速度差距拉大）与"功耗墙"（晶体管微缩逼近物理极限）两大瓶颈日益凸显。</p>
+          <p><strong>神经形态架构：</strong>模拟大脑的神经元-突触结构，存储与计算融合在硬件中（存算一体），以脉冲（spike）驱动、事件驱动的方式工作，功耗仅为传统芯片的百分之一量级。它并非为"取代冯·诺依曼"而生，而是为感知、控制等"脑型任务"提供专用加速——如同 GPU 之于图形、NPU 之于神经网络。</p>
+          <p><strong>量子架构：</strong>用量子比特的叠加与纠缠并行演算，理论速度在特定问题上指数级超越经典机；但它需要极低温环境、纠错开销巨大，且只能处理量子算法（Shor 分解、Grover 搜索等）能表达的问题。三种架构的关系不是"替代"，而是"分工"——经典机管通用逻辑，神经形态管感知决策，量子机管特定难题。</p>
+          <p><strong>现实意义：</strong>华为昇腾 NPU、寒武纪芯片是"冯·诺依曼+AI 加速"的中间形态；清华天机与英特尔 Loihi 是神经形态的代表；九章与祖冲之号则是量子路线的事实标准。理解三种架构的分工，就能读懂未来十年芯片产业的大部分新闻。</p>
+        </div>
+<h3>思考与延伸</h3>
+<div class="explain">
+          <p>站在全卷的终点回望，四个问题值得持续追问：</p>
+          <ul>
+            <li>如果量子计算成熟，"后量子密码"（格密码、多变量密码）会成为新一代安全底座吗？——提示：美国 NIST 已于 2024 年发布首批后量子密码标准。</li>
+            <li>脑机接口从"康复工具"走向"增强工具"的边界在哪里？——提示：可参考伦理学界关于"认知自由"的讨论。</li>
+            <li>普通人如何练习"计算思维"？——提示：从"把日常问题写成步骤清单"开始——抽象出输入、输出与约束，就是算法设计的起点。</li>
+            <li>计算机科学之外，还有哪些"思想图谱"与本卷形成呼应？——提示：数学思想（可计算性的数学根源）、逻辑与论证（布尔代数与推理）、科技与AI（技术伦理）、心理学（认知与学习）——建议对照阅读本系列相应辑目。</li>
+          </ul>
+        </div>
+<div class="callout">
+          <span class="callout-title">延伸视野 · 摩尔定律的黄昏与"后摩尔时代"</span>
+          <p>摩尔定律（1965）曾是半导体产业的节拍器：晶体管尺寸每两年减半，性能翻倍，成本减半。但晶体管已逼近原子尺度，单纯"缩小"难以为继。后摩尔时代的三条路径正在成形：<strong>先进封装</strong>（Chiplet 小芯片组合，把多个异构 die 拼成一台"计算机"）、<strong>异构计算</strong>（CPU+GPU+NPU 分工协作）、<strong>新器件</strong>（碳纳米管、忆阻器、光子计算）。中国在这一转型中已占得先机：长电科技、通富微电的先进封装位居全球前列，华为昇腾、寒武纪等国产 AI 芯片持续迭代——硬件革命正从"尺寸竞赛"转向"架构竞赛"。</p>
+        </div>
+<h3>本章术语速查</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>术语</th><th>英文</th><th>一句话解释</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>存算一体</strong></td><td>Compute-in-Memory</td><td>在存储介质中直接完成计算，突破"内存墙"瓶颈</td></tr>
+              <tr><td><strong>神经形态计算</strong></td><td>Neuromorphic Computing</td><td>模拟大脑神经元-突触结构的事件驱动计算范式</td></tr>
+              <tr><td><strong>量子霸权</strong></td><td>Quantum Supremacy</td><td>量子计算机在特定任务上超越最强经典计算机</td></tr>
+              <tr><td><strong>脑机接口</strong></td><td>Brain-Computer Interface</td><td>大脑与外部设备之间直接通信的通道</td></tr>
+              <tr><td><strong>计算思维</strong></td><td>Computational Thinking</td><td>抽象、分解、算法设计、模式识别的思维方式</td></tr>
+              <tr><td><strong>后量子密码</strong></td><td>Post-Quantum Crypto</td><td>设计为抵抗量子计算机攻击的新一代密码体制</td></tr>
+              <tr><td><strong>Chiplet</strong></td><td>Chiplet</td><td>将多个小芯片通过先进封装组合成大规模处理器</td></tr>
+              <tr><td><strong>开源鸿蒙</strong></td><td>OpenHarmony</td><td>华为捐献给开放原子开源基金会的国产操作系统底座</td></tr>
+            </tbody>
+          </table>
+        </div>
+</section>
+
+    <section class="sec">
+      <h2>关联辑目</h2>
+      <div class="explain">
+        <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+        <ul>
+<li><span class="rel-link" data-vol="vol16">数学思想</span></li>
+<li><span class="rel-link" data-vol="vol22">逻辑与论证思想谱系</span></li>
+<li><span class="rel-link" data-vol="vol18">科技与AI思想谱系</span></li>
+<li><span class="rel-link" data-vol="vol6">心理学思想谱系</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      计算机科学 · 思想图谱系列第36辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-06
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+(function() {
+  if (window.mermaid) {
+    mermaid.initialize({
+      startOnLoad: true, theme: 'neutral', securityLevel: 'loose',
+      flowchart: { curve: 'basis', htmlLabels: true },
+      fontFamily: 'Segoe UI, PingFang SC, Microsoft YaHei, sans-serif'
+    });
+  }
+
+  var input = document.getElementById('searchInput');
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.sec'));
+  var tocLinks = Array.prototype.slice.call(document.querySelectorAll('#toc a'));
+
+  function applyFilter() {
+    var q = (input.value || '').trim().toLowerCase();
+    sections.forEach(function (sec) {
+      var hit = !q || sec.textContent.toLowerCase().indexOf(q) !== -1;
+      sec.classList.toggle('hidden-by-search', !hit);
+    });
+    tocLinks.forEach(function (a) {
+      var id = a.getAttribute('href').slice(1);
+      var sec = document.getElementById(id);
+      var visible = sec && !sec.classList.contains('hidden-by-search');
+      a.style.opacity = visible ? '' : '0.35';
+    });
+  }
+
+  if (input) { input.addEventListener('input', applyFilter); }
+})();
+</script>
+</body>
+</html>

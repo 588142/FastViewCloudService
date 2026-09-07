@@ -1,0 +1,97 @@
+﻿
+===== 心理学思想谱系.html =====
+  ✓ 标签闭合平衡
+  [JS引用缺元素] ['dprime-slider', 'dprime-value', 'replay-btn']
+  #chart-psych-emotion: 高度OK (父级inline)
+  #chart-psych-learning: 高度OK (父级inline)
+  #chart-psych-roc: 高度OK (父级inline)
+  #psych-chart-icc: 高度OK (inline)
+  #psych-chart-methods: 高度OK (inline)
+  #psych-chart-pvalue: 高度OK (inline)
+  #psych-threejs-container: 高度OK (inline)
+  #threejs-connectome: 高度OK (inline)
+  #threejs-irt: 高度OK (inline)
+  #viz-psych-3d: 高度OK (inline)
+  #viz-psych-stages: 高度OK (inline)
+  ✓ 所有可视化容器高度有效
+
+===== 数学思想谱系.html =====
+  ✓ 标签闭合平衡
+  [JS引用缺元素] ['limit-status', 'reset-limit-btn']
+  #chart-math-functions: 高度OK (父级inline)
+  #chart-math-limit: 高度OK (父级inline)
+  #math-chart-methods: 高度OK (inline)
+  #math-chart-pnp: 高度OK (inline)
+  #math-chart-settheory: 高度OK (inline)
+  #math-threejs-container: 高度OK (inline)
+  #phd-three-hott: 高度OK (.phd-three-container)
+  #phd-three-settheory: 高度OK (.phd-three-container)
+  #viz-math-3d: 高度OK (inline)
+  #viz-math-transform: 高度OK (inline)
+  ✓ 所有可视化容器高度有效
+
+===== 真理的多维图景.html =====
+  ✓ 标签闭合平衡
+  [#canvas-m5: 无高度!]
+  [#chart-m2: 无高度!]
+  [#chart-m4: 无高度!]
+  #paradigm-shift-3d: 高度OK (inline)
+  [#three-container-d5: 无高度!]
+  [#three-container-d7: 无高度!]
+  [#three-container-m1: 无高度!]
+  #truth-curve-chart: 高度OK (父级inline)
+  #truth-space-3d: 高度OK (inline)
+  #truth-spectrum-chart: 高度OK (父级inline)
+
+===== 经济思想谱系.html =====
+  ✓ 标签闭合平衡
+  #chart-adas: 高度OK (inline)
+  #chart-allais: 高度OK (inline)
+  #chart-equilibrium: 高度OK (inline)
+  #chart-islm: 高度OK (inline)
+  #chart-marginal: 高度OK (inline)
+  #chart-methods: 高度OK (inline)
+  #chart-production: 高度OK (inline)
+  #viz-3d-edgeworth: 高度OK (inline)
+  #viz-3d-equilibrium: 高度OK (inline)
+  #viz-3d-ge: 高度OK (inline)
+  #viz-3d-supply-demand: 高度OK (inline)
+  ✓ 所有可视化容器高度有效
+
+===== 经济思想谱系下篇.html =====
+  ✓ 标签闭合平衡
+  #chart-econometrics-genealogy: 高度OK (inline)
+  #chart-growth-path: 高度OK (inline)
+  #chart-irf: 高度OK (inline)
+  #chart-minsky: 高度OK (inline)
+  #chart-monetary: 高度OK (inline)
+  #chart-phillips-laffer: 高度OK (inline)
+  #chart-solow: 高度OK (inline)
+  #viz-3d-dsge: 高度OK (inline)
+  #viz-3d-dsge-irf: 高度OK (inline)
+  #viz-3d-hank: 高度OK (inline)
+  #viz-3d-islmbp: 高度OK (inline)
+  ✓ 所有可视化容器高度有效
+
+===== 艺术与美学思想谱系.html =====
+  ✓ 标签闭合平衡
+  ✓ 所有可视化容器高度有效
+
+===== 逻辑与论证思想谱系.html =====
+    多余闭合 </li>
+  [#chart-complexity: 无高度!]
+  [#chart-methodology: 无高度!]
+  #three-container: 高度OK (#three-container)
+
+===== 马克思主义谱系.html =====
+  ✓ 标签闭合平衡
+  #capital-cycle-3d: 高度OK (inline)
+  #marx-adaptation-chart: 高度OK (父级inline)
+  #marx-space-3d: 高度OK (inline)
+  #marx-spectrum-chart: 高度OK (父级inline)
+  #masters-marx-3d: 高度OK (inline)
+  #masters-methodology-chart: 高度OK (父级inline)
+  #masters-profit-rate-chart: 高度OK (父级inline)
+  #phd-crisis-3d: 高度OK (inline)
+  #phd-reproduction-3d: 高度OK (inline)
+  ✓ 所有可视化容器高度有效

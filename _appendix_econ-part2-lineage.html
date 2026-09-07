@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>经济思想谱系 · 下篇 · 本科生升级附录</title>
+<style>
+:root {
+  --bg: #F4F7F3; --bg2: #E9EFE7; --ink: #1F2A22; --muted: #5E6E62;
+  --rule: #D6E0D4; --accent: #14532D; --accent2: #B7791F;
+  --font-head: 'Lora','Songti SC','SimSun',serif;
+  --font: 'WorkSans','PingFang SC','Microsoft YaHei',sans-serif;
+  --font-mono: 'DMMono',monospace;
+  --max: 880px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:16px;scroll-behavior:smooth;}
+body{font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.75;padding:2rem 1.5rem;max-width:var(--max);margin:0 auto;}
+section.sec{margin-bottom:3.5rem;}
+h2{font-family:var(--font-head);font-size:1.5rem;font-weight:700;padding-bottom:0.5rem;border-bottom:2px solid var(--accent);margin-bottom:1.2rem;}
+h2 .chapno{color:var(--accent2);font-family:var(--font-mono);font-size:0.85rem;letter-spacing:0.1em;display:block;margin-bottom:0.3rem;}
+h3{font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin:1.6rem 0 0.6rem;}
+h4{font-family:var(--font-head);font-size:0.95rem;font-weight:700;margin:1.2rem 0 0.4rem;color:var(--accent);}
+p{margin-bottom:0.9rem;font-size:0.95rem;}
+ul{margin:0 0 1rem 1.3rem;font-size:0.95rem;}
+li{margin-bottom:0.4rem;}
+strong{color:var(--ink);}
+.callout{border-left:4px solid var(--accent2);background:var(--bg2);padding:0.9rem 1.1rem;margin:1.2rem 0;font-size:0.92rem;border-radius:0 8px 8px 0;}
+.callout .callout-title{font-weight:700;color:var(--accent2);display:block;margin-bottom:0.3rem;font-size:0.85rem;}
+.table-wrap{overflow-x:auto;overflow-y:auto;max-height:800px;margin:1.2rem 0;border:1px solid var(--rule);border-radius:10px;}
+table{border-collapse:collapse;width:100%;font-size:0.88rem;}
+th{background:var(--bg2);text-align:left;padding:0.6rem 0.9rem;border-bottom:2px solid var(--rule);font-weight:700;white-space:nowrap;}
+td{padding:0.6rem 0.9rem;border-bottom:1px solid var(--rule);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:var(--bg2);}
+.formula{font-family:var(--font-mono);background:var(--bg);border:1px solid var(--rule);border-left:4px solid var(--accent2);border-radius:0 8px 8px 0;padding:0.8rem 1rem;margin:0.7rem 0;font-size:0.95rem;overflow-x:auto;}
+.formula .f-name{font-weight:700;color:var(--accent);display:block;font-size:0.78rem;letter-spacing:0.04em;margin-bottom:0.3rem;}
+.formula .f-note{color:var(--muted);font-size:0.8rem;display:block;margin-top:0.3rem;}
+.viz-container{width:100%;background:var(--bg2);border-radius:12px;position:relative;overflow:hidden;margin:1.2rem 0;border:1px solid var(--rule);}
+.viz-caption{font-size:0.82rem;color:var(--muted);text-align:center;padding:0.5rem 1rem 1rem;font-style:italic;}
+pre{background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:0.8rem 1rem;margin:0.7rem 0;font-size:0.85rem;overflow-x:auto;font-family:var(--font-mono);}
+.highlight{background:rgba(183,121,59,0.08);border-left:3px solid var(--accent2);padding:0.3rem 0.8rem;}
+footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:0.8rem;color:var(--muted);font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+
+<article>
+<header style="margin-bottom:2.5rem;">
+  <div style="font:700 0.75rem var(--font-mono);letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);margin-bottom:0.6rem;">思想图谱系列 · 第十六辑</div>
+  <h1 style="font-family:var(--font-head);font-size:2rem;font-weight:700;line-height:1.25;">经济思想谱系 · 下篇</h1>
+  <p style="font-family:var(--font-head);font-style:italic;font-size:1.05rem;color:var(--muted);margin-top:0.5rem;">本科生升级附录 · 增长、金融、货币、平台与AI经济</p>
+  <p style="font-size:0.8rem;color:var(--muted);margin-top:0.9rem;font-family:var(--font-mono);">11 个附录 · 交互式可视化 · 术语表 · 习题集 · 文献选读</p>
+</header>
+
+<main>
+
+<!-- ===== 附录一 ===== -->
+<section class="sec" id="appendix-a">
+  <h2><span class="chapno">附录一</span>升级导览与教材对标</h2>
+  <p>本附录集为已经通过《经济思想谱系·下篇》（第十六辑）获得当代经济学前沿通识框架的本科生提供一条通向学术前沿的升级路径。下篇聚焦五大深水区——增长与发展、金融与危机、货币前沿、平台与数字经济、AI与经济——本附录集为每个领域提供精确的术语定义、形式化模型、交互式可视化、方法训练、习题和文献指引。</p>
+
+  <div class="callout">
+    <span class="callout-title">升级目标</span>
+    <p>本附录集的核心目标：</p>
+    <ul>
+      <li><strong>精确化</strong>：将当代经济学的核心概念转化为严格的学术定义和形式化表述；</li>
+      <li><strong>系统化</strong>：梳理下篇五大领域之间的逻辑关系与理论传承；</li>
+      <li><strong>可视化</strong>：通过三维IS-LM-BP模型、菲利普斯曲线、拉弗曲线和经济周期动画直观展示当代经济学模型；</li>
+      <li><strong>方法论</strong>：介绍当代经济学特有的分析工具（增长核算、DSGE、金融网络分析等）；</li>
+      <li><strong>批判性</strong>：呈现当代经济学中的关键争论（如r>g、MMT、加密资产等）；</li>
+      <li><strong>文献基础</strong>：提供一手文献和前沿研究的阅读指引。</li>
+    </ul>
+  </div>
+
+  <h3>教材对标表</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>附录</th><th>布兰查德《宏观经济学》</th><th>罗默《高级宏观经济学》</th><th>其他教材</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>附录一</strong> 升级导览</td><td>全书导览</td><td>全书导览</td><td>—</td></tr>
+        <tr><td><strong>附录二</strong> 精确定义与术语表</td><td>第1-3章</td><td>第1章</td><td>阿西莫格鲁《增长理论》</td></tr>
+        <tr><td><strong>附录三</strong> 形式系统与核心模型</td><td>第6-9章</td><td>第2-4章</td><td>索洛模型、内生增长模型</td></tr>
+        <tr><td><strong>附录四</strong> 推演方法与证明</td><td>第10-13章</td><td>第6-8章</td><td>明斯基《稳定不稳定的经济》</td></tr>
+        <tr><td><strong>附录五</strong> 核心模型与图表</td><td>第14-17章</td><td>第10-12章</td><td>IS-LM-BP、菲利普斯曲线</td></tr>
+        <tr><td><strong>附录六</strong> 高阶理论与前沿</td><td>第18-21章</td><td>第13-15章</td><td>DSGE、行为金融</td></tr>
+        <tr><td><strong>附录七</strong> 方法训练与实操</td><td>各章习题</td><td>各章习题</td><td>增长核算、计量经济</td></tr>
+        <tr><td><strong>附录八</strong> 经典习题集</td><td>各章复习题</td><td>各章习题</td><td>—</td></tr>
+        <tr><td><strong>附录九</strong> 一手文献选读</td><td>—</td><td>—</td><td>原著选读</td></tr>
+        <tr><td><strong>附录十</strong> 关键争论</td><td>—</td><td>—</td><td>学术史</td></tr>
+        <tr><td><strong>附录十一</strong> 延伸阅读</td><td>—</td><td>—</td><td>跨学科拓展</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>如何使用本附录</h3>
+  <p>建议读者按以下顺序使用：首先通读<strong>附录二</strong>建立术语基础，然后依次研读<strong>附录三至五</strong>（含交互式三维IS-LM-BP模型、菲利普斯曲线、拉弗曲线和经济周期可视化），掌握当代经济学的形式系统与核心模型。<strong>附录六</strong>提供高阶理论视野（DSGE、行为金融、平台经济学），<strong>附录七至八</strong>用于方法训练，<strong>附录九至十一</strong>为自主研究提供指引。每个附录均可独立使用。</p>
+</section>
+
+<!-- ===== 附录二 ===== -->
+<section class="sec" id="appendix-b">
+  <h2><span class="chapno">附录二</span>精确定义与术语表</h2>
+  <p>本术语表收录了经济思想谱系下篇中最核心的15个术语，涵盖增长、金融、货币、平台和AI经济五大领域。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>术语</th><th>英文</th><th>符号</th><th>严格定义</th><th>易混点辨析</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>全要素生产率</strong></td><td>Total Factor Productivity</td><td>TFP / A</td><td>产出增长中不能被资本和劳动增长解释的剩余部分，反映技术进步、制度改进和效率提升。TFP = ΔY/Y - α·ΔK/K - β·ΔL/L。</td><td>不同于劳动生产率（Y/L）。TFP是所有投入要素的综合效率，劳动生产率仅衡量劳动投入的效率。TFP提升可以在不增加资本和劳动的情况下增加产出。</td></tr>
+        <tr><td><strong>索洛残差</strong></td><td>Solow Residual</td><td>ΔA/A</td><td>增长核算方程中的残差项，等于产出增长率减去资本和劳动贡献率的加权和。索洛（1957）发现美国约八成人均增长来自残差。</td><td>不同于测量误差。残差是"可解释的增长"之外的剩余，但并非不可解释——它衡量的是技术进步、制度改进等不能被直接测量的因素。</td></tr>
+        <tr><td><strong>内生增长</strong></td><td>Endogenous Growth</td><td>—</td><td>罗默（1986）和卢卡斯（1988）建立的增长理论，将技术进步内生化——知识具有非竞争性，因此不受边际收益递减约束，增长可以自我持续。</td><td>不同于外生增长（索洛模型）。外生增长中技术进步是"天上掉下来的"（外生给定的），内生增长中技术进步是研发投资和人力资本积累的结果。</td></tr>
+        <tr><td><strong>明斯基时刻</strong></td><td>Minsky Moment</td><td>—</td><td>金融体系从稳定转向危机的临界点。当庞氏融资普及后，任何利率上升或资产价格下跌都会触发连锁抛售，导致债务通缩和金融危机。</td><td>不同于"流动性危机"。明斯基时刻是结构性的（融资结构崩溃），不仅仅是流动性不足。流动性危机可以通过央行注资解决，明斯基时刻需要更根本的债务重组。</td></tr>
+        <tr><td><strong>有效市场假说</strong></td><td>Efficient Market Hypothesis</td><td>EMH</td><td>法玛（1970）提出的理论：在有效市场中，资产价格完全反映了所有可得信息，因此没有人能系统性地获得超额收益。分为弱式、半强式和强式三种形式。</td><td>不同于"市场总是理性的"。EMH只断言价格反映信息，不断言价格是"正确"的。行为金融证明价格可以偏离基本面，但EMH认为这种偏离无法被系统性地预测和利用。</td></tr>
+        <tr><td><strong>非理性繁荣</strong></td><td>Irrational Exuberance</td><td>—</td><td>席勒（2000）提出的概念，指资产价格脱离基本面的大幅上涨，由投资者情绪、叙事传播和羊群效应驱动，最终必然回归均值。席勒在2000年互联网泡沫顶峰出版同名著作。</td><td>不同于"理性泡沫"。理性泡沫假设投资者知道价格偏离基本面，但因为相信有人会以更高价接盘而继续持有；非理性繁荣强调投资者真的相信价格会永远上涨。</td></tr>
+        <tr><td><strong>资产负债表衰退</strong></td><td>Balance Sheet Recession</td><td>—</td><td>辜朝明提出的衰退类型：当资产价格崩盘而债务不变，企业和家庭从"利润最大化"转向"债务最小化"——集体去杠杆导致借贷需求消失，货币政策失效。</td><td>不同于普通衰退（由总需求不足引起）。普通衰退中降息可以刺激投资；资产负债表衰退中，即使利率为零，企业也不愿借钱——它们要还债。</td></tr>
+        <tr><td><strong>网络效应</strong></td><td>Network Effect</td><td>—</td><td>一个产品或服务的价值随用户数量的增加而增加的现象。梅特卡夫定律：网络价值 V ∝ n²（n为用户数）。直接网络效应（如微信）和间接网络效应（如平台两侧用户）是两种主要类型。</td><td>不同于"规模效应"。规模效应是供给侧的（成本随产量增加而下降），网络效应是需求侧的（价值随用户数增加而增加）。两者结合形成"赢家通吃"的垄断格局。</td></tr>
+        <tr><td><strong>双边市场</strong></td><td>Two-Sided Market</td><td>—</td><td>平台连接两个不同的用户群体，一侧用户的参与价值取决于另一侧用户的规模。梯若尔等（2003）建立了双边市场定价理论：最优定价取决于两侧的需求弹性。</td><td>不同于单边市场。单边市场中价格由成本加利润决定；双边市场中，平台可能对一侧免费甚至补贴，从另一侧收费——如信用卡向商户收费但对持卡人免费。</td></tr>
+        <tr><td><strong>数据要素</strong></td><td>Data as a Factor of Production</td><td>—</td><td>数据作为继土地、劳动、资本、企业家才能之后的第五大生产要素。数据具有非竞争性（可被反复使用）、可复制性（边际成本近乎零）和网络外部性（更多数据产生更多价值）。</td><td>不同于"信息"。信息是经过处理的有意义数据，数据是原始的数字记录。数据要素的特殊性在于其"使用不减少"和"规模报酬递增"的特征。</td></tr>
+        <tr><td><strong>创造性破坏</strong></td><td>Creative Destruction</td><td>—</td><td>熊彼特提出的概念：新技术、新产业、新组织方式不断涌现，淘汰旧的技术和产业，是资本主义经济动态的本质。创新者获得垄断利润，但垄断会被新的创新打破。</td><td>不同于"渐进式改进"。创造性破坏是颠覆性的——蒸汽机淘汰马车，互联网淘汰实体零售，AI可能淘汰许多白领工作。破坏是创造的必要代价。</td></tr>
+        <tr><td><strong>r &gt; g</strong></td><td>r &gt; g</td><td>r &gt; g</td><td>皮凯蒂（2013）提出的核心不等式：资本收益率（r，约4-5%）长期超过经济增长率（g，约1-2%），意味着继承财富的积累速度超过劳动收入，不平等将内生性扩大。</td><td>不同于"r > g是必然的"。皮凯蒂指出r>g是历史常态而非经济学定律，可以通过累进资本税等政策干预。反对者认为r>g不能直接推导出不平等扩大的结论。</td></tr>
+        <tr><td><strong>包容性制度</strong></td><td>Inclusive Institutions</td><td>—</td><td>阿西莫格鲁和罗宾逊提出的概念：保护产权、鼓励公平竞争、允许广泛参与的经济和政治制度，是长期繁荣的根本保障。与"汲取性制度"（少数人榨取多数人）相对。</td><td>不同于"民主制度"。包容性制度包含了民主但不仅限于民主——强有力的产权保护（如英国光荣革命后的制度）可以在不完全民主的情况下促进增长。</td></tr>
+        <tr><td><strong>UBI</strong></td><td>Universal Basic Income</td><td>UBI</td><td>无条件基本收入：政府定期向所有公民（无论贫富、就业与否）发放一笔足以维持基本生活的现金。在AI时代，UBI被视为应对大规模失业的潜在政策工具。</td><td>不同于"负所得税"（NIT）。NIT仅向收入低于某一门槛的人发放补贴，UBI人人有份。UBI的优点是无条件、不产生贫困陷阱，缺点是成本高昂。</td></tr>
+        <tr><td><strong>费雪方程</strong></td><td>Fisher Equation</td><td>—</td><td>名义利率 = 实际利率 + 预期通货膨胀率，即 i = r + π<sup>e</sup>。费雪方程是货币经济学中最基本的恒等式，也是理解货币政策传导机制的基础。</td><td>不同于"费雪数量方程"（MV=PY）。费雪方程是利率与通胀的关系，费雪数量方程是货币供给与价格的关系。两者都是费雪的重要贡献，但属于不同理论。</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>符号对照表</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>符号</th><th>含义</th><th>所属领域</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Y</td><td>产出/GDP</td><td>宏观/增长</td></tr>
+        <tr><td>K</td><td>资本存量</td><td>增长理论</td></tr>
+        <tr><td>L</td><td>劳动投入</td><td>增长理论</td></tr>
+        <tr><td>A / TFP</td><td>全要素生产率</td><td>增长理论</td></tr>
+        <tr><td>r</td><td>利率 / 资本收益率</td><td>宏观/金融</td></tr>
+        <tr><td>g</td><td>经济增长率</td><td>增长理论</td></tr>
+        <tr><td>s</td><td>储蓄率</td><td>增长理论</td></tr>
+        <tr><td>δ</td><td>折旧率</td><td>增长理论</td></tr>
+        <tr><td>π</td><td>通货膨胀率</td><td>宏观</td></tr>
+        <tr><td>u</td><td>失业率</td><td>宏观</td></tr>
+        <tr><td>M</td><td>货币供给</td><td>货币经济学</td></tr>
+        <tr><td>P</td><td>价格水平</td><td>宏观</td></tr>
+        <tr><td>i</td><td>名义利率</td><td>金融/宏观</td></tr>
+        <tr><td>E</td><td>汇率</td><td>国际金融</td></tr>
+        <tr><td>BP</td><td>国际收支</td><td>国际金融</td></tr>
+        <tr><td>G</td><td>基尼系数</td><td>不平等</td></tr>
+        <tr><td>n</td><td>用户数 / 网络规模</td><td>平台经济</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== 附录三 ===== -->
+<section class="sec" id="appendix-c">
+  <h2><span class="chapno">附录三</span>形式系统与核心模型</h2>
+  <p>本附录从形式化的角度重新审视当代经济学的核心模型。通过交互式三维可视化、函数图分析和动画演示，深化对IS-LM-BP模型、菲利普斯曲线、拉弗曲线和经济周期的理解。</p>
+
+  <h3>3.1 IS-LM-BP 三维模型：利率×产出×汇率</h3>
+  <p>IS-LM-BP模型是开放宏观经济学的基础框架，在IS-LM模型基础上引入国际收支平衡（BP）曲线，分析开放经济中的政策效应。下面用Three.js构建三维IS-LM-BP曲面，同时展示利率、产出和汇率三个维度。</p>
+
+  <div class="viz-container" style="height:420px;">
+    <canvas id="viz-3d-islmbp" style="width:100%;height:100%;display:block;"></canvas>
+  </div>
+  <div class="viz-caption">图 A3-1 · IS-LM-BP三维模型。红色曲面：IS曲线（商品市场均衡）；蓝色曲面：LM曲线（货币市场均衡）；绿色曲面：BP曲线（国际收支均衡）。三条曲面的交点为开放经济的一般均衡点。</div>
+
+  <h3>3.2 菲利普斯曲线与拉弗曲线</h3>
+  <p>菲利普斯曲线描述失业与通胀之间的反向关系，是宏观经济学最具争议性的经验关系之一。拉弗曲线描述税率与政府税收收入之间的倒U型关系，是供给学派经济学的核心。下面用Chart.js同时展示这两条曲线。</p>
+
+  <div class="viz-container" style="height:370px;padding:15px;">
+    <canvas id="chart-phillips-laffer" style="width:100%;height:100%;"></canvas>
+  </div>
+  <div class="viz-caption">图 A3-2 · 菲利普斯曲线与拉弗曲线对比。左轴：失业率u与通胀率π的关系（菲利普斯曲线）；右轴：税率τ与税收收入T的关系（拉弗曲线）。注意两者的形状对比——菲利普斯曲线向右下倾斜，拉弗曲线先升后降。</div>
+
+  <h3>3.3 经济周期动态演示</h3>
+  <p>经济周期是市场经济的内在特征。下面用Canvas动画演示经济从繁荣到衰退再到复苏的完整周期，展示产出、就业、投资和通胀四变量的动态变化。</p>
+
+  <div class="viz-container" style="height:380px;padding:15px;">
+    <canvas id="anim-business-cycle" style="width:100%;height:100%;display:block;"></canvas>
+  </div>
+  <div class="viz-caption">图 A3-3 · 经济周期动态演示。蓝色曲线：产出（GDP）围绕长期趋势线波动；橙色曲线：就业率；绿色曲线：投资。四个阶段——繁荣（波峰）、衰退（下降）、萧条（谷底）、复苏（上升）——循环往复。</div>
+
+  <h3>3.4 形式化定义</h3>
+  <div class="formula">
+    <span class="f-name">IS-LM-BP模型</span>
+    IS: Y = C(Y-T) + I(r) + G + NX(E)<br>
+    LM: M/P = L(Y, r)<br>
+    BP: NX(E) + CF(r, r*) = 0
+    <span class="f-note">其中E=汇率, r*=国外利率, CF=资本净流入, NX=净出口</span>
+  </div>
+  <div class="formula">
+    <span class="f-name">菲利普斯曲线（现代形式）</span>
+    π = π<sup>e</sup> - β(u - u*) + ε
+    <span class="f-note">π=实际通胀, π<sup>e</sup>=预期通胀, u=实际失业率, u*=自然失业率, ε=供给冲击</span>
+  </div>
+  <div class="formula">
+    <span class="f-name">拉弗曲线</span>
+    T(τ) = τ · B(τ)
+    <span class="f-note">T=税收收入, τ=税率, B(τ)=税基（税率τ的函数）。当τ&gt;τ*时，提高税率反而减少税收收入</span>
+  </div>
+  <div class="formula">
+    <span class="f-name">索洛增长模型核心方程</span>
+    Δk = s·f(k) - (δ + n)·k
+    <span class="f-note">k=人均资本, s=储蓄率, f(k)=人均产出, δ=折旧率, n=人口增长率。稳态时Δk=0</span>
+  </div>
+</section>
+
+<!-- ===== 附录四 ===== -->
+<section class="sec" id="appendix-d">
+  <h2><span class="chapno">附录四</span>推演方法与证明</h2>
+  <p>当代经济学在方法论上经历了从演绎推理到经验实证、从局部均衡到一般均衡、从静态到动态的深刻转变。本附录梳理下篇核心领域的论证方法。</p>
+
+  <h3>4.1 增长核算：从"残差"到"理解"</h3>
+  <p>索洛（1957）的增长核算框架是经济学方法论的革命性突破：将不可直接观测的"技术进步"转化为可测量的"残差"。这一方法的精妙之处在于——它不需要直接测量技术，只需要测量产出和投入，然后让数据"说话"。</p>
+  <div class="formula">
+    <span class="f-name">增长核算方程（对数形式）</span>
+    ln(Y) = ln(A) + α·ln(K) + β·ln(L)
+    <span class="f-note">对时间求导：ΔY/Y = ΔA/A + α·(ΔK/K) + β·(ΔL/L)</span>
+  </div>
+  <div class="callout">
+    <span class="callout-title">增长核算的局限与发展</span>
+    <p>增长核算虽然将技术从"黑箱"变成了"可测量的残差"，但残差本身仍然是一个"黑箱"——它包含了技术、制度、效率、测量误差等一切无法被资本和劳动解释的因素。内生增长理论（罗默、卢卡斯）的贡献在于：将残差分解为人力资本、知识存量和研发投入的函数，让"残差"不再是"无知之名"。</p>
+  </div>
+
+  <h3>4.2 明斯基的金融脆弱性分析</h3>
+  <p>明斯基的金融不稳定假说（FIH）提供了一种不同于主流经济学的金融分析方法。它不是从"理性人"和"均衡"出发，而是从<strong>经济结构的内生演化</strong>出发：</p>
+  <div class="callout">
+    <span class="callout-title">明斯基推演的逻辑链</span>
+    <ol style="margin-left:1.3rem;margin-bottom:0.5rem;">
+      <li><strong>前提</strong>：资本主义经济本质上是金融经济——所有投资都通过债务融资。</li>
+      <li><strong>阶段一（稳定）</strong>：经济繁荣期，利润良好，债务人能够按时还本付息（对冲性融资主导）。</li>
+      <li><strong>阶段二（兴奋）</strong>：繁荣持续，市场主体放松警惕，开始采用投机性融资（只能付息，需滚动续借）。</li>
+      <li><strong>阶段三（狂热）</strong>：资产价格持续上涨，庞氏融资普及（本息依赖资产涨价）。</li>
+      <li><strong>触发</strong>：利率上升、资产价格增速放缓或任何负面冲击。</li>
+      <li><strong>崩溃</strong>：抛售→价格下跌→更多抛售→债务通缩→金融危机。</li>
+    </ol>
+    <p><strong>核心结论</strong>：稳定本身孕育不稳定——危机不是系统的故障，而是系统的特性。</p>
+  </div>
+
+  <h3>4.3 内生增长理论的证明</h3>
+  <p>罗默（1986）和卢卡斯（1988）通过引入<strong>非竞争性</strong>和<strong>溢出效应</strong>，证明了增长可以自我持续，不需要外生的技术进步推动。</p>
+  <div class="formula">
+    <span class="f-name">罗默内生增长模型（简化版）</span>
+    Y = A·K<sup>α</sup>·L<sup>1-α</sup> 且 A = B·K<sup>φ</sup>
+    <span class="f-note">当φ&gt;0且α+φ=1时，经济呈现AK型增长——资本边际收益不递减，增长可持续</span>
+  </div>
+  <p>罗默的关键洞察：<strong>知识不同于资本</strong>——资本会因使用而磨损，知识却越用越多。知识的非竞争性意味着：一个人使用一个数学定理，不妨碍千万人同时使用。知识的溢出效应使整个经济体的生产函数呈现规模报酬递增的特征，从而突破索洛模型中资本边际收益递减的限制。</p>
+
+  <div class="viz-container" style="height:370px;padding:15px;">
+    <canvas id="chart-growth-path" style="width:100%;height:100%;"></canvas>
+  </div>
+  <div class="viz-caption">图 A4-1 · 经济增长路径对比。蓝色曲线：索洛模型（外生增长，收敛到稳态）；橙色曲线：内生增长模型（持续增长，不收敛）。横轴为时间，纵轴为人均产出。</div>
+
+  <h3>4.4 平台经济学的分析方法</h3>
+  <p>梯若尔等人建立的平台经济学分析方法，其核心是<strong>交叉网络外部性</strong>和<strong>非中性定价</strong>。与传统市场分析不同，平台市场必须同时考虑两侧用户的需求和定价策略。</p>
+  <div class="formula">
+    <span class="f-name">平台最优定价（梯若尔模型）</span>
+    P<sub>A</sub> = C<sub>A</sub> - α<sub>B</sub>·n<sub>B</sub> + θ<sub>A</sub>
+    <span class="f-note">P<sub>A</sub> = 平台对A侧用户的定价, C<sub>A</sub> = 服务A侧的成本, α<sub>B</sub> = B侧用户对A侧用户的网络外部性强度, n<sub>B</sub> = B侧用户数, θ<sub>A</sub> = 平台市场势力</span>
+  </div>
+  <p>这一公式揭示了平台定价的核心逻辑：平台可能对一侧用户收取低于成本的价格（甚至免费），因为另一侧用户的存在为该侧用户创造了价值。这正是为什么支付宝和微信支付对消费者免费，但对商户收费。</p>
+</section>
+
+<!-- ===== 附录五 ===== -->
+<section class="sec" id="appendix-e">
+  <h2><span class="chapno">附录五</span>核心模型与图表</h2>
+  <p>本附录深入分析当代经济学中的几个核心模型，包括增长模型、金融脆弱性模型、货币政策和平台经济模型。</p>
+
+  <h3>5.1 索洛模型的稳态分析</h3>
+  <p>索洛增长模型的核心是人均资本k的积累方程：Δk = s·f(k) - (δ+n)·k。稳态时Δk=0，即s·f(k*) = (δ+n)·k*。稳态人均产出y* = f(k*)。储蓄率s越高，稳态人均产出越高，但不能改变长期增长率——长期增长率由外生的技术进步率决定。</p>
+
+  <div class="viz-container" style="height:370px;padding:15px;">
+    <canvas id="chart-solow" style="width:100%;height:100%;"></canvas>
+  </div>
+  <div class="viz-caption">图 A5-1 · 索洛模型稳态分析。f(k)为生产函数，s·f(k)为实际投资，(δ+n)k为持平投资。交点确定稳态人均资本k*。储蓄率提高使s·f(k)上移，k*增加。</div>
+
+  <h3>5.2 明斯基融资三形态的量化模型</h3>
+  <p>明斯基的金融脆弱性分析可以通过量化的"融资压力指数"来可视化。不同融资形态对应不同的债务偿还能力和风险暴露程度。</p>
+
+  <div class="viz-container" style="height:370px;padding:15px;">
+    <canvas id="chart-minsky" style="width:100%;height:100%;"></canvas>
+  </div>
+  <div class="viz-caption">图 A5-2 · 明斯基融资结构动态演化。绿色：对冲融资占比；橙色：投机融资占比；红色：庞氏融资占比。随着繁荣持续，融资结构从稳健向脆弱滑动，最终触发明斯基时刻。</div>
+
+  <h3>5.3 货币政策传导机制</h3>
+  <p>货币政策的传导渠道包括利率渠道、信贷渠道、资产价格渠道和汇率渠道。下面通过交互式图表展示中央银行调整政策利率如何影响最终产出和通胀。</p>
+
+  <div class="viz-container" style="height:370px;padding:15px;">
+    <canvas id="chart-monetary" style="width:100%;height:100%;"></canvas>
+  </div>
+  <div class="viz-caption">图 A5-3 · 货币政策传导机制。央行调整政策利率 → 影响市场利率 → 影响投资和消费 → 影响总需求和产出 → 影响通胀。每条渠道的传导时滞和强度不同。</div>
+
+  <h3>5.4 各领域核心模型对照</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>领域</th><th>核心模型</th><th>关键变量</th><th>均衡条件</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>增长理论</strong></td><td>索洛模型</td><td>k, y, s, δ, n</td><td>s·f(k)=(δ+n)·k</td></tr>
+        <tr><td><strong>内生增长</strong></td><td>AK模型 / 罗默模型</td><td>A, K, H</td><td>g = φ·(ΔK/K) - 其他</td></tr>
+        <tr><td><strong>开放宏观</strong></td><td>IS-LM-BP / 蒙代尔-弗莱明</td><td>Y, r, E</td><td>IS=LM=BP</td></tr>
+        <tr><td><strong>金融脆弱性</strong></td><td>明斯基三形态</td><td>融资结构占比</td><td>对冲→投机→庞氏演化</td></tr>
+        <tr><td><strong>货币经济学</strong></td><td>泰勒规则 / 菲利普斯曲线</td><td>i, π, u</td><td>i = r* + π + 0.5(π-π*) + 0.5(u-u*)</td></tr>
+        <tr><td><strong>平台经济</strong></td><td>双边市场模型</td><td>P<sub>A</sub>, P<sub>B</sub>, n<sub>A</sub>, n<sub>B</sub></td><td>两侧用户参与最大化</td></tr>
+        <tr><td><strong>不平等</strong></td><td>皮凯蒂 r&gt;g 模型</td><td>r, g, β=K/Y</td><td>资本/收入比 β = s/g</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== 附录六 ===== -->
+<section class="sec" id="appendix-f">
+  <h2><span class="chapno">附录六</span>高阶理论与前沿</h2>
+  <p>本附录为已经掌握当代经济学基础知识的本科生提供通向学术前沿的桥梁。以下主题代表了当代经济学最活跃的前沿领域。</p>
+
+  <h3>6.1 DSGE模型：宏观经济学的前沿范式</h3>
+  <p>动态随机一般均衡（DSGE）模型是当代宏观经济学的标准分析工具。它从微观经济主体的最优化行为出发，在一般均衡框架下模拟宏观经济的动态演变。DSGE模型的核心特征：</p>
+  <ul>
+    <li><strong>微观基础</strong>：家庭最大化效用，企业最大化利润，政府制定政策——所有行为从微观决策推导得出。</li>
+    <li><strong>预期</strong>：理性预期假设——经济主体利用所有可得信息形成对未来变量的预期。</li>
+    <li><strong>冲击</strong>：经济波动由不可预测的外生冲击驱动（技术冲击、货币政策冲击、财政政策冲击等）。</li>
+    <li><strong>校准/估计</strong>：模型参数通过校准或贝叶斯估计确定，使模型模拟结果与实际数据匹配。</li>
+  </ul>
+  <p>DSGE模型在中央银行政策分析中占据核心地位（美联储的FRB/US模型、欧央行的NAWM模型、中国人民银行的DSGE模型），但2008年金融危机也暴露了其局限性——未能预测危机的发生，因为大多数DSGE模型没有纳入金融部门。</p>
+
+  <h3>6.2 行为金融学：如何解释市场异象</h3>
+  <p>行为金融学将心理学发现引入金融学，解释了EMH无法解释的"市场异象"：</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>市场异象</th><th>描述</th><th>行为解释</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>动量效应</strong></td><td>过去表现好的股票未来继续表现好（短期）</td><td>投资者反应不足（anchoring）</td></tr>
+        <tr><td><strong>反转效应</strong></td><td>过去表现好的股票未来表现差（长期）</td><td>投资者过度反应（overreaction）</td></tr>
+        <tr><td><strong>股权溢价之谜</strong></td><td>股票收益率远高于债券，风险溢价过高</td><td>损失厌恶——投资者对损失极度厌恶，要求高溢价</td></tr>
+        <tr><td><strong>封闭式基金折价</strong></td><td>封闭式基金价格长期低于资产净值</td><td>情绪因素——投资者情绪波动影响基金价格</td></tr>
+        <tr><td><strong>日历效应</strong></td><td>1月收益率高于其他月份</td><td>税收损失抛售、新年乐观情绪</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>6.3 平台经济学与数据要素</h3>
+  <p>平台经济学的三个核心理论问题：</p>
+  <ul>
+    <li><strong>定价问题</strong>：平台如何最优地分配两侧用户的费用？为什么对一侧免费甚至补贴？梯若尔的核心结论：对弹性较大、网络外部性较强的一侧收取较低费用。</li>
+    <li><strong>竞争问题</strong>：平台市场是否存在"赢家通吃"的趋势？多归属（multi-homing）和平台差异化如何影响竞争？</li>
+    <li><strong>数据问题</strong>：数据作为生产要素，其产权如何界定？数据隐私保护与数据开放共享如何平衡？</li>
+  </ul>
+  <div class="callout">
+    <span class="callout-title">数据要素的经济学特性</span>
+    <p>数据与传统的生产要素（土地、劳动、资本）有根本区别：</p>
+    <ul>
+      <li><strong>非竞争性</strong>：数据可以被无限次使用而不会损耗——这是数据要素最重要的特征。</li>
+      <li><strong>规模报酬递增</strong>：更多数据产生更好的算法，更好的算法吸引更多用户，更多用户产生更多数据——形成正反馈循环。</li>
+      <li><strong>非排他性难以实现</strong>：数据容易被复制和传播，产权保护成本高。</li>
+      <li><strong>隐私的外部性</strong>：一个人的数据被泄露可能帮助推断其他人的信息。</li>
+    </ul>
+  </div>
+
+  <h3>6.4 AI与经济</h3>
+  <p>AI对经济学的冲击正在重塑整个学科的边界。以下四个方向是当前最活跃的研究前沿：</p>
+  <ul>
+    <li><strong>任务模型（Task Model）</strong>：Autor、Levy和Murnane（2003）将工作分解为"常规/非常规"和"认知/手工"四个象限，分析自动化对不同类型任务的影响。AI正在进入"非常规认知"任务——律师、会计师、程序员等白领工作面临挑战。</li>
+    <li><strong>生产率J曲线</strong>：Aghion等人发现，AI等通用目的技术（GPT）在引入初期可能降低生产率（因为需要时间学习、重组和适应），随后生产率大幅提升——形成"先降后升"的J型曲线。</li>
+    <li><strong>丰裕经济学</strong>：当智能本身成为可大规模复制的生产要素，经济的稀缺性结构可能发生根本变化——能源、计算、甚至部分劳动可能变得极其廉价。这挑战了经济学"稀缺性"的根基。</li>
+    <li><strong>UBI与再分配</strong>：AI可能导致大规模结构性失业，UBI（无条件基本收入）成为重要的政策讨论。但UBI如何融资、是否影响工作激励、如何与现有的社会福利体系衔接，都是未解决的难题。</li>
+  </ul>
+</section>
+
+<!-- ===== 附录七 ===== -->
+<section class="sec" id="appendix-g">
+  <h2><span class="chapno">附录七</span>方法训练与实操指南</h2>
+  <p>当代经济学分析需要掌握多种定量和定性工具。本附录提供具体的方法训练指南。</p>
+
+  <h3>7.1 增长核算实操</h3>
+  <p><strong>场景：</strong>某国2020-2025年经济数据如下：GDP年均增长6%，资本存量年均增长8%，劳动投入年均增长1%，资本产出弹性α=0.4，劳动产出弹性β=0.6。</p>
+  <p><strong>问题：</strong>(1)计算TFP年均增长率。(2)解释TFP增长对各要素增长的贡献率。</p>
+  <p><strong>解法：</strong></p>
+  <p>(1) ΔA/A = ΔY/Y - α·(ΔK/K) - β·(ΔL/L) = 6% - 0.4×8% - 0.6×1% = 6% - 3.2% - 0.6% = 2.2%</p>
+  <p>(2) TFP贡献率 = 2.2%/6% ≈ 36.7%；资本贡献率 = 3.2%/6% ≈ 53.3%；劳动贡献率 = 0.6%/6% = 10%。</p>
+
+  <h3>7.2 索洛模型稳态分析实操</h3>
+  <p><strong>场景：</strong>假设生产函数为 y = k<sup>0.5</sup>，储蓄率 s=0.3，折旧率 δ=0.1，人口增长率 n=0.02。</p>
+  <p><strong>问题：</strong>(1)求稳态人均资本k*和人均产出y*。(2)如果储蓄率提高到0.4，新的稳态值是多少？</p>
+  <p><strong>解法：</strong></p>
+  <p>(1) 稳态条件：s·k<sup>0.5</sup> = (δ+n)·k → 0.3·k<sup>0.5</sup> = 0.12·k → k<sup>-0.5</sup> = 0.12/0.3 = 0.4 → k* = 6.25, y* = 6.25<sup>0.5</sup> = 2.5。</p>
+  <p>(2) 当s=0.4时：0.4·k<sup>0.5</sup> = 0.12·k → k<sup>-0.5</sup> = 0.12/0.4 = 0.3 → k* = 11.11, y* = 3.33。</p>
+
+  <h3>7.3 明斯基融资结构分析实操</h3>
+  <p><strong>场景：</strong>分析下列三家公司2024年的融资结构，判断它们属于明斯基的哪种融资类型：</p>
+  <ul>
+    <li>公司A：年度经营现金流500万，年度还本付息额300万，现金储备200万。</li>
+    <li>公司B：年度经营现金流200万，年度还本付息额250万，计划通过发行新债偿还到期债务。</li>
+    <li>公司C：年度经营现金流-100万，年度还本付息额300万，计划通过出售资产或资产价格上涨来偿还。</li>
+  </ul>
+  <p><strong>分析：</strong></p>
+  <p>公司A：对冲性融资（经营现金流足以覆盖还本付息，有安全边际）。</p>
+  <p>公司B：投机性融资（经营现金流不足以还本，需要滚动续借，依赖市场融资条件）。</p>
+  <p>公司C：庞氏融资（经营现金流为负，还本付息完全依赖资产出售或价格上涨，极度脆弱）。</p>
+
+  <h3>7.4 数据与经济分析工具指南</h3>
+  <p>当代经济学研究离不开数据处理和定量分析工具。建议本科生掌握以下技能：</p>
+  <ul>
+    <li><strong>Excel</strong>：基础数据处理、图表绘制、回归分析（数据分析工具包）。</li>
+    <li><strong>Stata / R</strong>：学术计量经济学标准工具，建议从Stata开始（更容易上手），然后学习R（更灵活、免费）。</li>
+    <li><strong>Python</strong>：Pandas（数据处理）、Matplotlib（可视化）、Statsmodels（统计分析）——适合处理大规模数据和爬虫。</li>
+    <li><strong>FRED / CEIC / Wind</strong>：宏观经济数据来源。FRED（美联储经济数据库）免费且覆盖面广，CEIC和Wind（中国数据）需要机构订阅。</li>
+  </ul>
+  <div class="callout">
+    <span class="callout-title">实操建议</span>
+    <p>建议每周至少完成一次"数据实操"：从FRED或Wind下载一组宏观经济数据（如中国GDP、CPI、M2），用Excel或Python绘制时序图，计算增长率和相关性，并撰写一页简要分析报告。坚持一个学期，数据分析能力会有质的提升。</p>
+  </div>
+</section>
+
+<!-- ===== 附录八 ===== -->
+<section class="sec" id="appendix-h">
+  <h2><span class="chapno">附录八</span>经典习题集</h2>
+  <p>以下五道习题覆盖了当代经济学的核心知识点，从增长核算到金融分析，难度递进。参考答案附于每题之后。</p>
+
+  <h3>习题一：增长核算（基础）</h3>
+  <p>某经济体2020年GDP为1000亿元，资本存量4000亿元，劳动投入100万人。2025年GDP为1300亿元，资本存量4800亿元，劳动投入105万人。假设资本产出弹性α=0.3，劳动产出弹性β=0.7。</p>
+  <p>(1) 计算2020-2025年的年均GDP增长率、资本增长率和劳动增长率。</p>
+  <p>(2) 用增长核算方程计算TFP年均增长率。</p>
+  <p>(3) 解释TFP在总增长中的贡献占比。</p>
+  <div class="callout">
+    <span class="callout-title">参考答案</span>
+    <p>(1) GDP年均增长率 = (1300/1000)^(1/5)-1 ≈ 5.4%；资本增长率 = (4800/4000)^(1/5)-1 ≈ 3.7%；劳动增长率 = (105/100)^(1/5)-1 ≈ 1.0%。</p>
+    <p>(2) ΔA/A = 5.4% - 0.3×3.7% - 0.7×1.0% = 5.4% - 1.11% - 0.7% = 3.59%。</p>
+    <p>(3) TFP贡献占比 = 3.59%/5.4% ≈ 66.5%。说明该经济体增长主要来自技术进步和效率提升，而非要素投入增长。</p>
+  </div>
+
+  <h3>习题二：索洛模型稳态分析（进阶）</h3>
+  <p>假设生产函数为 Y = K<sup>0.3</sup>L<sup>0.7</sup>，储蓄率s=0.25，折旧率δ=0.08，人口增长率n=0.015。</p>
+  <p>(1) 写出人均形式的生产函数 y = f(k)。</p>
+  <p>(2) 计算稳态人均资本k*和人均产出y*。</p>
+  <p>(3) 如果储蓄率提高到0.35，新的稳态人均产出比原来高多少？</p>
+  <div class="callout">
+    <span class="callout-title">参考答案</span>
+    <p>(1) y = k<sup>0.3</sup>。</p>
+    <p>(2) 稳态条件：s·k<sup>0.3</sup> = (δ+n)·k → 0.25·k<sup>0.3</sup> = 0.095·k → k<sup>-0.7</sup> = 0.095/0.25 = 0.38 → k* = 0.38^(-1/0.7) ≈ 4.21, y* = 4.21^0.3 ≈ 1.54。</p>
+    <p>(3) 当s=0.35时：0.35·k<sup>0.3</sup> = 0.095·k → k<sup>-0.7</sup> = 0.095/0.35 = 0.271 → k* = 0.271^(-1/0.7) ≈ 6.82, y* = 6.82^0.3 ≈ 1.78。人均产出增长：(1.78-1.54)/1.54 ≈ 15.6%。</p>
+  </div>
+
+  <h3>习题三：IS-LM-BP模型分析（综合）</h3>
+  <p>在浮动汇率制下，假设某国实施扩张性货币政策（增加货币供给）。</p>
+  <p>(1) 用IS-LM-BP模型分析短期效应：产出、利率、汇率如何变化？</p>
+  <p>(2) 在浮动汇率制和资本完全流动的情况下，货币政策是否有效？</p>
+  <p>(3) 如果改为固定汇率制，结果有何不同？</p>
+  <div class="callout">
+    <span class="callout-title">参考答案</span>
+    <p>(1) 货币扩张 → LM右移 → 利率下降 → 刺激投资和消费 → 产出增加。利率下降导致资本外流 → 本币贬值 → 净出口增加 → 产出进一步增加（IS右移）。最终：利率下降（但幅度较小），产出增加，本币贬值。</p>
+    <p>(2) 在浮动汇率+资本完全流动（蒙代尔-弗莱明模型）下，货币政策非常有效——货币扩张通过利率下降和汇率贬值双重渠道刺激经济。</p>
+    <p>(3) 固定汇率下，货币政策无效。货币扩张 → 利率下降 → 资本外流 → 本币贬值压力 → 央行必须买入本币卖出外汇 → 货币供给恢复原状。固定汇率+资本完全流动下，一国失去货币政策独立性（三元悖论）。</p>
+  </div>
+
+  <h3>习题四：明斯基金融不稳定分析（宏观金融）</h3>
+  <p>假设一个经济体的总负债结构如下：</p>
+  <ul>
+    <li>对冲性融资占40%（安全边际充足）</li>
+    <li>投机性融资占35%（依赖滚动续借）</li>
+    <li>庞氏融资占25%（依赖资产涨价）</li>
+  </ul>
+  <p>(1) 如果利率上升2个百分点，哪种融资类型最可能首先违约？为什么？</p>
+  <p>(2) 如果资产价格下跌10%，对不同类型的融资者分别有何影响？</p>
+  <p>(3) 描述可能的"明斯基时刻"触发路径。</p>
+  <div class="callout">
+    <span class="callout-title">参考答案</span>
+    <p>(1) 庞氏融资最可能首先违约。因为庞氏融资者连利息都无力支付，依靠资产涨价来偿还。利率上升使利息负担增加，同时资产价格可能因利率上升而下跌，双向挤压。</p>
+    <p>(2) 对冲融资者：影响较小，现金流充足，资产价格下跌不影响偿债能力。投机融资者：资产价格下跌使抵押品价值下降，可能面临追加保证金要求，融资条件恶化。庞氏融资者：资产价格下跌直接击穿其偿债基础，因为其还本付息完全依赖资产出售或涨价。</p>
+    <p>(3) 触发路径：利率上升或负面冲击 → 庞氏融资者违约 → 资产抛售 → 资产价格进一步下跌 → 投机融资者被迫抛售 → 恐慌蔓延 → 信贷冻结 → 对冲融资者也被波及 → 系统性金融危机。</p>
+  </div>
+
+  <h3>习题五：平台经济与数据要素（批判性思考）</h3>
+  <p>比较传统工业经济和平台经济在以下三个维度的差异：</p>
+  <p>(1) 市场结构：传统工业的"完全竞争-垄断"光谱在平台经济中如何变化？</p>
+  <p>(2) 定价策略：传统定价理论（MC=MR）在双边市场中是否适用？为什么？</p>
+  <p>(3) 监管挑战：传统反垄断法（关注价格和消费者福利）在平台经济中面临哪些挑战？</p>
+  <div class="callout">
+    <span class="callout-title">参考答案要点</span>
+    <p>(1) 平台经济具有强烈的自然垄断倾向：网络效应和规模报酬递增导致"赢家通吃"（如微信、支付宝）。但"多归属"（用户同时使用多个平台）和平台差异化可以缓解垄断趋势。结果是"寡头竞争"（如滴滴vs美团打车）而非"一家独大"更为常见。</p>
+    <p>(2) 传统MC=MR定价在双边市场中不完全适用。平台必须考虑交叉网络外部性——可能对一侧定价低于边际成本（甚至免费），从另一侧盈利。最优定价条件：P<sub>A</sub> = MC<sub>A</sub> - 外部性B-to-A + 市场势力溢价。</p>
+    <p>(3) 传统反垄断挑战：平台提供的"免费服务"是否构成掠夺性定价？数据集中是否构成"数据垄断"？平台"自我优待"（如Google搜索优先显示自己的产品）是否违法？传统的消费者福利标准（关注价格）在免费服务中难以适用——需要转向关注"质量、创新和隐私保护"。</p>
+  </div>
+</section>
+
+<!-- ===== 附录九 ===== -->
+<section class="sec" id="appendix-i">
+  <h2><span class="chapno">附录九</span>一手文献选读</h2>
+  <p>以下五篇文献对应经济思想谱系下篇中的五个关键领域，建议按推荐顺序阅读。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>文献</th><th>作者</th><th>年份</th><th>核心内容</th><th>推荐版本</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>《经济增长理论》</strong></td><td>罗伯特·索洛</td><td>1956</td><td>新古典增长模型、稳态分析、增长核算</td><td>英文原文：A Contribution to the Theory of Economic Growth</td></tr>
+        <tr><td><strong>《稳定不稳定的经济》</strong></td><td>海曼·明斯基</td><td>1986</td><td>金融不稳定假说、融资三形态、"大政府+大银行"</td><td>石宝峰等译本，清华大学出版社</td></tr>
+        <tr><td><strong>《国家为什么会失败》</strong></td><td>阿西莫格鲁、罗宾逊</td><td>2012</td><td>包容性制度 vs 汲取性制度、制度决定论</td><td>李增刚译本，湖南科学技术出版社</td></tr>
+        <tr><td><strong>《21世纪资本论》</strong></td><td>托马斯·皮凯蒂</td><td>2013</td><td>r&gt;g、资本/收入比、不平等的历史趋势</td><td>巴曙松译本，中信出版社</td></tr>
+        <tr><td><strong>《第二次机器时代》</strong></td><td>布林约尔松、麦卡菲</td><td>2014</td><td>数字技术对经济的影响、AI与就业</td><td>闾佳译本，中信出版社</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>阅读建议</h3>
+  <ul>
+    <li><strong>索洛（1956）</strong>：这是增长理论的奠基论文，数学推导较为严谨，建议先阅读布兰查德《宏观经济学》中关于索洛模型的章节，再读原文。</li>
+    <li><strong>明斯基（1986）</strong>：明斯基的写作风格具有批判性和论战性，建议先理解2008年金融危机的背景，再读原文。重点关注第9-11章（融资结构分析）和第13-14章（政策建议）。</li>
+    <li><strong>阿西莫格鲁（2012）</strong>：全书可读性极强，以大量历史案例（诺加利斯、南北朝鲜、博茨瓦纳等）支撑论点，适合本科生作为入门读物。第1-3章和最后一章为核心。</li>
+    <li><strong>皮凯蒂（2013）</strong>：数据丰富，论证严谨，但篇幅较长（近700页）。建议重点阅读导论、第1-2部分（资本/收入比的历史趋势）和第10-12章（r>g与政策建议）。</li>
+    <li><strong>布林约尔松（2014）</strong>：可读性强，案例丰富（从自动驾驶到AI诊断），适合对AI与经济感兴趣的读者。第9-12章关于就业和政策的讨论尤其值得关注。</li>
+  </ul>
+</section>
+
+<!-- ===== 附录十 ===== -->
+<section class="sec" id="appendix-j">
+  <h2><span class="chapno">附录十</span>关键争论</h2>
+  <p>当代经济学中的五个关键争论，每一个都涉及理论、政策和意识形态的深刻分歧。</p>
+
+  <h3>10.1 增长引擎之争：资本 vs 技术 vs 制度</h3>
+  <p><strong>核心问题：</strong>经济增长的终极引擎到底是什么？</p>
+  <p><strong>争论各方：</strong></p>
+  <ul>
+    <li><strong>资本积累论</strong>（发展经济学早期观点）：增长的关键是提高储蓄率和投资率。东亚奇迹（高储蓄率、高投资率）是这一观点的证据。</li>
+    <li><strong>技术决定论</strong>（索洛、罗默）：增长的大头来自技术进步，而非资本积累。索洛残差证明，资本积累只能解释增长的一小部分。</li>
+    <li><strong>制度决定论</strong>（阿西莫格鲁、诺斯）：技术本身是制度的结果——没有产权保护，就没有人投资研发。制度是"元因"，技术是"中间因"。</li>
+    <li><strong>林毅夫的"新结构经济学"</strong>：发展中国家应遵循比较优势，在市场基础上发挥政府作用推动产业升级，综合了"市场"和"政府"两个维度。</li>
+  </ul>
+
+  <h3>10.2 r &gt; g 之争：不平等是否必然扩大</h3>
+  <p><strong>核心问题：</strong>资本主义是否内在地导致不平等扩大？</p>
+  <p><strong>皮凯蒂的论点：</strong>r &gt; g 是历史常态（而非例外），意味着继承财富的积累速度超过劳动收入，不平等会内生性扩大。库兹涅茨"倒U型曲线"（不平等先扩大后缩小）是20世纪特殊时期的产物（两次世界大战摧毁了大量资本），不能作为一般规律。</p>
+  <p><strong>反对者的论点：</strong></p>
+  <ul>
+    <li>r &gt; g 是会计恒等式的一部分，不能直接推导出不平等的扩大（阿吉翁）。</li>
+    <li>人力资本扩散（教育普及）可以抵消r&gt;g的效应（戈丁和卡茨）。</li>
+    <li>皮凯蒂对资本的定义过宽（包括房产等非生产性资本），且未充分考虑技术进步对劳动回报的提升。</li>
+  </ul>
+
+  <h3>10.3 MMT（现代货币理论）之争</h3>
+  <p><strong>核心问题：</strong>主权货币国家是否受财政预算约束？政府可以无限制地发钞来支付支出吗？</p>
+  <p><strong>MMT核心主张：</strong>主权货币国家（如美国、日本）不存在"破产"风险，因为政府可以随时创造货币来偿还债务。政府支出不应受"能否负担得起"的约束，而应受"是否引发通胀"的约束。只要经济中还有闲置资源（失业），政府就可以通过赤字支出刺激经济。</p>
+  <p><strong>反对者的论点：</strong></p>
+  <ul>
+    <li>MMT忽视了政府债务的长期影响——过高的债务会导致利率上升、挤出私人投资。</li>
+    <li>MMT低估了通胀风险——当经济接近充分就业时，继续赤字支出会引发通胀。</li>
+    <li>MMT在政治上可能导致财政纪律崩溃，因为政客总是倾向于多花钱。</li>
+  </ul>
+
+  <h3>10.4 加密资产：货币的未来还是投机泡沫？</h3>
+  <p><strong>核心问题：</strong>比特币等加密资产是货币的未来形态，还是纯粹的投机泡沫？</p>
+  <p><strong>支持者的论点：</strong></p>
+  <ul>
+    <li>比特币是"数字黄金"——总量有限（2100万个），无法被政府操纵，是全球性的价值储存工具。</li>
+    <li>加密资产允许点对点交易，无需中介（银行），降低交易成本，提高金融包容性。</li>
+    <li>智能合约和DeFi（去中心化金融）可以创造全新的金融基础设施。</li>
+  </ul>
+  <p><strong>反对者的论点：</strong></p>
+  <ul>
+    <li>比特币价格波动极大（2021年涨到6万美元，2022年跌到1.6万美元），不具备"价值尺度"和"交易媒介"的基本货币功能。</li>
+    <li>加密资产交易速度慢（比特币每秒7笔，Visa每秒数万笔）、能耗高（比特币挖矿年耗电量堪比荷兰）。</li>
+    <li>加密资产的主要用途是投机和非法交易（勒索软件、暗网交易）。</li>
+  </ul>
+
+  <h3>10.5 AI 会让劳动贬值还是增值？</h3>
+  <p><strong>核心问题：</strong>AI是替代人类劳动（导致大规模失业），还是增强人类劳动（提高生产率和工资）？</p>
+  <p><strong>替代论：</strong></p>
+  <ul>
+    <li>AI不仅会替代蓝领工作（如制造业），还会替代白领工作（如律师、会计、程序员）。</li>
+    <li>"技术性失业"不是暂时的——当AI的智能超过人类时，人类可能在多个领域失去比较优势。</li>
+    <li>长期来看，这可能导致"没有工作"的未来，需要UBI来维持社会稳定。</li>
+  </ul>
+  <p><strong>增强论：</strong></p>
+  <ul>
+    <li>历史上，技术（蒸汽机、电力、计算机）一直替代某些工作，但创造更多新的工作。AI不会例外。</li>
+    <li>AI是"通用目的技术"（GPT），会像电力一样渗透到各个行业，提高劳动生产率，从而增加对劳动力的需求（而非减少）。</li>
+    <li>AI可能创造全新的职业类别（如提示工程师、AI伦理师、数据叙事师）。</li>
+  </ul>
+  <div class="callout">
+    <span class="callout-title">学术共识</span>
+    <p>目前学术界的主流观点是"不确定"——AI对就业的影响取决于AI的能力边界、制度响应（教育、培训、社会保障）和分配机制。大多数经济学家认为，AI不会导致"工作消失"，但可能加剧"工作极化"——高技能和低技能工作增加，中等技能工作减少。</p>
+  </div>
+</section>
+
+<!-- ===== 附录十一 ===== -->
+<section class="sec" id="appendix-k">
+  <h2><span class="chapno">附录十一</span>延伸阅读与课程对照</h2>
+  <p>本附录为希望在当代经济学领域深入学习的本科生提供系统的延伸阅读指南和课程对照表。</p>
+
+  <h3>11.1 推荐阅读书目</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>层级</th><th>书名</th><th>作者</th><th>推荐理由</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>入门</strong></td><td>《宏观经济学》</td><td>布兰查德</td><td>中级宏观经济学标准教材，短期/中期/长期三期框架清晰</td></tr>
+        <tr><td><strong>入门</strong></td><td>《国家为什么会失败》</td><td>阿西莫格鲁/罗宾逊</td><td>制度经济学的经典之作，案例丰富，可读性强</td></tr>
+        <tr><td><strong>进阶</strong></td><td>《高级宏观经济学》</td><td>罗默</td><td>研究生级宏观教材，DSGE模型的标准教材</td></tr>
+        <tr><td><strong>进阶</strong></td><td>《稳定不稳定的经济》</td><td>明斯基</td><td>金融脆弱性分析的奠基之作</td></tr>
+        <tr><td><strong>进阶</strong></td><td>《21世纪资本论》</td><td>皮凯蒂</td><td>不平等研究的里程碑，数据翔实</td></tr>
+        <tr><td><strong>高阶</strong></td><td>《经济增长》</td><td>阿吉翁/霍伊特</td><td>内生增长理论的标准教材</td></tr>
+        <tr><td><strong>高阶</strong></td><td>《Platform Economics》</td><td>梯若尔等</td><td>平台经济学前沿论文集</td></tr>
+        <tr><td><strong>前沿</strong></td><td>《第二次机器时代》</td><td>布林约尔松/麦卡菲</td><td>数字技术与经济转型</td></tr>
+        <tr><td><strong>前沿</strong></td><td>《非理性繁荣》</td><td>席勒</td><td>行为金融学经典，2000年成功预测互联网泡沫</td></tr>
+        <tr><td><strong>前沿</strong></td><td>《The Economics of Artificial Intelligence》</td><td>Agrawal等</td><td>AI经济学的入门读物，预测AI将降低预测成本</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>11.2 国内高校课程对照</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>课程名称</th><th>对应附录</th><th>推荐教材</th><th>重点章节</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>中级宏观经济学</strong></td><td>附录二、三、五</td><td>布兰查德《宏观经济学》</td><td>第1-9章、第17-24章</td></tr>
+        <tr><td><strong>发展经济学</strong></td><td>附录三、四、六</td><td>林毅夫《发展经济学》</td><td>第1-5章、第9-12章</td></tr>
+        <tr><td><strong>金融学/金融经济学</strong></td><td>附录四、五、六</td><td>米什金《货币金融学》</td><td>第1-8章、第12-18章</td></tr>
+        <tr><td><strong>国际经济学</strong></td><td>附录三、五</td><td>克鲁格曼《国际经济学》</td><td>第1-5章、第12-16章</td></tr>
+        <tr><td><strong>平台经济学(选修)</strong></td><td>附录二、四、六</td><td>梯若尔《平台经济学》</td><td>第1-4章</td></tr>
+        <tr><td><strong>行为经济学(选修)</strong></td><td>附录六</td><td>塞勒《行为经济学》</td><td>第1-5章</td></tr>
+        <tr><td><strong>计量经济学</strong></td><td>附录七</td><td>伍德里奇《计量经济学导论》</td><td>第1-8章</td></tr>
+        <tr><td><strong>中国经济前沿</strong></td><td>附录十、十一</td><td>林毅夫《中国经济专题》</td><td>第1-6章</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>11.3 在线资源推荐</h3>
+  <ul>
+    <li><strong>Coursera/edX</strong>：MIT 14.02（宏观经济学）、MIT 14.73（发展经济学）、芝加哥大学金融学课程</li>
+    <li><strong>Nobel Prize 官方网站</strong>：查阅近年诺贝尔经济学奖得主的文献（关注2024年阿西莫格鲁、约翰逊、罗宾逊）</li>
+    <li><strong>IDEAS/RePEc</strong>：全球最大的经济学研究论文数据库</li>
+    <li><strong>NBER（美国国家经济研究局）</strong>：发布最新经济学研究论文，许多可免费下载</li>
+    <li><strong>中国人民银行官网</strong>：中国货币政策报告、金融稳定报告、数据发布</li>
+    <li><strong>Our World in Data</strong>：全球发展数据可视化，涵盖增长、不平等、环境等主题</li>
+  </ul>
+
+  <div class="callout">
+    <span class="callout-title">学习路径建议</span>
+    <p>对于计划在当代经济学领域深入学习的本科生：</p>
+    <ul>
+      <li><strong>大二结束前</strong>：完成布兰查德《宏观经济学》和阿西莫格鲁《国家为什么会失败》的阅读，掌握增长核算、IS-LM-BP、菲利普斯曲线等核心模型。</li>
+      <li><strong>大三</strong>：精读明斯基《稳定不稳定的经济》、皮凯蒂《21世纪资本论》，学习计量经济学（至少掌握OLS回归和工具变量法）。</li>
+      <li><strong>大四</strong>：阅读本附录九推荐的一手文献，撰写一篇关于AI与经济增长、或中国金融改革的学术论文。同时关注NBER和央行的最新研究报告。</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>经济思想谱系 · 下篇 · 本科生升级附录 · 思想图谱系列第十六辑 · 2026年9月</p>
+  <p>本附录集为独立学习材料，建议配合主卷《经济思想谱系·下篇》和当代经济学教材使用。</p>
+</footer>
+</article>
+
+<!-- Three.js 3D IS-LM-BP 模型 -->
+<script src="./_shared/js/three.min.js"></script>
+<script>
+(function(){
+  var container = document.getElementById('viz-3d-islmbp');
+  if(!container) return;
+  var w = container.clientWidth, h = container.clientHeight;
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xf4f7f3);
+  var camera = new THREE.PerspectiveCamera(45, w/h, 0.1, 100);
+  camera.position.set(8, 6, 10);
+  camera.lookAt(0, 1, 0);
+  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(w, h);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  var ambient = new THREE.AmbientLight(0x404040);
+  scene.add(ambient);
+  var dir = new THREE.DirectionalLight(0xffffff, 0.8);
+  dir.position.set(5, 10, 7);
+  scene.add(dir);
+  var dir2 = new THREE.DirectionalLight(0xffffff, 0.3);
+  dir2.position.set(-5, -5, -5);
+  scene.add(dir2);
+
+  var axesHelper = new THREE.AxesHelper(6);
+  scene.add(axesHelper);
+  var gridHelper = new THREE.GridHelper(10, 10, 0x5E6E62, 0xD6E0D4);
+  gridHelper.position.y = -0.1;
+  scene.add(gridHelper);
+
+  function makeLabel(text, color, pos) {
+    var canvas = document.createElement('canvas');
+    canvas.width = 128; canvas.height = 64;
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = color;
+    ctx.font = 'bold 20px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText(text, 64, 40);
+    var tex = new THREE.CanvasTexture(canvas);
+    var mat = new THREE.SpriteMaterial({ map: tex, transparent: true });
+    var sprite = new THREE.Sprite(mat);
+    sprite.position.copy(pos);
+    sprite.scale.set(1.5, 0.75, 1);
+    scene.add(sprite);
+  }
+  makeLabel('r', '#B7791F', new THREE.Vector3(0, 6.5, 0));
+  makeLabel('Y', '#14532D', new THREE.Vector3(6.5, -0.5, 0));
+  makeLabel('E', '#5E6E62', new THREE.Vector3(0, -0.5, 6.5));
+
+  // IS曲线 (红色曲面)
+  var res = 15;
+  var geom = new THREE.BufferGeometry();
+  var verts = [], idx = [];
+  for(var i=0; i<=res; i++) {
+    for(var j=0; j<=res; j++) {
+      var y = (j/res)*6 - 3;
+      var e = (i/res)*4 - 2;
+      var r = 5 - 0.5*y + 0.3*e + 0.1*Math.sin(y*0.5);
+      verts.push(y, Math.max(0.2, r), e*1.5);
+    }
+  }
+  for(var i=0; i<res; i++) {
+    for(var j=0; j<res; j++) {
+      var a = i*(res+1)+j, b = i*(res+1)+j+1, c = (i+1)*(res+1)+j, d = (i+1)*(res+1)+j+1;
+      idx.push(a,b,c,b,d,c);
+    }
+  }
+  geom.setAttribute('position', new THREE.Float32BufferAttribute(verts, 3));
+  geom.setIndex(idx);
+  geom.computeVertexNormals();
+  var matIS = new THREE.MeshPhongMaterial({ color: 0xB03A2E, transparent: true, opacity: 0.3, side: THREE.DoubleSide });
+  var meshIS = new THREE.Mesh(geom, matIS);
+  scene.add(meshIS);
+  var wireIS = new THREE.Mesh(geom, new THREE.MeshBasicMaterial({ color: 0xB03A2E, wireframe: true, transparent: true, opacity: 0.15 }));
+  scene.add(wireIS);
+
+  // LM曲线 (蓝色曲面)
+  var geom2 = new THREE.BufferGeometry();
+  var verts2 = [];
+  for(var i=0; i<=res; i++) {
+    for(var j=0; j<=res; j++) {
+      var y = (j/res)*6 - 3;
+      var e = (i/res)*4 - 2;
+      var r = 1 + 0.4*y - 0.2*e + 0.1*Math.cos(y*0.3);
+      verts2.push(y, Math.max(0.2, r), e*1.5);
+    }
+  }
+  geom2.setAttribute('position', new THREE.Float32BufferAttribute(verts2, 3));
+  geom2.setIndex(idx);
+  geom2.computeVertexNormals();
+  var matLM = new THREE.MeshPhongMaterial({ color: 0x14532D, transparent: true, opacity: 0.3, side: THREE.DoubleSide });
+  var meshLM = new THREE.Mesh(geom2, matLM);
+  scene.add(meshLM);
+  var wireLM = new THREE.Mesh(geom2, new THREE.MeshBasicMaterial({ color: 0x14532D, wireframe: true, transparent: true, opacity: 0.15 }));
+  scene.add(wireLM);
+
+  // BP曲线 (绿色曲面)
+  var geom3 = new THREE.BufferGeometry();
+  var verts3 = [];
+  for(var i=0; i<=res; i++) {
+    for(var j=0; j<=res; j++) {
+      var y = (j/res)*6 - 3;
+      var e = (i/res)*4 - 2;
+      var r = 3 + 0.3*y - 0.5*e + 0.08*Math.sin(y*0.4);
+      verts3.push(y, Math.max(0.2, r), e*1.5);
+    }
+  }
+  geom3.setAttribute('position', new THREE.Float32BufferAttribute(verts3, 3));
+  geom3.setIndex(idx);
+  geom3.computeVertexNormals();
+  var matBP = new THREE.MeshPhongMaterial({ color: 0xB7791F, transparent: true, opacity: 0.3, side: THREE.DoubleSide });
+  var meshBP = new THREE.Mesh(geom3, matBP);
+  scene.add(meshBP);
+  var wireBP = new THREE.Mesh(geom3, new THREE.MeshBasicMaterial({ color: 0xB7791F, wireframe: true, transparent: true, opacity: 0.15 }));
+  scene.add(wireBP);
+
+  var angle = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    angle += 0.003;
+    camera.position.x = 10 * Math.sin(angle);
+    camera.position.z = 10 * Math.cos(angle);
+    camera.lookAt(0, 1, 0);
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', function(){
+    var w2 = container.clientWidth, h2 = container.clientHeight;
+    camera.aspect = w2/h2; camera.updateProjectionMatrix();
+    renderer.setSize(w2, h2);
+  });
+})();
+</script>
+
+<!-- Chart.js 函数图 -->
+<script src="./_shared/js/chart.umd.min.js"></script>
+<script>
+(function(){
+  // 菲利普斯曲线 + 拉弗曲线
+  var ctx = document.getElementById('chart-phillips-laffer');
+  if(!ctx) return;
+  var labels = [];
+  for(var i=0; i<=20; i++) labels.push(i*0.5);
+  var phillips = [], laffer = [];
+  for(var i=0; i<=20; i++) {
+    var u = i*0.5;
+    phillips.push(10 - 0.6*u + 0.02*u*u);
+    var tau = u/10;
+    laffer.push(tau * (100 - 2*tau*100));
+  }
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        { label: '菲利普斯曲线 (π)', data: phillips, borderColor: '#14532D', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0, yAxisID: 'y' },
+        { label: '拉弗曲线 (T)', data: laffer, borderColor: '#B7791F', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0, borderDash: [5,3], yAxisID: 'y1' }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top', labels: { font: { size: 12 } } } },
+      scales: {
+        x: { title: { display: true, text: '失业率 u / 税率 τ', font: { size: 13 } }, grid: { color: '#D6E0D4' } },
+        y: { title: { display: true, text: '通胀率 π (%)', font: { size: 13 } }, grid: { color: '#D6E0D4' }, position: 'left' },
+        y1: { title: { display: true, text: '税收收入 T', font: { size: 13 } }, grid: { display: false }, position: 'right' }
+      }
+    }
+  });
+})();
+
+(function(){
+  // 经济周期动画
+  var canvas = document.getElementById('anim-business-cycle');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W = canvas.width = canvas.clientWidth;
+  var H = canvas.height = canvas.clientHeight;
+  var pad = {t: 30, b: 40, l: 55, r: 30};
+  var time = 0;
+
+  function drawCycle(t) {
+    ctx.clearRect(0, 0, W, H);
+    var x0 = pad.l, y0 = H - pad.b, x1 = W - pad.r, y1 = pad.t;
+    // 坐标轴
+    ctx.strokeStyle = '#1F2A22';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(x0, y0); ctx.lineTo(x1, y0);
+    ctx.moveTo(x0, y0); ctx.lineTo(x0, y1);
+    ctx.stroke();
+    ctx.fillStyle = '#5E6E62';
+    ctx.font = '12px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('时间', (x0+x1)/2, H-5);
+    ctx.save();
+    ctx.translate(15, (y0+y1)/2);
+    ctx.rotate(-Math.PI/2);
+    ctx.fillText('经济变量', 0, 0);
+    ctx.restore();
+
+    // 长期趋势线
+    ctx.setLineDash([4,4]);
+    ctx.strokeStyle = '#5E6E62';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(x0, y0 - 0.5*(y0-y1));
+    ctx.lineTo(x1, y0 - 0.3*(y0-y1));
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = '#5E6E62';
+    ctx.font = '9px monospace';
+    ctx.fillText('长期趋势', x1-80, y0 - 0.4*(y0-y1)-5);
+
+    // 绘制周期曲线
+    var phases = [
+      { color: '#14532D', label: 'GDP', width: 2.5 },
+      { color: '#B7791F', label: '就业率', width: 2 },
+      { color: '#5E6E62', label: '投资', width: 1.5 }
+    ];
+
+    var phaseOffset = t * 2 * Math.PI;
+    var data = [];
+    for(var i=0; i<=200; i++) {
+      var x = x0 + (i/200)*(x1-x0);
+      var phase = (i/200)*4*Math.PI + phaseOffset;
+      var gdp = y0 - (0.5 + 0.25*Math.sin(phase))*(y0-y1);
+      var emp = y0 - (0.45 + 0.15*Math.sin(phase - 0.3))*(y0-y1);
+      var inv = y0 - (0.4 + 0.35*Math.sin(phase - 0.8))*(y0-y1);
+      data.push({x: x, gdp: gdp, emp: emp, inv: inv});
+    }
+
+    // 标注阶段
+    var phaseMarker = (t * 4) % 4;
+    var markers = ['繁荣', '衰退', '萧条', '复苏'];
+    var colors = ['#14532D', '#B03A2E', '#5E6E62', '#B7791F'];
+    ctx.fillStyle = colors[Math.floor(phaseMarker)];
+    ctx.font = 'bold 13px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText(markers[Math.floor(phaseMarker)], x0 + (x1-x0)*(phaseMarker/4 + 0.125), y1+10);
+
+    // 绘图
+    ctx.beginPath();
+    ctx.strokeStyle = phases[0].color;
+    ctx.lineWidth = phases[0].width;
+    data.forEach(function(d, i) { if(i===0) ctx.moveTo(d.x, d.gdp); else ctx.lineTo(d.x, d.gdp); });
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.strokeStyle = phases[1].color;
+    ctx.lineWidth = phases[1].width;
+    data.forEach(function(d, i) { if(i===0) ctx.moveTo(d.x, d.emp); else ctx.lineTo(d.x, d.emp); });
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.strokeStyle = phases[2].color;
+    ctx.lineWidth = phases[2].width;
+    data.forEach(function(d, i) { if(i===0) ctx.moveTo(d.x, d.inv); else ctx.lineTo(d.x, d.inv); });
+    ctx.stroke();
+
+    // 图例
+    var lx = x1 - 120, ly = y1 + 5;
+    phases.forEach(function(p, i) {
+      ctx.strokeStyle = p.color;
+      ctx.lineWidth = p.width;
+      ctx.beginPath();
+      ctx.moveTo(lx, ly + i*18);
+      ctx.lineTo(lx+20, ly + i*18);
+      ctx.stroke();
+      ctx.fillStyle = '#1F2A22';
+      ctx.font = '10px monospace';
+      ctx.textAlign = 'left';
+      ctx.fillText(p.label, lx+25, ly + i*18 + 4);
+    });
+  }
+
+  function loop() {
+    time += 0.005;
+    if(time > 1) time -= 1;
+    drawCycle(time);
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+
+(function(){
+  // 经济增长路径对比 (附录四)
+  var ctx = document.getElementById('chart-growth-path');
+  if(!ctx) return;
+  var labels = [];
+  for(var i=0; i<=50; i++) labels.push(i);
+  var solow = [], endog = [];
+  for(var i=0; i<=50; i++) {
+    var t = i;
+    solow.push(1 + 2*(1 - Math.exp(-0.05*t)));
+    endog.push(1 + 0.03*t + 0.0005*t*t);
+  }
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        { label: '索洛模型 (收敛)', data: solow, borderColor: '#14532D', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0 },
+        { label: '内生增长 (持续)', data: endog, borderColor: '#B7791F', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0, borderDash: [5,3] }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top', labels: { font: { size: 12 } } } },
+      scales: {
+        x: { title: { display: true, text: '时间', font: { size: 13 } }, grid: { color: '#D6E0D4' } },
+        y: { title: { display: true, text: '人均产出 y', font: { size: 13 } }, grid: { color: '#D6E0D4' } }
+      }
+    }
+  });
+})();
+
+(function(){
+  // 索洛模型稳态 (附录五)
+  var ctx = document.getElementById('chart-solow');
+  if(!ctx) return;
+  var labels = [];
+  for(var i=0; i<=20; i++) labels.push((i/20)*10);
+  var fk = [], sfk = [], dnk = [];
+  for(var i=0; i<=20; i++) {
+    var k = (i/20)*10;
+    var y = Math.pow(k, 0.3);
+    fk.push(y);
+    sfk.push(0.25*y);
+    dnk.push(0.095*k);
+  }
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        { label: 'f(k) 生产函数', data: fk, borderColor: '#14532D', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0 },
+        { label: 's·f(k) 实际投资', data: sfk, borderColor: '#B7791F', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0 },
+        { label: '(δ+n)k 持平投资', data: dnk, borderColor: '#B03A2E', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0, borderDash: [4,3] }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top', labels: { font: { size: 12 } } } },
+      scales: {
+        x: { title: { display: true, text: '人均资本 k', font: { size: 13 } }, grid: { color: '#D6E0D4' } },
+        y: { title: { display: true, text: '人均产出', font: { size: 13 } }, grid: { color: '#D6E0D4' } }
+      }
+    }
+  });
+})();
+
+(function(){
+  // 明斯基融资结构 (附录五)
+  var ctx = document.getElementById('chart-minsky');
+  if(!ctx) return;
+  var labels = [];
+  for(var i=0; i<=20; i++) labels.push('t=' + i);
+  var hedge = [], spec = [], ponzi = [];
+  for(var i=0; i<=20; i++) {
+    var t = i/20;
+    hedge.push(60 - 30*t + 5*Math.sin(t*2));
+    spec.push(25 + 10*t + 3*Math.cos(t*1.5));
+    ponzi.push(15 + 20*t - 2*Math.sin(t*1.8));
+  }
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        { label: '对冲融资 %', data: hedge, borderColor: '#14532D', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0 },
+        { label: '投机融资 %', data: spec, borderColor: '#B7791F', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0 },
+        { label: '庞氏融资 %', data: ponzi, borderColor: '#B03A2E', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top', labels: { font: { size: 12 } } } },
+      scales: {
+        x: { title: { display: true, text: '时间', font: { size: 13 } }, grid: { color: '#D6E0D4' } },
+        y: { title: { display: true, text: '融资结构占比 (%)', font: { size: 13 } }, min: 0, max: 100, grid: { color: '#D6E0D4' } }
+      }
+    }
+  });
+})();
+
+(function(){
+  // 货币政策传导机制 (附录五)
+  var ctx = document.getElementById('chart-monetary');
+  if(!ctx) return;
+  var labels = ['0', 'Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q8'];
+  var rate = [], invest = [], output = [], infl = [];
+  for(var i=0; i<9; i++) {
+    var t = i;
+    rate.push(t===0 ? 5 : 3);
+    invest.push(100 + (t===0 ? 0 : 15*(1-Math.exp(-0.5*(t-1)))));
+    output.push(100 + (t===0 ? 0 : 10*(1-Math.exp(-0.3*(t-1)))));
+    infl.push(2 - (t===0 ? 0 : 0.4*(1-Math.exp(-0.2*(t-1)))));
+  }
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        { label: '政策利率 (%)', data: rate, borderColor: '#B03A2E', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 4, yAxisID: 'y' },
+        { label: '投资 (指数)', data: invest, borderColor: '#14532D', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0, yAxisID: 'y1' },
+        { label: '产出 (指数)', data: output, borderColor: '#B7791F', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0, yAxisID: 'y1' },
+        { label: '通胀 (%)', data: infl, borderColor: '#5E6E62', borderWidth: 2, tension: 0.3, fill: false, pointRadius: 0, borderDash: [4,3], yAxisID: 'y' }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top', labels: { font: { size: 12 } } } },
+      scales: {
+        x: { title: { display: true, text: '时间', font: { size: 13 } }, grid: { color: '#D6E0D4' } },
+        y: { position: 'left', title: { display: true, text: '利率 / 通胀 (%)', font: { size: 13 } }, grid: { color: '#D6E0D4' } },
+        y1: { position: 'right', title: { display: true, text: '产出/投资指数', font: { size: 13 } }, grid: { display: false } }
+      }
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1075 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>艺术与美学思想谱系 · 思想图谱系列第九辑</title>
+
+  <style>
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+  </style>
+
+  <style>
+    :root {
+      --bg: #FBF7F5;
+      --bg2: #F4E9E4;
+      --ink: #2A2024;
+      --muted: #6E5A62;
+      --rule: #E6D8D2;
+      --accent: #9E2A5B;
+      --accent2: #C98A2D;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:first-child { margin-left: 0; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .legacy .legacy-title { font-weight: 700; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .legacy ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; }
+    @media (max-width: 700px) { .legacy { grid-template-columns: 1fr; } }
+
+    .history { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; }
+    .history .history-title { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem; }
+    .history p { margin-bottom: 0.55rem; }
+    .history p:last-child { margin-bottom: 0; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    .formula {
+      font-family: var(--font-mono);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidenav { position: static; max-height: none; }
+    }
+    @media print {
+      .sidenav { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      section.sec { break-inside: avoid-page; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="shell">
+
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">艺术与美学思想谱系</div>
+    <div class="brand-sub">思想图谱系列 · 第九辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+      <li><a href="#intro">导言 · 艺术与美学是什么</a></li>
+      <li><a href="#overview">第一章 · 总览：艺术与美学思想谱系</a></li>
+      <li><a href="#classical">第二章 · 古典美学：从柏拉图到中世纪</a></li>
+      <li><a href="#modern">第三章 · 文艺复兴与近代美学：从达芬奇到康德黑格尔</a></li>
+      <li><a href="#avantgarde">第四章 · 现代主义与先锋艺术</a></li>
+      <li><a href="#eastern">第五章 · 东方美学：意境与气韵</a></li>
+      <li><a href="#contemporary">第六章 · 当代艺术与电子音乐（含 Phonk 专题）</a></li>
+      <li><a href="#summary">第七章 · 总结：艺术、文明与真理</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第九辑</span>
+        <span class="series-links">
+          <a href="../index.html">系列目录</a>
+          <a href="../科学思想谱系/科学思想谱系.html">← 上一辑 · 科学思想谱系</a>
+          <a href="../伦理与道德思想谱系/伦理与道德思想谱系.html">下一辑 · 伦理与道德思想谱系 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>艺术与美学思想谱系</h1>
+      <p class="subtitle">从柏拉图到 Phonk——人类如何定义"美"，艺术史又如何映照文明与真理的轮廓，附常用美学法则速查</p>
+      <p class="meta">作者：詹家杨 · 2026-09-05 · 7 张思维导图 · 7 张对照表 · 20+ 美学法则速查 · 40+ 人物语录 · 艺术史</p>
+    </header>
+
+    <main>
+      <!-- 导言 -->
+      <section class="sec" id="intro">
+        <h2>导言 · 艺术与美学是什么</h2>
+        <p>前八辑讲的是"人如何想"——政治、哲学、宗教、经济、科学；这一辑补上人类文明里最感性也最古老的那条线：<strong>艺术如何表达"人如何感受"</strong>。艺术（art）源自拉丁语 <em>ars</em>，本义是"技艺"，与希腊语的 <em>techne</em> 同源——最初它和"技术"不分家，直到近代才专指"美的创造"。美学（aesthetics）一词则更年轻：1750 年德国哲学家鲍姆加登（Baumgarten）用它命名一门新学科，词根 <em>aisthesis</em> 意为"感性知觉"——美学就是<strong>关于感性认识与美的学问</strong>。</p>
+        <div class="callout">
+          <span class="callout-title">一条主线</span>
+          艺术思想史的主线，是"艺术为谁而美"的六次转向：<strong>为神</strong>（原始与古典：艺术是宗教仪式）→ <strong>为王</strong>（中世纪与宫廷：艺术是权力与信仰的装饰）→ <strong>为人</strong>（文艺复兴：艺术是人的尊严）→ <strong>为自我</strong>（浪漫主义与现代主义：艺术是艺术家内心的表达）→ <strong>为大众</strong>（当代艺术与流行文化：艺术是消费与参与）→ <strong>为算法</strong>（数字时代：艺术是数据与流量的产物）。每一次转向，都是一次"人如何定义自己"的重新回答。
+        </div>
+      </section>
+
+      <!-- 第一章 总览 -->
+      <section class="sec" id="overview">
+        <h2><span class="chapno">第一章</span>总览：艺术与美学思想谱系</h2>
+        <p>先看全景：古希腊人第一次追问"美是什么"，柏拉图把艺术逐出理想国，亚里士多德为它辩护；中世纪艺术服务于上帝，文艺复兴把目光还给人与自然，启蒙时代康德把"审美"确立为独立的人类能力；19 世纪浪漫主义让艺术成为自我表达，20 世纪现代主义让艺术反身审视自身，先锋艺术不断打破边界；与此同时，东方美学以"意境""气韵""留白"走出另一条路；而 20 世纪以来的电子音乐与数字艺术，则把"美"从画布与舞台搬进了电路与算法。艺术从"模仿世界"走向"创造世界"，也把"什么是美"这个难题永远留给了人类。</p>
+
+        <figure class="diagram">
+          <figcaption>图 1 · 艺术与美学思想谱系总图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["古典美学<br>古希腊 · 中世纪<br>柏拉图 · 亚里士多德"] --> B["文艺复兴与近代<br>15–18 世纪<br>达芬奇 · 康德 · 黑格尔"]
+  B --> C["现代主义与先锋<br>19–20 世纪<br>梵高 · 毕加索 · 杜尚"]
+  C --> D["当代艺术与数字时代<br>20 世纪至今<br>沃霍尔 · 电子音乐 · Phonk"]
+  B --> E["东方美学<br>意境 · 气韵 · 留白<br>儒 · 道 · 禅"]
+  classDef rootNode fill:#9E2A5B,color:#fff,stroke:#9E2A5B;
+  class A rootNode;
+          </pre>
+        </figure>
+
+        <h3>总对照表：艺术与美学的五次转折</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>阶段</th><th>时期</th><th>核心问题</th><th>艺术为谁</th><th>代表</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>古典美学</strong></td><td>前 5 世纪–14 世纪</td><td>美是什么？艺术与真理何干？</td><td>为神 · 为城邦 · 为上帝</td><td>柏拉图 · 亚里士多德 · 奥古斯丁</td></tr>
+              <tr><td><strong>文艺复兴与近代</strong></td><td>15–18 世纪</td><td>人如何创造与欣赏美？</td><td>为人 · 为理性 · 为自由</td><td>达芬奇 · 康德 · 黑格尔</td></tr>
+              <tr><td><strong>现代主义与先锋</strong></td><td>19–20 世纪</td><td>艺术能否脱离模仿而自足？</td><td>为自我 · 为艺术本身</td><td>梵高 · 毕加索 · 杜尚</td></tr>
+              <tr><td><strong>东方美学</strong></td><td>先秦至今</td><td>美如何通向人格与天地？</td><td>为成德 · 为天人合一</td><td>孔子 · 庄子 · 王维 · 王国维</td></tr>
+              <tr><td><strong>当代与数字时代</strong></td><td>20 世纪至今</td><td>艺术如何进入生活、机器与流量？</td><td>为大众 · 为参与 · 为算法</td><td>沃霍尔 · 电子音乐 · Phonk</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 第二章 古典美学 -->
+      <section class="sec" id="classical">
+        <h2><span class="chapno">第二章</span>古典美学：从柏拉图到中世纪（前 5 世纪–14 世纪）</h2>
+        <p><strong>定义</strong>：西方美学在古希腊诞生——柏拉图提出"美本身"（理式之美），却把模仿的艺术逐出理想国；亚里士多德为艺术辩护，认为悲剧通过"卡塔西斯"（净化）让人更接近普遍真理；新柏拉图主义（普罗提诺）把美看作"太一"的流溢；中世纪（奥古斯丁、阿奎那）把美归于上帝创造的秩序——和谐、比例、明晰。这一千年里，艺术是通往神圣的阶梯，而不是目的本身。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>希腊的"美"与"善"不分家</strong>：古希腊语 <em>kalos</em>（美）与 <em>agathos</em>（善）常连用为"美善"（kalokagathia），美被理解为秩序、比例、和谐——宇宙的数学结构，也是城邦公民的德性。雕塑、悲剧、建筑都是城邦公共生活的一部分。</p>
+          <p><strong>柏拉图的两难</strong>：柏拉图在《理想国》中既承认美是"理式"的显现，又因艺术只是"模仿的模仿"（与真理隔了三层）而主张把诗人逐出理想国——这是西方美学史上第一次关于"艺术与真理"的激烈争论。</p>
+          <p><strong>亚里士多德的辩护</strong>：亚里士多德在《诗学》中为悲剧辩护：模仿不是复制表象，而是表现"可能发生的事"（普遍性）；悲剧通过怜悯与恐惧的净化，让人获得道德与情感的升华。</p>
+          <p><strong>中世纪的光与秩序</strong>：奥古斯丁把美看作上帝之光的秩序（"美是数"），阿奎那提出美的三要素——完整（integritas）、比例（proportio）、明晰（claritas）；哥特式教堂的彩窗与尖拱，正是把"光"当作神圣之美的物质化。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>毕达哥拉斯（约前 570–前 495）</strong>——数与和谐美学的源头。提出"美是和谐"，以数的比例解释音乐音程，构想宇宙的"天体音乐"。</p>
+        <p><strong>赫拉克利特（约前 535–前 475）</strong>——辩证法美学的先驱。"不同的音调造成最美的和谐"，美在对立统一之中，也是相对的。</p>
+        <p><strong>恩培多克勒（约前 490–前 430）</strong>——四根说与"爱恨"美学。以"爱"（philia）与"恨"（neikos）解释万物的结合与分离，美是元素在爱中的和谐聚合。</p>
+        <p><strong>苏格拉底（前 469–前 399）</strong>——"美善合一"的践行者。主张"美德即知识"，美与有用、目的、善相通（经色诺芬、柏拉图记载）。</p>
+        <p><strong>德谟克利特（约前 460–前 370）</strong>——原子论与快乐论美学。认为艺术源于对自然的模仿，美带来灵魂的愉悦与宁静。</p>
+        <p><strong>柏拉图（前 427–前 347）</strong>——理念论美学的奠基者。提出"美本身"（理式之美），认为现实美是理式美的摹本，艺术是"模仿的模仿"。</p>
+        <p><strong>亚里士多德（前 384–前 322）</strong>——模仿说的辩护者。以《诗学》为悲剧辩护，提出"卡塔西斯"（净化）理论。</p>
+        <p><strong>伊壁鸠鲁（前 341–前 270）</strong>——快乐主义美学。主张审美愉悦通向灵魂的宁静（ataraxia），艺术带来无痛苦的快乐。</p>
+        <p><strong>贺拉斯（前 65–前 8）</strong>——罗马诗学代表。《诗艺》提出"寓教于乐"（dulce et utile），艺术应既愉悦又教益。</p>
+        <p><strong>维特鲁威（约前 80–前 15）</strong>——建筑美学奠基者。《建筑十书》提出建筑三原则：坚固（firmitas）、实用（utilitas）、美观（venustas）。</p>
+        <p><strong>朗吉努斯（约 1–3 世纪）</strong>——《论崇高》的作者。提出"崇高"这一美学范畴，追溯其五个源泉，深刻影响后世浪漫主义与审美判断。</p>
+        <p><strong>普罗提诺（204–270）</strong>——新柏拉图主义代表。把美看作"太一"的流溢，美是灵魂对神圣的回忆。</p>
+        <p><strong>奥古斯丁（354–430）</strong>——教父美学的代表。"美是数"，世界之美是上帝之美的秩序显现。</p>
+        <p><strong>波爱修斯（约 480–524）</strong>——中世纪音乐美学代表。《音乐原理》把音乐分为宇宙音乐、人的音乐与器乐音乐，主张"音乐是数的心灵化"。</p>
+        <p><strong>伪狄奥尼修斯（约 5–6 世纪）</strong>——神秘主义美学的集大成者。以"光"的形而上学，把美归于上帝之名与神圣光辉。</p>
+        <p><strong>爱留根纳（约 810–877）</strong>——中世纪早期美学代表。以"光"与"显现"论美，认为美是上帝之光的流溢，万物因分有光而美。</p>
+        <p><strong>圣维克多的雨果（约 1096–1141）</strong>——中世纪美学代表。主张美在于"和谐与比例"，并区分可见之美与不可见之美。</p>
+        <p><strong>托马斯·阿奎那（1225–1274）</strong>——经院美学集大成者。提出美的三要素：完整、比例、明晰。</p>
+        <p><strong>但丁（1265–1321）</strong>——中世纪文学美学的巅峰。《神曲》以诗与爱，赋予神圣秩序以最高形式的美。</p>
+
+        <figure class="diagram">
+          <figcaption>图 2 · 古典美学结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["古典美学<br>古希腊 · 中世纪"] --> A["前苏格拉底<br>毕达哥拉斯 · 赫拉克利特<br>恩培多克勒"]
+  ROOT --> B["苏格拉底 · 柏拉图<br>美善合一 · 理式之美"]
+  ROOT --> C["亚里士多德 · 伊壁鸠鲁<br>模仿说 · 快乐论"]
+  ROOT --> D["希腊化与罗马<br>贺拉斯 · 维特鲁威<br>朗吉努斯 · 普罗提诺"]
+  ROOT --> E["中世纪美学<br>奥古斯丁 · 波爱修斯<br>伪狄奥尼修斯 · 爱留根纳<br>圣维克多的雨果 · 阿奎那 · 但丁"]
+  classDef rootNode fill:#9E2A5B,color:#fff,stroke:#9E2A5B;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <p>古典美学留给后世两件"武器"——<strong>比例</strong>与<strong>模仿</strong>——至今仍潜伏在一切视觉艺术里：</p>
+        <div class="formula">
+          <span class="f-name">黄金比例（神圣比例）</span>
+          φ = (1 + √5) / 2 ≈ 1.618
+          <span class="f-note">把线段分成两段，使整体与较长段之比等于较长段与较短段之比。古希腊人相信它是"最美"的比例，帕特农神庙、达芬奇画作都暗含它。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">阿奎那美的三要素</span>
+          完整（integritas）· 比例（proportio）· 明晰（claritas）
+          <span class="f-note">一件东西要"美"，须整体完整、各部分比例协调、且清晰可感。这是中世纪对"美"最著名的定义。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">亚里士多德"模仿"公式</span>
+          艺术 = 模仿"可能发生的事"（普遍性）→ 净化情感
+          <span class="f-note">模仿不是照抄表象，而是表现普遍与必然。悲剧让人在怜悯与恐惧中得到"卡塔西斯"（净化）。</span>
+        </div>
+
+        <h3>对照表：柏拉图 vs 亚里士多德论艺术与真理</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>柏拉图</th><th>亚里士多德</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>对艺术的定位</strong></td><td>模仿的模仿，与真理隔三层</td><td>模仿普遍性，可通向真理</td></tr>
+              <tr><td><strong>艺术的价值</strong></td><td>煽动情感，腐蚀理性</td><td>净化情感，升华德性</td></tr>
+              <tr><td><strong>对诗人的态度</strong></td><td>逐出理想国</td><td>为悲剧辩护</td></tr>
+              <tr><td><strong>美之所在</strong></td><td>理式世界（彼岸）</td><td>现实世界的秩序与形式</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">毕达哥拉斯 · 约前 570–前 495</div>
+            <blockquote>美是和谐，和谐是数的比例。<cite>——毕达哥拉斯学派</cite></blockquote>
+            <blockquote>整个宇宙是一首和谐的乐章（天体音乐）。<cite>——学派宇宙观</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">赫拉克利特 · 约前 535–前 475</div>
+            <blockquote>不同的音调造成最美的和谐。<cite>——残篇 D8</cite></blockquote>
+            <blockquote>最美丽的猴子，与人相比也是丑的。<cite>——残篇 D82</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">恩培多克勒 · 约前 490–前 430</div>
+            <blockquote>爱使万物结合为一，恨使万物分离为多。<cite>——残篇 B17</cite></blockquote>
+            <blockquote>万物因爱而和谐，因恨而纷争。<cite>——残篇 B27</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">伊壁鸠鲁 · 前 341–前 270</div>
+            <blockquote>快乐是幸福生活的起点和终点。<cite>——《致美诺寇的信》</cite></blockquote>
+            <blockquote>灵魂的宁静，是最大的快乐。<cite>——《格言集》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">苏格拉底 · 前 469–前 399</div>
+            <blockquote>凡是合乎目的的东西，就是美的、有用的。<cite>——色诺芬《回忆录》转述</cite></blockquote>
+            <blockquote>美与善是一回事。<cite>——（据传）</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">德谟克利特 · 约前 460–前 370</div>
+            <blockquote>大的快乐，来自对美的作品与思想的冥想。<cite>——残篇 B194</cite></blockquote>
+            <blockquote>追求美而不亵渎美，这样的爱才是正当的。<cite>——残篇 B73</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">柏拉图 · 前 427–前 347</div>
+            <blockquote>美是难的。<cite>——《大希庇阿斯篇》</cite></blockquote>
+            <blockquote>美具有引人向善的力量和属性。<cite>——《会饮篇》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">亚里士多德 · 前 384–前 322</div>
+            <blockquote>诗比历史更哲学、更严肃，因为诗表现普遍，历史只记载个别。<cite>——《诗学》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">贺拉斯 · 前 65–前 8</div>
+            <blockquote>寓教于乐，既劝谕读者，又使他喜爱。<cite>——《诗艺》</cite></blockquote>
+            <blockquote>诗人的目的是给人教益，或供人娱乐，或把愉快和有益的东西结合在一起。<cite>——《诗艺》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">维特鲁威 · 约前 80–前 15</div>
+            <blockquote>建筑应当坚固、实用、美观。<cite>——《建筑十书》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">朗吉努斯 · 约 1–3 世纪</div>
+            <blockquote>崇高是伟大灵魂的回声。<cite>——《论崇高》</cite></blockquote>
+            <blockquote>崇高的风格，是一颗伟大心灵的流露。<cite>——《论崇高》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">普罗提诺 · 204–270</div>
+            <blockquote>美是太一的光辉，是灵魂对神圣家园的回忆。<cite>——《九章集》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">奥古斯丁 · 354–430</div>
+            <blockquote>美是数，数是美。<cite>——《论音乐》</cite></blockquote>
+            <blockquote>唯有上帝的美，是永不凋谢的。<cite>——《忏悔录》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">伪狄奥尼修斯 · 约 5–6 世纪</div>
+            <blockquote>美是光的倾泻，是万物秩序的显现。<cite>——《论神圣之名》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">波爱修斯 · 约 480–524</div>
+            <blockquote>音乐是数的心灵化，是灵魂与宇宙的和谐。<cite>——《音乐原理》</cite></blockquote>
+            <blockquote>宇宙音乐，是星辰运转的和谐。<cite>——《音乐原理》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">爱留根纳 · 约 810–877</div>
+            <blockquote>美是上帝之光的流溢，万物因分有光而美。<cite>——《论自然的区分》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">托马斯·阿奎那 · 1225–1274</div>
+            <blockquote>美的事物，是看见即令人愉悦的事物。<cite>——《神学大全》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">但丁 · 1265–1321</div>
+            <blockquote>是爱，推动着太阳和其他的群星。<cite>——《神曲·天堂篇》</cite></blockquote>
+            <blockquote>艺术尽其所能，模仿自然。<cite>——《神曲》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">圣维克多的雨果 · 约 1096–1141</div>
+            <blockquote>美在于和谐与比例，在于整体的统一。<cite>——《论教学法》</cite></blockquote>
+            <blockquote>可见之美，是通往不可见之美的阶梯。<cite>——《论教学法》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">古典美学的遗产</div>
+            <ul>
+              <li>"美是秩序、比例、和谐"的古典理想</li>
+              <li>"艺术与真理"之争从此成为美学母题</li>
+              <li>模仿说（亚里士多德）统治西方艺术两千年</li>
+              <li>"寓教于乐"（贺拉斯）与建筑三原则（维特鲁威）</li>
+              <li>"崇高"（朗吉努斯）为浪漫主义埋下伏笔</li>
+              <li>黄金比例与"美善合一"的永恒追问</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第三章 文艺复兴与近代美学 -->
+      <section class="sec" id="modern">
+        <h2><span class="chapno">第三章</span>文艺复兴与近代美学：从达芬奇到康德黑格尔（15–19 世纪）</h2>
+        <p><strong>定义</strong>：文艺复兴把艺术从"神学侍女"解放为"人的学问"——达芬奇把绘画提升为科学，透视法与解剖学让艺术逼近真实；18 世纪鲍姆加登创立美学学科，康德在《判断力批判》中确立"审美无利害"与"天才"概念，席勒主张以审美教育拯救人性，黑格尔把艺术定义为"理念的感性显现"并预言艺术的终结；浪漫主义则让艺术成为情感与自我的表达。近代美学完成了从"模仿世界"到"表现自我"的转向。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>文艺复兴的人本转向（15–16 世纪）</strong>：意大利城邦的财富与人文主义让艺术家从工匠升为"天才"。达芬奇以解剖与透视把绘画变成科学，米开朗基罗以《大卫》与西斯廷天顶画展现人的力量，拉斐尔以圣母像调和神圣与人间。</p>
+          <p><strong>美学的诞生（18 世纪）</strong>：1750 年鲍姆加登出版《美学》，首次以"aesthetics"命名"感性认识的科学"；英国经验主义者（夏夫兹博里、伯克）区分"优美"与"崇高"，把审美从理性拉回感性。</p>
+          <p><strong>康德的美学革命（1790）</strong>：康德《判断力批判》提出审美判断"无利害而生愉悦"、"无概念而普遍有效"、"无目的而合目的"，并把"天才"定义为"为艺术立法的自然"——审美由此成为独立于认识与道德的人类第三大能力。</p>
+          <p><strong>黑格尔与浪漫主义（19 世纪）</strong>：黑格尔把艺术看作"理念的感性显现"，认为艺术、宗教、哲学依次承载绝对精神，并预言艺术终将被哲学超越；浪漫主义（歌德、华兹华斯、贝多芬）则把"情感表达"推向中心，艺术从"反映世界"转向"创造世界"。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>达芬奇（1452–1519）</strong>——文艺复兴全才。把绘画提升为科学，透视、解剖、明暗法的集大成者，《蒙娜丽莎》《最后的晚餐》。</p>
+        <p><strong>米开朗基罗（1475–1564）</strong>——雕塑与绘画巨匠。《大卫》《创世纪》，展现人的力量与神性。</p>
+        <p><strong>鲍姆加登（1714–1762）</strong>——美学之父。1750 年创立"美学"（aesthetics）学科。</p>
+        <p><strong>康德（1724–1804）</strong>——近代美学巅峰。《判断力批判》确立审美判断的先天原则与"天才"概念。</p>
+        <p><strong>席勒（1759–1805）</strong>——审美教育论者。《审美教育书简》主张以"游戏冲动"调和感性与理性。</p>
+        <p><strong>黑格尔（1770–1831）</strong>——美学体系集大成者。"艺术是理念的感性显现"，提出"艺术终结论"。</p>
+        <p><strong>歌德（1749–1832）</strong>——浪漫主义与古典主义的桥梁。《浮士德》，主张"美在自然与自由的统一"。</p>
+
+        <figure class="diagram">
+          <figcaption>图 3 · 文艺复兴与近代美学结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["文艺复兴与近代美学<br>15–19 世纪"] --> A["文艺复兴<br>达芬奇 · 米开朗基罗"]
+  ROOT --> B["美学学科诞生<br>鲍姆加登 · 伯克"]
+  ROOT --> C["康德<br>审美无利害 · 天才"]
+  ROOT --> D["席勒 · 审美教育"]
+  ROOT --> E["黑格尔<br>理念的感性显现"]
+  ROOT --> F["浪漫主义<br>情感表现 · 歌德"]
+  classDef rootNode fill:#9E2A5B,color:#fff,stroke:#9E2A5B;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <p>近代美学把"美"从神坛请回人间，也留下了至今沿用的创作法则：</p>
+        <div class="formula">
+          <span class="f-name">一点透视法</span>
+          所有平行线汇聚于消失点 → 在二维平面制造三维纵深
+          <span class="f-note">布鲁内莱斯基与达芬奇把"透视"变成绘画的数学。它让画面第一次像"从窗口看世界"。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">康德审美判断四契机</span>
+          无利害 · 无概念 · 无目的 · 共通感
+          <span class="f-note">审美愉悦不依赖占有、不依赖概念、不依赖功利目的，却要求人人认同——"美是无目的的合目的性"。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">黑格尔艺术公式</span>
+          艺术 = 理念（内容）的感性显现（形式）
+          <span class="f-note">内容与形式的完美统一即美。艺术、宗教、哲学依次承载绝对精神——这为"艺术终结论"埋下伏笔。</span>
+        </div>
+
+        <h3>对照表：模仿说 vs 表现说</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>古典模仿说</th><th>浪漫主义表现说</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>艺术的本源</strong></td><td>外部世界（自然 · 普遍性）</td><td>内心世界（情感 · 自我）</td></tr>
+              <tr><td><strong>艺术家的角色</strong></td><td>技艺高超的模仿者</td><td>天赋异禀的创造者（天才）</td></tr>
+              <tr><td><strong>评判标准</strong></td><td>像不像 · 是否合比例</td><td>真不真 · 是否动人</td></tr>
+              <tr><td><strong>典型代表</strong></td><td>亚里士多德 · 古典主义</td><td>卢梭 · 歌德 · 华兹华斯</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">达芬奇 · 1452–1519</div>
+            <blockquote>绘画是自然的孙女，是自然的科学。<cite>——《论绘画》</cite></blockquote>
+            <blockquote>简单是终极的精致。<cite>——（据传）</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">米开朗基罗 · 1475–1564</div>
+            <blockquote>雕像本就在大理石里，我只是把多余的部分去掉。<cite>——（据传）</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">康德 · 1724–1804</div>
+            <blockquote>美是无目的的合目的性。<cite>——《判断力批判》</cite></blockquote>
+            <blockquote>美是道德的象征。<cite>——《判断力批判》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">席勒 · 1759–1805</div>
+            <blockquote>人唯有在游戏时，才是完整的人。<cite>——《审美教育书简》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">黑格尔 · 1770–1831</div>
+            <blockquote>艺术是理念的感性显现。<cite>——《美学讲演录》</cite></blockquote>
+            <blockquote>美就是理念，所以美与真是一回事。<cite>——《美学讲演录》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">歌德 · 1749–1832</div>
+            <blockquote>美是自然与自由的秘密统一。<cite>——（据传）</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">文艺复兴与近代美学的遗产</div>
+            <ul>
+              <li>艺术从"神学侍女"成为"人的学问"</li>
+              <li>美学作为独立学科诞生（鲍姆加登、康德）</li>
+              <li>审美成为独立于认识与道德的人类能力</li>
+              <li>从"模仿世界"到"表现自我"的转向完成</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四章 现代主义与先锋艺术 -->
+      <section class="sec" id="avantgarde">
+        <h2><span class="chapno">第四章</span>现代主义与先锋艺术（19 世纪末–20 世纪）</h2>
+        <p><strong>定义</strong>：现代主义是艺术对自身的革命——印象派（莫奈）把光与瞬间变成主题，后印象派（梵高、塞尚、高更）让色彩与形式脱离"像不像"；表现主义、立体主义（毕加索）、未来主义、达达（杜尚的《泉》）、超现实主义（达利）接连炸毁古典的边界；抽象艺术（康定斯基、蒙德里安）让绘画彻底告别具象。王尔德喊出"为艺术而艺术"，艺术从"反映世界"转向"创造世界"，也从"服务他人"转向"审视自身"。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>摄影术的冲击（1839）</strong>：照相机发明后，"画得像"不再是绘画的使命，绘画被迫重新定义自己——印象派（1874）转而捕捉光线与瞬间，莫奈《日出·印象》让"印象"成为流派之名。</p>
+          <p><strong>自我表达的爆发（19 世纪末）</strong>：梵高以燃烧的笔触与色彩表达内心，塞尚把自然还原为几何体（"用圆柱体、球体、圆锥体处理自然"），高更逃离文明寻找原始——"表现"彻底压过"模仿"。</p>
+          <p><strong>先锋派的连环爆破（20 世纪初）</strong>：立体主义（毕加索《亚威农少女》）打碎透视，未来主义讴歌速度与机器，达达（杜尚把小便池命名为《泉》）否定艺术本身，超现实主义（达利）潜入梦境与无意识。</p>
+          <p><strong>抽象与"为艺术而艺术"</strong>：康定斯基以《论艺术的精神》为抽象辩护，蒙德里安把世界还原为直线与三原色；王尔德在《道林·格雷的画像》序言宣称"艺术除了表现自身，不表现任何东西"。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>莫奈（1840–1926）</strong>——印象派领袖。以《日出·印象》《睡莲》捕捉光与瞬间。</p>
+        <p><strong>梵高（1853–1890）</strong>——后印象派与表现主义先驱。燃烧的色彩与笔触，《向日葵》《星月夜》。</p>
+        <p><strong>塞尚（1839–1906）</strong>——现代绘画之父。把自然还原为几何体，为立体主义铺路。</p>
+        <p><strong>毕加索（1881–1973）</strong>——立体主义创立者。《亚威农少女》《格尔尼卡》。</p>
+        <p><strong>杜尚（1887–1968）</strong>——达达与观念艺术之父。《泉》（小便池），"现成品"艺术。</p>
+        <p><strong>达利（1904–1989）</strong>——超现实主义代表。《记忆的永恒》（软钟）。</p>
+        <p><strong>康定斯基（1866–1944）</strong>——抽象艺术先驱。《论艺术的精神》。</p>
+        <p><strong>王尔德（1854–1900）</strong>——唯美主义代表。"为艺术而艺术"。</p>
+
+        <figure class="diagram">
+          <figcaption>图 4 · 现代主义与先锋艺术结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["现代主义与先锋艺术<br>19 世纪末–20 世纪"] --> A["印象派 · 后印象派<br>莫奈 · 梵高 · 塞尚"]
+  ROOT --> B["立体主义 · 毕加索"]
+  ROOT --> C["达达 · 杜尚现成品"]
+  ROOT --> D["超现实主义 · 达利"]
+  ROOT --> E["抽象艺术<br>康定斯基 · 蒙德里安"]
+  ROOT --> F["唯美主义 · 王尔德"]
+  classDef rootNode fill:#9E2A5B,color:#fff,stroke:#9E2A5B;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <p>现代主义把"法则"本身也变成了可被打破的对象，但仍留下几条影响至今的形式语言：</p>
+        <div class="formula">
+          <span class="f-name">色彩三要素</span>
+          色相（Hue）· 明度（Value）· 饱和度（Saturation）
+          <span class="f-note">任何颜色都由这三个维度定义。印象派与梵高正是通过解放"色彩"本身，让颜色不再只是物体的标签。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">塞尚几何化公式</span>
+          自然 = 圆柱体 + 球体 + 圆锥体
+          <span class="f-note">把纷繁的自然还原为基本几何体，是立体主义与抽象艺术的理论起点。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">杜尚"现成品"公式</span>
+          艺术家命名 + 语境 = 艺术（哪怕它是一只小便池）
+          <span class="f-note">《泉》（1917）证明：艺术的价值不在"手艺"，而在"观念"与"命名"——这是观念艺术的开端。</span>
+        </div>
+
+        <h3>对照表：古典艺术 vs 现代主义艺术</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>古典艺术</th><th>现代主义艺术</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>目标</strong></td><td>模仿自然 · 服务宗教与宫廷</td><td>表达自我 · 审视艺术自身</td></tr>
+              <tr><td><strong>形式</strong></td><td>透视 · 写实 · 比例</td><td>变形 · 抽象 · 拼贴 · 现成品</td></tr>
+              <tr><td><strong>评判标准</strong></td><td>像 · 美 · 和谐</td><td>新 · 真 · 有冲击力</td></tr>
+              <tr><td><strong>与观众的关系</strong></td><td>愉悦 · 教化</td><td>震惊 · 挑衅 · 邀请思考</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">王尔德 · 1854–1900</div>
+            <blockquote>为艺术而艺术。<cite>——《道林·格雷的画像》序言</cite></blockquote>
+            <blockquote>艺术除了表现自身，不表现任何东西。<cite>——《道林·格雷的画像》序言</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">莫奈 · 1840–1926</div>
+            <blockquote>我要画的是空气，是光。<cite>——（据传）</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">梵高 · 1853–1890</div>
+            <blockquote>我梦见我的画，然后我把梦画下来。<cite>——（据传）</cite></blockquote>
+            <blockquote>色彩本身表达某种东西。<cite>——致弟弟提奥的信</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">塞尚 · 1839–1906</div>
+            <blockquote>用圆柱体、球体、圆锥体处理自然。<cite>——致埃米尔·贝尔纳信</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">毕加索 · 1881–1973</div>
+            <blockquote>艺术是揭示真相的谎言。<cite>——（据传）</cite></blockquote>
+            <blockquote>我花了一辈子学习怎样像孩子那样画画。<cite>——（据传）</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">杜尚 · 1887–1968</div>
+            <blockquote>艺术要么是剽窃，要么是革命。<cite>——（据传）</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">达利 · 1904–1989</div>
+            <blockquote>我与疯子的唯一区别，是我没有疯。<cite>——（据传）</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">康定斯基 · 1866–1944</div>
+            <blockquote>色彩是琴键，眼睛是琴槌，灵魂是钢琴。<cite>——《论艺术的精神》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">现代主义与先锋艺术的遗产</div>
+            <ul>
+              <li>艺术从"模仿"彻底转向"表现"与"创造"</li>
+              <li>抽象艺术与观念艺术（杜尚）确立</li>
+              <li>"为艺术而艺术"的独立宣言</li>
+              <li>艺术不断自我革命——为当代艺术铺路</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第五章 东方美学 -->
+      <section class="sec" id="eastern">
+        <h2><span class="chapno">第五章</span>东方美学：意境与气韵（先秦至今）</h2>
+        <p><strong>定义</strong>：东方美学走出了一条与西方迥异的道路——它不追问"美是什么"，而追问"美如何通向人格与天地"。儒家主张"美善相乐""文以载道"，道家推崇"大音希声""大象无形"的自然之美，禅宗追求"空灵""顿悟"的意境；中国书画以"气韵生动"为最高标准（谢赫六法），以"留白""意境"为灵魂；日本美学则以"侘寂""物哀""幽玄"捕捉残缺、无常与幽微之美。东方美学不是"看"的艺术，而是"品"与"悟"的艺术。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>儒家的"美善合一"（先秦）</strong>：孔子"尽善尽美"论《韶》乐，主张"文质彬彬"；《乐记》提出"乐者，通伦理者也"，艺术被纳入礼乐教化——美必须通向善。</p>
+          <p><strong>道家的"自然之美"（先秦）</strong>：老子"大音希声，大象无形"，庄子"天地有大美而不言"，主张美在自然无为、在"道"的浑然之中，反对人为雕琢。</p>
+          <p><strong>魏晋的自觉与六法（3–6 世纪）</strong>：魏晋玄学让艺术走向自觉，顾恺之提出"传神写照"，谢赫《古画品录》确立"六法"，以"气韵生动"为首——中国绘画美学由此奠基。</p>
+          <p><strong>意境与禅意（唐–宋）</strong>：王维"诗中有画，画中有诗"，司空图《二十四诗品》论"意境"；禅宗传入后，"空灵""留白""顿悟"渗入诗画，苏轼"论画以形似，见与儿童邻"。</p>
+          <p><strong>近代的总结与日本美学</strong>：王国维《人间词话》以"境界"说集意境美学之大成；日本在吸收禅宗后发展出"侘寂"（wabi-sabi，残缺之美）、"物哀"（mono no aware，无常之叹）、"幽玄"（yūgen，幽深含蓄）三大美学范畴。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>孔子（前 551–前 479）</strong>——儒家美学奠基者。"尽善尽美""文质彬彬"，美善合一。</p>
+        <p><strong>老子（约前 6 世纪）</strong>——道家美学源头。"大音希声，大象无形"，自然无为之美。</p>
+        <p><strong>庄子（约前 369–前 286）</strong>——道家美学集大成者。"天地有大美而不言"，逍遥与齐物。</p>
+        <p><strong>谢赫（约 5–6 世纪）</strong>——中国绘画美学奠基人。《古画品录》提出"六法"，以"气韵生动"为首。</p>
+        <p><strong>王维（701–761）</strong>——诗画一体的典范。"诗中有画，画中有诗"，意境美学的代表。</p>
+        <p><strong>苏轼（1037–1101）</strong>——文人美学代表。"论画以形似，见与儿童邻"，重神韵与意境。</p>
+        <p><strong>王国维（1877–1927）</strong>——近代美学集大成者。《人间词话》以"境界"说总结意境美学。</p>
+
+        <figure class="diagram">
+          <figcaption>图 5 · 东方美学结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["东方美学<br>意境与气韵"] --> A["儒家<br>美善相乐 · 文以载道"]
+  ROOT --> B["道家<br>大音希声 · 自然无为"]
+  ROOT --> C["禅宗<br>空灵 · 顿悟 · 留白"]
+  ROOT --> D["中国书画美学<br>谢赫六法 · 气韵生动"]
+  ROOT --> E["意境美学<br>王维 · 苏轼 · 王国维"]
+  ROOT --> F["日本美学<br>侘寂 · 物哀 · 幽玄"]
+  classDef rootNode fill:#9E2A5B,color:#fff,stroke:#9E2A5B;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <p>东方美学不以公式立论，但留下了几条可循的"心法"：</p>
+        <div class="formula">
+          <span class="f-name">谢赫六法（绘画六法）</span>
+          气韵生动 · 骨法用笔 · 应物象形 · 随类赋彩 · 经营位置 · 传移模写
+          <span class="f-note">六法以"气韵生动"为最高标准——画不在"像"，而在"活"：让生命的气息在笔墨间流动。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">意境公式</span>
+          意境 = 情（主观） + 景（客观） + 言外之意
+          <span class="f-note">王国维："能写真景物、真感情者，谓之有境界。"美在景与情的交融，更在文字与画面之外的留白。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">侘寂（wabi-sabi）</span>
+          美 = 残缺 + 无常 + 朴素
+          <span class="f-note">日本茶道与陶艺以"不完美"为美：金缮修复的裂痕、风化的茶碗，都因承载时间而动人。</span>
+        </div>
+
+        <h3>对照表：西方美学 vs 东方美学</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>西方美学</th><th>东方美学</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>核心问题</strong></td><td>美是什么？（本质）</td><td>美如何通向人格与天地？（境界）</td></tr>
+              <tr><td><strong>理想</strong></td><td>比例 · 和谐 · 真实</td><td>意境 · 气韵 · 留白</td></tr>
+              <tr><td><strong>欣赏方式</strong></td><td>看（视觉 · 分析）</td><td>品与悟（整体 · 体味）</td></tr>
+              <tr><td><strong>与道德的关系</strong></td><td>审美独立（康德）</td><td>美善合一（儒家）</td></tr>
+              <tr><td><strong>典型范畴</strong></td><td>优美 · 崇高 · 天才</td><td>意境 · 气韵 · 侘寂 · 物哀</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">孔子 · 前 551–前 479</div>
+            <blockquote>尽美矣，又尽善也。<cite>——《论语·八佾》</cite></blockquote>
+            <blockquote>文质彬彬，然后君子。<cite>——《论语·雍也》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">老子 · 约前 6 世纪</div>
+            <blockquote>大音希声，大象无形。<cite>——《道德经》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">庄子 · 约前 369–前 286</div>
+            <blockquote>天地有大美而不言。<cite>——《庄子·知北游》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">谢赫 · 约 5–6 世纪</div>
+            <blockquote>气韵，生动是也。<cite>——《古画品录》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">苏轼 · 1037–1101</div>
+            <blockquote>论画以形似，见与儿童邻。<cite>——《书鄢陵王主簿所画折枝》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">王国维 · 1877–1927</div>
+            <blockquote>能写真景物、真感情者，谓之有境界。<cite>——《人间词话》</cite></blockquote>
+            <blockquote>境界有大小，不以是而分优劣。<cite>——《人间词话》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">东方美学的遗产</div>
+            <ul>
+              <li>"美善合一"与"自然无为"两条人格美学路径</li>
+              <li>谢赫六法与"气韵生动"的绘画美学</li>
+              <li>意境、留白、空灵的审美范畴</li>
+              <li>侘寂、物哀、幽玄——日本美学的世界性贡献</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第六章 当代艺术与电子音乐 -->
+      <section class="sec" id="contemporary">
+        <h2><span class="chapno">第六章</span>当代艺术与电子音乐：从波普到 Phonk（20 世纪至今）</h2>
+        <p><strong>定义</strong>：当代艺术把"美"从美术馆搬进生活、街头与屏幕——波普艺术（沃霍尔）让消费符号成为艺术，观念艺术让"想法"取代"作品"，行为艺术与装置艺术让观众成为作品的一部分，街头艺术与数字艺术（含 AI 艺术）则把创作权交给大众与机器。与此同时，20 世纪以来的电子音乐用电路、采样与算法重新定义了"声音之美"：从具体音乐、合成器、Kraftwerk 的机器人节拍，到底特律/芝加哥的 techno 与 house、嘻哈的采样文化，再到互联网原生的 <strong>Phonk</strong>——艺术史第一次由"算法与流量"直接书写。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>波普与消费时代（1950s–60s）</strong>：沃霍尔以《金宝汤罐头》《玛丽莲·梦露》把商业图像变成艺术，宣告"艺术与消费"的合流；波普艺术消解了"高雅"与"低俗"的界限。</p>
+          <p><strong>观念与行为艺术（1960s–70s）</strong>：观念艺术主张"想法即作品"，博伊斯提出"人人都是艺术家"，行为艺术与大地艺术把创作现场变成作品本身。</p>
+          <p><strong>电子音乐的诞生（1940s–70s）</strong>：具体音乐（皮埃尔·舍费尔）用录音磁带拼贴声音，合成器（穆格）让音色可被"制造"，Kraftwerk（发电站乐队）以机器人节拍宣告电子流行乐的诞生，随后底特律 techno 与芝加哥 house 把电子节拍变成舞池宗教。</p>
+          <p><strong>采样与互联网时代（1980s–今）</strong>：嘻哈以采样拼贴旧唱片，EDM 让电子音乐成为全球主流；互联网与短视频平台让"卧室制作人"绕过唱片公司直接触达全球听众——Phonk 正是这个时代的产物。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>沃霍尔（1928–1987）</strong>——波普艺术领袖。"在未来，每个人都能成名 15 分钟"。</p>
+        <p><strong>博伊斯（1921–1986）</strong>——观念与行为艺术代表。"人人都是艺术家"。</p>
+        <p><strong>皮埃尔·舍费尔（1910–1995）</strong>——具体音乐之父。以磁带拼贴开创"声音即素材"。</p>
+        <p><strong>Kraftwerk（1970–）</strong>——电子流行乐先驱。机器人节拍与"人机合一"美学。</p>
+        <p><strong>DJ Screw（1971–2000）</strong>——休斯顿"chopped and screwed"技术开创者，Phonk 的远祖。</p>
+        <p><strong>SpaceGhostPurrp（1991–）</strong>——"Phonk"一词的命名者，迈阿密地下说唱制作人。</p>
+        <p><strong>Kordhell（1990s–）</strong>——Drift Phonk 代表制作人，短视频时代的 Phonk 推手。</p>
+
+        <figure class="diagram">
+          <figcaption>图 6 · 当代艺术与电子音乐结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["当代艺术与电子音乐<br>20 世纪至今"] --> A["波普艺术 · 沃霍尔"]
+  ROOT --> B["观念与行为艺术<br>博伊斯 · 人人都是艺术家"]
+  ROOT --> C["电子音乐源流<br>具体音乐 · 合成器 · Kraftwerk"]
+  C --> C1["techno · house · EDM"]
+  C --> C2["嘻哈采样文化"]
+  ROOT --> D["互联网原生音乐<br>Phonk · 卧室制作人"]
+  D --> D1["Memphis 根源<br>DJ Screw · 三六黑手党"]
+  D --> D2["Drift Phonk<br>短视频时代"]
+  classDef rootNode fill:#9E2A5B,color:#fff,stroke:#9E2A5B;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <p>声音与数字时代的"美"也有自己的数学——它们藏在节拍、音律与比特里：</p>
+        <div class="formula">
+          <span class="f-name">BPM（每分钟节拍数）</span>
+          速度 = 节拍数 / 分钟
+          <span class="f-note">BPM 决定音乐的情绪：60–80 舒缓，120–130 舞曲，Phonk 常落在 130–160 的"漂移"区间，快而躁动。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">十二平均律（音程公式）</span>
+          相邻半音频率比 = 2^(1/12) ≈ 1.0595
+          <span class="f-note">把一个八度平均分成 12 个半音，是钢琴与几乎所有现代音乐的音律基础——巴赫《平均律键盘曲集》为它立碑。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">数字音频（采样率 × 位深）</span>
+          音质 ≈ 采样率（如 44.1kHz）× 位深（如 16bit）
+          <span class="f-note">CD 音质 = 每秒采样 44100 次、每次 16 位。Phonk 的"低保真"美学反而刻意压低音质，制造复古的磁带感。</span>
+        </div>
+
+        <h3>专题 · Phonk：从孟菲斯地下室到全球短视频</h3>
+        <p><strong>Phonk</strong> 是 21 世纪最典型的"互联网原生"音乐流派——它没有厂牌、没有实体唱片，却借助短视频平台成为全球现象。理解 Phonk，就是理解数字时代艺术如何诞生。</p>
+        <div class="history">
+          <span class="history-title">Phonk 的谱系</span>
+          <p><strong>根源 · 孟菲斯地下说唱（1990s）</strong>：美国田纳西州孟菲斯的 DJ Screw 发明"chopped and screwed"——把唱片放慢、切碎、反复，制造迷幻的"泥泞"质感；三六黑手党（Three 6 Mafia）、Tommy Wright III 等以黑暗、粗糙的节拍与邪典采样，奠定了 Phonk 的听觉基因。</p>
+          <p><strong>命名 · SpaceGhostPurrp（2010s 初）</strong>：迈阿密制作人 SpaceGhostPurrp 在 2010 年代初以"Phonk"命名这种融合孟菲斯采样、黑暗氛围与 808 鼓点的声音，并把它带上互联网（SoundCloud、YouTube）。</p>
+          <p><strong>爆发 · Drift Phonk（2020s）</strong>：制作人 Kordhell、MoonDeity、DVRST、Pharmacist 等把 Phonk 提速到 130–160 BPM，配上失真 808、牛铃（cowbell）与"漂移"（drift）的汽车漂移视频，在 TikTok 上病毒式传播——"Drift Phonk"成为全球 Z 世代的背景音乐。</p>
+          <p><strong>美学内核</strong>：Phonk 的美学是"低保真 × 高能量"——粗糙的磁带质感、黑暗邪典的采样、失真的低音，与短视频的碎片化、重复性完美契合。它证明：在算法时代，"美"可以由一群卧室制作人共同定义，而不必经过任何权威。</p>
+        </div>
+
+        <h3>对照表：传统艺术 vs 当代艺术 vs 数字/电子艺术</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>传统艺术</th><th>当代艺术</th><th>数字/电子艺术</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>媒介</strong></td><td>画布 · 大理石 · 舞台</td><td>现成品 · 身体 · 空间</td><td>电路 · 采样 · 算法 · 屏幕</td></tr>
+              <tr><td><strong>创作者</strong></td><td>受训的艺术家</td><td>艺术家 + 观众</td><td>制作人 + 听众 + 算法</td></tr>
+              <tr><td><strong>传播</strong></td><td>美术馆 · 剧院 · 宫廷</td><td>画廊 · 街头 · 现场</td><td>流媒体 · 短视频 · 平台</td></tr>
+              <tr><td><strong>评判者</strong></td><td>学院 · 贵族 · 教会</td><td>批评家 · 策展人</td><td>流量 · 算法 · 大众</td></tr>
+              <tr><td><strong>典型</strong></td><td>《蒙娜丽莎》</td><td>《泉》 · 波普</td><td>Kraftwerk · techno · Phonk</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">沃霍尔 · 1928–1987</div>
+            <blockquote>在未来，每个人都能成名 15 分钟。<cite>——（据传）</cite></blockquote>
+            <blockquote>艺术是你可以逃脱惩罚的事情。<cite>——（据传）</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">博伊斯 · 1921–1986</div>
+            <blockquote>人人都是艺术家。<cite>——（据传）</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">皮埃尔·舍费尔 · 1910–1995</div>
+            <blockquote>声音本身就可以成为音乐，不必来自乐器。<cite>——论具体音乐</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">Kraftwerk · 1970–</div>
+            <blockquote>我们是机器人，我们来自未来。<cite>——《The Robots》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">DJ Screw · 1971–2000</div>
+            <blockquote>放慢它，切碎它，让它渗进你的骨头。<cite>——论 chopped and screwed</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">当代艺术与电子音乐的遗产</div>
+            <ul>
+              <li>艺术从"作品"走向"观念"与"参与"</li>
+              <li>电子音乐把"声音"本身变成艺术素材</li>
+              <li>采样文化让"旧声音"获得新生命</li>
+              <li>Phonk 证明：算法时代，美由大众共同定义</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第七章 总结 -->
+      <section class="sec" id="summary">
+        <h2><span class="chapno">第七章</span>总结：艺术、文明与真理</h2>
+        <p>回望这条谱系：艺术从"为神"走向"为王"、"为人"、"为自我"、"为大众"，最终"为算法"——每一次转向，都是人类文明的一次自我更新。艺术史之所以能映照文明的轮廓，是因为<strong>艺术总是最先说出一个时代"人如何感受自己"</strong>：希腊的和谐对应城邦的理性，中世纪的尖拱对应信仰的上升，文艺复兴的透视对应人的觉醒，现代主义的变形对应工业时代的焦虑，Phonk 的低保真对应信息时代的碎片与速度。读懂艺术史，就读懂了文明的心电图。</p>
+
+        <figure class="diagram">
+          <figcaption>图 7 · 艺术与文明：六次转向</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["艺术为谁而美<br>六次转向"] --> A["为神<br>原始与古典<br>宗教仪式"]
+  A --> B["为王<br>中世纪与宫廷<br>权力与信仰的装饰"]
+  B --> C["为人<br>文艺复兴<br>人的尊严"]
+  C --> D["为自我<br>浪漫主义与现代主义<br>内心的表达"]
+  D --> E["为大众<br>当代艺术与流行文化<br>消费与参与"]
+  E --> F["为算法<br>数字时代<br>数据与流量"]
+  classDef rootNode fill:#9E2A5B,color:#fff,stroke:#9E2A5B;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <div class="callout">
+          <span class="callout-title">艺术与真理</span>
+          艺术提供一种科学无法提供的"真理"：科学之真回答"世界如何运作"，艺术之真回答"世界如何被感受"。前者可检验、可证伪；后者不可检验，却同样真实——梵高的星空在物理上不准确，在情感上却比照片更真。艺术之真不是"符合事实"，而是<strong>"揭示存在"</strong>：它让不可言说的经验（爱、死亡、孤独、狂喜）获得形式。这正是第八辑《科学思想谱系》与第九辑的对话：科学与艺术，是人类认识世界的两种必要方式——一个求真，一个求美；而"真善美"三者，最终指向同一个问题：人如何安顿自己。
+        </div>
+
+        <h3>常用美学法则速查</h3>
+        <p>把本辑出现过的法则集中起来，按领域归类，方便随时查阅：</p>
+
+        <h3>比例与构成</h3>
+        <div class="formula">
+          <span class="f-name">黄金比例</span>
+          φ ≈ 1.618
+        </div>
+        <div class="formula">
+          <span class="f-name">一点透视</span>
+          平行线汇聚于消失点
+        </div>
+        <div class="formula">
+          <span class="f-name">三分法构图</span>
+          画面横竖三等分，主体置于交点
+        </div>
+
+        <h3>色彩</h3>
+        <div class="formula">
+          <span class="f-name">色彩三要素</span>
+          色相 · 明度 · 饱和度
+        </div>
+        <div class="formula">
+          <span class="f-name">互补色</span>
+          色环相对的两色（如红–绿）并置增强
+        </div>
+
+        <h3>东方心法</h3>
+        <div class="formula">
+          <span class="f-name">谢赫六法</span>
+          气韵生动 · 骨法用笔 · 应物象形 · 随类赋彩 · 经营位置 · 传移模写
+        </div>
+        <div class="formula">
+          <span class="f-name">意境</span>
+          情 + 景 + 言外之意
+        </div>
+        <div class="formula">
+          <span class="f-name">侘寂</span>
+          残缺 + 无常 + 朴素
+        </div>
+
+        <h3>声音与数字</h3>
+        <div class="formula">
+          <span class="f-name">十二平均律</span>
+          2^(1/12) ≈ 1.0595
+        </div>
+        <div class="formula">
+          <span class="f-name">BPM</span>
+          节拍数 / 分钟
+        </div>
+        <div class="formula">
+          <span class="f-name">数字音频</span>
+          采样率 × 位深
+        </div>
+
+        <h3>核心对照表：艺术之真 vs 科学之真</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>科学之真</th><th>艺术之真</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>回答的问题</strong></td><td>世界如何运作</td><td>世界如何被感受</td></tr>
+              <tr><td><strong>方法</strong></td><td>观察 · 实验 · 数学</td><td>直觉 · 形式 · 想象</td></tr>
+              <tr><td><strong>检验方式</strong></td><td>可检验 · 可证伪</td><td>不可检验 · 却可共鸣</td></tr>
+              <tr><td><strong>真理形态</strong></td><td>符合事实（客观）</td><td>揭示存在（主观而普遍）</td></tr>
+              <tr><td><strong>典型问题</strong></td><td>光速是多少？</td><td>梵高的星空为何动人？</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">艺术精神三句话</span>
+          第一，<strong>美不服从任何权威</strong>——它由每一个感受者重新定义；第二，<strong>艺术是文明的镜子</strong>——一个时代如何感受，就如何创造；第三，<strong>审美是人的自由</strong>——在真与善之外，美让人成为完整的人。艺术不是现实的装饰，而是人类为"不可言说之物"找到的形式——这正是它超越时代、通向真理的方式。
+        </div>
+      </section>
+    </main>
+
+    
+      <section class="sec">
+        <h2>关联辑目</h2>
+        <div class="explain">
+          <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+          <ul>
+          <li><a href="../西方哲学思想谱系/西方哲学思想谱系.html">西方哲学思想谱系</a></li>
+          <li><a href="../文学与语言思想谱系/文学与语言思想谱系.html">文学与语言思想谱系</a></li>
+          <li><a href="../心理学思想谱系/心理学思想谱系.html">心理学思想谱系</a></li>
+          <li><a href="../历史思想谱系/历史思想谱系.html">历史思想谱系</a></li>
+          <li><a href="../东方思想谱系/东方思想谱系.html">东方思想谱系</a></li>
+          <li><a href="../传播与媒介思想谱系/传播与媒介思想谱系.html">传播与媒介思想谱系</a></li>
+          </ul>
+        </div>
+      </section>
+<footer>
+      艺术与美学思想谱系 · 思想图谱系列第九辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-05
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'PingFang SC, Microsoft YaHei, Helvetica, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>

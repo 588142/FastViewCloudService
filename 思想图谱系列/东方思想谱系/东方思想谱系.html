@@ -1,0 +1,1062 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>东方思想谱系 · 思想图谱系列第五辑</title>
+
+  <style>
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+  </style>
+
+  <style>
+    :root {
+      --bg: #FBF8F4;
+      --bg2: #F3EEE6;
+      --ink: #26221C;
+      --muted: #6E675C;
+      --rule: #E4DED2;
+      --accent: #B03A2E;
+      --accent2: #8A6D1F;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:first-child { margin-left: 0; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .legacy .legacy-title { font-weight: 700; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .legacy ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; }
+    @media (max-width: 700px) { .legacy { grid-template-columns: 1fr; } }
+
+    .history { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; }
+    .history .history-title { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem; }
+    .history p { margin-bottom: 0.55rem; }
+    .history p:last-child { margin-bottom: 0; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidenav { position: static; max-height: none; }
+    }
+    @media print {
+      .sidenav { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      section.sec { break-inside: avoid-page; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">东方思想谱系</div>
+    <div class="brand-sub">思想图谱系列 · 第五辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+      <li><a href="#intro">导言 · 成德与有序</a></li>
+      <li><a href="#overview">第一章 · 总览：源流与传承</a></li>
+      <li><a href="#preqin">第二章 · 先秦诸子：百家争鸣</a></li>
+      <li><a href="#hanwei">第三章 · 两汉经学与魏晋玄学</a></li>
+      <li><a href="#buddhism">第四章 · 佛学东传与隋唐</a></li>
+      <li><a href="#songming">第五章 · 宋明理学与心学</a></li>
+      <li><a href="#modern">第六章 · 近代回应：中西之变</a></li>
+      <li><a href="#summary">第七章 · 总结：内圣外王</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第五辑</span>
+        <span class="series-links">
+          <a href="../index.html">系列目录</a>
+          <a href="../自由主义谱系/自由主义谱系.html">← 上一辑 · 自由主义的谱系</a>
+          <a href="../series-overview/系列总览.html">下一辑 · 系列总览 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>东方思想谱系</h1>
+      <p class="subtitle">从先秦诸子到近代回应——成德、有序与天人合一的两千五百年</p>
+      <p class="meta">作者：詹家杨 · 2026-09-05 · 6 张思维导图 · 7 张对照表 · 语录 / 成果 / 历史背景</p>
+    </header>
+
+    <main>
+      <!-- 导言 -->
+      <section class="sec" id="intro">
+        <h2>导言 · 成德与有序</h2>
+        <p>如果说自由主义谱系是西方追问"个人如何自由"的大河，那么东方思想谱系就是东方追问"<strong>人如何成德、社会如何有序、天与人如何合一</strong>"的另一条大河。它以中国思想为主体，兼纳佛学东传，从先秦诸子到两汉经学、魏晋玄学、隋唐佛学、宋明理学，再到近代对西方冲击的回应，绵延两千五百年。本辑把<strong>孔子、孟子、荀子、老子、庄子、墨子、韩非、董仲舒、王弼、慧能、朱熹、王阳明、康有为、梁启超、冯友兰、牟宗三</strong>等思想者放进同一条谱系：看清谁是源头、谁完成了转折、谁又在近代重新出发。</p>
+        <div class="callout">
+          <span class="callout-title">一条主线</span>
+          整部谱系的核心逻辑是"<strong>内圣外王</strong>"——由内而外：修身、齐家、治国、平天下。分歧不在于要不要成德，而在于：成德的根据是性善还是性恶？路径是格物穷理还是发明本心？面对西方，是守成、变法还是全盘重构？
+        </div>
+      </section>
+
+      <!-- 第一章 总览 -->
+      <section class="sec" id="overview">
+        <h2><span class="chapno">第一章</span>总览：源流与传承</h2>
+        <p>先看全景：先秦诸子奠定基本格局；两汉把儒学立为官方学术，魏晋则以玄学反思；佛教东传后，隋唐佛学鼎盛；宋明儒学吸收佛道重建形而上根基，形成理学与心学；近代西学东渐，东方思想在冲击中回应并孕育现代新儒家。</p>
+
+        <figure class="diagram">
+          <figcaption>图 1 · 东方思想谱系总图</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  Z["先秦诸子<br>儒 · 道 · 墨 · 法"] --> H["两汉经学<br>独尊儒术"]
+  H --> W["魏晋玄学<br>以无为本"]
+  W --> F["隋唐佛学<br>禅宗中国化"]
+  F --> S["宋明理学与心学<br>程朱 · 陆王"]
+  S --> M["近代回应<br>维新 · 五四 · 新儒家"]
+  classDef rootNode fill:#B03A2E,color:#fff,stroke:#B03A2E;
+  class Z rootNode;
+          </pre>
+        </figure>
+
+        <h3>总对照表</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>阶段</th><th>时期</th><th>回答的核心问题</th><th>代表</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>先秦诸子</strong></td><td>前 6–前 3 世纪</td><td>礼崩乐坏，如何救世</td><td>孔孟 · 老庄 · 墨 · 韩非</td></tr>
+              <tr><td><strong>两汉经学</strong></td><td>前 2 世纪–3 世纪</td><td>大一统需要何种思想</td><td>董仲舒</td></tr>
+              <tr><td><strong>魏晋玄学</strong></td><td>3–5 世纪</td><td>名教与自然如何安顿</td><td>王弼 · 郭象 · 竹林七贤</td></tr>
+              <tr><td><strong>隋唐佛学</strong></td><td>1–10 世纪</td><td>如何解脱生死</td><td>慧能 · 玄奘 · 天台 · 华严</td></tr>
+              <tr><td><strong>宋明理学</strong></td><td>10–17 世纪</td><td>如何重建儒学的形而上根基</td><td>朱熹 · 王阳明</td></tr>
+              <tr><td><strong>近代回应</strong></td><td>19–20 世纪</td><td>如何面对西方冲击</td><td>康梁 · 严复 · 冯友兰 · 牟宗三</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 第二章 先秦诸子 -->
+      <section class="sec" id="preqin">
+        <h2><span class="chapno">第二章</span>先秦诸子：百家争鸣（前 6–前 3 世纪）</h2>
+        <p><strong>定义</strong>：春秋战国时期礼崩乐坏，诸子百家竞相提出救世方案，奠定了中国思想的基本格局。其中<strong>儒、道、墨、法</strong>四家影响最大，后世所谓"九流十家"皆由此出。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>政治土壤</strong>：周王室衰微，诸侯争霸，"礼崩乐坏"——维系秩序的宗法礼制瓦解，思想家被迫重新回答"秩序从何而来"。</p>
+          <p><strong>社会土壤</strong>：井田制瓦解，士阶层崛起，私学兴起，孔子开私人讲学之风，"学在官府"变为"学在民间"。</p>
+          <p><strong>思想土壤</strong>：各国变法图强，为不同学说提供试验场；齐之稷下学宫成为百家争鸣的中心。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>孔子（前 551–前 479）</strong>——儒家创始人。以"仁"为核心，以"礼"为规范，主张"克己复礼""有教无类"，整理六经，开创私人讲学。</p>
+        <p><strong>孟子（约前 372–前 289）</strong>——儒家"亚圣"。主"性善论"，倡"仁政""民贵君轻"，把孔子的仁发展为系统的政治哲学。</p>
+        <p><strong>荀子（约前 313–前 238）</strong>——儒家集大成者。主"性恶论"，主张"隆礼重法""制天命而用之"，为法家提供思想桥梁。</p>
+        <p><strong>老子（约前 6 世纪）</strong>——道家创始人。《道德经》五千言，主"道法自然""无为而治"，以柔克刚。</p>
+        <p><strong>庄子（约前 369–前 286）</strong>——道家集大成者。倡"逍遥游""齐物论"，追求精神绝对自由。</p>
+        <p><strong>墨子（约前 468–前 376）</strong>——墨家创始人。主"兼爱""非攻""尚贤""节用"，代表小生产者利益。</p>
+        <p><strong>韩非（约前 280–前 233）</strong>——法家集大成者。综合"法、术、势"，主张以法治国、不期修古。</p>
+
+        <figure class="diagram">
+          <figcaption>图 2 · 先秦诸子结构图</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  ROOT["先秦诸子"] --> A["儒家<br>仁 · 礼 · 中庸"]
+  ROOT --> B["道家<br>道 · 无为"]
+  ROOT --> C["墨家<br>兼爱 · 非攻"]
+  ROOT --> D["法家<br>法 · 术 · 势"]
+  A --> A1["孔子 · 仁者爱人"]
+  A --> A2["孟子 · 性善 · 仁政"]
+  A --> A3["荀子 · 性恶 · 隆礼"]
+  B --> B1["老子 · 道法自然"]
+  B --> B2["庄子 · 逍遥 · 齐物"]
+  C --> C1["墨子 · 兼相爱交相利"]
+  D --> D1["韩非 · 以法治国"]
+  classDef rootNode fill:#B03A2E,color:#fff,stroke:#B03A2E;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>四家对照表</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>儒家</th><th>道家</th><th>墨家</th><th>法家</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>核心概念</strong></td><td>仁 · 礼 · 中庸</td><td>道 · 无为</td><td>兼爱 · 非攻</td><td>法 · 术 · 势</td></tr>
+              <tr><td><strong>人性论</strong></td><td>性善（孟子）／性恶（荀子）</td><td>超越善恶，顺其自然</td><td>人性自利，需以兼爱矫正</td><td>人性自利，需以法治约束</td></tr>
+              <tr><td><strong>治国路径</strong></td><td>德治 · 礼治 · 仁政</td><td>无为而治 · 小国寡民</td><td>尚贤 · 尚同 · 节用</td><td>以法治国 · 严刑峻法</td></tr>
+              <tr><td><strong>理想人格</strong></td><td>君子 · 圣贤</td><td>圣人 · 真人</td><td>兼士 · 贤者</td><td>法术之士 · 明君</td></tr>
+              <tr><td><strong>后世命运</strong></td><td>成为官方正统</td><td>隐逸与玄学之源</td><td>秦汉后几近断绝</td><td>秦用而汉后隐入制度</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">孔子 · 前 551–前 479</div>
+            <blockquote>己所不欲，勿施于人。<cite>——《论语·卫灵公》</cite></blockquote>
+            <blockquote>学而不思则罔，思而不学则殆。<cite>——《论语·为政》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">孟子 · 约前 372–前 289</div>
+            <blockquote>民为贵，社稷次之，君为轻。<cite>——《孟子·尽心下》</cite></blockquote>
+            <blockquote>富贵不能淫，贫贱不能移，威武不能屈，此之谓大丈夫。<cite>——《孟子·滕文公下》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">老子 · 约前 6 世纪</div>
+            <blockquote>道可道，非常道；名可名，非常名。<cite>——《道德经》第一章</cite></blockquote>
+            <blockquote>上善若水。水善利万物而不争。<cite>——《道德经》第八章</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">庄子 · 约前 369–前 286</div>
+            <blockquote>天地与我并生，而万物与我为一。<cite>——《庄子·齐物论》</cite></blockquote>
+            <blockquote>吾生也有涯，而知也无涯。<cite>——《庄子·养生主》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">墨子 · 约前 468–前 376</div>
+            <blockquote>兼相爱，交相利。<cite>——《墨子·兼爱中》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">韩非 · 约前 280–前 233</div>
+            <blockquote>不期修古，不法常可，论世之事，因为之备。<cite>——《韩非子·五蠹》</cite></blockquote>
+            <blockquote>刑过不避大臣，赏善不遗匹夫。<cite>——《韩非子·有度》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">百家争鸣的遗产</div>
+            <ul>
+              <li>私学兴起，打破"学在官府"</li>
+              <li>诸子典籍：《论语》《道德经》《庄子》《墨子》《韩非子》</li>
+              <li>奠定儒、道、墨、法四大思想源流</li>
+              <li>稷下学宫——最早的学术中心</li>
+            </ul>
+          </div>
+          <div>
+            <div class="legacy-who">荀子 · 约前 313–前 238</div>
+            <blockquote>制天命而用之。<cite>——《荀子·天论》</cite></blockquote>
+            <blockquote>人之性恶，其善者伪也。<cite>——《荀子·性恶》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">曾子 · 前 505–前 435</div>
+            <blockquote>吾日三省吾身：为人谋而不忠乎？与朋友交而不信乎？传不习乎？<cite>——《论语·学而》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">子思 · 约前 483–前 402</div>
+            <blockquote>中也者，天下之大本也；和也者，天下之达道也。<cite>——《中庸》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">孙武 · 约前 545–前 470</div>
+            <blockquote>知己知彼，百战不殆。<cite>——《孙子兵法·谋攻》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">商鞅 · 约前 390–前 338</div>
+            <blockquote>治世不一道，便国不法古。<cite>——《商君书·更法》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">惠施 · 约前 370–前 310</div>
+            <blockquote>至大无外，谓之大一；至小无内，谓之小一。<cite>——《庄子·天下》引惠施</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">杨朱 · 约前 395–前 335</div>
+            <blockquote>拔一毛而利天下，不为也。<cite>——《孟子·尽心上》述杨朱</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">告子 · 约前 420–前 350</div>
+            <blockquote>食色，性也。<cite>——《孟子·告子上》述告子</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">公孙龙 · 约前 320–前 250</div>
+            <blockquote>白马非马。<cite>——《公孙龙子·白马论》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">列子 · 约前 450–前 375</div>
+            <blockquote>天地无全功，圣人无全能，万物无全用。<cite>——《列子·天瑞》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">邹衍 · 约前 305–前 240</div>
+            <blockquote>五德转移，治各有宜。<cite>——阴阳五行说</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">管仲 · 约前 723–前 645</div>
+            <blockquote>仓廪实则知礼节，衣食足则知荣辱。<cite>——《管子·牧民》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">诸子百家的多元面向</div>
+            <ul>
+              <li>名家以逻辑思辨开中国论辩传统</li>
+              <li>阴阳家以五行建构宇宙图式</li>
+              <li>管子学派融合经济与礼法</li>
+              <li>为后世各学科提供思想源头</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第三章 两汉经学与魏晋玄学 -->
+      <section class="sec" id="hanwei">
+        <h2><span class="chapno">第三章</span>两汉经学与魏晋玄学（前 2 世纪–5 世纪）</h2>
+        <p><strong>定义</strong>：汉初以黄老无为休养生息，汉武帝时董仲舒"罢黜百家，独尊儒术"，经学成为官方学术；东汉末至魏晋，玄学以老庄解经，形成清谈之风，是思想从"经世"转向"玄远"的一次大转折。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>大一统之需</strong>：秦亡教训与汉初分封之乱，使统治者意识到需要统一思想；董仲舒以"天人感应"为君权提供神学依据，儒学由此官方化。</p>
+          <p><strong>经学之争</strong>：今文经学与古文经学围绕经典文本与师法展开长期争论，经学日益繁琐，沦为章句之学。</p>
+          <p><strong>玄学之兴</strong>：东汉末年政治黑暗、党锢之祸，士人避祸清谈；正始年间王弼以老庄注《易》，玄学兴起，以"无"为本。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>董仲舒（前 179–前 104）</strong>——汉代大儒。倡"天人感应""三纲五常""大一统"，使儒学成为官方意识形态。</p>
+        <p><strong>王弼（226–249）</strong>——玄学开山。注《老子》《周易》，主"以无为本""得意忘象"，把本体论引入中国思想。</p>
+        <p><strong>郭象（约 252–312）</strong>——玄学殿军。主"独化于玄冥之境"，调和名教与自然。</p>
+        <p><strong>竹林七贤（嵇康、阮籍等）</strong>——"越名教而任自然"，以放达反抗虚伪礼法。</p>
+
+        <figure class="diagram">
+          <figcaption>图 3 · 两汉经学与魏晋玄学结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["两汉 · 魏晋"] --> A["两汉经学<br>独尊儒术"]
+  ROOT --> B["魏晋玄学<br>以无为本"]
+  A --> A1["董仲舒 · 天人感应"]
+  A --> A2["今古文经学之争"]
+  A --> A3["三纲五常 · 大一统"]
+  B --> B1["王弼 · 得意忘象"]
+  B --> B2["郭象 · 独化玄冥"]
+  B --> B3["竹林七贤 · 越名教任自然"]
+  classDef rootNode fill:#B03A2E,color:#fff,stroke:#B03A2E;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>经学与玄学对照表</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>两汉经学</th><th>魏晋玄学</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>时代</strong></td><td>前 2 世纪–3 世纪</td><td>3–5 世纪</td></tr>
+              <tr><td><strong>核心问题</strong></td><td>大一统需要何种思想</td><td>名教与自然如何安顿</td></tr>
+              <tr><td><strong>经典依据</strong></td><td>五经（《诗》《书》《礼》《易》《春秋》）</td><td>"三玄"（《老子》《庄子》《周易》）</td></tr>
+              <tr><td><strong>本体观念</strong></td><td>天 · 天人感应</td><td>无 · 自然</td></tr>
+              <tr><td><strong>治学方式</strong></td><td>章句训诂 · 师法家法</td><td>义理思辨 · 清谈</td></tr>
+              <tr><td><strong>代表</strong></td><td>董仲舒 · 郑玄</td><td>王弼 · 郭象 · 竹林七贤</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">董仲舒 · 前 179–前 104</div>
+            <blockquote>《春秋》大一统者，天地之常经，古今之通谊也。<cite>——《举贤良对策》</cite></blockquote>
+            <blockquote>道之大原出于天，天不变，道亦不变。<cite>——《举贤良对策》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">王弼 · 226–249</div>
+            <blockquote>得意而忘象，得象而忘言。<cite>——《周易略例·明象》</cite></blockquote>
+            <blockquote>天下之物，皆以有为生；有之所始，以无为本。<cite>——《老子注》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">嵇康 · 224–263</div>
+            <blockquote>越名教而任自然。<cite>——《释私论》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">经学与玄学的遗产</div>
+            <ul>
+              <li>儒学官方化，太学与察举制确立</li>
+              <li>《春秋繁露》与今古文经学典籍</li>
+              <li>玄学把本体论引入中国思想</li>
+              <li>清谈之风与士人精神解放</li>
+            </ul>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">郑玄 · 127–200</div>
+            <blockquote>括囊大典，网罗众家，删裁繁诬，刊改漏失。<cite>——《后汉书·郑玄传》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">何晏 · 约 193–249</div>
+            <blockquote>天地万物皆以无为本。<cite>——《晋书·王衍传》述何晏</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">阮籍 · 210–263</div>
+            <blockquote>礼岂为我辈设邪？<cite>——《世说新语·任诞》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">裴頠 · 267–300</div>
+            <blockquote>夫至无者，无以能生，故始生者，自生也。<cite>——《崇有论》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">王充 · 27–约 97</div>
+            <blockquote>事莫明于有效，论莫定于有证。<cite>——《论衡·薄葬》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">扬雄 · 前 53–18</div>
+            <blockquote>玄者，幽摛万类而不见形者也。<cite>——《太玄》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">向秀 · 约 227–272</div>
+            <blockquote>逍遥者，明至人之心也。<cite>——《庄子注》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">支道林 · 314–366</div>
+            <blockquote>即色游玄，色即是空。<cite>——即色论</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">许慎 · 约 58–约 147</div>
+            <blockquote>盖文字者，经艺之本，王政之始。<cite>——《说文解字·叙》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">经学与玄学的多元遗产</div>
+            <ul>
+              <li>《说文解字》奠定文字学与训诂学</li>
+              <li>王充以实证批判谶纬迷信</li>
+              <li>玄学与佛学交融（支道林）</li>
+              <li>为宋明理学储备本体论范畴</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四章 佛学东传与隋唐 -->
+      <section class="sec" id="buddhism">
+        <h2><span class="chapno">第四章</span>佛学东传与隋唐（1–10 世纪）</h2>
+        <p><strong>定义</strong>：佛教自汉代经丝绸之路传入，经魏晋南北朝发展，至隋唐形成天台、华严、唯识、禅等中国化宗派，其中禅宗以"明心见性、顿悟成佛"成为最具中国特色的佛教。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>传入之路</strong>：张骞通西域后，佛教沿丝绸之路东传；东汉明帝"白马驮经"，佛教正式入华。</p>
+          <p><strong>乱世之需</strong>：魏晋南北朝战乱频仍，佛教以"因果轮回""彼岸解脱"为苦难中的人们提供精神慰藉，迅速传播。</p>
+          <p><strong>鼎盛之世</strong>：隋唐统一，帝王多崇佛，玄奘西行取经，佛经翻译与义学鼎盛；禅宗在六祖慧能后彻底中国化。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>慧能（638–713）</strong>——禅宗六祖。《坛经》为其说法记录，主"明心见性""顿悟成佛"，主张"不立文字，教外别传"。</p>
+        <p><strong>玄奘（602–664）</strong>——唯识宗创始人。西行天竺十七年，译经千余卷，著《大唐西域记》。</p>
+        <p><strong>智者大师（538–597）</strong>——天台宗实际创始人。主"一念三千""三谛圆融"，判教体系完备。</p>
+        <p><strong>法藏（643–712）</strong>——华严宗三祖。主"法界缘起""一即一切"，以理事无碍为极致。</p>
+
+        <figure class="diagram">
+          <figcaption>图 4 · 佛学东传结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["佛学东传"] --> A["禅宗<br>明心见性 · 顿悟"]
+  ROOT --> B["唯识宗<br>万法唯识"]
+  ROOT --> C["天台宗<br>一念三千"]
+  ROOT --> D["华严宗<br>法界缘起"]
+  A --> A1["慧能 · 菩提本无树"]
+  A --> A2["不立文字 · 教外别传"]
+  B --> B1["玄奘 · 西行取经"]
+  C --> C1["智者大师 · 三谛圆融"]
+  D --> D1["法藏 · 一即一切"]
+  classDef rootNode fill:#B03A2E,color:#fff,stroke:#B03A2E;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>四大宗派对照表</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>宗派</th><th>核心教义</th><th>修行路径</th><th>代表</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>禅宗</strong></td><td>明心见性 · 顿悟成佛</td><td>不立文字 · 直指本心</td><td>慧能</td></tr>
+              <tr><td><strong>唯识宗</strong></td><td>万法唯识 · 三性三无性</td><td>转识成智 · 渐修</td><td>玄奘 · 窥基</td></tr>
+              <tr><td><strong>天台宗</strong></td><td>一念三千 · 三谛圆融</td><td>止观双修</td><td>智者大师</td></tr>
+              <tr><td><strong>华严宗</strong></td><td>法界缘起 · 一即一切</td><td>理事无碍 · 事事无碍</td><td>法藏</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">慧能 · 638–713</div>
+            <blockquote>菩提本无树，明镜亦非台；本来无一物，何处惹尘埃。<cite>——《坛经》</cite></blockquote>
+            <blockquote>何期自性，本自清净；何期自性，能生万法。<cite>——《坛经》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">玄奘 · 602–664</div>
+            <blockquote>宁向西天一步死，不向东土半步生。<cite>——西行求法之志（传说）</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">智者大师 · 538–597</div>
+            <blockquote>一念三千，三谛圆融。<cite>——《摩诃止观》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">佛学东传的遗产</div>
+            <ul>
+              <li>禅宗彻底中国化，影响东亚文化圈</li>
+              <li>玄奘译经与《大唐西域记》</li>
+              <li>佛经翻译与义学体系（天台、华严）</li>
+              <li>为宋明理学提供思想资源（心性、本体）</li>
+            </ul>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">神秀 · 606–706</div>
+            <blockquote>身是菩提树，心如明镜台；时时勤拂拭，勿使惹尘埃。<cite>——《坛经》载神秀偈</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">慧远 · 334–416</div>
+            <blockquote>心净则佛土净。<cite>——净土之旨（慧远倡净土）</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">百丈怀海 · 720–814</div>
+            <blockquote>一日不作，一日不食。<cite>——《百丈清规》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">吉藏 · 549–623</div>
+            <blockquote>不生亦不灭，不常亦不断，不一亦不异，不来亦不去。<cite>——《中论》八不中道</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">道宣 · 596–667</div>
+            <blockquote>戒为无上菩提本，应当具足持净戒。<cite>——《四分律行事钞》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">善导 · 613–681</div>
+            <blockquote>一心专念弥陀名号，行住坐卧，不问时节久近。<cite>——《观经四帖疏》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">窥基 · 632–682</div>
+            <blockquote>万法唯识，识外无境。<cite>——《成唯识论述记》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">马祖道一 · 709–788</div>
+            <blockquote>平常心是道。<cite>——《景德传灯录》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">神会 · 684–758</div>
+            <blockquote>顿悟见性，即得解脱。<cite>——《荷泽神会禅师语录》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">隋唐佛教的多元宗派</div>
+            <ul>
+              <li>律宗以戒律立宗，规范僧团</li>
+              <li>净土宗以称名念佛普摄大众</li>
+              <li>唯识宗继承印度瑜伽行派</li>
+              <li>禅宗分南北，南宗顿悟成主流</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第五章 宋明理学与心学 -->
+      <section class="sec" id="songming">
+        <h2><span class="chapno">第五章</span>宋明理学与心学（10–17 世纪）</h2>
+        <p><strong>定义</strong>：面对佛道的挑战，宋明儒者吸收佛道心性论与本体论，重建儒学的形而上根基，形成以"理"为核心的<strong>程朱理学</strong>与以"心"为核心的<strong>陆王心学</strong>，合称宋明理学（道学）。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>佛道挑战</strong>：隋唐佛学鼎盛，儒学在形而上层面相形见绌，"儒门淡薄，收拾不住"成为士人焦虑。</p>
+          <p><strong>文治之世</strong>：宋代重文轻武，书院兴起，印刷术普及，儒学复兴获得制度与物质条件。</p>
+          <p><strong>理学大成</strong>：周敦颐开山，二程立"天理"，朱熹集大成，将《四书》体系化；陆九渊倡"心即理"，王阳明集心学大成。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>周敦颐（1017–1073）</strong>——理学开山。《太极图说》以"无极而太极"为宇宙论奠基。</p>
+        <p><strong>二程（程颢 1032–1085、程颐 1033–1107）</strong>——确立"天理"为最高范畴，"理一分殊"。</p>
+        <p><strong>朱熹（1130–1200）</strong>——理学集大成者。主"理气论""格物致知""存天理灭人欲"，编定《四书章句集注》。</p>
+        <p><strong>陆九渊（1139–1193）</strong>——心学开创者。主"心即理"，与朱熹"鹅湖之会"论辩。</p>
+        <p><strong>王阳明（1472–1529）</strong>——心学集大成者。主"致良知""知行合一""心外无物"，平定宁王之乱，立德立功立言。</p>
+
+        <figure class="diagram">
+          <figcaption>图 5 · 宋明理学与心学结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["宋明理学"] --> A["程朱理学<br>理在气先"]
+  ROOT --> B["陆王心学<br>心即理"]
+  A --> A1["周敦颐 · 太极图说"]
+  A --> A2["二程 · 天理"]
+  A --> A3["朱熹 · 格物致知"]
+  B --> B1["陆九渊 · 宇宙即吾心"]
+  B --> B2["王阳明 · 致良知 · 知行合一"]
+  classDef rootNode fill:#B03A2E,color:#fff,stroke:#B03A2E;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>理学与心学对照表</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>程朱理学</th><th>陆王心学</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>核心命题</strong></td><td>理在气先 · 性即理</td><td>心即理 · 心外无物</td></tr>
+              <tr><td><strong>成德路径</strong></td><td>格物致知 · 即物穷理</td><td>致良知 · 发明本心</td></tr>
+              <tr><td><strong>工夫重点</strong></td><td>向外格物，积累渐进</td><td>向内反省，当下即是</td></tr>
+              <tr><td><strong>知行关系</strong></td><td>知先行后</td><td>知行合一</td></tr>
+              <tr><td><strong>代表</strong></td><td>周敦颐 · 二程 · 朱熹</td><td>陆九渊 · 王阳明</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">朱熹 · 1130–1200</div>
+            <blockquote>格物致知，诚意正心。<cite>——《大学章句》</cite></blockquote>
+            <blockquote>存天理，灭人欲。<cite>——《朱子语类》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">陆九渊 · 1139–1193</div>
+            <blockquote>宇宙便是吾心，吾心即是宇宙。<cite>——《陆九渊集》</cite></blockquote>
+            <blockquote>先立乎其大者，则其小者不能夺也。<cite>——《陆九渊集》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">王阳明 · 1472–1529</div>
+            <blockquote>知是行之始，行是知之成。<cite>——《传习录》</cite></blockquote>
+            <blockquote>心外无物，心外无理。<cite>——《传习录》</cite></blockquote>
+            <blockquote>致吾心之良知于事事物物。<cite>——《传习录》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">理学的遗产</div>
+            <ul>
+              <li>《四书章句集注》成为科举标准</li>
+              <li>书院教育与理学传播</li>
+              <li>阳明心学东传日本、朝鲜</li>
+              <li>为近代新儒家提供思想资源</li>
+            </ul>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">张载 · 1020–1077</div>
+            <blockquote>为天地立心，为生民立命，为往圣继绝学，为万世开太平。<cite>——《张子语录》</cite></blockquote>
+            <blockquote>民吾同胞，物吾与也。<cite>——《西铭》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">程颢 · 1032–1085</div>
+            <blockquote>仁者浑然与物同体。<cite>——《识仁篇》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">程颐 · 1033–1107</div>
+            <blockquote>涵养须用敬，进学则在致知。<cite>——《二程遗书》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">王夫之 · 1619–1692</div>
+            <blockquote>六经责我开生面，七尺从天乞活埋。<cite>——自题画像</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">周敦颐 · 1017–1073</div>
+            <blockquote>无极而太极。<cite>——《太极图说》</cite></blockquote>
+            <blockquote>予独爱莲之出淤泥而不染。<cite>——《爱莲说》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">邵雍 · 1011–1077</div>
+            <blockquote>天向一中分体用，人于心上起经纶。<cite>——《观物吟》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">陈献章 · 1428–1500</div>
+            <blockquote>为学须从静中养出个端倪来。<cite>——《与贺克恭书》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">湛若水 · 1466–1560</div>
+            <blockquote>随处体认天理。<cite>——《甘泉学案》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">黄宗羲 · 1610–1695</div>
+            <blockquote>天下为主，君为客。<cite>——《明夷待访录·原君》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">顾炎武 · 1613–1682</div>
+            <blockquote>天下兴亡，匹夫有责。<cite>——《日知录》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">宋明理学的多元展开</div>
+            <ul>
+              <li>周敦颐、邵雍奠定宇宙论与象数</li>
+              <li>白沙心学开明代心学先声</li>
+              <li>黄宗羲、顾炎武开启明清之际经世之学</li>
+              <li>为近代民主启蒙提供思想资源</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第六章 近代回应 -->
+      <section class="sec" id="modern">
+        <h2><span class="chapno">第六章</span>近代回应：中西之变（19–20 世纪）</h2>
+        <p><strong>定义</strong>：鸦片战争后西学东渐，东方思想在冲击中层层回应——从器物（洋务）、制度（维新）到文化（五四），并在批判与反思中孕育<strong>现代新儒家</strong>，尝试以传统接引现代。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>民族危机</strong>：1840 年鸦片战争打开国门，甲午战败、庚子国变，传统"天下"秩序崩塌，"三千年未有之大变局"。</p>
+          <p><strong>层层深入</strong>：洋务运动学器物，戊戌变法改制度，新文化运动反思文化——西学东渐由表及里。</p>
+          <p><strong>重建之思</strong>：五四"打倒孔家店"之后，一部分学者转向"整理国故"与"返本开新"，冯友兰、牟宗三等重建儒学以回应现代。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>康有为（1858–1927）</strong>——维新派领袖。以"托古改制"为变法张本，著《大同书》构想大同世界。</p>
+        <p><strong>梁启超（1873–1929）</strong>——启蒙思想家。"新民说"重塑国民性，《少年中国说》激励一代人。</p>
+        <p><strong>严复（1854–1921）</strong>——翻译家。译《天演论》等西方名著，以"物竞天择"警醒国人。</p>
+        <p><strong>胡适（1891–1962）</strong>——新文化运动旗手。倡"大胆假设，小心求证"，主张"整理国故"。</p>
+        <p><strong>冯友兰（1895–1990）</strong>——现代新儒家。著"贞元六书"，以新理学会通中西，"阐旧邦以辅新命"。</p>
+        <p><strong>牟宗三（1909–1995）</strong>——现代新儒家殿军。主"良知自我坎陷"以开出民主与科学。</p>
+
+        <figure class="diagram">
+          <figcaption>图 6 · 近代回应结构图</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  ROOT["近代回应"] --> A["器物层面<br>洋务运动"]
+  ROOT --> B["制度层面<br>戊戌变法"]
+  ROOT --> C["文化层面<br>五四新文化"]
+  ROOT --> D["重建层面<br>现代新儒家"]
+  A --> A1["师夷长技以制夷"]
+  B --> B1["康有为 · 托古改制"]
+  B --> B2["梁启超 · 新民说"]
+  C --> C1["严复 · 天演论"]
+  C --> C2["胡适 · 整理国故"]
+  D --> D1["冯友兰 · 新理学"]
+  D --> D2["牟宗三 · 良知坎陷"]
+  classDef rootNode fill:#B03A2E,color:#fff,stroke:#B03A2E;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>近代回应四层面对照表</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>层面</th><th>运动</th><th>核心主张</th><th>代表</th><th>局限</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>器物</strong></td><td>洋务运动</td><td>师夷长技以制夷 · 中体西用</td><td>曾国藩 · 李鸿章 · 张之洞</td><td>未触及制度与观念</td></tr>
+              <tr><td><strong>制度</strong></td><td>戊戌变法</td><td>君主立宪 · 托古改制</td><td>康有为 · 梁启超</td><td>依赖皇权，缺乏社会基础</td></tr>
+              <tr><td><strong>文化</strong></td><td>五四新文化运动</td><td>科学 · 民主 · 白话文</td><td>陈独秀 · 胡适 · 鲁迅</td><td>有全盘反传统的倾向</td></tr>
+              <tr><td><strong>重建</strong></td><td>现代新儒家</td><td>返本开新 · 良知坎陷</td><td>冯友兰 · 牟宗三</td><td>如何落实于制度仍在探索</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">康有为 · 1858–1927</div>
+            <blockquote>天下为公，选贤与能，讲信修睦。<cite>——《大同书》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">梁启超 · 1873–1929</div>
+            <blockquote>少年智则国智，少年富则国富，少年强则国强。<cite>——《少年中国说》</cite></blockquote>
+            <blockquote>新民云者，非欲吾民尽弃其旧以从人也。<cite>——《新民说》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">严复 · 1854–1921</div>
+            <blockquote>物竞天择，适者生存。<cite>——译《天演论》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">冯友兰 · 1895–1990</div>
+            <blockquote>阐旧邦以辅新命。<cite>——自述治学宗旨</cite></blockquote>
+            <blockquote>极高明而道中庸。<cite>——《新原道》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">牟宗三 · 1909–1995</div>
+            <blockquote>良知自我坎陷，以开出民主与科学。<cite>——《政道与治道》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">近代回应的遗产</div>
+            <ul>
+              <li>洋务运动与近代工业起步</li>
+              <li>戊戌变法与君主立宪尝试</li>
+              <li>新文化运动与白话文、科学民主</li>
+              <li>现代新儒家：儒学现代化转型</li>
+              <li>马克思主义中国化（衔接第三辑）</li>
+            </ul>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">章太炎 · 1869–1936</div>
+            <blockquote>夫国学者，国家所以成立之源泉也。<cite>——《国学讲习会序》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">熊十力 · 1885–1968</div>
+            <blockquote>体用不二，即体即用。<cite>——《新唯识论》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">梁漱溟 · 1893–1988</div>
+            <blockquote>吾曹不出，如苍生何！<cite>——《吾曹不出如苍生何》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">钱穆 · 1895–1990</div>
+            <blockquote>所谓对其本国已往历史有一种温情与敬意。<cite>——《国史大纲》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">唐君毅 · 1909–1978</div>
+            <blockquote>花果飘零，灵根自植。<cite>——《说中华民族之花果飘零》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">现代新儒家的遗产</div>
+            <ul>
+              <li>返本开新：以传统接引民主与科学</li>
+              <li>港台新儒家（牟宗三、唐君毅）与大陆新儒家并立</li>
+              <li>文化保守主义与"国学热"的思想源头</li>
+              <li>为中西会通提供哲学方案</li>
+            </ul>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">谭嗣同 · 1865–1898</div>
+            <blockquote>冲决网罗。<cite>——《仁学》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">孙中山 · 1866–1925</div>
+            <blockquote>天下为公。<cite>——题词</cite></blockquote>
+            <blockquote>民生主义就是社会主义，又名共产主义。<cite>——《三民主义》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">陈独秀 · 1879–1942</div>
+            <blockquote>我们现在认定只有这两位先生，可以救治中国政治上道德上学术上思想上一切的黑暗。<cite>——《新青年》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">徐复观 · 1903–1982</div>
+            <blockquote>中国文化的基本精神，是道德的人文主义。<cite>——《中国人文精神之发展》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">方东美 · 1899–1977</div>
+            <blockquote>中国哲学以生命为中心，是生生不息的形上学。<cite>——《中国哲学之精神及其发展》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">近代回应的多元声音</div>
+            <ul>
+              <li>谭嗣同以仁学冲决礼教网罗</li>
+              <li>三民主义融合中西政治理想</li>
+              <li>新文化运动引入德先生、赛先生</li>
+              <li>新儒家（徐复观、方东美）守护文化主体性</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第七章 总结 -->
+      <section class="sec" id="summary">
+        <h2><span class="chapno">第七章</span>总结：内圣外王</h2>
+        <p>把六个阶段放进一句话：<strong>先秦诸子奠基了格局，两汉经学立起了正统，魏晋玄学转向了玄远，隋唐佛学引入了彼岸，宋明理学重建了根基，近代回应则让传统直面现代</strong>。判断任何一种东方思想的位置，只需问两个问题：它把成德的根据放在性善还是性恶、理还是心？它面对秩序与变革，选择守成、调和还是重构？</p>
+        <p>两千五百年间，东方思想始终围绕"<strong>内圣外王</strong>"展开——由内而外，修身齐家治国平天下。它不像自由主义那样追问"个人如何免于干涉"，而是追问"人如何成德、社会如何有序、天与人如何合一"。理解这条大河，才能理解与自由主义谱系完全不同的另一种现代性想象。</p>
+        <div class="callout">
+          <span class="callout-title">与第四辑的对照</span>
+          自由主义谱系重"权利"与"自由"，东方思想谱系重"成德"与"秩序"；前者以个体为本位，后者以人伦为本位。二者并非对立，而是现代世界的两种互补资源——东方思想在近代正是通过与西方（包括马克思主义）的对话，才完成了自身的现代转型。
+        </div>
+
+        <h3>东方与西方（自由主义）对照表</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>东方思想谱系</th><th>自由主义谱系</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>根本追问</strong></td><td>人如何成德、社会如何有序</td><td>个人如何免于干涉</td></tr>
+              <tr><td><strong>本位</strong></td><td>人伦 · 家国 · 天下</td><td>个体 · 权利</td></tr>
+              <tr><td><strong>理想人格</strong></td><td>内圣外王 · 君子</td><td>理性自律的公民</td></tr>
+              <tr><td><strong>秩序来源</strong></td><td>德治 · 礼治 · 教化</td><td>法治 · 契约 · 制度</td></tr>
+              <tr><td><strong>现代转型</strong></td><td>返本开新 · 中西会通</td><td>自我修正 · 与时俱进</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    
+      <section class="sec">
+        <h2>关联辑目</h2>
+        <div class="explain">
+          <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+          <ul>
+          <li><a href="../西方哲学思想谱系/西方哲学思想谱系.html">西方哲学思想谱系</a></li>
+          <li><a href="../伦理与道德思想谱系/伦理与道德思想谱系.html">伦理学思想谱系</a></li>
+          <li><a href="../艺术与美学思想谱系/艺术与美学思想谱系.html">艺术与美学思想谱系</a></li>
+          <li><a href="../历史思想谱系/历史思想谱系.html">历史思想谱系</a></li>
+          <li><a href="../人类学思想谱系/人类学思想谱系.html">人类学思想谱系</a></li>
+          </ul>
+        </div>
+      </section>
+<footer>
+      东方思想谱系 · 思想图谱系列第五辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-05
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'PingFang SC, Microsoft YaHei, Helvetica, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>

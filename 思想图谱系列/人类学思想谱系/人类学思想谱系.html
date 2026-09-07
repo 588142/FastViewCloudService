@@ -1,0 +1,999 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人类学思想谱系 · 思想图谱系列第二十九辑</title>
+
+  <style>
+
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+
+  </style>
+
+  <style>
+
+    :root {
+      --bg: #FBF8F3;
+      --bg2: #F3EDE1;
+      --ink: #2B2418;
+      --muted: #6E6352;
+      --rule: #E4DBC9;
+      --accent: #7C2D12;
+      --accent2: #065F46;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:first-child { margin-left: 0; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .legacy .legacy-title { font-weight: 700; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .legacy ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; }
+    @media (max-width: 700px) { .legacy { grid-template-columns: 1fr; } }
+
+    .history { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; }
+    .history .history-title { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem; }
+    .history p { margin-bottom: 0.55rem; }
+    .history p:last-child { margin-bottom: 0; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+    p a, li a { color: var(--accent); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    .formula {
+      font-family: var(--font-mono);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidenav { position: static; max-height: none; }
+    }
+    @media print {
+      .sidenav { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      section.sec { break-inside: avoid-page; }
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="shell">
+
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">人类学思想谱系</div>
+    <div class="brand-sub">思想图谱系列 · 第二十九辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+      <li><a href="#intro">导言 · 人类学</a></li>
+      <li><a href="#overview">第一章 · 总览：人类学的演变</a></li>
+      <li><a href="#origin">第二章 · 人类学的起源：从博物记述到进化人类学</a></li>
+      <li><a href="#fieldwork">第三章 · 田野与民族志：马林诺夫斯基与博厄斯</a></li>
+      <li><a href="#relativism">第四章 · 文化相对主义：文化人类学的成熟</a></li>
+      <li><a href="#structure">第五章 · 结构主义与解释人类学：列维-斯特劳斯与格尔茨</a></li>
+      <li><a href="#contemporary">第六章 · 当代人类学：全球化、反思与人类共同未来</a></li>
+      <li><a href="#summary">第七章 · 总结提炼：人类学的启示</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第二十九辑</span>
+        <span class="series-links">
+          <a href="../index.html">系列目录</a>
+          <a href="../修辞与演说思想谱系/修辞与演说思想谱系.html">← 上一辑 · 修辞与演说思想谱系</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>人类学思想谱系</h1>
+      <p class="subtitle">从希罗多德到格尔茨——人类如何认识人自身、理解他者、反思文明：人类学的起源、进化人类学、田野与民族志、文化相对主义、结构主义与解释人类学、当代人类学，提炼“人之问、文化之眼、田野之法、相对之思、共情之怀”的人类学规律</p>
+      <p class="meta">作者：詹家杨 · 2026-09-05 · 8 张思维导图 · 7 张对照表 · 10+ 人物语录 · 人类学</p>
+    </header>
+
+    <main>
+      <!-- 导言 -->
+      <section class="sec" id="intro">
+        <h2>导言 · 人类学</h2>
+        <p>人类学（anthropology）来自希腊语 anthrōpos——“人”与 logos——“学问”；人类学是研究人的学问。前面各辑梳理了人类关于世界、社会与心灵的种种思想，而本辑要追问的是更根本的问题：<strong>人是什么？文化如何塑造人？我们如何理解他者？</strong>当我们谈论民族、文化、习俗、仪式时，我们其实在谈论同一个问题——人如何成为人。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 人类学理论演变：从进化论到解释人类学</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  EVO["进化人类学\n19世纪\n泰勒·摩尔根\n文化从低级到高级进化"] --> DIFF["文化相对主义\n20世纪初\n博厄斯·本尼迪克特\n每一种文化自成一格"]
+  DIFF --> FUNC["功能主义\n1920-1930\n马林诺夫斯基\n文化满足人的基本需求"]
+  FUNC --> STRUC["结构主义\n1950-1960\n列维-斯特劳斯\n文化背后的深层结构"]
+  STRUC --> INTER["解释人类学\n1970-\n格尔茨\n文化是文本，需深描"]
+  INTER --> POST["反思人类学\n1980-\n克利福德\n权力·作者·民族志的权威"]
+  classDef evo fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef diff fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef func fill:#DBEAFE,stroke:#3B82F6,color:#1E3A5F;
+  classDef struc fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  classDef inter fill:#FCE7F3,stroke:#DB2777,color:#831843;
+  class EVO evo;
+  class DIFF diff;
+  class FUNC func;
+  class STRUC struc;
+  class INTER inter;
+  class POST post;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：人类学理论的演变</strong>——从"文明人研究野蛮人"到"所有人研究所有人"。</p>
+          <p><strong>从进化论到相对主义：</strong>早期人类学认为文化从低级到高级进化——欧洲最高级，其他地区是"活化石"。这为殖民主义提供了意识形态支持。博厄斯学派彻底颠覆了这种看法，提出文化相对主义——每一种文化必须用其自身的标准来理解。</p>
+          <p><strong>解释人类学：</strong>格尔茨说，"人是悬挂在自己编织的意义之网上的动物。文化就是那些网。"人类学家的任务不是"发现"文化的规律，而是"解释"文化的意义。他提出了"深描"——不是简单地记录"他们做了什么"，而是解释"这个行为在文化中意味着什么"。</p>
+          <p><strong>反思人类学：</strong>1980年代以来，人类学开始反思自身的殖民历史——"谁有权力代表他者？"后殖民批评迫使人类学重新思考自己的知识生产：如何避免将他者"异域化"或"浪漫化"？</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>0.1 人类学的定义：anthrōpos——人、logos——学问</li>
+          <li>0.2 人类学的七次转向：为记述→为进化→为田野→为文化→为结构→为解释→为反思</li>
+          <li>0.3 人类学同心理卷、社会卷的关联</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>anthrōpos</strong>：人类学的词源，意为“人”</li>
+          <li><strong>文化相对主义</strong>：理解文化不以自身为标准</li>
+          <li><strong>人类学谱系</strong>：记述→进化→田野→文化→结构→解释→反思</li>
+        </ul>
+<figure class="diagram">
+          <figcaption>图 0a · 人类学基本概念树状图</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  ROOT["人类学思想谱系"] --> A["四大分支"]
+  ROOT --> B["研究方法"]
+  ROOT --> C["核心概念"]
+  ROOT --> D["理论演变"]
+  A --> A1["文化人类学\n研究文化的多样性"]
+  A --> A2["体质人类学\n人类的生物进化"]
+  A --> A3["考古学\n通过物质遗存研究过去"]
+  A --> A4["语言人类学\n语言与文化的关系"]
+  B --> B1["田野调查\n马林诺夫斯基"]
+  B --> B2["参与观察\n成为被研究者的一部分"]
+  B --> B3["民族志\n深描 格尔茨"]
+  C --> C1["文化\n习得的共享的意义系统"]
+  C --> C2["文化相对主义\n不能用自己文化标准评判他者"]
+  C --> C3["结构\n潜藏于文化表面之下的深层模式"]
+  D --> D1["进化人类学\n19世纪"]
+  D --> D2["文化相对主义\n博厄斯学派"]
+  D --> D3["功能主义\n马林诺夫斯基"]
+  D --> D4["结构主义\n列维-斯特劳斯"]
+  D --> D5["解释人类学\n格尔茨"]
+  classDef root fill:#D97706,color:#fff,stroke:#D97706;
+  classDef cat fill:#F59E0B,color:#fff,stroke:#F59E0B;
+  classDef leaf fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  class ROOT root;
+  class A,B,C,D cat;
+  class A1,A2,A3,A4,B1,B2,B3,C1,C2,C3,D1,D2,D3,D4,D5 leaf;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 0a 详解：人类学的基本概念框架</strong>——人类学是"研究人的科学"，但它独特之处在于：它通过研究"他者"来理解"我们"。</p>
+          <p><strong>文化是人类学的核心概念：</strong>泰勒1871年给出了经典定义："文化是包括知识、信仰、艺术、道德、法律、习俗以及人作为社会成员获得的一切能力和习惯的复合整体。"文化不是生物遗传的，而是通过社会习得的。文化相对主义认为，每一种文化都必须用其自身的标准来理解——不能用西方标准评判非洲部落，也不能用现代标准评判古代社会。这个原则既是人类学的方法论基础，也是其伦理立场。</p>
+          <p><strong>田野调查与民族志：</strong>马林诺夫斯基在特罗布里恩德群岛的田野调查奠定了现代人类学的方法论。他提出了"参与观察"——研究者不仅要"观察"被研究者的生活，还要"参与"其中。他的民族志《西太平洋上的航海者》描述了"库拉圈"——一种跨越多个岛屿的交换体系，交换的不是实用物品，而是贝壳项链和臂镯。这个发现挑战了西方经济学的"理性人"假设：这些岛民不是为了"利益"而交换，而是为了"声望"和"关系"。</p>
+          <p><strong>人类学的当代意义：</strong>在全球化时代，人类学比以往任何时候都更重要。它帮助我们理解文化差异、挑战偏见、反思自己的文化假设。当企业需要进入海外市场时，当政府需要设计文化敏感的政策时，当我们需要理解"为什么他们那样做"时——人类学提供的不是"答案"，而是"看问题的另一种方式"。</p>
+        </div>
+        <div class="callout">
+          <span class="callout-title">一条主线</span>
+          人类学关注对象的七次转向：<strong>为记述</strong>（希罗多德与游记，人类学是记述异邦）→ <strong>为进化</strong>（泰勒与摩尔根，人类学是进化阶梯）→ <strong>为田野</strong>（马林诺夫斯基与博厄斯，人类学是田野调查）→ <strong>为文化</strong>（文化相对主义，人类学是理解文化）→ <strong>为结构</strong>（列维-斯特劳斯，人类学是结构分析）→ <strong>为解释</strong>（格尔茨，人类学是深描与解释）→ <strong>为反思</strong>（当代人类学，人类学是反思现代性）。每一次转向，都是人类对“人是什么”的一次重新回答。
+        </div>
+        <p>本辑沿人类学的谱系展开——<strong>人类学的起源</strong>（希罗多德、博物记述、进化人类学）、<strong>田野与民族志</strong>（马林诺夫斯基、博厄斯、米德）、<strong>文化相对主义</strong>（文化人类学的成熟）、<strong>结构主义与解释人类学</strong>（列维-斯特劳斯、格尔茨）、<strong>当代人类学</strong>（全球化、反思、人类共同未来），看“认识人自身”的学问如何从游记的记述，长成理解人类文化的现代科学。它与第十八辑《心理学思想谱系》血脉相连——心理卷问“心灵如何运作”，本辑问“文化如何塑造人”；又与第十三辑《社会学思想谱系》遥相呼应——社会学问“社会如何组织”，人类学问“文化如何多样”。</p>
+        <figure class="diagram">
+          <figcaption>图 1 · 图 1 · 人类学的七次转向图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["为记述"]
+  B["为进化"]
+  C["为田野"]
+  D["为文化"]
+  E["为结构"]
+  F["为解释"]
+  G["为反思"]
+  A --> B
+  B --> C
+  C --> D
+  D --> E
+  E --> F
+  F --> G
+  classDef shift fill:#7C2D12,color:#fff,stroke:#7C2D12;
+  class A,B,C,D,E,F,G shift;
+          </pre>
+        </figure>
+      </section>
+      <section class="sec" id="overview">
+        <h2><span class="chapno">第一章</span>总览：人类学的演变</h2>
+        <p>先看全景：人类学与人类对自身的追问同龄。古希腊的希罗多德记述异邦风俗，中世纪与近代的游记积累异文化知识；19世纪，泰勒与摩尔根以进化论框架解释文化差异；20世纪初，马林诺夫斯基与博厄斯开创田野调查，人类学成为一门科学；博厄斯学派确立文化相对主义，米德以萨摩亚研究震动西方；列维-斯特劳斯以结构主义分析神话与亲属，格尔茨以深描解释文化；当代，人类学反思殖民遗产、直面全球化，追问人类的共同未来。理解人类学，就是理解人如何成为人、文化如何塑造人。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 人类学理论演变：从进化论到解释人类学</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  EVO["进化人类学\n19世纪\n泰勒·摩尔根\n文化从低级到高级进化"] --> DIFF["文化相对主义\n20世纪初\n博厄斯·本尼迪克特\n每一种文化自成一格"]
+  DIFF --> FUNC["功能主义\n1920-1930\n马林诺夫斯基\n文化满足人的基本需求"]
+  FUNC --> STRUC["结构主义\n1950-1960\n列维-斯特劳斯\n文化背后的深层结构"]
+  STRUC --> INTER["解释人类学\n1970-\n格尔茨\n文化是文本，需深描"]
+  INTER --> POST["反思人类学\n1980-\n克利福德\n权力·作者·民族志的权威"]
+  classDef evo fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef diff fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef func fill:#DBEAFE,stroke:#3B82F6,color:#1E3A5F;
+  classDef struc fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  classDef inter fill:#FCE7F3,stroke:#DB2777,color:#831843;
+  class EVO evo;
+  class DIFF diff;
+  class FUNC func;
+  class STRUC struc;
+  class INTER inter;
+  class POST post;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：人类学理论的演变</strong>——从"文明人研究野蛮人"到"所有人研究所有人"。</p>
+          <p><strong>从进化论到相对主义：</strong>早期人类学认为文化从低级到高级进化——欧洲最高级，其他地区是"活化石"。这为殖民主义提供了意识形态支持。博厄斯学派彻底颠覆了这种看法，提出文化相对主义——每一种文化必须用其自身的标准来理解。</p>
+          <p><strong>解释人类学：</strong>格尔茨说，"人是悬挂在自己编织的意义之网上的动物。文化就是那些网。"人类学家的任务不是"发现"文化的规律，而是"解释"文化的意义。他提出了"深描"——不是简单地记录"他们做了什么"，而是解释"这个行为在文化中意味着什么"。</p>
+          <p><strong>反思人类学：</strong>1980年代以来，人类学开始反思自身的殖民历史——"谁有权力代表他者？"后殖民批评迫使人类学重新思考自己的知识生产：如何避免将他者"异域化"或"浪漫化"？</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>1.1 古典与近代：从希罗多德到博物记述</li>
+          <li>1.2 进化人类学与田野革命</li>
+          <li>1.3 文化人类学与当代人类学</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>民族志</strong>：人类学的田野文本</li>
+          <li><strong>文化相对主义</strong>：理解文化不以自身为标准</li>
+          <li><strong>深描</strong>：格尔茨的文化解释</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>古典与近代（前5世纪–18世纪）</strong>：希罗多德《历史》记述异邦风俗；中世纪游记（马可·波罗）与近代传教士、探险家的记述积累异文化知识；启蒙时代，孟德斯鸠、卢梭以“高贵的野蛮人”反思文明。</p>
+          <p><strong>进化人类学（19世纪）</strong>：泰勒《原始文化》（1871）提出“万物有灵论”与文化进化；摩尔根《古代社会》（1877）提出社会进化三阶段；进化论框架解释文化差异，但带有欧洲中心偏见。</p>
+          <p><strong>田野革命（20世纪初）</strong>：马林诺夫斯基在西太平洋特罗布里恩德群岛长期田野，开创参与观察与功能主义；博厄斯反对进化论，强调历史特殊论与文化相对主义。</p>
+          <p><strong>文化人类学与当代人类学（20世纪中–）</strong>：米德《萨摩亚人的成年》（1928）震动西方；列维-斯特劳斯《结构人类学》开创结构主义；格尔茨《文化的解释》（1973）提出深描；当代人类学反思殖民遗产、直面全球化。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>希罗多德（约前484–前425）</strong>——历史之父、异邦记述。</p>
+        <p><strong>泰勒（1832–1917）</strong>——《原始文化》、万物有灵论。</p>
+        <p><strong>摩尔根（1818–1881）</strong>——《古代社会》。</p>
+        <p><strong>马林诺夫斯基（1884–1942）</strong>——田野调查、功能主义。</p>
+        <p><strong>博厄斯（1858–1942）</strong>——文化相对主义之父。</p>
+        <p><strong>米德（1901–1978）</strong>——《萨摩亚人的成年》。</p>
+        <p><strong>列维-斯特劳斯（1908–2009）</strong>——结构主义。</p>
+        <p><strong>格尔茨（1926–2006）</strong>——《文化的解释》、深描。</p>
+        <figure class="diagram">
+          <figcaption>图 2 · 人类学演变结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["人类学"] --> A["古典与近代<br>希罗多德 · 游记"]
+  ROOT --> B["进化人类学<br>泰勒 · 摩尔根"]
+  ROOT --> C["田野革命<br>马林诺夫斯基 · 博厄斯"]
+  ROOT --> D["文化人类学<br>米德 · 列维-斯特劳斯 · 格尔茨"]
+  classDef rootNode fill:#7C2D12,color:#fff,stroke:#7C2D12;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：人类学主要时期速览</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>时期</th><th>核心问题</th><th>代表人物</th><th>思想遗产</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>古典与近代</strong></td><td>异邦是什么样</td><td>希罗多德 · 马可·波罗</td><td>异文化记述</td></tr>
+              <tr><td><strong>进化人类学</strong></td><td>文化如何进化</td><td>泰勒 · 摩尔根</td><td>文化进化论</td></tr>
+              <tr><td><strong>田野革命</strong></td><td>文化如何运作</td><td>马林诺夫斯基 · 博厄斯</td><td>田野调查 · 民族志</td></tr>
+              <tr><td><strong>文化人类学</strong></td><td>文化如何多样</td><td>米德 · 列维-斯特劳斯</td><td>相对主义 · 结构主义</td></tr>
+              <tr><td><strong>当代人类学</strong></td><td>人类如何共存</td><td>格尔茨 · 反思人类学</td><td>深描 · 文化批评</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="sec" id="origin">
+        <h2><span class="chapno">第二章</span>人类学的起源：从博物记述到进化人类学</h2>
+        <p>人类学的起点是对“他者”的记述。古希腊的希罗多德以好奇的目光记述埃及与波斯的习俗；中世纪与近代，游记、传教士报告与殖民档案积累了关于异文化的知识。19世纪，进化论为人类学提供了第一个理论框架：泰勒以“万物有灵论”解释宗教起源，摩尔根以“蒙昧—野蛮—文明”三阶段勾勒社会进化。本章的核心洞见是：<strong>人类学诞生于“他者”的目光</strong>——我们通过理解他人来理解自己，但早期的进化论也带着欧洲中心的偏见。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 人类学理论演变：从进化论到解释人类学</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  EVO["进化人类学\n19世纪\n泰勒·摩尔根\n文化从低级到高级进化"] --> DIFF["文化相对主义\n20世纪初\n博厄斯·本尼迪克特\n每一种文化自成一格"]
+  DIFF --> FUNC["功能主义\n1920-1930\n马林诺夫斯基\n文化满足人的基本需求"]
+  FUNC --> STRUC["结构主义\n1950-1960\n列维-斯特劳斯\n文化背后的深层结构"]
+  STRUC --> INTER["解释人类学\n1970-\n格尔茨\n文化是文本，需深描"]
+  INTER --> POST["反思人类学\n1980-\n克利福德\n权力·作者·民族志的权威"]
+  classDef evo fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef diff fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef func fill:#DBEAFE,stroke:#3B82F6,color:#1E3A5F;
+  classDef struc fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  classDef inter fill:#FCE7F3,stroke:#DB2777,color:#831843;
+  class EVO evo;
+  class DIFF diff;
+  class FUNC func;
+  class STRUC struc;
+  class INTER inter;
+  class POST post;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：人类学理论的演变</strong>——从"文明人研究野蛮人"到"所有人研究所有人"。</p>
+          <p><strong>从进化论到相对主义：</strong>早期人类学认为文化从低级到高级进化——欧洲最高级，其他地区是"活化石"。这为殖民主义提供了意识形态支持。博厄斯学派彻底颠覆了这种看法，提出文化相对主义——每一种文化必须用其自身的标准来理解。</p>
+          <p><strong>解释人类学：</strong>格尔茨说，"人是悬挂在自己编织的意义之网上的动物。文化就是那些网。"人类学家的任务不是"发现"文化的规律，而是"解释"文化的意义。他提出了"深描"——不是简单地记录"他们做了什么"，而是解释"这个行为在文化中意味着什么"。</p>
+          <p><strong>反思人类学：</strong>1980年代以来，人类学开始反思自身的殖民历史——"谁有权力代表他者？"后殖民批评迫使人类学重新思考自己的知识生产：如何避免将他者"异域化"或"浪漫化"？</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>2.1 希罗多德与异邦记述</li>
+          <li>2.2 游记、传教士与殖民知识</li>
+          <li>2.3 泰勒：万物有灵论与文化进化</li>
+          <li>2.4 摩尔根：社会进化三阶段</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>万物有灵论</strong>：泰勒的宗教起源论</li>
+          <li><strong>社会进化论</strong>：蒙昧—野蛮—文明</li>
+          <li><strong>欧洲中心主义</strong>：早期人类学的偏见</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>希罗多德（约前484–前425）</strong>：希罗多德《历史》记述埃及、波斯等异邦的风俗与制度；他主张“习俗是万物的王”，以相对的目光看待文化差异，被称为“历史之父”。</p>
+          <p><strong>游记与殖民知识（13–18世纪）</strong>：马可·波罗游记、大航海时代的探险报告、传教士的记述积累了大量异文化知识；启蒙思想家以“高贵的野蛮人”反思欧洲文明。</p>
+          <p><strong>泰勒《原始文化》（1871）</strong>：泰勒提出“万物有灵论”解释宗教起源；把文化定义为“包括知识、信仰、艺术、道德、法律、习俗的复合整体”；以进化阶梯排列文化。</p>
+          <p><strong>摩尔根《古代社会》（1877）</strong>：摩尔根提出社会进化三阶段——蒙昧、野蛮、文明；以亲属称谓研究家庭演化；其框架影响马克思与恩格斯的家庭研究。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>希罗多德（约前484–前425）</strong>——《历史》。</p>
+        <p><strong>马可·波罗（1254–1324）</strong>——《马可·波罗游记》。</p>
+        <p><strong>泰勒（1832–1917）</strong>——《原始文化》。</p>
+        <p><strong>摩尔根（1818–1881）</strong>——《古代社会》。</p>
+        <p><strong>弗雷泽（1854–1941）</strong>——《金枝》。</p>
+        <figure class="diagram">
+          <figcaption>图 3 · 人类学起源结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["人类学的起源"] --> A["希罗多德<br>异邦记述"]
+  ROOT --> B["游记与殖民知识<br>马可·波罗 · 传教士"]
+  ROOT --> C["泰勒<br>万物有灵论 · 文化进化"]
+  ROOT --> D["摩尔根<br>社会进化三阶段"]
+  classDef rootNode fill:#7C2D12,color:#fff,stroke:#7C2D12;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：早期人类学理论对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>理论</th><th>核心主张</th><th>代表人物</th><th>局限</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>文化进化论</strong></td><td>文化按阶段进化</td><td>泰勒 · 摩尔根</td><td>欧洲中心</td></tr>
+              <tr><td><strong>万物有灵论</strong></td><td>宗教源于灵魂观念</td><td>泰勒</td><td>忽视社会结构</td></tr>
+              <tr><td><strong>社会进化三阶段</strong></td><td>蒙昧—野蛮—文明</td><td>摩尔根</td><td>线性单线进化</td></tr>
+              <tr><td><strong>比较神话学</strong></td><td>神话反映原始思维</td><td>弗雷泽</td><td>脱离田野</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">希罗多德 · 约前484–前425</div>
+            <blockquote>习俗是万物的王。<cite>——《历史》</cite></blockquote>
+            <div class="legacy-who">泰勒 · 1832–1917</div>
+            <blockquote>文化是包括知识、信仰、艺术、道德、法律、习俗的复合整体。<cite>——《原始文化》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">摩尔根 · 1818–1881</div>
+            <blockquote>人类从蒙昧经野蛮走向文明。<cite>——《古代社会》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="fieldwork">
+        <h2><span class="chapno">第三章</span>田野与民族志：马林诺夫斯基与博厄斯</h2>
+        <p>20世纪初，人类学发生“田野革命”。马林诺夫斯基在西太平洋特罗布里恩德群岛长期居住，开创“参与观察”与功能主义，写出《西太平洋的航海者》；博厄斯反对进化论，强调历史特殊论，主张以田野材料重建各文化的历史，并培养出米德、本尼迪克特等一代人类学家。本章的核心洞见是：<strong>人类学的知识来自田野</strong>——不是书斋里的想象，而是与研究对象共同生活的理解。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 人类学理论演变：从进化论到解释人类学</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  EVO["进化人类学\n19世纪\n泰勒·摩尔根\n文化从低级到高级进化"] --> DIFF["文化相对主义\n20世纪初\n博厄斯·本尼迪克特\n每一种文化自成一格"]
+  DIFF --> FUNC["功能主义\n1920-1930\n马林诺夫斯基\n文化满足人的基本需求"]
+  FUNC --> STRUC["结构主义\n1950-1960\n列维-斯特劳斯\n文化背后的深层结构"]
+  STRUC --> INTER["解释人类学\n1970-\n格尔茨\n文化是文本，需深描"]
+  INTER --> POST["反思人类学\n1980-\n克利福德\n权力·作者·民族志的权威"]
+  classDef evo fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef diff fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef func fill:#DBEAFE,stroke:#3B82F6,color:#1E3A5F;
+  classDef struc fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  classDef inter fill:#FCE7F3,stroke:#DB2777,color:#831843;
+  class EVO evo;
+  class DIFF diff;
+  class FUNC func;
+  class STRUC struc;
+  class INTER inter;
+  class POST post;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：人类学理论的演变</strong>——从"文明人研究野蛮人"到"所有人研究所有人"。</p>
+          <p><strong>从进化论到相对主义：</strong>早期人类学认为文化从低级到高级进化——欧洲最高级，其他地区是"活化石"。这为殖民主义提供了意识形态支持。博厄斯学派彻底颠覆了这种看法，提出文化相对主义——每一种文化必须用其自身的标准来理解。</p>
+          <p><strong>解释人类学：</strong>格尔茨说，"人是悬挂在自己编织的意义之网上的动物。文化就是那些网。"人类学家的任务不是"发现"文化的规律，而是"解释"文化的意义。他提出了"深描"——不是简单地记录"他们做了什么"，而是解释"这个行为在文化中意味着什么"。</p>
+          <p><strong>反思人类学：</strong>1980年代以来，人类学开始反思自身的殖民历史——"谁有权力代表他者？"后殖民批评迫使人类学重新思考自己的知识生产：如何避免将他者"异域化"或"浪漫化"？</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>3.1 马林诺夫斯基：参与观察与功能主义</li>
+          <li>3.2 《西太平洋的航海者》：库拉交换</li>
+          <li>3.3 博厄斯：历史特殊论与文化相对主义</li>
+          <li>3.4 博厄斯学派：米德与本尼迪克特</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>参与观察</strong>：田野调查的核心方法</li>
+          <li><strong>功能主义</strong>：文化要素满足人的需要</li>
+          <li><strong>历史特殊论</strong>：博厄斯对进化论的批评</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>马林诺夫斯基（1884–1942）</strong>：一战期间在马林诺夫斯基在特罗布里恩德群岛长期田野（1915–1918）；开创“参与观察”方法；提出功能主义——文化要素满足人的生物与社会需要。</p>
+          <p><strong>《西太平洋的航海者》（1922）</strong>：马林诺夫斯基以库拉交换（kula）研究经济与互惠；民族志成为人类学的标志性文体；田野调查成为人类学家的成年礼。</p>
+          <p><strong>博厄斯（1858–1942）</strong>：博厄斯反对进化论与种族主义；主张历史特殊论——各文化有其独特历史；强调以田野材料为基础；被称为“美国人类学之父”。</p>
+          <p><strong>博厄斯学派（20世纪上半叶）</strong>：米德《萨摩亚人的成年》（1928）以田野证据挑战“青春期必然动荡”的西方观念；本尼迪克特《菊与刀》（1946）以“文化模式”分析日本。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>马林诺夫斯基（1884–1942）</strong>——《西太平洋的航海者》。</p>
+        <p><strong>博厄斯（1858–1942）</strong>——美国人类学之父。</p>
+        <p><strong>米德（1901–1978）</strong>——《萨摩亚人的成年》。</p>
+        <p><strong>本尼迪克特（1887–1948）</strong>——《菊与刀》。</p>
+        <p><strong>拉德克利夫-布朗（1881–1955）</strong>——结构功能主义。</p>
+        <figure class="diagram">
+          <figcaption>图 4 · 田野与民族志结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["田野与民族志"] --> A["马林诺夫斯基<br>参与观察 · 功能主义"]
+  ROOT --> B["库拉交换<br>《西太平洋的航海者》"]
+  ROOT --> C["博厄斯<br>历史特殊论"]
+  ROOT --> D["博厄斯学派<br>米德 · 本尼迪克特"]
+  classDef rootNode fill:#7C2D12,color:#fff,stroke:#7C2D12;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：田野人类学方法对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>方法</th><th>核心内容</th><th>代表人物</th><th>贡献</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>参与观察</strong></td><td>与研究对象共同生活</td><td>马林诺夫斯基</td><td>田野调查制度化</td></tr>
+              <tr><td><strong>功能分析</strong></td><td>文化满足人的需要</td><td>马林诺夫斯基</td><td>功能主义</td></tr>
+              <tr><td><strong>历史特殊论</strong></td><td>各文化独特历史</td><td>博厄斯</td><td>反进化论</td></tr>
+              <tr><td><strong>文化模式</strong></td><td>文化塑造人格</td><td>本尼迪克特</td><td>国民性研究</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">马林诺夫斯基 · 1884–1942</div>
+            <blockquote>人类学家必须离开书斋，走进田野。<cite>——《西太平洋的航海者》</cite></blockquote>
+            <div class="legacy-who">博厄斯 · 1858–1942</div>
+            <blockquote>文明不是进化的阶梯，而是多样的花朵。<cite>——《原始人的心智》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">米德 · 1901–1978</div>
+            <blockquote>文化是塑造人格的力量。<cite>——《萨摩亚人的成年》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="relativism">
+        <h2><span class="chapno">第四章</span>文化相对主义：文化人类学的成熟</h2>
+        <p>文化相对主义是人类学最核心的立场：每一种文化都有其内在的逻辑与价值，不能以另一种文化的标准去评判。博厄斯学派以此反对种族主义与欧洲中心主义；赫斯科维茨把它系统化为“文化相对主义”；本尼迪克特以“文化模式”说明不同文化塑造不同人格。文化相对主义不是“什么都行”的相对主义，而是理解的前提——先理解，再评判。本章的核心洞见是：<strong>理解他者，先悬置自己的标准</strong>——文化相对主义是人类学献给世界的宽容智慧。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 人类学理论演变：从进化论到解释人类学</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  EVO["进化人类学\n19世纪\n泰勒·摩尔根\n文化从低级到高级进化"] --> DIFF["文化相对主义\n20世纪初\n博厄斯·本尼迪克特\n每一种文化自成一格"]
+  DIFF --> FUNC["功能主义\n1920-1930\n马林诺夫斯基\n文化满足人的基本需求"]
+  FUNC --> STRUC["结构主义\n1950-1960\n列维-斯特劳斯\n文化背后的深层结构"]
+  STRUC --> INTER["解释人类学\n1970-\n格尔茨\n文化是文本，需深描"]
+  INTER --> POST["反思人类学\n1980-\n克利福德\n权力·作者·民族志的权威"]
+  classDef evo fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef diff fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef func fill:#DBEAFE,stroke:#3B82F6,color:#1E3A5F;
+  classDef struc fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  classDef inter fill:#FCE7F3,stroke:#DB2777,color:#831843;
+  class EVO evo;
+  class DIFF diff;
+  class FUNC func;
+  class STRUC struc;
+  class INTER inter;
+  class POST post;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：人类学理论的演变</strong>——从"文明人研究野蛮人"到"所有人研究所有人"。</p>
+          <p><strong>从进化论到相对主义：</strong>早期人类学认为文化从低级到高级进化——欧洲最高级，其他地区是"活化石"。这为殖民主义提供了意识形态支持。博厄斯学派彻底颠覆了这种看法，提出文化相对主义——每一种文化必须用其自身的标准来理解。</p>
+          <p><strong>解释人类学：</strong>格尔茨说，"人是悬挂在自己编织的意义之网上的动物。文化就是那些网。"人类学家的任务不是"发现"文化的规律，而是"解释"文化的意义。他提出了"深描"——不是简单地记录"他们做了什么"，而是解释"这个行为在文化中意味着什么"。</p>
+          <p><strong>反思人类学：</strong>1980年代以来，人类学开始反思自身的殖民历史——"谁有权力代表他者？"后殖民批评迫使人类学重新思考自己的知识生产：如何避免将他者"异域化"或"浪漫化"？</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>4.1 文化相对主义的提出</li>
+          <li>4.2 本尼迪克特：文化模式</li>
+          <li>4.3 赫斯科维茨：文化相对主义的系统化</li>
+          <li>4.4 相对主义与普遍价值的张力</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>文化相对主义</strong>：理解文化不以自身为标准</li>
+          <li><strong>文化模式</strong>：文化塑造人格与行为</li>
+          <li><strong>普遍价值</strong>：相对主义的边界</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>文化相对主义的提出（20世纪初）</strong>：博厄斯反对以欧洲标准评判其他文化；主张文化是历史地形成的整体；种族主义被人类学证据驳斥。</p>
+          <p><strong>本尼迪克特《文化模式》（1934）</strong>：本尼迪克特以祖尼人、夸扣特尔人、多布人为例，说明不同文化塑造不同人格类型；文化是“人格的放大”。</p>
+          <p><strong>赫斯科维茨（1895–1963）</strong>：赫斯科维茨系统提出“文化相对主义”；主张价值判断应置于文化脉络之中；其思想影响联合国教科文组织的文化多样性宣言。</p>
+          <p><strong>相对主义与普遍价值的张力（20世纪中–）</strong>：文化相对主义被批评为可能为压迫辩护；人权、性别平等、反割礼等普遍价值与相对主义形成张力；当代人类学在“理解”与“评判”之间寻求平衡。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>博厄斯（1858–1942）</strong>——文化相对主义的奠基。</p>
+        <p><strong>本尼迪克特（1887–1948）</strong>——《文化模式》。</p>
+        <p><strong>赫斯科维茨（1895–1963）</strong>——《人及其工作》。</p>
+        <p><strong>米德（1901–1978）</strong>——文化与人格。</p>
+        <figure class="diagram">
+          <figcaption>图 5 · 文化相对主义结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["文化相对主义"] --> A["博厄斯<br>反种族主义"]
+  ROOT --> B["本尼迪克特<br>文化模式"]
+  ROOT --> C["赫斯科维茨<br>系统化"]
+  ROOT --> D["张力<br>相对主义与普遍价值"]
+  classDef rootNode fill:#7C2D12,color:#fff,stroke:#7C2D12;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：文化相对主义的核心命题</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>命题</th><th>含义</th><th>代表人物</th><th>思想启示</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>文化整体观</strong></td><td>文化是相互关联的整体</td><td>博厄斯</td><td>不能孤立评判</td></tr>
+              <tr><td><strong>文化模式</strong></td><td>文化塑造人格</td><td>本尼迪克特</td><td>人格是文化的产物</td></tr>
+              <tr><td><strong>价值脉络化</strong></td><td>价值置于文化脉络</td><td>赫斯科维茨</td><td>先理解再评判</td></tr>
+              <tr><td><strong>普遍价值张力</strong></td><td>人权与相对主义</td><td>当代人类学</td><td>在理解与评判间平衡</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">本尼迪克特 · 1887–1948</div>
+            <blockquote>文化是人格的放大。<cite>——《文化模式》</cite></blockquote>
+            <div class="legacy-who">赫斯科维茨 · 1895–1963</div>
+            <blockquote>判断必须置于文化的脉络之中。<cite>——《人及其工作》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">米德 · 1901–1978</div>
+            <blockquote>人类本性是文化塑造的。<cite>——《文化与承诺》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="structure">
+        <h2><span class="chapno">第五章</span>结构主义与解释人类学：列维-斯特劳斯与格尔茨</h2>
+        <p>20世纪中叶，人类学出现两种转向。列维-斯特劳斯以结构主义分析神话、亲属与图腾——他认为文化的深层结构源于人类心智的普遍法则，神话是“心智的语法”；格尔茨则以解释人类学回应——他认为文化是“意义之网”，人类学的任务是“深描”，即对文化符号进行细致的解释。本章的核心洞见是：<strong>文化既是结构，也是意义</strong>——结构主义追问文化的深层语法，解释人类学倾听文化的具体声音。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 人类学理论演变：从进化论到解释人类学</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  EVO["进化人类学\n19世纪\n泰勒·摩尔根\n文化从低级到高级进化"] --> DIFF["文化相对主义\n20世纪初\n博厄斯·本尼迪克特\n每一种文化自成一格"]
+  DIFF --> FUNC["功能主义\n1920-1930\n马林诺夫斯基\n文化满足人的基本需求"]
+  FUNC --> STRUC["结构主义\n1950-1960\n列维-斯特劳斯\n文化背后的深层结构"]
+  STRUC --> INTER["解释人类学\n1970-\n格尔茨\n文化是文本，需深描"]
+  INTER --> POST["反思人类学\n1980-\n克利福德\n权力·作者·民族志的权威"]
+  classDef evo fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef diff fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef func fill:#DBEAFE,stroke:#3B82F6,color:#1E3A5F;
+  classDef struc fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  classDef inter fill:#FCE7F3,stroke:#DB2777,color:#831843;
+  class EVO evo;
+  class DIFF diff;
+  class FUNC func;
+  class STRUC struc;
+  class INTER inter;
+  class POST post;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：人类学理论的演变</strong>——从"文明人研究野蛮人"到"所有人研究所有人"。</p>
+          <p><strong>从进化论到相对主义：</strong>早期人类学认为文化从低级到高级进化——欧洲最高级，其他地区是"活化石"。这为殖民主义提供了意识形态支持。博厄斯学派彻底颠覆了这种看法，提出文化相对主义——每一种文化必须用其自身的标准来理解。</p>
+          <p><strong>解释人类学：</strong>格尔茨说，"人是悬挂在自己编织的意义之网上的动物。文化就是那些网。"人类学家的任务不是"发现"文化的规律，而是"解释"文化的意义。他提出了"深描"——不是简单地记录"他们做了什么"，而是解释"这个行为在文化中意味着什么"。</p>
+          <p><strong>反思人类学：</strong>1980年代以来，人类学开始反思自身的殖民历史——"谁有权力代表他者？"后殖民批评迫使人类学重新思考自己的知识生产：如何避免将他者"异域化"或"浪漫化"？</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>5.1 列维-斯特劳斯：结构主义人类学</li>
+          <li>5.2 神话的结构分析</li>
+          <li>5.3 格尔茨：文化的解释与深描</li>
+          <li>5.4 从结构到意义：人类学的解释转向</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>结构主义</strong>：文化的深层结构</li>
+          <li><strong>深描</strong>：格尔茨的文化解释方法</li>
+          <li><strong>意义之网</strong>：文化是符号的体系</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>列维-斯特劳斯（1908–2009）</strong>：列维-斯特劳斯《结构人类学》（1958）开创结构主义；受索绪尔语言学影响，认为文化的深层结构源于心智的二元对立；《野性的思维》反驳“原始思维”的偏见。</p>
+          <p><strong>神话的结构分析</strong>：列维-斯特劳斯《神话学》（1964–1971）分析美洲神话；认为神话是“心智的语法”，通过二元对立（生/熟、自然/文化）组织意义；神话的变体构成一个结构系统。</p>
+          <p><strong>格尔茨（1926–2006）</strong>：格尔茨《文化的解释》（1973）提出文化是“意义之网”；人类学的任务是“深描”——对文化符号进行细致的解释；《地方性知识》强调知识的语境性。</p>
+          <p><strong>从结构到意义（20世纪70年代–）</strong>：解释人类学转向意义与符号；象征人类学（特纳）研究仪式；写文化（Writing Culture）反思民族志的书写权力；人类学从“科学”走向“解释”。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>列维-斯特劳斯（1908–2009）</strong>——《结构人类学》。</p>
+        <p><strong>格尔茨（1926–2006）</strong>——《文化的解释》。</p>
+        <p><strong>特纳（1920–1983）</strong>——仪式与象征。</p>
+        <p><strong>道格拉斯（1921–2007）</strong>——《洁净与危险》。</p>
+        <p><strong>萨林斯（1930–2021）</strong>——文化与实践理性。</p>
+        <figure class="diagram">
+          <figcaption>图 6 · 结构主义与解释人类学结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["结构主义与解释"] --> A["列维-斯特劳斯<br>结构主义 · 神话学"]
+  ROOT --> B["深层结构<br>二元对立 · 心智语法"]
+  ROOT --> C["格尔茨<br>深描 · 意义之网"]
+  ROOT --> D["解释转向<br>象征 · 仪式 · 书写"]
+  classDef rootNode fill:#7C2D12,color:#fff,stroke:#7C2D12;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：结构主义与解释人类学对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>结构主义</th><th>解释人类学</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>代表人物</strong></td><td>列维-斯特劳斯</td><td>格尔茨</td></tr>
+              <tr><td><strong>文化是什么</strong></td><td>深层结构</td><td>意义之网</td></tr>
+              <tr><td><strong>方法</strong></td><td>结构分析</td><td>深描</td></tr>
+              <tr><td><strong>目标</strong></td><td>发现普遍语法</td><td>理解地方意义</td></tr>
+              <tr><td><strong>名言</strong></td><td>神话是心智的语法</td><td>人是悬挂在意义之网上的动物</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">列维-斯特劳斯 · 1908–2009</div>
+            <blockquote>神话是心智的语法。<cite>——《神话学》</cite></blockquote>
+            <div class="legacy-who">格尔茨 · 1926–2006</div>
+            <blockquote>人是悬挂在自己编织的意义之网上的动物。<cite>——《文化的解释》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">道格拉斯 · 1921–2007</div>
+            <blockquote>洁净与危险是文化的分类。<cite>——《洁净与危险》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="contemporary">
+        <h2><span class="chapno">第六章</span>当代人类学：全球化、反思与人类共同未来</h2>
+        <p>当代人类学在反思中前行。它反思殖民遗产——人类学曾与殖民统治纠缠，如今以批判的目光重写历史；它直面全球化——移民、跨国资本、数字技术让“田野”无处不在；它追问人类共同未来——气候变化、疫情、人工智能让人类命运相连。同时，人类学也把目光转向自身社会：都市人类学、医学人类学、数字人类学应运而生。本章的核心洞见是：<strong>人类学是理解人类共同未来的学问</strong>——在差异中看见共通，在反思中走向共情。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 人类学理论演变：从进化论到解释人类学</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  EVO["进化人类学\n19世纪\n泰勒·摩尔根\n文化从低级到高级进化"] --> DIFF["文化相对主义\n20世纪初\n博厄斯·本尼迪克特\n每一种文化自成一格"]
+  DIFF --> FUNC["功能主义\n1920-1930\n马林诺夫斯基\n文化满足人的基本需求"]
+  FUNC --> STRUC["结构主义\n1950-1960\n列维-斯特劳斯\n文化背后的深层结构"]
+  STRUC --> INTER["解释人类学\n1970-\n格尔茨\n文化是文本，需深描"]
+  INTER --> POST["反思人类学\n1980-\n克利福德\n权力·作者·民族志的权威"]
+  classDef evo fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef diff fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef func fill:#DBEAFE,stroke:#3B82F6,color:#1E3A5F;
+  classDef struc fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  classDef inter fill:#FCE7F3,stroke:#DB2777,color:#831843;
+  class EVO evo;
+  class DIFF diff;
+  class FUNC func;
+  class STRUC struc;
+  class INTER inter;
+  class POST post;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：人类学理论的演变</strong>——从"文明人研究野蛮人"到"所有人研究所有人"。</p>
+          <p><strong>从进化论到相对主义：</strong>早期人类学认为文化从低级到高级进化——欧洲最高级，其他地区是"活化石"。这为殖民主义提供了意识形态支持。博厄斯学派彻底颠覆了这种看法，提出文化相对主义——每一种文化必须用其自身的标准来理解。</p>
+          <p><strong>解释人类学：</strong>格尔茨说，"人是悬挂在自己编织的意义之网上的动物。文化就是那些网。"人类学家的任务不是"发现"文化的规律，而是"解释"文化的意义。他提出了"深描"——不是简单地记录"他们做了什么"，而是解释"这个行为在文化中意味着什么"。</p>
+          <p><strong>反思人类学：</strong>1980年代以来，人类学开始反思自身的殖民历史——"谁有权力代表他者？"后殖民批评迫使人类学重新思考自己的知识生产：如何避免将他者"异域化"或"浪漫化"？</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>6.1 反思殖民遗产与写文化</li>
+          <li>6.2 全球化与多点田野</li>
+          <li>6.3 应用人类学：都市、医学与数字</li>
+          <li>6.4 人类共同未来：从差异到共情</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>写文化</strong>：反思民族志的书写权力</li>
+          <li><strong>多点田野</strong>：全球化时代的人类学方法</li>
+          <li><strong>应用人类学</strong>：人类学的现实关怀</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>反思殖民遗产（20世纪70年代–）</strong>：人类学反思与殖民统治的纠缠；《写文化》（1986）反思民族志的书写权力；后殖民人类学让“他者”发出自己的声音。</p>
+          <p><strong>全球化与多点田野（20世纪90年代–）</strong>：移民、跨国资本与媒体让文化流动；马库斯提出“多点田野”；人类学从研究“遥远部落”转向研究“流动世界”。</p>
+          <p><strong>应用人类学（20世纪中–）</strong>：都市人类学研究城市生活；医学人类学研究健康与疾病的文化维度；数字人类学研究社交媒体与算法；人类学进入公共生活。</p>
+          <p><strong>人类共同未来（21世纪–）</strong>：气候变化、疫情、人工智能让人类命运相连；人类学以“人类世”视角思考人与自然；在差异中寻找共通，在理解中走向共情。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>马库斯（1946–）</strong>——《写文化》、多点田野。</p>
+        <p><strong>克利福德（1945–）</strong>——《写文化》。</p>
+        <p><strong>萨林斯（1930–2021）</strong>——文化与实践理性。</p>
+        <p><strong>阿帕杜莱（1949–）</strong>——《消散的现代性》。</p>
+        <p><strong>曹锦清（1949–）</strong>——《黄河边的中国》。</p>
+        <p><strong>费孝通（1910–2005）</strong>——《江村经济》、乡土中国。</p>
+        <figure class="diagram">
+          <figcaption>图 7 · 当代人类学结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["当代人类学"] --> A["反思殖民<br>写文化 · 后殖民"]
+  ROOT --> B["全球化<br>多点田野 · 流动世界"]
+  ROOT --> C["应用人类学<br>都市 · 医学 · 数字"]
+  ROOT --> D["共同未来<br>人类世 · 共情"]
+  classDef rootNode fill:#7C2D12,color:#fff,stroke:#7C2D12;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：当代人类学分支对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>分支</th><th>研究对象</th><th>代表人物</th><th>核心关怀</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>都市人类学</strong></td><td>城市生活</td><td>芝加哥学派</td><td>城市与社区</td></tr>
+              <tr><td><strong>医学人类学</strong></td><td>健康与疾病</td><td>克莱曼</td><td>疾病的文化维度</td></tr>
+              <tr><td><strong>数字人类学</strong></td><td>社交媒体与算法</td><td>米勒 · 博斯特</td><td>数字生活</td></tr>
+              <tr><td><strong>发展人类学</strong></td><td>发展与变迁</td><td>当代人类学家</td><td>发展的人文关怀</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">克利福德 · 1945–</div>
+            <blockquote>民族志是部分真理的书写。<cite>——《写文化》</cite></blockquote>
+            <div class="legacy-who">阿帕杜莱 · 1949–</div>
+            <blockquote>全球化让想象成为社会事实。<cite>——《消散的现代性》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">费孝通 · 1910–2005</div>
+            <blockquote>各美其美，美人之美，美美与共，天下大同。<cite>——《乡土中国》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="summary">
+        <h2><span class="chapno">第七章</span>总结提炼：人类学的启示</h2>
+        <p>回顾从希罗多德到格尔茨，可以提炼出人类学的核心规律：<strong>人之问、文化之眼、田野之法、相对之思、共情之怀</strong>。人类学不提供“标准答案”，它提供的是“理解他者”的清醒智慧——它让我们看见人如何成为人，文化如何塑造人，我们如何在差异中共存。理解人类学，就是理解我们是谁，也是理解我们如何与所有他者共同生活。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 人类学理论演变：从进化论到解释人类学</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  EVO["进化人类学\n19世纪\n泰勒·摩尔根\n文化从低级到高级进化"] --> DIFF["文化相对主义\n20世纪初\n博厄斯·本尼迪克特\n每一种文化自成一格"]
+  DIFF --> FUNC["功能主义\n1920-1930\n马林诺夫斯基\n文化满足人的基本需求"]
+  FUNC --> STRUC["结构主义\n1950-1960\n列维-斯特劳斯\n文化背后的深层结构"]
+  STRUC --> INTER["解释人类学\n1970-\n格尔茨\n文化是文本，需深描"]
+  INTER --> POST["反思人类学\n1980-\n克利福德\n权力·作者·民族志的权威"]
+  classDef evo fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef diff fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef func fill:#DBEAFE,stroke:#3B82F6,color:#1E3A5F;
+  classDef struc fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  classDef inter fill:#FCE7F3,stroke:#DB2777,color:#831843;
+  class EVO evo;
+  class DIFF diff;
+  class FUNC func;
+  class STRUC struc;
+  class INTER inter;
+  class POST post;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：人类学理论的演变</strong>——从"文明人研究野蛮人"到"所有人研究所有人"。</p>
+          <p><strong>从进化论到相对主义：</strong>早期人类学认为文化从低级到高级进化——欧洲最高级，其他地区是"活化石"。这为殖民主义提供了意识形态支持。博厄斯学派彻底颠覆了这种看法，提出文化相对主义——每一种文化必须用其自身的标准来理解。</p>
+          <p><strong>解释人类学：</strong>格尔茨说，"人是悬挂在自己编织的意义之网上的动物。文化就是那些网。"人类学家的任务不是"发现"文化的规律，而是"解释"文化的意义。他提出了"深描"——不是简单地记录"他们做了什么"，而是解释"这个行为在文化中意味着什么"。</p>
+          <p><strong>反思人类学：</strong>1980年代以来，人类学开始反思自身的殖民历史——"谁有权力代表他者？"后殖民批评迫使人类学重新思考自己的知识生产：如何避免将他者"异域化"或"浪漫化"？</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>7.1 人类学五大规律回顾</li>
+          <li>7.2 人类学同心理、社会的关系</li>
+          <li>7.3 人类学精神的当代意义</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>人之问</strong>：追问人是什么</li>
+          <li><strong>文化之眼</strong>：以文化视角看世界</li>
+          <li><strong>田野之法</strong>：在生活现场理解</li>
+          <li><strong>相对之思</strong>：理解不以自身为标准</li>
+          <li><strong>共情之怀</strong>：在差异中走向共情</li>
+        </ul>
+        <figure class="diagram">
+          <figcaption>图 8 · 人类学五大规律图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["人类学五大规律"] --> A["人之问<br>人是什么"]
+  ROOT --> B["文化之眼<br>文化视角"]
+  ROOT --> C["田野之法<br>生活现场"]
+  ROOT --> D["相对之思<br>不以自身为标准"]
+  ROOT --> E["共情之怀<br>差异中共情"]
+  classDef rootNode fill:#7C2D12,color:#fff,stroke:#7C2D12;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <div class="history">
+          <span class="history-title">五大规律的提炼</span>
+          <p><strong>人之问</strong>：从希罗多德到当代人类学，人类学始终追问“人是什么”。人之问的启示是：人是文化的动物——我们不是生而为人，而是在文化中成为人。</p>
+          <p><strong>文化之眼</strong>：从泰勒的文化定义到格尔茨的意义之网，文化之眼让人类学以文化的视角看世界。文化之眼的启示是：我们的习惯、观念与情感都是文化的产物——看见文化，就是看见自己。</p>
+          <p><strong>田野之法</strong>：从马林诺夫斯基到当代多点田野，田野之法是人类学的方法论基石。田野之法的启示是：真正的理解来自共同生活——离开书斋，走进现场，才能听见他者的声音。</p>
+          <p><strong>相对之思</strong>：从博厄斯到赫斯科维茨，相对之思让人类学悬置自己的标准。相对之思的启示是：理解先于评判——先理解他者的逻辑，再谈论是非对错。</p>
+          <p><strong>共情之怀</strong>：从反思殖民到直面全球化，共情之怀让人类学在差异中走向共通。共情之怀的启示是：人类命运相连——在差异中看见共通，在理解中走向共情，是人类学献给世界的礼物。</p>
+        </div>
+        <h3>对照表：人类学五大规律的对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>规律</th><th>核心命题</th><th>代表人物</th><th>思想启示</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>人之问</strong></td><td>追问人是什么</td><td>希罗多德 · 格尔茨</td><td>人是文化的动物</td></tr>
+              <tr><td><strong>文化之眼</strong></td><td>以文化视角看世界</td><td>泰勒 · 格尔茨</td><td>看见文化就是看见自己</td></tr>
+              <tr><td><strong>田野之法</strong></td><td>在生活现场理解</td><td>马林诺夫斯基 · 博厄斯</td><td>理解来自共同生活</td></tr>
+              <tr><td><strong>相对之思</strong></td><td>理解不以自身为标准</td><td>博厄斯 · 赫斯科维茨</td><td>理解先于评判</td></tr>
+              <tr><td><strong>共情之怀</strong></td><td>在差异中走向共情</td><td>费孝通 · 当代人类学</td><td>美美与共，天下大同</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <span class="callout-title">人类学精神三句话</span>
+          第一，<strong>人类学是认识人自身的学问</strong>——它追问人是什么，让我们看见自己也是文化的产物；第二，<strong>人类学是理解他者的智慧</strong>——它教我们悬置自己的标准，先理解再评判，在差异中看见共通；第三，<strong>人类学最终通向共情</strong>——从反思殖民到直面全球化，人类学让我们看见人类命运相连，在理解中走向共情。与第十八辑《心理学思想谱系》合观，心理卷问“心灵如何运作”，本辑问“文化如何塑造人”；与第十三辑《社会学思想谱系》对话，社会学问“社会如何组织”，人类学问“文化如何多样”。这正是思想图谱系列的意义——既理解社会的结构，也理解文化的多样，一个完整的人，二者缺一不可。
+        </div>
+      </section>
+    </main>
+
+    
+      <section class="sec">
+        <h2>关联辑目</h2>
+        <div class="explain">
+          <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+          <ul>
+          <li><a href="../历史思想谱系/历史思想谱系.html">历史思想谱系</a></li>
+          <li><a href="../心理学思想谱系/心理学思想谱系.html">心理学思想谱系</a></li>
+          <li><a href="../社会思想谱系/社会思想谱系.html">社会思想谱系</a></li>
+          <li><a href="../东方思想谱系/东方思想谱系.html">东方思想谱系</a></li>
+          <li><a href="../地理与环境思想谱系/地理与环境思想谱系.html">地理与环境思想谱系</a></li>
+          <li><a href="../生命科学思想谱系/生命科学思想谱系.html">生命科学思想谱系</a></li>
+          </ul>
+        </div>
+      </section>
+<footer>
+      人类学思想谱系 · 思想图谱系列第二十九辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-05
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'PingFang SC, Microsoft YaHei, Helvetica, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>

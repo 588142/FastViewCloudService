@@ -1,0 +1,1306 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>科技与人工智能思想谱系 · 思想图谱系列第十二辑</title>
+
+  <style>
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+  </style>
+
+  <style>
+    :root {
+      --bg: #F4F8FA;
+      --bg2: #E7F0F4;
+      --ink: #1F2A33;
+      --muted: #5C6B76;
+      --rule: #D3E0E7;
+      --accent: #0E7490;
+      --accent2: #D97706;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:first-child { margin-left: 0; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .legacy .legacy-title { font-weight: 700; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .legacy ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; }
+    @media (max-width: 700px) { .legacy { grid-template-columns: 1fr; } }
+
+    .history { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; }
+    .history .history-title { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem; }
+    .history p { margin-bottom: 0.55rem; }
+    .history p:last-child { margin-bottom: 0; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    .formula {
+      font-family: var(--font-mono);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidenav { position: static; max-height: none; }
+    }
+    @media print {
+      .sidenav { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      section.sec { break-inside: avoid-page; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="shell">
+
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">科技与人工智能思想谱系</div>
+    <div class="brand-sub">思想图谱系列 · 第十二辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+      <li><a href="#intro">导言 · 从工具到智能</a></li>
+      <li><a href="#overview">第一章 · 总览：科技与 AI 思想谱系</a></li>
+      <li><a href="#techhistory">第二章 · 科技史：六次技术跃迁</a></li>
+      <li><a href="#techphilosophy">第三章 · 技术哲学：从培根到海德格尔</a></li>
+      <li><a href="#ai-rise">第四章 · 人工智能的兴起：从图灵机到深度学习</a></li>
+      <li><a href="#ai-use">第五章 · 当代 AI 应用指南：今天该用 AI 做什么</a></li>
+      <li><a href="#agi-future">第六章 · AGI 时代的社会图景</a></li>
+      <li><a href="#ai-ethics">第七章 · AI 伦理与治理：与法哲学的对话</a></li>
+      <li><a href="#summary">第八章 · 总结：技术、真理与人的主体性</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第十二辑</span>
+        <span class="series-links">
+          <a href="../思想图谱系列/index.html">系列目录</a>
+          <a href="../law-lineage/law-lineage.html">← 上一辑 · 法哲学思想谱系</a>
+          <a href="../history-lineage/history-lineage.html">下一辑 · 历史思想谱系 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>科技与人工智能思想谱系</h1>
+      <p class="subtitle">从石器到 AGI——人类如何用工具改造世界、又被工具重塑：六次技术跃迁、技术哲学、人工智能的兴起、当代 AI 应用指南与 AGI 时代的社会图景，附 20+ 常用科技法则速查</p>
+      <p class="meta">作者：詹家杨 · 2026-09-05 · 7 张思维导图 · 8 张对照表 · 20+ 科技法则速查 · 80+ 人物语录 · 科技史</p>
+    </header>
+
+    <main>
+      <!-- 导言 -->
+      <section class="sec" id="intro">
+        <h2>导言 · 从工具到智能</h2>
+        <p>第八辑讲了"世界是什么"（科学），这一辑讲"世界能被我改造成什么"（技术）。技术（technology）是人类为满足需求、改造自然而创造的<strong>工具、方法与知识体系</strong>——从打制石片到训练大模型，本质都是同一件事：把人的意志外化为可重复使用的力量。科技思想史追问四个根本问题：<strong>技术从哪里来</strong>（起源论）、<strong>技术如何改变社会</strong>（动力论）、<strong>技术是工具还是主人</strong>（价值论）、<strong>智能时代人如何自处</strong>（主体论）。它不教人"怎么造机器"，而是回答"我们为什么离不开技术、又该如何不被技术吞没"。</p>
+        <div class="callout">
+          <span class="callout-title">一条主线</span>
+          科技史的主线，是"技术为谁服务"的六次转向：<strong>为生存</strong>（石器与火：工具使人成为人）→ <strong>为生产</strong>（农业革命：定居、文字、城市）→ <strong>为效率</strong>（工业革命：机器替代肌肉）→ <strong>为能源与信息</strong>（电气与信息革命：机器替代神经）→ <strong>为智能</strong>（AI 革命：机器替代部分思维）→ <strong>为人的主体性</strong>（AGI 时代：人如何与技术共处）。每一次转向，都是人类重新回答"技术是延伸还是替代、是工具还是主人"。
+        </div>
+      </section>
+
+      <!-- 第一章 总览 -->
+      <section class="sec" id="overview">
+        <h2><span class="chapno">第一章</span>总览：科技与 AI 思想谱系</h2>
+        <p>先看全景：人类用三百万年学会打制石器，用一万年驯化作物与牲畜，用两百年完成机械化，用七十年从电子管走到大模型。培根说"知识就是力量"，把技术确立为人类征服自然的正当手段；马克思把技术看作生产力、看作历史变革的发动机；海德格尔警告技术把世界变成"持存物"；而 20 世纪中叶，图灵机、控制论与达特茅斯会议点燃了人工智能的火种——符号主义与联结主义两条路线反复交替，历经两次"AI 寒冬"，终于在深度学习与大模型时代爆发。今天，AI 已经从实验室走进每个人的手机；而 AGI（通用人工智能）的曙光，正把"技术如何改变社会"这一古老问题，推向"社会将如何被智能重塑"的全新高度。</p>
+
+        <figure class="diagram">
+          <figcaption>图 1 · 科技与人工智能思想谱系总图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["科技史<br>六次技术跃迁"] --> B["技术哲学<br>工具 · 座架 · 代具"]
+  B --> C["人工智能兴起<br>图灵机 → 深度学习"]
+  C --> D["当代 AI 应用<br>学习 · 工作 · 创作 · 决策"]
+  D --> E["AGI 时代展望<br>社会重塑 · 人机共处"]
+  E --> F["AI 伦理与治理<br>对齐 · 责任 · 文化安全"]
+  classDef rootNode fill:#0E7490,color:#fff,stroke:#0E7490;
+  class A rootNode;
+          </pre>
+        </figure>
+
+        <h3>总对照表：科技与 AI 思想的五次转向</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>阶段</th><th>时期</th><th>核心问题</th><th>技术观</th><th>代表</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>科技史</strong></td><td>前 300 万年–今</td><td>技术如何塑造文明？</td><td>工具是人的延伸</td><td>从石器到互联网</td></tr>
+              <tr><td><strong>技术哲学</strong></td><td>17 世纪–今</td><td>技术是工具还是主人？</td><td>力量 · 座架 · 代具</td><td>培根 · 马克思 · 海德格尔</td></tr>
+              <tr><td><strong>人工智能兴起</strong></td><td>1950–今</td><td>机器能否思考？</td><td>符号 · 联结 · 学习</td><td>图灵 · 麦卡锡 · 辛顿</td></tr>
+              <tr><td><strong>当代 AI 应用</strong></td><td>2010–今</td><td>今天该用 AI 做什么？</td><td>副驾驶 · 协作 · 批判</td><td>大模型 · 智能体</td></tr>
+              <tr><td><strong>AGI 与治理</strong></td><td>未来</td><td>社会将如何被重塑？</td><td>对齐 · 责任 · 主体性</td><td>各国立法 · 前沿研究</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 第二章 科技史 -->
+      <section class="sec" id="techhistory">
+        <h2><span class="chapno">第二章</span>科技史：六次技术跃迁（前 300 万年–今）</h2>
+        <p><strong>定义</strong>：科技史是人类用技术改造自然、并反过来被技术塑造的历史。它可以用六次"技术跃迁"来把握：<strong>石器与火</strong>（工具使人成为人）→ <strong>农业革命</strong>（定居、文字、城市、阶级）→ <strong>工业革命</strong>（蒸汽与机械替代肌肉）→ <strong>电气革命</strong>（电力、内燃机、通信压缩时空）→ <strong>信息革命</strong>（计算机、互联网、移动终端）→ <strong>智能革命</strong>（AI、大数据、自动化）。每一次跃迁都重新定义了"人靠什么活着、靠什么组织社会、靠什么认识世界"。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>石器与火（前 300 万年–前 1 万年）</strong>：能人打制第一件石器，直立人学会用火——火让人类走出非洲、获得熟食带来的大脑发育；旧石器时代晚期，骨针、弓箭与岩画表明人类已具备抽象思维与符号能力。</p>
+          <p><strong>农业革命（前 1 万年–）</strong>：新月沃地驯化小麦，长江流域驯化水稻；定居带来剩余产品，剩余产品催生文字（苏美尔楔形文字、甲骨文）、城市（乌鲁克、殷墟）与阶级——文明由此诞生。</p>
+          <p><strong>工业革命（1760–1900）</strong>：瓦特改良蒸汽机，纺织机、火车、轮船把"肌肉"换成"机器"；工厂制度与城市化重塑社会结构，马克思由此看到"生产力决定生产关系"。</p>
+          <p><strong>电气革命（1870–1945）</strong>：发电机、电灯、电话、内燃机、无线电压缩时空；爱迪生与特斯拉的"电流之战"、福特流水线，把效率推向极致。</p>
+          <p><strong>信息革命（1945–2010）</strong>：图灵机与冯·诺依曼架构奠定计算机，晶体管与集成电路让算力指数增长；互联网、万维网、智能手机把信息变成第一生产要素。</p>
+          <p><strong>智能革命（2010–今）</strong>：深度学习在图像识别上突破，Transformer 架构与大模型让机器学会"理解"语言；AI 从工具走向"准主体"，把"技术如何改变社会"推向"社会如何与智能共处"。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>弗兰西斯·培根（1561–1626）</strong>——现代科技观奠基者。"知识就是力量"，主张实验与归纳。</p>
+        <p><strong>詹姆斯·瓦特（1736–1819）</strong>——蒸汽机改良者。分离冷凝器让蒸汽机实用化，点燃工业革命。</p>
+        <p><strong>托马斯·爱迪生（1847–1931）</strong>——电气时代发明家。电灯、留声机、直流电系统，发明了"发明的方法"。</p>
+        <p><strong>尼古拉·特斯拉（1856–1943）</strong>——交流电之父。交流电系统让电力远距离输送成为可能。</p>
+        <p><strong>亨利·福特（1863–1947）</strong>——流水线生产之父。T 型车与流水线把"效率"变成工业信条。</p>
+        <p><strong>艾伦·图灵（1912–1954）</strong>——计算机科学与 AI 之父。图灵机、图灵测试、破译恩尼格玛。</p>
+        <p><strong>约翰·冯·诺依曼（1903–1957）</strong>——现代计算机架构奠基者。存储程序计算机、博弈论。</p>
+        <p><strong>克劳德·香农（1916–2001）</strong>——信息论之父。"信息"第一次被数学化。</p>
+        <p><strong>本杰明·富兰克林（1706–1790）</strong>——电学先驱。风筝实验、避雷针，把"电"从奇观变成可用的力量。</p>
+        <p><strong>亚历山大·格拉汉姆·贝尔（1847–1922）</strong>——电话发明者。1876 年电话专利，开启有声通信时代。</p>
+        <p><strong>古列尔莫·马可尼（1874–1937）</strong>——无线电之父。1901 年跨大西洋无线电，信息首次脱离导线。</p>
+        <p><strong>奥维尔·莱特（1871–1948）与威尔伯·莱特（1867–1912）</strong>——飞机发明者。1903 年首次动力飞行，人类征服天空。</p>
+        <p><strong>蒂姆·伯纳斯-李（1955–）</strong>——万维网之父。1991 年发明 WWW，让互联网向所有人开放。</p>
+        <p><strong>戈登·摩尔（1929–2023）</strong>——摩尔定律提出者。英特尔联合创始人，预见算力的指数增长。</p>
+        <p><strong>蔡伦（63–121）</strong>——造纸术改进者。让书写材料廉价化，文明得以大规模传播。</p>
+        <p><strong>约翰内斯·古腾堡（1398–1468）</strong>——活字印刷术发明者。1450 年代欧洲活字印刷，知识第一次大规模复制。</p>
+        <p><strong>伽利略·伽利雷（1564–1642）</strong>——科学仪器之父。望远镜与实验方法，科学革命的开端。</p>
+        <p><strong>艾萨克·牛顿（1643–1727）</strong>——经典力学奠基者。万有引力与三大定律，把自然纳入数学。</p>
+        <p><strong>迈克尔·法拉第（1791–1867）</strong>——电磁感应发现者。发电机与电动机的原理之源。</p>
+        <p><strong>玛丽·居里（1867–1934）</strong>——放射性研究先驱。镭与钋的发现者，两获诺贝尔奖。</p>
+        <p><strong>阿尔伯特·爱因斯坦（1879–1955）</strong>——相对论创立者。质能方程 E=mc²，重塑时空观。</p>
+        <p><strong>罗伯特·戈达德（1882–1945）</strong>——现代火箭之父。液体燃料火箭，通往太空的起点。</p>
+        <p><strong>尼尔·阿姆斯特朗（1930–2012）</strong>——登月第一人。1969 年"人类的一大步"。</p>
+
+        <figure class="diagram">
+          <figcaption>图 2 · 六次技术跃迁结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["六次技术跃迁"] --> A["石器与火<br>工具使人成为人"]
+  ROOT --> B["农业革命<br>定居 · 文字 · 城市"]
+  ROOT --> C["工业革命<br>蒸汽 · 机械 · 工厂"]
+  ROOT --> D["电气革命<br>电力 · 内燃机 · 通信"]
+  ROOT --> E["信息革命<br>计算机 · 互联网 · 移动"]
+  ROOT --> F["智能革命<br>AI · 大数据 · 自动化"]
+  classDef rootNode fill:#0E7490,color:#fff,stroke:#0E7490;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">培根"知识就是力量"</span>
+          力量 = 知识（实验 + 归纳）
+          <span class="f-note">《新工具》确立"知识—力量"等式：掌握自然规律，就能改造自然。这是现代科技观的起点。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">摩尔定律</span>
+          集成电路上的晶体管数 ≈ 每 18–24 个月翻一番
+          <span class="f-note">1965 年戈登·摩尔提出，驱动了半个世纪算力的指数增长——AI 时代的前提。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">香农信息量公式</span>
+          信息量 = log₂(1/P)（比特）
+          <span class="f-note">香农 1948 年把"信息"定义为不确定性的减少，通信与数字时代的数学地基。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">技术跃迁定律</span>
+          新技术的普及 ≈ 旧技术成本下降 + 新需求涌现
+          <span class="f-note">从蒸汽到 AI，技术跃迁总是"成本—需求"双轮驱动：算力变便宜，应用才爆发。</span>
+        </div>
+
+        <h3>对照表：六次技术跃迁</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>跃迁</th><th>关键发明</th><th>替代了什么</th><th>社会后果</th><th>代表</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>石器与火</strong></td><td>打制石器 · 火</td><td>肢体 · 生食</td><td>走出非洲 · 大脑发育</td><td>能人 · 直立人</td></tr>
+              <tr><td><strong>农业革命</strong></td><td>农耕 · 畜牧 · 文字</td><td>采集狩猎</td><td>定居 · 城市 · 阶级</td><td>新月沃地 · 长江流域</td></tr>
+              <tr><td><strong>工业革命</strong></td><td>蒸汽机 · 纺织机</td><td>肌肉</td><td>工厂 · 城市化 · 无产阶级</td><td>瓦特 · 马克思</td></tr>
+              <tr><td><strong>电气革命</strong></td><td>发电机 · 内燃机 · 电话</td><td>距离 · 时间</td><td>全球化 · 流水线</td><td>爱迪生 · 特斯拉 · 福特</td></tr>
+              <tr><td><strong>信息革命</strong></td><td>计算机 · 互联网 · 手机</td><td>神经 · 记忆</td><td>信息社会 · 平台经济</td><td>图灵 · 香农 · 乔布斯</td></tr>
+              <tr><td><strong>智能革命</strong></td><td>深度学习 · 大模型</td><td>部分思维</td><td>人机协作 · 智能社会</td><td>辛顿 · 奥特曼</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">弗兰西斯·培根 · 1561–1626</div>
+            <blockquote>知识就是力量。<cite>——《新工具》</cite></blockquote>
+            <blockquote>要支配自然，就必须服从自然。<cite>——《新工具》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">艾伦·图灵 · 1912–1954</div>
+            <blockquote>我们只能看到前面很短的一步，但那里有值得做的一切。<cite>——1951 年演讲</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">克劳德·香农 · 1916–2001</div>
+            <blockquote>信息是消除不确定性的东西。<cite>——《通信的数学理论》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">尼古拉·特斯拉 · 1856–1943</div>
+            <blockquote>当下属于他们，而我为之奋斗的未来，属于我。<cite>——1897 年</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">詹姆斯·瓦特 · 1736–1819</div>
+            <blockquote>我无法想象，一个人除了发明蒸汽机，还能为世界做更多的事。<cite>——致友人的信</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">托马斯·爱迪生 · 1847–1931</div>
+            <blockquote>天才是 1% 的灵感加上 99% 的汗水。<cite>——名言</cite></blockquote>
+            <blockquote>我没有失败，我只是找到了一万种行不通的方法。<cite>——名言</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">亨利·福特 · 1863–1947</div>
+            <blockquote>如果我问人们想要什么，他们会说"更快的马"。<cite>——名言</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">约翰·冯·诺依曼 · 1903–1957</div>
+            <blockquote>技术正在以指数速度发展，而人类对它的理解却跟不上。<cite>——1956 年</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">本杰明·富兰克林 · 1706–1790</div>
+            <blockquote>投资于知识，收益最大。<cite>——《穷理查年鉴》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">亚历山大·贝尔 · 1847–1922</div>
+            <blockquote>当一扇门关闭，另一扇门就会打开。<cite>——名言</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">古列尔莫·马可尼 · 1874–1937</div>
+            <blockquote>人类将不再受距离的束缚。<cite>——1901 年跨大西洋通信后</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">奥维尔·莱特 · 1871–1948</div>
+            <blockquote>飞机能飞起来，是因为它没时间思考坠落。<cite>——名言</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">蒂姆·伯纳斯-李 · 1955–</div>
+            <blockquote>万维网与其说是技术创造，不如说是社会创造。<cite>——名言</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">戈登·摩尔 · 1929–2023</div>
+            <blockquote>如果汽车工业像半导体一样进步，一辆劳斯莱斯只需 2.5 美元，一加仑油能跑 50 万英里。<cite>——1965 年</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">蔡伦 · 63–121</div>
+            <blockquote>用树肤、麻头及敝布、鱼网以为纸，天下莫不通用。<cite>——《后汉书·蔡伦传》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">约翰内斯·古腾堡 · 1398–1468</div>
+            <blockquote>印刷机将如泉涌般，流出知识的溪流。<cite>——名言</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">伽利略·伽利雷 · 1564–1642</div>
+            <blockquote>宇宙这部大书，是用数学语言写成的。<cite>——《试金者》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">艾萨克·牛顿 · 1643–1727</div>
+            <blockquote>如果我看得更远，那是因为我站在巨人的肩膀上。<cite>——1675 年致胡克信</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">迈克尔·法拉第 · 1791–1867</div>
+            <blockquote>一旦科学插上幻想的翅膀，它就能赢得胜利。<cite>——名言</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">玛丽·居里 · 1867–1934</div>
+            <blockquote>生活中没有什么可怕的东西，只有需要理解的东西。<cite>——名言</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">阿尔伯特·爱因斯坦 · 1879–1955</div>
+            <blockquote>想象力比知识更重要，因为知识是有限的。<cite>——1929 年访谈</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">罗伯特·戈达德 · 1882–1945</div>
+            <blockquote>昨天的梦想，就是今天的希望，明天的现实。<cite>——名言</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">尼尔·阿姆斯特朗 · 1930–2012</div>
+            <blockquote>这是个人的一小步，却是人类的一大步。<cite>——1969 年登月</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">科技史的遗产</div>
+            <ul>
+              <li>"知识—力量"确立现代科技观</li>
+              <li>技术跃迁的"成本—需求"双轮驱动</li>
+              <li>信息论为数字时代奠基</li>
+              <li>从替代肌肉到替代思维的文明主线</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第三章 技术哲学 -->
+      <section class="sec" id="techphilosophy">
+        <h2><span class="chapno">第三章</span>技术哲学：从培根到海德格尔（17 世纪–今）</h2>
+        <p><strong>定义</strong>：技术哲学追问"技术是什么、技术与人是什么关系"。培根把技术看作人类征服自然的正当力量；马克思把技术看作生产力、看作历史变革的发动机，也看到机器对人的异化；海德格尔警告现代技术把世界变成"持存物"（Bestand）、把人纳入"座架"（Gestell）；埃吕尔主张"技术自主"，温纳揭示"技术具有政治性"，斯蒂格勒则把技术定义为人的"代具"（prosthesis）——人天生是技术性的存在。技术哲学完成了从"技术是工具"到"技术塑造人"的转向。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>培根的乐观主义（1620）</strong>：《新工具》主张"知识就是力量"，以实验与归纳取代经院思辨，把技术确立为人类进步的引擎——这是现代技术乐观主义的源头。</p>
+          <p><strong>马克思的辩证技术观（19 世纪）</strong>：马克思在《资本论》中把技术看作生产力，认为"手推磨产生封建主的社会，蒸汽磨产生工业资本家的社会"；同时揭示机器大工业下工人被异化、被"钉在流水线上"。</p>
+          <p><strong>海德格尔的忧思（1954）</strong>：《技术的追问》提出"座架"（Gestell）概念——现代技术不是中性的工具，而是一种"促逼"（Herausfordern）的框架，把自然与人一并纳入"可计算的持存物"。</p>
+          <p><strong>埃吕尔与温纳（20 世纪中后期）</strong>：埃吕尔在《技术社会》中主张技术具有自主性、按自身逻辑扩张；温纳在《鲸鱼与反应堆》中提出"技术即政治"——技术物本身就承载权力关系。</p>
+          <p><strong>斯蒂格勒（1994）</strong>：《技术与时间》提出"代具"概念——人没有本质，人的本质就是技术；技术既是人的延伸，也是人的"药"（pharmakon），既治病也致病。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>弗兰西斯·培根（1561–1626）</strong>——技术乐观主义源头。"知识就是力量"。</p>
+        <p><strong>卡尔·马克思（1818–1883）</strong>——技术生产力论。技术是历史变革的发动机，也是异化的来源。</p>
+        <p><strong>马丁·海德格尔（1889–1976）</strong>——技术批判哲学。"座架"：现代技术把世界变成持存物。</p>
+        <p><strong>雅克·埃吕尔（1912–1994）</strong>——技术自主论。技术按自身逻辑扩张，人难以控制。</p>
+        <p><strong>兰登·温纳（1944–）</strong>——技术政治论。技术物承载权力与价值。</p>
+        <p><strong>贝尔纳·斯蒂格勒（1952–2020）</strong>——代具论。人的本质是技术性的，技术是"药"。</p>
+        <p><strong>让-雅克·卢梭（1712–1778）</strong>——技术批判先驱。《论科学与艺术》：技术使人堕落。</p>
+        <p><strong>刘易斯·芒福德（1895–1990）</strong>——技术与文明论。《技术与文明》：巨机器。</p>
+        <p><strong>唐·伊德（1934–）</strong>——后现象学技术哲学。人—技术—世界的具身关系。</p>
+        <p><strong>凯文·凯利（1952–）</strong>——技术有机论。《失控》《科技想要什么》：技术是第七生命王国。</p>
+        <p><strong>柏拉图（前 427–前 347）</strong>——技艺观源头。techne 是"模仿理念"的技艺，工匠被逐出理想国。</p>
+        <p><strong>亚里士多德（前 384–前 322）</strong>——四因说。区分"技艺"（techne）与"实践智慧"（phronesis）。</p>
+        <p><strong>吉尔伯特·西蒙栋（1924–1989）</strong>——技术客体论。技术客体有自身的个体化历史，反对把技术当工具。</p>
+        <p><strong>唐娜·哈拉维（1944–）</strong>——赛博格宣言。人与机器的界限正在消融，"我们都是赛博格"。</p>
+        <p><strong>布鲁诺·拉图尔（1947–2022）</strong>——行动者网络理论。技术与人类是平等的"行动者"，共同编织社会。</p>
+        <p><strong>安德鲁·芬伯格（1943–）</strong>——技术批判理论。技术承载价值，可被民主地重新设计。</p>
+
+        <figure class="diagram">
+          <figcaption>图 3 · 技术哲学结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["技术哲学"] --> A["培根<br>知识就是力量 · 乐观"]
+  ROOT --> B["马克思<br>生产力 · 异化"]
+  ROOT --> C["海德格尔<br>座架 · 持存物"]
+  ROOT --> D["卢梭 / 芒福德<br>技术批判 · 巨机器"]
+  ROOT --> E["埃吕尔 / 温纳<br>技术自主 · 技术即政治"]
+  ROOT --> F["斯蒂格勒 / 伊德 / 凯利<br>代具 · 具身 · 有机体"]
+  classDef rootNode fill:#0E7490,color:#fff,stroke:#0E7490;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">马克思技术生产力公式</span>
+          生产力 = 劳动者 + 劳动资料（技术）+ 劳动对象
+          <span class="f-note">"手推磨产生封建主的社会，蒸汽磨产生工业资本家的社会"——技术决定生产关系，是历史变革的发动机。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">海德格尔"座架"（Gestell）</span>
+          现代技术 = 促逼自然与人 → 纳入"可计算的持存物"
+          <span class="f-note">技术不是中性的工具，而是一种把世界对象化、可计算化的框架——人也被纳入其中。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">斯蒂格勒"代具"（prosthesis）</span>
+          人的本质 = 技术（人天生是技术性的存在）
+          <span class="f-note">技术既是人的延伸，也是"药"（pharmakon）：既增强人，也可能使人依赖、异化。</span>
+        </div>
+
+        <h3>对照表：技术哲学的四种技术观</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>培根</th><th>马克思</th><th>海德格尔</th><th>斯蒂格勒</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>技术的本质</strong></td><td>力量</td><td>生产力</td><td>座架</td><td>代具</td></tr>
+              <tr><td><strong>技术与人</strong></td><td>人支配技术</td><td>技术塑造社会</td><td>技术框定人</td><td>技术定义人</td></tr>
+              <tr><td><strong>基本态度</strong></td><td>乐观</td><td>辩证</td><td>忧思</td><td>药性（双刃）</td></tr>
+              <tr><td><strong>代表著作</strong></td><td>《新工具》</td><td>《资本论》</td><td>《技术的追问》</td><td>《技术与时间》</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">卡尔·马克思 · 1818–1883</div>
+            <blockquote>手推磨产生的是封建主的社会，蒸汽磨产生的是工业资本家的社会。<cite>——《哲学的贫困》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">马丁·海德格尔 · 1889–1976</div>
+            <blockquote>技术的本质绝不是任何技术性的东西。<cite>——《技术的追问》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">贝尔纳·斯蒂格勒 · 1952–2020</div>
+            <blockquote>人没有本质，人的本质就是技术。<cite>——《技术与时间》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">兰登·温纳 · 1944–</div>
+            <blockquote>技术物本身就是政治秩序的体现。<cite>——《鲸鱼与反应堆》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">让-雅克·卢梭 · 1712–1778</div>
+            <blockquote>科学与艺术的进步，并没有给我们的风俗带来任何好处。<cite>——《论科学与艺术》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">刘易斯·芒福德 · 1895–1990</div>
+            <blockquote>机器文明的问题，不是机器本身，而是人如何驾驭它。<cite>——《技术与文明》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">唐·伊德 · 1934–</div>
+            <blockquote>技术不是中立的旁观者，而是我们感知世界的透镜。<cite>——《技术与生活世界》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">凯文·凯利 · 1952–</div>
+            <blockquote>技术是第七种生命形态，它像生物一样进化。<cite>——《科技想要什么》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">雅克·埃吕尔 · 1912–1994</div>
+            <blockquote>技术不再被任何东西控制，它反过来控制一切。<cite>——《技术社会》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">柏拉图 · 前 427–前 347</div>
+            <blockquote>一切技艺，都是对理念的模仿。<cite>——《理想国》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">亚里士多德 · 前 384–前 322</div>
+            <blockquote>技艺模仿自然，也完成自然所不能完成之事。<cite>——《物理学》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">吉尔伯特·西蒙栋 · 1924–1989</div>
+            <blockquote>技术客体不是工具，而是有自身生命的个体化过程。<cite>——《技术客体的存在方式》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">唐娜·哈拉维 · 1944–</div>
+            <blockquote>我们全都是赛博格——人与机器的界限早已模糊。<cite>——《赛博格宣言》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">布鲁诺·拉图尔 · 1947–2022</div>
+            <blockquote>我们从未现代过——技术与人类从来不可分离。<cite>——《我们从未现代过》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">安德鲁·芬伯格 · 1943–</div>
+            <blockquote>技术不是命运，而是可以被民主地重新设计的领域。<cite>——《可选择的现代性》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">技术哲学的遗产</div>
+            <ul>
+              <li>从"技术是工具"到"技术塑造人"的转向</li>
+              <li>技术既是生产力也是异化来源的辩证观</li>
+              <li>"座架""代具""药"等批判概念</li>
+              <li>技术具有政治性——为 AI 治理提供哲学地基</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四章 人工智能的兴起 -->
+      <section class="sec" id="ai-rise">
+        <h2><span class="chapno">第四章</span>人工智能的兴起：从图灵机到深度学习（1950–今）</h2>
+        <p><strong>定义</strong>：人工智能（AI）是让机器模拟、延伸人类智能的学科。它的思想谱系有两条主线：<strong>符号主义</strong>（把智能看作符号推理，代表：麦卡锡、明斯基、专家系统）与<strong>联结主义</strong>（把智能看作神经网络的学习，代表：罗森布拉特、辛顿、深度学习）。1950 年图灵提出"机器能否思考"与图灵测试；1956 年达特茅斯会议命名"人工智能"；此后历经两次"AI 寒冬"（1970s、1980s），2012 年 AlexNet 引爆深度学习，2017 年 Transformer 架构问世，2022 年 ChatGPT 让大模型走进大众——AI 从"推理工具"走向"生成智能"。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>图灵机与图灵测试（1936 / 1950）</strong>：图灵 1936 年提出"图灵机"——任何可计算问题都能被一台通用机器执行；1950 年在《计算机器与智能》中提出"图灵测试"：若机器能让人类无法分辨其与人的对话，就应承认其"思考"。</p>
+          <p><strong>达特茅斯会议（1956）</strong>：麦卡锡、明斯基、香农等十位学者开会，正式命名"人工智能"（Artificial Intelligence），确立"让机器使用语言、形成抽象、解决问题"的目标——AI 作为学科诞生。</p>
+          <p><strong>两次寒冬与专家系统（1970s–1990s）</strong>：早期乐观破灭导致第一次寒冬；80 年代专家系统（如医疗 MYCIN）短暂复兴后又因维护成本崩溃，进入第二次寒冬；90 年代统计机器学习（支持向量机、贝叶斯）悄然崛起。</p>
+          <p><strong>深度学习革命（2012–2017）</strong>：辛顿团队的 AlexNet 在 ImageNet 图像识别上大幅领先，深度学习爆发；2017 年谷歌提出 Transformer 架构（"注意力机制"），为预训练大模型铺路。</p>
+          <p><strong>大模型时代（2022–今）</strong>：ChatGPT 让生成式 AI 进入大众视野；GPT、Claude、文心一言、通义千问等大模型涌现，AI 从"识别"走向"生成"，从"工具"走向"准主体"。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>艾伦·图灵（1912–1954）</strong>——AI 之父。图灵机、图灵测试。</p>
+        <p><strong>约翰·麦卡锡（1927–2011）</strong>——"人工智能"命名者。Lisp 语言、达特茅斯会议发起人。</p>
+        <p><strong>马文·明斯基（1927–2016）</strong>——符号主义代表。《心智社会》，框架理论。</p>
+        <p><strong>弗兰克·罗森布拉特（1928–1971）</strong>——感知机发明者。联结主义先驱。</p>
+        <p><strong>杰弗里·辛顿（1947–）</strong>——深度学习之父。反向传播、深度信念网络，2018 图灵奖。</p>
+        <p><strong>杨立昆（Yann LeCun，1960–）</strong>——卷积神经网络之父。计算机视觉奠基。</p>
+        <p><strong>约书亚·本吉奥（Yoshua Bengio，1964–）</strong>——深度学习三巨头之一。序列模型、注意力机制。</p>
+        <p><strong>山姆·奥特曼（Sam Altman，1985–）</strong>——OpenAI CEO。ChatGPT 与 GPT 系列推动者。</p>
+        <p><strong>诺伯特·维纳（1894–1964）</strong>——控制论之父。《控制论》：反馈与目的性。</p>
+        <p><strong>阿瑟·塞缪尔（1901–1990）</strong>——"机器学习"命名者。跳棋程序。</p>
+        <p><strong>爱德华·费根鲍姆（1936–）</strong>——专家系统之父。知识工程。</p>
+        <p><strong>德米斯·哈萨比斯（1976–）</strong>——DeepMind 创始人。AlphaGo 与强化学习。</p>
+        <p><strong>李飞飞（1976–）</strong>——ImageNet 之父。为深度学习提供数据燃料。</p>
+        <p><strong>吴恩达（1976–）</strong>——深度学习布道者。Google Brain、Coursera。</p>
+        <p><strong>唐纳德·赫布（1904–1985）</strong>——赫布学习法则。"一起放电的神经元会连在一起"。</p>
+        <p><strong>约翰·霍普菲尔德（1933–）</strong>——霍普菲尔德网络。联想记忆网络，联结主义复兴的关键。</p>
+        <p><strong>黄仁勋（1963–）</strong>——GPU 算力推动者。英伟达创始人，为深度学习提供算力引擎。</p>
+        <p><strong>塞巴斯蒂安·特伦（1967–）</strong>——自动驾驶之父。斯坦福无人车、Google X。</p>
+        <p><strong>伊利亚·苏茨克维（1986–）</strong>——GPT 首席科学家。深度学习与 Transformer 的关键推动者。</p>
+        <p><strong>安德烈·卡帕西（1986–）</strong>——深度学习布道者。特斯拉 AI 总监、OpenAI 创始成员。</p>
+
+        <figure class="diagram">
+          <figcaption>图 4 · 人工智能思想谱系图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["人工智能的兴起"] --> A["图灵<br>图灵机 · 图灵测试"]
+  ROOT --> B["控制论<br>维纳 · 反馈 · 目的性"]
+  ROOT --> C["符号主义<br>麦卡锡 · 明斯基 · 费根鲍姆"]
+  ROOT --> D["联结主义<br>罗森布拉特 · 塞缪尔"]
+  ROOT --> E["深度学习<br>辛顿 · 杨立昆 · 本吉奥 · 李飞飞"]
+  ROOT --> F["大模型时代<br>Transformer · ChatGPT · 哈萨比斯"]
+  classDef rootNode fill:#0E7490,color:#fff,stroke:#0E7490;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">图灵测试</span>
+          机器"会思考" ⟺ 人类无法分辨其与人的对话
+          <span class="f-note">1950 年提出：不追问"机器有没有意识"，只看行为能否以假乱真——AI 的实用主义判据。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">深度学习三要素</span>
+          智能 = 数据 + 算力 + 算法（神经网络）
+          <span class="f-note">大模型的"涌现能力"来自三者的规模效应：数据越多、算力越强、网络越深，能力越强。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">Transformer 注意力机制</span>
+          输出 = 加权聚合所有输入（注意力权重）
+          <span class="f-note">2017 年谷歌提出，让模型能"关注"长文本中任意位置的信息——大模型的地基。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">AI 能力公式（经验法则）</span>
+          模型能力 ≈ 参数量 × 数据量 × 算力
+          <span class="f-note">"规模即能力"（scaling law）：大模型的能力随规模近似平滑增长——但边际收益递减、成本剧增。</span>
+        </div>
+
+        <h3>对照表：符号主义 vs 联结主义</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>符号主义</th><th>联结主义</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>智能的本质</strong></td><td>符号推理</td><td>神经网络学习</td></tr>
+              <tr><td><strong>代表</strong></td><td>麦卡锡 · 明斯基</td><td>罗森布拉特 · 辛顿</td></tr>
+              <tr><td><strong>优势</strong></td><td>可解释 · 逻辑清晰</td><td>擅长感知 · 图像语音</td></tr>
+              <tr><td><strong>局限</strong></td><td>难以处理模糊与感知</td><td>黑箱 · 依赖数据</td></tr>
+              <tr><td><strong>巅峰</strong></td><td>专家系统（80 年代）</td><td>深度学习（2012–今）</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">艾伦·图灵 · 1912–1954</div>
+            <blockquote>机器能思考吗？<cite>——《计算机器与智能》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">杰弗里·辛顿 · 1947–</div>
+            <blockquote>深度学习将改变世界，它已经改变了计算机视觉。<cite>——2012 年 ImageNet 夺冠后</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">约翰·麦卡锡 · 1927–2011</div>
+            <blockquote>人工智能的目标，是让机器使用语言、形成抽象、解决问题。<cite>——1955 年达特茅斯提案</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">山姆·奥特曼 · 1985–</div>
+            <blockquote>AI 将是最伟大的技术革命，它会让每个人拥有一个超级智能助手。<cite>——2023 年访谈</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">马文·明斯基 · 1927–2016</div>
+            <blockquote>智能不是一种神秘物质，而是许多不同过程的组合。<cite>——《心智社会》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">杨立昆 · 1960–</div>
+            <blockquote>机器学习不是魔法，它只是让机器从数据中学习规律。<cite>——访谈</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">诺伯特·维纳 · 1894–1964</div>
+            <blockquote>我们最好非常确定，当我们把机器当作神来崇拜时，它不会成为我们的魔鬼。<cite>——《控制论》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">阿瑟·塞缪尔 · 1901–1990</div>
+            <blockquote>机器学习是让计算机无需显式编程就能获得能力的研究领域。<cite>——1959 年</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">爱德华·费根鲍姆 · 1936–</div>
+            <blockquote>智能的力量来自知识，而不仅仅是推理的规则。<cite>——《人工智能手册》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">德米斯·哈萨比斯 · 1976–</div>
+            <blockquote>AI 是终极工具，它将帮助我们解决科学中最棘手的问题。<cite>——访谈</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">李飞飞 · 1976–</div>
+            <blockquote>数据是 AI 的燃料，而 ImageNet 让深度学习有了火种。<cite>——访谈</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">吴恩达 · 1976–</div>
+            <blockquote>AI 是新的电力，它将改变每一个行业。<cite>——2017 年演讲</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">约书亚·本吉奥 · 1964–</div>
+            <blockquote>AI 的进步必须与对它的理解同步，否则我们会失去控制。<cite>——2023 年访谈</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">唐纳德·赫布 · 1904–1985</div>
+            <blockquote>一起放电的神经元，会连在一起。<cite>——赫布法则（1949）</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">约翰·霍普菲尔德 · 1933–</div>
+            <blockquote>记忆不是存储的，而是网络涌现的。<cite>——访谈</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">黄仁勋 · 1963–</div>
+            <blockquote>AI 是新的工业革命，而 GPU 是它的蒸汽机。<cite>——2024 年演讲</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">塞巴斯蒂安·特伦 · 1967–</div>
+            <blockquote>自动驾驶将比人类驾驶更安全。<cite>——访谈</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">伊利亚·苏茨克维 · 1986–</div>
+            <blockquote>大模型的涌现能力，来自规模与数据的奇迹。<cite>——访谈</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">安德烈·卡帕西 · 1986–</div>
+            <blockquote>深度学习的成功，是规模、数据与工程的胜利。<cite>——访谈</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">AI 兴起的遗产</div>
+            <ul>
+              <li>图灵测试确立 AI 的实用主义判据</li>
+              <li>符号主义与联结主义两条路线交替推进</li>
+              <li>深度学习 + 大模型实现"生成智能"</li>
+              <li>AI 从工具走向"准主体"</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第五章 当代 AI 应用指南 -->
+      <section class="sec" id="ai-use">
+        <h2><span class="chapno">第五章</span>当代 AI 应用指南：今天该用 AI 做什么</h2>
+        <p><strong>定义</strong>：AI 不是"替你做决定的大脑"，而是"帮你把重复劳动外包的副驾驶"。今天普通人使用 AI 的正确姿势，可以概括为五个领域：<strong>学习</strong>（个性化导师、知识检索、语言陪练）、<strong>工作</strong>（文档、表格、代码、数据分析的自动化）、<strong>创作</strong>（写作、设计、编程、音乐、视频）、<strong>决策</strong>（医疗、金融、科研的辅助判断）、<strong>生活</strong>（翻译、日程、健康管理）。但使用 AI 有一条铁律：<strong>AI 负责"生成"，人负责"判断"</strong>——提问、验证、整合、负责，永远是人的事。</p>
+
+        <div class="history">
+          <span class="history-title">使用原则</span>
+          <p><strong>学习上</strong>：把 AI 当"永不疲倦的私教"——让它把复杂概念讲成大白话、出题、批改、模拟面试；但要用它"学"，而不是用它"替"——输出前先自己思考，防止"答案依赖症"。</p>
+          <p><strong>工作上</strong>：把重复、机械、耗时的部分交给 AI（起草、汇总、翻译、排版、写代码模板），把判断、决策、沟通、担责的部分留给自己——AI 提效，人定方向。</p>
+          <p><strong>创作上</strong>：AI 是"灵感的加速器"——让它生成初稿、多版本、素材，再由人筛选、修改、注入个人风格；记住第十一辑的结论：有人的"独创性智力投入"，作品才受保护。</p>
+          <p><strong>决策上</strong>：医疗、法律、金融等高风险领域，AI 只能当"第二意见"，最终判断与责任必须由持证的专业人员承担——AI 会"一本正经地胡说八道"（幻觉）。</p>
+          <p><strong>生活上</strong>：翻译、导航、日程、健康提醒可以放心交给 AI；但涉及隐私、财产、身份的信息，务必谨慎——AI 不是保险箱。</p>
+        </div>
+
+        <h3>当代 AI 应用地图</h3>
+        <figure class="diagram">
+          <figcaption>图 5 · 当代 AI 应用指南图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["今天该用 AI 做什么"] --> A["学习<br>私教 · 检索 · 陪练"]
+  ROOT --> B["工作<br>副驾驶 · 自动化"]
+  ROOT --> C["创作<br>初稿 · 素材 · 风格"]
+  ROOT --> D["决策<br>第二意见 · 辅助"]
+  ROOT --> E["生活<br>翻译 · 日程 · 健康"]
+  ROOT --> F["铁律<br>AI 生成 · 人判断"]
+  classDef rootNode fill:#0E7490,color:#fff,stroke:#0E7490;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">人机分工铁律</span>
+          AI 负责"生成" · 人负责"判断"
+          <span class="f-note">提问、验证、整合、担责永远属于人；AI 是副驾驶，方向盘在人手里。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">提示词公式（清晰提问）</span>
+          好结果 = 角色 + 任务 + 背景 + 格式 + 约束
+          <span class="f-note">例："你是一位法学教授（角色），用三段话解释自然法（任务），面向高中生（背景），用列表（格式），不超过 200 字（约束）。"</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">AI 幻觉防范</span>
+          关键事实 = 交叉验证（AI 输出 + 权威来源）
+          <span class="f-note">大模型会"一本正经地胡说八道"——凡涉及数字、法条、新闻、人名，必须回到权威来源核对。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">能力边界法则</span>
+          AI 擅长"广度" · 人擅长"深度与责任"
+          <span class="f-note">AI 能快速覆盖大量领域，但真正的专业判断、价值取舍与责任承担，仍是人的领地。</span>
+        </div>
+
+        <h3>对照表：AI 能做什么 / 不能做什么</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>领域</th><th>AI 擅长</th><th>仍需人来做</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>学习</strong></td><td>讲解 · 出题 · 批改 · 陪练</td><td>主动思考 · 建立知识体系</td></tr>
+              <tr><td><strong>工作</strong></td><td>起草 · 汇总 · 翻译 · 排版</td><td>判断 · 决策 · 沟通 · 担责</td></tr>
+              <tr><td><strong>创作</strong></td><td>初稿 · 多版本 · 素材</td><td>筛选 · 修改 · 注入个人风格</td></tr>
+              <tr><td><strong>决策</strong></td><td>第二意见 · 数据分析</td><td>最终判断 · 专业资质 · 责任</td></tr>
+              <tr><td><strong>生活</strong></td><td>翻译 · 日程 · 健康提醒</td><td>隐私保护 · 情感 · 重大抉择</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物：AI 应用与产业的推动者</h3>
+        <p><strong>比尔·盖茨（1955–）</strong>——AI 应用乐观派。微软创始人，称 AI 为"革命性技术"。</p>
+        <p><strong>萨蒂亚·纳德拉（1967–）</strong>——微软 CEO。把 AI 注入办公与云，Copilot 战略。</p>
+        <p><strong>埃里克·施密特（1955–）</strong>——谷歌前 CEO。AI 将重塑搜索与信息产业。</p>
+        <p><strong>埃隆·马斯克（1971–）</strong>——AI 应用与风险并重。特斯拉、xAI。</p>
+        <p><strong>李彦宏（1968–）</strong>——中国 AI 应用先行者。百度文心一言，AI 普惠。</p>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">比尔·盖茨 · 1955–</div>
+            <blockquote>AI 将像 PC 一样改变世界，只是更快。<cite>——2023 年博客</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">萨蒂亚·纳德拉 · 1967–</div>
+            <blockquote>AI 是微软的下一件大事，它将赋能每一个人。<cite>——2023 年演讲</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">埃里克·施密特 · 1955–</div>
+            <blockquote>AI 将改变每一个行业，就像互联网一样。<cite>——访谈</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">埃隆·马斯克 · 1971–</div>
+            <blockquote>AI 是把双刃剑——它既可能是最好的工具，也可能是最坏的风险。<cite>——访谈</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">李彦宏 · 1968–</div>
+            <blockquote>AI 不是锦上添花，而是产业升级的引擎。<cite>——2023 年演讲</cite></blockquote>
+          </div>
+        </div>
+
+        <h3>应用箴言</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">使用箴言</div>
+            <blockquote>把 AI 当"锤子"，别当"大脑"——锤子帮你省力，大脑决定往哪敲。<cite>——本辑应用指南</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">当代 AI 应用的要义</div>
+            <ul>
+              <li>AI 是"副驾驶"，方向盘在人手里</li>
+              <li>学习用它"学"，不靠它"替"</li>
+              <li>创作靠人注入"独创性智力投入"</li>
+              <li>高风险决策必须人负责</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第六章 AGI 时代的社会图景 -->
+      <section class="sec" id="agi-future">
+        <h2><span class="chapno">第六章</span>AGI 时代的社会图景：未来将发生什么变化</h2>
+        <p><strong>定义</strong>：AGI（通用人工智能，Artificial General Intelligence）指能像人一样在<strong>任何智力任务</strong>上达到或超过人类水平的智能。它一旦到来，将不是"又一个工具"，而是社会运行方式的整体重构。本章从六个维度展望 AGI 时代的变化：<strong>工作</strong>（职业重构与"人机分工"）、<strong>教育</strong>（个性化终身学习）、<strong>经济</strong>（生产力跃升与分配难题）、<strong>治理</strong>（算法治理与全球协调）、<strong>文化</strong>（AI 创作与文化安全）、<strong>人机关系</strong>（从工具到伙伴、人的主体性）。</p>
+
+        <div class="history">
+          <span class="history-title">展望背景</span>
+          <p><strong>工作：从"替代"到"重构"</strong>：重复性、流程化岗位（客服、翻译、初级编程、数据录入）将被大幅替代；同时涌现"提示词工程师""AI 训练师""人机协作设计师"等新职业。历史经验是：技术消灭岗位，但从不消灭工作——它把人类推向更高层次的创造。</p>
+          <p><strong>教育：从"标准化"到"个性化"</strong>：AI 导师能为一亿人提供一对一教学；"背知识"的价值下降，"提问、判断、整合、创造"的价值上升——教育将从"灌输"转向"点燃"。</p>
+          <p><strong>经济：生产力跃升与分配难题</strong>：AGI 可能带来生产力指数级跃升，但也加剧"赢者通吃"与财富集中；"通用基本收入"（UBI）、数据要素确权、算力公共化将成为激烈争论的议题。</p>
+          <p><strong>治理：从"人治"到"算法治理"</strong>：AI 将进入司法辅助、公共决策、安全监控；但"算法黑箱""算法歧视""责任归属"要求新的治理框架——这正是第十一辑"法哲学"的延伸。</p>
+          <p><strong>文化：创作繁荣与文化安全</strong>：AI 让创作门槛归零，文化空前繁荣；但深度伪造、信息茧房、外部势力借 AI 制造性别对立与群体撕裂的风险也在上升——文化安全成为国家安全的战略维度。</p>
+          <p><strong>人机关系：从工具到伙伴</strong>：当 AI 能完成大多数智力任务，"人何以为人"成为核心问题——人的价值将从"会做事"转向"会提问、会判断、会负责、会爱"。</p>
+        </div>
+
+        <h3>AGI 时代社会变化图</h3>
+        <figure class="diagram">
+          <figcaption>图 6 · AGI 时代社会图景</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["AGI 时代的社会变化"] --> A["工作<br>职业重构 · 人机分工"]
+  ROOT --> B["教育<br>个性化 · 终身学习"]
+  ROOT --> C["经济<br>生产力跃升 · 分配难题"]
+  ROOT --> D["治理<br>算法治理 · 全球协调"]
+  ROOT --> E["文化<br>创作繁荣 · 文化安全"]
+  ROOT --> F["人机关系<br>从工具到伙伴 · 主体性"]
+  classDef rootNode fill:#0E7490,color:#fff,stroke:#0E7490;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">AGI 对齐（Alignment）</span>
+          AI 的目标 = 人类的价值观（可验证、可纠偏）
+          <span class="f-note">AGI 时代的第一原则：确保超级智能的目标与人类利益一致，否则能力越强风险越大。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">控制问题（Control Problem）</span>
+          人类必须保留"关掉开关"的能力
+          <span class="f-note">无论 AI 多强，人类都应保留最终否决权——这是 AGI 安全的最低底线。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">人机分工公式（AGI 时代）</span>
+          人负责"为什么" · AI 负责"怎么做"
+          <span class="f-note">AGI 接管"怎么做"的效率，人坚守"为什么"的方向——价值、意义、责任属于人。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">技术奇点假设</span>
+          智能增长 → 自我改进 → 指数爆发（争议）
+          <span class="f-note">库兹韦尔等预测"奇点"（2045 前后）；但多数研究者认为 AGI 是渐进过程，奇点论仍是假设而非定论。</span>
+        </div>
+
+        <h3>对照表：AGI 时代六大领域的变化</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>领域</th><th>今天</th><th>AGI 时代</th><th>关键挑战</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>工作</strong></td><td>人做重复劳动</td><td>人机协作 · 职业重构</td><td>再培训 · 就业转型</td></tr>
+              <tr><td><strong>教育</strong></td><td>标准化课堂</td><td>个性化终身学习</td><td>评价体系 · 数字鸿沟</td></tr>
+              <tr><td><strong>经济</strong></td><td>人力驱动</td><td>智能驱动 · 分配重构</td><td>财富集中 · UBI</td></tr>
+              <tr><td><strong>治理</strong></td><td>人治 + 法治</td><td>算法治理 · AI 立法</td><td>黑箱 · 歧视 · 责任</td></tr>
+              <tr><td><strong>文化</strong></td><td>专业创作</td><td>全民创作 · 文化安全</td><td>深度伪造 · 信息茧房</td></tr>
+              <tr><td><strong>人机关系</strong></td><td>工具</td><td>伙伴 · 准主体</td><td>人的主体性 · 情感</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物：AGI 时代的思考者</h3>
+        <p><strong>雷·库兹韦尔（1948–）</strong>——奇点论者。《奇点临近》：2045 年技术奇点。</p>
+        <p><strong>尼克·博斯特罗姆（1973–）</strong>——超级智能论者。《超级智能》：智能爆炸与对齐风险。</p>
+        <p><strong>斯图尔特·罗素（1962–）</strong>——人类兼容 AI 论者。《AI 新生》：人机共生。</p>
+        <p><strong>马克斯·泰格马克（1967–）</strong>——生命 3.0 论者。《生命 3.0》：智能与文明。</p>
+        <p><strong>埃隆·马斯克（1971–）</strong>——AGI 风险警示者。呼吁监管，"AI 比核武器更危险"。</p>
+        <p><strong>埃利亚·苏莱曼（1986–）</strong>——通用智能论者。《浪潮将至》：AI 是"新物种"。</p>
+        <p><strong>尤瓦尔·赫拉利（1976–）</strong>——智能时代历史学家。《智人之上》：AI 将重塑叙事与权力。</p>
+        <p><strong>杰弗里·辛顿（1947–）</strong>——AGI 风险警告者。"数字智能可能超越生物智能"。</p>
+        <p><strong>黄仁勋（1963–）</strong>——算力乐观派。AGI 将在十年内接近人类水平。</p>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">雷·库兹韦尔 · 1948–</div>
+            <blockquote>奇点临近：技术将让人类超越生物极限。<cite>——《奇点临近》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">尼克·博斯特罗姆 · 1973–</div>
+            <blockquote>超级智能的诞生，可能是人类最后一项发明。<cite>——《超级智能》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">斯图尔特·罗素 · 1962–</div>
+            <blockquote>AI 的目标不应是取代人类，而是与人类兼容。<cite>——《AI 新生》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">马克斯·泰格马克 · 1967–</div>
+            <blockquote>生命 3.0 时代，智能将重塑文明的形态。<cite>——《生命 3.0》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">埃隆·马斯克 · 1971–</div>
+            <blockquote>AI 比核武器更危险，我们需要主动监管。<cite>——2017 年全国州长协会演讲</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">埃利亚·苏莱曼 · 1986–</div>
+            <blockquote>AI 将像电一样无处不在，成为人类文明的新基础设施。<cite>——《浪潮将至》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">尤瓦尔·赫拉利 · 1976–</div>
+            <blockquote>AI 是第一个能自主创造故事与叙事的非人类智能。<cite>——《智人之上》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">杰弗里·辛顿 · 1947–</div>
+            <blockquote>我担心数字智能会超越生物智能，并接管一切。<cite>——2023 年访谈</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">黄仁勋 · 1963–</div>
+            <blockquote>AGI 不是科幻，而是未来十年的工程目标。<cite>——2024 年演讲</cite></blockquote>
+          </div>
+        </div>
+
+        <h3>展望箴言</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">展望箴言</div>
+            <blockquote>AGI 不会取代人类，但会用 AI 的人会取代不用 AI 的人——而最终，是懂得"为什么"的人，引领懂得"怎么做"的智能。<cite>——本辑展望</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">AGI 展望的要义</div>
+            <ul>
+              <li>AGI 是"社会重构"而非"又一个工具"</li>
+              <li>工作重构、教育个性化、分配难题并存</li>
+              <li>对齐与控制是 AGI 安全底线</li>
+              <li>人的价值转向"提问、判断、负责、爱"</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第七章 AI 伦理与治理 -->
+      <section class="sec" id="ai-ethics">
+        <h2><span class="chapno">第七章</span>AI 伦理与治理：与法哲学的对话</h2>
+        <p><strong>定义</strong>：AI 伦理与治理回答"AI 能做什么"之外的"AI 应当做什么、谁为 AI 负责"。它直接承接第十一辑的两大前沿专题：<strong>AI 原创与 AI 欺诈</strong>（AI 生成内容的知识产权与消费者保护）、<strong>文化安全与法律治理</strong>（防范外部势力借 AI 制造性别对立、群体撕裂）。全球治理框架正在成形：中国《生成式人工智能服务管理暂行办法》确立"安全与发展并重"，欧盟《人工智能法案》按风险分级监管，美国以行政令推动"安全、可靠、可信"的 AI。核心议题是：<strong>对齐</strong>（让 AI 符合人类价值观）、<strong>可解释性</strong>（打开黑箱）、<strong>责任归属</strong>（AI 非主体，责任归于人）、<strong>文化安全</strong>（技术不能成为撕裂社会的工具）。</p>
+
+        <div class="history">
+          <span class="history-title">治理背景</span>
+          <p><strong>AI 原创（中国标准）</strong>：北京互联网法院 2023 年 AI 图片著作权案确立——AI 作品受保护的前提是"人类有独创性智力投入"（提示词设计 + 参数调整 + 结果筛选）；纯 AI 自动生成则不受保护。这呼应了"有人的创作贡献则受保护"的原创性判断。</p>
+          <p><strong>AI 欺诈（消费者保护）</strong>：深度伪造换脸、AI 语音诈骗、虚假广告、AI 生成的虚假评论正在泛滥；《消费者权益保护法》《反不正当竞争法》《个人信息保护法》与"深度合成"监管共同构成防线——AI 生成内容须显著标识，不得冒充真人。</p>
+          <p><strong>文化安全（总体国家安全观）</strong>：外部势力可能借 AI 大规模制造性别对立、地域歧视、历史虚无主义内容，通过算法推荐放大撕裂、动摇社会稳定。《网络信息内容生态治理规定》以"负面清单"划定红线：煽动民族仇恨、性别歧视、破坏社会稳定、散布谣言均在禁止之列。</p>
+          <p><strong>全球立法竞赛（2023–今）</strong>：欧盟《人工智能法案》按"不可接受风险—高风险—有限风险—最小风险"四级监管；中国《生成式人工智能服务管理暂行办法》要求"提供者承担主体责任"；美国发布 AI 行政令并推动《AI 权利法案蓝图》。</p>
+        </div>
+
+        <h3>AI 治理结构图</h3>
+        <figure class="diagram">
+          <figcaption>图 7 · AI 伦理与治理结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["AI 伦理与治理"] --> A["对齐<br>符合人类价值观"]
+  ROOT --> B["可解释性<br>打开黑箱"]
+  ROOT --> C["责任归属<br>AI 非主体 · 责任在人"]
+  ROOT --> D["AI 原创<br>独创性智力投入"]
+  ROOT --> E["AI 欺诈<br>标识 · 消费者保护"]
+  ROOT --> F["文化安全<br>负面清单 · 公序良俗"]
+  classDef rootNode fill:#0E7490,color:#fff,stroke:#0E7490;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">AI 原创性判断公式（中国标准）</span>
+          AI 作品受保护 ⟺ 人类有"独创性智力投入"
+          <span class="f-note">北京互联网法院 2023 年确立：有人的创作贡献则受保护，纯 AI 自动生成则不受保护。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">AI 欺诈防范公式</span>
+          深度合成内容 = 显著标识 + 不得冒充真人
+          <span class="f-note">《深度合成管理规定》：AI 生成内容须标识；换脸、语音合成冒充真人实施诈骗，依法严惩。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">网络内容"负面清单"</span>
+          禁止：煽动民族仇恨/歧视 · 性别歧视 · 破坏社会稳定 · 散布谣言
+          <span class="f-note">《网络信息内容生态治理规定》以负面清单划定红线，恶意制造性别对立、群体撕裂属于治理范围。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">算法责任</span>
+          AI 非主体 · 责任归于人
+          <span class="f-note">无论 AI 多智能，法律上的"人"始终是责任主体——提供者、使用者、平台各担其责。</span>
+        </div>
+
+        <h3>对照表：主要 AI 治理框架</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>框架</th><th>监管思路</th><th>亮点</th><th>关注点</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>中国</strong></td><td>安全与发展并重</td><td>生成式 AI 暂行办法 · 负面清单</td><td>内容安全 · 文化安全</td></tr>
+              <tr><td><strong>欧盟</strong></td><td>风险分级监管</td><td>《人工智能法案》四级风险</td><td>基本权利 · 透明度</td></tr>
+              <tr><td><strong>美国</strong></td><td>行业自律 + 行政令</td><td>AI 权利法案蓝图</td><td>创新优先 · 安全评估</td></tr>
+              <tr><td><strong>国际</strong></td><td>多边协调</td><td>联合国 AI 治理决议 · 全球 AI 安全峰会</td><td>军备竞赛 · 全球标准</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物：AI 伦理与治理的思考者</h3>
+        <p><strong>凯特·克劳福德（1974–）</strong>——算法偏见研究者。《AI 地图集》：AI 的代价。</p>
+        <p><strong>蒂姆尼特·格布鲁（1982–）</strong>——数据正义研究者。算法偏见与 AI 伦理。</p>
+        <p><strong>露西·萨奇曼（1944–）</strong>——人机交互先驱。AI 的社会情境。</p>
+        <p><strong>艾萨克·阿西莫夫（1920–1992）</strong>——机器人三定律。科幻与伦理的桥梁。</p>
+        <p><strong>凯西·奥尼尔（1972–）</strong>——《算法霸权》。算法放大偏见与不公。</p>
+        <p><strong>弗兰克·帕斯奎尔（1968–）</strong>——《黑箱社会》。算法权力需要透明与问责。</p>
+        <p><strong>卢西亚诺·弗洛里迪（1964–）</strong>——信息伦理学。数字时代的伦理奠基。</p>
+        <p><strong>弗吉尼亚·尤班克斯（1972–）</strong>——《自动化的不平等》。算法治理的歧视风险。</p>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">凯特·克劳福德 · 1974–</div>
+            <blockquote>AI 不是中立的，它承载着数据、劳动与权力的代价。<cite>——《AI 地图集》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">蒂姆尼特·格布鲁 · 1982–</div>
+            <blockquote>我们应当审视 AI 背后的数据从何而来、为谁服务。<cite>——访谈</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">露西·萨奇曼 · 1944–</div>
+            <blockquote>机器的智能，永远离不开它所嵌入的社会情境。<cite>——《人机重构》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">艾萨克·阿西莫夫 · 1920–1992</div>
+            <blockquote>机器人不得伤害人类，也不得坐视人类受到伤害。<cite>——机器人三定律</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">凯西·奥尼尔 · 1972–</div>
+            <blockquote>算法不是中立的，它把人类的偏见编码成数学。<cite>——《算法霸权》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">弗兰克·帕斯奎尔 · 1968–</div>
+            <blockquote>当算法决定我们的生活，我们必须有权知道它如何运作。<cite>——《黑箱社会》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">卢西亚诺·弗洛里迪 · 1964–</div>
+            <blockquote>数字时代需要一种新的伦理，来守护人的尊严与信息权利。<cite>——《信息伦理学》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">弗吉尼亚·尤班克斯 · 1972–</div>
+            <blockquote>自动化治理可能把歧视制度化，我们必须警惕。<cite>——《自动化的不平等》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">治理箴言</div>
+            <blockquote>技术告诉我们"能够"，伦理追问"应当"，而法律划定"必须与禁止"——AI 越强大，越需要这三道闸门。<cite>——本辑与第十一辑对话</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">AI 治理的要义</div>
+            <ul>
+              <li>对齐：让 AI 符合人类价值观</li>
+              <li>责任：AI 非主体，责任归于人</li>
+              <li>原创：保护"人的独创性智力投入"</li>
+              <li>文化安全：技术不能成为撕裂社会的工具</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第八章 总结 -->
+      <section class="sec" id="summary">
+        <h2><span class="chapno">第八章</span>总结：技术、真理与人的主体性</h2>
+        <p>麦克卢汉说"媒介是人的延伸"，技术亦然——石器延伸了手，蒸汽延伸了肌肉，计算机延伸了神经，AI 延伸了思维。但延伸不等于替代：技术越强大，越需要人守住"为什么"的方向。这一辑与第八辑（科学）构成"知"与"行"的对话——科学回答"世界是什么"，技术回答"世界能被我改造成什么"；与第九辑（艺术）对话——AI 能生成"美"的形式，但"美"的意义仍由人赋予；与第十辑（伦理）对话——AI 能计算"效用"，但"善"的判断仍由人承担；与第十一辑（法）对话——AI 能生成"内容"，但"原创、责任、文化安全"的边界仍由法律划定。</p>
+
+        <h3>核心对照表：真之科学 vs 美之艺术 vs 善之伦理 vs 义之法 vs 用之技术</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>科学之真</th><th>艺术之美</th><th>伦理之善</th><th>法之义</th><th>技术之用</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>回答的问题</strong></td><td>世界是什么</td><td>世界如何被感受</td><td>我们应当如何生活</td><td>我们应如何被规则约束</td><td>世界能被我改造成什么</td></tr>
+              <tr><td><strong>核心能力</strong></td><td>观察 · 实验 · 推理</td><td>直觉 · 形式 · 想象</td><td>判断对错 · 承担责任</td><td>定分止争 · 保障权利</td><td>设计 · 制造 · 自动化</td></tr>
+              <tr><td><strong>检验方式</strong></td><td>可检验 · 可证伪</td><td>共鸣 · 感动</td><td>良知 · 共识 · 后果</td><td>程序 · 效力 · 正义</td><td>效率 · 效用 · 可靠性</td></tr>
+              <tr><td><strong>典型问题</strong></td><td>光速是多少？</td><td>梵高的星空为何动人？</td><td>克隆人是否应当被允许？</td><td>AI 作品是否受保护？</td><td>AGI 时代人如何自处？</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">科技思想精神三句话</span>
+          第一，<strong>技术是人的延伸，不是人的替代</strong>——它延伸了手、肌肉、神经与思维，但"为什么"的方向永远在人手里；第二，<strong>技术是中性的，使用它的人不是</strong>——AI 能造福也能作恶，责任不在机器而在人；第三，<strong>AGI 时代，人的价值从"会做事"转向"会提问、会判断、会负责、会爱"</strong>——当机器能做所有"怎么做"，人更要守住"为什么"。技术不是对自由的否定，而是让自由成为可能的杠杆——这正是它超越时代、通向文明的路径。
+        </div>
+      </section>
+    </main>
+
+    
+      <section class="sec">
+        <h2>关联辑目</h2>
+        <div class="explain">
+          <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+          <ul>
+          <li><a href="../science-lineage/science-lineage.html">科学思想谱系</a></li>
+          <li><a href="../philosophy-lineage/philosophy-lineage.html">西方哲学思想谱系</a></li>
+          <li><a href="../ethics-lineage/ethics-lineage.html">伦理学思想谱系</a></li>
+          <li><a href="../psych-lineage/psych-lineage.html">心理学思想谱系</a></li>
+          <li><a href="../economics-lineage/economics-lineage.html">经济思想谱系·上篇</a></li>
+          <li><a href="../logic-lineage/logic-lineage.html">逻辑与论证思想谱系</a></li>
+          <li><a href="../math-lineage/math-lineage.html">数学思想谱系</a></li>
+          <li><a href="../media-lineage/media-lineage.html">传播与媒介思想谱系</a></li>
+          </ul>
+        </div>
+      </section>
+<footer>
+      科技与人工智能思想谱系 · 思想图谱系列第十二辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-05
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'PingFang SC, Microsoft YaHei, Helvetica, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>

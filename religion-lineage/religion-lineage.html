@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宗教学与神话 · 思想图谱系列第34辑</title>
+
+  <style>
+    :root {
+      --bg: #F8F4F0;
+      --bg2: #EDE7E0;
+      --ink: #241E18;
+      --muted: #6E6558;
+      --rule: #E0D8CE;
+      --accent: #7C3AED;
+      --accent2: #A67C2E;
+      --font-head: 'Georgia', 'Songti SC', 'STSong', 'SimSun', serif;
+      --font: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+      --font-mono: 'Consolas', 'JetBrains Mono', 'Courier New', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .explain { background: #F8F6EF; border: 1px solid var(--rule); border-radius: 10px; padding: 1rem 1.2rem; margin: 0.6rem 0; }
+    .explain p { margin-bottom: 0.5rem; font-size: 0.9rem; }
+    .explain strong { color: var(--accent); }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .table-wrap { overflow-x: auto; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    table th, table td { border: 1px solid var(--rule); padding: 0.5rem 0.7rem; text-align: left; }
+    table th { background: var(--bg2); font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: 0.78rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<div class="shell">
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">宗教学与神话</div>
+    <div class="brand-sub">思想图谱系列 · 第34辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+<li><a href="#intro">导言 · 宗教与神话</a></li>
+<li><a href="#myth">第一章 · 神话与原初信仰</a></li>
+<li><a href="#world">第二章 · 世界宗教概览</a></li>
+<li><a href="#philosophy">第三章 · 宗教哲学与神学</a></li>
+<li><a href="#modern">第四章 · 宗教与现代世界</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第34辑</span>
+        <span class="series-links">
+          <a href="../思想图谱系列/index.html">系列目录</a>
+          <a href="../medicine-lineage/medicine-lineage.html">← 上一辑 · 医学与健康</a>
+          <a href="../linguistics-lineage/linguistics-lineage.html">下一辑 · 语言学 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>宗教学与神话</h1>
+      <p class="subtitle">神圣、超越与意义——人类信仰的多元图景</p>
+      <p class="meta">作者：詹家杨 · 2026-09-06 · 5 章 · 10 张思维导图 · 25 个解释块 · 5 张对照表</p>
+    </header>
+
+<section class="sec" id="intro">
+        <h2><span class="chapno">导言 &middot; 宗教与神话</span></h2>
+<p>宗教学作为一门独立的学科，试图客观、比较地研究宗教现象。它不预设某一种宗教为真，而是将宗教作为人类文化现象来理解。</p>
+<figure class="diagram">
+          <figcaption>图 0 · 宗教研究的维度</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["宗教学"] --> A["世界宗教<br>佛教·基督教·伊斯兰教<br>印度教·道教·犹太教"]
+  ROOT --> B["神话学<br>创世神话·英雄神话"]
+  ROOT --> C["宗教哲学<br>神的存在·恶的问题"]
+  ROOT --> D["宗教社会学<br>世俗化·原教旨"]
+  ROOT --> E["比较宗教学<br>共性与差异"]
+  classDef root fill:#7C3AED,color:#fff,stroke:#7C3AED;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>宗教的本质：</strong>宗教学试图理解人类最古老的追问：超越性的存在是什么？生命的意义是什么？死后还有世界吗？
+
+宗教不是迷信的同义词——它在人类文明中扮演了提供意义、维系道德、组织社会的核心角色。
+
+**中国案例**：中国文化中的'敬天法祖'传统，以及佛教本土化后的禅宗，展示了宗教在不同文化中的独特形态。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">伊利亚德 · 1907–1986</div>
+            <blockquote>神圣与世俗是两种不同的存在模式。<cite>——《神圣与世俗》</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">坎贝尔 · 1904–1987</div>
+            <blockquote>神话是众人的梦，梦是私人的神话。<cite>——《千面英雄》</cite></blockquote>
+          </div>
+</div>
+<figure class="diagram">
+          <figcaption>图 0a · 宗教学基本概念树状图 —— 神话与仪式·世界宗教·宗教经验·宗教哲学·宗教与社会</figcaption>
+          <div style="overflow-x:auto;text-align:center;">
+          <svg viewBox="0 0 720 560" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;height:auto;">
+            <defs>
+              <marker id="ar0a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+                <path d="M1 1 L7 4 L1 7 Z" fill="#52525B"/>
+              </marker>
+            </defs>
+            <rect x="0" y="0" width="720" height="560" fill="#F7F7F8" rx="8"/>
+            <rect x="210" y="12" width="300" height="40" rx="20" fill="#334155"/>
+            <text x="360" y="38" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700" font-family="system-ui,sans-serif">宗教与神话</text>
+            <line x1="360" y1="52" x2="360" y2="68" stroke="#334155" stroke-width="2"/>
+            <line x1="72" y1="68" x2="648" y2="68" stroke="#52525B" stroke-width="1.5"/>
+            <line x1="72" y1="68" x2="72" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#ar0a)"/>
+            <line x1="216" y1="68" x2="216" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#ar0a)"/>
+            <line x1="360" y1="68" x2="360" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#ar0a)"/>
+            <line x1="504" y1="68" x2="504" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#ar0a)"/>
+            <line x1="648" y1="68" x2="648" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#ar0a)"/>
+            <rect x="14" y="82" width="116" height="34" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+            <text x="72" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">神话与仪式</text>
+            <rect x="164" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#6F6FFF" stroke-width="1.5"/>
+            <text x="216" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">世界宗教</text>
+            <rect x="308" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+            <text x="360" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">宗教经验</text>
+            <rect x="452" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#6F6FFF" stroke-width="1.5"/>
+            <text x="504" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">宗教哲学</text>
+            <rect x="590" y="82" width="116" height="34" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+            <text x="648" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">宗教与社会</text>
+            <rect x="12" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="72" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">创世神话</text>
+            <rect x="12" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="72" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">献祭与节日</text>
+            <rect x="12" y="190" width="120" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="72" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">神圣与世俗</text>
+            <line x1="72" y1="116" x2="72" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#ar0a)"/>
+            <line x1="72" y1="154" x2="72" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#ar0a)"/>
+            <line x1="72" y1="184" x2="72" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#ar0a)"/>
+            <rect x="162" y="130" width="108" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="216" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">亚伯拉罕诸教</text>
+            <rect x="162" y="160" width="108" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="216" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">印度系宗教</text>
+            <rect x="162" y="190" width="108" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="216" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">东亚宗教</text>
+            <line x1="216" y1="116" x2="216" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#ar0a)"/>
+            <line x1="216" y1="154" x2="216" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#ar0a)"/>
+            <line x1="216" y1="184" x2="216" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#ar0a)"/>
+            <rect x="300" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="360" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">神圣体验</text>
+            <rect x="300" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="360" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">神秘主义</text>
+            <rect x="300" y="190" width="120" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="360" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">宗教情感</text>
+            <line x1="360" y1="116" x2="360" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#ar0a)"/>
+            <line x1="360" y1="154" x2="360" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#ar0a)"/>
+            <line x1="360" y1="184" x2="360" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#ar0a)"/>
+            <rect x="450" y="130" width="108" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="504" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">神的存在论证</text>
+            <rect x="450" y="160" width="108" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="504" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">恶的问题</text>
+            <rect x="450" y="190" width="108" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="504" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">信仰与理性</text>
+            <line x1="504" y1="116" x2="504" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#ar0a)"/>
+            <line x1="504" y1="154" x2="504" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#ar0a)"/>
+            <line x1="504" y1="184" x2="504" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#ar0a)"/>
+            <rect x="590" y="130" width="116" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="648" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">伦理与法律</text>
+            <rect x="590" y="160" width="116" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="648" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">宗教对话</text>
+            <rect x="590" y="190" width="116" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+            <text x="648" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">现代性挑战</text>
+            <line x1="648" y1="116" x2="648" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#ar0a)"/>
+            <line x1="648" y1="154" x2="648" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#ar0a)"/>
+            <line x1="648" y1="184" x2="648" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#ar0a)"/>
+            <rect x="30" y="265" width="660" height="250" rx="10" fill="#EFEFF2" opacity="0.7"/>
+            <text x="360" y="290" text-anchor="middle" fill="#171717" font-size="14" font-weight="700" font-family="system-ui,sans-serif">专业名词释义</text>
+            <text x="50" y="318" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎神圣与世俗</text>
+            <text x="50" y="335" fill="#52525B" font-size="11" font-family="system-ui,sans-serif">伊利亚德提出，"神圣"与"世俗"是两种存在模式：神圣以"显圣"（hierophany）显现于时空，</text>
+            <text x="50" y="351" fill="#52525B" font-size="11" font-family="system-ui,sans-serif">宗教人通过仪式重返神圣时间，非宗教人则生活在均质、可逆的世俗时间之中。</text>
+            <text x="50" y="368" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎神秘主义</text>
+            <text x="50" y="385" fill="#52525B" font-size="11" font-family="system-ui,sans-serif">通过冥想、祈祷、出神等方式直接体验终极实在的宗教实践。詹姆斯在《宗教经验之种种》中归纳神秘体验四大特征：</text>
+            <text x="50" y="401" fill="#52525B" font-size="11" font-family="system-ui,sans-serif">不可言说性、可知性、短暂性与被动性。中国禅宗的"顿悟"与伊斯兰苏非派的"法那"（寂灭）皆是典型表现。</text>
+            <text x="50" y="418" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎宗教多元主义</text>
+            <text x="50" y="435" fill="#52525B" font-size="11" font-family="system-ui,sans-serif">承认各大宗教是对同一终极实在的不同理解与回应。当代宗教哲学家约翰·希克以"月亮与手指"的比喻说明：</text>
+            <text x="50" y="451" fill="#52525B" font-size="11" font-family="system-ui,sans-serif">各宗教教义如同指向月亮的手指，指法各异而所指为一；中国"三教合一"的传统也体现着多元共存的智慧。</text>
+            <text x="50" y="468" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎世俗化</text>
+            <text x="50" y="485" fill="#52525B" font-size="11" font-family="system-ui,sans-serif">指宗教在现代社会从公共领域逐渐退出的过程。韦伯以"世界的祛魅"（Entzauberung）概括现代性的宗教处境，</text>
+            <text x="50" y="501" fill="#52525B" font-size="11" font-family="system-ui,sans-serif">但当代宗教社会学研究已表明：宗教并未如早期世俗化理论预言的那样消亡，而是以新的形态持续存在。</text>
+          </svg>
+          </div>
+        </figure>
+<div class="explain">
+          <p><strong>图 0a 详解：</strong>宗教学的研究版图可以概括为五大分支。理解这棵概念树，就是掌握宗教学的基本坐标系：它从"神话与仪式"出发，追问宗教最古老的形态；经由"世界宗教"的比较视野，进入"宗教经验"与"宗教哲学"的深层结构，最终落脚于"宗教与社会"的现实关怀。</p>
+          <p><strong>五大分支逐支解读：</strong></p>
+          <ul>
+            <li><strong>神话与仪式</strong>——宗教的最初形态。神话以叙事解释世界与人生的来历，仪式以行动维系神圣秩序。创世神话回答"世界从何而来"，献祭与节日让神圣时间在一年中反复重现。伊利亚德指出，神话与仪式使早期人类得以"生活在神圣之中"，这是理解一切宗教的起点。</li>
+            <li><strong>世界宗教</strong>——比较宗教学的田野。亚伯拉罕诸教（犹太教、基督教、伊斯兰教）同源而分流，印度系宗教（印度教、佛教、耆那教）共享轮回与业报的宇宙观，东亚宗教（儒、道、神道）则强调天人合一与现世伦理。三大体系几乎覆盖了人类绝大多数信徒。</li>
+            <li><strong>宗教经验</strong>——宗教的内在核心。从施莱尔马赫的"绝对依赖感"，到奥托描述的"神圣者"（numinous）那令人既战栗又神往的神秘，再到詹姆斯搜集的皈依与神秘体验案例，宗教经验研究试图回答：信仰究竟从何种体验中生长出来？</li>
+            <li><strong>宗教哲学</strong>——以理性审视信仰。神的存在论证（本体论、宇宙论、设计论）、恶的问题、信仰与理性的关系，构成宗教哲学的三大议题。从安瑟尔谟到阿奎那，从康德到蒂利希，哲学家们不断追问：信仰能否经受理性的检验？</li>
+            <li><strong>宗教与社会</strong>——宗教的现实维度。宗教为伦理与法律奠基，参与公共对话，也面临现代性的挑战。涂尔干研究宗教的社会整合功能，韦伯考察宗教与资本主义精神的关联，当代学者则关注宗教对话与全球化时代的多元共存。</li>
+          </ul>
+          <p><strong>现实案例：</strong>中国"敬天法祖"传统就是"神话与仪式"与"宗教与社会"两条分支交汇的典型：祖先崇拜以仪式维系宗族伦理，同时又构成中国社会最深层的精神纽带——宗教学者称之为"扩散性宗教"（diffused religion）。</p>
+        </div>
+        <div class="explain">
+          <p><strong>深度解读 · 宗教学的研究方法：</strong>作为一门现代学科，宗教学区别于神学的关键，在于它把宗教当作"可研究的对象"而非"必须信仰的对象"。围绕"如何研究宗教"，形成了四条主要方法论路径。</p>
+          <ul>
+            <li><strong>比较方法</strong>——缪勒的名言"只知一种宗教者，一无所知"道出了比较宗教学的初衷：唯有在多种传统的对照中，才能辨认宗教的共性与个性。弗雷泽的《金枝》、坎贝尔的神话比较研究都是比较方法的典范。</li>
+            <li><strong>现象学方法</strong>——奥托与伊利亚德借鉴胡塞尔现象学，主张研究者应"悬置判断"（epoché）：暂时搁置宗教命题的真假，而专注于宗教现象的"自身显示"——神圣者如何显现、仪式如何结构、象征如何运作。这一方法使"理解"先于"评判"。</li>
+            <li><strong>社会学与人类学方法</strong>——涂尔干、韦伯与马林诺夫斯基把宗教置于社会与文化的语境中考察：宗教如何整合社会（涂尔干）、如何塑造经济伦理（韦伯）、如何在部落生活中发挥"宪章"功能（马林诺夫斯基）。田野调查（参与观察）成为人类学研究宗教的基本手段。</li>
+            <li><strong>诠释学方法</strong>——利科与伊利亚德强调宗教经典与象征的"多层意义"：神话与仪式文本需要不断"重新诠释"，正如中国历代注疏传统对《周易》《道德经》的层层解读。</li>
+          </ul>
+          <p><strong>现实案例：</strong>当代中国学者的宗教研究常综合上述方法：对藏传佛教寺院的经济人类学调查（田野法）、对《山海经》神话的跨文化比较（比较法）、对禅宗公案的象征诠释（诠释学），共同构成了理解中国宗教的多棱镜。</p>
+        </div>
+        <h3>对照表：宗教学经典著作速览</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>著作</th><th>作者</th><th>出版年</th><th>核心贡献</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>《原始文化》</strong></td><td>爱德华·泰勒（英国）</td><td>1871</td><td>提出"万物有灵论"，奠定宗教人类学</td></tr>
+              <tr><td><strong>《金枝》</strong></td><td>弗雷泽（英国）</td><td>1890</td><td>比较巫术、宗教与科学，提出"交感巫术"理论</td></tr>
+              <tr><td><strong>《宗教经验之种种》</strong></td><td>威廉·詹姆斯（美国）</td><td>1902</td><td>开创宗教心理学，归纳神秘体验四特征</td></tr>
+              <tr><td><strong>《新教伦理与资本主义精神》</strong></td><td>马克斯·韦伯（德国）</td><td>1905</td><td>论证新教伦理与资本主义精神的内在关联</td></tr>
+              <tr><td><strong>《宗教生活的基本形式》</strong></td><td>涂尔干（法国）</td><td>1912</td><td>以澳洲图腾制度论证宗教的社会整合功能</td></tr>
+              <tr><td><strong>《论神圣》</strong></td><td>鲁道夫·奥托（德国）</td><td>1917</td><td>提出"神圣者"（numinous）概念</td></tr>
+              <tr><td><strong>《千面英雄》</strong></td><td>约瑟夫·坎贝尔（美国）</td><td>1949</td><td>提出"英雄之旅"原型理论</td></tr>
+              <tr><td><strong>《神圣与世俗》</strong></td><td>伊利亚德（罗马尼亚）</td><td>1957</td><td>区分神圣与世俗两种存在模式</td></tr>
+            </tbody>
+          </table>
+        </div>
+</section>
+<section class="sec" id="myth">
+        <h2><span class="chapno">第一章 &middot; 神话与原初信仰</span></h2>
+<p>神话是宗教的最早形式。原始人类通过神话解释自然现象、建立社会规范、应对死亡恐惧。神话中的原型——英雄、母亲、智者、阴影——至今仍活跃在文学、电影和梦中。</p>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>1.1 神话的定义：叙事、象征与神圣原型</li>
+          <li>1.2 神话的母题：创世·洪水·英雄·末世</li>
+          <li>1.3 从神话到信仰：仪式、禁忌与万物有灵</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>母题（motif）</strong>：跨文化反复出现的神话叙事单元</li>
+          <li><strong>英雄之旅</strong>：坎贝尔概括的英雄历险结构</li>
+          <li><strong>万物有灵论</strong>：泰勒提出的宗教起源学说</li>
+        </ul>
+<figure class="diagram">
+          <figcaption>图 1 · 神话类型</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["神话类型"] --> A["创世神话<br>盘古·女娲·圣经·北欧"]
+  ROOT --> B["英雄神话<br>吉尔伽美什·赫拉克勒斯"]
+  ROOT --> C["自然神话<br>太阳神·雷神·山神"]
+  ROOT --> D["末世神话<br>末日·审判·重生"]
+  A --> E["坎贝尔<br>英雄之旅模型"]
+  E --> F["启程·启蒙·归来"]
+  classDef root fill:#7C3AED,color:#fff,stroke:#7C3AED;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>神话的结构：</strong>约瑟夫·坎贝尔在《千面英雄》中提出了'英雄之旅'模型：英雄从平凡世界出发，接受冒险召唤，经历考验，最终带着恩赐归来。这一模式出现在从《奥德赛》到《星球大战》的无数故事中。
+
+**中国神话**：盘古开天辟地、女娲补天造人、后羿射日、精卫填海——中国神话反映了中华民族的宇宙观和价值观。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">坎贝尔 · 1904–1987</div>
+            <blockquote>跟随你的极乐。<cite>——坎贝尔《千面英雄》</cite></blockquote>
+          </div>
+</div>
+<figure class="diagram">
+          <figcaption>图 1a · 神话的母题与功能</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["神话的母题与功能"] --> A["创世神话<br>盘古开天·女娲造人<br>《创世记》·北欧神话"]
+  ROOT --> B["洪水神话<br>诺亚方舟·大禹治水<br>《吉尔伽美什史诗》"]
+  ROOT --> C["英雄神话<br>赫拉克勒斯·孙悟空<br>英雄之旅模型"]
+  ROOT --> D["末世神话<br>诸神的黄昏·启示录<br>弥勒降生·最后审判"]
+  ROOT --> E["神话的功能<br>解释自然·维系伦理<br>提供意义·治愈心灵"]
+  A --> F["伊利亚德<br>神圣与世俗"]
+  C --> G["坎贝尔<br>千面英雄"]
+  classDef root fill:#7C3AED,color:#fff,stroke:#7C3AED;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 1a 详解：</strong>神话学的研究表明，世界各地的神话尽管面貌迥异，却共享若干反复出现的"母题"（motif），并承担着相似的社会功能。理解这些母题，是走进一切宗教精神世界的钥匙。</p>
+          <p><strong>四大母题：</strong></p>
+          <ul>
+            <li><strong>创世神话</strong>——回答"世界从何而来"。中国有盘古开天辟地、女娲抟土造人，希伯来《创世记》有上帝七日创世，北欧神话有巨人尤弥尔之躯化为天地。伊利亚德指出，创世神话的功能在于为世界确立"神圣的原型"：万物因被神圣者创造而具有秩序与意义。</li>
+            <li><strong>洪水神话</strong>——全球数百个民族都有"大洪水"的记忆。苏美尔《吉尔伽美什史诗》中的乌特纳皮什提、希伯来《创世记》中的诺亚方舟、中国的大禹治水与女娲补天，情节惊人相似。弗雷泽在《旧约中的民俗》中系统比较了这些传说，说明洪水神话是人类面对自然灾难的集体记忆与道德叙事。</li>
+            <li><strong>英雄神话</strong>——坎贝尔在《千面英雄》中提炼出"英雄之旅"模型：英雄受召唤、越界冒险、历经考验、获得恩赐、带着恩赐归来。从希腊的赫拉克勒斯、印度的罗摩，到中国的孙悟空、当代电影中的超级英雄，皆循此原型。</li>
+            <li><strong>末世神话</strong>——回答"世界将往何处去"。北欧神话有"诸神的黄昏"，基督教有末日审判，佛教有弥勒下生成佛，明清民间有"末劫"观念。末世神话往往与救赎盼望相连，在动荡时代尤为活跃。</li>
+          </ul>
+          <p><strong>神话的功能：</strong>弗雷泽在《金枝》中认为神话是"前科学"的认知；涂尔干强调神话与仪式维系社会团结；荣格则视神话为集体无意识的原型表达。三者并不矛盾：神话既解释世界（认知功能），又维系伦理（社会功能），还提供意义（心理功能）。</p>
+          <p><strong>现实案例：</strong>伊利亚德在《神圣与世俗》中指出，现代人依然通过"重演神话"获得意义感——国庆阅兵重演"开国叙事"，婚礼重演"结合仪式"，节日重演"创始时刻"。神话从未消失，它只是改换了形态。</p>
+        </div>
+        <h3>对照表：神话类型对比</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>类型</th><th>核心母题</th><th>典型文本</th><th>主要功能</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>创世神话</strong></td><td>宇宙与人类的起源</td><td>盘古开天 · 《创世记》 · 北欧《埃达》</td><td>确立世界的神圣秩序与人的来历</td></tr>
+              <tr><td><strong>洪水神话</strong></td><td>大洪水与劫后重生</td><td>《吉尔伽美什史诗》 · 诺亚方舟 · 大禹治水</td><td>承载灾难记忆 · 警示道德 · 解释文明重建</td></tr>
+              <tr><td><strong>英雄神话</strong></td><td>英雄的历险与成长</td><td>赫拉克勒斯十二功业 · 《罗摩衍那》 · 《西游记》</td><td>树立人格典范 · 表达民族理想</td></tr>
+              <tr><td><strong>末世神话</strong></td><td>世界的终结与救赎</td><td>诸神的黄昏 · 《启示录》 · 弥勒信仰</td><td>回应苦难 · 提供希望与终极意义</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="explain">
+          <p><strong>深度解读 · 神话学的理论谱系：</strong>神话研究自19世纪起形成多条理论路径，彼此争鸣又相互补充。</p>
+          <ul>
+            <li><strong>自然神话学派</strong>——马克斯·缪勒认为神话是"语言的疾病"：古人对自然现象（日月星辰、风雨雷电）的命名在语言演化中逐渐人格化，形成神祇与故事。太阳神、雷神、山神皆源于此。</li>
+            <li><strong>仪式学派</strong>——弗雷泽与"剑桥仪式学派"主张神话是仪式的"脚本"：先有仪式（如献祭、王位更替），后有神话为之辩护。弗雷泽在《金枝》中描绘的"金枝国王"故事即被视为丰产仪式的残迹。</li>
+            <li><strong>功能主义</strong>——马林诺夫斯基在特罗布里恩德群岛的田野调查表明，神话不是"虚构的故事"，而是"活着的宪章"：它论证部落制度、土地权属与道德规范的合法性。神话在原始社会承担着类似"法律与宪法"的功能。</li>
+            <li><strong>精神分析学派</strong>——弗洛伊德在《图腾与禁忌》中把神话视为集体心理的投射，荣格则提出"集体无意识"与"原型"理论：英雄、大母神、智者、阴影等原型超越文化差异，反复出现在世界神话与梦境之中。</li>
+          </ul>
+          <p><strong>现实案例：</strong>中国学者闻一多研究"鱼"与"龙"的神话意象，指出图腾神话承载着民族的自我认同；当代影视作品中"英雄之旅"模板的广泛运用（如《狮子王》《哈利·波特》），正是坎贝尔神话理论在大众文化中的回响。</p>
+        </div>
+        <div class="explain">
+          <p><strong>深度解读 · 中国神话体系：</strong>与希腊、北欧神话不同，中国神话没有一部完整的"神话总集"，而是散见于《山海经》《楚辞》《淮南子》等典籍，形成了昆仑、蓬莱、楚地与中原四大神话系统。</p>
+          <ul>
+            <li><strong>昆仑系统</strong>——以西北高原的昆仑山为中心，居住着西王母、黄帝等神祇，是"神居之所"；《山海经》记载了昆仑的宫阙与守门神兽。</li>
+            <li><strong>蓬莱系统</strong>——以东方海上仙山（蓬莱、方丈、瀛洲）为中心，孕育了后来道教的神仙信仰与"海上仙山"意象，秦始皇遣徐福入海求仙正与此相关。</li>
+            <li><strong>楚地系统</strong>——以《楚辞·九歌》为代表，充满巫风祭祀与瑰丽想象，日神东君、云神云中君、山鬼等形象塑造了南方浪漫的神话气质。</li>
+            <li><strong>中原系统</strong>——以三皇五帝传说为核心，重"德"与"功"：伏羲画卦、神农尝草、黄帝战蚩尤、大禹治水，神祇逐渐"人文化"，成为华夏文明的历史记忆。</li>
+          </ul>
+          <p><strong>神话与历史的交融：</strong>中国神话的一大特点是"历史化"倾向——孔子"不语怪力乱神"，后世学者把神话人物改造为古史帝王（如把黄帝从天神变为圣王），使中国早期历史与神话深度交织。当代考古学（如良渚、二里头遗址的发现）正在为这些古老传说提供新的印证。</p>
+        </div>
+        <div class="explain">
+          <p><strong>深度解读 · 万物有灵论与萨满教：</strong>宗教是如何起源的？19世纪宗教学给出的经典回答之一，是英国人类学家爱德华·泰勒的"万物有灵论"（animism）。</p>
+          <ul>
+            <li><strong>泰勒的"最小定义"</strong>——泰勒在《原始文化》（1871）中提出，一切宗教都可以追溯到"对精灵实体的信仰"：原始人从梦境、幻觉与死亡经验中推想出"灵魂"（soul），再把灵魂观念投射到万物之上——山川、河流、树木、动物皆有灵。由此，灵魂观念演化为精灵，精灵升格为神祇，多神教再演化为一种教。泰勒因此称宗教为"对精灵的信仰"，这是宗教学史上第一个系统的宗教起源理论。</li>
+            <li><strong>弗雷泽的"巫术—宗教—科学"三阶段</strong>——弗雷泽在《金枝》中提出：人类理智经历了巫术（试图以技术控制超自然）→宗教（以祈祷求告超自然）→科学（以经验控制自然）的演进。这一图景虽有线性简化之嫌，却深刻影响了后世对宗教史的叙述。</li>
+            <li><strong>萨满教：活着的"原始宗教"</strong>——萨满教是万物有灵论的典型形态，至今仍见于西伯利亚、东北亚与中国北方民族（满族、鄂伦春族、蒙古族等）。萨满（shaman，意为"激动者"）通过击鼓、歌舞进入出神状态，作为人神中介主持治病、驱邪、占卜与祭祀。考古发现与民族志表明，这类实践可上溯至旧石器时代。</li>
+          </ul>
+          <p><strong>现实案例：</strong>中国东北的"萨满"传统在满族说部、蒙古族博文化中保存至今，已被列入国家级非物质文化遗产名录；贵州傩戏、各地"跳大神"习俗则是萨满式仪式在民间的变体。当代宗教学已不再把万物有灵论当作宗教的"唯一起源"，但它仍是理解民间信仰与仪式治疗的重要框架。</p>
+        </div>
+</section>
+<section class="sec" id="world">
+        <h2><span class="chapno">第二章 &middot; 世界宗教概览</span></h2>
+<p>世界各大宗教在教义、仪式、组织上相差甚远，但都在人类生活中扮演着提供意义、维系社群、规范行为的角色。理解世界宗教是理解全球文明的关键。</p>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>2.1 三大谱系：亚伯拉罕系·印度系·东亚系</li>
+          <li>2.2 世界宗教的经典与教义</li>
+          <li>2.3 轴心时代与宗教的普世化</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>一神论</strong>：亚伯拉罕诸教共有的神学前提</li>
+          <li><strong>轮回-业报-解脱</strong>：印度系宗教的宇宙观框架</li>
+          <li><strong>轴心时代</strong>：雅斯贝尔斯提出的精神突破期</li>
+        </ul>
+<figure class="diagram">
+          <figcaption>图 2 · 世界宗教简谱</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["世界宗教"] --> A["印度教<br>~12亿人<br>吠陀·梵·轮回"]
+  ROOT --> B["佛教<br>~5亿人<br>四圣谛·八正道"]
+  ROOT --> C["道教<br>~2000万人<br>道·无为·自然"]
+  ROOT --> D["犹太教<br>~1500万人<br>一神·契约·律法"]
+  ROOT --> E["基督教<br>~24亿人<br>三位一体·救赎"]
+  ROOT --> F["伊斯兰教<br>~18亿人<br>安拉·古兰经·五功"]
+  B -->|"源自"| A
+  D --> E
+  D --> F
+  classDef root fill:#7C3AED,color:#fff,stroke:#7C3AED;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>世界宗教比较：</strong>各大宗教有不同的起源和教义，但都回答类似的问题：世界的本质、人生的目的、善恶的标准、死后何往。
+
+**轴心时代**：雅斯贝尔斯指出，公元前800-200年间，中国（孔子、老子）、印度（佛陀）、希腊（苏格拉底、柏拉图）、以色列（先知）几乎同时出现了伟大的精神导师，奠定了人类文明的精神基础。
+
+**中国宗教**：中国传统宗教有'三教合一'的特点——儒家的伦理、道教的自然、佛教的超越，三者相互影响、共存互补。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">孔子 · 前551–前479</div>
+            <blockquote>敬鬼神而远之。<cite>——《论语·雍也》</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">佛陀 · 约前5世纪</div>
+            <blockquote>诸法因缘生，诸法因缘灭。<cite>——缘起法</cite></blockquote>
+          </div>
+</div>
+<figure class="diagram">
+          <figcaption>图 2a · 世界宗教谱系图 —— 亚伯拉罕系·印度系·东亚系</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["世界宗教谱系"] --> A["亚伯拉罕系<br>犹太教→基督教→伊斯兰教<br>一神论·先知·经典"]
+  ROOT --> B["印度系<br>印度教·佛教·耆那教<br>轮回·业报·解脱"]
+  ROOT --> C["东亚系<br>儒教·道教·神道教<br>天人合一·现世伦理"]
+  ROOT --> D["其他传统<br>锡克教·琐罗亚斯德教<br>非洲与美洲原住民宗教"]
+  A --> E["宗教改革<br>马丁·路德·加尔文<br>新教诞生"]
+  B --> F["佛陀<br>四圣谛·八正道"]
+  C --> G["三教合一<br>儒释道互补"]
+  classDef root fill:#7C3AED,color:#fff,stroke:#7C3AED;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 2a 详解：</strong>世界宗教并非一盘散沙，而是可以从"谱系"的角度加以把握——同源的宗教共享经典、先知与神学母题，不同系别之间则存在深刻的宇宙观差异。</p>
+          <p><strong>三大谱系：</strong></p>
+          <ul>
+            <li><strong>亚伯拉罕系</strong>——犹太教、基督教、伊斯兰教同以亚伯拉罕为信仰先祖，共享"一神论"与"先知传统"。《旧约》、《新约》与《古兰经》在人物与故事上多有重叠（如亚伯拉罕、摩西、耶稣）；三教在历史上分合错综：基督教由犹太教"第二圣殿"传统分化而来，伊斯兰教则自认是对一神信仰的"最终修正"。</li>
+            <li><strong>印度系</strong>——印度教、佛教、耆那教诞生于南亚，共享"轮回-业报-解脱"的宇宙观框架：灵魂在生死流转中随业力沉浮，修行的目标是跳出轮回。佛教与耆那教都以反对婆罗门祭祀权威的姿态兴起，堪称印度教的"改革运动"。</li>
+            <li><strong>东亚系</strong>——儒教、道教与日本神道教不强调彼岸世界，而注重天人合一、现世伦理与生命修炼。儒家以"礼"与"仁"安顿社会，道教以"道"与"无为"贯通自然，神道教以"神"与"洁净"维系民族记忆。</li>
+          </ul>
+          <p><strong>现实案例 · 宗教改革运动：</strong>1517年马丁·路德张贴《九十五条论纲》，抗议赎罪券买卖，由此引发的宗教改革裂解了西方基督教的统一——新教（路德宗、加尔文宗、英国国教）相继诞生，天主教则通过特伦特公会议自我革新。这场运动不仅是神学事件，更重塑了欧洲的政治版图与资本主义伦理——韦伯在《新教伦理与资本主义精神》中论证，加尔文派的"天职观"为近代资本主义提供了精神动力。</p>
+          <p><strong>现实案例 · 佛教东传：</strong>佛教自印度经丝绸之路传入中国（东汉明帝时），与中国本土的儒、道长期互动，至唐代形成禅宗、净土宗等中国化宗派，再东传朝鲜半岛与日本。这一过程展示了宗教谱系在传播中的"本土化"机制——同源的信仰在不同文化中长出不同的枝叶。</p>
+        </div>
+        <h3>对照表：世界主要宗教对比</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>宗教</th><th>起源时间与地区</th><th>主要经典</th><th>核心教义</th><th>主要分布与信众规模（约）</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>犹太教</strong></td><td>约公元前2千纪 · 迦南（今以色列/巴勒斯坦地区）</td><td>《塔纳赫》（《旧约》）· 《塔木德》</td><td>唯一神耶和华 · 选民观 · 律法（托拉）</td><td>全球约1500万 · 以色列、美国、欧洲</td></tr>
+              <tr><td><strong>基督教</strong></td><td>1世纪 · 罗马帝国犹太行省</td><td>《圣经》（旧约+新约）</td><td>三位一体 · 耶稣基督救赎 · 因信称义</td><td>全球约24亿 · 欧洲、美洲、非洲、大洋洲</td></tr>
+              <tr><td><strong>伊斯兰教</strong></td><td>7世纪 · 阿拉伯半岛</td><td>《古兰经》· 圣训（哈迪斯）</td><td>认主独一（陶希德）· 穆罕默德为最后先知 · 五功</td><td>全球约19亿 · 中东、北非、南亚、东南亚</td></tr>
+              <tr><td><strong>印度教</strong></td><td>约公元前1500年起 · 印度河流域</td><td>《吠陀》· 《奥义书》· 《薄伽梵歌》</td><td>梵我同一 · 轮回与业报 · 解脱（摩克沙）</td><td>全球约12亿 · 印度、尼泊尔、东南亚</td></tr>
+              <tr><td><strong>佛教</strong></td><td>约公元前6世纪 · 古印度</td><td>《大藏经》（经律论三藏）</td><td>四圣谛 · 八正道 · 缘起性空 · 涅槃</td><td>全球约5亿 · 东亚、东南亚、南亚</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="explain">
+          <p><strong>深度解读 · 宗教对话运动与梵二会议：</strong>20世纪以来，随着全球化与宗教多元格局的深化，"宗教对话"从理想变为制度性实践，其里程碑是1962—1965年召开的天主教梵蒂冈第二届大公会议（梵二会议）。</p>
+          <p><strong>梵二会议的转向：</strong>会议颁布的《教会对非基督宗教态度宣言》（Nostra Aetate，1965）承认其他宗教"反映着普照全人类的真理之光"，明确否定了"犹太人集体杀害耶稣"的指控，为天主教与犹太教、伊斯兰教及其他宗教的对话铺平了道路。1960年代至今，教皇与各大宗教领袖的会晤、1986年亚西西世界和平祈祷聚会等，成为宗教对话的象征性事件。</p>
+          <p><strong>对话的三种立场：</strong>当代宗教哲学将宗教间关系概括为三种模式——排他论（唯我独真）、包容论（我全而他有部分真理）、多元论（殊途同归）。约翰·希克主张多元论，以康德"物自体"与"现象"的区分类比：各大宗教是对同一终极实在的不同经验与表达。蒂利希则从"终极关怀"出发，主张各宗教共享对存在根基的追问。</p>
+          <p><strong>现实案例：</strong>中国宗教界长期践行"和谐共处"传统：五台山、峨眉山等名山佛道共存，泉州开元寺旁建有清净寺与关帝庙，构成"一条街三教并立"的景观；当代"人间佛教"倡导者星云大师也多次参与跨宗教对谈，主张"同体共生"。</p>
+        </div>
+        <div class="explain">
+          <p><strong>深度解读 · 中国的多元宗教格局：</strong>中国是宗教多元并存的典型样本。佛教、道教、伊斯兰教、天主教、基督教五大宗教依法平等共处，民间信仰（祖先崇拜、城隍土地、妈祖信仰）绵延不绝，形成"大传统"与"小传统"并行的格局。</p>
+          <ul>
+            <li><strong>"三教合一"的深层结构</strong>——儒、释、道三教在宋代以后走向"三教合流"：理学吸收佛道的宇宙论，道教吸收儒家的忠孝伦理，禅宗吸收儒道的心性之学。明代"三教圣人"图、民间"三教并祀"的庙宇，都是这一融合的物证。</li>
+            <li><strong>外来宗教的本土化</strong>——伊斯兰教自唐代传入后与中国文化深度结合，形成"以儒诠经"的传统（刘智、王岱舆等学者用儒家概念阐释伊斯兰教义）；天主教在明代由利玛窦等耶稣会士传入，采取"合儒补儒"的传教策略。</li>
+            <li><strong>当代宗教管理</strong>——中国宪法规定公民有宗教信仰自由，各宗教团体实行自治、自养、自传；宗教事务管理坚持"与社会主义社会相适应"的方向。学术界常用"政主教从"来描述中国政教关系的结构性特征。</li>
+          </ul>
+          <p><strong>现实案例 · 敦煌宗教艺术交融：</strong>敦煌莫高窟的壁画与雕塑是宗教交融的活化石：洞窟中既有佛陀与菩萨，也有道教东王公、西王母的形象，还有祆教（琐罗亚斯德教）、景教（基督教聂斯脱利派）的遗存。1900年发现的藏经洞文书以汉、藏、于阗、回鹘等多种文字写成，涵盖佛教、道教、摩尼教经典——证明丝路之上诸宗教曾和平共处、彼此滋养。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 2b · 轴心时代 —— 四大文明的精神突破</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["轴心时代<br>公元前800—前200年"] --> A["中国<br>孔子·老子·墨子<br>百家争鸣"]
+  ROOT --> B["印度<br>佛陀·大雄<br>奥义书哲学"]
+  ROOT --> C["波斯<br>琐罗亚斯德<br>善恶二元"]
+  ROOT --> D["以色列<br>以赛亚·耶利米<br>先知传统"]
+  ROOT --> E["希腊<br>苏格拉底·柏拉图<br>理性哲学"]
+  A --> F["人文觉醒<br>仁·道·兼爱"]
+  B --> G["解脱之道<br>涅槃·业报"]
+  E --> H["理性奠基<br>逻各斯·理念"]
+  classDef root fill:#7C3AED,color:#fff,stroke:#7C3AED;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 2b 详解 · 轴心时代：</strong>德国哲学家雅斯贝尔斯在《历史的起源与目标》（1949）中提出"轴心时代"（Achsenzeit）概念：公元前800至前200年间，中国、印度、波斯、以色列与希腊几乎同时出现了伟大的精神突破，人类开始以超越的眼光反思自身与世界。</p>
+          <ul>
+            <li><strong>中国</strong>——孔子倡"仁"与"礼"，老子著《道德经》阐"道"，墨子主"兼爱"，百家争鸣使中国思想完成从"神本"到"人本"的转向。</li>
+            <li><strong>印度</strong>——《奥义书》哲学家追问"梵我同一"，佛陀以四圣谛与八正道开辟解脱之路，耆那教大雄倡"不害"（ahimsa）。</li>
+            <li><strong>波斯</strong>——琐罗亚斯德创立善恶二元论，光明与黑暗、善神阿胡拉·马兹达与恶神安格拉·曼纽的对抗，深刻影响了后来犹太教与基督教的末世论。</li>
+            <li><strong>以色列</strong>——以赛亚、耶利米等先知把民族信仰提升为普世的道德一神论，为亚伯拉罕诸教奠定神学根基。</li>
+            <li><strong>希腊</strong>——苏格拉底"认识你自己"、柏拉图理念论、亚里士多德逻辑学，为西方理性传统奠基。</li>
+          </ul>
+          <p><strong>轴心时代的遗产：</strong>雅斯贝尔斯指出，轴心时代确立的"超越意识"是人类精神的共同基底，此后两千年人类不断"重返轴心"以汲取力量。当代全球化正酝酿"第二次轴心时代"——各文明在相遇中再次实现精神突破。这一理论帮助我们理解：世界各大宗教其实是"同一人类精神在多元文明中的不同表达"。</p>
+        </div>
+        <h3>对照表：宗教对话大事年表</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>年份</th><th>事件</th><th>意义</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>1893</strong></td><td>芝加哥世界宗教议会</td><td>近代宗教对话的开端，佛教、印度教首次以平等身份出席</td></tr>
+              <tr><td><strong>1962—1965</strong></td><td>梵蒂冈第二届大公会议</td><td>天主教会转向宗教对话，《教会对非基督宗教态度宣言》颁布</td></tr>
+              <tr><td><strong>1986</strong></td><td>亚西西世界和平祈祷聚会</td><td>各大宗教领袖首次共同祈祷和平</td></tr>
+              <tr><td><strong>1993</strong></td><td>芝加哥《世界伦理宣言》</td><td>孔汉思起草，各大宗教代表签署"全球伦理"共识</td></tr>
+              <tr><td><strong>2000</strong></td><td>联合国千年世界宗教与精神领袖和平大会</td><td>宗教界参与全球治理与文明对话的制度化尝试</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="explain">
+          <p><strong>深度解读 · 宗教社会学：涂尔干与韦伯：</strong>宗教与社会的关系，是宗教学与社会学的交叉地带，其奠基人是法国社会学家涂尔干与德国社会学家韦伯。</p>
+          <ul>
+            <li><strong>涂尔干《宗教生活的基本形式》（1912）</strong>——涂尔干以澳大利亚原住民的图腾制度为"最简单的宗教"，论证宗教的本质是"社会把自己神圣化"：图腾不是动物，而是氏族自身；宗教仪式维系集体情感、强化社会团结。他因此断言"宗教是社会的自画像"——社会是宗教的实在对象。这一"功能论"解释了为何任何社会都需要某种"神圣"。</li>
+            <li><strong>韦伯的"理性化"命题</strong>——与涂尔干相反，韦伯关注宗教如何推动社会变迁。《新教伦理与资本主义精神》（1905）论证：加尔文派的"预定论"产生"天职观"与禁欲伦理，信徒以世俗成功证明自己被拣选，从而释放出资本主义积累的精神动力。韦伯还用"世界的祛魅"与"理性化"描述现代性进程：宗教从公共领域退场，但现代人必须直面"诸神之争"的价值多元。</li>
+            <li><strong>当代发展</strong>——彼得·伯格《神圣的帷幕》（1967）把宗教视为人类建造"意义宇宙"的机制；但随后的"去世俗化"争论（伯格本人后来也修正了立场）显示，宗教在现代社会的命运远比古典理论预言复杂：它既被边缘化，又以新形态复兴。</li>
+          </ul>
+          <p><strong>现实案例：</strong>中国的"庙会经济"现象是宗教社会学理论的生动注脚——福建、广东的妈祖庙会既是信仰仪式，又是社群认同与地方经济的载体；涂尔干所说的"集体欢腾"（effervescence）在春节返乡、清明祭祖等集体仪式中依然清晰可辨。</p>
+        </div>
+</section>
+<section class="sec" id="philosophy">
+        <h2><span class="chapno">第三章 &middot; 宗教哲学与神学</span></h2>
+<p>宗教哲学以理性审视信仰，对宗教信念提出最深刻的质疑和最精巧的辩护。从安瑟尔谟的'本体论论证'到康德对理性宗教的批判，宗教哲学展示了理性与信仰之间持久的张力。</p>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>3.1 上帝存在的论证：本体论·宇宙论·设计论</li>
+          <li>3.2 恶的问题与神义论</li>
+          <li>3.3 信仰与理性的关系</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>本体论论证</strong>：安瑟尔谟"最伟大者必然存在"</li>
+          <li><strong>神义论</strong>：为上帝的全善全能辩护的理论</li>
+          <li><strong>终极关怀</strong>：蒂利希对信仰的重新定义</li>
+        </ul>
+<figure class="diagram">
+          <figcaption>图 3 · 宗教哲学核心问题</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["宗教哲学"] --> A["神的存在<br>本体论·宇宙论·设计论"]
+  ROOT --> B["恶的问题<br>全善全能的神为何允许恶？"]
+  ROOT --> C["信仰与理性<br>安瑟尔谟→阿奎那→康德"]
+  ROOT --> D["宗教经验<br>神秘主义·启示"]
+  ROOT --> E["宗教多元论<br>殊途同归？"]
+  A --> B
+  B --> C
+  classDef root fill:#7C3AED,color:#fff,stroke:#7C3AED;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>宗教哲学：</strong>宗教哲学用理性工具分析宗教概念和信念。
+
+**恶的问题**是宗教哲学中最棘手的难题：如果神是全善、全知、全能的，为什么世界上还有如此多的苦难？各种回答包括：自由意志辩护、灵魂修炼说、过程神学等。
+
+**无神论与世俗化**：尼采说'上帝死了'，标志着西方现代性中宗教权威的衰落。但世俗化并未导致宗教消失——在全球范围内，宗教仍然是最重要的文化力量之一。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">奥古斯丁 · 354–430</div>
+            <blockquote>你为自己创造了我们，我们的心不安息，直到安息于你。<cite>——《忏悔录》</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">尼采 · 1844–1900</div>
+            <blockquote>上帝死了。是我们杀了他。<cite>——《快乐的科学》</cite></blockquote>
+          </div>
+</div>
+<figure class="diagram">
+          <figcaption>图 3a · 宗教哲学核心议题 —— 上帝存在的论证</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["上帝存在的论证"] --> A["本体论论证<br>安瑟尔谟·笛卡尔<br>上帝=可设想的无与伦比的伟大者"]
+  ROOT --> B["宇宙论论证<br>阿奎那·莱布尼茨<br>第一因·充足理由"]
+  ROOT --> C["设计论论证<br>佩利·钟表匠比喻<br>秩序→设计者"]
+  ROOT --> D["道德论证<br>康德·纽曼<br>道德法则→上帝存在"]
+  ROOT --> E["反驳与回应<br>休谟·康德·达尔文<br>道金斯《上帝错觉》"]
+  A --> F["安瑟尔谟<br>愚人反驳"]
+  C --> G["进化论<br>自然选择"]
+  E --> H["恶的问题<br>神义论"]
+  classDef root fill:#7C3AED,color:#fff,stroke:#7C3AED;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 3a 详解：</strong>上帝是否存在，是宗教哲学最核心的议题。两千年来，哲学家们发展出若干经典的"证明"路径，也遭遇了同样经典的反驳。</p>
+          <p><strong>四大论证：</strong></p>
+          <ul>
+            <li><strong>本体论论证</strong>——安瑟尔谟（1033—1109）在《宣讲》中提出：上帝是"可设想的无与伦比的伟大者"；若上帝只存在于思想中，则他就不如"既存在于思想又存在于现实"者伟大；因此上帝必然存在于现实中。这一论证完全从概念出发，不依赖经验。笛卡尔与莱布尼茨曾为其辩护，康德则指出"存在不是谓词"——"100元钱的概念"不等于"口袋里真有100元钱"。</li>
+            <li><strong>宇宙论论证</strong>——阿奎那的"五路证明"中前两路即宇宙论论证：万物皆有原因，原因链不能无限回溯，故必有一"第一因"；万物的存在是偶然的，故必有一"必然存在者"作为其根据。莱布尼茨以"充足理由律"作了更精密的表述。</li>
+            <li><strong>设计论论证</strong>——佩利（1743—1805）在《自然神学》中以"钟表匠"比喻闻名：荒野中捡到一块精密的怀表，其构造足以推出它出自制表者之手；宇宙的秩序与精巧更远胜怀表，岂能没有设计者？</li>
+            <li><strong>道德论证</strong>——康德在《实践理性批判》中提出：道德法则要求"德福一致"，但现实世界并非如此；为使道德不沦为荒谬，必须悬设上帝存在与灵魂不朽。这是从"应然"推出"实然"的论证。</li>
+          </ul>
+          <p><strong>现实案例 · 反驳的经典：</strong>休谟在《自然宗教对话录》（1779）中借斐罗之口反驳设计论：宇宙未必像人造物，秩序可能源于自然自身；达尔文1859年发表《物种起源》后，自然选择提供了不需要设计者的秩序解释，设计论论证遂退出主流科学。当代无神论哲学家道金斯在《上帝错觉》（2006）中继承休谟，称上帝假说为"多余的假设"——但宗教哲学家普兰丁格等则以"改革宗认识论"回应，主张对上帝的信念可如对他人心灵的信念一样"恰当地基本"。</p>
+        </div>
+        <div class="explain">
+          <p><strong>深度解读 · 恶的问题与神义论：</strong>"如果上帝全善、全知、全能，为何世界充满苦难？"这一"恶的问题"被视为对有神论最严峻的挑战。伊壁鸠鲁的古老悖论被休谟复述后成为标准表述。</p>
+          <ul>
+            <li><strong>奥古斯丁的神义论</strong>——恶不是上帝创造的"实体"，而是善的缺失（privatio boni）：自由意志被误用产生道德恶，自然恶是对堕落的惩罚。这一思路成为基督教神义论的主流。</li>
+            <li><strong>爱任纽的"灵魂铸造"说</strong>——恶与苦难是灵魂成长的"原材料"：世界是灵魂的学校，人通过面对挑战而趋于完善。20世纪神学家约翰·希克继承并系统化了这一"过程神义论"。</li>
+            <li><strong>自由意志辩护</strong>——普兰丁格论证：一个拥有自由意志的世界，即使包含恶，也比没有自由意志的"木偶世界"更有价值；上帝无法既赋予真正自由又不冒恶的风险。</li>
+            <li><strong>过程神学</strong>——怀特海与哈茨霍恩主张上帝并非全能的主宰，而是"诱引者"：上帝参与世界的过程，但受制于宇宙的创造性本身——苦难并非上帝所愿。</li>
+          </ul>
+          <p><strong>现实案例：</strong>二战期间犹太神学家埃利·维瑟尔在奥斯维辛集中营的经历，使"奥斯维辛之后神学"成为当代神学的分水岭——汉斯·约纳斯以"奥斯维辛之后的上帝观念"提出：大屠杀后，只能相信一位"自我限制"的上帝。2011年东日本大地震后，日本佛教界以"无常"与"同苦"回应灾难，展示了非西方宗教应对恶之问题的独特资源。</p>
+        </div>
+        <div class="explain">
+          <p><strong>深度解读 · 宗教经验研究：</strong>宗教不只是教义与仪式，更是一种可描述的内在体验。19世纪末以来，宗教经验成为宗教学的实证研究对象。</p>
+          <ul>
+            <li><strong>施莱尔马赫</strong>——被称为"现代神学之父"，在《论宗教》（1799）中把宗教的本质界定为"对无限的绝对依赖感"（schlechthinniges Abhängigkeitsgefühl），而非教义或道德——这是宗教经验研究的开端。</li>
+            <li><strong>威廉·詹姆斯</strong>——在《宗教经验之种种》（1902）中，他以心理学方法分析皈依、神秘体验、圣徒性等现象，归纳出神秘体验的四个标志：不可言说性、可知性、短暂性、被动性。他主张以"果实"检验宗教经验——看它是否使生活更有爱、更丰盛。</li>
+            <li><strong>鲁道夫·奥托</strong>——在《论神圣》（1917）中提出"神圣者"（numinous）概念：神圣体验是"令人战栗的神秘"（mysterium tremendum）与"令人神往的神秘"（mysterium fascinans）的双重结构——既恐惧又爱慕，既卑微又狂喜。这一分析深刻影响了宗教学与神学。</li>
+            <li><strong>中国的宗教经验</strong>——禅宗的"顿悟"、道教的"坐忘"、儒家的"天人合一"（王阳明"万物一体之仁"），皆为东方宗教经验的经典形态，与西方神秘主义形成对照：东方更重"即世即超越"的体验。</li>
+          </ul>
+          <p><strong>现实案例：</strong>当代神经科学与宗教经验研究交汇——美国学者纽伯格（Andrew Newberg）对冥想者与祈祷者的大脑扫描显示，前额叶与顶叶活动的变化与"自我消融"体验相关；但这些发现并未终结争论：宗教经验究竟是"大脑的产物"还是"对实在的接触"，仍是一个开放的哲学问题。</p>
+        </div>
+        <div class="explain">
+          <p><strong>深度解读 · 信仰与理性的关系：</strong>信仰是否需要理性的辩护？理性能否通达信仰？这是宗教哲学两千年来反复交锋的"元问题"，其间的立场光谱极其丰富。</p>
+          <ul>
+            <li><strong>反智主义</strong>——德尔图良（约155—约240）的名言"正因为荒谬，所以我相信"（credo quia absurdum）宣告信仰高于理性；克尔凯郭尔（1813—1855）则称信仰是"纵身一跃"，理性无法也不应替代这关键的一跃——但二者的"反理性"并不等于"反智"，他们反对的是用理性僭越信仰。</li>
+            <li><strong>理性辩护主义</strong>——安瑟尔谟提出"信仰寻求理解"（fides quaerens intellectum），阿奎那则试图以"自然神学"证明理性与信仰的和谐：恩典不废除自然，而是成全自然。这一立场在中世纪经院哲学中达到顶峰。</li>
+            <li><strong>信仰与理性的分工</strong>——路德主张"因信称义"，认为在救恩之事上理性只能让位于启示；但路德并不否定理性在世俗事务（法律、医学、工程）中的价值。康德则把信仰安放在实践理性领域：上帝、自由、不朽是"实践的公设"，不依赖理论证明。</li>
+            <li><strong>当代综合</strong>——蒂利希（1886—1965）把信仰重新定义为"终极关怀"（ultimate concern），认为信仰不是对某命题的同意，而是人被存在的根基所攫住的整全态度；普兰丁格的"改革宗认识论"则主张，相信上帝与相信"他人有心灵"一样，是无需论证的"恰当的基本信念"。</li>
+          </ul>
+          <p><strong>现实案例：</strong>科学与宗教的当代对话正是"分工"立场的实践——梵蒂冈天文台主办的多届"科学与信仰"研讨会邀请物理学家与神学家同场讨论宇宙学与神学；而大学中的宗教哲学课程则训练学生在理性法庭上为自己的世界观辩护——无论信与不信。</p>
+        </div>
+</section>
+<section class="sec" id="modern">
+        <h2><span class="chapno">第四章 &middot; 宗教与现代世界</span></h2>
+<p>宗教不是'前现代'的遗留物，而是持续演化的文化力量。理解宗教的多元性和复杂性，是理解当代世界不可或缺的维度。</p>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>4.1 科学与宗教：从冲突到对话</li>
+          <li>4.2 政教关系与世俗化</li>
+          <li>4.3 宗教对话与新兴灵性</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>政教分离</strong>：现代国家处理政教关系的原则</li>
+          <li><strong>去世俗化</strong>：对"宗教必然消亡"论断的修正</li>
+          <li><strong>全球伦理</strong>：孔汉思倡导的跨宗教道德共识</li>
+        </ul>
+<figure class="diagram">
+          <figcaption>图 4 · 宗教与现代性</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["宗教与现代世界"] --> A["世俗化理论<br>现代化→宗教衰落"]
+  ROOT --> B["宗教复兴<br>原教旨主义·福音派"]
+  ROOT --> C["宗教与政治<br>政教分离·神权政治"]
+  ROOT --> D["宗教对话<br>跨信仰交流"]
+  A --> E["反思<br>宗教并未消失"]
+  B --> E
+  C --> F["冲突与和平"]
+  D --> F
+  classDef root fill:#7C3AED,color:#fff,stroke:#7C3AED;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>宗教与现代性：</strong>世俗化理论认为现代化必然导致宗教衰落，但全球宗教版图呈现更复杂的图景。
+
+**美国**是发达国家中宗教性最强的，约40%的成年人每周参加宗教活动。
+
+**中国**的宗教政策强调宗教与社会主义社会相适应。佛教、道教、伊斯兰教、天主教、基督教是五大合法宗教。
+
+**跨辑关联**：本卷与伦理学、东方思想、哲学、人类学密切关联。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">韦伯 · 1864–1920</div>
+            <blockquote>新教伦理塑造了资本主义精神。<cite>——《新教伦理与资本主义精神》</cite></blockquote>
+          </div>
+</div>
+<figure class="diagram">
+          <figcaption>图 4a · 宗教与现代世界的张力与对话</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["宗教与现代世界"] --> A["科学与宗教<br>伽利略事件·进化论之争<br>冲突/独立/对话/整合"]
+  ROOT --> B["政教关系<br>政教分离·国教体制<br>世俗国家"]
+  ROOT --> C["全球化与多元<br>移民·宗教相遇<br>原教旨主义兴起"]
+  ROOT --> D["世俗化与复兴<br>欧洲衰落·全球南方增长<br>灵性但不宗教"]
+  ROOT --> E["宗教对话<br>梵二会议·亚西西祈祷<br>文明间和平"]
+  A --> F["伽利略·1633审判"]
+  A --> G["达尔文·1859"]
+  D --> H["新宗教运动<br>新兴灵性"]
+  classDef root fill:#7C3AED,color:#fff,stroke:#7C3AED;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 4a 详解：</strong>宗教不是"前现代的遗留物"，而是与现代性持续互动的活力量。本图勾勒了宗教在当代世界的五组核心张力与对话关系。</p>
+          <p><strong>五条主线：</strong></p>
+          <ul>
+            <li><strong>科学与宗教</strong>——从伽利略审判（1633）到达尔文进化论之争，科学与宗教的冲突构成现代性最著名的张力之一。但历史学家指出，冲突只是四种关系模式之一（详见下方对照表）；牛顿本人就是虔诚的基督徒，开普勒自认在"为上帝思想"。</li>
+            <li><strong>政教关系</strong>——西方现代国家普遍确立政教分离原则（美国宪法第一修正案、法国1905年政教分离法），但英国仍有国教体制（圣公会），中东多国以伊斯兰教法为立法渊源——政教关系的形态因历史而异。</li>
+            <li><strong>全球化与多元</strong>——移民使各宗教在"全球南方"与欧美城市中深度相遇：伦敦的清真寺、巴黎的佛教禅堂、纽约的锡克庙比邻而居。与此同时，全球化也刺激了原教旨主义的反弹——宗教既可以是桥梁，也可以是边界。</li>
+            <li><strong>世俗化与复兴</strong>——早期世俗化理论（现代化必然导致宗教衰落）在解释欧洲时大体成立，却无法解释美国的高宗教性（约四成成年人每周参加宗教活动）与"全球南方"基督教的迅猛增长。当代学者用"去世俗化"（desecularization）修正旧范式，并注意到"信而不属"（believing without belonging）与"灵性但不宗教"（spiritual but not religious）的新形态。</li>
+            <li><strong>宗教对话</strong>——面对冲突风险，宗教界兴起制度化的对话运动：梵二会议（1962—1965）开启天主教与其他宗教的对话，1986年亚西西世界和平祈祷聚会聚集各大宗教领袖。孔汉思（Hans Küng）提出"没有宗教间的和平，就没有世界和平"。</li>
+          </ul>
+          <p><strong>现实案例 · 伽利略事件：</strong>1633年，伽利略因倡导哥白尼日心说被罗马教廷审判并软禁。事件常被简化为"科学与宗教的决战"，但史实更复杂：伽利略的对手不仅有神学家，也有固守亚里士多德自然哲学的学者；教廷的顾虑部分出于三十年战争时期的政治敏感。1992年，教宗若望·保禄二世正式为伽利略案平反，承认"神学与科学对话"的必要性——这一进程本身即显示宗教传统具有自我修正的能力。</p>
+        </div>
+        <h3>对照表：宗教与科学关系的四种模式</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>模式</th><th>基本主张</th><th>代表人物</th><th>典型议题</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>冲突模式</strong></td><td>科学与宗教势不两立，两者必居其一</td><td>道金斯 · 赫胥黎（"达尔文的斗犬"）</td><td>进化论与创世记之争 · 智能设计论</td></tr>
+              <tr><td><strong>独立模式</strong></td><td>两者领域不同，各管各的：科学问"如何"，宗教问"为何"</td><td>古尔德（"不重叠的权威"NOMA）</td><td>科学与价值的分工 · 方法论的差异</td></tr>
+              <tr><td><strong>对话模式</strong></td><td>科学与宗教在边界问题上彼此启发、相互提问</td><td>波拉尼 · 巴伯 · 蒂利希</td><td>宇宙起源 · 意识本质 · 物理学与神学</td></tr>
+              <tr><td><strong>整合模式</strong></td><td>两者的洞见可整合为统一的世界观</td><td>怀特海（过程哲学）· 德日进</td><td>过程神学 · 进化神学 · 自然主义有神论</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="explain">
+          <p><strong>深度解读 · 科学革命与宗教的张力：</strong>科学革命（16—18世纪）常被描述为宗教的"失败"，但历史研究呈现远为复杂的图景——许多科学革命的主角本身就是虔信者。</p>
+          <ul>
+            <li><strong>伽利略事件（1633）</strong>——伽利略因坚持日心说被教廷审判。值得注意的是，教宗乌尔班八世本人曾是伽利略的朋友与赞助人；审判的深层原因是伽利略在《对话》中以愚钝的"辛普利丘"影射教宗。1992年教廷正式为其平反。</li>
+            <li><strong>牛顿的自然神学</strong>——牛顿在《自然哲学的数学原理》（1687）中建立万有引力定律，同时深信宇宙的秩序证明上帝的存在：他称"这最美丽的太阳、行星与彗星的系统，只能出自一个睿智而全能的存在的设计与支配"。牛顿毕生钻研《圣经》编年学，是虔诚的阿里乌派信徒。</li>
+            <li><strong>达尔文与进化论之争</strong>——1859年《物种起源》出版后，自然选择理论动摇了"设计论"的神学基础。但争论并非简单的"科学与宗教对决"：许多神职人员接受进化论，达尔文本人在《人类的由来》中自述为"不可知论者"。1925年美国"猴子审判"（斯科普斯案）使这一张力再度白热化，而当代美国福音派中仍有人坚持"年轻地球创造论"。</li>
+            <li><strong>现代对话</strong>——1996年教宗若望·保禄二世称进化论"不止是一种假说"；2006年英国坎特伯雷大主教与科学家的公开对话、2010年教皇本笃十六世对"宇宙理性"的强调，显示建制宗教正积极与科学展开建设性对话。</li>
+          </ul>
+          <p><strong>现实案例 · 中国：</strong>中国近代科技与宗教的关系呈现独特路径——严复翻译《天演论》（1897）时以"物竞天择"冲击传统宇宙观，但中国知识分子多将其视为救国之道而非宗教挑战；当代中国的科普教育与宗教教育并行不悖，科学与宗教的关系更多表现为"对话"而非"冲突"。</p>
+        </div>
+        <div class="explain">
+          <p><strong>深度解读 · 中国宗教政策与多元宗教并存：</strong>理解当代中国宗教，需把握"多元并存、依法管理、相适应"三个关键词。</p>
+          <ul>
+            <li><strong>多元并存的现实图景</strong>——佛教、道教、伊斯兰教、天主教、基督教五大宗教在全国范围内分布，其中佛教与道教为传统宗教：全国现存佛教寺院3.3万余座、道教宫观9千余座、清真寺3.9万余座、教堂与宗教活动场所6万余处。此外，妈祖、关帝、城隍等民间信仰在东南沿海与海外华人中影响深远。</li>
+            <li><strong>依法管理的框架</strong>——1982年《宪法》第36条保障宗教信仰自由；2004年《宗教事务条例》确立了宗教团体登记、宗教活动场所管理等制度，2017年修订版进一步强调依法管理与独立自主自办原则。</li>
+            <li><strong>"相适应"的方向</strong>——引导宗教与社会主义社会相适应，包括：支持宗教团体开展公益慈善（如佛教"人间佛教"、道教"济世利人"）、鼓励宗教阐释与时代精神契合（如佛教界提出"庄严国土、利乐有情"）、推动宗教中国化（如神学思想建设、伊斯兰教经堂教育本土化）。</li>
+          </ul>
+          <p><strong>现实案例：</strong>西藏的藏传佛教与汉传佛教、苯教和平共存，拉萨大昭寺内同时供奉释迦牟尼与藏王松赞干布；云南西双版纳的傣族全民信仰南传上座部佛教，佛寺与村寨融为一体；泉州开元寺兼祀道教祖师，清净寺、关帝庙、天后宫在不足一平方公里的街区内并立——这些都是"多元宗教并存"的生动样本，也说明中国的宗教格局是"历史形成、法治保障、文化共融"的结果。</p>
+        </div>
+        <div class="explain">
+          <p><strong>深度解读 · 新兴宗教与"灵性但不宗教"：</strong>当代宗教版图不仅有大传统的延续，也有大量新兴宗教运动（NRM）与灵性实践的涌现。</p>
+          <ul>
+            <li><strong>新兴宗教运动</strong>——19世纪以来，摩门教、耶和华见证人、巴哈伊教相继兴起；20世纪六七十年代，源自东方的超觉静坐（TM）、克里希那运动以及西方的"新时代"（New Age）灵修蓬勃出现。它们或从既有宗教中分化，或融合多种传统，反映出现代人在建制宗教之外寻求意义的需求。</li>
+            <li><strong>"灵性但不宗教"</strong>——社会学调查显示，欧美"信而不属"（believing without belonging）人口持续增长：他们相信有超越之物，却不愿隶属于任何教会。瑜伽、正念冥想（源自佛教）与"灵性旅游"成为去建制化的灵性消费。</li>
+            <li><strong>正念的世俗化</strong>——"正念"（mindfulness）本是南传佛教的修行方法，现已被引入医院、学校与企业，用于减压与心理治疗（如乔恩·卡巴金1979年创立的"正念减压"MBSR课程）。这一"去宗教化"的传播路径，展示了宗教资源在现代社会中的创造性转化。</li>
+          </ul>
+          <p><strong>现实案例：</strong>中国近年兴起的"国学热"与佛道养生文化，部分承担了类似的灵性功能——人们在传统资源中寻找身心安顿；而日本"神道婚礼+基督教式婚礼+佛寺葬礼"并行的"功能分化的宗教市场"，则生动说明现代人常常在多种宗教传统间灵活切换。</p>
+        </div>
+</section>
+
+    <section class="sec">
+      <h2>关联辑目</h2>
+      <div class="explain">
+        <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+        <ul>
+<li><span class="rel-link" data-vol="vol23">东方思想</span></li>
+<li><span class="rel-link" data-vol="vol2">西方哲学思想谱系</span></li>
+<li><span class="rel-link" data-vol="vol3">伦理学</span></li>
+<li><span class="rel-link" data-vol="vol13">人类学</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      宗教学与神话 · 思想图谱系列第34辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-06
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+(function() {
+  if (window.mermaid) {
+    mermaid.initialize({
+      startOnLoad: true, theme: 'neutral', securityLevel: 'loose',
+      flowchart: { curve: 'basis', htmlLabels: true },
+      fontFamily: 'Segoe UI, PingFang SC, Microsoft YaHei, sans-serif'
+    });
+  }
+
+  var input = document.getElementById('searchInput');
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.sec'));
+  var tocLinks = Array.prototype.slice.call(document.querySelectorAll('#toc a'));
+
+  function applyFilter() {
+    var q = (input.value || '').trim().toLowerCase();
+    sections.forEach(function (sec) {
+      var hit = !q || sec.textContent.toLowerCase().indexOf(q) !== -1;
+      sec.classList.toggle('hidden-by-search', !hit);
+    });
+    tocLinks.forEach(function (a) {
+      var id = a.getAttribute('href').slice(1);
+      var sec = document.getElementById(id);
+      var visible = sec && !sec.classList.contains('hidden-by-search');
+      a.style.opacity = visible ? '' : '0.35';
+    });
+  }
+
+  if (input) { input.addEventListener('input', applyFilter); }
+})();
+</script>
+</body>
+</html>

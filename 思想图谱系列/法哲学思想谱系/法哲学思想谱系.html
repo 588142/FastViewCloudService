@@ -1,0 +1,1023 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>法哲学思想谱系 · 思想图谱系列第十一辑</title>
+
+  <style>
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+  </style>
+
+  <style>
+    :root {
+      --bg: #F6F7F9;
+      --bg2: #EAEDF1;
+      --ink: #23262B;
+      --muted: #646B74;
+      --rule: #D8DDE3;
+      --accent: #4A4E69;
+      --accent2: #C98A2D;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:first-child { margin-left: 0; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .legacy .legacy-title { font-weight: 700; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .legacy ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; }
+    @media (max-width: 700px) { .legacy { grid-template-columns: 1fr; } }
+
+    .history { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; }
+    .history .history-title { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem; }
+    .history p { margin-bottom: 0.55rem; }
+    .history p:last-child { margin-bottom: 0; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    .formula {
+      font-family: var(--font-mono);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidenav { position: static; max-height: none; }
+    }
+    @media print {
+      .sidenav { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      section.sec { break-inside: avoid-page; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="shell">
+
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">法哲学思想谱系</div>
+    <div class="brand-sub">思想图谱系列 · 第十一辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+      <li><a href="#intro">导言 · 法哲学是什么</a></li>
+      <li><a href="#overview">第一章 · 总览：法哲学思想谱系</a></li>
+      <li><a href="#classical">第二章 · 古典法哲学：从自然法到中世纪</a></li>
+      <li><a href="#modern">第三章 · 近代法哲学：从霍布斯到孟德斯鸠</a></li>
+      <li><a href="#positivism">第四章 · 实证主义与现实主义：从边沁到哈特</a></li>
+      <li><a href="#contemporary">第五章 · 当代法哲学：从罗尔斯到德沃金</a></li>
+      <li><a href="#frontier">第六章 · 前沿法哲学：AI 原创、AI 欺诈与数字治理</a></li>
+      <li><a href="#culture">第七章 · 文化安全与法律治理</a></li>
+      <li><a href="#summary">第八章 · 总结：法、正义与文明</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第十一辑</span>
+        <span class="series-links">
+          <a href="../index.html">系列目录</a>
+          <a href="../伦理与道德思想谱系/伦理与道德思想谱系.html">← 上一辑 · 伦理与道德思想谱系</a>
+          <a href="../科技与人工智能思想谱系/科技与人工智能思想谱系.html">下一辑 · 科技与人工智能思想谱系 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>法哲学思想谱系</h1>
+      <p class="subtitle">从自然法到 AI——正义与规则的两千年：自然法、社会契约、实证主义、现实主义、当代法哲学，以及 AI 原创与 AI 欺诈、文化安全与法律治理两大前沿专题，附常用法哲学法则速查</p>
+      <p class="meta">作者：詹家杨 · 2026-09-05 · 6 张思维导图 · 9 张对照表 · 20+ 法哲学法则速查 · 30+ 人物语录 · 法哲学史</p>
+    </header>
+
+    <main>
+      <!-- 导言 -->
+      <section class="sec" id="intro">
+        <h2>导言 · 法哲学是什么</h2>
+        <p>第十辑讲了"人应当如何生活"（伦理）；这一辑讲"人应当如何被规则约束"（法）。法哲学（philosophy of law / jurisprudence）追问四个根本问题：<strong>法律是什么</strong>（本体论）、<strong>法律凭什么有效</strong>（效力论）、<strong>恶法是不是法</strong>（正当性）、<strong>法律与正义、道德、权力的关系</strong>（关系论）。它不教人"如何打官司"，而是回答"我们为什么要有法、法凭什么约束我们"。</p>
+        <div class="callout">
+          <span class="callout-title">一条主线</span>
+          法哲学史的主线，是"法之正当性来源"的七次转向：<strong>为自然</strong>（古典：真正的法是正确理性）→ <strong>为神</strong>（中世纪：法参与永恒法）→ <strong>为权利</strong>（近代：自然权利与社会契约）→ <strong>为命令</strong>（实证主义：法是主权者的命令）→ <strong>为规则</strong>（哈特：法是规则体系）→ <strong>为正义与权利</strong>（罗尔斯、德沃金）→ <strong>为数字时代</strong>（AI 原创、AI 欺诈、算法治理与文化安全）。每一次转向，都是人类重新回答"法凭什么约束我、又该如何被约束"。
+        </div>
+      </section>
+
+      <!-- 第一章 总览 -->
+      <section class="sec" id="overview">
+        <h2><span class="chapno">第一章</span>总览：法哲学思想谱系</h2>
+        <p>先看全景：古希腊人第一次追问"什么是正义"，柏拉图说正义是各安其位，亚里士多德说"法治优于人治"；罗马的西塞罗把法定义为"正确理性"，中世纪的阿奎那以永恒法—自然法—人法的层级为法律奠基；近代以来，霍布斯、洛克、卢梭以社会契约论证法的正当性，孟德斯鸠以三权分立约束权力，贝卡利亚以罪刑法定改革刑法；19 世纪，边沁与奥斯丁把法定义为"主权者的命令"（实证主义），凯尔森以"基础规范"构建纯粹法学，哈特以"承认规则"重建规则论；20 世纪，罗尔斯以正义论、德沃金以权利论、富勒以"法律的内在道德"回应"恶法非法"，波斯纳以经济学重估法律。而 21 世纪，AI 生成内容的原创性、AI 欺诈消费者、算法治理与文化安全，把"法是什么、法为谁而立"带进了数字时代。</p>
+
+        <figure class="diagram">
+          <figcaption>图 1 · 法哲学思想谱系总图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["古典法哲学<br>自然法 · 正义 · 法治"] --> B["近代法哲学<br>契约 · 权利 · 分权"]
+  B --> C["实证主义与现实主义<br>命令 · 规则 · 预测"]
+  C --> D["当代法哲学<br>正义 · 权利 · 内在道德"]
+  D --> E["前沿法哲学<br>AI 原创 · AI 欺诈 · 文化安全"]
+  classDef rootNode fill:#4A4E69,color:#fff,stroke:#4A4E69;
+  class A rootNode;
+          </pre>
+        </figure>
+
+        <h3>总对照表：法哲学的五次转折</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>阶段</th><th>时期</th><th>核心问题</th><th>法的正当性来源</th><th>代表</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>古典法哲学</strong></td><td>前 5 世纪–14 世纪</td><td>什么是正义？</td><td>自然 · 理性 · 神</td><td>柏拉图 · 亚里士多德 · 阿奎那</td></tr>
+              <tr><td><strong>近代法哲学</strong></td><td>17–18 世纪</td><td>法凭什么约束我？</td><td>契约 · 自然权利 · 分权</td><td>霍布斯 · 洛克 · 孟德斯鸠</td></tr>
+              <tr><td><strong>实证主义</strong></td><td>19–20 世纪</td><td>恶法是不是法？</td><td>命令 · 规则 · 基础规范</td><td>边沁 · 奥斯丁 · 凯尔森 · 哈特</td></tr>
+              <tr><td><strong>当代法哲学</strong></td><td>20 世纪至今</td><td>法律如何通向正义？</td><td>正义 · 权利 · 内在道德</td><td>罗尔斯 · 德沃金 · 富勒</td></tr>
+              <tr><td><strong>前沿法哲学</strong></td><td>21 世纪至今</td><td>AI 与数字时代如何立法？</td><td>透明度 · 责任 · 文化安全</td><td>各国立法 · 司法实践</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 第二章 古典法哲学 -->
+      <section class="sec" id="classical">
+        <h2><span class="chapno">第二章</span>古典法哲学：从自然法到中世纪（前 5 世纪–14 世纪）</h2>
+        <p><strong>定义</strong>：西方法哲学在古希腊诞生——柏拉图在《理想国》中把正义定义为"各安其位"，亚里士多德在《政治学》中提出"法治优于人治"，并把正义分为分配正义与矫正正义；罗马的西塞罗把法定义为"正确理性"，乌尔比安提出"法是善良与公正的艺术"；中世纪（奥古斯丁、阿奎那）以永恒法—自然法—人法的层级为法律奠基，主张"不公正的法律不是法律"。这一千年里，法的正当性来自<strong>自然、理性与神</strong>，而不是主权者的意志。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>柏拉图与亚里士多德的正义</strong>：柏拉图在《理想国》中把正义定义为"每个人做自己分内的事"；亚里士多德在《尼各马可伦理学》中区分分配正义（按功绩分配）与矫正正义（纠偏），在《政治学》中提出"法治优于人治"——法律是"不受欲望影响的理性"。</p>
+          <p><strong>罗马法学的自然法</strong>：西塞罗在《论法律》中提出"真正的法是正确理性与自然一致"，乌尔比安定义"法是善良与公正的艺术"；罗马法学家把自然法（万民法）与人法（市民法）区分开来。</p>
+          <p><strong>中世纪的四层法</strong>：阿奎那在《神学大全》中提出永恒法（上帝）、自然法（理性参与永恒法）、人法（人定法）、神法（圣经）的层级；"不公正的法律不是法律"成为后世"恶法非法"的思想源头。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>柏拉图（前 427–前 347）</strong>——正义论奠基者。正义是各安其位，哲人王统治。</p>
+        <p><strong>亚里士多德（前 384–前 322）</strong>——法治论奠基者。"法治优于人治"，分配正义与矫正正义。</p>
+        <p><strong>西塞罗（前 106–前 43）</strong>——罗马自然法代表。"真正的法是正确理性"，法与自然一致。</p>
+        <p><strong>乌尔比安（约 170–228）</strong>——罗马法学家。"法是善良与公正的艺术"。</p>
+        <p><strong>奥古斯丁（354–430）</strong>——教父法哲学。"不公正的法律不是法律"。</p>
+        <p><strong>托马斯·阿奎那（1225–1274）</strong>——经院法哲学集大成者。永恒法—自然法—人法—神法的四层结构。</p>
+
+        <figure class="diagram">
+          <figcaption>图 2 · 古典法哲学结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["古典法哲学<br>自然法 · 正义"] --> A["柏拉图<br>正义 = 各安其位"]
+  ROOT --> B["亚里士多德<br>法治优于人治 · 分配/矫正正义"]
+  ROOT --> C["罗马法学<br>西塞罗正确理性 · 乌尔比安公正艺术"]
+  ROOT --> D["中世纪<br>奥古斯丁 · 阿奎那四层法"]
+  classDef rootNode fill:#4A4E69,color:#fff,stroke:#4A4E69;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">亚里士多德"法治优于人治"</span>
+          法治 = 良法 + 普遍服从
+          <span class="f-note">法律是"不受欲望影响的理性"，比任何统治者更可靠；这是西方法治传统的源头。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">西塞罗自然法公式</span>
+          真正的法 = 正确理性（与自然一致）
+          <span class="f-note">"自然法高于人定法"——若人定法与自然法冲突，则人定法无效。这是"恶法非法"的古典表述。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">阿奎那四层法</span>
+          永恒法 → 自然法 → 人法 → 神法
+          <span class="f-note">人法必须符合自然法（理性参与永恒法），否则不是真正的法——为后世自然权利论奠基。</span>
+        </div>
+
+        <h3>对照表：古典法哲学的正义观</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>柏拉图</th><th>亚里士多德</th><th>西塞罗</th><th>阿奎那</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>正义的核心</strong></td><td>各安其位</td><td>分配与矫正</td><td>正确理性</td><td>符合自然法</td></tr>
+              <tr><td><strong>法的来源</strong></td><td>理念</td><td>理性与习俗</td><td>自然</td><td>永恒法（上帝）</td></tr>
+              <tr><td><strong>法治观</strong></td><td>哲人王统治</td><td>法治优于人治</td><td>法高于权力</td><td>人法服从自然法</td></tr>
+              <tr><td><strong>代表著作</strong></td><td>《理想国》</td><td>《政治学》</td><td>《论法律》</td><td>《神学大全》</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">柏拉图 · 前 427–前 347</div>
+            <blockquote>正义就是每个人做自己分内的事。<cite>——《理想国》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">亚里士多德 · 前 384–前 322</div>
+            <blockquote>法治优于人治，因为法律是不受欲望影响的理性。<cite>——《政治学》</cite></blockquote>
+            <blockquote>已成立的法律获得普遍的服从，而大家所服从的法律又应该是制定得良好的法律。<cite>——《政治学》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">西塞罗 · 前 106–前 43</div>
+            <blockquote>真正的法是正确理性，与自然一致。<cite>——《论法律》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">乌尔比安 · 约 170–228</div>
+            <blockquote>法是善良与公正的艺术。<cite>——《法学阶梯》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">奥古斯丁 · 354–430</div>
+            <blockquote>不公正的法律，不是法律。<cite>——《论自由意志》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">托马斯·阿奎那 · 1225–1274</div>
+            <blockquote>人法若与自然法相悖，便不再是法律，而是法律的败坏。<cite>——《神学大全》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">古典法哲学的遗产</div>
+            <ul>
+              <li>"法治优于人治"确立西方法治传统</li>
+              <li>自然法高于人定法的"恶法非法"命题</li>
+              <li>分配正义与矫正正义的正义分类</li>
+              <li>永恒法—自然法—人法的层级结构</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第三章 近代法哲学 -->
+      <section class="sec" id="modern">
+        <h2><span class="chapno">第三章</span>近代法哲学：从霍布斯到孟德斯鸠（17–18 世纪）</h2>
+        <p><strong>定义</strong>：近代法哲学把法的正当性从"自然与神"转向"人的同意"——霍布斯以"自然状态"论证主权与法律源于契约，洛克以"自然权利"限制主权，孟德斯鸠以"三权分立"约束权力、以"法的精神"考察法律与政体、气候、习俗的关系，卢梭以"公意"论证人民主权，贝卡利亚以"罪刑法定"改革刑法。近代法哲学完成了从"法源于神"到"法源于人"的转向，为现代法治、宪政与人权奠基。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>霍布斯的利维坦（1651）</strong>：霍布斯在《利维坦》中设想"人人相争"的自然状态，认为人们通过契约把权利交给主权者以换取和平——法律是主权者的命令，正义存在于主权者之下。</p>
+          <p><strong>洛克与孟德斯鸠的分权（1690 / 1748）</strong>：洛克以"自然权利"（生命、自由、财产）限制主权，提出立法权与执行权分立；孟德斯鸠在《论法的精神》中提出立法、行政、司法三权分立与制衡，并主张"法的精神"因政体、气候、习俗而异。</p>
+          <p><strong>卢梭的公意（1762）</strong>：卢梭在《社会契约论》中提出"公意"（general will），主张人民主权不可转让、不可分割——法律是公意的表达。</p>
+          <p><strong>贝卡利亚的刑法改革（1764）</strong>：贝卡利亚在《论犯罪与刑罚》中反对酷刑与死刑滥用，提出"罪刑法定""罪刑相适应""刑罚的及时性"——现代刑法学的奠基之作。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>霍布斯（1588–1679）</strong>——主权论奠基者。《利维坦》，自然状态"人对人是狼"。</p>
+        <p><strong>洛克（1632–1704）</strong>——自然权利论代表。生命、自由、财产是自然权利，政府须经同意。</p>
+        <p><strong>孟德斯鸠（1689–1755）</strong>——分权论代表。《论法的精神》，三权分立与制衡。</p>
+        <p><strong>卢梭（1712–1778）</strong>——公意论代表。《社会契约论》，人民主权。</p>
+        <p><strong>贝卡利亚（1738–1794）</strong>——刑法改革者。《论犯罪与刑罚》，罪刑法定。</p>
+
+        <figure class="diagram">
+          <figcaption>图 3 · 近代法哲学结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["近代法哲学<br>17–18 世纪"] --> A["霍布斯<br>主权 · 契约 · 命令"]
+  ROOT --> B["洛克<br>自然权利 · 立法/执行分立"]
+  ROOT --> C["孟德斯鸠<br>三权分立 · 法的精神"]
+  ROOT --> D["卢梭<br>公意 · 人民主权"]
+  ROOT --> E["贝卡利亚<br>罪刑法定 · 刑法改革"]
+  classDef rootNode fill:#4A4E69,color:#fff,stroke:#4A4E69;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">孟德斯鸠三权分立</span>
+          立法权 + 行政权 + 司法权 分立制衡
+          <span class="f-note">"要防止滥用权力，就必须以权力约束权力"——现代宪政的基石。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">洛克自然权利公式</span>
+          生命 + 自由 + 财产 = 不可剥夺的自然权利
+          <span class="f-note">政府的存在以保护自然权利为目的，未经同意不得侵犯——现代人权与宪政的思想源头。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">贝卡利亚罪刑法定</span>
+          法无明文规定不为罪，法无明文规定不处罚
+          <span class="f-note">只有法律才能规定犯罪与刑罚，法官不得任意解释——现代刑法的铁律。</span>
+        </div>
+
+        <h3>对照表：近代法哲学的契约论谱系</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>霍布斯</th><th>洛克</th><th>孟德斯鸠</th><th>卢梭</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>自然状态</strong></td><td>人人相争</td><td>和平但权利易受侵</td><td>（重政制而非状态）</td><td>自由平等</td></tr>
+              <tr><td><strong>主权归属</strong></td><td>主权者（利维坦）</td><td>人民（可撤回）</td><td>分权制衡</td><td>公意（人民主权）</td></tr>
+              <tr><td><strong>法律本质</strong></td><td>主权者的命令</td><td>保护权利的规则</td><td>法的精神</td><td>公意的表达</td></tr>
+              <tr><td><strong>代表著作</strong></td><td>《利维坦》</td><td>《政府论》</td><td>《论法的精神》</td><td>《社会契约论》</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">霍布斯 · 1588–1679</div>
+            <blockquote>没有主权者，就没有法律，也没有正义。<cite>——《利维坦》（意译）</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">洛克 · 1632–1704</div>
+            <blockquote>法律的目的不是废除自由，而是保护自由。<cite>——《政府论》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">孟德斯鸠 · 1689–1755</div>
+            <blockquote>要防止滥用权力，就必须以权力约束权力。<cite>——《论法的精神》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">卢梭 · 1712–1778</div>
+            <blockquote>法律是公意的表达。<cite>——《社会契约论》（意译）</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">贝卡利亚 · 1738–1794</div>
+            <blockquote>刑罚的威慑力，不在于其残酷，而在于其不可避免。<cite>——《论犯罪与刑罚》</cite></blockquote>
+            <blockquote>只有法律才能规定犯罪与刑罚。<cite>——《论犯罪与刑罚》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">近代法哲学的遗产</div>
+            <ul>
+              <li>法的正当性从"神"转向"人的同意"</li>
+              <li>三权分立与宪政成为现代政制基石</li>
+              <li>自然权利与人权观念奠基</li>
+              <li>罪刑法定与现代刑法体系确立</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四章 实证主义与现实主义 -->
+      <section class="sec" id="positivism">
+        <h2><span class="chapno">第四章</span>实证主义与现实主义：从边沁到哈特（19–20 世纪）</h2>
+        <p><strong>定义</strong>：面对"恶法是不是法"的追问，法律实证主义主张<strong>"法律与道德分离"</strong>——边沁与奥斯丁把法定义为"主权者的命令"，凯尔森以"基础规范"构建纯粹法学，哈特以"承认规则"重建规则论；与此同时，美国现实主义法学（霍姆斯、庞德）主张"法律是法官的预测"、法律是"社会工程"。实证主义让法学成为一门"科学"，但也留下了"纳粹恶法是否有效"的世纪难题。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>边沁与奥斯丁的命令说（18–19 世纪）</strong>：边沁主张以功利主义改革法律，奥斯丁在《法理学的范围》中提出"法律是主权者的命令"——法律的存在是一回事，其好坏是另一回事（法律与道德分离）。</p>
+          <p><strong>凯尔森的纯粹法学（1934）</strong>：凯尔森在《纯粹法学》中把法律体系还原为"基础规范"（Grundnorm）——法律的效力最终追溯到一个被预设的终极规范，法学只研究"实然"而非"应然"。</p>
+          <p><strong>哈特的规则论（1961）</strong>：哈特在《法律的概念》中批评命令说过于简单，提出法律是"第一性规则（义务）+ 第二性规则（承认、变更、裁判）"的体系，以"承认规则"确定何者有效。</p>
+          <p><strong>美国现实主义（20 世纪）</strong>：霍姆斯提出"法律的生命不在逻辑而在经验""法律是法官将实际做什么的预测"；庞德提出法律是"社会工程"，以社会利益衡量规则。</p>
+          <p><strong>拉德布鲁赫公式（1946）</strong>：二战后，拉德布鲁赫提出"极端不公正的法律不是法律"——实证主义在纳粹恶法面前的反思。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>边沁（1748–1832）</strong>——功利主义立法者。以最大幸福衡量法律。</p>
+        <p><strong>奥斯丁（1790–1859）</strong>——命令说代表。"法律是主权者的命令"。</p>
+        <p><strong>凯尔森（1881–1973）</strong>——纯粹法学代表。基础规范，法律与道德分离。</p>
+        <p><strong>哈特（1907–1992）</strong>——规则论代表。《法律的概念》，承认规则。</p>
+        <p><strong>霍姆斯（1841–1935）</strong>——现实主义代表。"法律的生命不在逻辑而在经验"。</p>
+        <p><strong>庞德（1870–1964）</strong>——社会工程论代表。以社会利益衡量法律。</p>
+        <p><strong>拉德布鲁赫（1878–1949）</strong>——价值论法哲学。"极端不公正的法律不是法律"。</p>
+
+        <figure class="diagram">
+          <figcaption>图 4 · 实证主义与现实主义结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["实证主义与现实主义<br>19–20 世纪"] --> A["命令说<br>边沁 · 奥斯丁"]
+  ROOT --> B["纯粹法学<br>凯尔森 · 基础规范"]
+  ROOT --> C["规则论<br>哈特 · 承认规则"]
+  ROOT --> D["现实主义<br>霍姆斯预测 · 庞德社会工程"]
+  ROOT --> E["战后反思<br>拉德布鲁赫公式"]
+  classDef rootNode fill:#4A4E69,color:#fff,stroke:#4A4E69;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">奥斯丁命令说</span>
+          法律 = 主权者的命令（以制裁为后盾）
+          <span class="f-note">"法律的存在是一回事，其好坏是另一回事"——法律与道德分离的经典表述。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">凯尔森基础规范</span>
+          法律效力 ← 追溯 ← 基础规范（Grundnorm）
+          <span class="f-note">一部法律的效力来自上位法，最终追溯到被预设的"基础规范"——法学只研究实然，不研究应然。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">哈特承认规则</span>
+          法律 = 第一性规则（义务）+ 第二性规则（承认/变更/裁判）
+          <span class="f-note">"承认规则"是判断何者有效的终极标准——它把法律从"命令"升级为"规则体系"。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">拉德布鲁赫公式</span>
+          极端不公正的法律 = 不是法律
+          <span class="f-note">"实证法的安定性优先于正义，但当不公正达到极端程度时，法律让位于正义"——战后对纳粹恶法的反思。</span>
+        </div>
+
+        <h3>对照表：自然法 vs 实证主义 vs 现实主义</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>自然法</th><th>实证主义</th><th>现实主义</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>法律与道德</strong></td><td>不可分离</td><td>严格分离</td><td>关注实际效果</td></tr>
+              <tr><td><strong>法的本质</strong></td><td>正确理性 / 自然</td><td>命令 / 规则 / 基础规范</td><td>法官的预测 / 社会工程</td></tr>
+              <tr><td><strong>恶法是否法</strong></td><td>不是（恶法非法）</td><td>是（但应改革）</td><td>看实际执行</td></tr>
+              <tr><td><strong>代表</strong></td><td>阿奎那 · 富勒</td><td>奥斯丁 · 凯尔森 · 哈特</td><td>霍姆斯 · 庞德</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">奥斯丁 · 1790–1859</div>
+            <blockquote>法律是主权者的命令。<cite>——《法理学的范围》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">凯尔森 · 1881–1973</div>
+            <blockquote>法律规范的效力，最终追溯到一个被预设的基础规范。<cite>——《纯粹法学》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">哈特 · 1907–1992</div>
+            <blockquote>承认规则是法律体系效力的终极判准。<cite>——《法律的概念》（意译）</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">霍姆斯 · 1841–1935</div>
+            <blockquote>法律的生命不在逻辑，而在经验。<cite>——《普通法》</cite></blockquote>
+            <blockquote>法律不过是对法院将实际做什么的预测。<cite>——《法律的道路》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">庞德 · 1870–1964</div>
+            <blockquote>法律是社会工程，以最小的代价满足最大的利益。<cite>——《法理学》（意译）</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">拉德布鲁赫 · 1878–1949</div>
+            <blockquote>极端不公正的法律，不是法律。<cite>——《法律的不法与超法律的法》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">实证主义与现实主义遗产</div>
+            <ul>
+              <li>法律与道德分离，法学成为独立学科</li>
+              <li>命令说 → 规则论 → 承认规则的理论演进</li>
+              <li>现实主义把法律从文本拉回实践</li>
+              <li>拉德布鲁赫公式回应"恶法"的世纪难题</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第五章 当代法哲学 -->
+      <section class="sec" id="contemporary">
+        <h2><span class="chapno">第五章</span>当代法哲学：从罗尔斯到德沃金（20 世纪至今）</h2>
+        <p><strong>定义</strong>：当代法哲学在"实证主义之后"重建法律与正义的联系——罗尔斯以"正义论"为制度奠基，德沃金以"权利论"主张法律包含原则、法官应"认真对待权利"，富勒提出"法律的内在道德"（八项合法性原则），波斯纳以法律经济学重估规则，拉德布鲁赫公式为"恶法非法"提供战后答案。当代法哲学的核心是：<strong>法律不只是规则，更是通向正义的事业</strong>。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>罗尔斯的正义论（1971）</strong>：罗尔斯在《正义论》中以"无知之幕"设想原初状态，提出正义两原则：平等的基本自由 + 机会平等与差别原则（最不利者受益）——为宪法与制度提供正义标准。</p>
+          <p><strong>德沃金的权利论（1977–1986）</strong>：德沃金在《认真对待权利》《法律帝国》中主张法律不仅是规则，还包含"原则"；法官在疑难案件中应诉诸原则而非政策，权利是"王牌"（trump）。</p>
+          <p><strong>富勒的内在道德（1964）</strong>：富勒在《法律的道德性》中提出八项合法性原则（一般性、公布、不溯及既往、清晰、不矛盾、可行、稳定、官方行为与法律一致），主张法律本身有"内在道德"。</p>
+          <p><strong>波斯纳的法律经济学（1973）</strong>：波斯纳在《法律的经济分析》中以"效率"重估法律规则，主张法律应追求财富最大化——"法律的经济分析"成为当代最有影响的学派之一。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>罗尔斯（1921–2002）</strong>——正义论重建者。《正义论》，无知之幕与正义两原则。</p>
+        <p><strong>德沃金（1931–2013）</strong>——权利论代表。《认真对待权利》，权利是王牌。</p>
+        <p><strong>富勒（1902–1978）</strong>——内在道德论代表。《法律的道德性》，八项合法性原则。</p>
+        <p><strong>波斯纳（1939–）</strong>——法律经济学代表。《法律的经济分析》，效率与财富最大化。</p>
+
+        <figure class="diagram">
+          <figcaption>图 5 · 当代法哲学结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["当代法哲学<br>20 世纪至今"] --> A["罗尔斯<br>正义两原则 · 无知之幕"]
+  ROOT --> B["德沃金<br>权利是王牌 · 原则论"]
+  ROOT --> C["富勒<br>法律的内在道德 · 八项原则"]
+  ROOT --> D["波斯纳<br>法律经济学 · 效率"]
+  classDef rootNode fill:#4A4E69,color:#fff,stroke:#4A4E69;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">罗尔斯正义两原则</span>
+          1. 平等的基本自由 · 2. 机会平等 + 差别原则（最不利者受益）
+          <span class="f-note">在"无知之幕"下选择的制度必然公平——因为人人都可能成为最不利者。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">德沃金"权利是王牌"</span>
+          权利（rights）优先于政策（policies）
+          <span class="f-note">个人权利是"王牌"，即使为了多数人利益也不得随意剥夺——法官在疑难案件中应诉诸原则。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">富勒八项内在道德</span>
+          一般性 · 公布 · 不溯及既往 · 清晰 · 不矛盾 · 可行 · 稳定 · 言行一致
+          <span class="f-note">法律若违反这些原则，就不只是"坏法"，而是根本不配称为"法"——这是对实证主义的回应。</span>
+        </div>
+
+        <h3>对照表：德沃金 vs 富勒 vs 波斯纳</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>德沃金</th><th>富勒</th><th>波斯纳</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>法律的核心</strong></td><td>权利与原则</td><td>内在道德</td><td>效率</td></tr>
+              <tr><td><strong>疑难案件</strong></td><td>诉诸原则</td><td>诉诸合法性</td><td>诉诸成本收益</td></tr>
+              <tr><td><strong>对实证主义</strong></td><td>批评（规则之外有原则）</td><td>批评（法律有内在道德）</td><td>改造（以经济学重估）</td></tr>
+              <tr><td><strong>代表著作</strong></td><td>《认真对待权利》</td><td>《法律的道德性》</td><td>《法律的经济分析》</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">罗尔斯 · 1921–2002</div>
+            <blockquote>正义是社会制度的首要德性。<cite>——《正义论》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">德沃金 · 1931–2013</div>
+            <blockquote>权利是个人手中的王牌，即使为了多数人的利益也不得剥夺。<cite>——《认真对待权利》（意译）</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">富勒 · 1902–1978</div>
+            <blockquote>法律是使人的行为服从规则治理的事业。<cite>——《法律的道德性》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">波斯纳 · 1939–</div>
+            <blockquote>法律规则应当追求财富最大化。<cite>——《法律的经济分析》（意译）</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">当代法哲学的遗产</div>
+            <ul>
+              <li>正义论为制度提供正义标准（罗尔斯）</li>
+              <li>权利论让个人权利成为"王牌"（德沃金）</li>
+              <li>内在道德论回应"恶法非法"（富勒）</li>
+              <li>法律经济学以效率重估规则（波斯纳）</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第六章 前沿法哲学：AI 原创、AI 欺诈与数字治理 -->
+      <section class="sec" id="frontier">
+        <h2><span class="chapno">第六章</span>前沿法哲学：AI 原创、AI 欺诈与数字治理（21 世纪至今）</h2>
+        <p><strong>定义</strong>：当 AI 能写诗、作画、作曲、生成视频，法哲学必须回答两个全新的问题——<strong>AI 制作的东西是不是"原创"？能不能受著作权保护？</strong>以及<strong>AI 会不会欺诈消费者？法律如何认定与追责？</strong>这背后是更根本的法哲学追问：创作主体是否必须是"人"？意思表示是否必须来自"人"？责任能否归于"算法"？前沿法哲学正在把"法为谁而立"带进数字时代。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>AI 生成内容的爆发（2022–2023）</strong>：2022 年 ChatGPT、Stable Diffusion 等生成式 AI 爆发，AI 能生成文本、图像、音乐、视频——"AI 作品是否受著作权保护"成为全球司法难题。</p>
+          <p><strong>中国首例 AI 图片著作权案（2023）</strong>：北京互联网法院在"AI 生成图片著作权案"中认定：当人类对 AI 生成内容有独创性智力投入（设计提示词、反复调整）时，该图片可受著作权保护——确立了"人类创作贡献"标准。</p>
+          <p><strong>AI 欺诈的泛滥（2023–今）</strong>：AI 换脸诈骗、AI 生成虚假评价、AI 虚假广告、深度伪造视频层出不穷——"AI 欺诈消费者"成为监管重点。</p>
+          <p><strong>立法回应</strong>：中国 2022 年《互联网信息服务深度合成管理规定》（要求显著标识 AI 生成内容）、2023 年《生成式人工智能服务管理暂行办法》（要求真实、透明、可追责）、欧盟 2024 年《人工智能法案》（按风险分级监管）。</p>
+        </div>
+
+        <h3>专题一 · AI 制作的东西是不是"原创"？</h3>
+        <p>法哲学与著作权法的核心争议：</p>
+        <ul>
+          <li><strong>作者必须是"人"</strong>：传统著作权法（包括中国《著作权法》）以"自然人作者"为前提——"创作"是人的智力活动，AI 只是工具。因此"纯 AI 生成、无人类创作贡献"的内容通常不受保护。</li>
+          <li><strong>工具论 vs 作者论</strong>：工具论认为 AI 如同画笔、相机，人类通过提示词与调整完成"独创性表达"，作品归人类；作者论认为 AI 已能自主"创作"，应承认其"作者"地位（或至少承认"AI 生成物"这一独立范畴）。</li>
+          <li><strong>中国的"人类创作贡献"标准</strong>：北京互联网法院 2023 年判决确立——人类对提示词的设计、参数的调整、结果的筛选构成"独创性智力投入"时，AI 生成图片可受著作权保护；反之，纯 AI 自动生成则不受保护。</li>
+          <li><strong>法哲学追问</strong>："原创性"（originality）的本质是"人的独创性表达"。AI 生成内容是否原创，取决于<strong>人是否在其中留下了可识别的智力贡献</strong>——这既是技术问题，更是"何为创作主体"的哲学问题。</li>
+        </ul>
+
+        <h3>专题二 · AI 会不会欺诈消费者？法律如何认定与追责？</h3>
+        <p>AI 欺诈消费者是现实且紧迫的问题：</p>
+        <ul>
+          <li><strong>典型形态</strong>：AI 换脸冒充亲友诈骗、AI 生成虚假商品评价、AI 虚假广告与夸大宣传、深度伪造视频误导公众、AI 客服隐瞒身份。</li>
+          <li><strong>法律工具</strong>：<strong>民法典</strong>（欺诈可撤销、侵权责任）、<strong>消费者权益保护法</strong>（知情权、虚假宣传责任）、<strong>反不正当竞争法</strong>（虚假宣传）、<strong>个人信息保护法</strong>（人脸等敏感信息）、<strong>深度合成规定</strong>（AI 生成内容须显著标识）、<strong>生成式 AI 管理办法</strong>（服务提供者须真实、透明、可追责）。</li>
+          <li><strong>责任归属</strong>：AI 本身不是法律主体，责任归于<strong>服务提供者、开发者与使用者</strong>——"算法责任"要求平台对 AI 输出负责，并承担标识、审核、纠错义务。</li>
+          <li><strong>法哲学追问</strong>：AI 的"意思表示"能否构成欺诈？法律上，欺诈须有"故意"与"意思表示"——AI 无主观故意，但<strong>使用 AI 欺诈的人有故意</strong>；同时"透明度原则"要求 AI 生成内容必须可识别，否则即构成对消费者知情权的侵害。</li>
+        </ul>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">AI 原创性判断公式（中国标准）</span>
+          AI 作品受保护 ⟺ 人类有"独创性智力投入"（提示词设计 + 参数调整 + 结果筛选）
+          <span class="f-note">北京互联网法院 2023 年确立：有人的创作贡献则受保护，纯 AI 自动生成则不受保护。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">深度合成标识义务</span>
+          AI 生成内容 = 显著标识（不得以假乱真）
+          <span class="f-note">《互联网信息服务深度合成管理规定》：AI 生成或合成的信息须以显著方式标识，保障公众知情权。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">AI 欺诈责任归属</span>
+          责任 = 服务提供者 + 开发者 + 使用者（AI 非法律主体）
+          <span class="f-note">AI 无主观故意，但"用 AI 欺诈的人有故意"；平台承担标识、审核、纠错义务，消费者可依民法典与消保法维权。</span>
+        </div>
+
+        <h3>对照表：AI 原创 vs 人类原创 / AI 欺诈类型与法律工具</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>人类原创</th><th>AI 生成（有人类投入）</th><th>AI 生成（纯自动）</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>创作主体</strong></td><td>自然人</td><td>人 + AI 工具</td><td>AI（无人类创作贡献）</td></tr>
+              <tr><td><strong>是否受保护</strong></td><td>是</td><td>是（中国司法实践）</td><td>通常否</td></tr>
+              <tr><td><strong>权利归属</strong></td><td>作者</td><td>有智力投入的人</td><td>无（公有领域）</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>AI 欺诈类型</th><th>典型场景</th><th>主要法律工具</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>换脸诈骗</strong></td><td>冒充亲友/领导视频通话</td><td>刑法（诈骗罪）· 民法典 · 个保法</td></tr>
+              <tr><td><strong>虚假评价</strong></td><td>AI 批量生成好评/差评</td><td>反不正当竞争法 · 消保法</td></tr>
+              <tr><td><strong>虚假广告</strong></td><td>AI 夸大宣传、深度伪造</td><td>广告法 · 消保法 · 深度合成规定</td></tr>
+              <tr><td><strong>身份隐瞒</strong></td><td>AI 客服不表明 AI 身份</td><td>生成式 AI 管理办法 · 消保法</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">霍姆斯 · 1841–1935</div>
+            <blockquote>思想市场：最好的检验真理的力量，是思想在竞争中被接受。<cite>——《 Abrams 异议意见》（意译）</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">波斯纳 · 1939–</div>
+            <blockquote>法律规则应当追求财富最大化。<cite>——《法律的经济分析》（意译）</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">德沃金 · 1931–2013</div>
+            <blockquote>认真对待权利，就是认真对待每一个人的尊严。<cite>——《认真对待权利》（意译）</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">前沿法哲学的遗产</div>
+            <ul>
+              <li>"人类创作贡献"标准确立 AI 原创的边界</li>
+              <li>透明度原则（显著标识）成为 AI 治理基石</li>
+              <li>算法责任：AI 非主体，责任归于人</li>
+              <li>深度合成规定与生成式 AI 管理办法落地</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第七章 文化安全与法律治理 -->
+      <section class="sec" id="culture">
+        <h2><span class="chapno">第七章</span>文化安全与法律治理</h2>
+        <p><strong>定义</strong>：文化安全是国家安全的重要组成部分。在数字时代，文化产品与网络内容跨越国界传播，外部势力可能借文化、娱乐、性别议题等渠道进行意识形态渗透、制造社会对立，从而影响一个国家的文化认同与社会稳定。法哲学在此要回答：<strong>国家如何以法律保障文化安全？如何在保护表达自由的同时，治理恶意制造对立、破坏社会团结的内容？</strong>这不是"限制自由"的问题，而是"自由与秩序的边界在哪里"的经典法哲学问题。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>文化安全概念的提出</strong>：中国在总体国家安全观中把文化安全列为国家安全的重要领域——文化认同是国家认同的基础，意识形态安全关乎国家长治久安。</p>
+          <p><strong>网络内容治理的立法</strong>：《网络安全法》（2017）、《数据安全法》（2021）、《个人信息保护法》（2021）、《网络信息内容生态治理规定》（2020）、《未成年人保护法》网络保护专章（2021）、《反外国制裁法》（2021）相继出台，构建起网络内容治理与反外部干预的法律框架。</p>
+          <p><strong>性别议题与群体对立的风险</strong>：在网络上，性别议题若被恶意操纵——以极端化叙事煽动性别对立、制造群体撕裂——会破坏社会团结与公序良俗。《网络信息内容生态治理规定》明确禁止煽动民族仇恨、民族歧视、性别歧视以及破坏社会稳定等内容。</p>
+          <p><strong>反外部干预的法律工具</strong>：《反外国制裁法》授权对干涉中国内政的外部势力采取反制措施；数据出境安全评估、内容审核制度保障文化主权。</p>
+        </div>
+
+        <h3>专题一 · 文化安全的法律基础</h3>
+        <ul>
+          <li><strong>宪法基础</strong>：中国《宪法》序言与总纲确立社会主义文化建设的根本方向，第 24 条要求加强社会主义精神文明建设，培育和践行社会主义核心价值观。</li>
+          <li><strong>总体国家安全观</strong>：文化安全与政治安全、经济安全、社会安全等共同构成国家安全体系——文化渗透被视为对国家安全的威胁。</li>
+          <li><strong>文化主权</strong>：国家有权自主决定本国文化政策、保护文化多样性、抵御外部文化侵蚀——这是国际法上文化主权原则的体现。</li>
+        </ul>
+
+        <h3>专题二 · 治理网络性别对立与群体撕裂</h3>
+        <ul>
+          <li><strong>内容治理的"负面清单"</strong>：《网络信息内容生态治理规定》禁止制作、复制、发布"煽动民族仇恨、民族歧视""破坏国家宗教政策""宣扬性别歧视""散布谣言，扰乱社会秩序"等内容——恶意制造性别对立、煽动群体撕裂属于治理范围。</li>
+          <li><strong>平台责任</strong>：网络平台须履行信息内容管理主体责任，建立审核、预警、处置机制，对煽动对立的账号与内容采取限流、删除、封禁等措施。</li>
+          <li><strong>算法治理</strong>：《互联网信息服务算法推荐管理规定》要求算法推荐不得利用算法实施"流量造假""操纵信息呈现"等行为——防止算法放大对立、制造信息茧房。</li>
+          <li><strong>未成年人保护</strong>：《未成年人保护法》网络保护专章要求防治未成年人沉迷网络、保护其免受不良信息侵害。</li>
+        </ul>
+
+        <h3>专题三 · 反外部文化渗透的法律工具</h3>
+        <ul>
+          <li><strong>反外国制裁法</strong>：对直接或间接参与制定、实施干涉中国内政措施的外部势力，国家有权采取反制措施。</li>
+          <li><strong>数据与内容主权</strong>：数据出境安全评估、关键信息基础设施保护、网络内容属地管理，保障国家在网络空间的主权。</li>
+          <li><strong>对外传播的正当性</strong>：法律治理的对象是"恶意渗透与对立操纵"，而非正常的文化交流——在保障文化安全的同时，中国坚持对外开放、文明互鉴。</li>
+        </ul>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">总体国家安全观</span>
+          文化安全 = 国家安全的重要组成部分
+          <span class="f-note">文化认同是国家认同的基础，意识形态安全关乎长治久安——文化安全与政治、经济、社会安全相互支撑。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">网络内容"负面清单"</span>
+          禁止：煽动民族仇恨/歧视 · 性别歧视 · 破坏社会稳定 · 散布谣言
+          <span class="f-note">《网络信息内容生态治理规定》以负面清单划定内容红线，恶意制造性别对立、群体撕裂属于治理范围。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">公序良俗原则</span>
+          民事活动不得违背公序良俗（民法典第 8 条）
+          <span class="f-note">公序良俗是民事法律的一般原则——以极端化叙事煽动对立、破坏社会团结的行为，可依此原则否定其效力。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">反外国制裁法</span>
+          对干涉中国内政的外部势力 → 采取反制措施
+          <span class="f-note">2021 年施行，为应对外部干预、维护国家主权与安全提供法律工具。</span>
+        </div>
+
+        <h3>对照表：表达自由 vs 文化安全（不同法域的平衡）</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>表达自由的保护</th><th>文化安全的治理</th><th>平衡原则</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>宪法依据</strong></td><td>宪法第 35 条（言论自由）</td><td>宪法序言与第 24 条（精神文明建设）</td><td>权利与秩序并重</td></tr>
+              <tr><td><strong>治理对象</strong></td><td>正常表达与交流</td><td>恶意对立 · 渗透 · 谣言</td><td>只治"恶意"不伤"正常"</td></tr>
+              <tr><td><strong>平台责任</strong></td><td>不得随意删帖</td><td>内容审核与预警处置</td><td>程序正当 · 比例原则</td></tr>
+              <tr><td><strong>国际视角</strong></td><td>美国第一修正案</td><td>欧盟 DSA · 中国网络治理</td><td>各国依国情平衡</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">孟德斯鸠 · 1689–1755</div>
+            <blockquote>自由是做法律所许可的一切事情的权利。<cite>——《论法的精神》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">亚里士多德 · 前 384–前 322</div>
+            <blockquote>法律是秩序，良好的法律就是良好的秩序。<cite>——《政治学》（意译）</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">德沃金 · 1931–2013</div>
+            <blockquote>自由与秩序并非对立，而是同一枚硬币的两面。<cite>——《认真对待权利》（意译）</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">文化安全治理的遗产</div>
+            <ul>
+              <li>文化安全纳入总体国家安全观</li>
+              <li>网络内容"负面清单"划定治理红线</li>
+              <li>平台责任与算法治理遏制对立放大</li>
+              <li>反外国制裁法提供反干预工具</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第八章 总结 -->
+      <section class="sec" id="summary">
+        <h2><span class="chapno">第八章</span>总结：法、正义与文明</h2>
+        <p>回望这条谱系：法哲学从"为自然"走向"为神"、"为权利"、"为命令"、"为规则"、"为正义与权利"，最终"为数字时代"——每一次转向，都是人类文明对"法凭什么约束我"的一次重新回答。法哲学史之所以能映照文明的轮廓，是因为<strong>法总是最先说出一个时代"权力如何被约束、弱者如何被保护"</strong>：希腊的正义对应城邦的公民理想，近代的契约与分权对应民族国家的诞生，实证主义对应现代国家的治理技术，罗尔斯与德沃金对应福利国家与权利时代，而 AI 原创、AI 欺诈与文化安全，则对应数字时代人类对"创作、责任与认同"的重新确认。读懂法哲学史，就读懂了文明的秩序感。</p>
+
+        <figure class="diagram">
+          <figcaption>图 6 · 法哲学与文明：七次转向</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["法之正当性<br>七次转向"] --> A["为自然<br>古典 · 正确理性"]
+  A --> B["为神<br>中世纪 · 永恒法"]
+  B --> C["为权利<br>近代 · 契约 · 分权"]
+  C --> D["为命令<br>实证主义 · 主权者命令"]
+  D --> E["为规则<br>哈特 · 承认规则"]
+  E --> F["为正义与权利<br>罗尔斯 · 德沃金"]
+  F --> G["为数字时代<br>AI 原创 · AI 欺诈 · 文化安全"]
+  classDef rootNode fill:#4A4E69,color:#fff,stroke:#4A4E69;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <div class="callout">
+          <span class="callout-title">法与真、善、美</span>
+          法哲学提供一种与科学、艺术、伦理互补的"真理"：科学之真回答"世界如何运作"，艺术之美回答"世界如何被感受"，伦理之善回答"我们应当如何生活"，而法哲学回答"我们应当如何被规则约束"。法不是善的替代，而是善的制度化——伦理告诉我们"应当"，法律把"应当"变成可执行的规则与权利。面对 AI 原创、AI 欺诈与文化安全，法哲学尤其重要：技术告诉我们"能够做什么"，伦理追问"应当做什么"，而法律回答"必须做什么、禁止做什么"——这正是《法哲学思想谱系》与《科学思想谱系》《艺术与美学思想谱系》《伦理与道德思想谱系》的对话：真、善、美、法，共同构成人安顿自己与社会的完整坐标。
+        </div>
+
+        <h3>常用法哲学法则速查</h3>
+        <p>把本辑出现过的法则集中起来，按领域归类：</p>
+
+        <h3>古典与近代</h3>
+        <div class="formula">
+          <span class="f-name">法治优于人治</span>
+          良法 + 普遍服从
+        </div>
+        <div class="formula">
+          <span class="f-name">自然法</span>
+          真正的法 = 正确理性
+        </div>
+        <div class="formula">
+          <span class="f-name">三权分立</span>
+          立法 + 行政 + 司法 制衡
+        </div>
+        <div class="formula">
+          <span class="f-name">罪刑法定</span>
+          法无明文规定不为罪
+        </div>
+
+        <h3>实证主义与当代</h3>
+        <div class="formula">
+          <span class="f-name">命令说</span>
+          法律 = 主权者的命令
+        </div>
+        <div class="formula">
+          <span class="f-name">承认规则</span>
+          第一性规则 + 第二性规则
+        </div>
+        <div class="formula">
+          <span class="f-name">拉德布鲁赫公式</span>
+          极端不公正的法律 = 不是法律
+        </div>
+        <div class="formula">
+          <span class="f-name">正义两原则</span>
+          平等自由 + 差别原则
+        </div>
+
+        <h3>前沿法哲学</h3>
+        <div class="formula">
+          <span class="f-name">AI 原创标准</span>
+          人类独创性智力投入 → 受保护
+        </div>
+        <div class="formula">
+          <span class="f-name">深度合成标识</span>
+          AI 生成内容须显著标识
+        </div>
+        <div class="formula">
+          <span class="f-name">算法责任</span>
+          AI 非主体 · 责任归于人
+        </div>
+        <div class="formula">
+          <span class="f-name">文化安全</span>
+          总体国家安全观 · 负面清单 · 公序良俗
+        </div>
+
+        <h3>核心对照表：法之正义 vs 真之科学 vs 美之艺术 vs 善之伦理</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>法之正义</th><th>科学之真</th><th>艺术之美</th><th>伦理之善</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>回答的问题</strong></td><td>我们应如何被规则约束</td><td>世界如何运作</td><td>世界如何被感受</td><td>我们应当如何生活</td></tr>
+              <tr><td><strong>核心能力</strong></td><td>定分止争 · 保障权利</td><td>观察 · 实验 · 推理</td><td>直觉 · 形式 · 想象</td><td>判断对错 · 承担责任</td></tr>
+              <tr><td><strong>检验方式</strong></td><td>程序 · 效力 · 正义</td><td>可检验 · 可证伪</td><td>共鸣 · 感动</td><td>良知 · 共识 · 后果</td></tr>
+              <tr><td><strong>典型问题</strong></td><td>AI 作品是否受保护？</td><td>光速是多少？</td><td>梵高的星空为何动人？</td><td>克隆人是否应当被允许？</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">法哲学精神三句话</span>
+          第一，<strong>法不服从任何个人</strong>——它由程序、规则与正义共同定义，约束权力也保护弱者；第二，<strong>法是文明的底线</strong>——一个时代如何对待弱者、异见者与未来者，就如何定义自己的秩序；第三，<strong>法是自由的边界</strong>——面对 AI 原创、AI 欺诈与文化安全，技术告诉我们"能够"，伦理追问"应当"，而法律划定"必须与禁止"。法不是对自由的否定，而是让自由成为可能的秩序——这正是它超越时代、通向正义的路径。
+        </div>
+      </section>
+    </main>
+
+    
+      <section class="sec">
+        <h2>关联辑目</h2>
+        <div class="explain">
+          <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+          <ul>
+          <li><a href="../西方哲学思想谱系/西方哲学思想谱系.html">西方哲学思想谱系</a></li>
+          <li><a href="../伦理与道德思想谱系/伦理与道德思想谱系.html">伦理学思想谱系</a></li>
+          <li><a href="../政治学通论/政治学通论.html">政治学通论</a></li>
+          <li><a href="../自由主义谱系/自由主义谱系.html">自由主义谱系</a></li>
+          <li><a href="../历史思想谱系/历史思想谱系.html">历史思想谱系</a></li>
+          <li><a href="../马克思主义谱系/马克思主义谱系.html">马克思主义谱系</a></li>
+          </ul>
+        </div>
+      </section>
+<footer>
+      法哲学思想谱系 · 思想图谱系列第十一辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-05
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'PingFang SC, Microsoft YaHei, Helvetica, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>

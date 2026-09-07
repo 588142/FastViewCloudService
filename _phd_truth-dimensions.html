@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>真理的多维图景 · 博士水平进阶模块</title>
+
+  <style>
+    @font-face {
+      font-family: 'Lora';
+      src: url('./truth-dimensions/_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./truth-dimensions/_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./truth-dimensions/_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./truth-dimensions/_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./truth-dimensions/_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./truth-dimensions/_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+  </style>
+
+  <style>
+    :root {
+      --bg: #FBFAF7;
+      --bg2: #F2F0EA;
+      --ink: #23211C;
+      --muted: #6E6A60;
+      --rule: #E3E0D6;
+      --accent: #4B3FE3;
+      --accent2: #A85B2A;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+      padding: 2rem 1.5rem;
+    }
+
+    .container { max-width: var(--max); margin: 0 auto; }
+
+    .masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    .masthead h1 { font-family: var(--font-head); font-size: 2.2rem; font-weight: 700; line-height: 1.25; }
+    .masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1rem; color: var(--muted); margin-top: 0.5rem; }
+    .masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    section.sec { margin-bottom: 3.5rem; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    h4 { font-family: var(--font-head); font-size: 1rem; font-weight: 700; margin: 1.2rem 0 0.4rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    ol { margin: 0 0 1rem 1.5rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .formula { margin: 1rem 0; background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; font-size: 0.92rem; font-family: var(--font-mono); line-height: 1.65; }
+    .formula strong { color: var(--accent); }
+
+    .theorem { margin: 1rem 0; background: var(--bg2); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; font-size: 0.92rem; }
+    .theorem .theorem-title { font-weight: 700; color: var(--accent); display: block; margin-bottom: 0.3rem; font-family: var(--font-head); font-size: 0.95rem; }
+
+    .law { margin: 1rem 0; background: var(--bg2); border-left: 4px solid var(--accent2); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; font-size: 0.92rem; }
+    .law .law-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-family: var(--font-head); font-size: 0.95rem; }
+
+    .proof { margin: 0.6rem 0 1rem 1.5rem; padding: 0.7rem 0.9rem; background: var(--bg); border: 1px solid var(--rule); border-radius: 6px; font-size: 0.88rem; }
+    .proof .proof-title { font-weight: 700; font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); margin-bottom: 0.3rem; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    .three-wrap { margin: 1.4rem 0; background: #0a0a1a; border: 1px solid var(--rule); border-radius: 10px; padding: 0; overflow: hidden; position: relative; }
+    .three-wrap canvas { display: block; width: 100%; height: 480px; }
+    .three-caption { font-size: 0.82rem; color: var(--muted); text-align: center; margin-top: 0.6rem; font-style: italic; }
+
+    .biblio-list { list-style: none; padding: 0; margin: 0.6rem 0 1rem 0; }
+    .biblio-list li { font-size: 0.88rem; padding: 0.35rem 0; border-bottom: 1px solid var(--rule); margin-bottom: 0; }
+    .biblio-list li:last-child { border-bottom: none; }
+
+    .nav-bar { margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--rule); }
+    .nav-bar a { color: var(--accent); text-decoration: none; font-size: 0.85rem; margin-right: 1rem; }
+    .nav-bar a:hover { text-decoration: underline; }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 600px) {
+      .three-wrap canvas { height: 320px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <header class="masthead">
+    <div class="kicker">博士水平进阶模块</div>
+    <h1>真理的多维图景 · 博士水平进阶</h1>
+    <p class="subtitle">从硕士研究到原创性贡献——严格定义、核心定理、基本定律、形式化体系与研究前沿</p>
+    <p class="meta">本文件为独立片段，嵌入于硕士模块之后 · 2026-09-07</p>
+  </header>
+
+  <nav class="nav-bar">
+    <a href="#phd-prologue">博导 · 博士水平进阶导览</a>
+    <a href="#phd-d1">D1 · 核心公理与定义</a>
+    <a href="#phd-d2">D2 · 基本定律与原理</a>
+    <a href="#phd-d3">D3 · 核心定理</a>
+    <a href="#phd-d4">D4 · 定理证明详解</a>
+    <a href="#phd-d5">D5 · 形式化体系</a>
+    <a href="#phd-d6">D6 · 前沿定理与未解问题</a>
+    <a href="#phd-d7">D7 · 研究前沿</a>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================ -->
+    <!-- 博导 · 博士水平进阶导览 -->
+    <!-- ============================================================ -->
+    <section class="sec" id="phd-prologue">
+      <h2><span class="chapno">博导</span>博士水平进阶导览</h2>
+      <div class="callout">
+        <span class="callout-title">博士水平要求</span>
+        <p>从硕士到博士的跃迁：独立研究能力、原创性贡献、领域前沿的掌握。博士水平的核心标志是：能够识别真理理论中尚未解决的核心问题，提出自己的研究方案，并以严格的形式化语言进行论证。本模块的七个部分（D1–D7）按"定义基础 → 定律体系 → 定理系统 → 证明深度 → 形式化体系 → 前沿问题 → 研究方向"的逻辑展开。</p>
+      </div>
+
+      <p>博士阶段与硕士阶段的核心区别在于：硕士阶段要求<strong>批判性掌握</strong>现有理论——能够分析论证结构、识别内在张力、进行文献综述；博士阶段则要求<strong>原创性推进</strong>——在现有理论的边界之外做出贡献，无论这种贡献是新的定理证明、新的理论框架、还是对经典问题的重新表述。</p>
+
+      <p>真理理论在博士层面的核心问题可以概括为以下三个：</p>
+      <ul>
+        <li><strong>本体论问题</strong>："真"是一种属性吗？如果是，它是何种属性——是自然属性还是逻辑属性？紧缩论vs丰盈论的争论核心在于此。</li>
+        <li><strong>语义学问题</strong>：如何在包含自身真谓词的语言中定义一个一致的真理概念？Kripke固定点、Gupta修正理论、Field悖论解决方案各自给出了不同的回答。</li>
+        <li><strong>认识论问题</strong>：真理与证成（justification）的关系是什么？一个命题为真是否意味着它在理想条件下可证成？Putnam的内在实在论对此给出了肯定回答，但面临严重挑战。</li>
+      </ul>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>维度</th><th>硕士水平</th><th>博士水平</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>定义能力</strong></td><td>能理解精确的术语定义</td><td>能构造新定义并证明其充分性</td></tr>
+            <tr><td><strong>定理掌握</strong></td><td>能理解定理的结论和直觉</td><td>能独立完成定理证明并评价其假设</td></tr>
+            <tr><td><strong>形式化能力</strong></td><td>能使用形式语言表达理论</td><td>能构建形式系统并证明元定理</td></tr>
+            <tr><td><strong>前沿意识</strong></td><td>了解当前前沿争议</td><td>能识别领域空白并提出研究方案</td></tr>
+            <tr><td><strong>原创性</strong></td><td>能进行批判性分析</td><td>能做出理论贡献（新定理/新框架/新反驳）</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- D1 · 核心公理与定义 -->
+    <!-- ============================================================ -->
+    <section class="sec" id="phd-d1">
+      <h2><span class="chapno">D1</span>核心公理与定义</h2>
+      <div class="callout">
+        <span class="callout-title">D1 导引</span>
+        <p>真理理论的严格形式化始于对基本概念的精确界定。以下15条定义构成了真理的数学理论的公理基础。每条定义均标注原始出处，读者应将其视为"可操作的定义"而非"日常用语的精确化"。</p>
+      </div>
+
+      <div class="formula">
+        <strong>定义 1.1（Tarski 真值定义，1933）</strong><br>
+        设 L 为一阶语言，<em>M</em> = ⟨<em>D</em>, <em>I</em>⟩ 为 L 的模型（<em>D</em> 为非空论域，<em>I</em> 为解释函数）。对任意公式 φ 及赋值 s: Var → <em>D</em>，满足关系 ⊨ 递归定义为：<br>
+        <em>M</em> ⊨ P(t₁,…,tₙ)[s] ⇔ ⟨<em>I</em>(t₁),…,<em>I</em>(tₙ)⟩ ∈ <em>I</em>(P)；<br>
+        <em>M</em> ⊨ ¬ψ[s] ⇔ <em>M</em> ⊭ ψ[s]；<br>
+        <em>M</em> ⊨ ψ∧χ[s] ⇔ <em>M</em> ⊨ ψ[s] 且 <em>M</em> ⊨ χ[s]；<br>
+        <em>M</em> ⊨ ∀xψ[s] ⇔ 对所有 <em>d</em>∈<em>D</em>，<em>M</em> ⊨ ψ[s(<em>x</em>/<em>d</em>)]。<br>
+        语句 φ 在 <em>M</em> 中为真（记作 <em>M</em> ⊨ φ）当且仅当 <em>M</em> ⊨ φ[∅]（在空赋值下成立）。
+      </div>
+
+      <div class="formula">
+        <strong>定义 1.2（Kripke 固定点定义，1975）</strong><br>
+        设 L 为带真值谓词 Tr 的一阶语言，⟨<em>D</em>, <em>I</em>⟩ 为模型，其中 <em>I</em>(Tr) 初始为空。定义单调算子 Φ: <em>P</em>(<em>D</em>) → <em>P</em>(<em>D</em>) 如下：<br>
+        Φ(S) = { ⌜φ⌝ : φ 在扩展了 Tr 解释为 S 的模型中为真 }。<br>
+        S 是 Φ 的固定点当且仅当 Φ(S) = S。Kripke 证明：存在最小固定点 S₀ = ⋃_{α ∈ Ord} Φ^α(∅) 和最大固定点。
+      </div>
+
+      <div class="formula">
+        <strong>定义 1.3（真理的紧缩论定义，Horwich 1998）</strong><br>
+        "真"的全部意义由等值图式（Equivalence Schema）穷尽：<br>
+        (ES)  ⟨p⟩ 是真的 ⇔ p。<br>
+        其中 ⟨p⟩ 是命题 p 的名称。极小主义（Minimalism）主张：没有比 (ES) 更基础的真理理论。真谓词只是一个"去引号装置"（disquotational device），不具有实质性的形而上学内涵。
+      </div>
+
+      <div class="formula">
+        <strong>定义 1.4（模型论语义真值）</strong><br>
+        设 T 为一阶理论（语句集合），<em>M</em> = ⟨<em>D</em>, <em>I</em>⟩ 为 L 的模型。<em>M</em> ⊧ T 当且仅当对每个 φ ∈ T，<em>M</em> ⊨ φ。称 T 有模型当且仅当存在 <em>M</em> 使得 <em>M</em> ⊧ T。T 是<strong>语义完备</strong>的当且仅当对每个语句 φ，要么 T ⊨ φ 要么 T ⊨ ¬φ（即 T 的所有模型在 φ 上一致）。语义蕴涵：T ⊨ φ 当且仅当每个满足 T 的模型也满足 φ。
+      </div>
+
+      <div class="formula">
+        <strong>定义 1.5（形式语言的语法完备性）</strong><br>
+        形式系统 S 是<strong>语法完备</strong>的（syntactically complete）当且仅当对每个语句 φ，要么 S ⊢ φ 要么 S ⊢ ¬φ。S 是<strong>一致</strong>的（consistent）当且仅当不存在 φ 使得 S ⊢ φ 且 S ⊢ ¬φ。哥德尔第一不完备定理断言：任何包含初等算术的一致形式系统都不是语法完备的。
+      </div>
+
+      <div class="formula">
+        <strong>定义 1.6（Tarski 不可定义定理，1933）</strong><br>
+        设 L 为一阶语言，L 表达初等算术。令 Tr 为 L 中的一元谓词。Tr 是 L 的<strong>真值谓词</strong>当且仅当对每个 L-语句 φ：<br>
+        Tr(⌜φ⌝) ⇔ φ。<br>
+        Tarski 定理：如果 L 是一致且包含初等算术，则 L 中不存在真值谓词。<br>
+        Tarski 不可定义定理是哥德尔不完备定理的直接推论，它揭示了"真"相对于"可证"的更深刻的不可能性。
+      </div>
+
+      <div class="formula">
+        <strong>定义 1.7（哥德尔第一不完备定理，形式版本，1931）</strong><br>
+        设 PA 为皮亚诺算术的形式系统。如果 PA 是一致的，则存在一个算术语句 G（称为"哥德尔语句"）使得：<br>
+        (i) PA ⊬ G（G 在 PA 中不可证）；<br>
+        (ii) PA ⊬ ¬G（G 的否定在 PA 中不可证）；<br>
+        (iii) 在标准模型 ℕ 中，ℕ ⊨ G（G 在标准模型中为真）。<br>
+        因此，真值（在标准模型中为真）严格大于可证性。
+      </div>
+
+      <div class="formula">
+        <strong>定义 1.8（真理的模态定义）</strong><br>
+        在模态逻辑框架中，令 □ 为必然性算子。真理的模态定义可表述为：<br>
+        命题 p 是<strong>必然真理</strong>当且仅当 □p；<br>
+        命题 p 是<strong>可能真理</strong>当且仅当 ◇p；<br>
+        命题 p 是<strong>实际真理</strong>当且仅当 p 在现实世界 w₀ 中成立。<br>
+        在可能世界语义学中：<em>M</em>, w ⊨ φ 当且仅当 φ 在可能世界 w 中为真。□φ 在 w 中为真当且仅当对所有 w' 可达的 w，<em>M</em>, w' ⊨ φ。
+      </div>
+
+      <div class="formula">
+        <strong>定义 1.9（多值逻辑真值）</strong><br>
+        设 V 为真值集合。经典二值逻辑：V₂ = {T, F}。Lukasiewicz 三值逻辑：V₃ = {T, U, F}，其中 U 表示"不确定"。Lukasiewicz 无限值逻辑：V∞ = [0, 1]，其中 1 表示完全真，0 表示完全假，中间值表示真值程度。在模糊逻辑中（Zadeh 1965），真值函数操作如下：v(¬φ) = 1 − v(φ)；v(φ∧ψ) = min(v(φ), v(ψ))；v(φ∨ψ) = max(v(φ), v(ψ))。
+      </div>
+
+      <div class="formula">
+        <strong>定义 1.10（真值载体，Truth-Bearer）</strong><br>
+        真值载体是能够被赋予真值的实体。关于真值载体的本质，哲学中存在三种主要立场：<br>
+        (i) <strong>命题论</strong>（Propositionalism）：真值载体是命题——抽象、非语言、非心理的实体（Frege 1918, Moore 1899）。<br>
+        (ii) <strong>语句论</strong>（Sententialism）：真值载体是特定语言中的语句（Tarski 1933, Quine 1970）。<br>
+        (iii) <strong>信念论</strong>（Doxasticism）：真值载体是信念状态（Ramsey 1927, Dummett 1959）。<br>
+        每条真理理论都预设了某种真值载体理论，而这一选择深刻影响了理论的形式化方向。
+      </div>
+
+      <div class="formula">
+        <strong>定义 1.11（真理的对应论定义）</strong><br>
+        （对应论的形式化版本）设 B 为真值载体的集合，F 为事实（facts）的集合。对应关系 Corr: B × F → {0, 1} 定义如下：<br>
+        Corr(b, f) = 1 当且仅当 b 正确地描述了 f。<br>
+        命题 p 为真当且仅当存在事实 f 使得 Corr(p, f) = 1。<br>
+        这一定义面临的核心困难是：需要给出"事实"的本体论刻画，以及"描述"关系的非循环定义。Wittgenstein 的《逻辑哲学论》（Tractatus, 1921）给出了图像论（picture theory）的版本，但该理论在逻辑实证主义内部即遭到严重质疑。
+      </div>
+
+      <div class="formula">
+        <strong>定义 1.12（真值条件语义学，Davidson 1967）</strong><br>
+        一个自然语言 L 的意义理论是一个递归的公理系统，从中可以推导出所有形如以下语句的定理：<br>
+        (T) s 在 L 中为真当且仅当 p。<br>
+        其中 s 是 L 中语句的结构描述（structural description），p 是元语言中对 s 的真值条件的陈述。Davidson 纲领的核心主张是：意义理论不需要比真理定义更多——知道一个语句的意义就是知道它的真值条件。这一纲领将意义问题还原为真理问题，是当代语义学中最具影响力的研究纲领之一。
+      </div>
+
+      <div class="formula">
+        <strong>定义 1.13（可能世界语义学，Kripke 1963）</strong><br>
+        一个模态模型 <strong>M</strong> = ⟨<em>W</em>, <em>R</em>, <em>V</em>⟩ 由以下要素组成：<br>
+        <em>W</em> 为可能世界的非空集合；<em>R</em> ⊆ <em>W</em> × <em>W</em> 为可达关系（accessibility relation）；<em>V</em>: Atom × <em>W</em> → {0, 1} 为赋值函数。<br>
+        在可能世界 w 中，语句 φ 为真（记作 <em>M</em>, w ⊨ φ）递归定义如下：<br>
+        <em>M</em>, w ⊨ □φ 当且仅当对所有 w' 满足 wRw'，<em>M</em>, w' ⊨ φ；<br>
+        <em>M</em>, w ⊨ ◇φ 当且仅当存在 w' 满足 wRw'，<em>M</em>, w' ⊨ φ。<br>
+        逻辑真理（logical truth）在可能世界语义学中定义为：在所有可能世界中都为真的语句。
+      </div>
+
+      <div class="formula">
+        <strong>定义 1.14（真理的冗余论定义，Ramsey 1927）</strong><br>
+        弗兰克·拉姆齐（Frank Ramsey）在1927年的论文《事实与命题》（Facts and Propositions）中提出："p是真的"与"p"在逻辑上等价，因此"是真的"这一谓词是冗余的。具体地说：<br>
+        "p是真的" ⇔ p<br>
+        "p是假的" ⇔ ¬p<br>
+        因此，"真"和"假"并非实质性的属性，而只是语言上的"强调"或"肯定"的工具。这一观点后来被 Horwich（1998）发展为极小主义，被 Quine（1970）发展为"去引号论"（Disquotationalism）。冗余论面临的核心挑战是：它能否解释"真"在间接肯定（如"一切数学定理都是真的"）中的使用——这涉及对无穷多个命题的量化，而冗余论的去引号模式无法直接处理。
+      </div>
+
+      <div class="formula">
+        <strong>定义 1.15（命题的真值函数定义）</strong><br>
+        在经典命题逻辑中，真值函数（truth function）是定义在真值上的函数。一个逻辑联结词是<strong>真值函数的</strong>当且仅当它所生成的复合语句的真值完全由其组成部分的真值决定。真值函数定义如下：<br>
+        v(¬p) = 1 − v(p)；<br>
+        v(p∧q) = min(v(p), v(q))；<br>
+        v(p∨q) = max(v(p), v(q))；<br>
+        v(p→q) = max(1 − v(p), v(q))；<br>
+        v(p↔q) = 1 当且仅当 v(p) = v(q)。<br>
+        一个命题 p 是<strong>重言式</strong>（tautology）当且仅当对所有真值赋值 v，v(p) = 1。p 是<strong>矛盾式</strong>当且仅当对所有 v，v(p) = 0。p 是<strong>可满足式</strong>当且仅当存在 v 使得 v(p) = 1。真值函数定义是模型论语义的基础，也是塔斯基真理定义在命题逻辑层面的特例。
+      </div>
+
+      <div class="callout">
+        <span class="callout-title">D1 关键文献</span>
+        <p>Tarski, A. (1933). "The Concept of Truth in Formalized Languages." — Kripke, S. (1975). "Outline of a Theory of Truth." — Horwich, P. (1998). <em>Truth</em>, 2nd ed. — Davidson, D. (1967). "Truth and Meaning." — Ramsey, F. (1927). "Facts and Propositions." — Kripke, S. (1963). "Semantical Considerations on Modal Logic."</p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- D2 · 基本定律与原理 -->
+    <!-- ============================================================ -->
+    <section class="sec" id="phd-d2">
+      <h2><span class="chapno">D2</span>基本定律与原理</h2>
+      <div class="callout">
+        <span class="callout-title">D2 导引</span>
+        <p>以下定律和原理构成了真理理论的形式化基础。它们不是经验观察的概括，而是逻辑和数学的必然真理——在任何可能世界中都成立。每条定律给出严格表述和哲学意义。</p>
+      </div>
+
+      <div class="law">
+        <span class="law-title">定律 2.1（排中律，Law of Excluded Middle, LEM）</span>
+        <p>对于任意命题 p，要么 p 为真，要么 ¬p 为真。形式化：⊨ p ∨ ¬p。<br>
+        <strong>哲学意义：</strong>排中律是经典逻辑的基石之一。它断言"真"是二值的——不存在中间状态。直觉主义逻辑（Brouwer, Heyting）拒绝排中律在无限域中的无限制使用，认为"p 或 ¬p"为真要求我们实际上构造出了 p 或 ¬p 的证明。多值逻辑（Lukasiewicz）则通过引入第三个真值来局部放弃排中律。Kripke 的固定点理论在某种意义上也放弃了排中律——悖论性语句既不是真也不是假，而是"未定义"。</p>
+      </div>
+
+      <div class="law">
+        <span class="law-title">定律 2.2（矛盾律，Law of Non-Contradiction, LNC）</span>
+        <p>对于任意命题 p，p 和 ¬p 不能同时为真。形式化：⊨ ¬(p ∧ ¬p)。<br>
+        <strong>哲学意义：</strong>矛盾律是最基本的逻辑原则——任何包含矛盾的理论都是不一致的，因而不能作为真理的载体。亚里士多德在《形而上学》Γ卷中将矛盾律称为"最确定的原则"。然而，次协调逻辑（paraconsistent logic, Priest 1979）允许某些矛盾为真而不导致"爆炸"（从矛盾推出一切）。Priest 认为说谎者悖论就是一个"真矛盾"（true contradiction）——这挑战了矛盾律作为真理理论的绝对基础的地位。</p>
+      </div>
+
+      <div class="law">
+        <span class="law-title">定律 2.3（同一律，Law of Identity）</span>
+        <p>每个事物与其自身相同。形式化：∀x (x = x)。<br>
+        <strong>哲学意义：</strong>同一律是最基本的本体论原则。在真理理论中，同一律意味着：一个命题的真值不随时间、语境或观察者的变化而变化——如果 p 为真，则 p 为真（p → (p 为真)）。这一原则在"真理的稳定性"概念中扮演核心角色。Kripke 的固定点构造中，同一律的真值由模型的恒等关系保证。</p>
+      </div>
+
+      <div class="law">
+        <span class="law-title">定律 2.4（哥德尔第一不完备定理，1931）</span>
+        <p>任何包含初等算术的一致形式系统 S 都是不完备的：存在一个 S-语句 G 使得 S ⊬ G 且 S ⊬ ¬G。更精确地说：如果 S 是 ω-一致的，则 S ⊬ G 且 S ⊬ ¬G。<br>
+        <strong>哲学意义：</strong>这是20世纪数学哲学最重要的成果。它表明"真"与"可证"之间存在不可消除的鸿沟——真理的范围永远大于可证明的范围。任何形式系统，无论多么强大，都只能捕获一部分真理。这一发现终结了希尔伯特计划——通过有穷方法证明数学一致性的梦想。</p>
+      </div>
+
+      <div class="law">
+        <span class="law-title">定律 2.5（哥德尔第二不完备定理，1931）</span>
+        <p>任何包含初等算术的一致形式系统 S 不能在自身内部证明自身的一致性。形式化：如果 S 是一致的，则 S ⊬ Con(S)，其中 Con(S) 是表达"S 是一致的"的算术语句。<br>
+        <strong>哲学意义：</strong>第二不完备定理比第一定理更具破坏性。它表明数学无法从自身内部获得一致性的保证——我们只能从"外部"（元数学）来证明一致性。这直接导致了"数学基础问题"的当代形态：我们能否找到一种非循环的、有穷的元数学方法来证明数学的一致性？大多数数学哲学家认为这是不可能的。</p>
+      </div>
+
+      <div class="law">
+        <span class="law-title">定律 2.6（Löwenheim-Skolem 定理，1915/1920）</span>
+        <p>如果一阶理论 T 有无限模型，那么 T 有任意大基数的模型（向上的 Löwenheim-Skolem），也有可数模型（向下的 Löwenheim-Skolem）。更精确地说：如果 T 有无限模型，则对每个无限基数 κ ≥ |L|，T 有基数为 κ 的模型。<br>
+        <strong>哲学意义：</strong>这一定理揭示了一阶逻辑的"表达能力局限"——一阶理论无法唯一地确定其模型的基数。对真理理论而言，这意味着"真"不能完全由形式系统的公理来捕获——同一个理论可以有本质上不同的模型，这些模型中的"真"可能不同。这就是"Skolem 悖论"：集合论（一阶 ZFC）有可数模型，但 ZFC 内部却证明了不可数集合的存在。</p>
+      </div>
+
+      <div class="law">
+        <span class="law-title">定律 2.7（紧致性定理，Compactness Theorem, 1930）</span>
+        <p>一阶理论 T 有模型当且仅当 T 的每个有穷子集都有模型。形式化：T 是<strong>可满足的</strong>（satisfiable）⇔ 对每个有穷子集 Δ ⊆ T，Δ 是可满足的。<br>
+        <strong>哲学意义：</strong>紧致性定理是模型论的核心工具之一。它表明一阶逻辑具有"有穷性"（finiteness property）——任何矛盾都必然在有限步内显现。对真理理论而言，紧致性定理意味着：如果一阶理论 T 在直觉上是"真的"，但 T 的每个有穷子集都有模型，那么 T 本身一定有模型——这为"非标准模型"的存在提供了基础。紧致性定理与 Löwenheim-Skolem 定理一起，刻画了一阶逻辑的模型论特征。</p>
+      </div>
+
+      <div class="law">
+        <span class="law-title">定律 2.8（Tarski 不可定义定理，1933）</span>
+        <p>设 L 为包含初等算术的一阶语言。L 中不存在一个一元谓词 Tr(x) 使得对每个 L-语句 φ：Tr(⌜φ⌝) ⇔ φ。更一般地说：一个语言不能在自身内部定义自己的真值谓词。<br>
+        <strong>哲学意义：</strong>这一定理是哥德尔不完备定理的直接推论，但具有独立的哲学意义。它表明"真"本质上是一个<strong>元语言</strong>概念——我们只能在元语言中谈论对象语言的"真"。这直接导致了"语言分层"（language hierarchy）的设想：在元语言中定义对象语言的真，但在元元语言中定义元语言的真，如此类推。这一分层避免了说谎者悖论，但代价是"真"永远不能在一个语言内部被完全把握。</p>
+      </div>
+
+      <div class="law">
+        <span class="law-title">定律 2.9（康托尔定理，Cantor's Theorem, 1891）</span>
+        <p>对任意集合 A，A 的幂集 P(A) 的基数严格大于 A 的基数。即 |P(A)| > |A|。<br>
+        <strong>哲学意义：</strong>康托尔定理揭示了"无穷"的层次结构——存在无穷多个不同的无穷基数。对真理理论而言，康托尔定理意味着：如果"真命题"的集合是一个集合，那么它的幂集（即所有真命题子集的集合）的基数更大——因此，真理的"总体"永远无法被穷尽。康托尔定理也是说谎者悖论的一种集合论再现：如果"所有真语句"构成一个集合，那么"不包含自身的真语句"的集合就会产生悖论。</p>
+      </div>
+
+      <div class="law">
+        <span class="law-title">定律 2.10（Cantor-Bernstein 定理，1897）</span>
+        <p>如果存在单射 f: A → B 和单射 g: B → A，则存在双射 h: A → B（即 A 和 B 有相同的基数）。<br>
+        <strong>哲学意义：</strong>Cantor-Bernstein 定理在真理理论中的意义是间接的但重要的。它表明集合的基数比较是"定向的"——如果两个集合能互相嵌入，则它们的大小相同。这对真理理论中的"本体论承诺"问题有关联：一个理论的真值载体的集合是否与它声称的"事实"的集合有相同的大小？Cantor-Bernstein 定理保证，如果真值载体和事实之间存在双向的"对应"关系，则它们的"数量"相同——但这并不保证"对应"关系本身是"符合"（correspondence）关系。</p>
+      </div>
+
+      <div class="callout">
+        <span class="callout-title">D2 关键文献</span>
+        <p>Godel, K. (1931). "On Formally Undecidable Propositions..." — Tarski, A. (1933). "The Concept of Truth in Formalized Languages." — Lowenheim, L. (1915). "On Possibilities in the Calculus of Relatives." — Skolem, T. (1920). "Logico-combinatorial Investigations..." — Cantor, G. (1891). "On an Elementary Question in the Theory of Manifolds." — Priest, G. (1979). "The Logic of Paradox."</p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- D3 · 核心定理 -->
+    <!-- ============================================================ -->
+    <section class="sec" id="phd-d3">
+      <h2><span class="chapno">D3</span>核心定理</h2>
+      <div class="callout">
+        <span class="callout-title">D3 导引</span>
+        <p>以下8个定理构成了真理的形式理论的核心成果。每个定理给出完整表述和证明概要，只有在证明概要中才能理解定理的"真"含义——不仅是"结论是什么"，而且是"为什么结论成立"。</p>
+      </div>
+
+      <div class="theorem">
+        <span class="theorem-title">定理 3.1（Tarski 语义真值定理，1933）</span>
+        <p>设 L 为一阶语言，<em>M</em> = ⟨<em>D</em>, <em>I</em>⟩ 为 L 的模型。则存在一个递归定义的满足关系 ⊨，使得对每个 L-语句 φ，<em>M</em> ⊨ φ 当且仅当 φ 在 <em>M</em> 中为真。更具体地说，满足关系通过以下递归条款定义：</p>
+        <div class="formula" style="margin:0.5rem 0;">
+          <em>M</em> ⊨ P(t₁,…,tₙ)[s] ⇔ ⟨<em>I</em>(t₁),…,<em>I</em>(tₙ)⟩ ∈ <em>I</em>(P)（原子公式）；<br>
+          <em>M</em> ⊨ ¬ψ[s] ⇔ <em>M</em> ⊭ ψ[s]（否定）；<br>
+          <em>M</em> ⊨ ψ∧χ[s] ⇔ <em>M</em> ⊨ ψ[s] 且 <em>M</em> ⊨ χ[s]（合取）；<br>
+          <em>M</em> ⊨ ∀xψ[s] ⇔ 对所有 <em>d</em>∈<em>D</em>，<em>M</em> ⊨ ψ[s(<em>x</em>/<em>d</em>)]（全称量化）。
+        </div>
+        <p><strong>证明概要：</strong>通过对公式的复杂度（公式中逻辑联结词和量词的数量）进行归纳法。基始步骤：原子公式的满足条件直接由解释函数 I 给出。归纳步骤：假设对复杂度小于 n 的公式已定义满足关系，对复杂度为 n 的公式根据其主联结词（¬, ∧, ∨, →, ∀, ∃）分别定义。归纳法保证对所有公式都有定义。这一证明的关键在于：满足关系是递归定义的，但递归的基础是模型的解释函数，因此不涉及循环。Tarski 定理的哲学意义在于：它表明"真"可以在一个形式语言中严格定义——但前提是"真"是在元语言中定义的，而不是在对象语言中。</p>
+      </div>
+
+      <div class="theorem">
+        <span class="theorem-title">定理 3.2（哥德尔第一不完备定理，完整形式化表述，1931）</span>
+        <p>设 PA 为皮亚诺算术的形式系统。如果 PA 是一致的，则存在一个算术语句 G（哥德尔语句）使得：</p>
+        <ul>
+          <li>PA ⊬ G（G 在PA中不可证）；</li>
+          <li>PA ⊬ ¬G（¬G 在PA中不可证）；</li>
+          <li>在标准模型 ℕ 中，ℕ ⊨ G（G 在标准模型中为真）。</li>
+        </ul>
+        <p>因此，PA 是本质上不完备的——任何一致的扩展仍然是不完备的。</p>
+        <p><strong>证明概要：</strong>（1）将PA中的符号、公式、证明序列编码为自然数（哥德尔编码），得到可表示性引理：每个递归函数在PA中可表示；（2）构造一个公式 Bew(x) 表示"x的哥德尔数是某个在PA中可证公式的哥德尔数"；（3）通过对角线引理（Diagonal Lemma），构造一个语句 G 使得 PA ⊢ G ↔ ¬Bew(⌜G⌝)；（4）假设 PA ⊢ G，则 PA ⊢ Bew(⌜G⌝)，同时从 G ↔ ¬Bew(⌜G⌝) 得 PA ⊢ ¬Bew(⌜G⌝)，矛盾，故 PA ⊬ G；（5）假设 PA ⊢ ¬G，则 PA ⊢ Bew(⌜G⌝)，意味着存在一个证明，但由一致性假设这不可能，故 PA ⊬ ¬G。因此 G 不可判定。</p>
+      </div>
+
+      <div class="theorem">
+        <span class="theorem-title">定理 3.3（Kripke 固定点定理，最小固定点存在性，1975）</span>
+        <p>设 L 为带真值谓词 Tr 的一阶语言，⟨<em>D</em>, <em>I</em>⟩ 为模型，其中 <em>I</em>(Tr) 初始为空。定义单调算子 Φ: <em>P</em>(<em>D</em>) → <em>P</em>(<em>D</em>) 如下：Φ(S) = { ⌜φ⌝ : φ 在扩展了 Tr 解释为 S 的模型中为真 }。则：</p>
+        <ul>
+          <li>Φ 是单调的：若 S ⊆ T，则 Φ(S) ⊆ Φ(T)；</li>
+          <li>存在最小固定点 S₀ = ⋂{ S : Φ(S) ⊆ S }；</li>
+          <li>最小固定点可通过序数迭代得到：S₀ = ⋃_{α ∈ Ord} Φ^α(∅)。</li>
+        </ul>
+        <p><strong>证明概要：</strong>（1）单调性证明：若 S ⊆ T，则任何在 Tr=S 下为真的语句在 Tr=T 下保持为真，因为 Tr 只在正出现中增加真值分配；（2）定义序数迭代：Φ^0(∅) = ∅，Φ^{α+1}(∅) = Φ(Φ^α(∅))，对极限序数 λ，Φ^λ(∅) = ⋃_{α<λ} Φ^α(∅)；（3）由单调性，这个序列是递增的：Φ^α(∅) ⊆ Φ^{α+1}(∅)；（4）由于论域 D 是集合，存在某个序数 γ 使得序列稳定：Φ^{γ+1}(∅) = Φ^γ(∅)；（5）令 S₀ = Φ^γ(∅)，则 Φ(S₀) = S₀，即 S₀ 是固定点；（6）最小性：对任意固定点 S，容易归纳证明对所有 α，Φ^α(∅) ⊆ S，因此 S₀ ⊆ S。Kripke 固定点定理的哲学意义在于：它表明"真"可以是一个部分定义的谓词——悖论性语句被排除在真值讨论之外，而不是被赋予矛盾的真值。</p>
+      </div>
+
+      <div class="theorem">
+        <span class="theorem-title">定理 3.4（Tarski 不可定义定理的证明概要，1933）</span>
+        <p>设 L 为包含初等算术的一阶语言。如果 L 是一致的，则 L 中不存在一元谓词 Tr(x) 使得对每个 L-语句 φ：Tr(⌜φ⌝) ⇔ φ。</p>
+        <p><strong>证明概要：</strong>（1）假设存在这样的 Tr(x)。（2）由哥德尔对角线引理，构造一个语句 λ 使得 L ⊢ λ ↔ ¬Tr(⌜λ⌝)。（3）由 Tr 的定义，L ⊢ Tr(⌜λ⌝) ↔ λ。（4）从 (2) 和 (3) 得 L ⊢ Tr(⌜λ⌝) ↔ ¬Tr(⌜λ⌝)，即 L ⊢ Tr(⌜λ⌝) ∧ ¬Tr(⌜λ⌝)，矛盾。（5）因此假设不成立，L 中不存在这样的真值谓词。这个证明与说谎者悖论的结构完全一致——它表明，如果一个语言足够强大（包含初等算术）且一致，那么它就不能"安全地"包含自己的真值谓词。Tarski 不可定义定理是哥德尔不完备定理的"语义版本"——哥德尔定理说的是"可证性"的不可完备性，Tarski 定理说的是"真"的不可定义性。</p>
+      </div>
+
+      <div class="theorem">
+        <span class="theorem-title">定理 3.5（去引号引理，Disquotation Lemma，Tarski 1933）</span>
+        <p>设 L 为一阶语言，Tr 为 L 中满足 T 约定的真值谓词。则对每个 L-语句 φ：<br>
+        (D) Tr(⌜φ⌝) ↔ φ。<br>
+        去引号引理是 T 约定的直接结果，但它揭示了"真"的一个基本特征：在满足 T 约定的语言中，真值谓词的使用可以从语句中"去掉引号"而不改变真值。</p>
+        <p><strong>证明概要：</strong>由 T 约定的定义直接得出。T 约定要求：真值谓词 Tr 必须满足对每个语句 φ，Tr(⌜φ⌝) ↔ φ 成立。因此去引号引理不是需要证明的定理，而是真值谓词的定义条件。但它的哲学意义在于：它表明"真"的使用可以还原为"去引号"——这正是紧缩论的核心主张。然而，Tarski 自己并不认为去引号引理穷尽了"真"的含义——他认为"真"还涉及满足关系的递归定义，而不仅仅是去引号模式。</p>
+      </div>
+
+      <div class="theorem">
+        <span class="theorem-title">定理 3.6（Kripke 的三个固定点构造，1975）</span>
+        <p>在 Kripke 的固定点构造中，存在三个具有特殊意义的固定点：</p>
+        <ul>
+          <li><strong>最小固定点</strong>（Minimal Fixed Point）：从空集开始迭代得到的固定点。它包含所有"安全的"真值分配——即那些不依赖于任何有问题的真值分配的语句的真值。</li>
+          <li><strong>最大固定点</strong>（Maximal Fixed Point）：所有固定点中最大的一个。它包含尽可能多的语句的真值分配，但仍然保持一致。</li>
+          <li><strong>内在固定点</strong>（Intrinsic Fixed Point）：最小固定点的最大一致扩展，使得对每个语句 φ，要么 φ 被分配真值，要么 ¬φ 被分配真值，但不会两者都分配。</li>
+        </ul>
+        <p><strong>证明概要：</strong>（1）最小固定点的存在性已在定理3.3中证明。（2）由 Zorn 引理，所有固定点的集合在包含关系下有极大元，即最大固定点。（3）内在固定点的构造：从最小固定点出发，逐步添加"安全"的语句，但保证不产生矛盾。内在固定点不是唯一的——不同构造路径可能得到不同的内在固定点。Kripke 认为，最小固定点是最自然的真值谓词解释，因为它只包含那些"确实为真"的语句，而不包含任何人为的或任意的真值分配。</p>
+      </div>
+
+      <div class="theorem">
+        <span class="theorem-title">定理 3.7（Godel 完全性定理，一阶逻辑，1930）</span>
+        <p>对一阶逻辑，语义蕴涵与语法可证性等价：T ⊨ φ 当且仅当 T ⊢ φ。即：</p>
+        <ul>
+          <li><strong>可靠性</strong>（Soundness）：如果 T ⊢ φ，则 T ⊨ φ（可证的一定是语义真的）；</li>
+          <li><strong>完全性</strong>（Completeness）：如果 T ⊨ φ，则 T ⊢ φ（语义真的一定是可证的）。</li>
+        </ul>
+        <p><strong>证明概要：</strong>（1）可靠性证明通过对证明长度的归纳：每个推理规则都是保真的（preserve truth），因此从真前提推出的结论必然为真。（2）完全性证明是哥德尔1930年博士论文的核心成果。基本思路：假设 T ⊭ φ，即 T ∪ {¬φ} 有模型。我们需要构造一个模型 M 使得 M ⊨ T ∪ {¬φ}。哥德尔的构造方法是：首先将 T ∪ {¬φ} 扩展为一个极大的、一致的、包含见证常项（witnessing constants）的集合 T*，然后以 T* 中的项（terms）的等价类为论域构造模型。完全性定理的哲学意义在于：它表明一阶逻辑的"语法"和"语义"是完美匹配的——可证性恰好捕捉了语义真。但哥德尔一年后（1931）的不完备定理表明，对包含算术的形式系统，完全性不再成立——PA 的语义真（在标准模型中）超出了 PA 的可证范围。</p>
+      </div>
+
+      <div class="theorem">
+        <span class="theorem-title">定理 3.8（紧致性定理的证明概要，1930）</span>
+        <p>一阶理论 T 有模型当且仅当 T 的每个有穷子集都有模型。</p>
+        <p><strong>证明概要：</strong>（1）（→）方向是平凡的：如果 T 有模型 M，则 M 也是 T 的每个有穷子集的模型。（2）（←）方向是核心。利用哥德尔完全性定理的证明思路：如果 T 没有模型，则 T 是不一致的，即 T ⊢ ⊥。由演绎定理，存在有穷子集 Δ ⊆ T 使得 Δ ⊢ ⊥。但由可靠性，Δ ⊢ ⊥ 意味着 Δ ⊨ ⊥，即 Δ 没有模型。因此，如果 T 的每个有穷子集都有模型，则 T 不能是不一致的，因此 T 有模型。紧致性定理的哲学意义在于：它"局部化了"矛盾——如果一个理论存在矛盾，这个矛盾一定在某个有穷子集中已经显现。因此，对真理理论而言，任何"无穷"的真理集合（如 Peano 算术的全部真命题）如果是一致的，那么它的每个有穷子集都是一致的——但整个集合可能是不可公理化的（即不能被有穷多个公理捕获）。这正是哥德尔不完备定理的推论：算术真理的集合不是可公理化的。</p>
+      </div>
+
+      <div class="callout">
+        <span class="callout-title">D3 关键文献</span>
+        <p>Godel, K. (1930). "The Completeness of the Axioms of the Functional Calculus." — Godel, K. (1931). "On Formally Undecidable Propositions..." — Tarski, A. (1933). "The Concept of Truth in Formalized Languages." — Kripke, S. (1975). "Outline of a Theory of Truth." — Henkin, L. (1949). "The Completeness of the First-Order Functional Calculus."</p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- D4 · 定理证明详解 -->
+    <!-- ============================================================ -->
+    <section class="sec" id="phd-d4">
+      <h2><span class="chapno">D4</span>定理证明详解</h2>
+      <div class="callout">
+        <span class="callout-title">D4 导引</span>
+        <p>以下给出两个完整证明。与 D3 中的证明概要不同，这里的证明是完整的、自包含的，包含所有关键步骤和必要的技术细节。每个证明在 500 字以上，要求读者具备一阶逻辑和集合论的基本知识。</p>
+      </div>
+
+      <h3>证明一：Tarski 不可定义定理的完整证明（对角线论证 + 自指）</h3>
+
+      <p><strong>定理陈述：</strong>设 L 为包含初等算术的一阶语言（即 L 包含 0, S, +, × 等符号，足以表达皮亚诺算术 PA）。如果 L 是一致的，则 L 中不存在一元谓词 Tr(x) 使得对每个 L-语句 φ：Tr(⌜φ⌝) ↔ φ，其中 ⌜φ⌝ 是 φ 的哥德尔数的数字表示。</p>
+
+      <div class="proof">
+        <span class="proof-title">证明（Tarski 不可定义定理）</span>
+        <p><strong>步骤 1：准备——哥德尔编码与可表示性。</strong>首先，我们固定 L 的哥德尔编码：给每个符号分配一个唯一的自然数，每个公式分配一个素幂乘积形式的哥德尔数，每个证明序列也分配一个哥德尔数。由于 PA 是递归公理化的，我们可以定义一个公式 Bew(x) 在 PA 中表示"x 是某个在 PA 中可证语句的哥德尔数"——即 PA ⊢ Bew(⌜φ⌝) 当且仅当 PA ⊢ φ。Bew(x) 是 Σ₁ 公式，且由 PA 的递归性，它的可表示性可以通过对证明长度的归纳来证明。</p>
+
+        <p><strong>步骤 2：对角线引理（Diagonal Lemma）。</strong>设 ψ(x) 是 L 中只有一个自由变元 x 的公式。对角线引理断言：存在一个语句 δ 使得 PA ⊢ δ ↔ ψ(⌜δ⌝)。证明：定义函数 diag(y) 为：将哥德尔数为 y 的公式中的自由变元替换为 y 的数字表示后得到的公式的哥德尔数。diag 是递归函数，因此在 PA 中可表示：存在一个公式 Diag(x, y) 使得对每个 m, n，diag(m) = n 当且仅当 PA ⊢ ∀x (Diag(m̄, x) ↔ x = n̄)。现在令 χ(x) = ∃y (Diag(x, y) ∧ ψ(y))，并令 m = ⌜χ(x)⌝。则 δ = χ(m̄) = ∃y (Diag(m̄, y) ∧ ψ(y))。由于 diag(m) = ⌜δ⌝，我们有 PA ⊢ ∀y (Diag(m̄, y) ↔ y = ⌜δ⌝)。因此 PA ⊢ δ ↔ ψ(⌜δ⌝)。</p>
+
+        <p><strong>步骤 3：构造自指语句。</strong>假设矛盾——Tr(x) 是 L 中满足 Tr(⌜φ⌝) ↔ φ 的真值谓词。令 ψ(x) = ¬Tr(x)。由对角线引理，存在语句 λ 使得：PA ⊢ λ ↔ ¬Tr(⌜λ⌝)。</p>
+
+        <p><strong>步骤 4：导出矛盾。</strong>由 Tr 的假设条件，对 λ 有：Tr(⌜λ⌝) ↔ λ。将 λ ↔ ¬Tr(⌜λ⌝) 代入，得 Tr(⌜λ⌝) ↔ ¬Tr(⌜λ⌝)。由命题逻辑，这等价于 Tr(⌜λ⌝) ∧ ¬Tr(⌜λ⌝)。因此，L 中可证矛盾。由 PA ⊆ L 且 PA 是一致的，L 也是一致的，矛盾。</p>
+
+        <p><strong>步骤 5：结论。</strong>因此假设不成立，L 中不存在满足条件的真值谓词 Tr(x)。证毕。</p>
+      </div>
+
+      <p><strong>哲学评注：</strong>这个证明的核心是"自指"——通过对角线引理构造一个"说自己是假的"的语句 λ。这与说谎者悖论的结构完全相同，但区别在于：在悖论中，我们假设自然语言可以无限制地使用"真"，而 Tarski 定理证明了在形式语言中，这种无限制使用必然导致矛盾。因此，Tarski 定理不是"发现了悖论"，而是"证明了悖论不可消除"——任何足够强大的一阶语言，如果一致，就不能包含自己的真值谓词。</p>
+
+      <h3>证明二：Kripke 最小固定点存在的完整证明（单调算子 + 序数迭代）</h3>
+
+      <p><strong>定理陈述：</strong>设 L 为带真值谓词 Tr 的一阶语言，⟨D, I⟩ 为模型，其中 I(Tr) 初始为空。定义单调算子 Φ: P(D) → P(D) 如下：Φ(S) = { ⌜φ⌝ : φ 在扩展了 Tr 解释为 S 的模型中为真 }。则存在最小固定点 S₀ 使得 Φ(S₀) = S₀，且对任意固定点 S，S₀ ⊆ S。</p>
+
+      <div class="proof">
+        <span class="proof-title">证明（Kripke 最小固定点）</span>
+        <p><strong>预备定义：</strong>令 L⁺ 为 L 扩展了 Tr 谓词的语言。对每个 S ⊆ D，定义模型 M_S = ⟨D, I_S⟩，其中 I_S 与 I 在非逻辑符号上一致，且 I_S(Tr) = S。对任意 L⁺-语句 φ，如果 φ 在 M_S 中为真（在 Kripke 的三值逻辑中），则记 M_S ⊨ φ。注意：Kripke 使用三值逻辑（真、假、未定义），但为了简化，我们使用"真"的通常定义，只考虑那些在 M_S 中为"真"的语句。</p>
+
+        <p><strong>第一步：证明 Φ 的单调性。</strong>设 S ⊆ T ⊆ D。假设 ⌜φ⌝ ∈ Φ(S)，即 φ 在 M_S 中为真。我们需要证明 φ 在 M_T 中也为真。由于 Tr 只在正出现（positive occurrence）中影响 φ 的真值——即 φ 中 Tr 的每次出现都在偶数个否定符号的范围内——而 S ⊆ T，因此 Tr 在 M_S 中为真的语句在 M_T 中仍然为真。更正式地，通过对 φ 的复杂度进行归纳，可以证明：如果 S ⊆ T，则对每个 L⁺-语句 φ，如果 φ 在 M_S 中为真，则 φ 在 M_T 中也为真。因此 Φ(S) ⊆ Φ(T)。单调性得证。</p>
+
+        <p><strong>第二步：序数迭代。</strong>定义序数序列 {S_α}_{α∈Ord} 如下：</p>
+        <ul>
+          <li>S₀ = ∅；</li>
+          <li>S_{α+1} = Φ(S_α)；</li>
+          <li>对极限序数 λ，S_λ = ⋃_{α<λ} S_α。</li>
+        </ul>
+        <p>由 Φ 的单调性和 S₀ = ∅，容易通过对 α 的超限归纳证明：对所有 α ≤ β，S_α ⊆ S_β。即序列是递增的。</p>
+
+        <p><strong>第三步：稳定性的证明。</strong>由于 D 是集合，P(D) 的基数固定。序列 {S_α} 是 P(D) 中严格递增的序列（如果它一直不停止）。但 P(D) 是集合，因此严格递增的序列的长度不能超过 |P(D)|⁺——即存在某个序数 γ 使得 S_{γ+1} = S_γ。令 S₀ = S_γ，则 Φ(S₀) = Φ(S_γ) = S_{γ+1} = S_γ，因此 S₀ 是固定点。</p>
+
+        <p><strong>第四步：最小性的证明。</strong>设 S 是任意固定点，即 Φ(S) = S。我们通过对 α 的超限归纳证明：对所有 α，S_α ⊆ S。</p>
+        <ul>
+          <li>基始：S₀ = ∅ ⊆ S 显然成立。</li>
+          <li>归纳步骤：假设 S_α ⊆ S。由单调性，S_{α+1} = Φ(S_α) ⊆ Φ(S) = S。因此 S_{α+1} ⊆ S。</li>
+          <li>极限步骤：假设对所有 α<λ，S_α ⊆ S。则 S_λ = ⋃_{α<λ} S_α ⊆ S。</li>
+        </ul>
+        <p>因此 S₀ = ⋃_{α∈Ord} S_α ⊆ S。即 S₀ 是所有固定点中最小者。</p>
+
+        <p><strong>结论：</strong>存在最小固定点 S₀。证毕。</p>
+      </div>
+
+      <p><strong>哲学评注：</strong>Kripke 最小固定点证明的核心技术是"单调算子 + 序数迭代"——这一方法在集合论和递归论中广泛使用（如 Kleene 递归定理的证明）。最小固定点的哲学意义在于：它给出了一个"构造性"的真理定义——真理不是一次性被定义的，而是通过逐步迭代"涌现"出来的。每一步迭代都在前一阶段的基础上增加新的真理，直到达到饱和。那些在任意阶段都无法被确定为真的语句（如说谎者语句）就永远停留在"未定义"状态——它们不是"真"也不是"假"，而是"真值间隙"。</p>
+
+      <div class="callout">
+        <span class="callout-title">D4 关键文献</span>
+        <p>Tarski, A. (1933). "The Concept of Truth in Formalized Languages." Section 1: "The Concept of True Sentence in the Language of the Calculus of Classes." — Kripke, S. (1975). "Outline of a Theory of Truth." Section II: "Fixed Points." — Kleene, S. C. (1952). <em>Introduction to Metamathematics</em>. Chapter XII: "The Fixed-Point Theorem."</p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- D5 · 形式化体系 -->
+    <!-- ============================================================ -->
+    <section class="sec" id="phd-d5">
+      <h2><span class="chapno">D5</span>形式化体系</h2>
+      <div class="callout">
+        <span class="callout-title">D5 导引</span>
+        <p>本模块呈现一个完整的、形式化的真理理论体系——从形式语言的定义到真值谓词的条件，再到一致性证明的概要。这一体系综合了 Tarski 的语义真理论、Kripke 的固定点构造和哥德尔不完全性定理的约束。下方的 Three.js 3D 模型展示了形式体系的层次结构——对象语言、元语言、元元语言的三层螺旋关系。</p>
+      </div>
+
+      <h3>5.1 形式语言 L_T 的定义</h3>
+
+      <p><strong>字母表：</strong></p>
+      <ul>
+        <li><strong>逻辑符号：</strong>¬, ∧, ∨, →, ↔, ∀, ∃, =（等号）</li>
+        <li><strong>个体变元：</strong>x₀, x₁, x₂, …（可数无穷多个）</li>
+        <li><strong>个体常项：</strong>0（零）</li>
+        <li><strong>函数符号：</strong>S（后继函数，一元），+（加法，二元），×（乘法，二元）</li>
+        <li><strong>谓词符号：</strong>Tr（真值谓词，一元），P（其他谓词符号，可数无穷多个）</li>
+        <li><strong>括号：</strong>(, )</li>
+      </ul>
+
+      <p><strong>形成规则：</strong>合式公式（wff）递归定义如下：</p>
+      <ul>
+        <li>若 t₁, …, tₙ 是项，P 是 n 元谓词，则 P(t₁, …, tₙ) 是原子公式；</li>
+        <li>若 t₁, t₂ 是项，则 t₁ = t₂ 是原子公式；</li>
+        <li>若 t 是项，则 Tr(t) 是原子公式；</li>
+        <li>若 φ 是 wff，则 ¬φ 是 wff；</li>
+        <li>若 φ, ψ 是 wff，则 φ∧ψ, φ∨ψ, φ→ψ, φ↔ψ 是 wff；</li>
+        <li>若 φ 是 wff，x 是变元，则 ∀xφ, ∃xφ 是 wff。</li>
+      </ul>
+
+      <p><strong>公理系统（PA + Tr 公理）：</strong></p>
+      <ul>
+        <li>PA 的九条公理（皮亚诺算术）：包括后继公理、加法公理、乘法公理、归纳公理模式。</li>
+        <li>Tr 的 T 约定公理模式：对所有语句 φ，Tr(⌜φ⌝) ↔ φ。</li>
+        <li>Tr 的组成性公理（Compositional Axioms）：Tr(⌜¬φ⌝) ↔ ¬Tr(⌜φ⌝)；Tr(⌜φ∧ψ⌝) ↔ Tr(⌜φ⌝) ∧ Tr(⌜ψ⌝)；Tr(⌜∀xφ⌝) ↔ ∀x Tr(⌜φ(ẋ)⌝)，其中 ẋ 是 x 的哥德尔数的数字表示。</li>
+      </ul>
+
+      <p><strong>推理规则：</strong></p>
+      <ul>
+        <li>Modus Ponens（MP）：从 φ 和 φ→ψ 推出 ψ。</li>
+        <li>全称概括（Generalization）：从 φ 推出 ∀xφ。</li>
+      </ul>
+
+      <h3>5.2 模型论语义</h3>
+
+      <p>标准模型 ℕ = ⟨ℕ, 0, S, +, ×⟩ 是 PA 的标准模型，其中论域为自然数集合，0, S, +, × 有通常的解释。Tr 的解释如下：</p>
+      <div class="formula">
+        <strong>Tr 的语义解释（Kripke 最小固定点）</strong><br>
+        令 M₀ = ⟨ℕ, I₀⟩ 其中 I₀(Tr) = ∅。定义 Φ(S) = { ⌜φ⌝ : φ 在 ⟨ℕ, I_S⟩ 中为真 }，其中 I_S(Tr) = S。最小固定点 S₀ 是 Φ 的最小不动点。则 Tr 的解释为 I(Tr) = S₀。在这一解释下，一个语句 φ 为真当且仅当 ⌜φ⌝ ∈ S₀，即 φ 在最小固定点中为真。
+      </div>
+
+      <h3>5.3 一致性证明概要</h3>
+
+      <p>我们需要证明：系统 PA + Tr 公理是一致的（即不存在 φ 使得 ⊢ φ 且 ⊢ ¬φ）。</p>
+
+      <div class="proof">
+        <span class="proof-title">一致性证明概要</span>
+        <p>（1）构造标准模型 ℕ 并定义 Tr 为 Kripke 最小固定点 S₀ 的解释。（2）证明 PA 的所有公理在 ℕ 中为真（这是标准的"ℕ 是 PA 的模型"的证明）。（3）证明 Tr 的 T 约定公理在 ℕ 中为真：由最小固定点的定义，对每个语句 φ，⌜φ⌝ ∈ S₀ 当且仅当 φ 在 ℕ 中为真，因此 Tr(⌜φ⌝) ↔ φ 在 ℕ 中成立。（4）证明 Tr 的组成性公理在 ℕ 中为真：由满足关系的递归定义直接得出。（5）证明推理规则保真：如果前提在 ℕ 中为真，则结论在 ℕ 中也为真。因此，所有可证语句在 ℕ 中为真，故系统不可能同时证明 φ 和 ¬φ（否则 ℕ 中同时有 φ 和 ¬φ 为真，不可能）。证毕。</p>
+      </div>
+
+      <p><strong>说明：</strong>上述证明是非有穷的（non-finitary），因为它使用了集合论和超限归纳法。由哥德尔第二不完备定理，我们不可能在系统内部有穷地证明一致性。因此，上述"元数学"证明是在 ZFC 集合论中进行的，而不是在 PA 中。</p>
+
+      <h3>5.4 形式体系的层次结构：Three.js 3D 螺旋模型</h3>
+
+      <div class="three-wrap" id="three-container-d5">
+        <div class="three-caption" style="color:#aaa;padding:6px 0 0;">形式语言层次结构的3D螺旋模型：对象语言（底层）→ 元语言（中层）→ 元元语言（顶层），螺旋上升表示每个层次的语言都在更高层次中得到真值定义。</div>
+      </div>
+
+      <script src="./_shared/js/three.min.js"></script>
+      <script>
+      (function() {
+        try {
+          var container = document.getElementById('three-container-d5');
+          if (!container) return;
+          var w = container.clientWidth || 800;
+          var h = 480;
+
+          var scene = new THREE.Scene();
+          scene.background = new THREE.Color(0x0a0a1a);
+
+          var camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 1000);
+          camera.position.set(8, 6, 10);
+          camera.lookAt(0, 0, 0);
+
+          var renderer = new THREE.WebGLRenderer({ antialias: true });
+          renderer.setSize(w, h);
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+          container.insertBefore(renderer.domElement, container.firstChild);
+
+          // Lights
+          var ambient = new THREE.AmbientLight(0x335577);
+          scene.add(ambient);
+          var dirLight = new THREE.DirectionalLight(0xffffff, 1.2);
+          dirLight.position.set(5, 10, 7);
+          scene.add(dirLight);
+          var fillLight = new THREE.DirectionalLight(0x4488ff, 0.5);
+          fillLight.position.set(-5, 0, 5);
+          scene.add(fillLight);
+
+          // Three spiral layers representing object language, metalanguage, meta-metalanguage
+          var colors = [0x4B3FE3, 0xA85B2A, 0x27D2BF];
+          var labels = ['对象语言', '元语言', '元元语言'];
+          var yOffsets = [-2, 0, 2];
+
+          for (var layer = 0; layer < 3; layer++) {
+            var points = [];
+            var numPoints = 80;
+            var radius = 2.5 + layer * 0.8;
+            var turns = 2 + layer * 0.5;
+            var yBase = yOffsets[layer];
+
+            for (var i = 0; i <= numPoints; i++) {
+              var t = (i / numPoints) * turns * Math.PI * 2;
+              var x = radius * Math.cos(t);
+              var z = radius * Math.sin(t);
+              var y = yBase + 0.15 * Math.sin(t * 1.5);
+              points.push(new THREE.Vector3(x, y, z));
+            }
+
+            // Tube geometry along the spiral
+            var curve = new THREE.CatmullRomCurve3(points);
+            var tubeGeom = new THREE.TubeGeometry(curve, 100, 0.08, 8, false);
+            var tubeMat = new THREE.MeshPhongMaterial({
+              color: colors[layer],
+              emissive: colors[layer],
+              emissiveIntensity: 0.2,
+              transparent: true,
+              opacity: 0.7
+            });
+            var tube = new THREE.Mesh(tubeGeom, tubeMat);
+            scene.add(tube);
+
+            // Glow spheres along the spiral
+            var sphereMat = new THREE.MeshPhongMaterial({
+              color: colors[layer],
+              emissive: colors[layer],
+              emissiveIntensity: 0.5
+            });
+            for (var j = 0; j < 16; j++) {
+              var tj = (j / 16) * turns * Math.PI * 2;
+              var sx = radius * Math.cos(tj);
+              var sz = radius * Math.sin(tj);
+              var sy = yBase + 0.15 * Math.sin(tj * 1.5);
+              var sphere = new THREE.Mesh(new THREE.SphereGeometry(0.12, 8, 8), sphereMat);
+              sphere.position.set(sx, sy, sz);
+              scene.add(sphere);
+            }
+
+            // Label
+            var canvas = document.createElement('canvas');
+            canvas.width = 256;
+            canvas.height = 64;
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = 'rgba(0,0,0,0)';
+            ctx.fillRect(0, 0, 256, 64);
+            ctx.font = 'Bold 28px Arial, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = '#' + colors[layer].toString(16).padStart(6, '0');
+            ctx.fillText(labels[layer], 128, 32);
+            var texture = new THREE.CanvasTexture(canvas);
+            var labelMat = new THREE.SpriteMaterial({ map: texture, transparent: true });
+            var sprite = new THREE.Sprite(labelMat);
+            sprite.position.set(radius + 1.5, yBase, 0);
+            sprite.scale.set(1.4, 0.35, 1);
+            scene.add(sprite);
+          }
+
+          // Connecting lines between layers
+          var lineMat = new THREE.LineBasicMaterial({ color: 0x8888ff, transparent: true, opacity: 0.15 });
+          for (var k = 0; k < 12; k++) {
+            var angle = (k / 12) * Math.PI * 2;
+            var pts = [];
+            for (var layer2 = 0; layer2 < 3; layer2++) {
+              var r = 2.5 + layer2 * 0.8;
+              var yBase2 = yOffsets[layer2];
+              pts.push(new THREE.Vector3(r * Math.cos(angle), yBase2, r * Math.sin(angle)));
+            }
+            var lineGeo = new THREE.BufferGeometry().setFromPoints(pts);
+            var line = new THREE.Line(lineGeo, lineMat);
+            scene.add(line);
+          }
+
+          // Grid
+          var gridHelper = new THREE.GridHelper(10, 10, 0x4B3FE3, 0x222244);
+          gridHelper.position.y = -3;
+          scene.add(gridHelper);
+
+          // Animation
+          function animate() {
+            requestAnimationFrame(animate);
+            var time = Date.now() * 0.0003;
+            scene.rotation.y = time * 0.2;
+            renderer.render(scene, camera);
+          }
+          animate();
+
+          function onResize() {
+            var nw = container.clientWidth;
+            if (nw > 0) {
+              camera.aspect = nw / h;
+              camera.updateProjectionMatrix();
+              renderer.setSize(nw, h);
+            }
+          }
+          window.addEventListener('resize', onResize);
+        } catch(e) { console.log('Three.js D5:', e); }
+      })();
+      </script>
+
+      <div class="three-caption">图 D5 · 形式语言层次螺旋。蓝色螺旋为对象语言（Object Language, L₀）——我们在其中谈论世界（数、集合等）。橙色螺旋为元语言（Metalanguage, L₁）——我们在其中定义 L₀ 的真值谓词。青色螺旋为元元语言（Meta-metalanguage, L₂）——我们在其中定义 L₁ 的真值谓词。螺旋的上升表示：每个层次的语言都是"更高"层次语言的对象，真值定义永远在更高层次中进行。Tarski 的不可定义定理表明，这一螺旋必须无限延伸——不存在一个"终极"的语言可以定义自身的真值。</div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- D6 · 前沿定理与未解问题 -->
+    <!-- ============================================================ -->
+    <section class="sec" id="phd-d6">
+      <h2><span class="chapno">D6</span>前沿定理与未解问题</h2>
+      <div class="callout">
+        <span class="callout-title">D6 导引</span>
+        <p>以下展示真理理论中当前活跃的研究前沿——既包括已经得到证明的重要定理，也包括尚未解决的核心问题。博士水平的核心能力之一就是识别哪些问题已经解决、哪些问题仍然开放。</p>
+      </div>
+
+      <h3>6.1 前沿定理</h3>
+
+      <div class="theorem">
+        <span class="theorem-title">定理 6.1（Kripke 固定点的多重性定理，1975）</span>
+        <p>在 Kripke 的固定点构造中，存在不可数多个不同的固定点。更精确地说，如果基础模型 ℕ 的论域是可数无穷的，则固定点的集合具有连续统的基数（2^ℵ₀）。</p>
+        <p><strong>意义：</strong>这一结果表明，Kripke 的构造并未唯一地确定"真"的谓词——不同的固定点对应不同的"真值分配"。Kripke 本人认为最小固定点是最自然的，但这一选择不是形式系统的必然结果，而是哲学上的偏好。多重固定点的存在为真理的"多元论"解释提供了形式基础——不同固定点可以对应不同的"真值概念"。</p>
+      </div>
+
+      <div class="theorem">
+        <span class="theorem-title">定理 6.2（Gupta 的修正理论，Revision Theory of Truth，1982）</span>
+        <p>Gupta 和 Herzberger 独立地提出了一个替代 Kripke 固定点方法的真理理论——修正理论（Revision Theory）。其核心思想是：真值谓词的定义不是通过"固定点"而是通过"修正规则"（revision rule）给出的。设 Tr 的初始解释为任意集合 S₀，修正规则 τ 定义为：τ(S) = { ⌜φ⌝ : φ 在扩展了 Tr 为 S 的模型中为真 }。然后迭代应用 τ：S_{α+1} = τ(S_α)。与 Kripke 固定点不同，τ 不是单调的，因此序列不会收敛到固定点，而是进入一个"循环"或"极限"模式。</p>
+        <p><strong>意义：</strong>修正理论揭示了真理的"动态"本质——真理不是一次性确定的，而是通过不断修正而逐步逼近的。这一理论对"强化的说谎者"（strengthened liar）有一定处理能力，但也面临自己的困难（如极限阶段的定义问题）。Gupta 和 Belnap（1993）在《The Revision Theory of Truth》中系统化了这一理论。</p>
+      </div>
+
+      <div class="theorem">
+        <span class="theorem-title">定理 6.3（Field 的悖论解决方案，2008）</span>
+        <p>Hartry Field 在《Saving Truth from Paradox》（2008）中提出了一种基于"次协调逻辑"（paraconsistent logic）和"条件句逻辑"（conditional logic）的悖论解决方案。Field 的核心主张是：我们可以在不放弃 T 约定的情况下处理说谎者悖论，前提是我们使用一种非经典的"条件句"（→）来理解 T 约定中的"↔"。Field 构造了一个模型，其中 Tr(⌜λ⌝) ↔ λ 成立（λ 是说谎者语句），但 λ 不导致矛盾，因为条件句的"去引号"不满足经典逻辑的爆炸原则。</p>
+        <p><strong>意义：</strong>Field 的解决方案是当代真理理论中最精致的技术性工作之一。它展示了 Kripke 固定点之外的另一种可能性——接受悖论性语句的"真"但拒绝经典逻辑的一些原则。Field 的方案是否成功，至今仍是激烈争论的焦点。</p>
+      </div>
+
+      <div class="theorem">
+        <span class="theorem-title">定理 6.4（Yablo 悖论的非循环性，1993）</span>
+        <p>Stephen Yablo 在 1993 年构造了一个没有自指但产生悖论的语句序列。Yablo 悖论不是通过单个自指语句产生的，而是通过一个无穷语句序列 {S₁, S₂, S₃, …} 产生的，其中每个 Sₙ 说"所有下标大于 n 的 S_k 都是假的"。Yablo 证明了：如果假设这个序列中有一个语句为真，就会推出矛盾；如果假设所有语句为假，也会推出矛盾。因此，Yablo 悖论不用自指就产生了说谎者悖论式的矛盾。</p>
+        <p><strong>意义：</strong>Yablo 悖论揭示了"自指"不是产生悖论的必要条件——无穷序列也可以产生类似的效果。这对真理理论有深远影响：如果悖论不需要自指，那么 Tarski 的分层方案（通过禁止自指来避免悖论）可能不足以解决所有悖论。Yablo 悖论是否真正"非循环"至今仍有争议（Priest 认为它本质上仍然是循环的）。</p>
+      </div>
+
+      <h3>6.2 未解问题</h3>
+
+      <p><strong>开放问题一：真理的紧缩论是否充分？</strong></p>
+      <p>紧缩论（Deflationism）的核心主张是："真"不是一个实质性的属性，其全部意义由等值图式穷尽。然而，紧缩论面临以下严重挑战：</p>
+      <ul>
+        <li><strong>规范性问题</strong>：如果"真"只是去引号装置，那么"追求真理"的规范性从何而来？为什么我们应该相信"真的"命题而不是"假的"命题？紧缩论者似乎无法解释真理的"评价性"维度。</li>
+        <li><strong>通感问题</strong>（Scope Problem）："一切数学定理都是真的"——这个全称陈述涉及无穷多个命题，无法被还原为有限个去引号实例。紧缩论者需要诉诸"命题量化"来处理，但命题量化本身是否预设了"真"的实质性？</li>
+        <li><strong>保守性问题</strong>（Conservativeness Problem）：Shapiro（1998）和 Ketland（1999）证明了，在PA中添加一个满足T约定的真值谓词可以证明PA的一致性，而PA本身不能。因此，真值谓词有"内容"——它超出了PA的证明能力。紧缩论难以解释这一"非保守性"（non-conservativeness）。</li>
+      </ul>
+      <p>当前状态：紧缩论仍然是真理理论中最活跃的争论领域之一，但多数研究者认为，紧缩论的"纯"版本（纯粹的去引号论）难以维持，需要某种形式的"修正"。</p>
+
+      <p><strong>开放问题二：Tarski 限制的超越是否可能？</strong></p>
+      <p>Tarski 的不可定义定理表明，一个语言不能在自身内部定义自己的真值谓词。但这是否意味着"真理"永远不能在一个统一的语言中完全表达？Kripke 的固定点构造和 Gupta 的修正理论都试图超越 Tarski 限制——允许语言包含自己的真值谓词。但两者都面临"强化的说谎者"（strengthened liar）问题：</p>
+      <div class="formula">
+        <strong>强化的说谎者</strong><br>
+        λ*: "λ* 不是真的。"<br>
+        在 Kripke 的三值框架中，λ* 被分配"未定义"——但问题在于：我们能否在元语言中"说"λ* 是未定义的？如果可以，那么 "λ* 是未定义的" 在元语言中似乎为真，但 λ* 自己的内容恰好是"不是真的"——这又产生了矛盾。
+      </div>
+      <p>当前状态：没有一种方案被广泛接受。Kripke 方案、Gupta 修正理论、Field 的次协调方案各自有不同的受体。超越 Tarski 限制的可能性，是真理理论中最深刻、最困难的问题之一。</p>
+
+      <p><strong>开放问题三：多值逻辑中真值的本体论地位</strong></p>
+      <p>如果真值可以取[0,1]区间中的任意实数（模糊逻辑），那么"真值"是什么？它只是一个数学工具，还是对应着某种"本体论上的模糊性"？</p>
+      <ul>
+        <li><strong>认知主义</strong>（Epistemicism）：认为模糊性只是认知上的——"这杯水是热的"要么真要么假，我们只是不知道。真值仍然是二值的。</li>
+        <li><strong>本体论模糊性</strong>：认为世界本身就是模糊的——"热的"和"不热的"之间的边界不是被我们"不知道"的，而是客观地不存在的。</li>
+        <li><strong>语义模糊性</strong>：认为模糊性来源于语言——"热"这个词的语义不是精确的，但世界本身是精确的。</li>
+      </ul>
+      <p>当前状态：三种立场都有支持者，但都没有决定性论证。多值逻辑的真值本体论问题可能与"真理的紧缩论"问题有深层联系——如果"真"是紧缩的，那么多值逻辑中的真值也只是"记分工具"而非本体论承诺。</p>
+
+      <p><strong>开放问题四：物理主义框架下的真理自然化</strong></p>
+      <p>物理主义（Physicalism）主张：一切存在的都是物理的。在这一框架下，真理——作为一个语义学概念——能否被"自然化"？即，能否用物理语言（因果、信息、功能等）来定义"真"？</p>
+      <ul>
+        <li><strong>因果-指称理论</strong>（Kripke 1980, Putnam 1975）：指称通过因果链条建立，真理通过指称和事实的符合来定义。但"符合"是否可以用物理语言表达？</li>
+        <li><strong>信息论语义学</strong>（Dretske 1981）：一个信念为真当且仅当它携带了关于世界的信息。但信息本身是"物理"的吗？</li>
+        <li><strong>功能主义语义学</strong>：真值概念是认知系统的一个功能角色——"真"标记了那些在认知上可靠的表征状态。</li>
+      </ul>
+      <p>当前状态：真理的自然化是当代心灵哲学和语言哲学的核心问题之一。多数研究者认为，完全的"自然化"可能不可行——真理可能涉及不可还原的规范性要素。</p>
+
+      <p><strong>开放问题五：人工智能中的真值维护</strong></p>
+      <p>在人工智能和知识表示中，"真值维护"（Truth Maintenance）是一个核心问题。一个AI系统如何维护其信念集合的一致性？当新信息与旧信息冲突时，如何决定保留哪些"真理"？</p>
+      <ul>
+        <li><strong>真值维护系统</strong>（TMS, Doyle 1979）：基于"信念"（belief）和"证成"（justification）的依赖网络，在矛盾出现时回溯并撤销某些信念。</li>
+        <li><strong>非单调逻辑</strong>（Non-monotonic Logic）：允许在信息增加时撤销之前的结论。这与经典逻辑的单调性（如果前提增加，结论不会减少）形成对比。</li>
+        <li><strong>逻辑编程中的真值</strong>：Prolog 等逻辑编程语言基于"闭世界假设"（Closed World Assumption）——如果无法证明 p，则 p 为假。这实际上是一种"默认推理"（default reasoning）的真理观。</li>
+      </ul>
+      <p>当前状态：AI中的真值问题已经超出了传统真理理论的范畴，涉及到"在信息不完备下如何推理"这一更广泛的问题。但传统真理理论（如紧缩论、融贯论）为AI中的真值维护提供了重要的哲学背景。</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- D7 · 研究前沿 -->
+    <!-- ============================================================ -->
+    <section class="sec" id="phd-d7">
+      <h2><span class="chapno">D7</span>研究前沿</h2>
+      <div class="callout">
+        <span class="callout-title">D7 导引</span>
+        <p>本模块梳理当前真理理论的研究前沿，为博士研究生提供选题方向。每个方向包含：核心问题、当前进展、开放挑战、以及可能的切入点。下方的 Three.js 模型展示了真理悖论空间的三维结构——自指循环、Kripke 固定点迭代的路径、以及悖论区域的拓扑结构。</p>
+      </div>
+
+      <h3>7.1 真理的数学理论（Proof-Theoretic Truth）</h3>
+
+      <p>真理的数学理论研究"真"在证明论中的角色。核心问题是：在形式系统中，真值谓词如何影响系统的证明论强度？具体来说，</p>
+      <ul>
+        <li><strong>Kripke-Platek 集合论中的真值</strong>：在 Kripke-Platek 集合论（KP）中添加真值谓词后，系统的证明论序数（proof-theoretic ordinal）如何变化？</li>
+        <li><strong>不同固定点的证明论强度</strong>：Kripke 构造中不同的固定点（最小、最大、内在）对应不同的证明论强度。Cantini（1990）和 Feferman（1991）在这方面的研究是奠基性的。</li>
+        <li><strong>反思原则</strong>（Reflection Principles）：形如"如果 φ 在 PA 中可证，则 φ 为真"的语句被称为"反思原则"。在 PA 中添加反思原则可以逐步达到更强的系统。</li>
+      </ul>
+      <p><strong>关键文献：</strong>Feferman, S. (1991). "Reflecting on Incompleteness." — Cantini, A. (1990). "A Theory of Formal Truth Arithmetically Equivalent to ID₁."</p>
+
+      <h3>7.2 基于真理的悖论研究</h3>
+
+      <p>悖论研究的核心问题是：悖论是什么——是逻辑的局限，还是语言的病理？</p>
+      <ul>
+        <li><strong>逻辑局限论</strong>：悖论揭示了逻辑的"边界"——就像哥德尔定理揭示了可证明性的边界一样。按照这种观点，存在一些"真值无法确定"的语句，这不是语言的缺陷，而是逻辑的必然。</li>
+        <li><strong>语言病理论</strong>：悖论源于语言的"病理"——如自指、循环定义、语义的自我引用。按照这种观点，通过更精细的语言设计（如分层、条件句限制）可以避免悖论。</li>
+        <li><strong>真矛盾论</strong>（Dialetheism, Priest 2006）：有些悖论（如说谎者）是"真矛盾"——它们既真又假。逻辑需要适应这种真矛盾而不是消除它们。</li>
+      </ul>
+      <p><strong>当前争议：</strong>真矛盾论是最激进的立场，但面临"爆炸原则"的挑战——如果允许矛盾，如何避免从矛盾推出一切？次协调逻辑（paraconsistent logic）提供了技术回应，但真矛盾论在哲学上是否可接受仍是激烈争论的焦点。</p>
+
+      <h3>7.3 真理与泛化（Truth & Generalization）</h3>
+
+      <p>真值谓词的一个重要功能是表达"泛化"——如"一切数学定理都是真的"。紧缩论者认为这是真值谓词的主要甚至唯一功能。但泛化本身涉及深刻的问题：</p>
+      <ul>
+        <li><strong>无穷泛化</strong>：当我们说"一切数学定理都是真的"时，我们是在量化一个无穷集合。真值谓词使我们能够"抓住"（capture）这个无穷集合——但这是否意味着真值谓词有超越有限语言的内容？</li>
+        <li><strong>概括原则</strong>（Generalization Principle）：从 φ(c) 对每个个体 c 成立推出 ∀x φ(x) 成立——这需要某种"归纳原则"或"完全性假设"。但真理的概括原则是否总是可靠的？</li>
+        <li><strong>类型提升</strong>（Type Raising）：在类型论中，真值谓词的使用涉及"类型提升"——从"一阶"的命题到"二阶"的关于真值的命题。这引发了"真值谓词的类型"问题。</li>
+      </ul>
+      <p><strong>关键文献：</strong>Horwich, P. (1998). <em>Truth</em>. — Halbach, V. (2011). <em>Axiomatic Theories of Truth</em>.</p>
+
+      <h3>7.4 悖论与无限（Kripke-Wallace 固定点）</h3>
+
+      <p>Kripke 固定点构造依赖于序数迭代，而序数迭代本身涉及"无限"的概念。对这一过程中的"无限"的分析产生了丰富的结果：</p>
+      <ul>
+        <li><strong>固定点的序数层级</strong>：Kripke 构造达到最小固定点所需的序数有多大？对于 Peano 算术，这个序数是 ω₁^CK（Church-Kleene 序数）——即所有递归序数的上确界。</li>
+        <li><strong>非递归固定点</strong>：是否存在非递归的固定点？如果存在，它们的"构造性"程度如何？</li>
+        <li><strong>Wallace 固定点</strong>：Wallace 在 Kripke 构造的基础上提出了"超穷固定点"的概念——在 Kripke 最小固定点之上继续迭代是否还能得到新的真理？</li>
+      </ul>
+      <p><strong>关键文献：</strong>Kripke, S. (1975). "Outline of a Theory of Truth." — Burgess, J. (1986). "The Truth Is Never Simple." — McGee, V. (1991). <em>Truth, Vagueness, and Paradox</em>.</p>
+
+      <h3>7.5 真值论在计算机科学中的应用</h3>
+
+      <p>真值理论在计算机科学中有多项重要应用：</p>
+      <ul>
+        <li><strong>类型论中的真值</strong>：在 Martin-Lof 类型论中，命题被解释为类型（"命题即类型"，Propositions as Types）。一个命题的"真"就是构造该类型的"项"的存在性。这一"构造性真值"对形式化数学和证明助手（如 Coq, Agda）有重要影响。</li>
+        <li><strong>HoTT 中的一致性与真值</strong>：同伦类型论（Homotopy Type Theory, HoTT）将"一致性"与"真值"联系起来——在 HoTT 中，同一性（identity）不是二值的，而是有"空间"结构的。两个类型的"同一"可以有多种方式，这一"真值"的多元性对集合论基础构成了挑战。</li>
+        <li><strong>知识表示中的真值维护</strong>：在 AI 的知识表示中，真值维护系统（TMS）和真值网络（Truth Networks）使用"真值传播"（truth propagation）算法来维护知识库的一致性。</li>
+        <li><strong>逻辑编程中的真值定义</strong>：在 Datalog 和 Prolog 中，真值通过"最小模型语义"（minimal model semantics）和"固定点语义"（fixed point semantics）来定义——这与 Kripke 固定点构造有直接的数学联系。</li>
+      </ul>
+      <p><strong>关键文献：</strong>Martin-Lof, P. (1984). <em>Intuitionistic Type Theory</em>. — Univalent Foundations Program (2013). <em>Homotopy Type Theory</em>. — Doyle, J. (1979). "A Truth Maintenance System."</p>
+
+      <!-- Three.js 3D Model: Truth Paradox Space -->
+      <h3>7.6 真理悖论空间的三维可视化</h3>
+
+      <div class="three-wrap" id="three-container-d7">
+        <div class="three-caption" style="color:#aaa;padding:6px 0 0;">真理悖论空间的三维结构：自指循环（红色环）、Kripke 固定点迭代路径（蓝色螺旋）、悖论区域（紫色半透明区域）的拓扑结构。</div>
+      </div>
+
+      <script>
+      (function() {
+        try {
+          var container = document.getElementById('three-container-d7');
+          if (!container) return;
+          var w = container.clientWidth || 800;
+          var h = 480;
+
+          var scene = new THREE.Scene();
+          scene.background = new THREE.Color(0x0a0a1a);
+
+          var camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 1000);
+          camera.position.set(7, 5, 9);
+          camera.lookAt(0, 0, 0);
+
+          var renderer = new THREE.WebGLRenderer({ antialias: true });
+          renderer.setSize(w, h);
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+          container.insertBefore(renderer.domElement, container.firstChild);
+
+          // Lights
+          var ambient = new THREE.AmbientLight(0x224466);
+          scene.add(ambient);
+          var dirLight = new THREE.DirectionalLight(0xffffff, 1);
+          dirLight.position.set(5, 10, 7);
+          scene.add(dirLight);
+          var fillLight = new THREE.DirectionalLight(0x8866ff, 0.4);
+          fillLight.position.set(-5, 0, 5);
+          scene.add(fillLight);
+
+          // 1. Self-reference loop (Liar cycle) - red ring
+          var loopPoints = [];
+          for (var i = 0; i <= 60; i++) {
+            var t = (i / 60) * Math.PI * 2;
+            var r = 2.0;
+            loopPoints.push(new THREE.Vector3(r * Math.cos(t), 0.5 * Math.sin(t * 2), r * Math.sin(t)));
+          }
+          var loopCurve = new THREE.CatmullRomCurve3(loopPoints);
+          var loopGeom = new THREE.TubeGeometry(loopCurve, 80, 0.06, 8, true);
+          var loopMat = new THREE.MeshPhongMaterial({
+            color: 0xff4444,
+            emissive: 0xff2222,
+            emissiveIntensity: 0.3,
+            transparent: true,
+            opacity: 0.8
+          });
+          var loopMesh = new THREE.Mesh(loopGeom, loopMat);
+          scene.add(loopMesh);
+
+          // Glowing spheres on the loop
+          var loopSphereMat = new THREE.MeshPhongMaterial({
+            color: 0xff6666,
+            emissive: 0xff4444,
+            emissiveIntensity: 0.5
+          });
+          for (var j = 0; j < 12; j++) {
+            var tj = (j / 12) * Math.PI * 2;
+            var rj = 2.0;
+            var sx = rj * Math.cos(tj);
+            var sz = rj * Math.sin(tj);
+            var sy = 0.5 * Math.sin(tj * 2);
+            var sphere = new THREE.Mesh(new THREE.SphereGeometry(0.1, 8, 8), loopSphereMat);
+            sphere.position.set(sx, sy, sz);
+            scene.add(sphere);
+          }
+
+          // 2. Kripke iteration path - blue spiral converging to fixed point
+          var kripkePoints = [];
+          for (var k = 0; k <= 100; k++) {
+            var tk = k / 100;
+            var angle = tk * 8 * Math.PI;
+            var rk = 0.5 + 2.0 * Math.exp(-tk * 3);
+            var xk = rk * Math.cos(angle);
+            var zk = rk * Math.sin(angle);
+            var yk = -1.5 + tk * 3.0;
+            kripkePoints.push(new THREE.Vector3(xk, yk, zk));
+          }
+          var kripkeCurve = new THREE.CatmullRomCurve3(kripkePoints);
+          var kripkeGeom = new THREE.TubeGeometry(kripkeCurve, 120, 0.05, 6, false);
+          var kripkeMat = new THREE.MeshPhongMaterial({
+            color: 0x4488ff,
+            emissive: 0x2266ff,
+            emissiveIntensity: 0.2,
+            transparent: true,
+            opacity: 0.7
+          });
+          var kripkeMesh = new THREE.Mesh(kripkeGeom, kripkeMat);
+          scene.add(kripkeMesh);
+
+          // 3. Paradox region - semi-transparent purple volume
+          var paradoxGeom = new THREE.SphereGeometry(1.0, 24, 24);
+          var paradoxMat = new THREE.MeshPhongMaterial({
+            color: 0x9933ff,
+            transparent: true,
+            opacity: 0.12,
+            wireframe: false,
+            emissive: 0x6622cc,
+            emissiveIntensity: 0.1
+          });
+          var paradoxSphere = new THREE.Mesh(paradoxGeom, paradoxMat);
+          paradoxSphere.position.set(0, 0.5, 0);
+          scene.add(paradoxSphere);
+
+          // Paradox region wireframe overlay
+          var wireMat = new THREE.MeshBasicMaterial({
+            color: 0xaa66ff,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.15
+          });
+          var wireSphere = new THREE.Mesh(paradoxGeom.clone(), wireMat);
+          wireSphere.position.set(0, 0.5, 0);
+          scene.add(wireSphere);
+
+          // 4. Fixed point - bright gold sphere
+          var fpMat = new THREE.MeshPhongMaterial({
+            color: 0xffaa00,
+            emissive: 0xff8800,
+            emissiveIntensity: 0.6
+          });
+          var fp = new THREE.Mesh(new THREE.SphereGeometry(0.2, 16, 16), fpMat);
+          fp.position.set(0.5, 1.5, 0.5);
+          scene.add(fp);
+
+          // 5. Other fixed points (smaller, dimmer)
+          var fpMat2 = new THREE.MeshPhongMaterial({
+            color: 0xcc8800,
+            emissive: 0x886600,
+            emissiveIntensity: 0.3
+          });
+          var fpPositions = [[-0.3, 1.2, 0.8], [0.8, 0.8, -0.5], [-0.7, 0.3, -0.6]];
+          fpPositions.forEach(function(pos) {
+            var s = new THREE.Mesh(new THREE.SphereGeometry(0.1, 12, 12), fpMat2);
+            s.position.set(pos[0], pos[1], pos[2]);
+            scene.add(s);
+          });
+
+          // 6. Grid
+          var gridHelper = new THREE.GridHelper(8, 8, 0x4B3FE3, 0x222244);
+          gridHelper.position.y = -2;
+          scene.add(gridHelper);
+
+          // 7. Labels
+          function makeLabel(text, color, pos, sz) {
+            var canvas = document.createElement('canvas');
+            canvas.width = 256;
+            canvas.height = 64;
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = 'rgba(0,0,0,0)';
+            ctx.fillRect(0, 0, 256, 64);
+            ctx.font = 'Bold 24px Arial, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = color;
+            ctx.fillText(text, 128, 32);
+            var texture = new THREE.CanvasTexture(canvas);
+            var mat = new THREE.SpriteMaterial({ map: texture, transparent: true });
+            var sprite = new THREE.Sprite(mat);
+            sprite.position.set(pos[0], pos[1], pos[2]);
+            sprite.scale.set(sz || 1.2, 0.3, 1);
+            scene.add(sprite);
+          }
+          makeLabel('自指循环', '#ff6666', [2.8, 1.0, 0], 1.0);
+          makeLabel('Kripke 迭代路径', '#6699ff', [0, 2.8, 2.5], 1.0);
+          makeLabel('悖论区域', '#aa66ff', [0, 1.8, -2.2], 1.0);
+          makeLabel('最小固定点', '#ffaa00', [1.5, 2.0, 1.5], 0.8);
+
+          // Animation
+          function animate() {
+            requestAnimationFrame(animate);
+            var time = Date.now() * 0.0004;
+            scene.rotation.y = time * 0.15;
+            // Pulse the paradox region
+            var pulse = 0.8 + 0.2 * Math.sin(time * 2);
+            paradoxSphere.scale.set(pulse, pulse, pulse);
+            wireSphere.scale.set(pulse, pulse, pulse);
+            renderer.render(scene, camera);
+          }
+          animate();
+
+          function onResize() {
+            var nw = container.clientWidth;
+            if (nw > 0) {
+              camera.aspect = nw / h;
+              camera.updateProjectionMatrix();
+              renderer.setSize(nw, h);
+            }
+          }
+          window.addEventListener('resize', onResize);
+        } catch(e) { console.log('Three.js D7:', e); }
+      })();
+      </script>
+
+      <div class="three-caption">图 D7 · 真理悖论空间的三维结构。红色环代表自指循环——说谎者悖论 "这句话是假的" 的拓扑结构，箭头形成一个封闭的循环，永远无法在二值逻辑中稳定。蓝色螺旋代表 Kripke 固定点迭代路径——从空集出发，经过序数迭代，逐步"逼近"最小固定点（金色球体）。紫色半透明区域代表悖论区域——悖论性语句（如说谎者、强化的说谎者）坐落在这个区域中，它们无法被分配稳定的真值，但也不是"无意义"的——它们揭示了真理概念的边界。多个较小的金色球体代表其他可能的固定点——展示了 Kripke 固定点的多重性。</div>
+
+      <h3>7.7 研究选题建议</h3>
+
+      <div class="callout">
+        <span class="callout-title">博士论文选题方向</span>
+        <p>以下选题方向均具有足够的深度和广度，适合作为博士论文的起点：</p>
+        <ol>
+          <li><strong>Kripke 固定点与类型论的交叉</strong>：在 Martin-Lof 类型论中构造 Kripke 固定点的类型论版本，研究类型论中"真值谓词"的可能形式。</li>
+          <li><strong>真理的紧缩论与证明论</strong>：系统研究真值谓词在 PA 中的"非保守性"——紧缩论是否能够解释真值谓词在证明论上的"内容"？</li>
+          <li><strong>悖论的自然化</strong>：在物理主义框架下，将说谎者悖论重新解释为"信息处理系统的自指性局限"——可以从信息论或计算理论的角度给出新解释。</li>
+          <li><strong>多值逻辑中的真理定义</strong>：在 Lukasiewicz 无穷值逻辑或模糊逻辑中寻找满足 T 约定的真值谓词——这需要对 Tarski 的真理定义做根本性的重新表述。</li>
+          <li><strong>AI 中的真值维护与哲学真理理论的对话</strong>：系统比较 TMS 中的"真值"概念与哲学真理理论中的"真"概念——它们是否同一个"真"？</li>
+        </ol>
+      </div>
+
+      <div class="callout">
+        <span class="callout-title">D7 关键文献</span>
+        <p>Feferman, S. (1991). "Reflecting on Incompleteness." — Halbach, V. (2011). <em>Axiomatic Theories of Truth</em>. — McGee, V. (1991). <em>Truth, Vagueness, and Paradox</em>. — Priest, G. (2006). <em>In Contradiction</em>, 2nd ed. — Field, H. (2008). <em>Saving Truth from Paradox</em>. — Gupta, A. & Belnap, N. (1993). <em>The Revision Theory of Truth</em>. — Yablo, S. (1993). "Paradox without Self-Reference."</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>真理的多维图景 · 博士水平进阶模块 · 作者：詹家杨 · 2026-09-07</p>
+    <p>本模块是为《真理的多维图景》主卷及硕士模块配套的博士水平进阶材料。建议在完成硕士模块后阅读。本模块引用了大量一手文献，读者应直接查阅原文以获得最准确的理解。</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

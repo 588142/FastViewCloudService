@@ -1,0 +1,1007 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>历史思想谱系 · 思想图谱系列第十三辑</title>
+
+  <style>
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+  </style>
+
+  <style>
+    :root {
+      --bg: #F8F4F0;
+      --bg2: #F0E7DD;
+      --ink: #2B2118;
+      --muted: #6E5D4E;
+      --rule: #E0D3C3;
+      --accent: #8C2F39;
+      --accent2: #B8860B;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:first-child { margin-left: 0; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .legacy .legacy-title { font-weight: 700; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .legacy ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; }
+    @media (max-width: 700px) { .legacy { grid-template-columns: 1fr; } }
+
+    .history { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; }
+    .history .history-title { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem; }
+    .history p { margin-bottom: 0.55rem; }
+    .history p:last-child { margin-bottom: 0; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    .formula {
+      font-family: var(--font-mono);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidenav { position: static; max-height: none; }
+    }
+    @media print {
+      .sidenav { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      section.sec { break-inside: avoid-page; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="shell">
+
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">历史思想谱系</div>
+    <div class="brand-sub">思想图谱系列 · 第十三辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+      <li><a href="#intro">导言 · 从记录到理解</a></li>
+      <li><a href="#overview">第一章 · 总览：历史思想的演变</a></li>
+      <li><a href="#chu-han">第二章 · 楚汉之争：从秦亡到汉兴</a></li>
+      <li><a href="#wuhu">第三章 · 五胡乱华：民族大迁徙</a></li>
+      <li><a href="#wei-jin">第四章 · 魏晋南北朝：分裂与融合</a></li>
+      <li><a href="#guogong">第五章 · 国共对立：现代中国的道路之争</a></li>
+      <li><a href="#kangzhan">第六章 · 抗日战争：民族存亡的全民抗战</a></li>
+      <li><a href="#summary">第七章 · 总结提炼：历史思想的启示</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第十三辑</span>
+        <span class="series-links">
+          <a href="../index.html">系列目录</a>
+          <a href="../科技与人工智能思想谱系/科技与人工智能思想谱系.html">← 上一辑 · 科技与人工智能思想谱系</a>
+          <a href="../军事与战略思想谱系/军事与战略思想谱系.html">下一辑 · 军事与战略思想谱系 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>历史思想谱系</h1>
+      <p class="subtitle">从史官到史家，从王朝更替到文明兴衰——人类如何记录、理解与运用历史：以楚汉之争、五胡乱华、魏晋南北朝、国共对立、抗日战争五个大变局时代为案例，提炼"分合循环、民心向背、民族融合、道路选择、以史为鉴"的历史规律</p>
+      <p class="meta">作者：詹家杨 · 2026-09-05 · 7 张思维导图 · 7 张对照表 · 35+ 人物语录 · 历史思想</p>
+    </header>
+
+    <main>
+      <!-- 导言 -->
+      <section class="sec" id="intro">
+        <h2>导言 · 从记录到理解</h2>
+        <p>历史思想（historical thought）是人类对"过去"的<strong>记录、理解与运用</strong>——它既包括史官如何书写历史（史学传统），也包括思想家如何解释历史的规律（历史哲学），还包括政治家如何"以史为鉴"（资治通鉴）。历史思想史追问四个根本问题：<strong>历史从哪里来</strong>（起源论）、<strong>历史有无规律</strong>（规律论）、<strong>历史为谁书写</strong>（价值论）、<strong>历史如何塑造当下</strong>（鉴今论）。它不教人"背年份"，而是回答"我们为什么需要历史、又该如何从历史中汲取智慧"。</p>
+        <div class="callout">
+          <span class="callout-title">一条主线</span>
+          历史思想的主线，是"历史为谁服务"的几次转向：<strong>为神</strong>（上古祭司与神话：历史是神意的记录）→ <strong>为君</strong>（编年史与纪传体：历史是王朝的镜子）→ <strong>为道</strong>（春秋笔法：历史承载道德褒贬）→ <strong>为鉴</strong>（资治通鉴：历史是治国之资）→ <strong>为民族</strong>（近代民族史学：历史是民族认同的根基）→ <strong>为文明</strong>（全球史与文明史观：历史是人类共同的遗产）。每一次转向，都是人类重新回答"历史是记录还是理解、是镜子还是规律"。
+        </div>
+        <p>本辑以中国历史上五个"大变局"时代为案例——<strong>楚汉之争</strong>（王朝更替）、<strong>五胡乱华</strong>（民族迁徙）、<strong>魏晋南北朝</strong>（分裂融合）、<strong>国共对立</strong>（道路选择）、<strong>抗日战争</strong>（民族存亡），看历史如何在关键时刻被书写、被抉择、被运用，并最终提炼出贯穿其中的历史规律。</p>
+      </section>
+
+      <!-- 第一章 总览 -->
+      <section class="sec" id="overview">
+        <h2><span class="chapno">第一章</span>总览：历史思想的演变</h2>
+        <p>先看全景：人类从口述传说中记忆过去，从甲骨卜辞、金文纪事中留下痕迹，从《春秋》编年、《史记》纪传中书写历史，从《资治通鉴》中"以史为鉴"。中国史学形成了"秉笔直书、经世致用"的传统；西方史学则从希罗多德、修昔底德出发，经维科、黑格尔、马克思，到斯宾格勒、汤因比、布罗代尔，追问"历史有无规律、文明如何兴衰"。历史思想从"记录"走向"理解"，再走向"运用"——它既是知识，也是方法，更是治国与立身的智慧。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>中国史学传统</strong>：孔子修《春秋》"微言大义"，以一字褒贬寓道德判断；司马迁著《史记》"究天人之际，通古今之变，成一家之言"，开创纪传体通史；司马光编《资治通鉴》"鉴于往事，有资于治道"，为帝王提供治国镜鉴。二十四史与通鉴传统，构成"以史为鉴"的中华史学精神。</p>
+          <p><strong>西方历史哲学</strong>：希罗多德《历史》"记录人类的功业与苦难"；修昔底德《伯罗奔尼撒战争史》"为后世提供借鉴"；维科《新科学》主张"历史是人类自己创造的，因此人类能够认识历史"；黑格尔认为"历史是理性自我实现的过程"；马克思把历史看作"生产力与生产关系矛盾运动的过程"；斯宾格勒《西方的没落》把文明比作有机体；汤因比《历史研究》提出"挑战—应战"模式；布罗代尔以"长时段"重写历史。</p>
+          <p><strong>历史思想的转向</strong>：从"帝王将相的家谱"到"人民创造的历史"，从"事件史"到"结构史"，从"民族史"到"全球史"——历史思想不断扩展视野，也始终回答同一个问题：我们如何从过去中理解现在、预见未来。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>孔子（前 551–前 479）</strong>——春秋笔法开创者。修《春秋》，以一字寓褒贬。</p>
+        <p><strong>司马迁（前 145–约前 86）</strong>——纪传体通史之父。《史记》"究天人之际，通古今之变"。</p>
+        <p><strong>司马光（1019–1086）</strong>——编年体通史巨匠。《资治通鉴》"有资于治道"。</p>
+        <p><strong>希罗多德（约前 484–前 425）</strong>——西方"历史之父"。《历史》：记录人类的功业。</p>
+        <p><strong>修昔底德（约前 460–前 400）</strong>——政治史与权力分析先驱。《伯罗奔尼撒战争史》。</p>
+        <p><strong>维科（1668–1744）</strong>——历史哲学奠基者。《新科学》：历史有规律。</p>
+        <p><strong>黑格尔（1770–1831）</strong>——历史理性论者。历史是"理性自我实现"的过程。</p>
+        <p><strong>卡尔·马克思（1818–1883）</strong>——历史唯物主义者。历史是生产力与生产关系的矛盾运动。</p>
+        <p><strong>斯宾格勒（1880–1936）</strong>——文明有机体论者。《西方的没落》。</p>
+        <p><strong>汤因比（1889–1975）</strong>——文明形态史观。《历史研究》："挑战—应战"。</p>
+        <p><strong>布罗代尔（1902–1985）</strong>——年鉴学派巨匠。"长时段"结构史。</p>
+
+        <figure class="diagram">
+          <figcaption>图 1 · 历史思想演变结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["历史思想"] --> A["记录<br>口述 · 编年 · 纪传"]
+  ROOT --> B["理解<br>历史哲学 · 规律论"]
+  ROOT --> C["运用<br>以史为鉴 · 经世致用"]
+  ROOT --> D["中国传统<br>秉笔直书 · 春秋笔法"]
+  ROOT --> E["西方传统<br>希罗多德 → 布罗代尔"]
+  ROOT --> F["现代转向<br>人民史 · 全球史 · 长时段"]
+  classDef rootNode fill:#8C2F39,color:#fff,stroke:#8C2F39;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">秉笔直书</span>
+          史官传统 = 事实优先 + 不畏强权
+          <span class="f-note">董狐直笔、齐太史兄弟以死守史——中国史学的"实录"精神，是历史可信性的根基。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">以史为鉴</span>
+          历史的价值 = 鉴于往事 + 有资于治道
+          <span class="f-note">司马光编《资治通鉴》的目的：让历史成为治国理政的镜子，避免重蹈覆辙。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">历史规律论</span>
+          历史 = 生产力与生产关系的矛盾运动（马克思）
+          <span class="f-note">从维科、黑格尔到马克思，历史哲学追问"历史有无规律"——马克思给出唯物主义的回答。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">长时段（布罗代尔）</span>
+          历史 = 结构（长时段）+ 局势（中时段）+ 事件（短时段）
+          <span class="f-note">布罗代尔主张历史研究应超越"事件史"，关注地理、经济、社会等深层结构。</span>
+        </div>
+
+        <h3>对照表：中西方史学传统</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>中国史学</th><th>西方史学</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>起源</strong></td><td>史官制度 · 甲骨金文</td><td>史诗 · 希罗多德《历史》</td></tr>
+              <tr><td><strong>体例</strong></td><td>编年体 · 纪传体 · 纪事本末体</td><td>叙事史 · 分析史 · 年鉴学派</td></tr>
+              <tr><td><strong>核心关怀</strong></td><td>以史为鉴 · 经世致用</td><td>求真 · 解释 · 规律</td></tr>
+              <tr><td><strong>代表</strong></td><td>孔子 · 司马迁 · 司马光</td><td>希罗多德 · 修昔底德 · 汤因比</td></tr>
+              <tr><td><strong>历史观</strong></td><td>循环 · 分合 · 天命民心</td><td>进步 · 理性 · 文明兴衰</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">司马迁 · 前 145–约前 86</div>
+            <blockquote>究天人之际，通古今之变，成一家之言。<cite>——《报任安书》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">司马光 · 1019–1086</div>
+            <blockquote>鉴于往事，有资于治道。<cite>——《进资治通鉴表》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">希罗多德 · 约前 484–前 425</div>
+            <blockquote>历史是人类的功业与苦难的记录。<cite>——《历史》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">修昔底德 · 约前 460–前 400</div>
+            <blockquote>我的著作不是为一时之快，而是为永恒的财富。<cite>——《伯罗奔尼撒战争史》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">维科 · 1668–1744</div>
+            <blockquote>历史是人类自己创造的，因此人类能够认识历史。<cite>——《新科学》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">黑格尔 · 1770–1831</div>
+            <blockquote>历史是理性自我实现的过程。<cite>——《历史哲学》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">卡尔·马克思 · 1818–1883</div>
+            <blockquote>历史是生产力与生产关系矛盾运动的过程。<cite>——《政治经济学批判》序言</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">汤因比 · 1889–1975</div>
+            <blockquote>文明兴衰的钥匙，是挑战与应战。<cite>——《历史研究》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">布罗代尔 · 1902–1985</div>
+            <blockquote>历史学是时间的科学，而时间是多层次的。<cite>——《地中海与菲利普二世时代的地中海世界》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">历史思想的遗产</div>
+            <ul>
+              <li>"秉笔直书"确立史学的实录精神</li>
+              <li>"以史为鉴"让历史成为治国之资</li>
+              <li>历史规律论：从循环史观到唯物史观</li>
+              <li>从事件史到结构史、全球史的方法演进</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第二章 楚汉之争 -->
+      <section class="sec" id="chu-han">
+        <h2><span class="chapno">第二章</span>楚汉之争：从秦亡到汉兴（前 206–前 202）</h2>
+        <p><strong>定义</strong>：楚汉之争是秦末刘邦与项羽争夺天下的四年战争。它不仅是两个军事集团的决战，更是两种治国理念、两种用人哲学、两种人格的较量：项羽"力拔山兮气盖世"却刚愎自用、迷信武力；刘邦"不事生产"却知人善任、能屈能伸。最终刘邦以"得民心、用人才、守关中"胜出，建立汉朝，奠定此后四百年大一统格局。楚汉之争因此成为中国历史思想中"得民心者得天下"的经典案例。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>秦末大起义（前 209）</strong>：陈胜吴广"王侯将相宁有种乎"首举义旗，六国旧贵族纷纷复起，秦帝国土崩瓦解。</p>
+          <p><strong>刘邦起兵（前 209）</strong>：沛县亭长刘邦斩白蛇起义，西进关中，约法三章"杀人者死，伤人及盗抵罪"，深得民心。</p>
+          <p><strong>巨鹿之战（前 207）</strong>：项羽破釜沉舟，大破秦军主力，成为诸侯上将军，威震天下。</p>
+          <p><strong>鸿门宴（前 206）</strong>：项羽放走刘邦，埋下楚汉相争伏笔——"项庄舞剑，意在沛公"。</p>
+          <p><strong>楚汉相争（前 206–前 202）</strong>：彭城之战项羽大胜，荥阳对峙持久消耗，韩信北伐开辟第二战场，垓下之围项羽兵败。</p>
+          <p><strong>乌江自刎（前 202）</strong>：项羽"无颜见江东父老"自刎乌江，刘邦统一天下，建立汉朝。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>刘邦（前 256–前 195）</strong>——汉高祖。知人善任，从布衣到天子。</p>
+        <p><strong>项羽（前 232–前 202）</strong>——西楚霸王。勇冠三军，刚愎自用。</p>
+        <p><strong>张良（约前 250–前 186）</strong>——谋圣。运筹帷幄，决胜千里。</p>
+        <p><strong>萧何（前 257–前 193）</strong>——后勤与制度之才。镇守关中，保障粮草。</p>
+        <p><strong>韩信（约前 231–前 196）</strong>——兵仙。暗度陈仓、背水一战、十面埋伏。</p>
+        <p><strong>范增（前 277–前 204）</strong>——项羽谋士。"亚父"屡献良策而不被用。</p>
+        <p><strong>陈平（？–前 178）</strong>——奇谋之士。离间项羽君臣，屡出奇计。</p>
+        <p><strong>吕后（前 241–前 180）</strong>——汉初女主。稳定汉初政局。</p>
+
+        <figure class="diagram">
+          <figcaption>图 2 · 楚汉之争结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["楚汉之争"] --> A["秦亡<br>大起义 · 巨鹿之战"]
+  ROOT --> B["刘邦<br>约法三章 · 得民心"]
+  ROOT --> C["项羽<br>破釜沉舟 · 失民心"]
+  ROOT --> D["关键转折<br>鸿门宴 · 韩信北伐"]
+  ROOT --> E["垓下之围<br>四面楚歌 · 乌江自刎"]
+  ROOT --> F["汉兴<br>得民心者得天下"]
+  classDef rootNode fill:#8C2F39,color:#fff,stroke:#8C2F39;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">得民心者得天下</span>
+          天下 = 民心（约法三章 vs 屠城）
+          <span class="f-note">刘邦入关中约法三章、不扰民；项羽入咸阳屠城、烧阿房宫——民心向背决定胜负。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">用人者得天下</span>
+          刘邦 = 张良（谋）+ 萧何（政）+ 韩信（兵）
+          <span class="f-note">"汉初三杰"各尽其才；项羽连唯一的谋士范增都不能用——人才是最大的战略资源。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">战略 vs 战术</span>
+          项羽百战百胜 · 刘邦赢在全局
+          <span class="f-note">项羽在战术上几乎不败，却无后方、无盟友、无民心；刘邦守关中、用韩信开辟战场，赢得战略全局。</span>
+        </div>
+
+        <h3>对照表：刘邦 vs 项羽</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>刘邦</th><th>项羽</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>出身</strong></td><td>布衣 · 亭长</td><td>楚国贵族</td></tr>
+              <tr><td><strong>用人</strong></td><td>知人善任 · 三杰并用</td><td>刚愎自用 · 疑范增</td></tr>
+              <tr><td><strong>得民心</strong></td><td>约法三章 · 不扰民</td><td>屠城 · 烧宫 · 失民心</td></tr>
+              <tr><td><strong>战略</strong></td><td>守关中 · 全局布局</td><td>百战百胜 · 无后方</td></tr>
+              <tr><td><strong>结局</strong></td><td>统一天下 · 建汉</td><td>垓下兵败 · 乌江自刎</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">项羽 · 前 232–前 202</div>
+            <blockquote>彼可取而代也。<cite>——见秦始皇巡游</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">刘邦 · 前 256–前 195</div>
+            <blockquote>大丈夫当如此也！<cite>——见秦始皇巡游</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">韩信 · 约前 231–前 196</div>
+            <blockquote>陛下不过能将十万，臣多多而益善耳。<cite>——《史记·淮阴侯列传》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">刘邦 · 前 256–前 195</div>
+            <blockquote>夫运筹帷幄之中，决胜千里之外，吾不如子房；镇国家，抚百姓，给馈饷，吾不如萧何；连百万之军，战必胜，攻必取，吾不如韩信。<cite>——《史记·高祖本纪》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">项羽 · 前 232–前 202</div>
+            <blockquote>力拔山兮气盖世，时不利兮骓不逝。<cite>——《垓下歌》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">刘邦 · 前 256–前 195</div>
+            <blockquote>大风起兮云飞扬，威加海内兮归故乡，安得猛士兮守四方！<cite>——《大风歌》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">楚汉之争的历史启示</div>
+            <ul>
+              <li>得民心者得天下，失民心者失天下</li>
+              <li>用人者得天下：人才是最大的战略资源</li>
+              <li>战略全局重于战术胜利</li>
+              <li>能屈能伸、忍辱负重者成大事</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第三章 五胡乱华 -->
+      <section class="sec" id="wuhu">
+        <h2><span class="chapno">第三章</span>五胡乱华：民族大迁徙与北方变局（304–439）</h2>
+        <p><strong>定义</strong>：五胡乱华指西晋末年"八王之乱"后，匈奴、鲜卑、羯、氐、羌五个少数民族（"五胡"）相继在中原建立政权、北方陷入长期战乱的时期。它既是汉末以来民族内迁的必然结果，也是中国历史上第一次大规模"胡汉融合"的阵痛期。衣冠南渡保存了华夏文化的火种，北魏统一北方则开启了民族融合的新篇章——冲突之后是融合，融合创造新文明，这是五胡乱华留给历史思想的最大启示。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>八王之乱（291–306）</strong>：西晋宗室自相残杀十六年，国力衰耗，为五胡起兵提供契机。</p>
+          <p><strong>五胡内迁</strong>：汉末以来匈奴、鲜卑、羯、氐、羌等族不断内迁，与汉人杂居，"关中之人，戎狄居半"。</p>
+          <p><strong>刘渊建汉（304）</strong>：匈奴贵族刘渊起兵，自称汉室后裔，国号"汉"，揭开五胡乱华序幕。</p>
+          <p><strong>永嘉之乱（311）</strong>：匈奴攻陷洛阳，俘晋怀帝，西晋灭亡——"永嘉之乱，衣冠南渡"。</p>
+          <p><strong>衣冠南渡（317）</strong>：司马睿在建康建立东晋，中原士族大举南迁，华夏文化火种得以保存。</p>
+          <p><strong>十六国（304–439）</strong>：北方先后出现前赵、后赵、前燕、前秦等政权；前秦苻坚一度统一北方，淝水之战后瓦解。</p>
+          <p><strong>北魏统一（439）</strong>：鲜卑拓跋部统一北方，开启南北朝，民族融合进入新阶段。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>刘渊（？–310）</strong>——五胡首义者。匈奴贵族，建"汉"政权。</p>
+        <p><strong>石勒（274–333）</strong>——后赵建立者。从奴隶到皇帝，重用汉人张宾。</p>
+        <p><strong>苻坚（338–385）</strong>——前秦天王。一度统一北方，淝水之战败亡。</p>
+        <p><strong>王导（276–339）</strong>——东晋奠基者。"王与马，共天下"。</p>
+        <p><strong>祖逖（266–321）</strong>——北伐名将。"闻鸡起舞""中流击楫"。</p>
+        <p><strong>刘琨（271–318）</strong>——并州守将。"枕戈待旦"。</p>
+        <p><strong>冉闵（？–352）</strong>——冉魏建立者。颁布"杀胡令"，争议人物。</p>
+        <p><strong>拓跋珪（371–409）</strong>——北魏开国皇帝。定都平城，奠定北朝基业。</p>
+
+        <figure class="diagram">
+          <figcaption>图 3 · 五胡乱华结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["五胡乱华"] --> A["内因<br>八王之乱 · 民族内迁"]
+  ROOT --> B["五胡起兵<br>匈奴 · 鲜卑 · 羯 · 氐 · 羌"]
+  ROOT --> C["西晋灭亡<br>永嘉之乱"]
+  ROOT --> D["衣冠南渡<br>东晋 · 文化南移"]
+  ROOT --> E["十六国<br>前秦统一 · 淝水之战"]
+  ROOT --> F["北魏统一<br>民族融合新阶段"]
+  classDef rootNode fill:#8C2F39,color:#fff,stroke:#8C2F39;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">民族融合规律</span>
+          冲突 → 迁徙 → 融合 → 新文明
+          <span class="f-note">五胡乱华是冲突与阵痛，但最终走向胡汉融合——北魏汉化、隋唐胡汉混血，是"多元一体"中华文明的关键一步。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">衣冠南渡</span>
+          文化火种 = 士族南迁 + 华夏传承
+          <span class="f-note">中原沦陷而文化未断——东晋南朝保存了诗书礼乐，使华夏文明在乱世中延续。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">汉化 vs 胡汉分治</span>
+          前秦苻坚失败 · 北魏汉化成功
+          <span class="f-note">苻坚对旧贵族缺乏整合，淝水一战崩盘；北魏孝文帝主动汉化，融合而强大——融合的方式决定融合的成败。</span>
+        </div>
+
+        <h3>对照表：五胡主要政权</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>政权</th><th>民族</th><th>建立者</th><th>兴衰</th><th>特点</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>前赵</strong></td><td>匈奴</td><td>刘渊</td><td>304–329</td><td>五胡首义 · 自称汉室后裔</td></tr>
+              <tr><td><strong>后赵</strong></td><td>羯</td><td>石勒</td><td>319–351</td><td>从奴隶到皇帝 · 重用汉人</td></tr>
+              <tr><td><strong>前燕</strong></td><td>鲜卑</td><td>慕容皝</td><td>337–370</td><td>鲜卑汉化较早</td></tr>
+              <tr><td><strong>前秦</strong></td><td>氐</td><td>苻坚</td><td>351–394</td><td>一度统一北方 · 淝水败亡</td></tr>
+              <tr><td><strong>北魏</strong></td><td>鲜卑</td><td>拓跋珪</td><td>386–534</td><td>统一北方 · 孝文帝汉化</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">祖逖 · 266–321</div>
+            <blockquote>闻鸡起舞，中流击楫，誓清中原。<cite>——《晋书·祖逖传》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">刘琨 · 271–318</div>
+            <blockquote>枕戈待旦，志枭逆虏。<cite>——《晋书·刘琨传》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">王导 · 276–339</div>
+            <blockquote>戮力王室，克复神州，何至作楚囚相对泣邪！<cite>——《晋书·王导传》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">苻坚 · 338–385</div>
+            <blockquote>以吾之众旅，投鞭于江，足断其流。<cite>——淝水之战前（投鞭断流）</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">石勒 · 274–333</div>
+            <blockquote>大丈夫行事当礌礌落落，如日月皎然。<cite>——《晋书·石勒载记》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">五胡乱华的历史启示</div>
+            <ul>
+              <li>民族冲突的尽头是民族融合</li>
+              <li>衣冠南渡保存华夏文化火种</li>
+              <li>融合的方式决定融合的成败</li>
+              <li>"多元一体"是中华文明的生命力</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四章 魏晋南北朝 -->
+      <section class="sec" id="wei-jin">
+        <h2><span class="chapno">第四章</span>魏晋南北朝：分裂与融合的时代（220–589）</h2>
+        <p><strong>定义</strong>：魏晋南北朝是中国历史上最长的分裂时期之一（220–589），从曹魏代汉到隋灭陈，历时近四百年。它经历了三国鼎立、西晋短暂统一、东晋偏安、南北朝对峙；门阀政治主导社会，九品中正制固化阶层；同时民族融合、佛教传播、玄学兴起，书法、绘画、文学、科技取得辉煌成就——分裂的政治与繁荣的文化并存，是"乱世中的文明高峰"。它证明：政治分裂不等于文明停滞，融合与创造往往在动荡中生长。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>三国鼎立（220–280）</strong>：曹魏代汉，蜀汉、东吴相继立国；司马氏篡魏建晋，280 年灭吴统一。</p>
+          <p><strong>西晋统一与速亡（280–316）</strong>：八王之乱耗尽国力，永嘉之乱后西晋灭亡，衣冠南渡。</p>
+          <p><strong>东晋十六国（317–420）</strong>：东晋偏安江南，北方十六国混战；淝水之战（383）东晋以少胜多，保住南方。</p>
+          <p><strong>南北朝（420–589）</strong>：南朝宋齐梁陈更迭，北朝北魏、东魏西魏、北齐北周相继；北魏孝文帝改革推动民族融合。</p>
+          <p><strong>门阀政治</strong>：九品中正制使"上品无寒门，下品无士族"，门阀士族垄断政治与文化。</p>
+          <p><strong>文化成就</strong>：王羲之书法、顾恺之绘画、陶渊明田园诗、祖冲之圆周率、郦道元《水经注》、贾思勰《齐民要术》、佛教石窟艺术。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>曹操（155–220）</strong>——魏武帝。乱世枭雄，唯才是举。</p>
+        <p><strong>诸葛亮（181–234）</strong>——蜀汉丞相。"鞠躬尽瘁，死而后已"。</p>
+        <p><strong>司马懿（179–251）</strong>——晋朝奠基者。隐忍待时，高平陵之变。</p>
+        <p><strong>王羲之（303–361）</strong>——书圣。《兰亭集序》"天下第一行书"。</p>
+        <p><strong>陶渊明（365–427）</strong>——田园诗之祖。"不为五斗米折腰"。</p>
+        <p><strong>孝文帝拓跋宏（467–499）</strong>——北魏改革者。迁都洛阳，全面汉化。</p>
+        <p><strong>祖冲之（429–500）</strong>——数学家。圆周率精确到小数点后七位。</p>
+        <p><strong>顾恺之（约 348–409）</strong>——画家。"传神写照，正在阿堵中"。</p>
+
+        <figure class="diagram">
+          <figcaption>图 4 · 魏晋南北朝结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["魏晋南北朝"] --> A["三国鼎立<br>魏蜀吴 · 司马篡魏"]
+  ROOT --> B["西晋 · 东晋<br>短暂统一 · 衣冠南渡"]
+  ROOT --> C["南北朝<br>南朝宋齐梁陈 · 北朝诸国"]
+  ROOT --> D["门阀政治<br>九品中正制"]
+  ROOT --> E["民族融合<br>孝文帝汉化改革"]
+  ROOT --> F["文化高峰<br>书法 · 玄学 · 科技"]
+  classDef rootNode fill:#8C2F39,color:#fff,stroke:#8C2F39;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">门阀政治</span>
+          九品中正制 = 上品无寒门 + 下品无士族
+          <span class="f-note">门阀垄断政治与文化，阶层固化削弱统治活力——隋唐以科举制取代九品中正，正是对它的反动。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">民族融合（孝文帝改革）</span>
+          融合 = 迁都 + 改汉姓 + 说汉语 + 通婚
+          <span class="f-note">北魏孝文帝主动汉化，使鲜卑融入华夏——民族融合不是同化，而是"多元一体"的共生。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">乱世文化高峰</span>
+          政治分裂 ≠ 文明停滞
+          <span class="f-note">魏晋南北朝政治动荡，却诞生书法、玄学、佛教艺术与科技高峰——乱世往往是思想的解放期。</span>
+        </div>
+
+        <h3>对照表：南朝 vs 北朝</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>南朝</th><th>北朝</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>政权</strong></td><td>宋 · 齐 · 梁 · 陈</td><td>北魏 · 东魏西魏 · 北齐北周</td></tr>
+              <tr><td><strong>民族</strong></td><td>汉族为主 · 士族南迁</td><td>鲜卑等胡族为主 · 渐趋汉化</td></tr>
+              <tr><td><strong>政治</strong></td><td>门阀政治 · 皇权与士族共治</td><td>胡汉分治 → 孝文帝汉化</td></tr>
+              <tr><td><strong>文化</strong></td><td>玄学 · 书法 · 田园诗</td><td>佛教石窟 · 民歌 · 北朝乐府</td></tr>
+              <tr><td><strong>科技</strong></td><td>祖冲之圆周率 · 《齐民要术》</td><td>《水经注》 · 石窟艺术</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">曹操 · 155–220</div>
+            <blockquote>老骥伏枥，志在千里；烈士暮年，壮心不已。<cite>——《龟虽寿》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">诸葛亮 · 181–234</div>
+            <blockquote>鞠躬尽瘁，死而后已。<cite>——《后出师表》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">陶渊明 · 365–427</div>
+            <blockquote>不为五斗米折腰。<cite>——《晋书·陶潜传》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">王羲之 · 303–361</div>
+            <blockquote>固知一死生为虚诞，齐彭殇为妄作。<cite>——《兰亭集序》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">孝文帝拓跋宏 · 467–499</div>
+            <blockquote>断诸北语，一从正音；迁都洛阳，改姓元氏。<cite>——《魏书·高祖纪》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">顾恺之 · 约 348–409</div>
+            <blockquote>传神写照，正在阿堵中。<cite>——《世说新语·巧艺》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">魏晋南北朝的历史启示</div>
+            <ul>
+              <li>政治分裂不等于文明停滞</li>
+              <li>门阀固化终被科举取代</li>
+              <li>民族融合创造"多元一体"文明</li>
+              <li>乱世往往是思想解放与文化高峰</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第五章 国共对立 -->
+      <section class="sec" id="guogong">
+        <h2><span class="chapno">第五章</span>国共对立：现代中国的道路之争（1927–1949）</h2>
+        <p><strong>定义</strong>：国共对立是 1927 年至 1949 年间，中国国民党与中国共产党围绕"中国向何处去"展开的政治与军事斗争。它经历了第一次国共合作破裂、十年内战、抗日战争中的再度合作与摩擦、解放战争四个阶段。这场斗争的本质，是"大地主大资产阶级专政"与"人民民主专政"两条道路的抉择，最终以民心向背决定胜负——历史再次证明：得民心者得天下，人民是历史的创造者。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>辛亥革命与军阀混战（1911–1924）</strong>：推翻帝制，但北洋军阀割据，中国陷入混乱。</p>
+          <p><strong>五四运动与中共成立（1919 / 1921）</strong>：新文化运动传播马克思主义，中国共产党成立。</p>
+          <p><strong>第一次国共合作（1924–1927）</strong>：国共合作北伐，打倒军阀，取得重大胜利。</p>
+          <p><strong>四一二政变（1927）</strong>：蒋介石清党反共，国共分裂，大革命失败。</p>
+          <p><strong>十年内战（1927–1937）</strong>：共产党开辟农村革命根据地，进行土地革命；红军长征（1934–1936）；西安事变（1936）促成抗日民族统一战线。</p>
+          <p><strong>第二次国共合作（1937–1945）</strong>：共同抗日，但国民党消极抗日、积极反共。</p>
+          <p><strong>解放战争（1946–1949）</strong>：三大战役（辽沈、淮海、平津）、渡江战役，1949 年新中国成立。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>孙中山（1866–1925）</strong>——革命先行者。"天下为公"，三民主义。</p>
+        <p><strong>蒋介石（1887–1975）</strong>——国民党领导人。北伐、抗战、内战。</p>
+        <p><strong>毛泽东（1893–1976）</strong>——中国共产党领袖。农村包围城市，新民主主义革命。</p>
+        <p><strong>周恩来（1898–1976）</strong>——中共领导人。统一战线与外交智慧。</p>
+        <p><strong>张学良（1901–2001）</strong>——东北军将领。西安事变，逼蒋抗日。</p>
+        <p><strong>杨虎城（1893–1949）</strong>——西北军将领。西安事变发起者之一。</p>
+        <p><strong>朱德（1886–1976）</strong>——红军总司令。人民军队的缔造者。</p>
+        <p><strong>彭德怀（1898–1974）</strong>——解放军将领。百团大战、抗美援朝。</p>
+
+        <figure class="diagram">
+          <figcaption>图 5 · 国共对立结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["国共对立"] --> A["合作破裂<br>四一二政变 · 十年内战"]
+  ROOT --> B["共产党<br>土地革命 · 农村包围城市"]
+  ROOT --> C["国民党<br>大地主大资产阶级专政"]
+  ROOT --> D["抗日合作<br>民族统一战线 · 西安事变"]
+  ROOT --> E["解放战争<br>三大战役 · 渡江战役"]
+  ROOT --> F["新中国<br>民心向背决定胜负"]
+  classDef rootNode fill:#8C2F39,color:#fff,stroke:#8C2F39;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">民心向背</span>
+          得民心者得天下 · 失民心者失天下
+          <span class="f-note">共产党土地改革"耕者有其田"得民心；国民党苛捐杂税、腐败横行失民心——民心是最大的政治。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">统一战线</span>
+          团结一切可以团结的力量
+          <span class="f-note">从抗日民族统一战线到人民民主统一战线——"把朋友搞得多多的，把敌人搞得少少的"。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">农村包围城市</span>
+          革命道路 = 农村根据地 + 武装斗争 + 土地革命
+          <span class="f-note">毛泽东开辟"农村包围城市、武装夺取政权"的道路，是中国革命成功的独特路径。</span>
+        </div>
+
+        <h3>对照表：国共两党对比</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>中国共产党</th><th>中国国民党</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>阶级基础</strong></td><td>工农大众</td><td>大地主大资产阶级</td></tr>
+              <tr><td><strong>土地政策</strong></td><td>土地革命 · 耕者有其田</td><td>维护地主利益 · 苛捐杂税</td></tr>
+              <tr><td><strong>抗战态度</strong></td><td>积极抗日 · 敌后战场</td><td>消极抗日 · 积极反共</td></tr>
+              <tr><td><strong>民心</strong></td><td>得民心 · 人民拥护</td><td>失民心 · 腐败横行</td></tr>
+              <tr><td><strong>结局</strong></td><td>建立新中国</td><td>败退台湾</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">孙中山 · 1866–1925</div>
+            <blockquote>天下为公。<cite>——《礼记·礼运》题词</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">毛泽东 · 1893–1976</div>
+            <blockquote>星星之火，可以燎原。<cite>——《星星之火，可以燎原》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">毛泽东 · 1893–1976</div>
+            <blockquote>枪杆子里面出政权。<cite>——八七会议（1927）</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">周恩来 · 1898–1976</div>
+            <blockquote>为中华之崛起而读书。<cite>——少年时代</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">毛泽东 · 1893–1976</div>
+            <blockquote>人民，只有人民，才是创造世界历史的动力。<cite>——《论联合政府》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">国共对立的历史启示</div>
+            <ul>
+              <li>民心向背决定历史走向</li>
+              <li>统一战线是克敌制胜的法宝</li>
+              <li>农村包围城市是独特革命道路</li>
+              <li>人民是历史的创造者</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第六章 抗日战争 -->
+      <section class="sec" id="kangzhan">
+        <h2><span class="chapno">第六章</span>抗日战争：民族存亡的全民抗战（1937–1945）</h2>
+        <p><strong>定义</strong>：抗日战争是中华民族反抗日本帝国主义侵略的民族解放战争——1931 年九一八事变开始局部抗战，1937 年七七事变全面爆发，1945 年日本无条件投降。它是中国近代以来第一次取得完全胜利的民族解放战争。国共两党以民族大义为重再度合作，正面战场与敌后战场相互配合，全民族浴血奋战十四年，最终赢得胜利，中国成为联合国安理会常任理事国。抗日战争证明：民族存亡之际，全民族团结是战胜强敌的根本力量。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>九一八事变（1931）</strong>：日本侵占东北，局部抗战开始，东北抗联浴血奋战。</p>
+          <p><strong>华北事变与西安事变（1935 / 1936）</strong>：日本策动华北自治；张学良、杨虎城兵谏，逼蒋抗日，促成抗日民族统一战线。</p>
+          <p><strong>七七事变（1937）</strong>：卢沟桥事变，全面抗战爆发，国共第二次合作。</p>
+          <p><strong>正面战场</strong>：淞沪会战、台儿庄大捷、武汉会战——国民党军队浴血抵抗。</p>
+          <p><strong>敌后战场</strong>：平型关大捷、百团大战、游击战争——共产党开辟敌后根据地。</p>
+          <p><strong>南京大屠杀（1937）</strong>：日军暴行，三十万同胞遇难，人类文明史上的惨剧。</p>
+          <p><strong>抗战胜利（1945）</strong>：日本无条件投降，台湾光复，中国跻身世界四强，成为联合国安理会常任理事国。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>蒋介石（1887–1975）</strong>——正面战场统帅。庐山谈话宣示抗战到底。</p>
+        <p><strong>毛泽东（1893–1976）</strong>——敌后抗战领袖。《论持久战》战略指导。</p>
+        <p><strong>张学良（1901–2001）</strong>——西安事变主角。逼蒋抗日，促成统一战线。</p>
+        <p><strong>杨靖宇（1905–1940）</strong>——东北抗联英雄。孤军苦战，壮烈殉国。</p>
+        <p><strong>张自忠（1891–1940）</strong>——抗日名将。枣宜会战殉国，民族气节。</p>
+        <p><strong>左权（1905–1942）</strong>——八路军将领。百团大战，十字岭殉国。</p>
+        <p><strong>赵一曼（1905–1936）</strong>——抗联女英雄。"甘将热血沃中华"。</p>
+        <p><strong>彭德怀（1898–1974）</strong>——百团大战指挥者。敌后战场重要将领。</p>
+
+        <figure class="diagram">
+          <figcaption>图 6 · 抗日战争结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["抗日战争"] --> A["局部抗战<br>九一八 · 东北抗联"]
+  ROOT --> B["全面抗战<br>七七事变 · 国共合作"]
+  ROOT --> C["正面战场<br>淞沪 · 台儿庄 · 武汉"]
+  ROOT --> D["敌后战场<br>平型关 · 百团大战"]
+  ROOT --> E["民族苦难<br>南京大屠杀 · 全民牺牲"]
+  ROOT --> F["抗战胜利<br>1945 · 台湾光复"]
+  classDef rootNode fill:#8C2F39,color:#fff,stroke:#8C2F39;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>核心法则</h3>
+        <div class="formula">
+          <span class="f-name">民族统一战线</span>
+          全民族抗战 = 国共合作 + 各阶层团结
+          <span class="f-note">民族存亡之际，地无分南北、人无分老幼，皆有守土抗战之责——团结是战胜强敌的根本。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">持久战（《论持久战》）</span>
+          抗战 = 战略防御 → 战略相持 → 战略反攻
+          <span class="f-note">毛泽东《论持久战》科学预判战争三阶段，批驳"亡国论"与"速胜论"，为抗战提供战略指导。</span>
+        </div>
+        <div class="formula">
+          <span class="f-name">两个战场配合</span>
+          正面战场（正规战）+ 敌后战场（游击战）
+          <span class="f-note">国民党正面战场与共产党敌后战场相互配合，使日军陷入"两个拳头"的夹击。</span>
+        </div>
+
+        <h3>对照表：正面战场 vs 敌后战场</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>正面战场</th><th>敌后战场</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>主导</strong></td><td>国民党军队</td><td>共产党军队</td></tr>
+              <tr><td><strong>作战方式</strong></td><td>大规模正规战 · 阵地战</td><td>游击战 · 运动战</td></tr>
+              <tr><td><strong>代表战役</strong></td><td>淞沪会战 · 台儿庄 · 武汉会战</td><td>平型关 · 百团大战</td></tr>
+              <tr><td><strong>作用</strong></td><td>消耗日军主力 · 迟滞进攻</td><td>牵制日军 · 建立根据地</td></tr>
+              <tr><td><strong>牺牲</strong></td><td>重大 · 数百万将士</td><td>重大 · 根据地军民</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">蒋介石 · 1887–1975</div>
+            <blockquote>地无分南北，年无分老幼，无论何人，皆有守土抗战之责任。<cite>——1937 年庐山谈话</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">毛泽东 · 1893–1976</div>
+            <blockquote>兵民是胜利之本。<cite>——《论持久战》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">张自忠 · 1891–1940</div>
+            <blockquote>为国家民族死之决心，海不清，石不烂，决不半点改变。<cite>——致将士书</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">赵一曼 · 1905–1936</div>
+            <blockquote>未惜头颅新故国，甘将热血沃中华。<cite>——就义前遗诗</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">杨靖宇 · 1905–1940</div>
+            <blockquote>头颅可断，志不可夺。<cite>——东北抗联</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">抗日战争的历史启示</div>
+            <ul>
+              <li>全民族团结是战胜强敌的根本力量</li>
+              <li>持久战战略指导民族抗战</li>
+              <li>两个战场配合消耗日军</li>
+              <li>民族独立是复兴的前提</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第七章 总结提炼 -->
+      <section class="sec" id="summary">
+        <h2><span class="chapno">第七章</span>总结提炼：历史思想的启示</h2>
+        <p>回顾楚汉之争、五胡乱华、魏晋南北朝、国共对立、抗日战争五个时代，可以提炼出中国历史思想的核心规律：<strong>分合循环、民心向背、民族融合、道路选择、以史为鉴</strong>。历史不是偶然事件的堆积，而是规律与选择交织的过程——规律提供大势，选择决定走向。</p>
+
+        <figure class="diagram">
+          <figcaption>图 7 · 历史思想五大规律图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["历史思想五大规律"] --> A["分合循环<br>分久必合 · 合久必分"]
+  ROOT --> B["民心向背<br>得民心者得天下"]
+  ROOT --> C["民族融合<br>多元一体 · 融合创新"]
+  ROOT --> D["道路选择<br>转折点决定方向"]
+  ROOT --> E["以史为鉴<br>鉴于往事 · 有资于治道"]
+  classDef rootNode fill:#8C2F39,color:#fff,stroke:#8C2F39;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <div class="history">
+          <span class="history-title">五大规律的提炼</span>
+          <p><strong>分合循环</strong>：天下大势，分久必合，合久必分。楚汉之争结束秦末分裂，魏晋南北朝以隋唐统一告终，国共对立以新中国诞生收束——分裂是阵痛，统一是趋势。</p>
+          <p><strong>民心向背</strong>：得民心者得天下。刘邦约法三章得民心，项羽屠城失民心；共产党土地改革得民心，国民党腐败失民心——民心是最大的政治。</p>
+          <p><strong>民族融合</strong>：五胡乱华与魏晋南北朝证明，冲突之后是融合，融合创造新文明。北魏汉化、隋唐胡汉混血，是"多元一体"中华文明的关键一步。</p>
+          <p><strong>道路选择</strong>：历史转折点的抉择决定未来。楚汉之争是"霸道 vs 王道"，国共对立是"两条道路"——选择决定方向，方向决定命运。</p>
+          <p><strong>以史为鉴</strong>：历史思想的最终目的，是"鉴于往事，有资于治道"。从《资治通鉴》到今天的党史学习，历史始终是治国理政与民族复兴的镜鉴。</p>
+        </div>
+
+        <h3>对照表：五个时代的对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>时代</th><th>性质</th><th>关键转折</th><th>历史启示</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>楚汉之争</strong></td><td>王朝更替</td><td>鸿门宴 · 垓下之围</td><td>得民心者得天下 · 用人者得天下</td></tr>
+              <tr><td><strong>五胡乱华</strong></td><td>民族迁徙</td><td>永嘉之乱 · 衣冠南渡</td><td>冲突之后是融合 · 文化火种南移</td></tr>
+              <tr><td><strong>魏晋南北朝</strong></td><td>分裂融合</td><td>孝文帝汉化 · 淝水之战</td><td>分裂不等于停滞 · 融合创造文明</td></tr>
+              <tr><td><strong>国共对立</strong></td><td>道路选择</td><td>四一二政变 · 三大战役</td><td>民心向背 · 统一战线 · 农村包围城市</td></tr>
+              <tr><td><strong>抗日战争</strong></td><td>民族存亡</td><td>七七事变 · 抗战胜利</td><td>全民族团结 · 持久战 · 民族复兴</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">历史思想精神三句话</span>
+          第一，<strong>历史是规律与选择的交响</strong>——分合循环是规律，民心向背是选择，二者共同塑造历史；第二，<strong>文明在冲突与融合中生长</strong>——五胡乱华与魏晋南北朝证明，融合创造新文明，"多元一体"是中华文明的生命力；第三，<strong>以史为鉴，可以知兴替</strong>——历史思想的价值，在于让后人少走弯路、让民族在复兴之路上行稳致远。历史不是过去的坟墓，而是未来的镜子——这正是它超越时代、通向文明的路径。
+        </div>
+      </section>
+    </main>
+
+    
+      <section class="sec">
+        <h2>关联辑目</h2>
+        <div class="explain">
+          <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+          <ul>
+          <li><a href="../西方哲学思想谱系/西方哲学思想谱系.html">西方哲学思想谱系</a></li>
+          <li><a href="../经济思想谱系/经济思想谱系.html">经济思想谱系·上篇</a></li>
+          <li><a href="../政治学通论/政治学通论.html">政治学通论</a></li>
+          <li><a href="../军事与战略思想谱系/军事与战略思想谱系.html">军事与战略思想谱系</a></li>
+          <li><a href="../科学思想谱系/科学思想谱系.html">科学思想谱系</a></li>
+          <li><a href="../文学与语言思想谱系/文学与语言思想谱系.html">文学与语言思想谱系</a></li>
+          <li><a href="../艺术与美学思想谱系/艺术与美学思想谱系.html">艺术与美学思想谱系</a></li>
+          <li><a href="../马克思主义谱系/马克思主义谱系.html">马克思主义谱系</a></li>
+          </ul>
+        </div>
+      </section>
+<footer>
+      历史思想谱系 · 思想图谱系列第十三辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-05
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'PingFang SC, Microsoft YaHei, Helvetica, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>

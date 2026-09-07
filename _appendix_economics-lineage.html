@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>经济思想谱系 · 本科生升级附录 · 上篇</title>
+<style>
+:root {
+  --bg: #F8FAF6; --bg2: #EEF2EA; --ink: #222820; --muted: #62695C;
+  --rule: #DFE4D8; --accent: #4F7A28; --accent2: #B8793B;
+  --font-head: 'Lora','Songti SC','SimSun',serif;
+  --font: 'WorkSans','PingFang SC','Microsoft YaHei',sans-serif;
+  --font-mono: 'DMMono',monospace;
+  --max: 880px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:16px;scroll-behavior:smooth;}
+body{font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.75;padding:2rem 1.5rem;max-width:var(--max);margin:0 auto;}
+section.sec{margin-bottom:3.5rem;}
+h2{font-family:var(--font-head);font-size:1.5rem;font-weight:700;padding-bottom:0.5rem;border-bottom:2px solid var(--accent);margin-bottom:1.2rem;}
+h2 .chapno{color:var(--accent2);font-family:var(--font-mono);font-size:0.85rem;letter-spacing:0.1em;display:block;margin-bottom:0.3rem;}
+h3{font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin:1.6rem 0 0.6rem;}
+h4{font-family:var(--font-head);font-size:0.95rem;font-weight:700;margin:1.2rem 0 0.4rem;color:var(--accent);}
+p{margin-bottom:0.9rem;font-size:0.95rem;}
+ul{margin:0 0 1rem 1.3rem;font-size:0.95rem;}
+li{margin-bottom:0.4rem;}
+strong{color:var(--ink);}
+.callout{border-left:4px solid var(--accent2);background:var(--bg2);padding:0.9rem 1.1rem;margin:1.2rem 0;font-size:0.92rem;border-radius:0 8px 8px 0;}
+.callout .callout-title{font-weight:700;color:var(--accent2);display:block;margin-bottom:0.3rem;font-size:0.85rem;}
+.table-wrap{overflow-x:auto;overflow-y:auto;max-height:800px;margin:1.2rem 0;border:1px solid var(--rule);border-radius:10px;}
+table{border-collapse:collapse;width:100%;font-size:0.88rem;}
+th{background:var(--bg2);text-align:left;padding:0.6rem 0.9rem;border-bottom:2px solid var(--rule);font-weight:700;white-space:nowrap;}
+td{padding:0.6rem 0.9rem;border-bottom:1px solid var(--rule);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:var(--bg2);}
+.formula{font-family:var(--font-mono);background:var(--bg);border:1px solid var(--rule);border-left:4px solid var(--accent2);border-radius:0 8px 8px 0;padding:0.8rem 1rem;margin:0.7rem 0;font-size:0.95rem;overflow-x:auto;}
+.formula .f-name{font-weight:700;color:var(--accent);display:block;font-size:0.78rem;letter-spacing:0.04em;margin-bottom:0.3rem;}
+.formula .f-note{color:var(--muted);font-size:0.8rem;display:block;margin-top:0.3rem;}
+.viz-container{width:100%;background:var(--bg2);border-radius:12px;position:relative;overflow:hidden;margin:1.2rem 0;border:1px solid var(--rule);}
+.viz-caption{font-size:0.82rem;color:var(--muted);text-align:center;padding:0.5rem 1rem 1rem;font-style:italic;}
+pre{background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:0.8rem 1rem;margin:0.7rem 0;font-size:0.85rem;overflow-x:auto;font-family:var(--font-mono);}
+.highlight{background:rgba(183,121,59,0.08);border-left:3px solid var(--accent2);padding:0.3rem 0.8rem;}
+footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:0.8rem;color:var(--muted);font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+
+<article>
+<header style="margin-bottom:2.5rem;">
+  <div style="font:700 0.75rem var(--font-mono);letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);margin-bottom:0.6rem;">思想图谱系列 · 第七辑</div>
+  <h1 style="font-family:var(--font-head);font-size:2rem;font-weight:700;line-height:1.25;">经济思想谱系 · 上篇</h1>
+  <p style="font-family:var(--font-head);font-style:italic;font-size:1.05rem;color:var(--muted);margin-top:0.5rem;">本科生升级附录 · 从通识到学术前沿</p>
+  <p style="font-size:0.8rem;color:var(--muted);margin-top:0.9rem;font-family:var(--font-mono);">11 个附录 · 交互式可视化 · 术语表 · 习题集 · 文献选读</p>
+</header>
+
+<main>
+
+<!-- ===== 附录一 ===== -->
+<section class="sec" id="appendix-a">
+  <h2><span class="chapno">附录一</span>升级导览与教材对标</h2>
+  <p>本附录集旨在为已经通过《经济思想谱系》（第七辑）获得通识框架的本科生提供一条通向学术前沿的升级路径。每一份附录都对应着主流经济学教材（曼昆《经济学原理》、萨缪尔森《经济学》、平狄克《微观经济学》、布兰查德《宏观经济学》等）中的关键章节，帮助读者在熟悉的内容基础上，深化对经济思想史的理论理解。</p>
+
+  <div class="callout">
+    <span class="callout-title">升级目标</span>
+    <p>本附录集的六个核心目标：</p>
+    <ul>
+      <li><strong>精确化</strong>：将通识性叙述转化为严格的学术定义和形式化表述；</li>
+      <li><strong>系统化</strong>：梳理各学派之间的逻辑关系与理论传承；</li>
+      <li><strong>可视化</strong>：通过三维模型、函数图和动画直观展示抽象的经济学概念；</li>
+      <li><strong>方法论</strong>：介绍各学派特有的分析框架和论证方法；</li>
+      <li><strong>批判性</strong>：呈现关键学术争论，培养独立判断能力；</li>
+      <li><strong>文献基础</strong>：提供一手文献和前沿研究的阅读指引。</li>
+    </ul>
+  </div>
+
+  <h3>教材对标表</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>附录</th><th>曼昆《经济学原理》</th><th>萨缪尔森《经济学》</th><th>其他教材</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>附录一</strong> 升级导览</td><td>全书导览</td><td>全书导览</td><td>—</td></tr>
+        <tr><td><strong>附录二</strong> 精确定义与术语表</td><td>第1–2章</td><td>第1–3章</td><td>平狄克第1章</td></tr>
+        <tr><td><strong>附录三</strong> 形式系统与核心模型</td><td>第4–7章</td><td>第4–6章</td><td>平狄克第2–4章</td></tr>
+        <tr><td><strong>附录四</strong> 推演方法与证明</td><td>第7–8章</td><td>第7–8章</td><td>范里安《微观经济学》</td></tr>
+        <tr><td><strong>附录五</strong> 核心模型与图表</td><td>第9–13章</td><td>第9–12章</td><td>曼昆宏观部分</td></tr>
+        <tr><td><strong>附录六</strong> 高阶理论与前沿</td><td>第14–15章</td><td>第13–15章</td><td>马斯-科莱尔《微观经济理论》</td></tr>
+        <tr><td><strong>附录七</strong> 方法训练与实操</td><td>各章习题</td><td>各章习题</td><td>教材配套练习</td></tr>
+        <tr><td><strong>附录八</strong> 经典习题集</td><td>各章复习题</td><td>各章复习题</td><td>—</td></tr>
+        <tr><td><strong>附录九</strong> 一手文献选读</td><td>—</td><td>—</td><td>原著选读</td></tr>
+        <tr><td><strong>附录十</strong> 关键争论</td><td>—</td><td>—</td><td>学术史</td></tr>
+        <tr><td><strong>附录十一</strong> 延伸阅读</td><td>—</td><td></td><td>跨学科拓展</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>如何使用本附录</h3>
+  <p>建议读者按以下顺序使用：首先通读<strong>附录二</strong>建立术语基础，然后依次研读<strong>附录三至五</strong>（含交互式可视化），掌握形式系统与核心模型。<strong>附录六</strong>提供高阶理论视野，<strong>附录七至八</strong>用于方法训练，<strong>附录九至十一</strong>为自主研究提供指引。每个附录均可独立使用，也可作为主卷对应章节的补充阅读材料。</p>
+</section>
+
+<!-- ===== 附录二 ===== -->
+<section class="sec" id="appendix-b">
+  <h2><span class="chapno">附录二</span>精确定义与术语表</h2>
+  <p>本术语表收录了经济思想史上篇中最核心的15个术语，每个术语均标注英文对应词、符号表示、严格定义以及常见的易混点辨析。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>术语</th><th>英文</th><th>符号</th><th>严格定义</th><th>易混点辨析</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>稀缺性</strong></td><td>Scarcity</td><td>—</td><td>社会拥有的资源（土地、劳动、资本、企业家才能）永远无法满足人类无限的欲望，这一事实是经济学存在的根本前提。</td><td>不同于"短缺"（shortage），短缺是价格低于均衡时的暂时现象；稀缺是永恒的，无法通过价格机制消除。</td></tr>
+        <tr><td><strong>机会成本</strong></td><td>Opportunity Cost</td><td>OC</td><td>为得到某物而放弃的最高价值替代方案的成本。机会成本不仅包括显性货币成本，还包括隐性成本（如放弃的时间价值）。</td><td>不同于会计成本（仅计算实际支出）。机会成本是决策相关成本，是经济学思维的核心。</td></tr>
+        <tr><td><strong>边际效用</strong></td><td>Marginal Utility</td><td>MU</td><td>消费者从额外消费一单位商品中获得的满足感的增量。MU = dU/dQ，边际效用递减规律是需求曲线向右下倾斜的微观基础。</td><td>不同于总效用（TU）。边际效用是总效用对消费量的导数，描述了"最后一单位"的效用。</td></tr>
+        <tr><td><strong>需求价格弹性</strong></td><td>Price Elasticity of Demand</td><td>E<sub>d</sub></td><td>需求量变化百分比与价格变化百分比之比：E<sub>d</sub> = (dQ/Q)/(dP/P)。|E<sub>d</sub>|&gt;1为富有弹性，&lt;1为缺乏弹性。</td><td>不同于斜率。斜率取决于单位，弹性是无量纲的比率。直线需求曲线上各点弹性不同。</td></tr>
+        <tr><td><strong>消费者剩余</strong></td><td>Consumer Surplus</td><td>CS</td><td>消费者愿意支付的最高价格与实际支付价格之间的差额。CS = ∫(需求曲线函数 - 价格) dQ，衡量消费者从交易中获得的净收益。</td><td>不同于生产者剩余（PS）。CS + PS = 总剩余，衡量市场交易带来的社会福利。</td></tr>
+        <tr><td><strong>生产者剩余</strong></td><td>Producer Surplus</td><td>PS</td><td>生产者实际收到的价格与其愿意接受的最低价格之间的差额。PS = ∫(价格 - 供给曲线函数) dQ。</td><td>不同于利润。生产者剩余 = 收入 - 可变成本，而利润 = 收入 - 总成本（含固定成本）。</td></tr>
+        <tr><td><strong>帕累托最优</strong></td><td>Pareto Optimum</td><td>—</td><td>一种资源配置状态，在不使任何人的状况变差的前提下，无法使任何人的状况变得更好。第一福利定理：完全竞争市场达到帕累托最优。</td><td>不同于卡尔多-希克斯效率（允许补偿）。帕累托改进要求至少一人变好且无人变差。</td></tr>
+        <tr><td><strong>外部性</strong></td><td>Externality</td><td>—</td><td>一个经济主体的行为对另一个主体的福利产生影响，但该影响未通过市场价格反映。负外部性（如污染）导致过度供给，正外部性（如教育）导致供给不足。</td><td>不同于公共品。公共品具有非竞争性和非排他性，外部性不一定同时具备这两个特征。</td></tr>
+        <tr><td><strong>劳动价值论</strong></td><td>Labor Theory of Value</td><td>—</td><td>商品的价值由生产该商品所耗费的社会必要劳动时间决定。古典经济学（斯密、李嘉图）和马克思主义政治经济学继承此理论。</td><td>不同于效用价值论（边际革命）。劳动价值论从供给/成本侧解释价值，效用价值论从需求侧解释。</td></tr>
+        <tr><td><strong>剩余价值</strong></td><td>Surplus Value</td><td>s</td><td>马克思的术语，指工人劳动创造的价值超过其劳动力价值（工资）的部分。剩余价值率 s/v 衡量剥削程度。</td><td>不同于利润。马克思认为利润是剩余价值的转化形式，利润的平均化通过利润率平均化趋势实现。</td></tr>
+        <tr><td><strong>有效需求</strong></td><td>Effective Demand</td><td>AD</td><td>凯恩斯的概念，指有支付能力的总需求，由消费（C）、投资（I）、政府购买（G）和净出口（NX）组成。有效需求不足是失业和经济衰退的根本原因。</td><td>不同于潜在需求（想买但买不起）。有效需求 = 愿意且能够购买的总量。</td></tr>
+        <tr><td><strong>流动性偏好</strong></td><td>Liquidity Preference</td><td>L</td><td>凯恩斯提出的货币需求理论，认为人们持有货币的动机有三：交易动机、预防动机和投机动机。利率是放弃流动性的报酬。</td><td>不同于费雪方程式（MV=PT）。流动性偏好理论强调利率作为货币供求均衡的决定变量。</td></tr>
+        <tr><td><strong>边际消费倾向</strong></td><td>Marginal Propensity to Consume</td><td>MPC</td><td>可支配收入每增加一单位时消费的增加量。MPC = dC/dY，通常在0到1之间。乘数 = 1/(1-MPC)。</td><td>不同于平均消费倾向（APC）。APC = C/Y，MPC是边际概念。</td></tr>
+        <tr><td><strong>自然失业率</strong></td><td>Natural Rate of Unemployment</td><td>u*</td><td>经济在长期中趋向的失业率，由摩擦性失业和结构性失业组成，与周期性失业相对。弗里德曼和费尔普斯首次提出。</td><td>不同于实际失业率（u）。实际失业率围绕自然失业率波动，两者之差为周期性失业。</td></tr>
+        <tr><td><strong>滞胀</strong></td><td>Stagflation</td><td>—</td><td>经济停滞（高失业、低增长）与通货膨胀同时发生的现象。1970年代石油危机期间首次出现，动摇了凯恩斯主义菲利普斯曲线的理论基础。</td><td>不同于传统衰退（价格下降）。滞胀打破了"失业与通胀反向变动"的经验规律。</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>符号对照表</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>符号</th><th>含义</th><th>所属领域</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>P</td><td>价格</td><td>微观/宏观</td></tr>
+        <tr><td>Q</td><td>数量</td><td>微观/宏观</td></tr>
+        <tr><td>MU</td><td>边际效用</td><td>微观</td></tr>
+        <tr><td>MR</td><td>边际收益</td><td>微观</td></tr>
+        <tr><td>MC</td><td>边际成本</td><td>微观</td></tr>
+        <tr><td>AVC</td><td>平均可变成本</td><td>微观</td></tr>
+        <tr><td>ATC</td><td>平均总成本</td><td>微观</td></tr>
+        <tr><td>Y</td><td>产出/收入</td><td>宏观</td></tr>
+        <tr><td>C</td><td>消费</td><td>宏观</td></tr>
+        <tr><td>I</td><td>投资</td><td>宏观</td></tr>
+        <tr><td>G</td><td>政府购买</td><td>宏观</td></tr>
+        <tr><td>NX</td><td>净出口</td><td>宏观</td></tr>
+        <tr><td>r</td><td>利率</td><td>宏观</td></tr>
+        <tr><td>π</td><td>通货膨胀率/利润</td><td>宏观/微观</td></tr>
+        <tr><td>u</td><td>失业率</td><td>宏观</td></tr>
+        <tr><td>K</td><td>资本</td><td>增长理论</td></tr>
+        <tr><td>L</td><td>劳动</td><td>增长理论</td></tr>
+        <tr><td>A</td><td>全要素生产率/技术</td><td>增长理论</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== 附录三 ===== -->
+<section class="sec" id="appendix-c">
+  <h2><span class="chapno">附录三</span>形式系统与核心模型</h2>
+  <p>本附录从形式化的角度重新审视经济思想史上篇的核心模型。通过交互式三维可视化、函数图分析和动画演示，深化对供需理论、生产理论和市场均衡的理解。</p>
+
+  <h3>3.1 供需三维曲面：价格×数量×时间</h3>
+  <p>标准供需曲线是二维的（价格-数量平面），但现实市场是动态演化的。下面这个三维模型引入了时间维度，直观展示需求曲面和供给曲面如何随时间变化，以及市场均衡点的三维轨迹。</p>
+
+  <div class="viz-container" style="height:420px;">
+    <canvas id="viz-3d-supply-demand" style="width:100%;height:100%;display:block;"></canvas>
+  </div>
+  <div class="viz-caption">图 A3-1 · 供需三维曲面模型。蓝色曲面为需求曲面，橙色曲面为供给曲面。转动视角观察市场均衡的移动轨迹。纵轴：价格 P；横轴：数量 Q；深度轴：时间 t。</div>
+
+  <h3>3.2 生产函数与等产量曲线</h3>
+  <p>柯布-道格拉斯生产函数 Q = f(L, K) = A · L<sup>α</sup> · K<sup>β</sup> 是经济学中最常用的生产函数形式。下面用Chart.js绘制等产量曲线和边际收益递减曲线。</p>
+
+  <div class="viz-container" style="height:370px;padding:15px;">
+    <canvas id="chart-production" style="width:100%;height:100%;"></canvas>
+  </div>
+  <div class="viz-caption">图 A3-2 · 柯布-道格拉斯生产函数等产量曲线。每条曲线代表相同产出水平的劳动(L)与资本(K)组合。随着劳动投入增加，等产量曲线斜率递减，反映边际技术替代率递减。</div>
+
+  <h3>3.3 市场均衡调整动画</h3>
+  <p>市场从非均衡向均衡的调整过程是经济学最基础的动态机制。下面用Canvas动画演示当需求增加时，市场如何通过价格信号从旧均衡移动到新均衡。</p>
+
+  <div class="viz-container" style="height:380px;padding:15px;">
+    <canvas id="anim-market-equilibrium" style="width:100%;height:100%;display:block;"></canvas>
+  </div>
+  <div class="viz-caption">图 A3-3 · 市场均衡调整动画。红色虚线标注初始均衡点，绿色虚线标注新均衡点。观察供给曲线(橙色)与需求曲线(蓝色)的交点如何随需求增加而移动。</div>
+
+  <h3>3.4 形式化定义</h3>
+  <div class="formula">
+    <span class="f-name">需求函数</span>
+    Q<sub>d</sub> = f(P, P<sub>s</sub>, I, T, E, N)
+    <span class="f-note">其中 P=自身价格, P<sub>s</sub>=相关品价格, I=收入, T=偏好, E=预期, N=买者数量</span>
+  </div>
+  <div class="formula">
+    <span class="f-name">供给函数</span>
+    Q<sub>s</sub> = g(P, P<sub>i</sub>, T, R, E, N)
+    <span class="f-note">其中 P=价格, P<sub>i</sub>=投入品价格, T=技术, R=规制, E=预期, N=卖者数量</span>
+  </div>
+  <div class="formula">
+    <span class="f-name">市场均衡条件</span>
+    Q<sub>d</sub>(P) = Q<sub>s</sub>(P)  →  P* 使得 Q<sub>d</sub>(P*) = Q<sub>s</sub>(P*) = Q*
+    <span class="f-note">均衡价格 P* 和均衡数量 Q* 由供需曲线的交点决定</span>
+  </div>
+  <div class="formula">
+    <span class="f-name">柯布-道格拉斯生产函数</span>
+    Q = A · L<sup>α</sup> · K<sup>β</sup> , α + β = 1 时规模报酬不变
+    <span class="f-note">其中 α 为劳动产出弹性，β 为资本产出弹性</span>
+  </div>
+</section>
+
+<!-- ===== 附录四 ===== -->
+<section class="sec" id="appendix-d">
+  <h2><span class="chapno">附录四</span>推演方法与证明</h2>
+  <p>经济思想史上的重大突破往往伴随着分析方法的革新。本附录梳理了古典经济学、边际革命和凯恩斯主义的核心论证方法，帮助读者理解"经济学如何推导出结论"。</p>
+
+  <h3>4.1 古典经济学的演绎推理</h3>
+  <p>亚当·斯密和李嘉图采用演绎推理方法：从少数几个基本假设出发，通过逻辑推导得出一般性结论。斯密的《国富论》从"自利动机"和"分工提高效率"两个前提出发，推导出"看不见的手"和自由贸易的结论。李嘉图的比较优势论证是这一方法的典范：</p>
+  <div class="callout">
+    <span class="callout-title">比较优势定理的证明</span>
+    <p><strong>假设：</strong>两国（英/葡）、两种商品（布/酒）、一种生产要素（劳动）。</p>
+    <p><strong>命题：</strong>即使一国在所有商品上都具有绝对优势，两国仍可通过专业化生产和贸易互利。</p>
+    <p><strong>证明思路：</strong></p>
+    <ol style="margin-left:1.3rem;margin-bottom:0.5rem;">
+      <li>定义比较优势：一国生产某种商品的机会成本低于另一国。</li>
+      <li>如果英国生产布的机会成本（放弃的酒）低于葡萄牙，而葡萄牙生产酒的机会成本（放弃的布）低于英国，则两国分别专业化生产机会成本较低的商品。</li>
+      <li>各国在专业化后总产出增加，通过贸易按介于两国机会成本之间的价格交换，两国均获益。</li>
+    </ol>
+    <p><strong>结论：</strong>比较优势而非绝对优势决定贸易模式——这是经济学中少数几个"诺贝尔奖级别的非直观真理"之一（萨缪尔森语）。</p>
+  </div>
+
+  <h3>4.2 边际分析方法</h3>
+  <p>边际革命的核心方法论贡献是将<strong>微积分</strong>引入经济学分析。边际分析的核心思想是：所有经济决策都是"边际上"的决策——不是"做或不做"的二选一，而是"多做一点或少做一点"的边际选择。</p>
+  <div class="formula">
+    <span class="f-name">消费者最优条件</span>
+    MU<sub>1</sub> / P<sub>1</sub> = MU<sub>2</sub> / P<sub>2</sub> = ... = MU<sub>n</sub> / P<sub>n</sub> = λ
+    <span class="f-note">每单位货币的边际效用相等，λ为货币的边际效用</span>
+  </div>
+  <div class="formula">
+    <span class="f-name">生产者最优条件</span>
+    MR = MC
+    <span class="f-note">边际收益等于边际成本，利润最大化的一阶条件</span>
+  </div>
+
+  <div class="viz-container" style="height:370px;padding:15px;">
+    <canvas id="chart-marginal" style="width:100%;height:100%;"></canvas>
+  </div>
+  <div class="viz-caption">图 A4-1 · 边际收益(MR)与边际成本(MC)曲线。交点处为企业利润最大化的产量 Q*。当 MR &gt; MC 时，增产可增加利润；当 MR &lt; MC 时，减产可增加利润。</div>
+
+  <h3>4.3 凯恩斯主义的宏观推演</h3>
+  <p>凯恩斯在《就业、利息和货币通论》中建立了一种全新的宏观分析方法：从<strong>有效需求</strong>出发，通过<strong>乘数效应</strong>解释经济波动，并以<strong>流动性偏好</strong>理论取代古典货币数量论。</p>
+  <div class="formula">
+    <span class="f-name">乘数效应</span>
+    ΔY = (1 / (1 - MPC)) × ΔI = k × ΔI
+    <span class="f-note">MPC = 边际消费倾向；k = 1/(1-MPC) = 乘数；MPC=0.8 时，k=5，即100元投资增加500元产出</span>
+  </div>
+  <p>凯恩斯推演的关键逻辑链：投资下降 → 总需求不足 → 企业减产裁员 → 收入下降 → 消费进一步下降 → 总需求进一步下降（乘数的反向作用）。这一"节俭悖论"——个人多储蓄是美德，全社会多储蓄导致衰退——揭示了微观理性与宏观理性之间的深刻矛盾。</p>
+
+  <div class="callout">
+    <span class="callout-title">批判性思考：推演方法的局限</span>
+    <p>每种推演方法都有其前提假设的局限性：</p>
+    <ul>
+      <li>古典经济学的演绎推理依赖于"理性人"假设，行为经济学证明了真实决策存在系统性偏差。</li>
+      <li>边际分析假设偏好是连续的、可微的，但现实中消费决策可能是离散的（如买车、买房）。</li>
+      <li>凯恩斯主义的宏观推演假设价格和工资在短期内是刚性的，这一假设在后来的新古典综合派中受到挑战。</li>
+    </ul>
+    <p>理解方法的局限，是经济学批判性思维的第一步。</p>
+  </div>
+</section>
+
+<!-- ===== 附录五 ===== -->
+<section class="sec" id="appendix-e">
+  <h2><span class="chapno">附录五</span>核心模型与图表</h2>
+  <p>本附录深入分析经济思想史上篇中的几个核心模型，包括供需均衡模型、IS-LM模型和AD-AS模型，并通过交互式图表展示其内在逻辑。</p>
+
+  <h3>5.1 供需均衡：价格发现与福利分析</h3>
+  <p>供需模型是经济学最基础的模型。在完全竞争市场中，价格由供给和需求共同决定，均衡价格使市场出清。消费者剩余和生产者剩余之和衡量市场效率。</p>
+
+  <div class="viz-container" style="height:370px;padding:15px;">
+    <canvas id="chart-equilibrium" style="width:100%;height:100%;"></canvas>
+  </div>
+  <div class="viz-caption">图 A5-1 · 供需均衡与福利分析。蓝色区域：消费者剩余(CS)；橙色区域：生产者剩余(PS)。CS+PS=总剩余，在完全竞争市场中达到最大。</div>
+
+  <h3>5.2 IS-LM 模型：商品市场与货币市场的均衡</h3>
+  <p>IS-LM模型由希克斯（1937）提出，是对凯恩斯理论的经典形式化表达。IS曲线代表商品市场均衡（I=S），LM曲线代表货币市场均衡（L=M），两条曲线的交点决定均衡利率和均衡产出。</p>
+  <div class="formula">
+    <span class="f-name">IS曲线方程</span>
+    Y = C(Y - T) + I(r) + G
+    <span class="f-note">Y = 产出, C = 消费, T = 税收, I = 投资, r = 利率, G = 政府购买</span>
+  </div>
+  <div class="formula">
+    <span class="f-name">LM曲线方程</span>
+    M/P = L(Y, r)
+    <span class="f-note">M/P = 实际货币供给, L(Y, r) = 实际货币需求（取决于产出Y和利率r）</span>
+  </div>
+
+  <div class="viz-container" style="height:370px;padding:15px;">
+    <canvas id="chart-islm" style="width:100%;height:100%;"></canvas>
+  </div>
+  <div class="viz-caption">图 A5-2 · IS-LM模型。IS曲线向右下倾斜（利率下降刺激投资→产出增加），LM曲线向右上倾斜（产出增加提高货币需求→利率上升）。交点E为均衡点。</div>
+
+  <h3>5.3 AD-AS 模型：总需求与总供给</h3>
+  <p>AD-AS模型将IS-LM模型扩展到价格水平维度，分析整体经济的波动。总需求曲线（AD）向右下倾斜，短期总供给曲线（SRAS）向右上倾斜，长期总供给曲线（LRAS）垂直。需求冲击和供给冲击通过移动这些曲线导致经济波动。</p>
+
+  <div class="viz-container" style="height:370px;padding:15px;">
+    <canvas id="chart-adas" style="width:100%;height:100%;"></canvas>
+  </div>
+  <div class="viz-caption">图 A5-3 · AD-AS模型。绿色竖线为长期总供给(LRAS)，蓝色曲线为总需求(AD)，橙色曲线为短期总供给(SRAS)。需求冲击导致AD移动，供给冲击导致SRAS移动。</div>
+
+  <h3>5.4 各学派核心模型对照</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>学派</th><th>核心模型</th><th>关键变量</th><th>均衡条件</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>古典经济学</strong></td><td>萨伊定律</td><td>产出、价格</td><td>供给创造自身需求</td></tr>
+        <tr><td><strong>边际革命</strong></td><td>供需均衡</td><td>价格、数量</td><td>Q<sub>d</sub>=Q<sub>s</sub></td></tr>
+        <tr><td><strong>新古典经济学</strong></td><td>一般均衡</td><td>所有价格、所有数量</td><td>所有市场同时出清</td></tr>
+        <tr><td><strong>凯恩斯主义</strong></td><td>IS-LM</td><td>产出、利率</td><td>商品和货币市场均衡</td></tr>
+        <tr><td><strong>新古典综合</strong></td><td>AD-AS</td><td>产出、价格水平</td><td>AD=SRAS=LRAS</td></tr>
+        <tr><td><strong>货币主义</strong></td><td>货币数量论</td><td>货币供给、价格</td><td>MV=PY</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== 附录六 ===== -->
+<section class="sec" id="appendix-f">
+  <h2><span class="chapno">附录六</span>高阶理论与前沿</h2>
+  <p>本附录为已经掌握基础经济学知识的本科生提供通向学术前沿的桥梁。以下主题在主流经济学研究生课程中占有重要地位，但本科生可以通过系统学习提前接触。</p>
+
+  <h3>6.1 一般均衡理论：瓦尔拉斯的天才构想</h3>
+  <p>瓦尔拉斯（1874）在《纯粹经济学要义》中提出了经济学史上最具雄心的理论构想——一般均衡理论。与局部均衡（仅分析单一市场）不同，一般均衡考虑所有市场之间的相互依赖关系。</p>
+  <div class="callout">
+    <span class="callout-title">一般均衡的核心问题</span>
+    <p>是否存在一组价格 (P<sub>1</sub>, P<sub>2</sub>, ..., P<sub>n</sub>)，使得所有市场同时达到均衡？</p>
+    <p>阿罗和德布鲁（1954）用拓扑学中的不动点定理（布劳威尔/角谷不动点定理）严格证明了在完全竞争条件下一般均衡的存在性。这一证明是经济学最伟大的理论成就之一，阿罗和德布鲁因此获得诺贝尔经济学奖。</p>
+  </div>
+  <p><strong>阿罗-德布鲁模型的核心假设：</strong></p>
+  <ul>
+    <li>完全竞争（所有参与者是价格接受者）；</li>
+    <li>凸偏好（边际替代率递减）；</li>
+    <li>凸生产技术（边际收益递减）；</li>
+    <li>完备的市场（所有可能状态下的商品都有市场）。</li>
+  </ul>
+  <p><strong>两个福利定理：</strong>第一福利定理（竞争均衡是帕累托最优的）和第二福利定理（任何帕累托最优配置都可以通过竞争均衡实现，前提是适当的转移支付）构成了经济学对市场效率的正式论证。</p>
+
+  <h3>6.2 博弈论：策略互动的数学分析</h3>
+  <p>冯·诺伊曼和摩根斯坦（1944）在《博弈论与经济行为》中开创了博弈论。纳什（1950）证明了非合作博弈中纳什均衡的存在性，彻底改变了经济学对策略互动的理解。</p>
+  <div class="formula">
+    <span class="f-name">纳什均衡</span>
+    在一个 N 人博弈中，策略组合 (s<sub>1</sub>*, s<sub>2</sub>*, ..., s<sub>N</sub>*) 是纳什均衡，当且仅当对每个参与者 i：u<sub>i</sub>(s<sub>i</sub>*, s<sub>-i</sub>*) ≥ u<sub>i</sub>(s<sub>i</sub>, s<sub>-i</sub>*) 对所有 s<sub>i</sub> ∈ S<sub>i</sub> 成立
+    <span class="f-note">即每个参与者的策略是对其他参与者策略的最优反应</span>
+  </div>
+  <p><strong>经典博弈：囚徒困境</strong>——两个囚徒各自选择"坦白"或"沉默"，个人理性导致集体非理性（双方都坦白）。这一博弈揭示了：在缺乏合作机制的情况下，个人理性可能导致社会整体的福利损失。</p>
+
+  <h3>6.3 信息经济学与机制设计</h3>
+  <p>阿克洛夫（1970）在《柠檬市场》中揭示了信息不对称如何导致市场失灵。斯彭斯（1973）的劳动力市场信号模型和斯蒂格利茨（1976）的逆向选择与道德风险模型，共同构成了信息经济学的三大支柱。</p>
+  <div class="callout">
+    <span class="callout-title">柠檬市场模型</span>
+    <p><strong>问题：</strong>二手车市场中，卖方知道车况，买方不知道。买方只能根据平均质量出价，导致高质量车退出市场，平均质量进一步下降，最终市场崩溃。</p>
+    <p><strong>数学表达：</strong>假设高质量车价值 V<sub>H</sub>，低质量车价值 V<sub>L</sub>，高质量车占比 q。买方愿意支付的价格为 P = qV<sub>H</sub> + (1-q)V<sub>L</sub>。如果 V<sub>H</sub> &gt; P，高质量车车主退出市场，q 下降，P 进一步下降——这就是"劣币驱逐良币"的逆向选择过程。</p>
+    <p><strong>解决机制：</strong>信号传递（如质量保证）、信息中介（如第三方检测）、声誉机制、政府规制。</p>
+  </div>
+
+  <h3>6.4 行为经济学的前沿</h3>
+  <p>卡尼曼和特沃斯基的前景理论（1979）将心理学发现形式化，建立了描述性决策理论。塞勒（2017诺贝尔奖得主）将行为洞察应用于公共政策（助推理论）。行为经济学不是对主流经济学的否定，而是对"理性人"假设的修正和拓展。</p>
+  <div class="formula">
+    <span class="f-name">前景理论的价值函数</span>
+    v(x) = x<sup>α</sup> 当 x ≥ 0；v(x) = -λ(-x)<sup>β</sup> 当 x &lt; 0
+    <span class="f-note">其中 λ &gt; 1 为损失厌恶系数（典型值 λ ≈ 2.25），α、β ∈ (0,1) 为边际敏感度递减参数</span>
+  </div>
+</section>
+
+<!-- ===== 附录七 ===== -->
+<section class="sec" id="appendix-g">
+  <h2><span class="chapno">附录七</span>方法训练与实操指南</h2>
+  <p>经济学不仅是一套理论体系，更是一套分析工具。本附录提供具体的方法训练指南，帮助本科生将理论知识转化为可操作的分析能力。</p>
+
+  <h3>7.1 边际分析实操：从概念到计算</h3>
+  <p><strong>场景：</strong>一家面包店每天生产面包的边际成本如下：第1个面包MC=1元，第2个MC=1.5元，第3个MC=2元，第4个MC=3元，第5个MC=5元。面包售价为3元/个。</p>
+  <p><strong>问题：</strong>该店每天应该生产多少个面包？</p>
+  <p><strong>解法：</strong>运用利润最大化条件 MR=MC。MR=3元。当产量为3个时，MC=2元 &lt; MR=3元，增产有利；当产量为4个时，MC=3元 = MR，这是最优产量；当产量为5个时，MC=5元 &gt; MR=3元，减产有利。因此最优产量为4个。</p>
+
+  <h3>7.2 弹性分析实操</h3>
+  <p><strong>场景：</strong>某商品原价10元，销量1000个。降价至8元后，销量增至1500个。</p>
+  <p><strong>问题：</strong>(1)计算需求价格弹性。(2)判断该商品是富有弹性还是缺乏弹性。(3)降价对总收益有何影响？</p>
+  <p><strong>解法：</strong></p>
+  <p>(1) 中点法弹性 = [(1500-1000)/1250] / [(8-10)/9] = (0.4)/(-0.222) ≈ -1.8，取绝对值1.8。</p>
+  <p>(2) |E<sub>d</sub>| = 1.8 &gt; 1，富有弹性。</p>
+  <p>(3) 原总收益 = 10×1000 = 10000元；新总收益 = 8×1500 = 12000元。降价使总收益增加，验证了"富有弹性的商品降价增加总收益"的规律。</p>
+
+  <h3>7.3 乘数分析实操</h3>
+  <p><strong>场景：</strong>假设一个经济体的MPC=0.75，政府增加基础设施投资200亿元。</p>
+  <p><strong>问题：</strong>(1)计算乘数。(2)计算最终总产出的增加量。(3)如果MPC变为0.5，乘数如何变化？</p>
+  <p><strong>解法：</strong></p>
+  <p>(1) 乘数 k = 1/(1-MPC) = 1/(1-0.75) = 4。</p>
+  <p>(2) ΔY = k × ΔI = 4 × 200 = 800亿元。</p>
+  <p>(3) MPC=0.5时，k = 1/(1-0.5) = 2。MPC越小，乘数越小，财政政策效果越弱。</p>
+
+  <h3>7.4 数据可视化与图形分析</h3>
+  <p>经济分析中，图形是最重要的交流工具。建议按照以下步骤训练图形分析能力：</p>
+  <ol style="margin-left:1.3rem;margin-bottom:1rem;">
+    <li><strong>读图</strong>：识别坐标轴含义、曲线类型、均衡点、移动方向。</li>
+    <li><strong>推演</strong>：分析曲线移动的原因（需求冲击还是供给冲击），追踪新均衡的形成过程。</li>
+    <li><strong>求值</strong>：计算消费者剩余、生产者剩余、无谓损失等福利指标的变化。</li>
+    <li><strong>解释</strong>：用文字将图形分析的结果翻译为政策含义或经济结论。</li>
+  </ol>
+  <div class="callout">
+    <span class="callout-title">实操建议</span>
+    <p>建议每周完成2-3道图形分析题，从局部均衡开始，逐步过渡到一般均衡和宏观模型。使用Excel或在线工具绘制供需曲线、成本曲线、IS-LM曲线等，培养"手绘+计算"的双重技能。</p>
+  </div>
+</section>
+
+<!-- ===== 附录八 ===== -->
+<section class="sec" id="appendix-h">
+  <h2><span class="chapno">附录八</span>经典习题集</h2>
+  <p>以下五道习题覆盖了经济思想史上篇的核心知识点，从供需分析到宏观政策，难度递进。参考答案附于每题之后。</p>
+
+  <h3>习题一：供需分析（基础）</h3>
+  <p>已知某商品的市场需求函数为 Q<sub>d</sub> = 100 - 2P，市场供给函数为 Q<sub>s</sub> = -20 + 4P。</p>
+  <p>(1) 求均衡价格和均衡数量。</p>
+  <p>(2) 如果政府设定了最低限价 P<sub>min</sub> = 25，会出现过剩还是短缺？数量是多少？</p>
+  <p>(3) 计算最低限价导致的消费者剩余变化和生产者剩余变化。</p>
+  <div class="callout">
+    <span class="callout-title">参考答案</span>
+    <p>(1) 令 Q<sub>d</sub> = Q<sub>s</sub>：100 - 2P = -20 + 4P → 6P = 120 → P* = 20, Q* = 100 - 40 = 60。</p>
+    <p>(2) 当 P=25时，Q<sub>d</sub> = 100 - 50 = 50，Q<sub>s</sub> = -20 + 100 = 80，过剩 = 80 - 50 = 30。</p>
+    <p>(3) 最低限价下，实际交易量为50（需求量的较小值）。CS减少，PS变化不确定（部分生产者以高价卖出，部分退出市场），存在无谓损失。</p>
+  </div>
+
+  <h3>习题二：弹性分析（进阶）</h3>
+  <p>某公司将其产品价格从50元降至40元，观察到销量从2000单位增至2400单位。</p>
+  <p>(1) 用中点法计算需求价格弹性。</p>
+  <p>(2) 降价前和降价后的总收益分别是多少？</p>
+  <p>(3) 根据弹性值判断，该产品是奢侈品还是必需品？说明理由。</p>
+  <div class="callout">
+    <span class="callout-title">参考答案</span>
+    <p>(1) 中点法：ΔQ/Q<sub>avg</sub> = 400/2200 ≈ 0.182，ΔP/P<sub>avg</sub> = -10/45 ≈ -0.222，E<sub>d</sub> = 0.182/(-0.222) ≈ -0.82，|E<sub>d</sub>| = 0.82。</p>
+    <p>(2) 降价前 TR = 50×2000 = 100000元；降价后 TR = 40×2400 = 96000元。总收益下降。</p>
+    <p>(3) |E<sub>d</sub>| = 0.82 &lt; 1，缺乏弹性，属于必需品（如食品、药品等缺乏替代品的商品）。</p>
+  </div>
+
+  <h3>习题三：生产理论与成本分析（综合）</h3>
+  <p>一家企业的短期生产函数为 Q = 10L + 3L² - 0.1L³，其中L为劳动投入。工资率 w = 50元，固定成本 FC = 200元。</p>
+  <p>(1) 计算劳动的边际产出 MP<sub>L</sub> 函数。</p>
+  <p>(2) 当L=10时，边际产出是多少？解释其经济含义。</p>
+  <p>(3) 求该企业的短期总成本函数 STC(Q)。</p>
+  <div class="callout">
+    <span class="callout-title">参考答案</span>
+    <p>(1) MP<sub>L</sub> = dQ/dL = 10 + 6L - 0.3L²。</p>
+    <p>(2) 当L=10时，MP<sub>L</sub> = 10 + 60 - 30 = 40。经济含义：增加一单位劳动投入，产出增加40单位。</p>
+    <p>(3) 由于Q和L的关系是非线性的，无法直接得到STC(Q)的显式表达式。但概念上：STC(Q) = 50L(Q) + 200，其中L(Q)是生产函数的反函数。</p>
+  </div>
+
+  <h3>习题四：IS-LM 模型分析（宏观）</h3>
+  <p>假设一个经济体的消费函数为 C = 200 + 0.75(Y - T)，投资函数为 I = 150 - 25r，政府购买 G = 100，税收 T = 100。货币需求函数为 L = 0.2Y - 10r，实际货币供给 M/P = 150。</p>
+  <p>(1) 推导IS曲线方程。</p>
+  <p>(2) 推导LM曲线方程。</p>
+  <p>(3) 求解均衡产出和均衡利率。</p>
+  <div class="callout">
+    <span class="callout-title">参考答案</span>
+    <p>(1) IS: Y = C + I + G = 200 + 0.75(Y-100) + 150 - 25r + 100 = 375 + 0.75Y - 25r → 0.25Y = 375 - 25r → Y = 1500 - 100r。</p>
+    <p>(2) LM: 150 = 0.2Y - 10r → 0.2Y = 150 + 10r → Y = 750 + 50r。</p>
+    <p>(3) 联立IS和LM：1500 - 100r = 750 + 50r → 150r = 750 → r* = 5，Y* = 750 + 50×5 = 1000。</p>
+  </div>
+
+  <h3>习题五：经济思想史综合（批判性思考）</h3>
+  <p>比较古典经济学和凯恩斯主义关于"市场能否自动实现充分就业"的争论。</p>
+  <p>(1) 分别阐述两个学派的观点和核心论证。</p>
+  <p>(2) 指出两个学派在"工资和价格灵活性"假设上的分歧。</p>
+  <p>(3) 结合2008年全球金融危机，讨论哪一学派的观点更符合现实。</p>
+  <div class="callout">
+    <span class="callout-title">参考答案要点</span>
+    <p>(1) 古典经济学：萨伊定律"供给创造自身需求"，市场通过价格机制自动出清，不会出现长期非自愿失业。凯恩斯主义：有效需求不足导致非自愿失业，市场无法自动恢复充分就业，需要政府干预。</p>
+    <p>(2) 古典假设工资和价格完全灵活，能迅速调整到出清水平；凯恩斯假设工资和价格具有向下的刚性（尤其是名义工资），导致市场无法自动出清。</p>
+    <p>(3) 2008年金融危机后，全球失业率大幅上升，市场并未自动快速恢复，各国政府普遍采取财政和货币刺激政策——这更符合凯恩斯主义的预测。但长期来看，市场确实在恢复（尽管缓慢），体现了古典经济学"长期市场出清"的合理性。</p>
+  </div>
+</section>
+
+<!-- ===== 附录九 ===== -->
+<section class="sec" id="appendix-i">
+  <h2><span class="chapno">附录九</span>一手文献选读</h2>
+  <p>直接阅读经济学经典原著是学术训练的重要环节。以下五篇文献对应经济思想史上篇的五个关键节点，建议按推荐顺序阅读。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>文献</th><th>作者</th><th>年份</th><th>核心内容</th><th>推荐版本</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>《国富论》第一卷</strong></td><td>亚当·斯密</td><td>1776</td><td>分工理论、劳动价值论、"看不见的手"</td><td>郭大力、王亚南译本，商务印书馆</td></tr>
+        <tr><td><strong>《政治经济学及赋税原理》</strong></td><td>大卫·李嘉图</td><td>1817</td><td>比较优势原理、地租理论、价值理论</td><td>彼罗·斯拉法主编，商务印书馆</td></tr>
+        <tr><td><strong>《资本论》第一卷</strong></td><td>卡尔·马克思</td><td>1867</td><td>商品、货币、剩余价值、资本积累</td><td>中共中央编译局译本，人民出版社</td></tr>
+        <tr><td><strong>《纯粹经济学要义》</strong></td><td>莱昂·瓦尔拉斯</td><td>1874</td><td>一般均衡理论、边际效用价值论</td><td>英文版：Elements of Pure Economics</td></tr>
+        <tr><td><strong>《就业、利息和货币通论》</strong></td><td>约翰·梅纳德·凯恩斯</td><td>1936</td><td>有效需求、乘数、流动性偏好</td><td>高鸿业译本，商务印书馆</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>阅读建议</h3>
+  <ul>
+    <li><strong>斯密《国富论》</strong>：建议从第一卷第一至三章（分工）和第四卷（重商主义批判）开始。斯密的文笔优美，每章篇幅不长，适合作为入门原著。</li>
+    <li><strong>李嘉图《原理》</strong>：重点读第一章（价值论）和第七章（对外贸易）。李嘉图的论证逻辑严密，是理解古典经济学方法论的范本。</li>
+    <li><strong>马克思《资本论》</strong>：第一卷第一篇（商品与货币）和第二篇至第五篇（剩余价值生产）是核心。马克思的辩证法和历史唯物主义视角是理解其理论的钥匙。</li>
+    <li><strong>瓦尔拉斯《要义》</strong>：第4-8讲（效用理论与交换价值）和第11-13讲（生产与资本化）。数学功底较弱的读者可先读导论，了解一般均衡的思想框架。</li>
+    <li><strong>凯恩斯《通论》</strong>：第1-3章（有效需求原理）、第10章（乘数）、第13-15章（流动性偏好）。建议先阅读曼昆或布兰查德的宏观教材中对凯恩斯理论的介绍，再读原著。</li>
+  </ul>
+</section>
+
+<!-- ===== 附录十 ===== -->
+<section class="sec" id="appendix-j">
+  <h2><span class="chapno">附录十</span>关键争论</h2>
+  <p>经济思想史不仅是理论的演进史，更是争论的历史。以下五个关键争论塑造了经济学的面貌。</p>
+
+  <h3>10.1 劳动价值论 vs 效用价值论</h3>
+  <p><strong>核心问题：</strong>商品的价值是由生产它所需的劳动量决定，还是由消费者对它的主观评价决定？</p>
+  <p><strong>争论双方：</strong>古典—马克思阵营（劳动价值论）vs 边际革命阵营（效用价值论）。</p>
+  <p><strong>争论要点：</strong></p>
+  <ul>
+    <li>劳动价值论无法解释"钻石与水悖论"——钻石对人类生存几乎没有价值，但价格极高；水对人类生存至关重要，但价格极低。边际效用论用"边际效用递减"完美解释：钻石稀缺，边际效用高；水充裕，边际效用低。</li>
+    <li>劳动价值论在解释非劳动产品（如土地、自然资源）的价格时遇到困难。效用价值论通过"要素定价"（土地的地租由其边际生产力决定）解决。</li>
+    <li>马克思认为劳动价值论揭示了资本主义的剥削本质；边际效用论则掩盖了生产中的社会关系。</li>
+  </ul>
+  <p><strong>学术共识：</strong>现代经济学中，效用价值论是主流。但劳动价值论在分析收入分配、经济增长和全球化问题时仍有其解释力，尤其是在马克思主义经济学传统中。</p>
+
+  <h3>10.2 自由市场 vs 政府干预</h3>
+  <p><strong>核心问题：</strong>市场能否自动实现资源的最优配置？政府应该在什么程度上干预经济？</p>
+  <p><strong>争论双方：</strong>古典经济学/新自由主义（市场自由）vs 凯恩斯主义/制度学派（政府干预）。</p>
+  <p><strong>争论要点：</strong></p>
+  <ul>
+    <li>斯密的"看不见的手"论证了市场自发的协调功能，哈耶克（1945）进一步从"知识问题"角度论证了中央计划的不可行性。</li>
+    <li>凯恩斯（1936）证明在有效需求不足时，市场无法自动恢复充分就业，政府必须通过财政和货币政策进行逆周期调节。</li>
+    <li>弗里德曼（1968）的自然失业率假说挑战了凯恩斯主义长期干预的基础，认为长期中失业率由结构性因素决定，货币扩张只会导致通胀。</li>
+    <li>2008年金融危机和2020年新冠疫情后，政府的积极干预（量化宽松、财政刺激、工资补贴）再次证明了凯恩斯主义政策的有效性，但也引发了关于政府债务可持续性的担忧。</li>
+  </ul>
+
+  <h3>10.3 货币中性 vs 货币非中性</h3>
+  <p><strong>核心问题：</strong>货币供给的变化仅影响价格水平（中性），还是也影响实际产出和就业（非中性）？</p>
+  <p><strong>争论要点：</strong></p>
+  <ul>
+    <li>古典二分法认为经济分为"真实部门"和"货币部门"，货币只是"面纱"，不影响真实变量。</li>
+    <li>凯恩斯主义认为，在短期内，由于价格和工资刚性，货币供给变化影响实际利率和投资，从而影响总产出和就业（非中性）。</li>
+    <li>理性预期学派（卢卡斯、萨金特）认为，如果货币供给变化被完全预期到，则不会影响实际产出——只有"未预期到的"货币变化才有真实效应。</li>
+    <li>现代宏观经济学的主流观点是"短期非中性，长期中性"——货币在短期内影响真实变量，在长期内只影响价格水平。</li>
+  </ul>
+
+  <h3>10.4 边际革命：连续性还是断裂？</h3>
+  <p><strong>核心问题：</strong>边际革命（1870年代）是经济学理论的一次革命性断裂，还是古典经济学内在逻辑的延续？</p>
+  <p><strong>争论要点：</strong></p>
+  <ul>
+    <li>传统经济思想史叙述（如熊彼特《经济分析史》）强调边际革命的"革命性"：从客观价值论转向主观价值论，从成本分析转向边际分析，从宏观视角转向微观视角。</li>
+    <li>修正主义观点（如霍兰德）认为，斯密和李嘉图已经包含了边际分析的萌芽，边际革命只是对古典传统的延续和精确化，而非断裂。</li>
+    <li>马克思主义观点认为，边际革命是资产阶级意识形态对马克思劳动价值论的理论回应，试图通过将价值归结为主观效用来回避资本主义的剥削问题。</li>
+  </ul>
+
+  <h3>10.5 凯恩斯主义 vs 货币主义：菲利普斯曲线的命运</h3>
+  <p><strong>核心问题：</strong>失业与通胀之间是否存在稳定的替代关系？</p>
+  <p><strong>争论要点：</strong></p>
+  <ul>
+    <li>菲利普斯（1958）发现英国失业率与工资增长率之间存在反向关系。萨缪尔森和索洛将其推广到通胀与失业的关系，为凯恩斯主义的宏观管理提供了经验基础。</li>
+    <li>弗里德曼和费尔普斯（1968）独立论证，长期中不存在通胀与失业的替代关系——失业率会回到"自然失业率"，通胀只会被完全纳入预期。这一理论在1970年代滞胀中得到验证。</li>
+    <li>现代观点：短期菲利普斯曲线存在但斜率可变，长期菲利普斯曲线是垂直的。通胀预期是连接短期和长期的关键变量。</li>
+  </ul>
+</section>
+
+<!-- ===== 附录十一 ===== -->
+<section class="sec" id="appendix-k">
+  <h2><span class="chapno">附录十一</span>延伸阅读与课程对照</h2>
+  <p>本附录为希望在经济学领域深入学习的本科生提供系统的延伸阅读指南和课程对照表。</p>
+
+  <h3>11.1 推荐阅读书目</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>层级</th><th>书名</th><th>作者</th><th>推荐理由</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>入门</strong></td><td>《经济学原理》</td><td>曼昆</td><td>全球最畅销的经济学教材，强调十大经济学原理，内容丰富且通俗易懂</td></tr>
+        <tr><td><strong>入门</strong></td><td>《经济学》</td><td>萨缪尔森/诺德豪斯</td><td>经典教材，微观与宏观并重，历史视野开阔</td></tr>
+        <tr><td><strong>进阶</strong></td><td>《微观经济学：现代观点》</td><td>范里安</td><td>中级微观经济学标准教材，数学温和但概念严谨</td></tr>
+        <tr><td><strong>进阶</strong></td><td>《宏观经济学》</td><td>布兰查德</td><td>中级宏观经济学标准教材，强调短期、中期、长期的三期框架</td></tr>
+        <tr><td><strong>进阶</strong></td><td>《经济思想史》</td><td>布劳格</td><td>经济思想史领域的经典之作，兼具学术深度和可读性</td></tr>
+        <tr><td><strong>高阶</strong></td><td>《经济分析史》</td><td>熊彼特</td><td>经济思想史的宏大叙事，三卷本巨著，学术功底深厚</td></tr>
+        <tr><td><strong>高阶</strong></td><td>《微观经济理论》</td><td>马斯-科莱尔等</td><td>研究生级微观经济学教材，数学要求较高</td></tr>
+        <tr><td><strong>高阶</strong></td><td>《就业、利息和货币通论》</td><td>凯恩斯</td><td>宏观经济学奠基之作，建议在掌握基础后精读</td></tr>
+        <tr><td><strong>思想史</strong></td><td>《经济学的著名寓言》</td><td>麦洛斯基</td><td>对经济学经典寓言（如灯塔、柠檬市场）的学术批评</td></tr>
+        <tr><td><strong>思想史</strong></td><td>《资本主义与自由》</td><td>弗里德曼</td><td>新自由主义的经典宣言，政策主张与经济学分析的结合</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>11.2 国内高校课程对照</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>课程名称</th><th>对应附录</th><th>推荐教材</th><th>重点章节</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>经济学原理（微观）</strong></td><td>附录二、三、四</td><td>曼昆《经济学原理》</td><td>第1-8章、第13-15章</td></tr>
+        <tr><td><strong>经济学原理（宏观）</strong></td><td>附录五、六</td><td>曼昆《经济学原理》</td><td>第23-26章、第33-35章</td></tr>
+        <tr><td><strong>中级微观经济学</strong></td><td>附录三、四、五</td><td>范里安《微观经济学》</td><td>第1-8章、第14-19章、第21-26章</td></tr>
+        <tr><td><strong>中级宏观经济学</strong></td><td>附录五、六</td><td>布兰查德《宏观经济学》</td><td>第1-9章、第17-24章</td></tr>
+        <tr><td><strong>经济思想史</strong></td><td>附录一、九、十</td><td>布劳格《经济思想史》</td><td>第1-8章</td></tr>
+        <tr><td><strong>政治经济学</strong></td><td>附录二、九</td><td>马克思《资本论》</td><td>第一卷第一篇至第五篇</td></tr>
+        <tr><td><strong>计量经济学</strong></td><td>附录七</td><td>伍德里奇《计量经济学导论》</td><td>第1-5章</td></tr>
+        <tr><td><strong>博弈论与信息经济学</strong></td><td>附录六</td><td>张维迎《博弈论与信息经济学》</td><td>第1-4章</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>11.3 在线资源推荐</h3>
+  <ul>
+    <li><strong>Coursera/edX</strong>：MIT 14.01（微观经济学）、MIT 14.02（宏观经济学）、耶鲁大学经济学课程</li>
+    <li><strong>Nobel Prize 官方网站</strong>：查阅历年诺贝尔经济学奖得主的文献和演讲词</li>
+    <li><strong>JSTOR / Google Scholar</strong>：检索经济学经典论文（如阿克尔洛夫《柠檬市场》、弗里德曼《货币政策的作用》）</li>
+    <li><strong>中国经济学家网</strong>：国内经济学研究动态和政策分析</li>
+    <li><strong>Our World in Data</strong>：可视化经济数据，辅助理解经济指标</li>
+  </ul>
+
+  <div class="callout">
+    <span class="callout-title">学习路径建议</span>
+    <p>对于计划考研或出国深造的本科生：</p>
+    <ul>
+      <li><strong>大二结束前</strong>：完成曼昆《经济学原理》和范里安《微观经济学》的阅读，掌握供需分析、成本理论、市场结构等核心内容。</li>
+      <li><strong>大三</strong>：精读布兰查德《宏观经济学》和一本经济思想史教材，开始接触博弈论和信息经济学。</li>
+      <li><strong>大四</strong>：阅读本附录九推荐的一手文献，培养批判性思维。同时学习计量经济学，掌握实证研究方法。</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>经济思想谱系 · 本科生升级附录 · 思想图谱系列第七辑 · 2026年9月</p>
+  <p>本附录集为独立学习材料，建议配合主卷《经济思想谱系》和主流经济学教材使用。</p>
+</footer>
+</article>
+
+<!-- Three.js 3D 供需曲面 -->
+<script src="./_shared/js/three.min.js"></script>
+<script>
+(function(){
+  var container = document.getElementById('viz-3d-supply-demand');
+  if(!container) return;
+  var w = container.clientWidth, h = container.clientHeight;
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xf8faf6);
+  var camera = new THREE.PerspectiveCamera(45, w/h, 0.1, 100);
+  camera.position.set(8, 6, 10);
+  camera.lookAt(0, 0, 0);
+  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(w, h);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  // 灯光
+  var ambient = new THREE.AmbientLight(0x404040);
+  scene.add(ambient);
+  var dir = new THREE.DirectionalLight(0xffffff, 0.8);
+  dir.position.set(5, 10, 7);
+  scene.add(dir);
+  var dir2 = new THREE.DirectionalLight(0xffffff, 0.3);
+  dir2.position.set(-5, -5, -5);
+  scene.add(dir2);
+
+  // 坐标轴
+  var axesHelper = new THREE.AxesHelper(6);
+  scene.add(axesHelper);
+
+  // 网格
+  var gridHelper = new THREE.GridHelper(10, 10, 0x62695C, 0xDFE4D8);
+  gridHelper.position.y = -0.1;
+  scene.add(gridHelper);
+
+  // 标签用Sprite
+  function makeLabel(text, color, pos) {
+    var canvas = document.createElement('canvas');
+    canvas.width = 128; canvas.height = 64;
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = color;
+    ctx.font = 'bold 20px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText(text, 64, 40);
+    var tex = new THREE.CanvasTexture(canvas);
+    var mat = new THREE.SpriteMaterial({ map: tex, transparent: true });
+    var sprite = new THREE.Sprite(mat);
+    sprite.position.copy(pos);
+    sprite.scale.set(1.5, 0.75, 1);
+    scene.add(sprite);
+  }
+  makeLabel('P', '#B8793B', new THREE.Vector3(0, 6.5, 0));
+  makeLabel('Q', '#4F7A28', new THREE.Vector3(6.5, -0.5, 0));
+  makeLabel('t', '#62695C', new THREE.Vector3(0, -0.5, 6.5));
+
+  // 需求曲面：蓝色半透明
+  var geom = new THREE.BufferGeometry();
+  var vertices = [], indices = [];
+  var res = 15;
+  for(var i=0; i<=res; i++) {
+    for(var j=0; j<=res; j++) {
+      var t = (i/res)*2 - 1; // -1 to 1 时间
+      var q = (j/res)*6 - 3; // 数量
+      var p = 5 - 0.6*q + 0.3*t + 0.2*Math.sin(q*0.8) + 0.1*Math.cos(t*2);
+      vertices.push(q, Math.max(0.2, p), t*2.5);
+    }
+  }
+  for(var i=0; i<res; i++) {
+    for(var j=0; j<res; j++) {
+      var a = i*(res+1)+j;
+      var b = i*(res+1)+j+1;
+      var c = (i+1)*(res+1)+j;
+      var d = (i+1)*(res+1)+j+1;
+      indices.push(a, b, c);
+      indices.push(b, d, c);
+    }
+  }
+  geom.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+  geom.setIndex(indices);
+  geom.computeVertexNormals();
+  var matDemand = new THREE.MeshPhongMaterial({
+    color: 0x4F7A28, transparent: true, opacity: 0.35, side: THREE.DoubleSide, wireframe: false
+  });
+  var demandMesh = new THREE.Mesh(geom, matDemand);
+  scene.add(demandMesh);
+
+  // 供给曲面：橙色半透明
+  var geom2 = new THREE.BufferGeometry();
+  var vertices2 = [];
+  for(var i=0; i<=res; i++) {
+    for(var j=0; j<=res; j++) {
+      var t = (i/res)*2 - 1;
+      var q = (j/res)*6 - 3;
+      var p = 1 + 0.5*q + 0.2*t + 0.15*Math.sin(q*0.5+1) + 0.1*Math.cos(t*1.5);
+      vertices2.push(q, Math.max(0.2, p), t*2.5);
+    }
+  }
+  geom2.setAttribute('position', new THREE.Float32BufferAttribute(vertices2, 3));
+  geom2.setIndex(indices);
+  geom2.computeVertexNormals();
+  var matSupply = new THREE.MeshPhongMaterial({
+    color: 0xB8793B, transparent: true, opacity: 0.35, side: THREE.DoubleSide, wireframe: false
+  });
+  var supplyMesh = new THREE.Mesh(geom2, matSupply);
+  scene.add(supplyMesh);
+
+  // 线框
+  var wireMat = new THREE.MeshBasicMaterial({ color: 0x4F7A28, wireframe: true, transparent: true, opacity: 0.15 });
+  var wireDemand = new THREE.Mesh(geom, wireMat);
+  scene.add(wireDemand);
+  var wireMat2 = new THREE.MeshBasicMaterial({ color: 0xB8793B, wireframe: true, transparent: true, opacity: 0.15 });
+  var wireSupply = new THREE.Mesh(geom2, wireMat2);
+  scene.add(wireSupply);
+
+  // 轨道控制：手动实现旋转
+  var angle = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    angle += 0.003;
+    camera.position.x = 10 * Math.sin(angle);
+    camera.position.z = 10 * Math.cos(angle);
+    camera.lookAt(0, 1, 0);
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', function(){
+    var w2 = container.clientWidth, h2 = container.clientHeight;
+    camera.aspect = w2/h2;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w2, h2);
+  });
+})();
+</script>
+
+<!-- Chart.js 函数图 -->
+<script src="./_shared/js/chart.umd.min.js"></script>
+<script>
+(function(){
+  // 生产函数等产量曲线
+  var ctx = document.getElementById('chart-production');
+  if(!ctx) return;
+  var labels = [];
+  for(var i=1; i<=20; i++) labels.push(i);
+  function isoQ(K, L, A, alpha, beta, Qlevel) {
+    // Q = A * L^alpha * K^beta, 固定Q 求K = (Q / (A*L^alpha))^(1/beta)
+    var arr = [];
+    for(var l=1; l<=20; l++) {
+      var k = Math.pow(Qlevel / (A * Math.pow(l, alpha)), 1/beta);
+      arr.push(k > 0 ? k : null);
+    }
+    return arr;
+  }
+  var A = 1, alpha = 0.4, beta = 0.6;
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        { label: 'Q=10', data: isoQ(1, 1, A, alpha, beta, 10), borderColor: '#4F7A28', borderWidth: 2, tension: 0.3, fill: false, pointRadius: 0 },
+        { label: 'Q=15', data: isoQ(1, 1, A, alpha, beta, 15), borderColor: '#B8793B', borderWidth: 2, tension: 0.3, fill: false, pointRadius: 0, borderDash: [5,3] },
+        { label: 'Q=20', data: isoQ(1, 1, A, alpha, beta, 20), borderColor: '#62695C', borderWidth: 2, tension: 0.3, fill: false, pointRadius: 0, borderDash: [2,4] }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top', labels: { font: { size: 12 } } } },
+      scales: {
+        x: { title: { display: true, text: '劳动 (L)', font: { size: 13 } }, grid: { color: '#DFE4D8' } },
+        y: { title: { display: true, text: '资本 (K)', font: { size: 13 } }, grid: { color: '#DFE4D8' } }
+      }
+    }
+  });
+})();
+
+(function(){
+  // 市场均衡调整动画
+  var canvas = document.getElementById('anim-market-equilibrium');
+  if(!canvas) return;
+  var ctx2 = canvas.getContext('2d');
+  var W = canvas.width = canvas.clientWidth;
+  var H = canvas.height = canvas.clientHeight;
+  var pad = {t: 30, b: 40, l: 50, r: 30};
+  var anim = 0;
+
+  function drawEq(t) {
+    ctx2.clearRect(0, 0, W, H);
+    // 坐标轴
+    var x0 = pad.l, y0 = H - pad.b, x1 = W - pad.r, y1 = pad.t;
+    ctx2.strokeStyle = '#222820';
+    ctx2.lineWidth = 1.5;
+    ctx2.beginPath();
+    ctx2.moveTo(x0, y0); ctx2.lineTo(x1, y0);
+    ctx2.moveTo(x0, y0); ctx2.lineTo(x0, y1);
+    ctx2.stroke();
+    ctx2.fillStyle = '#62695C';
+    ctx2.font = '12px monospace';
+    ctx2.textAlign = 'center';
+    ctx2.fillText('数量 Q', (x0+x1)/2, H-5);
+    ctx2.save();
+    ctx2.translate(15, (y0+y1)/2);
+    ctx2.rotate(-Math.PI/2);
+    ctx2.fillText('价格 P', 0, 0);
+    ctx2.restore();
+
+    // 需求曲线（移动）
+    var dShift = t * 30;
+    ctx2.strokeStyle = '#4F7A28';
+    ctx2.lineWidth = 2.5;
+    ctx2.beginPath();
+    for(var x=x0; x<=x1; x+=1) {
+      var q = (x - x0) / (x1 - x0) * 100;
+      var p = 100 - 0.8*q + dShift;
+      var px = x0 + (q/100)*(x1-x0);
+      var py = y0 - (p/120)*(y0-y1);
+      if(x===x0) ctx2.moveTo(px, py); else ctx2.lineTo(px, py);
+    }
+    ctx2.stroke();
+    ctx2.fillStyle = '#4F7A28';
+    ctx2.font = '12px monospace';
+    ctx2.fillText('需求 D' + (t>0.1 ? "'" : ''), x1-60, y0 - (50/120)*(y0-y1)-10);
+
+    // 供给曲线（固定）
+    ctx2.strokeStyle = '#B8793B';
+    ctx2.lineWidth = 2.5;
+    ctx2.beginPath();
+    for(var x=x0; x<=x1; x+=1) {
+      var q = (x - x0) / (x1 - x0) * 100;
+      var p = 10 + 0.6*q;
+      var px = x0 + (q/100)*(x1-x0);
+      var py = y0 - (p/120)*(y0-y1);
+      if(x===x0) ctx2.moveTo(px, py); else ctx2.lineTo(px, py);
+    }
+    ctx2.stroke();
+    ctx2.fillStyle = '#B8793B';
+    ctx2.font = '12px monospace';
+    ctx2.fillText('供给 S', x1-60, y0 - (80/120)*(y0-y1)-10);
+
+    // 初始均衡点（红色虚线）
+    var eq1q = 50, eq1p = 100 - 0.8*50;
+    var eq1x = x0 + (eq1q/100)*(x1-x0);
+    var eq1y = y0 - (eq1p/120)*(y0-y1);
+    ctx2.setLineDash([4,4]);
+    ctx2.strokeStyle = '#B03A2E';
+    ctx2.lineWidth = 1.5;
+    ctx2.beginPath();
+    ctx2.moveTo(eq1x, y0); ctx2.lineTo(eq1x, eq1y); ctx2.lineTo(x0, eq1y);
+    ctx2.stroke();
+    ctx2.setLineDash([]);
+    ctx2.fillStyle = '#B03A2E';
+    ctx2.beginPath();
+    ctx2.arc(eq1x, eq1y, 5, 0, 2*Math.PI);
+    ctx2.fill();
+    ctx2.font = '10px monospace';
+    ctx2.fillText('E₀', eq1x+8, eq1y-5);
+
+    // 新均衡点（绿色虚线）
+    var eq2q = 100 - (120 - (10 + 0.6*eq2q)) / 0.8; // 近似
+    var eq2q = 58, eq2p = 10 + 0.6*58;
+    var eq2x = x0 + (eq2q/100)*(x1-x0);
+    var eq2y = y0 - (eq2p/120)*(y0-y1);
+    ctx2.setLineDash([4,4]);
+    ctx2.strokeStyle = '#14532D';
+    ctx2.lineWidth = 1.5;
+    ctx2.beginPath();
+    ctx2.moveTo(eq2x, y0); ctx2.lineTo(eq2x, eq2y); ctx2.lineTo(x0, eq2y);
+    ctx2.stroke();
+    ctx2.setLineDash([]);
+    ctx2.fillStyle = '#14532D';
+    ctx2.beginPath();
+    ctx2.arc(eq2x, eq2y, 5, 0, 2*Math.PI);
+    ctx2.fill();
+    ctx2.font = '10px monospace';
+    ctx2.fillText('E₁', eq2x+8, eq2y-5);
+
+    // 箭头标注
+    ctx2.fillStyle = '#4F7A28';
+    ctx2.font = '11px monospace';
+    ctx2.fillText('需求增加 →', x1-120, y0 - (20/120)*(y0-y1)+5);
+  }
+
+  function loop() {
+    anim += 0.008;
+    if(anim > 1) anim = 0;
+    var t = Math.abs(Math.sin(anim * Math.PI));
+    drawEq(t);
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+
+(function(){
+  // 边际收益与边际成本曲线 (附录四)
+  var ctx = document.getElementById('chart-marginal');
+  if(!ctx) return;
+  var labels = [];
+  for(var i=1; i<=20; i++) labels.push(i);
+  var mr = [], mc = [];
+  for(var i=1; i<=20; i++) {
+    mr.push(50 - 2*i);
+    mc.push(5 + 0.5*i + 0.03*i*i);
+  }
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        { label: 'MR 边际收益', data: mr, borderColor: '#4F7A28', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0 },
+        { label: 'MC 边际成本', data: mc, borderColor: '#B8793B', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top', labels: { font: { size: 12 } } } },
+      scales: {
+        x: { title: { display: true, text: '产量 Q', font: { size: 13 } }, grid: { color: '#DFE4D8' } },
+        y: { title: { display: true, text: '成本/收益 (元)', font: { size: 13 } }, grid: { color: '#DFE4D8' } }
+      }
+    }
+  });
+})();
+
+(function(){
+  // 供需均衡 (附录五)
+  var ctx = document.getElementById('chart-equilibrium');
+  if(!ctx) return;
+  var labels = [];
+  for(var i=0; i<=100; i+=5) labels.push(i);
+  var d = [], s = [];
+  for(var i=0; i<=100; i+=5) {
+    d.push(100 - i*0.8);
+    s.push(10 + i*0.5);
+  }
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        { label: '需求', data: d, borderColor: '#4F7A28', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0 },
+        { label: '供给', data: s, borderColor: '#B8793B', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top', labels: { font: { size: 12 } } } },
+      scales: {
+        x: { title: { display: true, text: '数量 Q', font: { size: 13 } }, grid: { color: '#DFE4D8' } },
+        y: { title: { display: true, text: '价格 P', font: { size: 13 } }, grid: { color: '#DFE4D8' } }
+      }
+    }
+  });
+})();
+
+(function(){
+  // IS-LM 模型 (附录五)
+  var ctx = document.getElementById('chart-islm');
+  if(!ctx) return;
+  var labels = [];
+  for(var i=0; i<=20; i++) labels.push(i*100);
+  var is = [], lm = [];
+  for(var i=0; i<=20; i++) {
+    var y = i*100;
+    is.push(15 - y/100);
+    lm.push(y/100 - 5);
+  }
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        { label: 'IS 曲线', data: is, borderColor: '#4F7A28', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0 },
+        { label: 'LM 曲线', data: lm, borderColor: '#B8793B', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top', labels: { font: { size: 12 } } } },
+      scales: {
+        x: { title: { display: true, text: '产出 Y', font: { size: 13 } }, grid: { color: '#DFE4D8' } },
+        y: { title: { display: true, text: '利率 r (%)', font: { size: 13 } }, grid: { color: '#DFE4D8' } }
+      }
+    }
+  });
+})();
+
+(function(){
+  // AD-AS 模型 (附录五)
+  var ctx = document.getElementById('chart-adas');
+  if(!ctx) return;
+  var labels = [];
+  for(var i=0; i<=20; i++) labels.push(i*100);
+  var ad = [], sras = [], lras = [];
+  for(var i=0; i<=20; i++) {
+    var y = i*100;
+    ad.push(120 - y/10);
+    sras.push(20 + y/30);
+    lras.push(2000);
+  }
+  // 调整LRAS为垂直竖线
+  var lras2 = [];
+  for(var i=0; i<=20; i++) lras2.push(i===0 ? null : null);
+  lras2[10] = 20;
+  lras2[11] = 120;
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        { label: 'AD 总需求', data: ad, borderColor: '#4F7A28', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0 },
+        { label: 'SRAS 短期总供给', data: sras, borderColor: '#B8793B', borderWidth: 2.5, tension: 0.3, fill: false, pointRadius: 0 },
+        { label: 'LRAS 长期总供给', data: [{x:1200, y:20}, {x:1200, y:120}], borderColor: '#14532D', borderWidth: 2.5, tension: 0, fill: false, pointRadius: 0, showLine: true }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top', labels: { font: { size: 12 } } } },
+      scales: {
+        x: { title: { display: true, text: '产出 Y', font: { size: 13 } }, grid: { color: '#DFE4D8' } },
+        y: { title: { display: true, text: '价格水平 P', font: { size: 13 } }, grid: { color: '#DFE4D8' } }
+      }
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

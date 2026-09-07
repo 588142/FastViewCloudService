@@ -1,0 +1,830 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自由主义的谱系 · 思想图谱系列第四辑</title>
+
+  <style>
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+  </style>
+
+  <style>
+    :root {
+      --bg: #FBFBF8;
+      --bg2: #F0F3EF;
+      --ink: #20241F;
+      --muted: #6C7268;
+      --rule: #E1E6DE;
+      --accent: #1F7A6D;
+      --accent2: #B08A2E;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:first-child { margin-left: 0; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .legacy .legacy-title { font-weight: 700; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .legacy ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; }
+    @media (max-width: 700px) { .legacy { grid-template-columns: 1fr; } }
+
+    .history { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; }
+    .history .history-title { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem; }
+    .history p { margin-bottom: 0.55rem; }
+    .history p:last-child { margin-bottom: 0; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidenav { position: static; max-height: none; }
+    }
+    @media print {
+      .sidenav { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      section.sec { break-inside: avoid-page; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">自由主义的谱系</div>
+    <div class="brand-sub">思想图谱系列 · 第四辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+      <li><a href="#intro">导言 · 自由的两百年</a></li>
+      <li><a href="#overview">第一章 · 总览：谱系与传承</a></li>
+      <li><a href="#classical">第二章 · 古典自由主义：奠基</a></li>
+      <li><a href="#social">第三章 · 社会自由主义：修正</a></li>
+      <li><a href="#neoliberal">第四章 · 新自由主义：复兴</a></li>
+      <li><a href="#contemporary">第五章 · 当代自由主义：裂变</a></li>
+      <li><a href="#relation">第六章 · 关联与区别</a></li>
+      <li><a href="#summary">第七章 · 总结：钟摆与困境</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第四辑</span>
+        <span class="series-links">
+          <a href="../index.html">系列目录</a>
+          <a href="../马克思主义谱系/马克思主义谱系.html">← 上一辑 · 马克思主义谱系</a>
+          <a href="../东方思想谱系/东方思想谱系.html">下一辑 · 东方思想谱系 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>自由主义的谱系</h1>
+      <p class="subtitle">从洛克到罗尔斯——个人自由的两百年：奠基、修正、复兴与裂变</p>
+      <p class="meta">作者：詹家杨 · 2026-09-05 · 6 张思维导图 · 3 张对照表 · 语录 / 成果 / 历史背景</p>
+    </header>
+
+    <main>
+      <!-- 导言 -->
+      <section class="sec" id="intro">
+        <h2>导言 · 自由的两百年</h2>
+        <p>如果说马克思主义谱系是"左翼"的长河，那么自由主义就是塑造现代世界的另一条大河。从 17 世纪英国革命到 21 世纪，自由主义经历了<strong>古典奠基、社会修正、新自由复兴、当代裂变</strong>四个阶段，在个人与国家之间来回摆动。本辑把<strong>洛克、亚当·斯密、密尔、格林、凯恩斯、罗斯福、哈耶克、弗里德曼、罗尔斯、诺齐克</strong>等思想家放进同一条谱系：看清谁是源头、谁修正了它、谁又让它裂变。</p>
+<figure class="diagram">
+          <figcaption>图 0a · 自由主义基本概念树状图</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  ROOT["自由主义谱系"] --> A["核心价值"]
+  ROOT --> B["四阶段演变"]
+  ROOT --> C["关键概念"]
+  ROOT --> D["主要争议"]
+  A --> A1["个人自由（最高价值）"]
+  A --> A2["有限政府（权力制衡）"]
+  A --> A3["市场经济（自发秩序）"]
+  A --> A4["法治与宽容（规则至上）"]
+  B --> B1["古典自由主义\n17-19世纪 · 奠基"]
+  B --> B2["社会自由主义\n19世纪末-20世纪中 · 修正"]
+  B --> B3["新自由主义\n20世纪下半叶 · 复兴"]
+  B --> B4["当代自由主义\n1970年代至今 · 裂变"]
+  C --> C1["消极自由 vs 积极自由\n以赛亚·伯林"]
+  C --> C2["正义即公平\n约翰·罗尔斯"]
+  C --> C3["自发秩序\n哈耶克"]
+  C --> C4["伤害原则\n密尔"]
+  D --> D1["自由 vs 平等"]
+  D --> D2["国家干预 vs 自由放任"]
+  D --> D3["分配正义 vs 持有正义"]
+  D --> D4["普遍主义 vs 社群主义"]
+  classDef root fill:#1F7A6D,color:#fff,stroke:#1F7A6D;
+  classDef cat fill:#0D9488,color:#fff,stroke:#0D9488;
+  classDef leaf fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  class ROOT root;
+  class A,B,C,D cat;
+  class A1,A2,A3,A4,B1,B2,B3,B4,C1,C2,C3,C4,D1,D2,D3,D4 leaf;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 0a 详解：自由主义的基本概念框架</strong>——自由主义是塑造现代世界最有力的意识形态之一，但"自由"这个词本身却充满歧义。</p>
+          <p><strong>核心价值：</strong>个人自由是自由主义的最高价值。但自由不是"想干什么就干什么"——洛克说的自由是在法律框架内的自由，密尔说的自由是"不伤害他人"的自由。有限政府意味着政府权力必须受到制约：三权分立、法治、宪法审查——这些制度设计都是为了保护个人自由不受国家侵犯。</p>
+          <p><strong>四阶段演变：</strong>自由主义不是一成不变的教条。它经历了从"不要管我"（古典自由主义的消极自由）到"请帮助我"（社会自由主义的积极自由），再到"政府管太多了"（新自由主义），最后分裂为左右两翼（当代自由主义）。每一次转变都是对"自由"这个概念的重新定义。</p>
+          <p><strong>消极自由 vs 积极自由：</strong>以赛亚·伯林在1958年做了经典区分——消极自由是"免于……的自由"（不被干涉），积极自由是"去做……的自由"（有能力实现）。这个区分是理解自由主义内部争吵的关键钥匙：古典自由主义和新自由主义偏向消极自由，社会自由主义偏向积极自由。</p>
+          <p><strong>现实案例：</strong>今天的医疗政策辩论就体现了这两种自由的分歧——保守派说"政府不要干涉我的医疗选择"（消极自由），进步派说"政府应该确保每个人都能看起病"（积极自由）。双方都在捍卫"自由"，但说的不是同一件事。</p>
+        </div>
+        <div class="callout">
+          <span class="callout-title">一条主线</span>
+          整部谱系的核心逻辑是"<strong>个人自由优先 → 有限政府 → 市场经济 → 法治与宽容</strong>"。分歧不在于要不要自由，而在于：自由是什么？政府该管多少？平等与自由如何权衡？
+        </div>
+      </section>
+
+      <!-- 第一章 总览 -->
+      <section class="sec" id="overview">
+        <h2><span class="chapno">第一章</span>总览：谱系与传承</h2>
+        <p>先看全景：洛克奠定自然权利与社会契约，斯密赋予自由以市场内涵，密尔把自由推向个性与言论；19 世纪末格林与凯恩斯引入国家干预，形成社会自由主义；20 世纪下半叶哈耶克与弗里德曼发起新自由主义复兴；1970 年代后罗尔斯与诺齐克使自由主义裂变为左、右两翼，并遭遇社群主义批评。</p>
+
+        <figure class="diagram">
+          <figcaption>图 1 · 自由主义谱系总图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  L["洛克 · 自然权利<br>1689《政府论》"] --> S["亚当·斯密 · 市场<br>1776《国富论》"]
+  S --> M["密尔 · 自由<br>1859《论自由》"]
+  M --> G["社会自由主义<br>格林 · 凯恩斯 · 罗斯福"]
+  G --> N["新自由主义<br>哈耶克 · 弗里德曼"]
+  N --> C["当代自由主义<br>罗尔斯 · 诺齐克"]
+  C --> D["当代困境<br>民粹 · 技术治理 · 身份政治"]
+  classDef rootNode fill:#1F7A6D,color:#fff,stroke:#1F7A6D;
+  class L rootNode;
+          </pre>
+        </figure>
+
+<figure class="diagram">
+          <figcaption>图 1a · 伯林的两种自由概念——消极自由与积极自由</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  subgraph NEG["消极自由 Negative Liberty"]
+    N1["免于干涉的自由"] --> N2["核心问题：我的领域有多大？"]
+    N2 --> N3["代表人物：洛克·密尔·哈耶克"]
+    N2 --> N4["政治立场：古典自由主义 · 自由至上主义"]
+    N2 --> N5["风险：冷漠 · 社会不公"]
+  end
+  subgraph POS["积极自由 Positive Liberty"]
+    P1["实现自我的自由"] --> P2["核心问题：谁在统治我？"]
+    P2 --> P3["代表人物：格林·凯恩斯·罗尔斯"]
+    P2 --> P4["政治立场：社会自由主义 · 社会民主主义"]
+    P2 --> P5["风险：强制·家长主义"]
+  end
+  NEG --- POS
+  classDef neg fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef pos fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  class NEG,N1,N2,N3,N4,N5 neg;
+  class POS,P1,P2,P3,P4,P5 pos;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：两种自由的概念</strong>——以赛亚·伯林"两种自由的概念"是20世纪最重要的政治哲学演讲之一，它揭示了自由主义内部最深层的分歧。</p>
+          <p><strong>消极自由：</strong>"自由就是没有人干涉我。"这是古典自由主义的核心——政府越小越好，只要不伤害别人，我想做什么就做什么。消极自由只关心"介入的范围有多大"，不关心"你是否真的有能力和资源去做"。哈耶克说，自由意味着强制的不存在，而不是选择权的保障。</p>
+          <p><strong>积极自由：</strong>"自由就是成为自己的主人。"但这隐含了一个危险：一旦我把自己视为"更高自我"（理性自我），而把别人视为"较低自我"，我就可以强迫别人"为了他们自己的利益"服从——这就是极权主义的哲学根源。伯林对此深感警惕，但他也承认积极自由包含了消极自由无法涵盖的价值：自我实现、民主参与、社会保障。</p>
+          <p><strong>现实案例：</strong>2020年新冠疫情中，口罩令和封城引发了两种自由观的激烈冲突。消极自由论者说："政府无权强制我戴口罩，这侵犯了我的身体自主权。"积极自由论者说："政府有责任保护公共健康，你的自由以不危害他人为限。"密尔的伤害原则在这里面临了严峻考验：在公共卫生危机中，"不伤害他人"的边界在哪里？</p>
+        </div>
+        <h3>总对照表</h3>        <h3>总对照表</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>阶段</th><th>时期</th><th>回答的核心问题</th><th>侧重点</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>古典自由主义</strong></td><td>17–19 世纪</td><td>如何限制国家权力、保障个人自由</td><td>自然权利 · 自由放任</td></tr>
+              <tr><td><strong>社会自由主义</strong></td><td>19 世纪末–20 世纪中</td><td>市场失灵时国家应否干预</td><td>积极自由 · 福利国家</td></tr>
+              <tr><td><strong>新自由主义</strong></td><td>20 世纪下半叶</td><td>大政府是否威胁自由</td><td>自发秩序 · 市场回归</td></tr>
+              <tr><td><strong>当代自由主义</strong></td><td>1970 年代至今</td><td>自由与正义如何分配</td><td>罗尔斯左翼 · 诺齐克右翼</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 第二章 古典自由主义 -->
+      <section class="sec" id="classical">
+        <h2><span class="chapno">第二章</span>古典自由主义：奠基（17–19 世纪）</h2>
+        <p><strong>定义</strong>：古典自由主义以<strong>个人自由</strong>为最高价值，主张生命、自由、财产等自然权利先于国家而存在；国家只是保障这些权利的"守夜人"，应奉行<strong>有限政府、自由放任、法治</strong>。代表人物是洛克、亚当·斯密与密尔。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>政治土壤</strong>：1215 年《大宪章》确立"王在法下"的传统；1640 年英国革命与 1688 年"光荣革命"推翻绝对王权，议会主权确立——洛克正是在这一背景下为革命辩护。</p>
+          <p><strong>思想土壤</strong>：宗教改革瓦解了教会对思想的垄断，启蒙运动高举理性与个人判断；自然法传统（格劳秀斯、霍布斯）提供了"权利先于国家"的概念工具。</p>
+          <p><strong>经济土壤</strong>：18 世纪工业革命兴起，新兴资产阶级要求摆脱重商主义的国家管制，亚当·斯密的《国富论》为自由贸易提供了理论旗帜。</p>
+          <p><strong>制度土壤</strong>：美国独立（1776）与法国大革命（1789）把自然权利写进《独立宣言》与《人权宣言》，自由主义从英国经验上升为现代政治原则。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>约翰·洛克（1632–1704）</strong>——"自由主义之父"。提出自然权利（生命、自由、财产），主张政府权力来自被统治者的同意，并首创立法、行政、联盟三权分立。其《政府论》（1689）为光荣革命辩护，成为现代宪政的奠基文本。</p>
+        <p><strong>亚当·斯密（1723–1790）</strong>——"经济学之父"。在《国富论》（1776）中提出"看不见的手"：个人追求私利，在市场机制下反而促进公共福利；主张分工、自由贸易、最小政府。</p>
+        <p><strong>约翰·斯图亚特·密尔（1806–1873）</strong>——古典自由主义的集大成者。《论自由》（1859）提出"伤害原则"：个人自由仅以不伤害他人为限；并论证言论自由与个性发展是社会进步的条件。</p>
+
+        <figure class="diagram">
+          <figcaption>图 2 · 古典自由主义结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["古典自由主义"] --> A["洛克<br>自然权利 · 社会契约 · 有限政府"]
+  ROOT --> B["亚当·斯密<br>看不见的手 · 自由放任"]
+  ROOT --> C["密尔<br>伤害原则 · 言论自由"]
+  A --> A1["生命 · 自由 · 财产"]
+  A --> A2["政府权力来自被统治者同意"]
+  B --> B1["分工与交换"]
+  B --> B2["市场自发调节"]
+  C --> C1["消极自由"]
+  C --> C2["个性与进步"]
+  classDef rootNode fill:#1F7A6D,color:#fff,stroke:#1F7A6D;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">洛克 · 1632–1704</div>
+            <blockquote>人生而自由，却无往不在枷锁之中。<cite>——常被误归于卢梭，洛克原意：人在自然状态中即享有自由</cite></blockquote>
+            <blockquote>法律的目的不是废除自由，而是保护自由。<cite>——《政府论》下篇</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">亚当·斯密 · 1723–1790</div>
+            <blockquote>他追求自己的利益，却受一只看不见的手的指引，去达成一个并非他本意的目的。<cite>——《国富论》第四篇</cite></blockquote>
+            <blockquote>消费是一切生产的唯一目的。<cite>——《国富论》第四篇</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">密尔 · 1806–1873</div>
+            <blockquote>人类之所以有理有权个别地或集体地对其任何成员的行动自由进行干涉，唯一的目的只是自我防卫。<cite>——《论自由》</cite></blockquote>
+            <blockquote>一个压制意见表达的时代，无论它如何确信，都绝无可能达到思想上的健康。<cite>——《论自由》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">革命成果</div>
+            <div class="legacy-title">古典自由主义的制度果实</div>
+            <ul>
+              <li>1688 光荣革命与《权利法案》——议会主权确立</li>
+              <li>1776 美国《独立宣言》——"人人生而平等"</li>
+              <li>1789 法国《人权宣言》——自由、财产、安全</li>
+              <li>19 世纪自由贸易体系与宪政改革</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>更多人物与语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">孟德斯鸠 · 1689–1755</div>
+            <blockquote>要防止滥用权力，就必须以权力约束权力。<cite>——《论法的精神》</cite></blockquote>
+            <blockquote>自由是做法律所许可的一切事情的权利。<cite>——《论法的精神》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">伏尔泰 · 1694–1778</div>
+            <blockquote>我不同意你的观点，但我誓死捍卫你说话的权利。<cite>——常被归于伏尔泰的经典表述</cite></blockquote>
+            <blockquote>自由意味着只服从法律，而不服从任何个人。<cite>——《哲学通信》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">杰斐逊 · 1743–1826</div>
+            <blockquote>我们认为这些真理是不言而喻的：人人生而平等，造物者赋予他们若干不可剥夺的权利。<cite>——《独立宣言》</cite></blockquote>
+            <blockquote>自由之树必须时常用爱国者与暴君的鲜血来浇灌。<cite>——1787 年书信</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">康德 · 1724–1804</div>
+            <blockquote>要有勇气运用你自己的理智！这就是启蒙运动的口号。<cite>——《什么是启蒙》</cite></blockquote>
+            <blockquote>自由即自律。<cite>——《实践理性批判》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">边沁 · 1748–1832</div>
+            <blockquote>最大多数人的最大幸福，是衡量是非的标准。<cite>——《道德与立法原理导论》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">托克维尔 · 1805–1859</div>
+            <blockquote>民主的弊端可以用自由来医治。<cite>——《论美国的民主》</cite></blockquote>
+            <blockquote>平等的激情一旦被点燃，就永不熄灭。<cite>——《论美国的民主》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第三章 社会自由主义 -->
+      <section class="sec" id="social">
+        <h2><span class="chapno">第三章</span>社会自由主义：修正（19 世纪末–20 世纪中）</h2>
+        <p><strong>定义</strong>：社会自由主义承认市场会失灵，主张国家积极干预以保障"实质自由"——即个人实现潜能的能力。它把自由从"不被干涉"（消极自由）扩展为"有能力去做"（积极自由），是福利国家的理论基础。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>贫富分化</strong>：19 世纪末工业资本主义造就巨大不平等，工人处境恶劣，古典自由主义的"自由放任"被批评为"挨饿的自由"。</p>
+          <p><strong>大萧条</strong>：1929 年世界经济危机使市场自动均衡的神话破产，1930 年代美国失业率一度高达 25%，罗斯福新政以大规模国家干预应对。</p>
+          <p><strong>战争与重建</strong>：两次世界大战摧毁旧秩序，战后欧洲普遍要求"从摇篮到坟墓"的社会保障；1942 年《贝弗里奇报告》成为英国福利国家的蓝图。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>托马斯·希尔·格林（1836–1882）</strong>——英国新自由主义先驱。提出"积极自由"：自由不是不受干预，而是有能力实现自我；国家应创造条件（教育、健康、劳动保障）使人人享有实质自由。</p>
+        <p><strong>约翰·梅纳德·凯恩斯（1883–1946）</strong>——《就业、利息和货币通论》（1936）论证有效需求不足导致失业，主张国家以财政与货币政策干预经济、熨平周期，开创宏观经济学。</p>
+        <p><strong>富兰克林·罗斯福（1882–1945）与贝弗里奇（1879–1963）</strong>——罗斯福新政以"救济、复兴、改革"应对大萧条；贝弗里奇报告提出消灭"五大恶"（贫困、疾病、无知、肮脏、懒散），奠定福利国家。</p>
+
+        <figure class="diagram">
+          <figcaption>图 3 · 社会自由主义结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["社会自由主义"] --> A["格林<br>积极自由"]
+  ROOT --> B["凯恩斯<br>有效需求 · 国家干预"]
+  ROOT --> C["罗斯福 · 贝弗里奇<br>新政 · 福利国家"]
+  A --> A1["自由 = 实现潜能的能力"]
+  A --> A2["国家创造自由的条件"]
+  B --> B1["市场失灵 · 有效需求不足"]
+  B --> B2["财政与货币政策"]
+  C --> C1["社会保障"]
+  C --> C2["充分就业"]
+  classDef rootNode fill:#1F7A6D,color:#fff,stroke:#1F7A6D;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">凯恩斯 · 1883–1946</div>
+            <blockquote>长期来看，我们都死了。<cite>——《货币改革论》</cite></blockquote>
+            <blockquote>困难不在于新思想，而在于摆脱旧思想。<cite>——《就业、利息和货币通论》序言</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">罗斯福 · 1882–1945</div>
+            <blockquote>我们唯一恐惧的，就是恐惧本身。<cite>——1933 年就职演说</cite></blockquote>
+            <blockquote>自由得以存在的必要条件，是免于恐惧的自由。<cite>——1941 年"四大自由"演说</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">格林 · 1836–1882</div>
+            <blockquote>自由不是做我们喜欢做的事，而是做我们应当做的事的力量。<cite>——《自由主义立法与契约自由》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">革命成果</div>
+            <div class="legacy-title">社会自由主义的制度果实</div>
+            <ul>
+              <li>1933–1938 罗斯福新政——社保、就业、金融监管</li>
+              <li>1948 英国国民健康服务体系（NHS）成立</li>
+              <li>战后欧美福利国家与凯恩斯主义经济学主导</li>
+              <li>布雷顿森林体系与"黄金年代"（1945–1973）</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>更多人物与语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">霍布豪斯 · 1864–1929</div>
+            <blockquote>自由是社会的产物，而非个人的天赋。<cite>——《自由主义》</cite></blockquote>
+            <blockquote>国家是自由的保障，而非自由的敌人。<cite>——《自由主义》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">杜威 · 1859–1952</div>
+            <blockquote>民主不是一种制度，而是一种生活方式。<cite>——《民主与教育》</cite></blockquote>
+            <blockquote>教育是民主的实验室。<cite>——相关论述</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">贝弗里奇 · 1879–1963</div>
+            <blockquote>社会保险应当覆盖从摇篮到坟墓的一生。<cite>——《贝弗里奇报告》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">马歇尔 · 1893–1981</div>
+            <blockquote>公民身份是一种地位，它赋予所有人平等的权利与义务。<cite>——《公民身份与社会阶级》</cite></blockquote>
+            <blockquote>社会权利是公民身份的最后一块拼图。<cite>——《公民身份与社会阶级》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">加尔布雷思 · 1908–2006</div>
+            <blockquote>私人富足与公共贫困并存，是丰裕社会的悖论。<cite>——《丰裕社会》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四章 新自由主义 -->
+      <section class="sec" id="neoliberal">
+        <h2><span class="chapno">第四章</span>新自由主义：复兴（20 世纪下半叶）</h2>
+        <p><strong>定义</strong>：新自由主义主张回归市场原教旨——相信自发秩序优于人为设计，反对大政府、高税收与过度管制，认为国家干预不仅低效，而且通向奴役。代表人物是哈耶克与弗里德曼，政治实践者是撒切尔与里根。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>滞胀危机</strong>：1970 年代石油危机后，西方出现"滞胀"（经济停滞 + 通货膨胀并存），凯恩斯主义药方失效，为市场回归提供了现实契机。</p>
+          <p><strong>福利国家困境</strong>：高福利带来高税收与财政赤字，批评者认为它养懒汉、扼杀活力，"英国病"成为反例。</p>
+          <p><strong>冷战意识形态</strong>：与苏联计划经济的对抗，使"市场 vs 计划"成为自由世界自我认同的核心；哈耶克《通往奴役之路》（1944）在战后被重新发现。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>弗里德里希·哈耶克（1899–1992）</strong>——奥地利学派代表。提出"自发秩序"与"知识分散"：价格体系传递分散于无数个体的知识，任何中央计划都无法复制；《通往奴役之路》警告计划导致极权。</p>
+        <p><strong>米尔顿·弗里德曼（1912–2006）</strong>——芝加哥学派领袖、货币主义创始人。主张"通货膨胀随时随地都是一种货币现象"，反对凯恩斯式财政干预；《资本主义与自由》（1962）论证小政府与自由市场。</p>
+        <p><strong>撒切尔（1925–2013）与里根（1911–2004）</strong>——政治实践者：私有化、放松管制、减税、削减福利，把新自由主义从书斋变成国策。</p>
+
+        <figure class="diagram">
+          <figcaption>图 4 · 新自由主义结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["新自由主义"] --> A["哈耶克<br>自发秩序 · 知识分散"]
+  ROOT --> B["弗里德曼<br>货币主义"]
+  ROOT --> C["撒切尔 · 里根<br>改革实践"]
+  A --> A1["计划导致奴役"]
+  A --> A2["价格传递分散知识"]
+  B --> B1["通胀是货币现象"]
+  B --> B2["小政府 · 低税"]
+  C --> C1["私有化 · 放松管制"]
+  C --> C2["全球化"]
+  classDef rootNode fill:#1F7A6D,color:#fff,stroke:#1F7A6D;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">哈耶克 · 1899–1992</div>
+            <blockquote>通往地狱之路，常由善意铺成。<cite>——《通往奴役之路》</cite></blockquote>
+            <blockquote>计划经济的实质，是把决定权交给少数人，而他们无法拥有计划所需的全部知识。<cite>——《知识在社会中的利用》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">弗里德曼 · 1912–2006</div>
+            <blockquote>通货膨胀随时随地都是一种货币现象。<cite>——《货币数量论》</cite></blockquote>
+            <blockquote>自由市场的伟大之处，在于它让陌生人之间也能合作。<cite>——《资本主义与自由》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">撒切尔 · 1925–2013</div>
+            <blockquote>没有所谓的社会，只有个人与家庭。<cite>——1987 年访谈</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">革命成果</div>
+            <div class="legacy-title">新自由主义的制度果实</div>
+            <ul>
+              <li>1979 英国撒切尔改革——私有化、去管制</li>
+              <li>1981 美国里根革命——减税、放松金融监管</li>
+              <li>1989 华盛顿共识——全球推广市场化</li>
+              <li>1990 年代全球化与金融自由化浪潮</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>更多人物与语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">米塞斯 · 1881–1973</div>
+            <blockquote>没有市场，就没有自由；没有自由，就没有繁荣。<cite>——《人的行动》</cite></blockquote>
+            <blockquote>计划经济必然走向极权。<cite>——《社会主义》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">布坎南 · 1919–2013</div>
+            <blockquote>政治家与官僚同样追求自身利益。<cite>——《公共选择理论》</cite></blockquote>
+            <blockquote>政府也会失灵，正如市场也会失灵。<cite>——公共选择理论核心命题</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">里根 · 1911–2004</div>
+            <blockquote>政府不是解决问题的办法，政府本身就是问题。<cite>——1981 年就职演说</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">斯蒂格勒 · 1911–1991</div>
+            <blockquote>监管往往被监管对象俘获。<cite>——《经济管制理论》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第五章 当代自由主义 -->
+      <section class="sec" id="contemporary">
+        <h2><span class="chapno">第五章</span>当代自由主义：裂变（1970 年代至今）</h2>
+        <p><strong>定义</strong>：1971 年罗尔斯《正义论》与 1974 年诺齐克《无政府、国家与乌托邦》使自由主义裂变为<strong>左翼（平等主义）</strong>与<strong>右翼（自由至上）</strong>两翼，并遭遇社群主义的批评。当代自由主义还面临民粹主义、技术治理与身份政治的挑战。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>民权运动</strong>：1960 年代美国民权运动、反越战与女权运动，把"平等"重新推上议程，罗尔斯的正义论正是对这一时代焦虑的哲学回应。</p>
+          <p><strong>新自由主义反弹</strong>：1980 年代市场化改革加剧不平等，引发对"自由放任"的反思，罗尔斯式平等主义与诺齐克式自由至上主义形成两极。</p>
+          <p><strong>全球化与身份政治</strong>：冷战结束后全球化深化，但 2008 年金融危机、2016 年民粹主义浪潮（英国脱欧、特朗普当选）暴露了自由主义的精英化困境；技术治理与身份政治进一步撕裂共识。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>约翰·罗尔斯（1921–2002）</strong>——当代政治哲学巨擘。《正义论》（1971）以"无知之幕"推导出两大正义原则：平等的基本自由 + 差别原则（社会不平等须使最不利者受益），为福利国家提供新的哲学辩护。</p>
+        <p><strong>罗伯特·诺齐克（1938–2002）</strong>——自由至上主义代表。《无政府、国家与乌托邦》（1974）主张"个人拥有权利，任何他人或群体都不得侵犯"；反对再分配，主张"最小国家"，与罗尔斯正面交锋。</p>
+        <p><strong>迈克尔·桑德尔（1953–）</strong>——社群主义批评者。《自由主义与正义的局限》（1982）批评罗尔斯式自我是"无牵无挂的自我"，主张自我是情境化的、共同善优先。</p>
+
+        <figure class="diagram">
+          <figcaption>图 5 · 当代自由主义结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["当代自由主义"] --> A["罗尔斯<br>正义论 · 差别原则"]
+  ROOT --> B["诺齐克<br>自由至上 · 最小国家"]
+  ROOT --> C["社群主义批评<br>桑德尔"]
+  A --> A1["无知之幕"]
+  A --> A2["最不利者受益"]
+  B --> B1["个人权利不可侵犯"]
+  B --> B2["再分配即侵犯权利"]
+  C --> C1["自我是情境化的"]
+  C --> C2["共同善优先"]
+  classDef rootNode fill:#1F7A6D,color:#fff,stroke:#1F7A6D;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>代表人物语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">罗尔斯 · 1921–2002</div>
+            <blockquote>正义是社会制度的首要价值，正如真理是思想体系的首要价值。<cite>——《正义论》</cite></blockquote>
+            <blockquote>社会和经济的不平等应这样安排：使它们对最不利者最为有利。<cite>——《正义论》· 差别原则</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">诺齐克 · 1938–2002</div>
+            <blockquote>个人拥有权利，任何他人、群体或国家都不得侵犯。<cite>——《无政府、国家与乌托邦》开篇</cite></blockquote>
+            <blockquote>对劳动成果征税，无异于强迫劳动。<cite>——《无政府、国家与乌托邦》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">桑德尔 · 1953–</div>
+            <blockquote>我们不是无牵无挂的自我，而是被共同体所构成的自我。<cite>——《自由主义与正义的局限》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">革命成果</div>
+            <div class="legacy-title">当代自由主义的制度果实</div>
+            <ul>
+              <li>罗尔斯正义论主导 20 世纪后期政治哲学</li>
+              <li>诺齐克为自由至上主义提供哲学根基</li>
+              <li>社群主义推动"共同善"与公民美德议题</li>
+              <li>身份政治、多元文化主义进入公共议程</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>更多人物与语录</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">以赛亚·伯林 · 1909–1997</div>
+            <blockquote>自由是一回事，平等是另一回事。<cite>——《两种自由概念》</cite></blockquote>
+            <blockquote>多元价值之间不可通约，这是人类自由的代价。<cite>——《自由论》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">德沃金 · 1931–2013</div>
+            <blockquote>权利是个人手中的王牌，可以对抗多数。<cite>——《认真对待权利》</cite></blockquote>
+            <blockquote>平等对待每一个人，是自由主义的底线。<cite>——《至上的美德》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">阿马蒂亚·森 · 1933–</div>
+            <blockquote>自由既是发展的首要目的，也是发展的主要手段。<cite>——《以自由看待发展》</cite></blockquote>
+            <blockquote>贫困不是收入低，而是可行能力的被剥夺。<cite>——《以自由看待发展》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">麦金太尔 · 1929–</div>
+            <blockquote>我们继承传统，传统也继承我们。<cite>——《德性之后》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">沃尔泽 · 1935–</div>
+            <blockquote>正义不是单一的平等，而是复合的平等。<cite>——《正义诸领域》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">查尔斯·泰勒 · 1931–</div>
+            <blockquote>认同是在对话中形成的，承认是认同的构成性条件。<cite>——《承认的政治》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第六章 关联与区别 -->
+      <section class="sec" id="relation">
+        <h2><span class="chapno">第六章</span>关联与区别</h2>
+        <p>四阶段共享同一条主线——个人自由、有限政府、市场经济、法治宽容；区别在于对"自由"与"国家"关系的理解不同。下图是贯穿全谱系的主线。</p>
+
+        <figure class="diagram">
+          <figcaption>图 6 · 自由主义主线</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  A["个人自由优先"] --> B["有限政府"]
+  B --> C["市场经济"]
+  C --> D["法治与宽容"]
+  D --> E["平等（机会或结果）"]
+  classDef rootNode fill:#1F7A6D,color:#fff,stroke:#1F7A6D;
+  class A rootNode;
+          </pre>
+        </figure>
+
+<figure class="diagram">
+          <figcaption>图 2a · 当代自由主义裂变：罗尔斯 vs 诺齐克</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  subgraph RAWLS["罗尔斯 · 正义即公平"]
+    R1["原初状态 + 无知之幕"] --> R2["两个正义原则"]
+    R2 --> R2A["平等自由原则\n每个人拥有最大平等的自由"]
+    R2 --> R2B["差别原则\n社会不平等应使最不利者受益"]
+    R2 --> R2C["机会公平原则\n公职向所有人开放"]
+  end
+  subgraph NOZICK["诺齐克 · 持有正义"]
+    N1["个人权利神圣不可侵犯"] --> N2["持有正义三原则"]
+    N2 --> N2A["获取正义\n原始占有是否合法"]
+    N2 --> N2B["转让正义\n交换是否自愿"]
+    N2 --> N2C["矫正正义\n对不正义的纠正"]
+    N2 --> N3["最小国家\n"守夜人"国家，再分配即偷窃"]
+  end
+  RAWLS -->|"分歧: 分配正义"| CONFLICT["自由与平等\n能否兼得？"]
+  NOZICK -->|"分歧: 持有正义"| CONFLICT
+  CONFLICT --> DEBATE["当代政治哲学\n核心争论"]
+  classDef rawls fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  classDef nozick fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef conflict fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  class RAWLS,R1,R2,R2A,R2B,R2C rawls;
+  class NOZICK,N1,N2,N2A,N2B,N2C,N3 nozick;
+  class CONFLICT,DEBATE conflict;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 2a 详解：罗尔斯 vs 诺齐克——当代自由主义的内部分裂</strong>——1971年罗尔斯发表《正义论》，1974年诺齐克发表《无政府、国家与乌托邦》，自由主义从此分裂为平等的左翼和自由至上的右翼。</p>
+          <p><strong>罗尔斯的正义即公平：</strong>想象你在"无知之幕"背后——你不知道自己出生在富裕家庭还是贫困家庭，不知道自己是聪明还是笨，不知道自己是健康还是残疾。在这种情况下，你会选择什么样的社会制度？罗尔斯说，你会选择"让最不利者的处境也尽可能好"的制度——这就是差别原则。这个思想实验的威力在于：它强迫你从最弱势者的视角思考正义。</p>
+          <p><strong>诺齐克的持有正义：</strong>诺齐克的起点完全不同。他认为"个人权利是绝对的，任何再分配都是偷窃"。只要你的财产是通过合法途径获得的（原始获取正当、交换自愿），那么无论你有多富，国家都无权拿走你的财产去帮助穷人——即使那是为了帮助最需要帮助的人。这是一种极端的自由至上主义立场。</p>
+          <p><strong>现实案例：</strong>累进税制就是罗尔斯 vs 诺齐克争论的日常版本。罗尔斯支持对富人征更高的税——因为社会财富的积累是所有人合作的结果，富人应该回报社会（差别原则）。诺齐克反对——如果我的财富是合法赚来的，凭什么国家可以拿走？这个争论没有简单的答案，但罗尔斯和诺齐克给了我们思考这个问题的两个清晰框架。</p>
+        </div>
+        <h3>四阶段对比表</h3>        <h3>四阶段对比表</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>古典自由主义</th><th>社会自由主义</th><th>新自由主义</th><th>当代自由主义</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>自由观</strong></td><td>消极自由</td><td>积极自由</td><td>消极自由（回归）</td><td>左翼重平等 / 右翼重自由</td></tr>
+              <tr><td><strong>国家角色</strong></td><td>守夜人</td><td>积极干预</td><td>最小国家</td><td>罗尔斯：分配正义 / 诺齐克：最小国家</td></tr>
+              <tr><td><strong>市场态度</strong></td><td>自由放任</td><td>市场失灵需纠正</td><td>市场最优</td><td>市场需正义框架约束</td></tr>
+              <tr><td><strong>平等观</strong></td><td>机会平等</td><td>实质平等</td><td>程序正义</td><td>差别原则 vs 权利优先</td></tr>
+              <tr><td><strong>代表文本</strong></td><td>《政府论》《国富论》《论自由》</td><td>《通论》《贝弗里奇报告》</td><td>《通往奴役之路》《资本主义与自由》</td><td>《正义论》《无政府、国家与乌托邦》</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>核心概念定义表</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>概念</th><th>定义</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>消极自由</strong></td><td>不被干涉的自由（柏林）："免于……的自由"，古典与新自由主义的核心</td></tr>
+              <tr><td><strong>积极自由</strong></td><td>有能力去做的自由（柏林）："去做……的自由"，社会自由主义的依据</td></tr>
+              <tr><td><strong>自然权利</strong></td><td>先于国家而存在的权利（洛克）：生命、自由、财产</td></tr>
+              <tr><td><strong>伤害原则</strong></td><td>个人自由仅以不伤害他人为限（密尔）</td></tr>
+              <tr><td><strong>看不见的手</strong></td><td>个人逐利在市场中自发促进公共福利（斯密）</td></tr>
+              <tr><td><strong>有效需求</strong></td><td>有支付能力的需求；其不足导致失业（凯恩斯）</td></tr>
+              <tr><td><strong>自发秩序</strong></td><td>非人为设计的秩序，如语言与市场（哈耶克）</td></tr>
+              <tr><td><strong>无知之幕</strong></td><td>选择正义原则时遮蔽自身处境（罗尔斯）</td></tr>
+              <tr><td><strong>差别原则</strong></td><td>不平等须使最不利者受益（罗尔斯）</td></tr>
+              <tr><td><strong>最小国家</strong></td><td>只保护权利、不搞再分配的国家（诺齐克）</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">三组容易混淆的关系</span>
+          ① <strong>古典 ≠ 新自由</strong>：二者都主张小政府，但古典诞生于国家过强之时，新自由诞生于福利国家过重之后，语境不同。② <strong>社会自由主义 ≠ 社会主义</strong>：前者保留私有制与市场，只求修正；后者主张消灭私有制。③ <strong>罗尔斯 ≠ 诺齐克</strong>：同为自由主义，罗尔斯允许再分配以利最不利者，诺齐克视再分配为侵犯权利——这是当代自由主义内部最大的裂痕。
+        </div>
+      </section>
+
+      <!-- 第七章 总结 -->
+      <section class="sec" id="summary">
+        <h2><span class="chapno">第七章</span>总结：钟摆与困境</h2>
+        <p>把四阶段放进一句话：<strong>洛克奠基了权利，斯密赋予了市场，密尔扩展了自由，格林与凯恩斯修正了国家，哈耶克与弗里德曼复兴了市场，罗尔斯与诺齐克则让自由裂变为正义与权利的两极</strong>。判断任何一种自由主义的位置，只需问两个问题：它把自由理解为消极还是积极？它让国家管多还是管少？</p>
+        <p>两百年来，自由主义的钟摆始终在<strong>个人与国家</strong>之间摆动：国家过强时，它呼唤小政府；市场失灵时，它呼唤干预。而当代的民粹主义、技术治理与身份政治，正在考验这条大河能否容纳新的支流。</p>
+        <div class="callout">
+          <span class="callout-title">与第三辑的对照</span>
+          马克思主义谱系回答"如何消灭剥削、实现解放"，自由主义谱系回答"如何保障个人自由、限制权力"。二者共同构成了现代政治光谱的左右两极——理解其一，才能更好地理解另一个。
+        </div>
+      </section>
+    </main>
+
+    
+      <section class="sec">
+        <h2>关联辑目</h2>
+        <div class="explain">
+          <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+          <ul>
+          <li><a href="../西方哲学思想谱系/西方哲学思想谱系.html">西方哲学思想谱系</a></li>
+          <li><a href="../经济思想谱系/经济思想谱系.html">经济思想谱系·上篇</a></li>
+          <li><a href="../政治学通论/政治学通论.html">政治学通论</a></li>
+          <li><a href="../马克思主义谱系/马克思主义谱系.html">马克思主义谱系</a></li>
+          <li><a href="../历史思想谱系/历史思想谱系.html">历史思想谱系</a></li>
+          <li><a href="../法哲学思想谱系/法哲学思想谱系.html">法学思想谱系</a></li>
+          </ul>
+        </div>
+      </section>
+<footer>
+      自由主义的谱系 · 思想图谱系列第四辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-05
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'PingFang SC, Microsoft YaHei, Helvetica, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>

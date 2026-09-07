@@ -1,0 +1,949 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>教育思想谱系 · 思想图谱系列第十九辑</title>
+
+  <style>
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+  </style>
+
+  <style>
+    :root {
+      --bg: #FBF8F3;
+      --bg2: #F3EDE1;
+      --ink: #2B2418;
+      --muted: #6E6352;
+      --rule: #E4DBC9;
+      --accent: #B45309;
+      --accent2: #1F6E8C;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:first-child { margin-left: 0; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .legacy .legacy-title { font-weight: 700; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .legacy ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; }
+    @media (max-width: 700px) { .legacy { grid-template-columns: 1fr; } }
+
+    .history { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; }
+    .history .history-title { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem; }
+    .history p { margin-bottom: 0.55rem; }
+    .history p:last-child { margin-bottom: 0; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+    p a, li a { color: var(--accent); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    .formula {
+      font-family: var(--font-mono);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidenav { position: static; max-height: none; }
+    }
+    @media print {
+      .sidenav { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      section.sec { break-inside: avoid-page; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="shell">
+
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">教育思想谱系</div>
+    <div class="brand-sub">思想图谱系列 · 第十九辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+      <li><a href="#intro">导言 · "教化"的传承</a></li>
+      <li><a href="#overview">第一章 · 总览：教育的演变</a></li>
+      <li><a href="#eastern">第二章 · 东方教育思想：从孔子到书院</a></li>
+      <li><a href="#western">第三章 · 西方古典与近代教育：从苏格拉底到卢梭</a></li>
+      <li><a href="#modern">第四章 · 现代教育思想：从裴斯泰洛齐到杜威</a></li>
+      <li><a href="#contemporary">第五章 · 当代教育前沿：从终身学习到 AI 教育</a></li>
+      <li><a href="#summary">第六章 · 总结提炼：教育的启示</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第十九辑</span>
+        <span class="series-links">
+          <a href="../index.html">系列目录</a>
+          <a href="../心理学思想谱系/心理学思想谱系.html">← 上一辑 · 心理学思想谱系</a>
+          <a href="../逻辑与论证思想谱系/逻辑与论证思想谱系.html">下一辑 · 逻辑与论证思想谱系 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>教育思想谱系</h1>
+      <p class="subtitle">从"有教无类"到"终身学习"——教育如何让文明自我传承：东方从孔子到书院、西方从苏格拉底到卢梭、现代从裴斯泰洛齐到杜威、当代从终身学习到 AI 教育，提炼"有教无类之公、因材施教之智、知行合一之实、教学相长之恒、终身学习之远"的教育规律</p>
+      <p class="meta">作者：詹家杨 · 2026-09-05 · 7 张思维导图 · 7 张对照表 · 50+ 人物语录 · 教育</p>
+    </header>
+
+    <main>
+      <!-- 导言 -->
+      <section class="sec" id="intro">
+        <h2>导言 · "教化"的传承</h2>
+        <p>教育（education）来自拉丁语 educare——"引出、引导"，而不是"灌输"。这个词本身道出了教育的本质：它不把现成的知识塞进头脑，而是把每个人内在的潜能"引"出来。教育是人类独有的文明机制——动物靠本能传递生存技能，人类却靠教育把数千年的思想、技艺与德性代代相传。前面十八辑所梳理的一切思想——政治、经济、哲学、艺术、科学、军事——无一不是经由教育才得以跨越时空。理解教育，就是理解文明如何"自我复制"并"自我超越"。</p>
+        <div class="callout">
+          <span class="callout-title">一条主线</span>
+          教育关注对象的大转向：<strong>为神</strong>（中世纪：教育服务于信仰与神学）→ <strong>为君</strong>（古代：教育培养治国之才，孔子"学而优则仕"）→ <strong>为人</strong>（文艺复兴与启蒙：卢梭"自然教育"、人文主义）→ <strong>为公民</strong>（近代：普及教育塑造现代国民）→ <strong>为大众</strong>（现代：杜威"教育即生活"，教育面向全体儿童）→ <strong>为终身</strong>（当代：终身学习、学会学习）→ <strong>为 AI 时代</strong>（当下：人机协同、个性化学习）。每一次转向，都是人类对"如何成为人"的一次重新回答。
+        </div>
+        <p>本辑沿教育的谱系展开——<strong>东方教育思想</strong>（孔子、孟子、荀子、朱熹、王阳明、蔡元培）、<strong>西方古典与近代教育</strong>（苏格拉底、柏拉图、亚里士多德、夸美纽斯、洛克、卢梭）、<strong>现代教育思想</strong>（裴斯泰洛齐、赫尔巴特、福禄贝尔、杜威、蒙台梭利）、<strong>当代教育前沿</strong>（弗莱雷、维果茨基、加德纳、终身学习与 AI 教育），看"引出潜能"的艺术如何从私学与学园，长成横跨东西方、贯穿人一生的现代事业。它与第十八辑（心理学思想谱系）互为表里——心理学揭示"人如何学习"，教育学回答"如何教人"；又与第五辑（东方思想谱系）、第十七辑（西方哲学思想谱系）血脉相连——每一种思想，都首先是教育思想的产物。</p>
+
+        <figure class="diagram">
+          <figcaption>图 1 · 教育的大转向：七次转向图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["为神<br>中世纪 · 经院教育"] --> B["为君<br>古代 · 学而优则仕"]
+  B --> C["为人<br>文艺复兴 · 卢梭自然教育"]
+  C --> D["为公民<br>近代 · 普及教育"]
+  D --> E["为大众<br>杜威 · 教育即生活"]
+  E --> F["为终身<br>终身学习 · 学会学习"]
+  F --> G["为AI时代<br>人机协同 · 个性化学习"]
+  classDef shift fill:#B45309,color:#fff,stroke:#B45309;
+  class A,B,C,D,E,F,G shift;
+          </pre>
+        </figure>
+      </section>
+
+      <!-- 第一章 总览 -->
+      <section class="sec" id="overview">
+        <h2><span class="chapno">第一章</span>总览：教育的演变</h2>
+        <p>先看全景：教育几乎与文明同龄。中国在春秋时期出现私学，孔子"有教无类"打破了学在官府的垄断；希腊在雅典城邦诞生了苏格拉底、柏拉图的学园，把"认识你自己"作为教育的起点。中世纪，大学在巴黎、博洛尼亚诞生，成为西方知识传承的枢纽。近代，夸美纽斯的《大教学论》提出班级授课制，普鲁士率先推行普及义务教育——教育从少数人的特权变成全体国民的权利。现代，杜威的进步主义把儿童放在教育的中心，蒙台梭利让幼儿教育成为科学。当代，终身学习与 AI 教育正在重新定义"学校"与"课堂"。理解教育，就是理解文明自我传承的全部机制。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>古代教育（公元前–5世纪）</strong>：中国西周"学在官府"，春秋孔子兴办私学，"有教无类"；希腊斯巴达重军事训练、雅典重文雅教育，苏格拉底以对话"产婆术"启发真理，柏拉图建学园（Academy），亚里士多德建吕克昂（Lyceum）。</p>
+          <p><strong>中世纪教育（5–15世纪）</strong>：欧洲教育由教会主导，修道院学校与主教座堂学校传授"七艺"（文法、修辞、逻辑、算术、几何、天文、音乐）；12世纪大学诞生——博洛尼亚大学（1088）、巴黎大学（约1150）、牛津大学（约1167），成为西方高等教育的源头。</p>
+          <p><strong>文艺复兴与宗教改革（14–17世纪）</strong>：人文主义教育（维多里诺"快乐之家"、伊拉斯谟）把古典学问与人的全面发展结合；夸美纽斯《大教学论》（1632）提出"把一切知识教给一切人"的泛智教育，确立班级授课制。</p>
+          <p><strong>启蒙与近代普及教育（17–19世纪）</strong>：洛克《教育漫话》（1693）主张"白板说"与绅士教育；卢梭《爱弥儿》（1762）提出自然教育，被誉为"教育的哥白尼"；裴斯泰洛齐让教育"心理学化"，赫尔巴特建立科学教育学；普鲁士1806年后推行普及义务教育，现代学校制度确立。</p>
+          <p><strong>现代进步教育（19世纪末–20世纪）</strong>：杜威在芝加哥建立实验学校，主张"教育即生活、学校即社会、做中学"；蒙台梭利创办"儿童之家"，创立蒙氏教育法；陶行知在中国推行"生活教育"。</p>
+          <p><strong>当代教育（20世纪中–）</strong>：联合国教科文组织《学会生存》（1972）提出终身学习；弗莱雷《被压迫者教育学》（1970）开创批判教育学；维果茨基的"最近发展区"重塑教学理论；MOOC、翻转课堂与 AI 个性化学习正在重塑教育的形态。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>孔子（前551–前479）</strong>——有教无类、因材施教，万世师表。</p>
+        <p><strong>苏格拉底（前469–前399）</strong>——产婆术、对话式教学。</p>
+        <p><strong>柏拉图（前427–前347）</strong>——学园、洞穴寓言、德智体美教育。</p>
+        <p><strong>亚里士多德（前384–前322）</strong>——自由教育、德性教育。</p>
+        <p><strong>夸美纽斯（1592–1670）</strong>——泛智教育、班级授课制、《大教学论》。</p>
+        <p><strong>洛克（1632–1704）</strong>——白板说、绅士教育。</p>
+        <p><strong>卢梭（1712–1778）</strong>——自然教育、《爱弥儿》。</p>
+        <p><strong>裴斯泰洛齐（1746–1827）</strong>——教育心理学化、爱的教育。</p>
+        <p><strong>赫尔巴特（1776–1841）</strong>——科学教育学、四段教学法。</p>
+        <p><strong>福禄贝尔（1782–1852）</strong>——幼儿园创始人、游戏教育。</p>
+        <p><strong>杜威（1859–1952）</strong>——教育即生活、做中学、儿童中心。</p>
+        <p><strong>蒙台梭利（1870–1952）</strong>——儿童敏感期、蒙氏教育法。</p>
+        <p><strong>维果茨基（1896–1934）</strong>——最近发展区、支架教学。</p>
+        <p><strong>弗莱雷（1921–1997）</strong>——被压迫者教育学、对话教育。</p>
+        <p><strong>加德纳（1943–）</strong>——多元智能理论。</p>
+        <p><strong>陶行知（1891–1946）</strong>——生活即教育、教学做合一。</p>
+
+        <figure class="diagram">
+          <figcaption>图 2 · 教育演变结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["教育"] --> A["东方传统<br>孔子 · 孟子 · 荀子 · 朱熹 · 王阳明"]
+  ROOT --> B["西方古典<br>苏格拉底 · 柏拉图 · 亚里士多德"]
+  ROOT --> C["近代转向<br>夸美纽斯 · 洛克 · 卢梭 · 裴斯泰洛齐"]
+  ROOT --> D["现代教育<br>赫尔巴特 · 杜威 · 蒙台梭利 · 陶行知"]
+  ROOT --> E["当代前沿<br>弗莱雷 · 维果茨基 · 终身学习 · AI教育"]
+  classDef rootNode fill:#B45309,color:#fff,stroke:#B45309;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>对照表：教育主要时期速览</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>时期</th><th>核心问题</th><th>代表人物</th><th>思想遗产</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>古代教育</strong></td><td>培养什么样的人</td><td>孔子 · 苏格拉底 · 柏拉图 · 亚里士多德</td><td>有教无类 · 学园 · 自由教育</td></tr>
+              <tr><td><strong>中世纪教育</strong></td><td>为信仰而教</td><td>修道院学校 · 经院学者</td><td>七艺 · 大学诞生</td></tr>
+              <tr><td><strong>文艺复兴</strong></td><td>人的全面发展</td><td>维多里诺 · 伊拉斯谟 · 夸美纽斯</td><td>人文主义 · 班级授课制</td></tr>
+              <tr><td><strong>启蒙与近代</strong></td><td>自然与理性</td><td>洛克 · 卢梭 · 裴斯泰洛齐 · 赫尔巴特</td><td>白板说 · 自然教育 · 科学教育学</td></tr>
+              <tr><td><strong>现代进步教育</strong></td><td>儿童中心</td><td>杜威 · 蒙台梭利 · 陶行知</td><td>做中学 · 敏感期 · 生活教育</td></tr>
+              <tr><td><strong>当代教育</strong></td><td>终身与公平</td><td>弗莱雷 · 维果茨基 · 加德纳</td><td>终身学习 · 最近发展区 · 多元智能</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 第二章 东方教育思想 -->
+      <section class="sec" id="eastern">
+        <h2><span class="chapno">第二章</span>东方教育思想：从孔子到书院</h2>
+        <p>东方教育思想以中国为轴心，绵延两千五百年。孔子在春秋乱世中开创私学，"有教无类"第一次把教育从贵族垄断中解放出来；孟子与荀子以"性善""性恶"之争，奠定了教育的两种哲学根基；《学记》是世界上最早的教育学专著；朱熹的书院与"朱子读书法"把儒学教育推向高峰；王阳明的"知行合一"则把教育从书本引向生命实践。近代，蔡元培以"思想自由、兼容并包"重塑大学精神。东方教育思想的核心，始终是"成人"——教育不是知识的堆积，而是人格的养成。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>孔子的私学（前6世纪）</strong>：春秋时期"礼崩乐坏"，孔子打破"学在官府"，首开私人讲学之风，弟子三千、贤者七十二；他整理六经，确立"文行忠信"的教育内容，被后世尊为"万世师表"。</p>
+          <p><strong>孟荀之争与《学记》（前4–前3世纪）</strong>：孟子主"性善"，教育是"扩充四端"；荀子主"性恶"，教育是"化性起伪"；《学记》（约前3世纪）系统论述教学相长、循序渐进、藏息相辅，是世界上最早的教育学专著。</p>
+          <p><strong>书院与科举（唐–宋）</strong>：唐代科举制度确立"学而优则仕"的通道；宋代书院（白鹿洞、岳麓、嵩阳、应天）成为学术研究与自由讲学的中心，朱熹制定《白鹿洞书院揭示》，集儒学教育之大成。</p>
+          <p><strong>心学与近代转型（明–近代）</strong>：王阳明提出"知行合一""致良知"，把教育从记诵引向生命体证；近代蔡元培任北大校长，主张"思想自由、兼容并包"，提出"五育并举"（军国民、实利、公民道德、世界观、美感），陶行知推行"生活教育"。</p>
+        </div>
+
+        <h3>思想详解</h3>
+        <p><strong>孔子的教育思想</strong>：孔子提出<strong>有教无类</strong>——不分贵贱贫富，人人皆可受教育，这是人类教育史上最伟大的平等宣言；<strong>因材施教</strong>——针对不同学生的禀赋与性格施以不同教导（"求也退，故进之；由也兼人，故退之"）；<strong>学思结合</strong>——"学而不思则罔，思而不学则殆"；<strong>启发式教学</strong>——"不愤不启，不悱不发"，在学生主动求索时加以点拨。孔子的教育目标是"成人"与"君子"——"志于道，据于德，依于仁，游于艺"，德才兼备、知行合一。</p>
+        <div class="formula">
+          <span class="f-name">孔子教学法</span>
+          有教无类（对象）→ 因材施教（方法）→ 学思结合（过程）→ 启发诱导（时机）→ 成人为君子（目标）
+          <span class="f-note">两千五百年前确立的教学原则，至今仍是教育学的基石</span>
+        </div>
+        <p><strong>孟荀之辨与《学记》</strong>：孟子主<strong>性善论</strong>——人性本有"四端"（恻隐、羞恶、辞让、是非），教育是"求放心"、扩充善端，使之成为仁义礼智；荀子主<strong>性恶论</strong>——人性本恶，教育是"化性起伪"，通过礼义法度改造本性。这一"性善—性恶"之争，实质是"教育是唤醒还是塑造"的哲学分歧，至今仍在教育理论中回响。《学记》提出<strong>教学相长</strong>（教与学相互促进）、<strong>循序渐进</strong>（"学不躐等"）、<strong>藏息相辅</strong>（课内与课外结合）、<strong>长善救失</strong>（发扬优点、补救缺点），并主张"道而弗牵，强而弗抑，开而弗达"——引导而不牵制，鼓励而不压抑，启发而不灌输。</p>
+        <p><strong>朱熹与书院教育</strong>：朱熹集理学教育之大成，主张<strong>格物致知</strong>——通过穷究事物之理而获得知识，进而诚意正心；他制定《白鹿洞书院揭示》，以"父子有亲、君臣有义、夫妇有别、长幼有序、朋友有信"为教育之目，以"博学之、审问之、慎思之、明辨之、笃行之"为为学之序；他总结<strong>朱子读书法</strong>——循序渐进、熟读精思、虚心涵泳、切己体察、着紧用力、居敬持志。书院制度让教育兼具学术研究与人格养成的双重使命，是中国古代教育的最高形态。</p>
+        <p><strong>王阳明的知行合一</strong>：王阳明针对朱熹"知先行后"的流弊，提出<strong>知行合一</strong>——"知是行之始，行是知之成"，真知必然体现于行，行中才能完成知；教育的目标是<strong>致良知</strong>——人人心中本有良知，教育是去除私欲障蔽、让良知朗现的过程。王阳明把教育从记诵之学转向生命实践，深刻影响了后世（陶行知"教学做合一"即承其精神）。</p>
+        <p><strong>蔡元培与近代大学精神</strong>：蔡元培任北大校长时提出<strong>思想自由、兼容并包</strong>——大学是研究高深学问之所，各种学派可以并存争鸣；他主张<strong>五育并举</strong>——军国民教育（体育）、实利主义教育（智育）、公民道德教育（德育）、世界观教育、美感教育，以"养成健全人格"为教育宗旨，奠定了中国现代大学与素质教育的基石。</p>
+
+        <figure class="diagram">
+          <figcaption>图 3 · 东方教育思想结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["东方教育思想"] --> A["孔子<br>有教无类 · 因材施教 · 启发"]
+  ROOT --> B["孟荀<br>性善扩充 · 性恶化性 · 学记"]
+  ROOT --> C["朱熹<br>格物致知 · 书院 · 读书法"]
+  ROOT --> D["王阳明<br>知行合一 · 致良知"]
+  ROOT --> E["蔡元培 · 陶行知<br>五育并举 · 生活教育"]
+  ROOT --> F["更多人物<br>董仲舒 · 韩愈 · 张载 · 梁启超 · 陈鹤琴 · 晏阳初"]
+  classDef rootNode fill:#B45309,color:#fff,stroke:#B45309;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>对照表：东方教育思想对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>孔子</th><th>孟子</th><th>荀子</th><th>朱熹</th><th>王阳明</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>人性论</strong></td><td>性相近，习相远</td><td>性善</td><td>性恶</td><td>理在气中 · 存天理</td><td>良知本具</td></tr>
+              <tr><td><strong>教育本质</strong></td><td>成人为君子</td><td>扩充四端</td><td>化性起伪</td><td>格物致知</td><td>致良知</td></tr>
+              <tr><td><strong>教学方法</strong></td><td>因材施教 · 启发</td><td>反求诸己</td><td>隆礼重法</td><td>读书穷理</td><td>知行合一</td></tr>
+              <tr><td><strong>知识观</strong></td><td>学思结合</td><td>良知良能</td><td>学以致知</td><td>即物穷理</td><td>行中求知</td></tr>
+              <tr><td><strong>对后世</strong></td><td>万世师表</td><td>性善传统</td><td>礼法教育</td><td>书院 · 科举</td><td>心学 · 生活教育</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">孔子 · 前551–前479</div>
+            <blockquote>有教无类。<cite>——《论语·卫灵公》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">孔子 · 前551–前479</div>
+            <blockquote>不愤不启，不悱不发——举一隅不以三隅反，则不复也。<cite>——《论语·述而》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">孔子 · 前551–前479</div>
+            <blockquote>学而不思则罔，思而不学则殆。<cite>——《论语·为政》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">孟子 · 前372–前289</div>
+            <blockquote>学问之道无他，求其放心而已矣。<cite>——《孟子·告子上》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">荀子 · 前313–前238</div>
+            <blockquote>青，取之于蓝，而青于蓝；冰，水为之，而寒于水。<cite>——《荀子·劝学》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">《学记》</div>
+            <blockquote>教学相长也——学然后知不足，教然后知困。<cite>——《礼记·学记》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">朱熹 · 1130–1200</div>
+            <blockquote>读书之法，在循序而渐进，熟读而精思。<cite>——《朱子读书法》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">王阳明 · 1472–1529</div>
+            <blockquote>知是行之始，行是知之成——知行合一，方是真知。<cite>——《传习录》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">蔡元培 · 1868–1940</div>
+            <blockquote>大学者，研究高深学问者也——思想自由，兼容并包。<cite>——就任北京大学校长演说</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">陶行知 · 1891–1946</div>
+            <blockquote>生活即教育，社会即学校，教学做合一。<cite>——《陶行知教育文集》</cite></blockquote>
+          </div>
+        </div>
+        <h3>更多人物</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">董仲舒 · 前179–前104</div>
+            <blockquote>罢黜百家，独尊儒术——兴太学，置明师，以养天下之士。<cite>——《举贤良对策》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">韩愈 · 768–824</div>
+            <blockquote>师者，所以传道受业解惑也——道之所存，师之所存也。<cite>——《师说》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">颜之推 · 531–约595</div>
+            <blockquote>积财千万，不如薄技在身——幼而学者，如日出之光。<cite>——《颜氏家训》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">张载 · 1020–1077</div>
+            <blockquote>为天地立心，为生民立命，为往圣继绝学，为万世开太平。<cite>——《张子语录》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">梁启超 · 1873–1929</div>
+            <blockquote>少年智则国智，少年富则国富，少年强则国强。<cite>——《少年中国说》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">陈鹤琴 · 1892–1982</div>
+            <blockquote>活教育——做中教，做中学，做中求进步。<cite>——《活教育的教学原则》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">晏阳初 · 1890–1990</div>
+            <blockquote>欲化农民，须先农民化——平民教育，开发"脑矿"。<cite>——《平民教育运动》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">东方教育思想的遗产</div>
+            <ul>
+              <li>有教无类：教育平等的宣言</li>
+              <li>因材施教：个性化教学之源</li>
+              <li>教学相长：师生互动的洞见</li>
+              <li>书院制度：学术与人格并重</li>
+              <li>知行合一：实践导向的传统</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第三章 西方古典与近代教育 -->
+      <section class="sec" id="western">
+        <h2><span class="chapno">第三章</span>西方古典与近代教育：从苏格拉底到卢梭</h2>
+        <p>西方教育思想从雅典城邦的广场出发。苏格拉底用"产婆术"在对话中接生真理，柏拉图在洞穴寓言中追问教育的本质，亚里士多德把"自由教育"献给自由民。中世纪，大学在教堂的阴影下诞生，成为西方文明的灯塔。文艺复兴让教育重新面向"人"，夸美纽斯梦想"把一切知识教给一切人"，洛克在"白板"上书写绅士的教养，卢梭则发出"归于自然"的呐喊——《爱弥儿》被誉为"教育的哥白尼革命"，从此儿童不再是小大人，而是一个需要被理解的生命。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>希腊教育（前5–前4世纪）</strong>：雅典的"文法、音乐、体育"教育与智者派的修辞学并立；苏格拉底以对话追问德性，被雅典法庭判处死刑（前399）；柏拉图建学园（前387），著《理想国》以洞穴寓言论教育；亚里士多德建吕克昂（前335），提出自由教育。</p>
+          <p><strong>中世纪大学（11–15世纪）</strong>：博洛尼亚大学（1088）、巴黎大学（约1150）、牛津大学（约1167）相继成立；大学分文、法、医、神四科，以"七艺"为基础，经院哲学（阿奎那）成为主导学问——大学制度成为西方知识传承的枢纽。</p>
+          <p><strong>文艺复兴与宗教改革（14–17世纪）</strong>：维多里诺在曼图亚办"快乐之家"，伊拉斯谟主张古典人文教育；宗教改革中，路德主张人人读经、普及教育；夸美纽斯《大教学论》（1632）确立班级授课制与学年制，被称为"近代教育学之父"。</p>
+          <p><strong>启蒙时代（17–18世纪）</strong>：洛克《教育漫话》（1693）以"白板说"反对天赋观念，主张绅士教育；卢梭《爱弥儿》（1762）主张自然教育，让儿童顺应天性成长；康德在柯尼斯堡讲授教育学，提出"人是唯一必须受教育的造物"。</p>
+        </div>
+
+        <h3>思想详解</h3>
+        <p><strong>苏格拉底的产婆术</strong>：苏格拉底认为知识不是被灌输的，而是被"接生"出来的——教师像产婆一样，通过<strong>诘问</strong>（反诘、追问）帮助对方发现自身观念中的矛盾，进而自己得出真理。他自称"无知"（"我唯一知道的就是我一无所知"），以谦卑的姿态开启对话。产婆术确立了<strong>对话式教学</strong>的传统：教育不是传授答案，而是激发思考。苏格拉底说"未经审视的人生不值得过"，教育的最高目的，就是让人学会审视自己的人生。</p>
+        <div class="formula">
+          <span class="f-name">苏格拉底产婆术</span>
+          反诘（暴露矛盾）→ 助产（引导发现）→ 归纳（形成定义）→ 定义（获得知识）
+          <span class="f-note">对话式教学的原型——教师不灌输，而是接生真理</span>
+        </div>
+        <p><strong>柏拉图的洞穴寓言与教育</strong>：柏拉图在《理想国》中讲述洞穴寓言——囚徒只能看见墙上的影子，以为那就是真实；走出洞穴、看见太阳的过程，就是教育。教育不是把知识"灌进"灵魂，而是让灵魂"转向"——从可见世界转向可知世界，从意见转向真理。柏拉图主张教育由国家主导，分阶段培养：音乐与体育塑造心灵与身体，数学与辩证法培养理性，最终培养"哲学王"。他还提出男女应受同等教育，是教育平等的先驱。</p>
+        <p><strong>亚里士多德的自由教育</strong>：亚里士多德认为教育的目的是<strong>幸福</strong>（eudaimonia）——通过德性与理性的实现而达到的完善生活。他区分<strong>自由教育</strong>（为自身而学，发展理性与德性）与<strong>实用教育</strong>（为谋生而学），主张自由民应接受不以实用为目的的"自由教育"——文法、修辞、逻辑、音乐、哲学。他强调教育要顺应自然、习惯与理性三个阶段，并提出"教育是国家的要务"，应由城邦统一实施。</p>
+        <p><strong>夸美纽斯的泛智教育</strong>：夸美纽斯在《大教学论》中提出<strong>泛智教育</strong>——"把一切知识教给一切人"，教育应面向所有人、教授全部知识；他确立<strong>班级授课制</strong>与学年制，把教育组织成高效的系统；他主张教育要<strong>顺应自然</strong>——像种子生长一样循序渐进，教学要直观、由易到难、由近及远。夸美纽斯让教育从贵族私塾变成面向大众的公共事业，是近代教育学的奠基人。</p>
+        <p><strong>洛克的绅士教育与卢梭的自然教育</strong>：洛克以<strong>白板说</strong>（tabula rasa）反对天赋观念——心灵生来如白板，一切知识来自经验，因此教育至关重要；他主张<strong>绅士教育</strong>——以体育（健康）、德育（德行）、智育（学问）培养理性、节制、优雅的绅士，重视习惯养成与榜样示范。卢梭则在《爱弥儿》中提出<strong>自然教育</strong>——儿童不是小大人，有其独特的天性与发展阶段；教育要"归于自然"，顺应儿童的成长节奏，让他在经验与活动中自我发现；他主张<strong>消极教育</strong>——在儿童理性成熟前，不急于灌输知识，而是保护其天性。卢梭把儿童从教育的客体变成教育的主体，被誉为"教育史上的哥白尼"。</p>
+
+        <figure class="diagram">
+          <figcaption>图 4 · 西方古典与近代教育结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["西方古典与近代教育"] --> A["苏格拉底<br>产婆术 · 对话教学"]
+  ROOT --> B["柏拉图<br>洞穴寓言 · 灵魂转向"]
+  ROOT --> C["亚里士多德<br>自由教育 · 德性幸福"]
+  ROOT --> D["夸美纽斯<br>泛智教育 · 班级授课制"]
+  ROOT --> E["洛克 · 卢梭<br>白板说 · 自然教育"]
+  ROOT --> F["更多人物<br>昆体良 · 维多里诺 · 伊拉斯谟 · 培根 · 爱尔维修"]
+  classDef rootNode fill:#B45309,color:#fff,stroke:#B45309;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>对照表：苏格拉底 / 柏拉图 / 亚里士多德对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>苏格拉底</th><th>柏拉图</th><th>亚里士多德</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>教育本质</strong></td><td>接生真理</td><td>灵魂转向</td><td>实现德性与理性</td></tr>
+              <tr><td><strong>教学方法</strong></td><td>产婆术 · 对话</td><td>分阶段 · 音乐体育与辩证法</td><td>顺应自然 · 习惯与理性</td></tr>
+              <tr><td><strong>教育目的</strong></td><td>认识自己 · 德性</td><td>培养哲学王 · 理想国</td><td>幸福 · 自由教育</td></tr>
+              <tr><td><strong>知识观</strong></td><td>知识即德性</td><td>回忆说 · 理念世界</td><td>经验与理性结合</td></tr>
+              <tr><td><strong>对后世</strong></td><td>对话教学之源</td><td>教育哲学 · 教育平等</td><td>自由教育 · 通识教育</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>对照表：洛克 / 卢梭 / 康德对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>洛克</th><th>卢梭</th><th>康德</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>人性观</strong></td><td>白板说（经验决定）</td><td>天性本善</td><td>人需要教育（理性）</td></tr>
+              <tr><td><strong>教育取向</strong></td><td>绅士教育 · 实用</td><td>自然教育 · 消极教育</td><td>道德教育 · 自律</td></tr>
+              <tr><td><strong>儿童观</strong></td><td>可塑的白板</td><td>有独特天性的生命</td><td>有待发展的理性存在</td></tr>
+              <tr><td><strong>方法</strong></td><td>习惯 · 榜样 · 奖励</td><td>经验 · 活动 · 自由</td><td>规训 · 榜样 · 义务</td></tr>
+              <tr><td><strong>名言</strong></td><td>"健康的精神寓于健康的身体"</td><td>"归于自然"</td><td>"人是唯一必须受教育的造物"</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">苏格拉底 · 前469–前399</div>
+            <blockquote>我唯一知道的，就是我一无所知——教育不是灌输，而是接生。<cite>——《申辩篇》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">柏拉图 · 前427–前347</div>
+            <blockquote>教育不是把知识灌进灵魂，而是让灵魂转向——从影子的世界转向真实的世界。<cite>——《理想国》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">亚里士多德 · 前384–前322</div>
+            <blockquote>教育的根是苦的，但它的果实是甜的——教育的目的是幸福。<cite>——《尼各马可伦理学》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">夸美纽斯 · 1592–1670</div>
+            <blockquote>把一切知识教给一切人——教育是使整个人类获得完善的艺术。<cite>——《大教学论》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">洛克 · 1632–1704</div>
+            <blockquote>心灵生来如白板——人之所以千差万别，皆因教育之故。<cite>——《人类理解论》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">卢梭 · 1712–1778</div>
+            <blockquote>出自造物主之手的东西，都是好的；而一到人的手里，就全变坏了。<cite>——《爱弥儿》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">卢梭 · 1712–1778</div>
+            <blockquote>教育即生长——儿童不是小大人，他有自己的天性、自己的节奏。<cite>——《爱弥儿》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">康德 · 1724–1804</div>
+            <blockquote>人是唯一必须受教育的造物——人只有通过教育才能成为人。<cite>——《论教育学》</cite></blockquote>
+          </div>
+        </div>
+        <h3>更多人物</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">昆体良 · 约35–约100</div>
+            <blockquote>教师应当像父亲一样对待学生——雄辩家的教育，从摇篮开始。<cite>——《雄辩术原理》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">维多里诺 · 1378–1446</div>
+            <blockquote>我们称它为"快乐之家"——教育应当愉快，游戏与学习可以合一。<cite>——曼图亚宫廷学校</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">伊拉斯谟 · 1466–1536</div>
+            <blockquote>人不是生而为人，而是通过教育成为人——儿童是未来的希望。<cite>——《论儿童的自由教育》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">培根 · 1561–1626</div>
+            <blockquote>知识就是力量——读史使人明智，读诗使人灵秀，数学使人周密。<cite>——《新工具》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">爱尔维修 · 1715–1771</div>
+            <blockquote>教育万能——人之所以成为他现在这个样子，完全是教育的结果。<cite>——《论人的理智能力和教育》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">西方古典与近代教育的遗产</div>
+            <ul>
+              <li>对话教学：苏格拉底产婆术</li>
+              <li>灵魂转向：教育哲学之源</li>
+              <li>自由教育：通识教育的先声</li>
+              <li>班级授课制：公共教育制度</li>
+              <li>自然教育：儿童中心的起点</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四章 现代教育思想 -->
+      <section class="sec" id="modern">
+        <h2><span class="chapno">第四章</span>现代教育思想：从裴斯泰洛齐到杜威</h2>
+        <p>十九世纪，教育从思想走向科学。裴斯泰洛齐让教育"心理学化"，用爱与直观唤醒儿童；赫尔巴特建立了第一个系统的教育学体系，让教学成为可操作的技术；福禄贝尔创办幼儿园，把游戏视为儿童的学习方式；斯宾塞追问"什么知识最有价值"，为科学教育辩护。二十世纪初，杜威在芝加哥掀起进步主义教育运动——"教育即生活、学校即社会、做中学"，把儿童从教育的边缘放回中心。蒙台梭利则以科学观察创立了影响全球的蒙氏教育法。现代教育思想的核心，是把教育从"教师的教"转向"儿童的学"。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>裴斯泰洛齐的教育实验（1774–1827）</strong>：裴斯泰洛齐在瑞士创办孤儿院与学校，主张"教育心理学化"——教学要顺应儿童心理发展的自然规律；他提出"爱的教育"，以母亲般的爱唤醒儿童；他创立"要素教育论"，从最简单的要素（数目、形状、语言）出发组织教学。</p>
+          <p><strong>赫尔巴特的科学教育学（1806–1841）</strong>：赫尔巴特《普通教育学》（1806）建立了以伦理学与心理学为基础的科学教育学；他提出"教育性教学"——教学与道德教育不可分割；他创立"四段教学法"（明了、联想、系统、方法），让课堂教学成为可操作的程序。</p>
+          <p><strong>福禄贝尔与幼儿园（1837）</strong>：福禄贝尔在德国勃兰根堡创办世界上第一所幼儿园（Kindergarten），主张游戏是儿童的天性活动与学习方式，设计"恩物"（积木等教具）促进儿童自我活动。</p>
+          <p><strong>斯宾塞与科学教育（1859）</strong>：斯宾塞发表《什么知识最有价值》，主张科学知识最有价值，教育要为完满生活做准备，推动了科学教育进入学校课程。</p>
+          <p><strong>杜威与进步主义教育（1896–）</strong>：杜威1896年在芝加哥大学创办实验学校，1916年出版《民主主义与教育》，系统阐述"教育即生活、学校即社会、做中学"；进步主义教育运动席卷美国，深刻影响全球。</p>
+          <p><strong>蒙台梭利与儿童之家（1907）</strong>：蒙台梭利在罗马创办"儿童之家"，以科学观察研究儿童，创立蒙氏教育法——尊重儿童敏感期、提供有准备的环境、让儿童自由选择工作，其影响遍及全球幼儿教育。</p>
+        </div>
+
+        <h3>思想详解</h3>
+        <p><strong>裴斯泰洛齐的爱的教育与心理学化</strong>：裴斯泰洛齐认为教育的基础是<strong>爱</strong>——教师要以母亲般的爱接纳儿童，教育的本质是"爱的唤醒"；他主张<strong>教育心理学化</strong>——教学必须顺应儿童心理发展的自然规律，从直观到抽象、从简单到复杂；他创立<strong>要素教育论</strong>——一切知识都可还原为最简单的要素（数目、形状、语言），教学从要素出发逐步综合。裴斯泰洛齐把教育从书本拉回儿童本身，是"教育心理学化"运动的开创者。</p>
+        <div class="formula">
+          <span class="f-name">赫尔巴特四段教学法</span>
+          明了（清楚感知）→ 联想（新旧联系）→ 系统（形成体系）→ 方法（应用练习）
+          <span class="f-note">第一个可操作的教学程序——课堂教学技术的原型</span>
+        </div>
+        <p><strong>赫尔巴特的科学教育学</strong>：赫尔巴特建立了第一个系统的教育学体系，以<strong>伦理学</strong>（确立教育目的——培养有德性的人）与<strong>心理学</strong>（确立教育方法——基于统觉与兴趣）为基础；他提出<strong>教育性教学</strong>——不存在"无教学的教育"，也不存在"无教育的教学"，知识与道德不可分割；他重视<strong>兴趣</strong>——教学要激发多方面的兴趣（经验的、思辨的、审美的、同情的、社会的、宗教的）；他创立<strong>四段教学法</strong>，使课堂教学成为可操作、可复制的技术。赫尔巴特让教育学成为一门独立的科学，统治西方课堂近一个世纪。</p>
+        <p><strong>福禄贝尔与游戏教育</strong>：福禄贝尔创办幼儿园，认为<strong>游戏</strong>是儿童的天性活动，也是儿童认识世界、发展自我的最高形式——"游戏是儿童的工作"；他设计<strong>恩物</strong>（福禄贝尔积木等）作为自我活动的教具，让儿童在操作中理解形状、数目与关系；他主张教育要顺应自然，让儿童像种子一样自由生长。福禄贝尔让幼儿教育成为独立的领域，是"幼儿园之父"。</p>
+        <p><strong>杜威的进步主义教育</strong>：杜威提出三个核心命题——<strong>教育即生活</strong>（教育不是为未来生活的准备，而是生活本身）、<strong>学校即社会</strong>（学校应是社会的雏形，让儿童在真实情境中学习）、<strong>做中学</strong>（learning by doing，知识来自经验与行动）；他主张<strong>儿童中心</strong>——"教育即生长"，儿童的兴趣与需要是教育的起点；他提出<strong>思维五步</strong>（情境、问题、假设、推理、验证），把科学探究引入课堂。杜威把教育从"教师的教"彻底转向"儿童的学"，是二十世纪最具影响力的教育思想家。</p>
+        <p><strong>蒙台梭利的科学幼儿教育</strong>：蒙台梭利以医学与人类学的科学观察研究儿童，发现儿童有<strong>敏感期</strong>（语言、秩序、感官、动作等发展的关键窗口）；她主张提供<strong>有准备的环境</strong>——环境本身是教育者，教具要符合儿童的发展需要；她让儿童<strong>自由选择工作</strong>，在专注的自我活动中发展独立与秩序感；她提出"跟随儿童"（follow the child）——教师是观察者与引导者，而非灌输者。蒙氏教育法至今影响全球数万所学校。</p>
+
+        <figure class="diagram">
+          <figcaption>图 5 · 现代教育思想结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["现代教育思想"] --> A["裴斯泰洛齐<br>爱的教育 · 心理学化"]
+  ROOT --> B["赫尔巴特<br>科学教育学 · 四段教学法"]
+  ROOT --> C["福禄贝尔<br>幼儿园 · 游戏教育"]
+  ROOT --> D["杜威<br>教育即生活 · 做中学 · 儿童中心"]
+  ROOT --> E["蒙台梭利<br>敏感期 · 有准备的环境"]
+  ROOT --> F["更多人物<br>第斯多惠 · 乌申斯基 · 托尔斯泰 · 马卡连柯 · 苏霍姆林斯基"]
+  classDef rootNode fill:#B45309,color:#fff,stroke:#B45309;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>对照表：赫尔巴特 vs 杜威</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>赫尔巴特（传统教育）</th><th>杜威（进步教育）</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>中心</strong></td><td>教师中心 · 教材中心 · 课堂中心</td><td>儿童中心 · 经验中心 · 活动中心</td></tr>
+              <tr><td><strong>教育本质</strong></td><td>塑造 · 传递 · 准备未来</td><td>生长 · 生活 · 经验改造</td></tr>
+              <tr><td><strong>教学方法</strong></td><td>四段教学法 · 系统讲授</td><td>做中学 · 问题解决 · 探究</td></tr>
+              <tr><td><strong>知识观</strong></td><td>统觉 · 系统知识</td><td>经验 · 实用 · 行动中求知</td></tr>
+              <tr><td><strong>师生关系</strong></td><td>教师主导 · 学生服从</td><td>教师引导 · 学生主动</td></tr>
+              <tr><td><strong>对后世</strong></td><td>课堂教学技术</td><td>活动课程 · 项目式学习</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">裴斯泰洛齐 · 1746–1827</div>
+            <blockquote>教育是爱的唤醒——教师首先要像母亲一样爱儿童，然后才是教他知识。<cite>——《林哈德与葛笃德》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">赫尔巴特 · 1776–1841</div>
+            <blockquote>不存在无教学的教育，也不存在无教育的教学。<cite>——《普通教育学》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">福禄贝尔 · 1782–1852</div>
+            <blockquote>游戏是儿童的工作——儿童在游戏中发展身体、心灵与品格。<cite>——《人的教育》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">斯宾塞 · 1820–1903</div>
+            <blockquote>什么知识最有价值？一致的答案是——科学。<cite>——《什么知识最有价值》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">杜威 · 1859–1952</div>
+            <blockquote>教育即生活，而非生活的准备——学校即社会，做中学。<cite>——《民主主义与教育》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">杜威 · 1859–1952</div>
+            <blockquote>教育即生长——除了更多的生长，教育没有别的目的。<cite>——《民主主义与教育》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">蒙台梭利 · 1870–1952</div>
+            <blockquote>跟随儿童——教师不是灌输者，而是观察者与引导者。<cite>——《童年的秘密》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">蒙台梭利 · 1870–1952</div>
+            <blockquote>儿童是成人之父——教育的秘密藏在儿童自身的发展之中。<cite>——《童年的秘密》</cite></blockquote>
+          </div>
+        </div>
+        <h3>更多人物</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">第斯多惠 · 1790–1866</div>
+            <blockquote>教学的艺术不在于传授本领，而在于激励、唤醒、鼓舞——德国教师的教师。<cite>——《德国教师培养指南》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">乌申斯基 · 1824–1871</div>
+            <blockquote>教师的人格，就是教育工作中的一切——只有人格才能影响人格。<cite>——《人是教育的对象》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">托尔斯泰 · 1828–1910</div>
+            <blockquote>教育不是强迫，而是帮助儿童自由地发展——学校应当是快乐的。<cite>——亚斯纳亚·波利亚纳学校</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">马卡连柯 · 1888–1939</div>
+            <blockquote>教育是集体的事业——通过集体、在集体中、为了集体。<cite>——《教育诗》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">苏霍姆林斯基 · 1918–1970</div>
+            <blockquote>没有爱，就没有教育——教育的全部秘密，在于如何爱护儿童。<cite>——《把整个心灵献给孩子》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">苏霍姆林斯基 · 1918–1970</div>
+            <blockquote>让每个孩子都抬起头来走路——教育是全面和谐的发展。<cite>——《给教师的建议》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">现代教育思想的遗产</div>
+            <ul>
+              <li>教育心理学化：教学顺应儿童心理</li>
+              <li>科学教育学：教育学成为独立学科</li>
+              <li>游戏与幼儿园：幼儿教育的奠基</li>
+              <li>儿童中心：教育重心的转移</li>
+              <li>做中学：经验与行动的学习</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第五章 当代教育前沿 -->
+      <section class="sec" id="contemporary">
+        <h2><span class="chapno">第五章</span>当代教育前沿：从终身学习到 AI 教育</h2>
+        <p>二十世纪中叶以来，教育面临前所未有的挑战与机遇。弗莱雷在巴西的扫盲运动中提出"被压迫者教育学"，让教育成为解放的工具；维果茨基的"最近发展区"揭示了教学与发展的辩证关系；加德纳的多元智能理论打破了"智商决定论"。联合国教科文组织提出"终身学习"与"学会学习"，教育从学校扩展到人的一生。今天，MOOC、翻转课堂与人工智能正在重塑课堂——AI 个性化学习让"因材施教"第一次有了大规模实现的技术可能。当代教育思想的核心，是把教育从"阶段性的学校事业"转向"贯穿一生的生活方式"。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>维果茨基的社会文化理论（1920s–1930s）</strong>：苏联心理学家维果茨基提出"最近发展区"——教学应走在发展前面，在儿童现有水平与潜在水平之间搭建"支架"；他主张学习是社会文化过程，语言与工具中介着思维发展。</p>
+          <p><strong>弗莱雷与被压迫者教育学（1970）</strong>：巴西教育家弗莱雷在成人扫盲中发展出批判教育学，《被压迫者教育学》（1970）主张教育不是"银行式"的灌输，而是"提问式"的对话，让被压迫者觉醒并解放自身。</p>
+          <p><strong>终身学习与学会生存（1972）</strong>：联合国教科文组织报告《学会生存——教育世界的今天和明天》（1972）提出"终身教育"与"学习化社会"；1996年《教育——财富蕴藏其中》提出教育的四大支柱：学会认知、学会做事、学会共同生活、学会生存。</p>
+          <p><strong>多元智能理论（1983）</strong>：加德纳在《智能的结构》（1983）中提出多元智能理论——人至少拥有语言、逻辑—数学、空间、音乐、身体—动觉、人际、内省等智能，教育应发现并发展每个人的优势智能。</p>
+          <p><strong>教育技术革命（2000s–）</strong>：MOOC（大规模开放在线课程，2012）让名校课程免费触达全球；翻转课堂把知识传授移到课前、把课堂留给互动；人工智能（2020s）实现个性化学习、智能辅导与自适应测评，正在重新定义"教"与"学"。</p>
+        </div>
+
+        <h3>思想详解</h3>
+        <p><strong>维果茨基的最近发展区</strong>：维果茨基提出，儿童有两种发展水平——<strong>现有发展水平</strong>（能独立完成的任务）与<strong>潜在发展水平</strong>（在帮助下能完成的任务），两者之间的区域就是<strong>最近发展区</strong>（zone of proximal development）。教学的价值不在于巩固已有能力，而在于<strong>走在发展前面</strong>，在最近发展区内提供<strong>支架</strong>（scaffolding）——随着儿童能力增长逐步撤除。维果茨基还强调学习的社会性：语言是思维的工具，儿童通过与他人的对话把外部经验内化为内部心理功能。他的理论催生了合作学习、支架教学与"教学走在发展前面"的原则。</p>
+        <div class="formula">
+          <span class="f-name">维果茨基最近发展区</span>
+          现有水平（独立完成）→ 最近发展区（支架帮助）→ 潜在水平（内化独立）
+          <span class="f-note">教学应走在发展前面，在最近发展区内提供并逐步撤除支架</span>
+        </div>
+        <p><strong>弗莱雷的被压迫者教育学</strong>：弗莱雷批判传统教育的"<strong>银行式教学</strong>"（banking education）——教师像存款一样把知识存入学生头脑，学生被动接受、丧失批判意识；他主张<strong>提问式教育</strong>（problem-posing education）——师生以对话共同探究真实问题，在批判性反思中认识并改变世界；他提出<strong>意识化</strong>（conscientização）——教育的目的是让被压迫者觉醒，从"沉默文化"走向主体性。弗莱雷让教育成为解放的工具，深刻影响了批判教育学与全球成人教育。</p>
+        <p><strong>加德纳的多元智能</strong>：加德纳反对单一的"智商"概念，提出人至少拥有八种相对独立的智能——<strong>语言智能、逻辑—数学智能、空间智能、音乐智能、身体—动觉智能、人际智能、内省智能、自然观察智能</strong>（后补充存在智能）。每个人都有自己的智能组合与优势领域。教育的启示是：不能用一把尺子衡量所有学生，要<strong>因材施教</strong>、发现并发展每个人的优势智能，同时通过多元途径让每个学生都能理解同一概念。多元智能理论为个性化教育与课程改革提供了理论基础。</p>
+        <p><strong>终身学习与教育的四大支柱</strong>：联合国教科文组织提出，教育应贯穿人的一生——<strong>终身学习</strong>不再只是学校阶段的事业，而是学习化社会中的生活方式；1996年报告提出教育的<strong>四大支柱</strong>：<strong>学会认知</strong>（掌握认识世界的工具）、<strong>学会做事</strong>（应对情境与工作的能力）、<strong>学会共同生活</strong>（理解他人、合作共处）、<strong>学会生存</strong>（发展人格与自主性）。终身学习把教育的目标从"知识"转向"学会学习"——在知识快速更新的时代，学会学习比记住知识更重要。</p>
+        <p><strong>AI 教育：因材施教的规模化实现</strong>：人工智能正在重塑教育——<strong>自适应学习系统</strong>根据每个学生的答题表现实时调整难度与路径，让"因材施教"第一次有了大规模实现的技术可能；<strong>智能辅导系统</strong>提供即时反馈与个性化讲解；<strong>AI 助教</strong>减轻教师重复劳动，让教师回归育人；<strong>教育数据</strong>让学习过程可视化、可诊断。与此同时，AI 教育也带来新的问题：算法偏见、数据隐私、师生关系的人性温度、以及"AI 时代人还需要学什么"——当机器能完成知识检索与技能操作，教育的重心正从"知识传递"转向"批判性思维、创造力、情感与价值观"的培养。这是教育思想谱系的最新一章，也是尚未写完的一章。</p>
+
+        <figure class="diagram">
+          <figcaption>图 6 · 当代教育前沿结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["当代教育前沿"] --> A["维果茨基<br>最近发展区 · 支架教学"]
+  ROOT --> B["弗莱雷<br>被压迫者教育学 · 对话"]
+  ROOT --> C["加德纳<br>多元智能 · 因材施教"]
+  ROOT --> D["终身学习<br>四大支柱 · 学会学习"]
+  ROOT --> E["AI教育<br>自适应学习 · 人机协同"]
+  ROOT --> F["更多人物<br>皮亚杰 · 布鲁纳 · 布卢姆 · 罗杰斯 · 伊利奇 · 可汗"]
+  classDef rootNode fill:#B45309,color:#fff,stroke:#B45309;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <h3>对照表：传统教育 / 进步教育 / 批判教育对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>传统教育</th><th>进步教育</th><th>批判教育</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>代表</strong></td><td>赫尔巴特</td><td>杜威 · 蒙台梭利</td><td>弗莱雷</td></tr>
+              <tr><td><strong>教育本质</strong></td><td>传递系统知识</td><td>经验改造 · 生长</td><td>意识化 · 解放</td></tr>
+              <tr><td><strong>师生关系</strong></td><td>教师中心</td><td>儿童中心</td><td>对话 · 平等</td></tr>
+              <tr><td><strong>教学方法</strong></td><td>讲授 · 系统训练</td><td>做中学 · 活动</td><td>提问式 · 批判反思</td></tr>
+              <tr><td><strong>社会观</strong></td><td>维持秩序</td><td>民主社会</td><td>改造不公</td></tr>
+              <tr><td><strong>共同启示</strong></td><td colspan="3">教育始终在"传递"与"解放"之间保持张力——既要传承文明，又要培养能超越前人的新人</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">维果茨基 · 1896–1934</div>
+            <blockquote>教学应当走在发展的前面——好的教学，是在最近发展区内提供支架。<cite>——《思维与语言》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">弗莱雷 · 1921–1997</div>
+            <blockquote>教育不是银行式的存款，而是提问式的对话——教育即解放。<cite>——《被压迫者教育学》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">加德纳 · 1943–</div>
+            <blockquote>每个孩子都是一个潜在的天才——只是以不同的方式聪明。<cite>——《智能的结构》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">联合国教科文组织</div>
+            <blockquote>教育的四大支柱：学会认知、学会做事、学会共同生活、学会生存。<cite>——《教育——财富蕴藏其中》</cite></blockquote>
+          </div>
+        </div>
+        <h3>更多人物</h3>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">皮亚杰 · 1896–1980</div>
+            <blockquote>教育的首要目标，是培养能够创造新事物的人——而不是只会重复前人的人。<cite>——《教育科学与儿童心理学》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">布鲁纳 · 1915–2016</div>
+            <blockquote>任何学科，都能以某种诚实的方式，教给任何年龄的儿童——发现学习。<cite>——《教育过程》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">布卢姆 · 1913–1999</div>
+            <blockquote>只要给予足够的时间与适当的帮助，95%的学生都能掌握所学——掌握学习。<cite>——《教育目标分类学》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">罗杰斯 · 1902–1987</div>
+            <blockquote>教育的目标，是培养学会如何学习的人——教师是促进者，而非灌输者。<cite>——《学习的自由》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">伊利奇 · 1926–2002</div>
+            <blockquote>学校垄断了教育——去学校化，让学习回归生活本身。<cite>——《去学校化社会》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">萨尔曼·可汗 · 1976–</div>
+            <blockquote>翻转课堂——把知识传授移到课前，把课堂留给互动与创造。<cite>——《翻转课堂的可汗学院》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">当代教育前沿的遗产</div>
+            <ul>
+              <li>最近发展区：教学与发展的辩证</li>
+              <li>批判教育学：教育作为解放</li>
+              <li>多元智能：尊重差异的教育</li>
+              <li>终身学习：教育贯穿一生</li>
+              <li>AI教育：因材施教的规模化</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第六章 总结提炼 -->
+      <section class="sec" id="summary">
+        <h2><span class="chapno">第六章</span>总结提炼：教育的启示</h2>
+        <p>回顾从孔子的私学到 AI 课堂，可以提炼出教育的核心规律：<strong>有教无类之公、因材施教之智、知行合一之实、教学相长之恒、终身学习之远</strong>。教育不提供关于"教什么"的固定答案，它提供的是"如何让人成为人"的永恒追问——每一代人都以自己时代的方式重问这个问题，而每一次追问，都让文明多一分自我超越的可能。理解教育，就是理解文明如何自我传承，也是理解我们如何成为自己。</p>
+
+        <figure class="diagram">
+          <figcaption>图 7 · 教育五大规律图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["教育五大规律"] --> A["有教无类之公<br>教育平等 · 面向一切人"]
+  ROOT --> B["因材施教之智<br>顺应禀赋 · 个性化教学"]
+  ROOT --> C["知行合一之实<br>学以致用 · 做中学"]
+  ROOT --> D["教学相长之恒<br>师生互促 · 学无止境"]
+  ROOT --> E["终身学习之远<br>贯穿一生 · 学会学习"]
+  classDef rootNode fill:#B45309,color:#fff,stroke:#B45309;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <div class="history">
+          <span class="history-title">五大规律的提炼</span>
+          <p><strong>有教无类之公</strong>：孔子"有教无类"是人类教育史上最伟大的平等宣言，夸美纽斯"把一切知识教给一切人"、近代普及义务教育、当代教育公平，都是这一原则的展开。有教无类之公的启示是：教育是文明最大的公平器——它让每个孩子都有机会超越出身，成为更好的自己。</p>
+          <p><strong>因材施教之智</strong>：孔子"因材施教"、加德纳"多元智能"、蒙台梭利"敏感期"、AI"自适应学习"，都指向同一个洞见——没有两个相同的学习者。因材施教之智的启示是：好的教育不是用一把尺子衡量所有人，而是发现每个人的禀赋，让每个生命都找到自己的生长方式。</p>
+          <p><strong>知行合一之实</strong>：王阳明"知行合一"、杜威"做中学"、陶行知"教学做合一"，都反对"知而不行"的空疏。知行合一之实的启示是：知识只有在行动中才成为真知——教育要让学生在做中学、在问题中探究、在实践中成长。</p>
+          <p><strong>教学相长之恒</strong>：《学记》"教学相长"、苏格拉底"产婆术"、弗莱雷"对话教育"，都把师生关系视为共同成长。教学相长之恒的启示是：最好的教师也是最好的学习者——教育不是单向的传递，而是师生在对话中相互成就。</p>
+          <p><strong>终身学习之远</strong>：从"活到老学到老"到联合国教科文组织的"终身学习"，教育早已超越学校围墙。终身学习之远的启示是：在知识快速更新的时代，学会学习比记住知识更重要——教育的最终目的，是让人成为终身的学习者。</p>
+        </div>
+
+        <h3>对照表：教育五大规律的对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>规律</th><th>核心命题</th><th>代表人物</th><th>思想启示</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>有教无类之公</strong></td><td>教育面向一切人</td><td>孔子 · 夸美纽斯</td><td>教育是文明最大的公平器</td></tr>
+              <tr><td><strong>因材施教之智</strong></td><td>顺应禀赋 · 个性化</td><td>孔子 · 加德纳 · 蒙台梭利</td><td>发现每个人的生长方式</td></tr>
+              <tr><td><strong>知行合一之实</strong></td><td>学以致用 · 做中学</td><td>王阳明 · 杜威 · 陶行知</td><td>知识在行动中成为真知</td></tr>
+              <tr><td><strong>教学相长之恒</strong></td><td>师生互促 · 对话</td><td>《学记》 · 苏格拉底 · 弗莱雷</td><td>最好的教师也是学习者</td></tr>
+              <tr><td><strong>终身学习之远</strong></td><td>教育贯穿一生</td><td>联合国教科文组织</td><td>学会学习比记住知识更重要</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">教育精神三句话</span>
+          第一，<strong>教育是文明的自我复制与自我超越</strong>——它把前人的思想传给后人，又让后人超越前人；第二，<strong>教育的对象永远是人，不是知识</strong>——从孔子的"成人"到杜威的"生长"、弗莱雷的"解放"，教育始终在回答"如何让人成为人"；第三，<strong>教育最终通向自由</strong>——有教无类是机会的自由，因材施教是禀赋的自由，知行合一是实践的自由，终身学习是时间的自由。与第十八辑《心理学思想谱系》合观，心理学揭示"人如何学习"，教育学回答"如何教人"；与第十七辑《西方哲学思想谱系》对话，哲学问"人是什么"，教育答"人如何成为人"。这正是思想图谱系列的全部意义——每一辑思想，最终都要经由教育，才能成为下一代人的起点。
+        </div>
+      </section>
+    </main>
+
+    
+      <section class="sec">
+        <h2>关联辑目</h2>
+        <div class="explain">
+          <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+          <ul>
+          <li><a href="../西方哲学思想谱系/西方哲学思想谱系.html">西方哲学思想谱系</a></li>
+          <li><a href="../心理学思想谱系/心理学思想谱系.html">心理学思想谱系</a></li>
+          <li><a href="../伦理与道德思想谱系/伦理与道德思想谱系.html">伦理学思想谱系</a></li>
+          <li><a href="../历史思想谱系/历史思想谱系.html">历史思想谱系</a></li>
+          <li><a href="../逻辑与论证思想谱系/逻辑与论证思想谱系.html">逻辑与论证思想谱系</a></li>
+          </ul>
+        </div>
+      </section>
+<footer>
+      教育思想谱系 · 思想图谱系列第十九辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-05
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'PingFang SC, Microsoft YaHei, Helvetica, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>

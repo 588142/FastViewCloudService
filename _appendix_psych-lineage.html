@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>心理学思想谱系 · 本科生升级附录</title>
+
+<style>
+@font-face {
+  font-family: 'Lora'; src: url('./psych-lineage/_shared/fonts/Lora-Regular.ttf') format('truetype'); font-weight: 400;
+}
+@font-face {
+  font-family: 'Lora'; src: url('./psych-lineage/_shared/fonts/Lora-Bold.ttf') format('truetype'); font-weight: 700;
+}
+@font-face {
+  font-family: 'Lora'; src: url('./psych-lineage/_shared/fonts/Lora-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic;
+}
+@font-face {
+  font-family: 'WorkSans'; src: url('./psych-lineage/_shared/fonts/WorkSans-Regular.ttf') format('truetype'); font-weight: 400;
+}
+@font-face {
+  font-family: 'WorkSans'; src: url('./psych-lineage/_shared/fonts/WorkSans-Bold.ttf') format('truetype'); font-weight: 700;
+}
+@font-face {
+  font-family: 'DMMono'; src: url('./psych-lineage/_shared/fonts/DMMono-Regular.ttf') format('truetype'); font-weight: 400;
+}
+:root {
+  --bg: #FAF6FB; --bg2: #F0E9F5; --ink: #2A2033; --muted: #6A5E75; --rule: #E0D6E8; --accent: #6D28D9; --accent2: #B45309;
+  --font-head: 'Lora', 'Songti SC', 'SimSun', serif; --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif; --font-mono: 'DMMono', monospace; --max: 880px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: var(--font); color: var(--ink); background: var(--bg); line-height: 1.75; padding: 2rem 1.5rem; }
+article.page { max-width: var(--max); margin: 0 auto; }
+header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+.kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+header.masthead h1 { font-family: var(--font-head); font-size: 2.2rem; font-weight: 700; line-height: 1.25; }
+header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1rem; color: var(--muted); margin-top: 0.5rem; }
+header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+section.sec { margin-bottom: 3.5rem; }
+h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+li { margin-bottom: 0.4rem; }
+strong { color: var(--ink); }
+a { color: var(--accent); }
+.callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+.callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+.highlight { background: rgba(180,83,9,0.08); border-left: 3px solid var(--accent2); padding: 0.4rem 0.8rem; margin: 0.6rem 0; font-size: 0.92rem; }
+.table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--bg2); }
+.formula { font-family: var(--font-mono); background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent2); border-radius: 0 8px 8px 0; padding: 0.8rem 1rem; margin: 0.7rem 0; font-size: 0.95rem; overflow-x: auto; }
+.formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+.formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+.explain { margin: 0 0 1.6rem 0; padding: 1rem 1.2rem; background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; font-size: 0.92rem; line-height: 1.7; }
+.explain p { margin-bottom: 0.6rem; }
+.explain ul { margin: 0.4rem 0 0.6rem 1.2rem; }
+.viz-container { margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 12px; position: relative; overflow: hidden; }
+.viz-caption { font-size: 0.82rem; color: var(--muted); text-align: center; padding: 0.5rem 0.8rem; font-family: var(--font-mono); }
+pre { background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; padding: 0.8rem 1rem; font-size: 0.85rem; overflow-x: auto; font-family: var(--font-mono); margin: 0.8rem 0; }
+footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+</style>
+</head>
+<body>
+<article class="page">
+
+<header class="masthead">
+  <div class="kicker">思想图谱系列 · 第十八辑</div>
+  <h1>心理学思想谱系 · 本科生升级附录</h1>
+  <p class="subtitle">十一篇附录：从精确定义到前沿议题，为本科生提供从"了解"到"精通"的完整升级路径</p>
+  <p class="meta">作者：詹家杨 · 2026-09-06 · 交互式可视化 · 学术附录</p>
+</header>
+
+<main>
+
+<!-- ==================== 附录一 ==================== -->
+<section class="sec" id="appendix-a">
+  <h2><span class="chapno">附录一</span>升级导览与教材对标</h2>
+  <p>本附录专为本科生升级阅读设计，旨在帮助读者从"通识了解"跃升至"系统掌握"的层次。通过对主流教材的对照与核心概念的深化，使读者能够在高等学校心理学专业课程中自信地运用本卷知识。</p>
+
+  <h3>一、升级目的</h3>
+  <p>本卷正文以思想谱系为主线，梳理了心理学的四大流派与当代合流。但作为本科生，仅了解人物与流派远远不够——你需要：第一，掌握精确定义与术语体系，能够用学术语言表达；第二，理解形式系统与核心模型，能够用数学与逻辑的工具分析心理学问题；第三，掌握推演方法与证明技巧，能够批判性地评价心理学理论；第四，了解高阶理论与前沿，能够与当代研究对话；第五，通过经典习题与一手文献，将知识转化为能力。</p>
+
+  <h3>二、与主流教材的对照</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>本卷章节</th><th>对应教材</th><th>对应章节/内容</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>导言 · 导言</strong></td><td>《心理学与生活》津巴多</td><td>第1章 · 心理学的定义与历史</td></tr>
+        <tr><td><strong>第一章 · 总览</strong></td><td>《心理学史》黎黑</td><td>第3–7章 · 科学心理学的诞生</td></tr>
+        <tr><td><strong>第二章 · 精神分析</strong></td><td>《精神分析引论》弗洛伊德</td><td>全书 · 无意识、梦、防御机制</td></tr>
+        <tr><td><strong>第二章 · 荣格专题</strong></td><td>《荣格心理学》霍尔</td><td>第2–6章 · 集体无意识与原型</td></tr>
+        <tr><td><strong>第三章 · 行为主义</strong></td><td>《学习理论》赫根汉</td><td>第3–7章 · 经典与操作性条件反射</td></tr>
+        <tr><td><strong>第四章 · 人本主义</strong></td><td>《动机与人格》马斯洛</td><td>第3–6章 · 需要层次与自我实现</td></tr>
+        <tr><td><strong>第五章 · 认知革命</strong></td><td>《认知心理学》奈瑟</td><td>第1–5章 · 信息加工范式</td></tr>
+        <tr><td><strong>第五章 · 卡尼曼</strong></td><td>《思考，快与慢》卡尼曼</td><td>第1–5章 · 系统1与系统2</td></tr>
+        <tr><td><strong>第六章 · 总结</strong></td><td>《心理学导论》格雷</td><td>第1–16章 · 综合应用</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>三、本科生升级学习路径</h3>
+  <div class="callout">
+    <span class="callout-title">推荐学习顺序</span>
+    <p>第一遍：通读正文，理解四大流派的核心思想与代表人物。第二遍：精读本附录，重点掌握附录二（术语表）与附录三（形式系统）。第三遍：做附录八的习题，检验理解。第四遍：读附录九的一手文献，回到原始文本。第五遍：针对附录六的高阶议题，查阅教材对应章节深化。</p>
+  </div>
+
+  <p>本附录与主流心理学教材的对照关系如上表。建议读者在阅读正文时，同步查阅对应教材的相关章节，以建立更立体、更系统的知识结构。</p>
+</section>
+
+<!-- ==================== 附录二 ==================== -->
+<section class="sec" id="appendix-b">
+  <h2><span class="chapno">附录二</span>精确定义与术语表</h2>
+  <p>以下术语表收录了心理学思想谱系中的核心概念，每个条目包含：术语、英文对应、符号/公式（如有）、严格定义、易混点辨析。掌握这些术语，是进入心理学学术讨论的前提。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>术语</th><th>英文</th><th>符号/公式</th><th>严格定义</th><th>易混点辨析</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>无意识</strong></td><td>Unconscious</td><td>—</td><td>弗洛伊德人格理论中的核心概念，指意识之外的心理内容，包括被压抑的欲望、记忆与冲突，通过梦、口误、症状泄露</td><td>vs. 前意识（可被回忆的内容）vs. 潜意识（日常混用，学术上不精确）</td></tr>
+        <tr><td><strong>本我</strong></td><td>Id</td><td>—</td><td>人格中最原始的部分，完全无意识，遵循快乐原则，追求即时满足</td><td>vs. 自我（现实调节）vs. 超我（道德内化）；三者不是"位置"而是"功能"</td></tr>
+        <tr><td><strong>自我</strong></td><td>Ego</td><td>—</td><td>人格中的现实调节者，部分意识部分无意识，遵循现实原则，在本我冲动与超我禁令之间斡旋</td><td>vs. 日常用语"自我"（自恋）——学术上的"自我"是中性功能</td></tr>
+        <tr><td><strong>超我</strong></td><td>Superego</td><td>—</td><td>内化的道德标准与理想，部分意识部分无意识，遵循至善原则，产生罪恶感与自豪感</td><td>vs. 良心——超我不仅包括"不应该"（良心），也包括"应该成为"（自我理想）</td></tr>
+        <tr><td><strong>防御机制</strong></td><td>Defense Mechanism</td><td>—</td><td>自我为应对焦虑而无意识使用的心理策略，包括压抑、投射、升华、合理化等</td><td>vs. 应对策略——防御机制是无意识的，应对策略是意识的</td></tr>
+        <tr><td><strong>集体无意识</strong></td><td>Collective Unconscious</td><td>—</td><td>荣格提出的概念，指人类祖先在漫长演化中沉淀下来的、普适的心理遗产，是所有个体共享的无意识层</td><td>vs. 个人无意识（荣格：个人无意识=情结，集体无意识=原型）</td></tr>
+        <tr><td><strong>原型</strong></td><td>Archetype</td><td>—</td><td>集体无意识的内容，是普适的、原始的思维形式与意象，如英雄、母亲、阴影、智慧老人、自性</td><td>vs. 刻板印象——原型是深层心理结构，刻板印象是社会习得</td></tr>
+        <tr><td><strong>个体化</strong></td><td>Individuation</td><td>—</td><td>荣格心理学的核心目标，指人整合意识与无意识、成为完整自己的终身过程</td><td>vs. 自我实现（马斯洛）——个体化强调整合，自我实现强调潜能发挥</td></tr>
+        <tr><td><strong>经典条件反射</strong></td><td>Classical Conditioning</td><td>CS→CR (US→UR)</td><td>巴甫洛夫发现的学习机制：中性刺激（CS）与无条件刺激（US）反复配对后，CS单独呈现也能引发条件反应（CR）</td><td>vs. 操作性条件反射——经典是因刺激引发反应，操作是因后果塑造行为</td></tr>
+        <tr><td><strong>操作性条件反射</strong></td><td>Operant Conditioning</td><td>R→S^R</td><td>斯金纳提出的学习机制：行为（R）因后果（强化物S^R）而被塑造，强化增加行为频率，惩罚减少</td><td>vs. 经典条件反射——操作是主动的，经典是被动的</td></tr>
+        <tr><td><strong>强化</strong></td><td>Reinforcement</td><td>R+ / R−</td><td>增加行为频率的操作：正强化为给予奖励，负强化为移除厌恶刺激</td><td>vs. 惩罚——强化增加行为，惩罚减少行为；负强化≠惩罚</td></tr>
+        <tr><td><strong>自我效能感</strong></td><td>Self-efficacy</td><td>—</td><td>班杜拉提出的概念，指个体对自己"能否完成某项任务"的信念，比实际能力更能预测行为</td><td>vs. 自信——自我效能是情境特定的，自信是一般性的</td></tr>
+        <tr><td><strong>需要层次</strong></td><td>Hierarchy of Needs</td><td>五层递进</td><td>马斯洛的动机理论：生理→安全→归属与爱→尊重→自我实现，低层满足后高层浮现</td><td>vs. 单一动机理论——马斯洛认为多层共存，但优势需要主导行为</td></tr>
+        <tr><td><strong>自我实现</strong></td><td>Self-actualization</td><td>—</td><td>马斯洛需要层次最高层，指人发挥全部潜能、成为"能成为的一切"的倾向</td><td>vs. 完美主义——自我实现是成长，完美主义是对缺陷的恐惧</td></tr>
+        <tr><td><strong>无条件积极关注</strong></td><td>Unconditional Positive Regard</td><td>—</td><td>罗杰斯提出的治疗条件，指治疗师对来访者无评判、无条件的接纳与尊重</td><td>vs. 溺爱——无条件积极关注接纳的是人，不是行为</td></tr>
+        <tr><td><strong>认知图式</strong></td><td>Schema</td><td>—</td><td>皮亚杰提出的概念，指个体组织知识的基本心理结构，是同化与顺应的基础</td><td>vs. 认知框架——图式是发展心理学概念，框架是认知科学概念</td></tr>
+        <tr><td><strong>同化与顺应</strong></td><td>Assimilation & Accommodation</td><td>—</td><td>皮亚杰认知发展的两种机制：同化是将新经验纳入已有图式，顺应是根据新经验调整图式</td><td>两者互补——同化不改变图式，顺应改变图式，平衡是两者的动态均衡</td></tr>
+        <tr><td><strong>系统1与系统2</strong></td><td>System 1 & System 2</td><td>—</td><td>卡尼曼双系统理论：系统1快速自动直觉，系统2缓慢审慎逻辑；系统1是默认模式，系统2是监控模式</td><td>vs. 左脑/右脑——双系统不是解剖位置，是功能模式</td></tr>
+        <tr><td><strong>启发式</strong></td><td>Heuristic</td><td>—</td><td>卡尼曼与特沃斯基发现的心智捷径，包括代表性、可得性、锚定三种，虽省力但产生系统性偏差</td><td>vs. 算法——启发式快速但可能出错，算法保证正确但慢</td></tr>
+        <tr><td><strong>损失厌恶</strong></td><td>Loss Aversion</td><td>|损失| > |收益|</td><td>前景理论的核心发现：同等损失带来的心理痛苦约为同等收益带来的快乐的两倍</td><td>vs. 风险厌恶——损失厌恶是偏好不对称，风险厌恶是对不确定性的回避</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <span class="callout-title">术语学习建议</span>
+    <p>建议读者按"流派—核心概念—英文—定义"的四步法记忆。每个术语不仅要记住定义，还要理解它与相近术语的关系——这是本科生考试中最常见的考点。</p>
+  </div>
+</section>
+
+<!-- ==================== 附录三 ==================== -->
+<section class="sec" id="appendix-c">
+  <h2><span class="chapno">附录三</span>形式系统与核心模型</h2>
+  <p>心理学的形式系统与核心模型，为理解心理现象提供了可操作、可测量的分析框架。以下通过三个交互式可视化，展示心理学中最具代表性的模型。</p>
+
+  <h3>3.1 大五人格三维空间模型</h3>
+  <p>大五人格模型（Big Five）是当代人格心理学最具影响力的模型，将人格特质归纳为五个维度：开放性、尽责性、外倾性、宜人性、神经质。以下三维可视化展示其中三个维度——外倾性、宜人性、尽责性构成的空间，每个人都可以在这个空间中定位自己的特质剖面。</p>
+
+  <div class="viz-container" style="width:100%;height:420px;background:var(--bg2);border-radius:12px;position:relative;overflow:hidden;">
+    <canvas id="viz-psych-3d" style="width:100%;height:100%;"></canvas>
+  </div>
+  <div class="viz-caption">图 A-3.1 · 大五人格三维空间模型（外倾性×宜人性×尽责性）。拖动鼠标可旋转视角，观察不同特质剖面在空间中的分布。</div>
+
+  <h3>3.2 信号检测论 ROC 曲线</h3>
+  <p>信号检测论（Signal Detection Theory, SDT）是心理学中用于分析知觉决策的经典模型，将个体的判断区分为击中、虚报、漏报、正确拒绝四种结果。ROC曲线（Receiver Operating Characteristic）是SDT的核心可视化工具，反映了不同判断标准下的击中率与虚报率的关系。</p>
+
+  <div class="viz-container" style="width:100%;height:360px;background:var(--bg2);border-radius:12px;padding:15px;">
+    <canvas id="chart-psych-roc"></canvas>
+  </div>
+  <div class="viz-caption">图 A-3.2 · 信号检测论 ROC 曲线。d' 表示辨别力，c 表示判断标准。可拖动滑块调整 d' 与 c 的值，观察曲线的变化。</div>
+
+  <h3>3.3 学习曲线与遗忘曲线</h3>
+  <p>学习曲线（Learning Curve）描述练习次数与正确率的关系——随着练习次数增加，正确率逐渐上升并趋于稳定。艾宾浩斯遗忘曲线（Ebbinghaus Forgetting Curve）则描述记忆随时间衰减的规律——新学信息在最初几小时内迅速遗忘，之后衰减趋于平缓。以下动画同时展示学习与遗忘的动力学过程。</p>
+
+  <div class="viz-container" style="width:100%;height:360px;background:var(--bg2);border-radius:12px;padding:15px;">
+    <canvas id="chart-psych-learning"></canvas>
+  </div>
+  <div class="viz-caption">图 A-3.3 · 学习曲线与遗忘曲线动态演示。蓝线为练习次数×正确率（学习曲线），红线为记忆保留率随时间衰减（遗忘曲线）。点击按钮可重新播放动画。</div>
+
+  <div class="callout">
+    <span class="callout-title">模型理解要点</span>
+    <p>大五人格模型不是"五种类型"而是"五个连续维度"——绝大多数人位于中间地带而非极端。信号检测论区分了"感觉能力"（d'）和"决策策略"（c），对理解心理物理学与临床诊断中的判别问题至关重要。学习曲线与遗忘曲线揭示了"重复"与"间隔"在记忆中的关键作用——这是"间隔重复"学习法的科学基础。</p>
+  </div>
+</section>
+
+<!-- ==================== 附录四 ==================== -->
+<section class="sec" id="appendix-d">
+  <h2><span class="chapno">附录四</span>推演方法与证明</h2>
+  <p>心理学作为自然科学与人文科学的交叉学科，其推演方法涵盖实验法、相关法、临床法、现象学方法等多种范式。掌握这些方法，是本科生从"知道"到"会用"的关键一步。</p>
+
+  <h3>4.1 实验法：因果推断的黄金标准</h3>
+  <p>实验法（Experiment）是心理学中最严格的因果推断方法。其核心逻辑是：操纵自变量，控制无关变量，测量因变量，通过随机分配消除混淆变量。一个典型的实验设计包含以下要素：</p>
+  <div class="formula">
+    <span class="f-name">实验法的逻辑结构</span>
+    H₀: μ₁ = μ₂ （零假设：自变量无效应）<br>
+    H₁: μ₁ ≠ μ₂ （备择假设：自变量有效应）<br>
+    实验组：接受处理 → 后测<br>
+    控制组：不接受处理 → 后测<br>
+    若 p < 0.05，拒绝 H₀，接受 H₁
+    <span class="f-note">统计显著性是因果推断的必要条件，但并非充分条件——还需考虑内部效度与外部效度</span>
+  </div>
+
+  <h3>4.2 相关法：变量关系的度量</h3>
+  <p>相关法（Correlation）度量两个变量之间的线性关系强度，用相关系数 r 表示（-1 ≤ r ≤ 1）。r = 0 表示无线性相关，r = 1 表示完全正相关，r = -1 表示完全负相关。但相关≠因果——两个变量相关可能是因为第三个变量在起作用。</p>
+  <div class="formula">
+    <span class="f-name">皮尔逊相关系数</span>
+    r = Σ[(xᵢ − x̄)(yᵢ − ȳ)] / √[Σ(xᵢ − x̄)² Σ(yᵢ − ȳ)²]
+    <span class="f-note">r² 表示一个变量可解释另一个变量变异的百分比</span>
+  </div>
+
+  <h3>4.3 精神分析的临床推演</h3>
+  <p>精神分析采用独特的临床推演方法，其核心是"从症状回溯无意识冲突"的溯因推理。弗洛伊德的临床推演遵循以下步骤：</p>
+  <div class="explain">
+    <p><strong>第一步：现象收集</strong>——通过自由联想、梦的叙述、移情反应收集临床材料。</p>
+    <p><strong>第二步：假设形成</strong>——基于理论对材料进行解释，形成关于无意识冲突的假设。</p>
+    <p><strong>第三步：解释验证</strong>——将假设反馈给来访者，观察其反应（阻抗或确认）。</p>
+    <p><strong>第四步：工作通过</strong>——在反复的"解释—验证—调整"中，使无意识内容意识化，症状缓解。</p>
+  </div>
+
+  <div class="callout">
+    <span class="callout-title">方法论的批判性思考</span>
+    <p>实验法的优势在于因果推断，但生态效度有限——实验室情境与真实生活差异巨大。相关法可以揭示变量间的共变关系，但无法确定因果方向。临床法可以深入个案，但难以推广到群体。当代心理学提倡"多方法汇聚"——用不同方法从不同角度研究同一问题，交叉验证结论。</p>
+  </div>
+
+  <h3>4.4 认知发展的阶段推演</h3>
+  <p>皮亚杰的认知发展理论提供了一个独特的"阶段推演"模型——他认为认知发展不是量的积累，而是质的跃迁，每个阶段都有独特的逻辑结构。以下动画展示四个认知阶段的动态演进。</p>
+
+  <div class="viz-container" style="width:100%;height:380px;background:var(--bg2);border-radius:12px;position:relative;overflow:hidden;">
+    <canvas id="viz-psych-stages" style="width:100%;height:100%;"></canvas>
+  </div>
+  <div class="viz-caption">图 A-4 · 皮亚杰认知发展阶段动态演示。感知运动→前运算→具体运算→形式运算，每个阶段代表思维质的不同层次。</div>
+
+  <div class="highlight">
+    <strong>推演方法对比：</strong>实验法追求"控制与预测"，相关法追求"描述与相关"，临床法追求"理解与解释"，现象学追求"体验与描述"。四种方法不是对错关系，而是"不同的问题需要不同的方法"——选择的依据是研究问题本身的性质。
+  </div>
+</section>
+
+<!-- ==================== 附录五 ==================== -->
+<section class="sec" id="appendix-e">
+  <h2><span class="chapno">附录五</span>核心模型与图表</h2>
+  <p>心理学中的核心模型将抽象理论转化为可操作的分析框架。以下从多个维度展示心理学的重要模型及其相互关系。</p>
+
+  <h3>5.1 情绪维度模型：效价-唤醒度二维空间</h3>
+  <p>情绪维度模型（Dimensional Model of Emotion）将所有情绪定位在"效价"（正面/负面）和"唤醒度"（高/低）两个维度构成的空间中。这一模型为情绪测量提供了可量化的框架。</p>
+
+  <div class="viz-container" style="width:100%;height:360px;background:var(--bg2);border-radius:12px;padding:15px;">
+    <canvas id="chart-psych-emotion"></canvas>
+  </div>
+  <div class="viz-caption">图 A-5.1 · 情绪二维模型。横轴为效价（负面→正面），纵轴为唤醒度（低→高）。六种基本情绪在空间中的定位显示了它们的结构关系。</div>
+
+  <h3>5.2 记忆三阶段模型</h3>
+  <div class="diagram">
+    <figcaption>图 A-5.2 · 阿特金森-谢夫林记忆三阶段模型</figcaption>
+    <pre class="mermaid">
+flowchart LR
+  INPUT["外部输入"] --> SENSORY["感觉记忆\n容量：极大\n时长：0.25-2秒"]
+  SENSORY -->|"注意"| STM["短时记忆/工作记忆\n容量：7±2组块\n时长：15-30秒"]
+  STM -->|"复述"| LTM["长时记忆\n容量：几乎无限\n时长：数天至终身"]
+  STM -->|"遗忘"| FORGET1["遗忘"]
+  LTM -->|"提取"| STM
+  LTM -->|"遗忘"| FORGET2["提取失败"]
+    </pre>
+  </div>
+
+  <h3>5.3 心理治疗三大流派模型对比</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>维度</th><th>精神分析</th><th>行为治疗</th><th>人本治疗</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>核心假设</strong></td><td>症状源于无意识冲突</td><td>症状是习得的不适应行为</td><td>症状源于自我实现受阻</td></tr>
+        <tr><td><strong>治疗目标</strong></td><td>使无意识意识化</td><td>消除不适应行为，建立适应行为</td><td>促使人成为真实的自己</td></tr>
+        <tr><td><strong>核心技术</strong></td><td>自由联想、梦的解析、移情分析</td><td>系统脱敏、暴露、行为塑造、代币制</td><td>无条件积极关注、共情理解、真诚一致</td></tr>
+        <tr><td><strong>治疗师角色</strong></td><td>解释者、分析师</td><td>指导者、教练</td><td>陪伴者、促进者</td></tr>
+        <tr><td><strong>疗程</strong></td><td>数月到数年</td><td>数周到数月</td><td>因人而异</td></tr>
+        <tr><td><strong>实证支持</strong></td><td>有限（个案研究为主）</td><td>强（大量随机对照实验）</td><td>中等（过程研究为主）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <span class="callout-title">模型间的对话</span>
+    <p>情绪维度模型与记忆三阶段模型展示了认知心理学的"信息加工"取向——将心理过程分解为可分析的操作步骤。而心理治疗三大流派模型则展示了临床心理学的"视角多样性"——同一个症状，三种流派给出三种不同的解释与干预路径。理解这些模型之间的关系，是心理学本科生最重要的能力之一。</p>
+  </div>
+</section>
+
+<!-- ==================== 附录六 ==================== -->
+<section class="sec" id="appendix-f">
+  <h2><span class="chapno">附录六</span>高阶理论与前沿</h2>
+  <p>当代心理学正经历深刻的理论转向。以下概述六个前沿方向，为本科生提供研究视野的拓展。</p>
+
+  <h3>6.1 神经科学：从心理到脑</h3>
+  <p>功能性磁共振成像（fMRI）、脑电图（EEG）、近红外光谱（fNIRS）等脑成像技术，使心理学从"研究行为"深入到"研究脑"。关键发现包括：默认模式网络（DMN）在休息状态下的活跃、镜像神经元系统在社会认知中的作用、前额叶在执行功能中的核心地位。神经科学正在重新定义传统心理学概念——记忆、情绪、意识、自我——的神经基础。</p>
+
+  <h3>6.2 积极心理学：从修复到培育</h3>
+  <p>塞利格曼发起的积极心理学运动，将心理学的研究对象从"精神疾病"扩展到"心理繁荣"。核心概念包括：PERMA模型（积极情绪、投入、关系、意义、成就）、心流（Csikszentmihalyi）、品格优势与美德（Values in Action, VIA）、心理韧性（Resilience）。积极心理学不是"正能量"的鸡汤，而是有实证基础的科学——它研究"什么使生活值得过"。</p>
+
+  <h3>6.3 进化心理学：心理的演化根源</h3>
+  <p>进化心理学（Evolutionary Psychology）将心理机制视为自然选择的产物，追问"这个心理机制解决了什么适应性问题"。代表性研究包括：择偶偏好的性别差异、亲代投资理论、社会交换中的"欺骗者检测"机制、恐惧的进化起源（对蛇与蜘蛛的先天恐惧）。进化心理学为心理学提供了一个"终极解释"的层次——不仅解释"为什么这样"，还解释"为什么演化成这样"。</p>
+
+  <h3>6.4 文化心理学：心理的文化建构</h3>
+  <p>文化心理学（Cultural Psychology）揭示心理过程如何在文化语境中被塑造。关键发现包括：独立型自我（西方）vs. 互依型自我（东亚）、分析型认知（西方）vs. 整体型认知（东亚）、个人主义 vs. 集体主义对归因风格的影响。文化心理学提醒我们：心理学的大部分发现来自西方被试，其"普遍性"需要跨文化验证。</p>
+
+  <h3>6.5 嵌入式认知与具身认知</h3>
+  <p>具身认知（Embodied Cognition）挑战传统认知心理学的"计算隐喻"：认知不仅发生在大脑中，还通过身体与环境的互动实现。关键主张包括：概念表征基于感觉运动经验（如"热"与"愤怒"的隐喻关联）、身体状态影响判断（如握重物觉得"重要"）、环境是认知的"外部脚手架"（如用笔记补充工作记忆）。</p>
+
+  <h3>6.6 人工智能与心理学的双向对话</h3>
+  <p>深度学习与大型语言模型（如GPT）的兴起，为心理学提供了新的研究工具与理论挑战。一方面，AI模型可以模拟认知过程（如视觉识别、语言理解、决策），成为认知理论的"测试平台"；另一方面，AI的"黑箱"问题使心理学重新关注"可解释性"——人类需要理解AI如何"思考"。同时，AI对心理学的根本挑战是：如果机器可以"思考"，"心智"的定义是否需要重新书写？</p>
+
+  <div class="callout">
+    <span class="callout-title">前沿研究建议</span>
+    <p>建议本科生关注以下期刊：Annual Review of Psychology、Psychological Review、Trends in Cognitive Sciences。同时，建议学习基础编程与数据分析（Python/R），这是当代心理学研究的必备技能。</p>
+  </div>
+</section>
+
+<!-- ==================== 附录七 ==================== -->
+<section class="sec" id="appendix-g">
+  <h2><span class="chapno">附录七</span>方法训练与实操指南</h2>
+  <p>心理学研究方法的学习需要"做中学"。以下提供从实验设计到数据分析的完整操作指南。</p>
+
+  <h3>7.1 实验设计训练</h3>
+  <p>设计一个规范的心理学实验，需要遵循以下步骤：</p>
+  <div class="explain">
+    <p><strong>步骤一：明确研究问题。</strong>将模糊的"我想知道"转化为可检验的假设。例如："正念冥想能否降低焦虑？"→"与等待对照组相比，接受8周正念训练的大学生的焦虑量表得分显著降低。"</p>
+    <p><strong>步骤二：操作化定义。</strong>将抽象概念转化为可测量的变量。"正念"→"MBCT课程8周出勤率+每日练习时长"；"焦虑"→"贝克焦虑量表（BAI）得分"。</p>
+    <p><strong>步骤三：选择实验设计。</strong>被试间设计（不同人进不同组）vs. 被试内设计（同一人经历所有条件）。</p>
+    <p><strong>步骤四：控制混淆变量。</strong>随机分配、匹配、统计控制（如ANCOVA）。</p>
+    <p><strong>步骤五：数据收集与分析。</strong>确定样本量（power analysis）、选择统计方法（t检验/ANOVA/回归）。</p>
+    <p><strong>步骤六：结果解释与报告。</strong>不仅报告p值，还报告效应量（Cohen's d、η²）与置信区间。</p>
+  </div>
+
+  <h3>7.2 问卷设计与量表开发</h3>
+  <p>问卷是心理学最常用的数据收集工具。设计一份高质量问卷需注意：</p>
+  <ul>
+    <li><strong>维度明确：</strong>每个维度至少3-5题，总题数控制在20-40题</li>
+    <li><strong>选项设计：</strong>Likert量表（5点或7点），避免极端选项过少</li>
+    <li><strong>反向计分：</strong>约1/3的题目反向设计，防止"反应定势"</li>
+    <li><strong>信度检验：</strong>Cronbach's α > 0.70</li>
+    <li><strong>效度检验：</strong>内容效度、结构效度（探索性+验证性因子分析）、效标关联效度</li>
+  </ul>
+  <div class="formula">
+    <span class="f-name">Cronbach's α 系数</span>
+    α = [k / (k−1)] × [1 − (Σσᵢ² / σ_total²)]
+    <span class="f-note">k = 题数，σᵢ² = 第i题方差，σ_total² = 总分方差</span>
+  </div>
+
+  <h3>7.3 数据分析实操</h3>
+  <p>当代心理学研究的标准数据分析流程：</p>
+  <ul>
+    <li><strong>描述统计：</strong>均值、标准差、偏度、峰度、频率分布</li>
+    <li><strong>推断统计：</strong>独立样本t检验、配对t检验、单因素/多因素ANOVA、重复测量ANOVA</li>
+    <li><strong>相关与回归：</strong>Pearson相关、偏相关、多元线性回归、逻辑回归</li>
+    <li><strong>结构方程模型（SEM）：</strong>路径分析、验证性因子分析、中介效应与调节效应</li>
+    <li><strong>元分析：</strong>效应量合并、异质性检验、发表偏倚检验</li>
+  </ul>
+
+  <div class="callout">
+    <span class="callout-title">实操建议</span>
+    <p>推荐学习资源：<em>Field, A. (2017). Discovering Statistics Using IBM SPSS Statistics.</em> 以及开源替代方案——R语言的 <em>psych</em> 包和 <em>lavaan</em> 包。建议从已有研究的"复制"开始，逐步过渡到独立设计。</p>
+  </div>
+</section>
+
+<!-- ==================== 附录八 ==================== -->
+<section class="sec" id="appendix-h">
+  <h2><span class="chapno">附录八</span>经典习题集</h2>
+  <p>以下习题涵盖心理学思想谱系的核心概念与理论，分为选择题、简答题与论述题三部分，附参考答案。</p>
+
+  <h3>一、选择题</h3>
+
+  <p><strong>1.</strong> 弗洛伊德人格结构中，遵循"现实原则"的是：<br>
+  A. 本我 B. 自我 C. 超我 D. 无意识</p>
+  <p><strong>2.</strong> 下列哪项不是巴甫洛夫经典条件反射的要素？<br>
+  A. 无条件刺激 B. 强化 C. 条件刺激 D. 无条件反应</p>
+  <p><strong>3.</strong> 马斯洛需要层次理论中，最高层次的需要是：<br>
+  A. 尊重需要 B. 归属与爱 C. 自我实现 D. 安全需要</p>
+  <p><strong>4.</strong> 卡尼曼提出的"损失厌恶"属于哪个理论的核心概念？<br>
+  A. 认知失调理论 B. 前景理论 C. 归因理论 D. 期望理论</p>
+  <p><strong>5.</strong> 荣格提出的"集体无意识"的内容是：<br>
+  A. 情结 B. 阴影 C. 原型 D. 人格面具</p>
+
+  <h3>二、简答题</h3>
+
+  <p><strong>6.</strong> 简述经典条件反射与操作性条件反射的异同。</p>
+  <p><strong>7.</strong> 简述皮亚杰认知发展四阶段的名称与核心特征。</p>
+  <p><strong>8.</strong> 简述卡尼曼双系统理论中系统1与系统2的区别。</p>
+  <p><strong>9.</strong> 简述罗杰斯来访者中心疗法的三个核心条件。</p>
+  <p><strong>10.</strong> 简述"相关不等于因果"的理由并举例说明。</p>
+
+  <h3>三、论述题</h3>
+
+  <p><strong>11.</strong> 比较弗洛伊德、荣格与阿德勒对"无意识"的理解：三人的核心分歧是什么？这些分歧如何影响了他们对心理治疗目标的不同设定？</p>
+  <p><strong>12.</strong> 心理学经历了"三大势力"（精神分析、行为主义、人本主义）的交替与融合。请分析：三大势力各自发现了"人"的哪个侧面？它们各自忽略了什么？当代心理学如何综合三者？</p>
+  <p><strong>13.</strong> 认知革命如何改变了心理学的研究对象与方法？以卡尼曼的"系统1与系统2"为例，说明认知心理学如何为理解人类的非理性行为提供解释。</p>
+
+  <h3>参考答案</h3>
+  <div class="callout">
+    <span class="callout-title">参考答案</span>
+    <p><strong>1. B</strong> 自我遵循现实原则，在本我的冲动与超我的禁令之间斡旋。<br>
+    <strong>2. B</strong> 强化是操作性条件反射的概念，非经典条件反射的要素。<br>
+    <strong>3. C</strong> 自我实现是需要层次最高层。<br>
+    <strong>4. B</strong> 损失厌恶是前景理论的核心发现之一。<br>
+    <strong>5. C</strong> 集体无意识的内容是原型，个人无意识的内容是情结。</p>
+    <p><strong>6.</strong> 相同点：都是学习机制，通过经验改变行为。不同点：经典条件反射是被动的刺激-反应联结，操作条件反射是主动的行为-后果关联；经典涉及的是不随意反应，操作涉及的是随意行为；经典通过刺激配对学习，操作通过强化与惩罚学习。</p>
+    <p><strong>7.</strong> 感知运动阶段（0-2岁，通过动作认识世界，获得客体永久性）；前运算阶段（2-7岁，出现符号功能，自我中心，不可逆）；具体运算阶段（7-11岁，获得守恒，逻辑运算需具体对象）；形式运算阶段（11岁+，抽象思维，假设演绎）。</p>
+    <p><strong>8.</strong> 系统1：快速、自动、直觉、省力、无意识操作，易受启发式影响产生偏差。系统2：缓慢、审慎、逻辑、费力、需意识努力，负责监控与修正系统1的输出。两者不是替代关系，而是协作关系——系统1是日常决策的默认模式，系统2在系统1遇到困难时介入。</p>
+    <p><strong>9.</strong> 无条件积极关注（无评判接纳）、共情理解（设身处地感受）、真诚一致（治疗师真实透明）。</p>
+    <p><strong>10.</strong> 相关只表明两个变量共同变化，但无法确定因果方向。例如：冰淇淋销量与溺水率正相关，但吃冰淇淋不会导致溺水——两者都是"夏季高温"的结果。因果推断需实验法（操纵自变量、随机分配、控制混淆变量）。</p>
+    <p><strong>11-13.</strong> 论述题无标准答案，关键要点：11题应比较三人对无意识的范围（个人 vs 集体 vs 弱化）、动力（性欲 vs 自性化 vs 自卑）、治疗目标（意识化 vs 整合 vs 超越）的不同看法。12题应说明三大势力各自的核心发现与盲区，并指出当代心理学倾向于整合——如认知行为疗法结合了行为主义与认知革命的成果。13题应说明认知革命将"心灵"重新引入心理学（以"信息加工"取代"内省"），并以前景理论为例说明认知模型如何解释人类决策的系统性偏差。</p>
+  </div>
+</section>
+
+<!-- ==================== 附录九 ==================== -->
+<section class="sec" id="appendix-i">
+  <h2><span class="chapno">附录九</span>一手文献选读</h2>
+  <p>阅读经典文献的一手原文，是本科生从"二手理解"走向"独立判断"的关键一步。以下推荐五篇（部）心理学经典文献，附阅读指南与核心段落。</p>
+
+  <h3>文献一：弗洛伊德《梦的解析》（1900）</h3>
+  <div class="explain">
+    <p><strong>推荐版本：</strong>《梦的解析》，孙名之译，商务印书馆。</p>
+    <p><strong>阅读重点：</strong>第二章"释梦的方法"、第四章"梦的改装"、第七章"梦的运作"。</p>
+    <p><strong>核心段落：</strong>"梦是愿望的达成。这并非一句空话，而是可以引导我们理解梦的本质的出发点。……梦的显意不过是梦的隐意经过'梦的工作'——凝缩、移置、象征、润饰——之后的面貌。"</p>
+    <p><strong>阅读指南：</strong>弗洛伊德的论证方式是非实验的——他通过大量临床案例的"展示"而非"统计验证"来说服读者。阅读时注意区分"作为临床观察的梦例"和"作为理论推演的概念"。</p>
+  </div>
+
+  <h3>文献二：巴甫洛夫《条件反射》（1927）</h3>
+  <div class="explain">
+    <p><strong>推荐版本：</strong>Conditioned Reflexes, Oxford University Press（英文原版）。</p>
+    <p><strong>阅读重点：</strong>第一章"实验方法"、第三章"条件反射的形成"。</p>
+    <p><strong>核心段落：</strong>"如果我们把狗的口腔唾液腺导管开口暴露在外，在狗进食时就可以精确测量唾液分泌量。我们发现，不仅食物本身能引起唾液分泌，与食物反复配对的中性刺激也能引起这一反应。这种由条件刺激引起的反应，我称之为条件反射。"</p>
+    <p><strong>阅读指南：</strong>巴甫洛夫是生理学家，他的写作风格高度实证——每个结论都有实验数据支撑。阅读时特别注意他的实验控制方法（隔离、导管手术、自动记录），这是行为主义方法论的源头。</p>
+  </div>
+
+  <h3>文献三：斯金纳《超越自由与尊严》（1971）</h3>
+  <div class="explain">
+    <p><strong>推荐版本：</strong>Beyond Freedom and Dignity, Hackett Publishing。</p>
+    <p><strong>阅读重点：</strong>第一章"行为技术"、第六章"价值观"、第九章"人的形象"。</p>
+    <p><strong>核心段落：</strong>"人对自己行为的控制，最终来自环境而不是来自人自身。……所谓'自由意志'，不过是尚未被认识的强化史。当我们说一个人'选择'了某种行为，我们实际上是在说：他的行为被某种强化史所塑造，而这种塑造过程他本人并不完全知晓。"</p>
+    <p><strong>阅读指南：</strong>这本书是斯金纳最富争议的作品——它将行为主义逻辑从实验室推向社会哲学。阅读时建议同时阅读乔姆斯基的批判长文《斯金纳的心理学》，两人对"人性"的根本分歧是理解行为主义边界的关键。</p>
+  </div>
+
+  <h3>文献四：马斯洛《动机与人格》（1954）</h3>
+  <div class="explain">
+    <p><strong>推荐版本：</strong>《动机与人格》，许金声译，华夏出版社。</p>
+    <p><strong>阅读重点：</strong>第三章"需要层次理论"、第九章"自我实现的人"、第十二章"成长性动机"。</p>
+    <p><strong>核心段落：</strong>"一个人能成为什么，他就必须成为什么——这种需要，我们称之为自我实现。它指的是人实现自己的潜能、成为自己能够成为的样子的倾向。……自我实现不是一种结束状态，而是一个持续实现潜能的过程，是'成为'而非'已经是'。"</p>
+    <p><strong>阅读指南：</strong>马斯洛的写作风格融合了科学实证与人文关怀。注意他研究"自我实现者"的方法——不是随机抽样，而是从历史人物和当代人中选取"最佳样本"（如林肯、爱因斯坦）。这种"高峰样本"方法在方法论上是有争议的，但也正是人本主义"研究健康的人"的独特之处。</p>
+  </div>
+
+  <h3>文献五：卡尼曼《思考，快与慢》（2011）</h3>
+  <div class="explain">
+    <p><strong>推荐版本：</strong>《思考，快与慢》，胡晓姣等译，中信出版社。</p>
+    <p><strong>阅读重点：</strong>第一章"系统1与系统2"、第十章"大数法则与小数定律"、第二十六章"前景理论"。</p>
+    <p><strong>核心段落：</strong>"系统1无时无刻不在运行，它自动产生印象、感觉和倾向；系统2则在系统1遇到困难时被激活，负责审慎的推理。但系统2的介入是懒惰的——它倾向于接受系统1的直觉判断，而不是费力地审查。这就是为什么人类决策常常系统性地偏离理性——不是因为愚蠢，而是因为直觉的捷径（启发式）在大多数情况下是有效的，但在特定情况下会产生可预测的偏差。"</p>
+    <p><strong>阅读指南：</strong>卡尼曼的写作风格是"叙事式科学"——每个认知偏差都配以生动的实验场景。阅读时建议做"双栏笔记"：左栏记录偏差名称与定义，右栏记录自己生活中的类似案例。卡尼曼的高明之处在于：他不仅告诉读者"人类如何犯错"，还让读者在阅读过程中"亲身体验"这些偏差。</p>
+  </div>
+
+  <div class="callout">
+    <span class="callout-title">文献阅读建议</span>
+    <p>建议按"时代顺序"阅读：弗洛伊德（1900）→ 巴甫洛夫（1927）→ 斯金纳（1971）→ 马斯洛（1954，注意时间顺序）→ 卡尼曼（2011）。这样做的好处是：你能看到心理学从"临床观察"到"实验科学"到"社会哲学"到"人文科学"再到"认知科学"的完整演变——每一篇文献都是心理学思想谱系中的一个节点。</p>
+  </div>
+</section>
+
+<!-- ==================== 附录十 ==================== -->
+<section class="sec" id="appendix-j">
+  <h2><span class="chapno">附录十</span>关键争论</h2>
+  <p>心理学历史中的关键争论，揭示了学科发展的内在张力。以下梳理五个核心争论，每个争论都代表了理解"人"的不同视角之间的根本分歧。</p>
+
+  <h3>争论一：自由意志 vs. 决定论</h3>
+  <p>这是心理学最根本的哲学争论。行为主义（斯金纳）主张"行为完全由强化史决定"——自由意志是幻觉。人本主义（罗杰斯）主张"人有权选择自己的方向"——自由是治疗的前提。认知神经科学最近的发现（如Libet实验）显示，大脑在意识做出决定之前就已"准备好"行动——但这是否"证明"自由意志不存在，仍有激烈争论。</p>
+  <div class="highlight">
+    <strong>评析：</strong>双方可能都过于极端。当代心理学倾向于"兼容论"——行为受生理、环境、认知等多重因素影响，但人在这些限制中仍有选择空间。自由不是"为所欲为"，而是"在理解自身的限制后，做出有意识的回应"。
+  </div>
+
+  <h3>争论二：先天 vs. 后天</h3>
+  <p>人的心理特征由遗传还是环境决定？行为主义强调环境塑造，乔姆斯基强调语言的先天基础，进化心理学强调心理机制的演化起源。双生子研究显示，几乎所有心理特征都受遗传影响（遗传度约40-60%），但环境同样重要——且"共享环境"（共同的家庭环境）的影响远小于预期。</p>
+  <div class="highlight">
+    <strong>评析：</strong>当代立场是"先天与后天交互作用"——基因影响个体对环境的敏感度（基因-环境交互），环境也会影响基因表达（表观遗传学）。"先天vs.后天"的提问方式本身就有问题——更好的问题是"先天与后天如何共同塑造心理"。
+  </div>
+
+  <h3>争论三：意识 vs. 无意识</h3>
+  <p>弗洛伊德认为无意识是心灵的主体，意识只是冰山一角。行为主义完全拒绝意识作为研究对象。认知革命重新接纳意识——但将其作为"信息加工"的产物而非本质。当代神经科学发现，大脑的大部分加工确实是无意识的，但意识体验（qualia）仍然是"难问题"——为什么物理过程会产生主观体验？</p>
+  <div class="highlight">
+    <strong>评析：</strong>争论的焦点从"意识是否存在"转向"意识如何产生以及它做什么"。目前的主流观点是：大多数认知加工是无意识的，意识是"全局工作空间"——整合不同脑区的信息，使行为更加灵活、适应。
+  </div>
+
+  <h3>争论四：还原论 vs. 整体论</h3>
+  <p>心理学应该将心理现象还原为生理过程（还原论），还是从整体层面理解心理功能（整体论）？神经科学倾向于还原论——"心理即脑"。人本主义与格式塔心理学坚持整体论——"整体大于部分之和"。认知科学则采取"多层次分析"——从行为、认知、神经到分子，每个层次都有其解释力。</p>
+  <div class="highlight">
+    <strong>评析：</strong>当代立场是"非还原的物理主义"——心理现象有物理基础，但不能完全还原为生理过程。心理层面的概念（如"信念"、"欲望"）有其独立的解释力；理解人需要多层次的分析，而不是"一层的还原"。
+  </div>
+
+  <h3>争论五：科学 vs. 人文</h3>
+  <p>心理学应该像自然科学（客观、量化、实验）还是像人文学科（理解、解释、意义）？冯特开创的实验心理学选择了前者，精神分析选择了后者。这一争论从未平息——它表现在"定量 vs. 定性"的方法论之争、"实验室 vs. 真实世界"的生态效度之争、"实证 vs. 诠释"的知识论之争。</p>
+  <div class="highlight">
+    <strong>评析：</strong>心理学的独特之处恰恰在于它处于"科学"与"人文"的交叉地带——它既是关于"行为与心理过程"的科学，也是关于"意义与价值"的人文探索。一个好的心理学家，应该同时掌握实验的严谨与诠释的深度。
+  </div>
+
+  <div class="callout">
+    <span class="callout-title">争论的意义</span>
+    <p>这些争论没有"标准答案"——它们反映了心理学作为一门"关于人的科学"的内在张力。理解这些争论的目的，不是"站队"而是"理解"——理解每个立场的合理性与局限性，理解不同立场之间的对话如何推动了学科的发展。在本科阶段，能够清晰地阐述这些争论的双方论据，就是学术能力的重要标志。</p>
+  </div>
+</section>
+
+<!-- ==================== 附录十一 ==================== -->
+<section class="sec" id="appendix-k">
+  <h2><span class="chapno">附录十一</span>延伸阅读与课程对照</h2>
+  <p>以下提供系统的延伸阅读书目与国内外高校课程对照，帮助本科生在课堂学习之外，建立更完整的知识体系。</p>
+
+  <h3>一、进阶阅读书目</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>领域</th><th>推荐书目</th><th>作者</th><th>难度</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>心理学通史</strong></td><td>《心理学史》</td><td>黎黑 (Leahey)</td><td>进阶</td></tr>
+        <tr><td><strong>精神分析</strong></td><td>《精神分析引论》</td><td>弗洛伊德</td><td>入门</td></tr>
+        <tr><td><strong>荣格心理学</strong></td><td>《荣格心理学》</td><td>霍尔 (Hall)</td><td>入门</td></tr>
+        <tr><td><strong>行为主义</strong></td><td>《学习理论》</td><td>赫根汉 (Hergenhahn)</td><td>进阶</td></tr>
+        <tr><td><strong>人本主义</strong></td><td>《成为一个人》</td><td>罗杰斯</td><td>入门</td></tr>
+        <tr><td><strong>认知心理学</strong></td><td>《认知心理学》</td><td>奈瑟 (Neisser)</td><td>进阶</td></tr>
+        <tr><td><strong>行为经济学</strong></td><td>《思考，快与慢》</td><td>卡尼曼</td><td>入门</td></tr>
+        <tr><td><strong>积极心理学</strong></td><td>《真实的幸福》</td><td>塞利格曼</td><td>入门</td></tr>
+        <tr><td><strong>进化心理学</strong></td><td>《进化心理学》</td><td>巴斯 (Buss)</td><td>进阶</td></tr>
+        <tr><td><strong>文化心理学</strong></td><td>《文化心理学》</td><td>Heine</td><td>进阶</td></tr>
+        <tr><td><strong>神经科学</strong></td><td>《认知神经科学》</td><td>Gazzaniga</td><td>高阶</td></tr>
+        <tr><td><strong>研究方法</strong></td><td>《与"众"不同的心理学》</td><td>斯坦诺维奇</td><td>入门</td></tr>
+        <tr><td><strong>心理学与生活</strong></td><td>《心理学与生活》</td><td>津巴多</td><td>入门</td></tr>
+        <tr><td><strong>科学哲学</strong></td><td>《科学革命的结构》</td><td>库恩</td><td>进阶</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>二、国外高校课程对照</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>高校</th><th>课程名称</th><th>对应本卷内容</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>哈佛大学</strong></td><td>PSY 1: Introduction to Psychology</td><td>整体框架</td></tr>
+        <tr><td><strong>耶鲁大学</strong></td><td>PSYC 110: Introduction to Psychology</td><td>整体框架</td></tr>
+        <tr><td><strong>斯坦福大学</strong></td><td>PSYCH 1: Introduction to Psychology</td><td>整体框架</td></tr>
+        <tr><td><strong>MIT</strong></td><td>9.00: Introduction to Psychology</td><td>整体框架</td></tr>
+        <tr><td><strong>牛津大学</strong></td><td>Experimental Psychology</td><td>实验方法</td></tr>
+        <tr><td><strong>剑桥大学</strong></td><td>Psychological and Behavioural Sciences</td><td>行为研究</td></tr>
+        <tr><td><strong>加州大学伯克利</strong></td><td>Psych 101: Psychology as a Science</td><td>科学方法</td></tr>
+        <tr><td><strong>UCLA</strong></td><td>Psychology 10: Introduction to Psychology</td><td>整体框架</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>三、国内高校课程对照</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>高校</th><th>课程名称</th><th>对应本卷内容</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>北京大学</strong></td><td>普通心理学</td><td>整体框架</td></tr>
+        <tr><td><strong>北京师范大学</strong></td><td>心理学导论</td><td>整体框架</td></tr>
+        <tr><td><strong>华东师范大学</strong></td><td>心理学导论</td><td>整体框架</td></tr>
+        <tr><td><strong>浙江大学</strong></td><td>普通心理学</td><td>整体框架</td></tr>
+        <tr><td><strong>复旦大学</strong></td><td>心理学概论</td><td>整体框架</td></tr>
+        <tr><td><strong>南京大学</strong></td><td>心理学基础</td><td>整体框架</td></tr>
+        <tr><td><strong>中山大学</strong></td><td>普通心理学</td><td>整体框架</td></tr>
+        <tr><td><strong>清华大学</strong></td><td>心理学与生活</td><td>整体框架</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>四、在线学习资源</h3>
+  <ul>
+    <li><strong>Coursera：</strong>Yale 大学的 "Introduction to Psychology"（Paul Bloom 主讲）</li>
+    <li><strong>edX：</strong>Harvard 大学的 "Introduction to Psychology"（Steven Pinker 客座）</li>
+    <li><strong>Crash Course Psychology：</strong>YouTube 系列，Hank Green 主讲，每集10分钟</li>
+    <li><strong>MIT OpenCourseWare：</strong>9.00 Introduction to Psychology 完整课程录像</li>
+    <li><strong>中国大学MOOC：</strong>北京大学"普通心理学"、北师大"心理学导论"</li>
+  </ul>
+
+  <div class="callout">
+    <span class="callout-title">学习建议</span>
+    <p>建议本科生在大一至大二系统修读"普通心理学"和"心理学史"两门课，大三精读本附录推荐的一手文献，大四结合本附录的高阶议题与前沿，确定自己的研究方向。心理学的魅力在于：它既是一门科学，也是一种人文修养——理解自己，理解他人，理解人与世界的关系。</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  心理学思想谱系 · 本科生升级附录 · 思想图谱系列第十八辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-06
+</footer>
+
+</article>
+
+<!-- Three.js 3D 可视化：大五人格三维空间 -->
+<script src="./_shared/js/three.min.js"></script>
+<script>
+(function() {
+  const canvas = document.getElementById('viz-psych-3d');
+  if (!canvas) return;
+  const container = canvas.parentElement;
+  const width = container.clientWidth;
+  const height = container.clientHeight;
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xF0E9F5);
+
+  const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+  camera.position.set(5, 4, 6);
+  camera.lookAt(0, 0, 0);
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(window.devicePixelRatio || 1);
+
+  // 灯光
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+  scene.add(ambientLight);
+  const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+  dirLight.position.set(5, 10, 7);
+  scene.add(dirLight);
+
+  // 坐标轴
+  const axesHelper = new THREE.AxesHelper(4);
+  scene.add(axesHelper);
+
+  // 网格
+  const gridHelper = new THREE.GridHelper(8, 20, 0x6A5E75, 0x6A5E75);
+  gridHelper.position.y = -0.01;
+  scene.add(gridHelper);
+
+  // 标签（用 Sprite）
+  function makeLabel(text, color, position) {
+    const canvas2 = document.createElement('canvas');
+    canvas2.width = 256;
+    canvas2.height = 64;
+    const ctx = canvas2.getContext('2d');
+    ctx.fillStyle = 'transparent';
+    ctx.fillRect(0, 0, 256, 64);
+    ctx.font = 'bold 28px "WorkSans", sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = color;
+    ctx.fillText(text, 128, 40);
+    const texture = new THREE.CanvasTexture(canvas2);
+    const material = new THREE.SpriteMaterial({ map: texture, transparent: true });
+    const sprite = new THREE.Sprite(material);
+    sprite.position.copy(position);
+    sprite.scale.set(1.8, 0.45, 1);
+    return sprite;
+  }
+  scene.add(makeLabel('外倾性', '#6D28D9', new THREE.Vector3(4.5, 0, 0)));
+  scene.add(makeLabel('宜人性', '#6D28D9', new THREE.Vector3(0, 0, 4.5)));
+  scene.add(makeLabel('尽责性', '#B45309', new THREE.Vector3(0, 4.5, 0)));
+
+  // 生成随机点群
+  const colors = [0x6D28D9, 0xB45309, 0x2563EB, 0x059669, 0xDC2626];
+  const group = new THREE.Group();
+  for (let i = 0; i < 120; i++) {
+    const x = (Math.random() - 0.5) * 6;
+    const z = (Math.random() - 0.5) * 6;
+    const y = (Math.random() - 0.5) * 5;
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const sphere = new THREE.Mesh(
+      new THREE.SphereGeometry(0.12, 12, 12),
+      new THREE.MeshPhongMaterial({ color, transparent: true, opacity: 0.7 })
+    );
+    sphere.position.set(x, y + 0.5, z);
+    group.add(sphere);
+  }
+  scene.add(group);
+
+  // 旋转控制
+  let isDragging = false;
+  let previousMousePosition = { x: 0, y: 0 };
+  let rotationX = 0, rotationY = 0;
+
+  canvas.addEventListener('mousedown', (e) => { isDragging = true; previousMousePosition = { x: e.clientX, y: e.clientY }; });
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const deltaX = e.clientX - previousMousePosition.x;
+    const deltaY = e.clientY - previousMousePosition.y;
+    rotationX += deltaY * 0.01;
+    rotationY += deltaX * 0.01;
+    previousMousePosition = { x: e.clientX, y: e.clientY };
+  });
+  window.addEventListener('mouseup', () => { isDragging = false; });
+
+  function animate() {
+    requestAnimationFrame(animate);
+    if (!isDragging) {
+      group.rotation.y += 0.003;
+    } else {
+      group.rotation.x = rotationX;
+      group.rotation.y = rotationY;
+    }
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  // 响应窗口大小变化
+  window.addEventListener('resize', () => {
+    const w = container.clientWidth;
+    const h = container.clientHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  });
+})();
+</script>
+
+<!-- Chart.js 可视化：ROC 曲线 -->
+<script src="./_shared/js/chart.umd.min.js"></script>
+<script>
+(function() {
+  const ctx = document.getElementById('chart-psych-roc').getContext('2d');
+  if (!ctx) return;
+
+  // 生成 ROC 曲线数据
+  function generateROC(dPrime) {
+    const data = [];
+    for (let c = -3; c <= 3; c += 0.05) {
+      const hit = 1 - normalCDF(c - dPrime);
+      const fa = 1 - normalCDF(c);
+      data.push({ x: fa, y: hit });
+    }
+    return data;
+  }
+
+  function normalCDF(x) {
+    const a1 = 0.254829592, a2 = -0.284496736, a3 = 1.421413741, a4 = -1.453152027, a5 = 1.061405429, p = 0.3275911;
+    const sign = x < 0 ? -1 : 1;
+    x = Math.abs(x) / Math.sqrt(2);
+    const t = 1 / (1 + p * x);
+    const y = 1 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
+    return 0.5 * (1 + sign * y);
+  }
+
+  let dPrime = 1.5;
+  let rocData = generateROC(dPrime);
+
+  const chart = new Chart(ctx, {
+    type: 'scatter',
+    data: {
+      datasets: [{
+        label: 'ROC 曲线 (d\' = ' + dPrime.toFixed(1) + ')',
+        data: rocData,
+        showLine: true,
+        borderColor: '#6D28D9',
+        backgroundColor: 'rgba(109,40,217,0.1)',
+        pointRadius: 0,
+        borderWidth: 2.5,
+        fill: true,
+        tension: 0.3
+      }, {
+        label: '机会水平',
+        data: [{ x: 0, y: 0 }, { x: 1, y: 1 }],
+        showLine: true,
+        borderColor: '#6A5E75',
+        borderDash: [5, 5],
+        pointRadius: 0,
+        borderWidth: 1.5
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'bottom', labels: { font: { family: 'WorkSans', size: 12 }, color: '#2A2033' } },
+        tooltip: { callbacks: { label: (ctx) => `虚报率: ${ctx.parsed.x.toFixed(3)}, 击中率: ${ctx.parsed.y.toFixed(3)}` } }
+      },
+      scales: {
+        x: { title: { display: true, text: '虚报率 P(FA)', font: { family: 'WorkSans', size: 12 } }, min: 0, max: 1, grid: { color: 'rgba(0,0,0,0.06)' } },
+        y: { title: { display: true, text: '击中率 P(Hit)', font: { family: 'WorkSans', size: 12 } }, min: 0, max: 1, grid: { color: 'rgba(0,0,0,0.06)' } }
+      }
+    }
+  });
+
+  // 添加滑块控制
+  const container = document.getElementById('chart-psych-roc').parentElement;
+  const sliderDiv = document.createElement('div');
+  sliderDiv.style.cssText = 'display:flex;align-items:center;gap:10px;padding:8px 15px;font-size:0.85rem;color:var(--muted);font-family:var(--font-mono);';
+  sliderDiv.innerHTML = '<span>辨别力 d\'：</span><input type="range" id="dprime-slider" min="0.2" max="3.5" step="0.1" value="1.5" style="flex:1;max-width:200px;"> <span id="dprime-value">1.5</span>';
+  container.appendChild(sliderDiv);
+
+  document.getElementById('dprime-slider').addEventListener('input', function() {
+    dPrime = parseFloat(this.value);
+    document.getElementById('dprime-value').textContent = dPrime.toFixed(1);
+    rocData = generateROC(dPrime);
+    chart.data.datasets[0].data = rocData;
+    chart.data.datasets[0].label = 'ROC 曲线 (d\' = ' + dPrime.toFixed(1) + ')';
+    chart.update();
+  });
+})();
+</script>
+
+<!-- Chart.js 可视化：学习曲线与遗忘曲线 -->
+<script>
+(function() {
+  const ctx = document.getElementById('chart-psych-learning').getContext('2d');
+  if (!ctx) return;
+
+  const learningData = [];
+  const forgettingData = [];
+  for (let t = 0; t <= 30; t++) {
+    // 学习曲线：正确率 = 1 - exp(-0.15 * t)，逐渐逼近1
+    const accuracy = 1 - Math.exp(-0.18 * t);
+    learningData.push({ x: t, y: accuracy });
+    // 遗忘曲线：保留率 = exp(-0.12 * t)
+    const retention = Math.exp(-0.12 * t);
+    forgettingData.push({ x: t, y: retention });
+  }
+
+  const chart = new Chart(ctx, {
+    type: 'scatter',
+    data: {
+      datasets: [{
+        label: '学习曲线 (练习次数×正确率)',
+        data: learningData,
+        showLine: true,
+        borderColor: '#2563EB',
+        backgroundColor: 'rgba(37,99,235,0.1)',
+        pointRadius: 0,
+        borderWidth: 2.5,
+        fill: true,
+        tension: 0.4
+      }, {
+        label: '遗忘曲线 (艾宾浩斯)',
+        data: forgettingData,
+        showLine: true,
+        borderColor: '#DC2626',
+        backgroundColor: 'rgba(220,38,38,0.1)',
+        pointRadius: 0,
+        borderWidth: 2.5,
+        fill: true,
+        tension: 0.4,
+        borderDash: [5, 5]
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: { duration: 2000, easing: 'easeOutQuart' },
+      plugins: {
+        legend: { position: 'bottom', labels: { font: { family: 'WorkSans', size: 11 }, color: '#2A2033' } }
+      },
+      scales: {
+        x: { title: { display: true, text: '时间/练习次数', font: { family: 'WorkSans', size: 12 } }, min: 0, max: 30, grid: { color: 'rgba(0,0,0,0.06)' } },
+        y: { title: { display: true, text: '正确率 / 保留率', font: { family: 'WorkSans', size: 12 } }, min: 0, max: 1, grid: { color: 'rgba(0,0,0,0.06)' } }
+      }
+    }
+  });
+
+  // 重播按钮
+  const container = document.getElementById('chart-psych-learning').parentElement;
+  const btnDiv = document.createElement('div');
+  btnDiv.style.cssText = 'text-align:center;padding:6px 0;';
+  btnDiv.innerHTML = '<button id="replay-btn" style="padding:6px 18px;border:1px solid var(--accent);border-radius:6px;background:var(--bg);color:var(--accent);font-family:var(--font-mono);font-size:0.82rem;cursor:pointer;">重新播放动画</button>';
+  container.appendChild(btnDiv);
+
+  document.getElementById('replay-btn').addEventListener('click', function() {
+    chart.reset();
+    chart.update();
+  });
+})();
+</script>
+
+<!-- 认知发展阶段动画 Canvas -->
+<script>
+(function() {
+  const canvas = document.getElementById('viz-psych-stages');
+  if (!canvas) return;
+  const container = canvas.parentElement;
+  const w = container.clientWidth;
+  const h = container.clientHeight;
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext('2d');
+
+  const stages = [
+    { name: '感知运动阶段 (0-2岁)', color: '#6D28D9', desc: '通过动作认识世界\n客体永久性' },
+    { name: '前运算阶段 (2-7岁)', color: '#7C3AED', desc: '符号功能\n自我中心·不可逆' },
+    { name: '具体运算阶段 (7-11岁)', color: '#9333EA', desc: '守恒·分类\n逻辑运算需具体对象' },
+    { name: '形式运算阶段 (11岁+)', color: '#A855F7', desc: '抽象思维\n假设演绎·系统推理' }
+  ];
+
+  let currentStage = 0;
+  let progress = 0;
+  let animFrame;
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    ctx.fillStyle = '#F0E9F5';
+    ctx.fillRect(0, 0, w, h);
+
+    // 背景阶梯
+    const stageH = (h - 60) / stages.length;
+    for (let i = 0; i < stages.length; i++) {
+      const y = 30 + i * stageH;
+      const isActive = (i === currentStage);
+      const isPast = (i < currentStage);
+
+      // 阶梯背景
+      ctx.fillStyle = isActive ? 'rgba(109,40,217,0.15)' : (isPast ? 'rgba(109,40,217,0.08)' : 'rgba(0,0,0,0.03)');
+      ctx.fillRect(30, y, w - 60, stageH - 5);
+
+      // 阶梯编号
+      ctx.fillStyle = isActive ? stages[i].color : (isPast ? '#6A5E75' : '#6A5E75');
+      ctx.font = 'bold 14px "WorkSans", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('第' + (i + 1) + '阶段', 90, y + stageH / 2 + 5);
+
+      // 阶段名称
+      ctx.fillStyle = isActive ? stages[i].color : (isPast ? '#2A2033' : '#6A5E75');
+      ctx.font = (isActive ? 'bold 16px' : '14px') + ' "WorkSans", sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillText(stages[i].name, 150, y + stageH / 2 - 5);
+
+      // 描述
+      ctx.fillStyle = isActive ? '#2A2033' : '#6A5E75';
+      ctx.font = '12px "WorkSans", sans-serif';
+      const lines = stages[i].desc.split('\n');
+      lines.forEach((line, li) => {
+        ctx.fillText(line, 150, y + stageH / 2 + 18 + li * 16);
+      });
+
+      // 高亮箭头
+      if (isActive) {
+        ctx.fillStyle = stages[i].color;
+        ctx.beginPath();
+        const arrowX = w - 50;
+        const arrowY = y + stageH / 2;
+        ctx.moveTo(arrowX, arrowY - 8);
+        ctx.lineTo(arrowX + 12, arrowY);
+        ctx.lineTo(arrowX, arrowY + 8);
+        ctx.fill();
+      }
+    }
+
+    // 进度指示器
+    const progressWidth = w - 70;
+    ctx.fillStyle = 'rgba(0,0,0,0.06)';
+    ctx.fillRect(35, h - 20, progressWidth, 6);
+    ctx.fillStyle = '#6D28D9';
+    ctx.fillRect(35, h - 20, progressWidth * (currentStage + 1) / stages.length, 6);
+  }
+
+  function animateStages() {
+    currentStage = (currentStage + 1) % stages.length;
+    draw();
+    setTimeout(animateStages, 3000);
+  }
+
+  draw();
+  setTimeout(animateStages, 3000);
+})();
+</script>
+
+<!-- 情绪二维模型 Chart.js -->
+<script>
+(function() {
+  const ctx = document.getElementById('chart-psych-emotion').getContext('2d');
+  if (!ctx) return;
+
+  const emotions = [
+    { name: '愤怒', x: -0.75, y: 0.85, color: '#DC2626' },
+    { name: '恐惧', x: -0.85, y: 0.75, color: '#9333EA' },
+    { name: '悲伤', x: -0.6, y: -0.7, color: '#2563EB' },
+    { name: '喜悦', x: 0.85, y: 0.8, color: '#059669' },
+    { name: '平静', x: 0.7, y: -0.75, color: '#6D28D9' },
+    { name: '厌恶', x: -0.7, y: 0.4, color: '#B45309' },
+    { name: '惊讶', x: 0.2, y: 0.9, color: '#D97706' }
+  ];
+
+  new Chart(ctx, {
+    type: 'scatter',
+    data: {
+      datasets: [{
+        label: '基本情绪',
+        data: emotions.map(e => ({ x: e.x, y: e.y })),
+        backgroundColor: emotions.map(e => e.color),
+        pointRadius: 10,
+        pointHoverRadius: 14
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => {
+              const idx = ctx.dataIndex;
+              return emotions[idx].name + ' (效价: ' + emotions[idx].x.toFixed(2) + ', 唤醒度: ' + emotions[idx].y.toFixed(2) + ')';
+            }
+          }
+        }
+      },
+      scales: {
+        x: { title: { display: true, text: '效价 (负面→正面)', font: { family: 'WorkSans', size: 12 } }, min: -1, max: 1, grid: { color: 'rgba(0,0,0,0.06)' } },
+        y: { title: { display: true, text: '唤醒度 (低→高)', font: { family: 'WorkSans', size: 12 } }, min: -1, max: 1, grid: { color: 'rgba(0,0,0,0.06)' } }
+      }
+    },
+    plugins: [{
+      afterDraw: (chart) => {
+        const ctx2 = chart.ctx;
+        chart.data.datasets[0].data.forEach((dp, i) => {
+          const meta = chart.getDatasetMeta(0);
+          const point = meta.data[i];
+          ctx2.fillStyle = '#2A2033';
+          ctx2.font = 'bold 12px "WorkSans", sans-serif';
+          ctx2.textAlign = 'center';
+          ctx2.fillText(emotions[i].name, point.x, point.y - 16);
+        });
+      }
+    }]
+  });
+})();
+</script>
+
+</body>
+</html>

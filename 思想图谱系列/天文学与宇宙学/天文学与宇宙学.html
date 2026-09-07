@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天文学与宇宙学 · 思想图谱系列第31辑</title>
+
+  <style>
+    :root {
+      --bg: #F4F6FA;
+      --bg2: #E6EAF4;
+      --ink: #1A1F2E;
+      --muted: #5A6073;
+      --rule: #D2D8E8;
+      --accent: #1E3A8A;
+      --accent2: #B8860B;
+      --font-head: 'Georgia', 'Songti SC', 'STSong', 'SimSun', serif;
+      --font: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+      --font-mono: 'Consolas', 'JetBrains Mono', 'Courier New', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .explain { background: #F8F6EF; border: 1px solid var(--rule); border-radius: 10px; padding: 1rem 1.2rem; margin: 0.6rem 0; }
+    .explain p { margin-bottom: 0.5rem; font-size: 0.9rem; }
+    .explain strong { color: var(--accent); }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .table-wrap { overflow-x: auto; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    table th, table td { border: 1px solid var(--rule); padding: 0.5rem 0.7rem; text-align: left; }
+    table th { background: var(--bg2); font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: 0.78rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<div class="shell">
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">天文学与宇宙学</div>
+    <div class="brand-sub">思想图谱系列 · 第31辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+<li><a href="#intro">导言 · 宇宙的召唤</a></li>
+<li><a href="#ancient">第一章 · 古代天文学</a></li>
+<li><a href="#stars">第二章 · 恒星与星系</a></li>
+<li><a href="#bigbang">第三章 · 大爆炸与宇宙演化</a></li>
+<li><a href="#solar">第四章 · 太阳系与行星科学</a></li>
+<li><a href="#exoplanet">第五章 · 系外行星与地外生命</a></li>
+<li><a href="#summary">第六章 · 总结：宇宙观</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第31辑</span>
+        <span class="series-links">
+          <a href="../index.html">系列目录</a>
+          <a href="../物理学/物理学.html">← 上一辑 · 物理学思想谱系</a>
+          <a href="../化学/化学.html">下一辑 · 化学 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>天文学与宇宙学</h1>
+      <p class="subtitle">从星图到宇宙简史——人类仰望星空的三千年</p>
+      <p class="meta">作者：詹家杨 · 2026-09-06 · 7 章 · 16 张思维导图 · 33 个解释块 · 8 张对照表</p>
+    </header>
+
+<section class="sec" id="intro">
+        <h2><span class="chapno">导言 &middot; 宇宙的召唤</span></h2>
+<p>天文学与宇宙学是研究天体和宇宙整体的科学。从哥白尼革命到大爆炸宇宙学，天文学不断重塑人类对自身位置的认知。</p>
+<figure class="diagram">
+          <figcaption>图 0 · 宇宙的层级结构</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["宇宙的层级"] --> A["地球<br>~1.3万km"]
+  ROOT --> B["太阳系<br>~100AU"]
+  ROOT --> C["银河系<br>~10万光年"]
+  ROOT --> D["本星系群<br>~1000万光年"]
+  ROOT --> E["宇宙大尺度结构<br>~100亿光年"]
+  A --> B --> C --> D --> E
+  classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 0 详解：</strong>宇宙的尺度跨越了数十个数量级，从地球到可观测宇宙，每个层级都有其独特的天体物理规律。
+
+天文学也许是人类最古老的科学——从三万年前的骨雕月相图到今天的韦伯太空望远镜，人类一直在追问：天上有什么？宇宙如何运作？我们在宇宙中处于什么位置？
+
+**中国案例**：中国商代甲骨文中就有关于日食和月食的记载，这是世界上最早的连续天文观测记录之一。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">伽利略 · 1564–1642</div>
+            <blockquote>我发现了四颗行星，它们绕着木星运行，就像金星和水星绕着太阳运行一样。<cite>——伽利略《星际信使》</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">卡尔·萨根 · 1934–1996</div>
+            <blockquote>宇宙既不冷漠也不充满敌意，它只是淡然。<cite>——《宇宙》</cite></blockquote>
+          </div>
+</div>
+<figure class="diagram">
+          <figcaption>图 0a · 天文学基本概念树状图 —— 观测工具 · 太阳系 · 恒星世界 · 星系与宇宙 · 系外行星与生命</figcaption>
+          <div style="overflow-x:auto;text-align:center;">
+          <svg viewBox="0 0 720 560" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;height:auto;">
+            <defs>
+              <marker id="arl0a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+                <path d="M1 1 L7 4 L1 7 Z" fill="#52525B"/>
+              </marker>
+            </defs>
+            <rect x="0" y="0" width="720" height="560" fill="#F7F7F8" rx="8"/>
+            <rect x="270" y="12" width="180" height="40" rx="20" fill="#334155"/>
+            <text x="360" y="38" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700" font-family="system-ui,sans-serif">天文学</text>
+            <line x1="360" y1="52" x2="360" y2="68" stroke="#334155" stroke-width="2"/>
+            <line x1="72" y1="68" x2="648" y2="68" stroke="#52525B" stroke-width="1.5"/>
+            <line x1="72" y1="68" x2="72" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl0a)"/>
+            <line x1="216" y1="68" x2="216" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl0a)"/>
+            <line x1="360" y1="68" x2="360" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl0a)"/>
+            <line x1="504" y1="68" x2="504" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl0a)"/>
+            <line x1="648" y1="68" x2="648" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arl0a)"/>
+            <rect x="20" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+            <text x="72" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">观测工具</text>
+            <rect x="164" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#6F6FFF" stroke-width="1.5"/>
+            <text x="216" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">太阳系</text>
+            <rect x="308" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+            <text x="360" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">恒星世界</text>
+            <rect x="448" y="82" width="112" height="34" rx="8" fill="#F2F7FF" stroke="#6F6FFF" stroke-width="1.5"/>
+            <text x="504" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">星系与宇宙</text>
+            <rect x="583" y="82" width="130" height="34" rx="8" fill="#F2F7FF" stroke="#334155" stroke-width="1.5"/>
+            <text x="648" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="system-ui,sans-serif">系外行星与生命</text>
+            <line x1="72" y1="116" x2="72" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arl0a)"/>
+            <rect x="14" y="130" width="116" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="72" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">裸眼与占星</text>
+            <line x1="72" y1="154" x2="72" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arl0a)"/>
+            <rect x="14" y="160" width="116" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="72" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">望远镜</text>
+            <line x1="72" y1="184" x2="72" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arl0a)"/>
+            <rect x="14" y="190" width="116" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="72" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">射电与空间望远镜</text>
+            <line x1="216" y1="116" x2="216" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arl0a)"/>
+            <rect x="164" y="130" width="104" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="216" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">行星与卫星</text>
+            <line x1="216" y1="154" x2="216" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arl0a)"/>
+            <rect x="164" y="160" width="104" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="216" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">小行星与彗星</text>
+            <line x1="216" y1="184" x2="216" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arl0a)"/>
+            <rect x="164" y="190" width="104" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="216" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">太阳与月球</text>
+            <line x1="360" y1="116" x2="360" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arl0a)"/>
+            <rect x="308" y="130" width="104" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="360" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">赫罗图与演化</text>
+            <line x1="360" y1="154" x2="360" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arl0a)"/>
+            <rect x="308" y="160" width="104" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="360" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">恒星死亡</text>
+            <line x1="360" y1="184" x2="360" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arl0a)"/>
+            <rect x="308" y="190" width="104" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="360" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">星际介质与元素</text>
+            <line x1="504" y1="116" x2="504" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arl0a)"/>
+            <rect x="448" y="130" width="112" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="504" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">银河系</text>
+            <line x1="504" y1="154" x2="504" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arl0a)"/>
+            <rect x="448" y="160" width="112" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="504" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">星系团</text>
+            <line x1="504" y1="184" x2="504" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arl0a)"/>
+            <rect x="448" y="190" width="112" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="504" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">大爆炸宇宙学</text>
+            <line x1="648" y1="116" x2="648" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arl0a)"/>
+            <rect x="583" y="130" width="130" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="648" y="147" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">系外行星探测</text>
+            <line x1="648" y1="154" x2="648" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arl0a)"/>
+            <rect x="583" y="160" width="130" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="648" y="177" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">宜居带</text>
+            <line x1="648" y1="184" x2="648" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arl0a)"/>
+            <rect x="583" y="190" width="130" height="24" rx="6" fill="#EFEFF2"/>
+            <text x="648" y="207" text-anchor="middle" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">地外生命搜寻</text>
+            <rect x="30" y="225" width="660" height="310" rx="10" fill="#EFEFF2" opacity="0.7"/>
+            <text x="360" y="250" text-anchor="middle" fill="#171717" font-size="13" font-weight="700" font-family="system-ui,sans-serif">专业名词释义</text>
+            <text x="50" y="278" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎天文学与宇宙学</text>
+            <text x="50" y="297" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">天文学研究天体的位置、运动与性质；宇宙学把整个宇宙作为研究对象，探讨其起源、演化与命运。</text>
+            <text x="50" y="331" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎赫罗图</text>
+            <text x="50" y="350" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">以恒星表面温度（光谱型）为横轴、光度为纵轴的经典图谱，是恒星分类与演化研究的核心工具。</text>
+            <text x="50" y="384" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎光年</text>
+            <text x="50" y="403" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">光在真空中一年所走过的距离，约 9.46 万亿千米，是天文学描述宇宙尺度最常用的长度单位。</text>
+            <text x="50" y="437" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎宜居带</text>
+            <text x="50" y="456" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">恒星周围行星表面能稳定维持液态水的环状区域，是搜寻“第二地球”时的首要参考标准。</text>
+            <text x="50" y="490" fill="#171717" font-size="12" font-weight="700" font-family="system-ui,sans-serif">▎暗物质与暗能量</text>
+            <text x="50" y="509" fill="#52525B" font-size="12" font-family="system-ui,sans-serif">二者合计约占宇宙能量密度的 95%：暗物质借引力塑造宇宙结构，暗能量驱动宇宙加速膨胀。</text>
+          </svg>
+          </div>
+        </figure>
+<div class="explain">
+          <p><strong>图 0a 详解：</strong>天文学的知识体系可以从五个方向展开，它们共同构成人类“仰望星空”的完整图景。</p>
+          <p><strong>观测工具：</strong>天文学是“观测驱动的科学”。从裸眼与占星时代的肉眼观测，到伽利略1610年把望远镜转向夜空，再到20世纪射电望远镜与空间望远镜的崛起，观测手段的每一次飞跃都带来天文学的革命。中国天眼FAST（500米口径）是当今世界最大的单口径射电望远镜；哈勃、韦伯空间望远镜则把视野推向可见光之外与宇宙深处——天文学的历史，就是观测工具不断延伸人类感官的历史。</p>
+          <p><strong>太阳系：</strong>太阳系是距离我们最近、能被直接探测的“天体实验室”。八大行星按成分分为类地行星与类木行星两类，小行星带与柯伊伯带保存着太阳系形成初期的原始物质。从嫦娥五号月面采样返回，到天问一号着陆火星，人类的深空探测正在把太阳系变成“可到达”的疆域。</p>
+          <p><strong>恒星世界：</strong>恒星是宇宙的“化工厂”。赫罗图按温度与光度给恒星分类，揭示了恒星从星际云塌缩到主序星、再到红巨星或超新星的演化路径。太阳正处在主序阶段，已燃烧约46亿年；大质量恒星以超新星爆发终结，把碳、氧、铁乃至金、银等重元素抛回星际空间——构成生命与我们身体的所有重元素都源自恒星。</p>
+          <p><strong>星系与宇宙：</strong>银河系只是可观测宇宙中数千亿个星系之一。星系聚合成星系团、超星系团，构成宇宙的大尺度结构。1929年哈勃发现星系退行，宣告宇宙在膨胀，大爆炸宇宙学由此建立，把宇宙的起源、演化与命运纳入科学视野。暗物质与暗能量占宇宙总能量约95%，仍是当代宇宙学最大的谜题。</p>
+          <p><strong>系外行星与生命：</strong>1995年人类确认第一颗围绕类太阳恒星运行的系外行星，此后已确认超过5500颗。天文学家通过宜居带与大气成分分析，寻找可能孕育生命的“第二地球”。费米悖论提醒我们：如果宇宙充满生命，为什么我们还没有看见他们？这个追问，正推动着系外行星研究与地外生命搜寻不断向前。</p>
+          <p><strong>现实案例：</strong>中国天眼FAST自2020年正式运行以来，已在快速射电暴、中性氢与脉冲星研究中取得一系列突破，并参与地外文明信号搜寻；郭守敬望远镜（LAMOST）则以超过2000万条恒星光谱，为银河系恒星群体研究提供了基础数据。</p>
+        </div>
+</section>
+<section class="sec" id="ancient">
+        <h2><span class="chapno">第一章 &middot; 古代天文学</span></h2>
+<p>古埃及人根据天狼星的出现预测尼罗河泛滥，玛雅人精确计算金星周期，中国历代王朝设立天文官观测星象——天文学是最早的制度化科学活动之一。</p>
+<figure class="diagram">
+          <figcaption>图 1 · 古代宇宙模型</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["古代宇宙观"] --> A["巴比伦<br>黄道十二宫<br>预测日月食"]
+  ROOT --> B["古希腊<br>地心说<br>（托勒密）"]
+  ROOT --> C["中国<br>二十八宿<br>天象记录"]
+  ROOT --> D["玛雅<br>精确历法<br>金星周期"]
+  B --> E["哥白尼<br>日心说 1543"]
+  E --> F["开普勒<br>椭圆轨道 1609"]
+  F --> G["伽利略<br>望远镜 1610"]
+  classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 1 详解：</strong>古代天文学独立发展于多个文明。
+
+**中国天文学**的特色是官方的、持续的天象记录。从公元前720年到公元1911年，中国连续记录了约1600次日食和大量彗星、新星、流星雨。这些记录对现代天文学有重要价值。
+
+**哥白尼革命**：1543年，哥白尼在临终前出版了《天体运行论》，将太阳放在宇宙中心，引发了一场深刻的世界观革命。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 1a · 从地心说到日心说的观念革命</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["宇宙模型的观念革命"] --> A["地心说<br>亚里士多德 · 托勒密<br>本轮与均轮解释逆行"]
+  ROOT --> B["日心说<br>哥白尼《天体运行论》<br>1543 太阳居于中心"]
+  ROOT --> C["过渡者<br>第谷·布拉赫<br>折中体系与精密观测"]
+  A --> B
+  C --> D["开普勒三定律<br>1609–1619<br>椭圆轨道取代圆周"]
+  B --> D
+  D --> E["伽利略的观测证据<br>1610<br>木星卫星 · 金星位相"]
+  E --> F["牛顿万有引力<br>1687<br>统一天上与地下的运动"]
+  classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 1a 详解：</strong>从地心说到日心说的转变，是科学史上第一次真正的“范式革命”。</p>
+          <p><strong>为什么地心说能统治千年：</strong>托勒密用“本轮＋均轮”的复合圆周运动，相当精确地预言了行星的位置——这套体系在数学上是“能工作的”。它的困难不在于算不准，而在于越来越臃肿：每出现一个观测异常，就要增加一个本轮。到16世纪，托勒密体系的轮子已多到令人难以容忍，哥白尼的改革因此首先是一场“简洁性”的胜利。</p>
+          <p><strong>革命的意义不在精度，而在框架：</strong>哥白尼的日心说在早期甚至不如托勒密体系精确——它真正的力量在于“框架转换”：把地球从宇宙中心降格为一颗普通行星，为开普勒的椭圆定律与牛顿的万有引力扫清了道路。第谷·布拉赫代表了务实而谨慎的过渡立场：他拒绝日心说，却以二十年如一日的精密观测，为开普勒提供了赖以成名的火星数据。</p>
+          <p><strong>现实案例：</strong>开普勒1609年《新天文学》中提出的椭圆轨道定律，直接来自对第谷火星观测数据的分析，拟合误差仅约0.008度；伽利略1610年用自制望远镜发现木星的四颗大卫星，又观察到金星的位相变化——证明并非一切天体都绕地球运行，地心说的最后一块基石随之松动。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 1b · 中国古代天文学成就</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["中国古代天文学"] --> A["天象记录<br>日食 · 彗星 · 新星<br>连续两千余年"]
+  ROOT --> B["二十八宿<br>赤道坐标体系<br>划分全天星区"]
+  ROOT --> C["历法成就<br>《授时历》1280<br>回归年 365.2425日"]
+  ROOT --> D["天文仪器<br>浑仪 · 简仪<br>水运仪象台 1092"]
+  A --> E["现代科学价值<br>超新星 · 彗星轨道研究"]
+  C --> E
+  classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 1b 详解：</strong>与古希腊以几何思辨为主的天文学不同，中国古代天文学以“制度化观测”为特征，成就集中在记录、历法与仪器三个方向。</p>
+          <p><strong>连续的天象档案：</strong>从公元前720年到1911年，中国史籍连续记录了约1600次日食、大量彗星与“客星”（新星、超新星）。这些记录在今天仍有科学价值：哈雷彗星的每次回归几乎都能在中国史书中找到对应记载，为现代彗星轨道计算提供了完整的历史序列；1054年的“天关客星”记载，则被用来确认蟹状星云正是那次超新星爆发的遗迹。</p>
+          <p><strong>仪器的巅峰：</strong>郭守敬设计的简仪把浑仪的同心环架简化为独立装置，观测精度在13世纪世界领先；苏颂主持的水运仪象台集观星、演示与报时于一体，其擒纵机构被公认为机械钟表的先驱。</p>
+          <p><strong>现实案例：</strong>中国古籍对哈雷彗星的记载始于公元前613年（《春秋》：“秋七月，有星孛入于北斗”），此后每次回归几乎都有记录；20世纪天文学家据此检验了哈雷彗星轨道计算的可靠性——古老的史官记录，成为现代天体力学难得的“历史观测数据”。</p>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 概念辨析：地心说为何能“错而不倒”一千年</strong></p>
+          <p>评价一个科学理论，首先要区分“现象预言”与“物理解释”。托勒密体系虽然把地球放在宇宙中心，却仍能以本轮、均轮相当好地拟合行星的视运动，甚至能解释行星逆行——在“只问位置准不准”的实用尺度上，它是一套成功的算法。真正的转折点不是某个观测数据突然出现，而是新的观测工具与新的数学框架同时成熟：第谷的精密观测暴露出旧框架的裂缝，开普勒以椭圆轨道提供了更简洁的几何，伽利略的望远镜把“天界完美不变”的古老信念一举击碎。</p>
+          <p>科学史由此给出一个重要教训：理论的更替，往往不是“错的被对的打败”，而是“能用的被更简单、更能生长的取代”。日心说最终胜出，是因为它把太阳系从一套“修补出来的算法”，变成了一幅能统一解释力学、光学与潮汐的真实图景——<strong>衡量一个理论的终极标准，是它解释世界的能力，而非一时的预言精度</strong>。</p>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 中国天文学的制度化传统</strong></p>
+          <p>与古希腊的私人学者传统不同，中国古代天文学是典型的“官办科学”。自先秦起，王朝便设立专职天文机构（如太史令、司天监），历代正史几乎都有《天文志》《律历志》，形成世界上延续时间最长的连续天象记录。观测不是个人爱好，而是“敬授民时”的国家事业——历法关乎农时与礼制，天象被看作“天命”的征兆，因此天文官的记录必须严密而连续。</p>
+          <p>郭守敬于1276—1280年主持编订《授时历》，测得回归年为365.2425日，与现行公历完全一致却早了300多年；他简化浑仪而成的简仪，在世界天文仪器史上占有重要地位。1092年建成的水运仪象台更把天文观测与计时机械合为一体。这些成就表明：在人类文明的大多数时期，<strong>天文学从来不是“无用之学”——它是最早与权力、时间、文明秩序深度绑定的科学</strong>。</p>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 占星术与天文学：一对纠缠了三千年的双生子</strong></p>
+          <p>在漫长的历史中，天文学与占星术共享同一个起点：二者都仰望星空，都记录行星运动，都相信“天上与人间存在联系”。巴比伦人发展出系统的行星观测，最初动机正是为国王占卜吉凶；托勒密既是地心说的集大成者，也写下了影响深远的《四书》（占星学著作）；开普勒本人靠编订占星历书维持生计。可以说，早期天文学的动力有一半来自占星需求。</p>
+          <p>两者的分野，是现代科学方法的胜利：天文学把“天空”当作独立于人类命运的客观研究对象，用可检验的理论解释行星运动；占星术则把天象与人事强行关联，其预言无法被证伪。伽利略的望远镜、开普勒的椭圆定律、牛顿的引力定律，一步步把天文学从占星术中解放出来。然而这段历史提醒我们：<strong>科学的诞生往往不是“干净的起源”，而是从与迷信的纠缠中艰难挣脱出来的</strong>——理解这段纠缠，比简单嘲笑占星术更有教益。</p>
+        </div>
+<h3>对照表：地心说 · 日心说 · 现代宇宙观</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>地心说（托勒密体系）</th><th>日心说（哥白尼体系）</th><th>现代宇宙观</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>宇宙中心</strong></td><td>地球</td><td>太阳</td><td>无中心（最大尺度上均匀各向同性）</td></tr>
+              <tr><td><strong>行星轨道</strong></td><td>本轮＋均轮的复合圆周</td><td>仍用圆周，残留本轮</td><td>椭圆轨道（开普勒定律 · 牛顿引力）</td></tr>
+              <tr><td><strong>行星逆行</strong></td><td>本轮机制的几何结果</td><td>地球与行星相对运动的结果</td><td>相对运动的自然结果</td></tr>
+              <tr><td><strong>恒星位置</strong></td><td>固定于最外层天球</td><td>极远处静止的“恒星天”</td><td>恒星是遥远而众多的“他者太阳”</td></tr>
+              <tr><td><strong>理论品格</strong></td><td>精细拟合，日趋臃肿</td><td>更简洁，早期精度略逊</td><td>与力学、光学、宇宙学统一自洽</td></tr>
+            </tbody>
+          </table>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">哥白尼 · 1473–1543</div>
+            <blockquote>太阳位于宇宙的中心，这是最合理的安排。<cite>——《天体运行论》</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">张衡 · 78–139</div>
+            <blockquote>天如鸡子，地如鸡中黄。<cite>——张衡《浑天仪注》</cite></blockquote>
+          </div>
+</div>
+</section>
+<section class="sec" id="stars">
+        <h2><span class="chapno">第二章 &middot; 恒星与星系</span></h2>
+<p>恒星是宇宙的化工厂——它们通过核聚变制造出从氦到铁的所有元素，超新星爆发则制造出更重的元素。没有恒星，就没有构成生命所需的碳、氧、氮等元素。</p>
+<figure class="diagram">
+          <figcaption>图 2 · 恒星演化路径</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["恒星演化"] --> A["星际云<br>分子云塌缩"]
+  A --> B["原恒星"]
+  B --> C["主序星<br>（如太阳）<br>H→He核聚变"]
+  C --> D{"质量 < 8M☉"}
+  C --> E{"质量 > 8M☉"}
+  D --> F["红巨星"]
+  F --> G["行星状星云<br>→ 白矮星"]
+  E --> H["红超巨星"]
+  H --> I["超新星爆发<br>Ⅱ型"]
+  I --> J["中子星<br>或 黑洞"]
+  classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 2 详解：</strong>恒星的一生是引力和核聚变之间的博弈。
+
+**主序星**阶段，恒星核心将氢聚变为氦，释放巨大能量。太阳正处于这个阶段，已持续约46亿年，还能再维持约50亿年。
+
+大质量恒星（>8倍太阳质量）在耗尽燃料后会发生超新星爆发，将重元素抛射到宇宙中——包括构成我们身体的金、银、铁。正如卡尔·萨根所说：'我们是由星尘构成的。'</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 2a · 恒星的诞生与演化（赫罗图流程）</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  A["星际分子云<br>引力塌缩 · 原恒星"] --> B["主序星<br>氢聚变稳定燃烧<br>太阳约可维持100亿年"]
+  B --> C{"恒星质量"}
+  C --> D["低·中质量恒星<br>红巨星 → 行星状星云 → 白矮星"]
+  C --> E["大质量恒星<br>红超巨星 → Ⅱ型超新星"]
+  E --> F["中子星 或 黑洞<br>重元素抛回星际空间"]
+  F --> G["富金属的新一代恒星<br>与行星系统"]
+  D --> G
+  classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class A root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 2a 详解：</strong>恒星的一生，是引力与核聚变之间的一场漫长博弈。</p>
+          <p><strong>从云到星：</strong>恒星诞生于星际分子云的引力塌缩。塌缩释放的引力能加热核心，当中心温度超过约1000万度，氢聚变被点燃，恒星进入最稳定的主序阶段——质量越大，燃烧越剧烈、寿命越短。太阳已经稳定燃烧约46亿年，还能再维持约50亿年。</p>
+          <p><strong>两种结局：</strong>质量小于约8倍太阳质量的恒星（如太阳）燃料耗尽后膨胀为红巨星，外层物质以行星状星云的形式抛散，核心塌缩成白矮星；质量更大的恒星则以红超巨星走向Ⅱ型超新星爆发，留下中子星或黑洞，并在爆发中合成铁以上的一切重元素。</p>
+          <p><strong>现实案例：</strong>1054年，北宋天文学家观测到金牛座“天关”星附近出现一颗白天可见的“客星”，《宋会要》记载它“昼见如太白……凡见二十三日”。现代天文学确认那是一次Ⅱ型超新星爆发（SN 1054），其遗迹就是著名的蟹状星云——中心的中子星（脉冲星）每秒自转约30次。中国古人的一次记录，如今成为恒星演化理论的活教材；而中国郭守敬望远镜（LAMOST）已发布超过2000万条恒星光谱，正在为银河系恒星群体研究提供最庞大的数据库。</p>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 赫罗图：恒星的“身份证”</strong></p>
+          <p>1910年前后，丹麦天文学家赫茨普龙与美国天文学家罗素各自独立发现：如果把恒星的表面温度（由颜色与光谱型决定）放在横轴、光度放在纵轴，恒星并非均匀散布，而是集中在一条从左上到右下的“主序带”上——这就是赫罗图。主序带上的恒星正处于氢聚变阶段，质量越大越亮、也越短命；离开主序后，恒星向右上角演化成红巨星，低质量恒星的归宿则是左下角炽热致密的白矮星——一颗白矮星的质量可与太阳相当，体积却只比地球略大，一茶匙物质重达数吨。</p>
+          <p>赫罗图的神奇之处，在于它把恒星的“分类”与“演化”压缩进了一幅图：只要测出恒星的光度与表面温度，就能判断它处于生命周期的哪个阶段、下一步将走向何方。天文学家因此称它为“恒星物理学的地图”——20世纪恒星天文学的大多数进展，都是在这张图上展开的。</p>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 我们都是星尘：元素周期表的宇宙起源</strong></p>
+          <p>宇宙诞生后最初三分钟，只合成了氢、氦与微量锂；构成生命与岩石的碳、氧、氮、铁，都是在恒星内部由核聚变“锻造”出来的。氢聚变产生氦，氦聚变产生碳与氧，更重的元素逐级合成，直至铁——因为铁的核聚变不再释放能量，大质量恒星由此走向坍缩与超新星爆发。超新星爆发时剧烈的中子流通过慢过程（s过程）与快过程（r过程），把金、银、铂、铀等重元素“组装”出来，抛回星际空间。</p>
+          <p>于是，我们身体里的碳来自恒星核合成，铁来自恒星核心，钙来自超新星喷流——<strong>构成我们身体的每一个重原子，都曾在一颗恒星内部或临终爆发中度过时光</strong>。卡尔·萨根那句“我们是由星尘构成的”，并非诗意的比喻，而是元素核合成理论的标准结论。</p>
+        </div>
+<h3>对照表：恒星光谱分类 OBAFGKM</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>光谱型</th><th>表面颜色</th><th>表面温度（K）</th><th>质量（太阳质量）</th><th>寿命量级</th><th>典型代表</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>O</strong></td><td>蓝</td><td>30,000–50,000</td><td>大于16</td><td>数百万年</td><td>参宿三（猎户座ζ）</td></tr>
+              <tr><td><strong>B</strong></td><td>蓝白</td><td>10,000–30,000</td><td>2.1–16</td><td>数千万年</td><td>参宿七（猎户座β）</td></tr>
+              <tr><td><strong>A</strong></td><td>白</td><td>7,500–10,000</td><td>1.4–2.1</td><td>约10亿年</td><td>天狼星A · 织女星</td></tr>
+              <tr><td><strong>F</strong></td><td>黄白</td><td>6,000–7,500</td><td>1.04–1.4</td><td>约30亿年</td><td>南河三A（小犬座α）</td></tr>
+              <tr><td><strong>G</strong></td><td>黄</td><td>5,200–6,000</td><td>0.8–1.04</td><td>约100亿年</td><td>太阳 · 半人马座α A</td></tr>
+              <tr><td><strong>K</strong></td><td>橙</td><td>3,700–5,200</td><td>0.45–0.8</td><td>数百亿年</td><td>大角星（牧夫座α）</td></tr>
+              <tr><td><strong>M</strong></td><td>红</td><td>2,400–3,700</td><td>小于0.45</td><td>数千亿年</td><td>比邻星 · 参宿四</td></tr>
+            </tbody>
+          </table>
+        </div>
+<p>助记口诀：O B A F G K M，可记为英文 "Oh, Be A Fine Girl/Guy, Kiss Me"（哦，做个好姑娘/小伙子，吻我）。</p>
+<figure class="diagram">
+          <figcaption>图 2b · 恒星光谱分类 OBAFGKM：从蓝到红的温度序列</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  A["O型 蓝<br>最热最亮 · 寿命最短"] --> B["B型 蓝白"]
+  B --> C["A型 白"]
+  C --> D["F型 黄白"]
+  D --> E["G型 黄<br>太阳属于此型"]
+  E --> F["K型 橙"]
+  F --> G["M型 红<br>最暗最冷 · 寿命最长"]
+  G --> H["赫罗图主序带<br>从左到右 温度递减"]
+  classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class A root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 2b 详解：</strong>OBAFGKM不是随意排列的字母，而是恒星的“温度—颜色—寿命”序列：从左上角炽热蓝色的O型星，到右下角低温红色的M型星，温度逐级下降、颜色渐次变红、寿命依次拉长。</p>
+          <p><strong>分类的由来：</strong>这套字母来自19世纪末哈佛大学天文台的大规模光谱巡天（HD巡天）。天文学家安妮·坎农在十余年间用肉眼为约35万颗恒星的光谱分类，最终把皮克林团队最初的字母顺序（按氢线强度排列）重排为按温度递减的OBAFGKM序列。此后一百多年，这套分类一直沿用至今。</p>
+          <p><strong>现实案例：</strong>太阳是G2V型主序星，表面温度约5800K，寿命约100亿年；比邻星作为M型红矮星，温度约3000K，寿命可达数千亿年——比宇宙年龄还长。中国的郭守敬望远镜（LAMOST）正以数千万条恒星光谱延续着坎农的事业，把“人眼分类”升级为“机器分类”，为赫罗图的精细结构提供海量数据。</p>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">爱丁顿 · 1882–1944</div>
+            <blockquote>如果恒星内部没有核能，它就会像一块冰冷的石头。<cite>——《恒星内部结构》</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">萨根 · 1934–1996</div>
+            <blockquote>我们是宇宙认识自己的方式。<cite>——《宇宙》</cite></blockquote>
+          </div>
+</div>
+</section>
+<section class="sec" id="bigbang">
+        <h2><span class="chapno">第三章 &middot; 大爆炸与宇宙演化</span></h2>
+<p>宇宙有一个开端，大约138亿年前从一个无限致密的奇点爆发，经过膨胀、冷却、凝聚，形成了我们今天看到的恒星、星系和生命。宇宙学是'万物的故事'——从创世到终结。</p>
+<figure class="diagram">
+          <figcaption>图 3 · 宇宙编年史</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["大爆炸<br>138亿年前"] --> B["暴胀期<br>10⁻³²秒"]
+  B --> C["原初核合成<br>3分钟<br>H·He·Li"]
+  C --> D["复合时期<br>38万年<br>CMB 微波背景"]
+  D --> E["黑暗时代<br>~4亿年"]
+  E --> F["第一代恒星<br>星系形成"]
+  F --> G["现今宇宙<br>ΛCDM模型"]
+  G --> H["宇宙未来<br>热寂？大撕裂？"]
+  classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class A root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 3 详解：</strong>大爆炸宇宙学是20世纪最伟大的科学成就之一。
+
+**大爆炸理论的证据**：
+1. 宇宙膨胀（哈勃定律，1929）
+2. 宇宙微波背景辐射（1965年发现，温度约2.7K）
+3. 原初核合成（宇宙中约75%的H、25%的He）
+
+**ΛCDM模型**：当前宇宙学标准模型，包含：
+- 普通物质：约5%
+- 暗物质：约27%（不可见，只有引力效应）
+- 暗能量：约68%（驱动宇宙加速膨胀）
+
+**中国案例**：中国天眼FAST（500米口径球面射电望远镜）在快速射电暴和中性氢研究中已取得多项突破性成果。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 3a · 宇宙大爆炸时间线：从奇点到今天</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["奇点<br>大爆炸 138亿年前"] --> B["普朗克时期<br>10⁻⁴³秒 物理定律的界限"]
+  B --> C["暴胀时期<br>10⁻³⁵秒 空间指数膨胀"]
+  C --> D["原初核合成<br>第3分钟 氦 · 氘 · 锂"]
+  D --> E["光子退耦<br>38万年 微波背景辐射诞生"]
+  E --> F["黑暗时代<br>约4亿年 首批恒星尚未点燃"]
+  F --> G["第一代恒星与星系<br>宇宙再电离"]
+  G --> H["今日宇宙<br>暗能量驱动加速膨胀"]
+  H --> I["可能的未来<br>热寂 或 大撕裂"]
+  classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class A root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 3a 详解：</strong>大爆炸理论描述的不是“一场爆炸”，而是空间本身从极热致密状态开始的膨胀、冷却与成结构过程。</p>
+          <p><strong>最初的三分钟与38万年：</strong>宇宙诞生后10⁻³⁵秒内经历暴胀，空间膨胀了约10²⁶倍；第3分钟，原初核合成把一部分氢变成氦，奠定了宇宙“约75%氢、25%氦”的元素比例；直到38万年前后，温度降到约3000K，电子与质子结合成中性氢，光子得以自由传播——这就是今天观测到的宇宙微波背景辐射。</p>
+          <p><strong>从黑暗到光明：</strong>之后约4亿年是“黑暗时代”，直到引力把物质聚成第一代恒星与星系，宇宙重新被点亮，并进入再电离时代。此后138亿年间，星系在暗物质骨架上次第聚合，暗能量则逐步主导，推动宇宙加速膨胀。</p>
+          <p><strong>现实案例：</strong>普朗克卫星（2009–2013年观测，2018年发布最终结果）绘制的微波背景全天图，把宇宙年龄锁定在138亿年（误差约1%），并测出普通物质约4.9%、暗物质约26.8%、暗能量约68.3%。中国科学家同样活跃于这条战线：2015年发射的暗物质粒子探测卫星“悟空号”给出了世界上精度最高的TeV能段电子宇宙线谱；西藏阿里地区的原初引力波观测计划（AliCPT）则在北半球追踪大爆炸引力波的痕迹。</p>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 宇宙微波背景辐射：创世的余晖</strong></p>
+          <p>1964年，贝尔实验室的彭齐亚斯与威尔逊在调试天线时，发现一种无法消除的、来自天空所有方向的均匀微波噪声，温度约3.5K。他们怀疑是天线上鸟类留下的“白色电介质”所致，清理后噪声依旧——最终确认这正是理论家早已预言的大爆炸余晖。此后，微波背景辐射成为宇宙学最强大的探针：1989年升空的COBE卫星测得精确温度2.725K，并首次发现其微小的温度涨落，马瑟与斯穆特因此获得2006年诺贝尔物理学奖。</p>
+          <p>这“十万分之一”的温度涨落，正是星系得以形成的种子：引力在致密处聚集物质，稀疏处则被掏空。今天的星系团、超星系团乃至我们脚下的大地，其“蓝图”早在38万年前就已写在天幕之上。从COBE到WMAP再到普朗克，三代卫星把宇宙学从“定性争论”推进到“百分比精度的测量科学”——这或许是20世纪实验天文学最伟大的遗产。</p>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 暗物质与暗能量：宇宙的两个幽灵</strong></p>
+          <p>1933年，兹威基发现后发座星系团内星系的运动速度快到“本应散架”，除非存在看不见的质量；1970年代，薇拉·鲁宾又发现星系外缘恒星的旋转速度并不随距离衰减，暗物质的存在由此获得坚实的观测证据。它不发光、不吸收光，只通过引力显现自身，约占宇宙能量密度的27%。1998年，两个国际超新星小组通过对遥远Ia型超新星的观测发现宇宙膨胀正在加速——驱动这种加速的神秘成分被命名为“暗能量”，占比约68%。</p>
+          <p>两个幽灵合占宇宙的95%，而构成我们与星辰的普通物质只有约5%——这一发现深刻改变了“宇宙由什么构成”的答案。中国科学界正积极参与这场竞赛：悟空号暗物质粒子探测卫星在TeV能段给出了世界上最精确的电子宇宙线谱；中国天眼FAST的中性氢巡天则致力于绘制宇宙物质分布的大尺度结构图。</p>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 宇宙的最终命运：热寂、大冻结还是大撕裂</strong></p>
+          <p>宇宙的结局取决于暗能量的性质与密度随时间的变化。如果暗能量恒定（即爱因斯坦引入的“宇宙学常数”），膨胀将持续加速，星系彼此远离，恒星燃料耗尽，黑洞缓慢蒸发——宇宙走向“热寂”（也称“大冻结”），在近乎绝对零度中归于寂静；如果暗能量密度随时间增强，膨胀将越来越猛烈，最终连星系、恒星乃至原子都被撕碎，这就是“大撕裂”；如果暗能量衰减，膨胀可能减速并转而收缩，宇宙或在遥远的未来塌缩回“大坍缩”。</p>
+          <p>现有观测（Ia型超新星、微波背景辐射、重子声学振荡）都倾向于宇宙学常数模型：宇宙大概率永续膨胀，最终归于寒冷而寂静的“大冻结”。热力学第二定律在这里给出同样的判决——一切有序终将耗散。但138亿年的演化史同时告诉我们：在走向结局的漫长旅途中，结构、生命与文明依然能够诞生——宇宙的意义，或许正在于它足够漫长，让“过程”本身成为可能。</p>
+        </div>
+<h3>对照表：大爆炸理论的三大观测证据</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>证据</th><th>发现</th><th>内容</th><th>意义</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>宇宙膨胀</strong></td><td>1929年 · 哈勃</td><td>星系退行速度与距离成正比（哈勃定律）</td><td>宇宙在膨胀，可追溯到一个起点</td></tr>
+              <tr><td><strong>微波背景辐射</strong></td><td>1965年 · 彭齐亚斯与威尔逊</td><td>来自全天各方向的2.7K均匀微波噪声</td><td>大爆炸的“余晖”，温度涨落孕育星系</td></tr>
+              <tr><td><strong>原初核合成</strong></td><td>理论预言于1948年前后</td><td>宇宙元素丰度：约75%氢、25%氦及微量锂</td><td>解释了元素丰度，支持热大爆炸图景</td></tr>
+            </tbody>
+          </table>
+        </div>
+<h3>对照表：宇宙的构成</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>成分</th><th>占宇宙总能量密度</th><th>性质</th><th>主要证据</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>普通物质</strong></td><td>约4.9%</td><td>原子构成，发光并吸收光</td><td>恒星、星系、气体的直接观测</td></tr>
+              <tr><td><strong>暗物质</strong></td><td>约26.8%</td><td>不发光，仅通过引力显现</td><td>星系旋转曲线 · 引力透镜 · 星系团</td></tr>
+              <tr><td><strong>暗能量</strong></td><td>约68.3%</td><td>驱动宇宙加速膨胀</td><td>1998年Ia型超新星距离–红移关系</td></tr>
+            </tbody>
+          </table>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">哈勃 · 1889–1953</div>
+            <blockquote>宇宙正在膨胀，星系彼此远离。<cite>——哈勃定律</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">彭齐亚斯 · 1933–</div>
+            <blockquote>我们发现了一个来自宇宙各方向的均匀微波噪声——那是大爆炸的余晖。<cite>——CMB发现</cite></blockquote>
+          </div>
+</div>
+</section>
+<section class="sec" id="solar">
+        <h2><span class="chapno">第四章 &middot; 太阳系与行星科学</span></h2>
+<p>太阳系是我们在宇宙中的'家园'。行星科学揭示了地球的独特之处——液态水、板块运动、磁场保护——以及为什么太阳系的其他行星不适合生命生存。</p>
+<figure class="diagram">
+          <figcaption>图 4 · 太阳系结构</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["太阳系"] --> A["太阳<br>占质量99.86%"]
+  ROOT --> B["类地行星<br>水星·金星·地球·火星"]
+  ROOT --> C["小行星带"]
+  ROOT --> D["类木行星<br>木星·土星·天王星·海王星"]
+  ROOT --> E["柯伊伯带<br>奥尔特云"]
+  B --> D
+  D --> E
+  classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>太阳系探索：</strong>人类对太阳系的探索是航天时代最伟大的成就。
+
+从1969年阿波罗登月，到2020年中国的嫦娥五号带回月球样本，人类对太阳系的认知不断深化。
+
+**中国案例**：中国的探月工程（嫦娥系列）和火星探测（天问一号）取得了重大成就。2021年，祝融号火星车在乌托邦平原成功着陆，使中国成为第二个在火星表面软着陆的国家。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 4a · 太阳系形成与行星分类</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  A["太阳星云<br>45.6亿年前 分子云塌缩"] --> B["原太阳盘<br>旋转吸积盘 中心增温"]
+  B --> C["太阳<br>占太阳系质量 99.86%"]
+  B --> D["内区高温<br>挥发物蒸发 金属与岩石凝聚"]
+  D --> E["类地行星<br>水星 · 金星 · 地球 · 火星<br>岩石质 · 有金属核"]
+  B --> F["外区低温<br>冰与气体凝聚"]
+  F --> G["类木行星<br>木星 · 土星 · 天王星 · 海王星<br>气态巨行星与冰巨行星"]
+  B --> H["小天体<br>小行星带 · 柯伊伯带 · 奥尔特云"]
+  classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class A root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 4a 详解：</strong>太阳系并非“一开始就有序”，而是从一团旋转的星云中演化出来的自洽系统——这就是18世纪康德与拉普拉斯先后提出的星云假说，如今已被行星形成理论充分发展。</p>
+          <p><strong>内冷外热的分工：</strong>原太阳盘内区温度高，水等挥发物蒸发殆尽，剩下金属与岩石凝聚成四颗小而致密的类地行星；外区温度低，冰与气体得以凝聚，形成质量巨大的类木行星——木星一“星”就比其余所有行星质量总和的2.5倍还大。小行星带与柯伊伯带则是“未完成的建材”，保留着太阳系早期的原始物质。</p>
+          <p><strong>现实案例：</strong>2020年12月，嫦娥五号从月球正面带回1731克样品；2021年10月，中外团队基于这些样品确定月球最年轻的玄武岩年龄约20.3亿年——把月球火山活动持续的时间推迟了约8亿年。2024年6月，嫦娥六号又完成人类首次月球背面采样返回。而在火星上，祝融号自2021年5月着陆乌托邦平原以来，不断发回火星地质与气象数据。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 4b · 中国太阳系探测工程布局</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["中国太阳系探测"] --> A["月球<br>嫦娥系列<br>2007年至今"]
+  ROOT --> B["火星<br>天问一号<br>2021年着陆"]
+  ROOT --> C["太阳<br>羲和号<br>2021年发射"]
+  ROOT --> D["近地与导航<br>北斗三号<br>2020年全球组网"]
+  A --> E["采样返回<br>嫦娥五号1731克<br>嫦娥六号1935.3克（月背）"]
+  B --> F["祝融号巡视<br>乌托邦平原"]
+  C --> G["空间Hα波段成像<br>国际首次"]
+  classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 4b 详解：</strong>进入21世纪，中国深空探测以“绕、落、回”三步走的月球工程为起点，迅速扩展为覆盖月球、火星、太阳与近地空间的完整布局。</p>
+          <p><strong>月球：</strong>2007年嫦娥一号实现绕月，2013年嫦娥三号实现月面软着陆，2019年嫦娥四号创造人类首次月背着陆纪录，2020年嫦娥五号与2024年嫦娥六号先后完成正、背面采样返回。中国由此成为继美、苏之后第三个实现月球采样返回的国家。</p>
+          <p><strong>火星与太阳：</strong>2021年天问一号一次性完成“绕、着、巡”三项目标，使中国成为世界上第二个成功着陆火星并开展巡视探测的国家；同年发射的羲和号是中国首颗太阳探测专用卫星，实现了国际上首次空间Hα波段光谱扫描成像，标志着中国进入“探日时代”。</p>
+          <p><strong>现实案例：</strong>嫦娥五号与六号带回的约3700克月球样品，正在改写人类对月球火山活动与月背演化的认知；祝融号与各国火星探测任务的数据相互印证，共同勾画火星的过去；羲和号与欧洲“太阳轨道器”的数据互补，为太阳活动预报提供了新的观测基础。</p>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 行星科学：地球为什么如此特别</strong></p>
+          <p>在八大行星中，地球是目前唯一已知拥有生命的天体，这一“特别”由多重条件共同成就：其一，地球恰好位于太阳宜居带内，地表温度使液态水得以稳定存在；其二，板块构造驱动碳硅循环，调节大气二氧化碳浓度，使气候在漫长地质年代中保持温和；其三，地球液态铁核产生的磁场屏蔽了太阳风与高能宇宙线，保护大气不被剥离；其四，质量约为地球1.2%的月球通过潮汐作用稳定了地轴倾角，防止气候在数十万年尺度上剧烈摆动。</p>
+          <p>对照之下，金星因失控温室效应地表温度高达约460℃，火星因磁场消失而大气稀薄、水冰封存——地球的宜居是诸多有利条件罕见的组合。行星科学教会我们的第一课就是：<strong>地球是珍贵的，而不是理所当然的</strong>。这也是它激励人类把望远镜对准系外行星、在宇宙中寻找“第二个地球”的深层动力。</p>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 中国深空探测：从北斗到天问</strong></p>
+          <p>深空探测是综合国力的“试金石”，中国走过了一条“从近地到深空”的清晰路径。2020年6月，北斗三号全球卫星导航系统完成组网，中国成为世界上第三个拥有全球卫星导航系统的国家；同年12月，嫦娥五号带着1731克月球样品返回地球；2021年5月，天问一号的祝融号火星车在乌托邦平原着陆；同年10月，羲和号升空探日；2024年6月，嫦娥六号更从月球背面南极—艾特肯盆地采样返回1935.3克样品。</p>
+          <p>这条路径的意义不止于“打卡纪录”：月球样品为行星演化提供了第一手证据，火星探测检验了深空测控与自主着陆能力，北斗则把“时空基准”牢牢握在自己手中。展望未来，中国已规划小行星探测与木星系探测任务——深空探测正在从“有没有”进入“深不深”的新阶段，天文学与航天工程在这里成为同一项事业。</p>
+        </div>
+<h3>对照表：中国深空探测里程碑</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>任务</th><th>关键时间</th><th>目标</th><th>标志性成就</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>北斗三号</strong></td><td>2020年6月组网完成</td><td>全球卫星导航</td><td>全球组网，服务覆盖全球</td></tr>
+              <tr><td><strong>嫦娥四号</strong></td><td>2019年1月着陆</td><td>月球背面</td><td>人类首次月球背面软着陆与巡视</td></tr>
+              <tr><td><strong>嫦娥五号</strong></td><td>2020年12月返回</td><td>月球正面采样</td><td>带回1731克月球样品</td></tr>
+              <tr><td><strong>天问一号</strong></td><td>2021年5月着陆</td><td>火星</td><td>一次完成“绕、着、巡”，祝融号登陆乌托邦平原</td></tr>
+              <tr><td><strong>羲和号</strong></td><td>2021年10月发射</td><td>太阳</td><td>中国首颗太阳探测卫星，国际首次空间Hα波段成像</td></tr>
+              <tr><td><strong>嫦娥六号</strong></td><td>2024年6月返回</td><td>月球背面采样</td><td>人类首次月背采样返回，带回1935.3克样品</td></tr>
+            </tbody>
+          </table>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">阿姆斯特朗 · 1930–2012</div>
+            <blockquote>这是个人的一小步，却是人类的一大步。<cite>——1969年登月</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">卡尔·萨根 · 1934–1996</div>
+            <blockquote>再看看那个点（暗淡蓝点）。那就是地球。<cite>——《暗淡蓝点》</cite></blockquote>
+          </div>
+</div>
+</section>
+<section class="sec" id="exoplanet">
+        <h2><span class="chapno">第五章 &middot; 系外行星与地外生命</span></h2>
+<p>系外行星的发现彻底改变了人类对自身在宇宙中位置的认知。我们正在进入一个新时代——不仅能够发现其他行星，还能分析它们的大气，寻找生命迹象。</p>
+<figure class="diagram">
+          <figcaption>图 5 · 寻找地外生命路径</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["地外生命探索"] --> A["系外行星探测<br>开普勒·TESS"]
+  ROOT --> B["宜居带<br>液态水条件"]
+  ROOT --> C["SETI<br>射电信号监听"]
+  ROOT --> D["太阳系内<br>火星·欧罗巴·土卫二"]
+  A --> E["5000+ 已确认<br>系外行星"]
+  E --> F["超级地球<br>可能宜居"]
+  B --> F
+  D --> G["地下海洋<br>可能微生物"]
+  classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>系外行星探索：</strong>1995年发现第一颗围绕类太阳恒星运行的系外行星，至今已确认超过5000颗系外行星。
+
+2022年，韦伯太空望远镜开始观测系外行星的大气成分，寻找水、甲烷、氧气等可能的生命标记物。
+
+**费米悖论**：如果宇宙中有大量文明，为什么我们从未接收到他们的信号？可能的答案包括：大过滤器、文明短暂、或者我们真的是孤独的。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 5a · 寻找宜居世界：条件与探测方法</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  ROOT["寻找宜居世界"] --> A["凌日法<br>恒星亮度周期性变暗<br>开普勒 · TESS"]
+  ROOT --> B["径向速度法<br>恒星光谱摆动<br>51 Pegasi b 1995"]
+  ROOT --> C["直接成像<br>掩蔽星光拍摄行星<br>HR 8799行星系"]
+  ROOT --> D["微引力透镜<br>行星引力放大背景星"]
+  A --> E["行星半径与轨道周期"]
+  B --> E
+  E --> F["宜居带评估<br>液态水 · 大气成分"]
+  F --> G["生物标记物搜寻<br>韦伯望远镜光谱分析"]
+  C --> H["已确认系外行星<br>超过5500颗"]
+  G --> H
+  classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class ROOT root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 5a 详解：</strong>行星本身不发光，探测它们就像在探照灯旁寻找萤火虫。四种主流方法各有所长，共同把“找行星”变成了一门成熟的观测科学。</p>
+          <p><strong>凌日法：</strong>行星从恒星前方经过时，会遮住一小部分星光，使恒星亮度周期性变暗。开普勒任务正是用这个方法确认了超过2700颗系外行星，占已确认总数的一半以上。</p>
+          <p><strong>径向速度法：</strong>行星的引力牵引使恒星在视线方向上轻微“摆动”，光谱线随之周期性红移、蓝移。1995年，梅厄与奎洛兹用此法发现第一颗围绕类太阳恒星运行的行星飞马座51b，并因此获得2019年诺贝尔物理学奖。</p>
+          <p><strong>直接成像与微引力透镜：</strong>直接成像用日冕仪遮挡恒星光芒，直接拍摄年轻而明亮的行星；微引力透镜则利用背景恒星被前景行星短暂放大的机会，探测遥远而低质量的行星。截至2026年，已确认系外行星超过5500颗。</p>
+          <p><strong>现实案例：</strong>2017年公布的TRAPPIST-1系统拥有7颗地球大小的行星，其中3颗位于宜居带；2022年，韦伯望远镜首次直接成像系外行星HIP 65426 b；2023年，韦伯又在超级地球K2-18b的大气中探测到疑似二甲基硫醚信号。中国方面，天眼FAST的高灵敏度使其成为地外文明信号搜寻的重要平台，中国科学家已利用它对邻近恒星系统开展相关搜寻。</p>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 宜居带：寻找“第二地球”的标尺</strong></p>
+          <p>宜居带指恒星周围行星表面可以维持液态水的环形区域。它由恒星光度决定：对太阳这类中等恒星，宜居带约在0.95至1.7个天文单位之间；对暗淡的红矮星，宜居带紧贴恒星，行星轨道周期可能只有几十天。但宜居带只是“必要条件而非充分条件”——金星位于太阳宜居带内侧，却因失控温室效应成为平均温度约460℃的炼狱；火星位于外侧边缘，大气稀薄而寒冷。真正的宜居还要求行星拥有磁场、适度大气与稳定轨道等条件。</p>
+          <p>2013年，开普勒数据分析估计：大约每5颗类日恒星中就有1颗在宜居带内拥有类地行星。照此推算，仅银河系就可能存在数百亿个潜在宜居世界。“第二地球”由此从科幻命题变成可检验的科学课题——这也是下一代空间望远镜（如中国的巡天空间望远镜CSST）将着力回答的问题。</p>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 费米悖论与德雷克方程：宇宙为何沉默</strong></p>
+          <p>1950年，物理学家费米在午餐时问出著名的“他们都在哪里？”：银河系有数千亿颗恒星、上百亿年演化时间，哪怕文明出现的概率极低，也应存在大量文明，可我们却从未收到任何确凿的讯号。1961年，天文学家德雷克把这个追问写成方程：N = R × fp × ne × fl × fi × fc × L——可联系的文明数，等于恒星形成率、有行星的恒星比例、宜居行星比例、出现生命的比例、演化出智慧的比例、能通信的比例与文明寿命的乘积。每个因子都充满未知，N既可以趋近于1，也可以大得惊人。</p>
+          <p>可能的解答包括“大过滤器”（文明在某个阶段几乎必然毁灭）、“动物园假说”（高级文明刻意保持沉默）、“技术寿命说”（能通信的文明转瞬即逝），以及最朴素的“我们只是还没听够”——人类系统性搜寻地外文明信号不过几十年。中国的FAST正以世界领先的灵敏度参与这场“倾听”，而答案或许就藏在我们尚未观测到的某个频率里。</p>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · SETI：人类倾听宇宙的科学</strong></p>
+          <p>1960年，天文学家德雷克用绿岸天文台的射电望远镜对天苑四与鲸鱼座τ星进行了第一次现代意义上的地外文明搜寻（“奥兹玛计划”），此后SETI（搜寻地外智慧）发展为一项国际性科学事业。SETI的基本假设是：智慧文明可能通过电磁波与外界通信，而射电波段最适合长距离传播。1974年，阿雷西博望远镜向球状星团M13发送了著名的“阿雷西博信息”；1977年，俄亥俄州立大学的“大耳朵”望远镜记录到神秘的“哇！”信号——至今未被重复，也未被解释。</p>
+          <p>中国天眼FAST凭借500米口径的灵敏度，已成为全球SETI最有力的新工具之一：它能以更短时间扫描更大范围的天空，也能捕捉更微弱的窄带信号。尽管至今没有确凿发现，SETI提醒我们一个朴素的道理：在找到答案之前，提问本身就是科学精神的体现。</p>
+        </div>
+<h3>对照表：著名宜居行星候选</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>行星</th><th>恒星类型</th><th>距地距离</th><th>关键特征</th><th>发现方法与时间</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>比邻星b</strong></td><td>红矮星</td><td>约4.2光年</td><td>距太阳系最近的系外行星，位于宜居带</td><td>径向速度法 · 2016年</td></tr>
+              <tr><td><strong>TRAPPIST-1e</strong></td><td>红矮星</td><td>约40光年</td><td>地球大小，岩石质，位于宜居带</td><td>凌日法 · 2017年</td></tr>
+              <tr><td><strong>TRAPPIST-1f</strong></td><td>红矮星</td><td>约40光年</td><td>宜居带内，表面可能维持液态水</td><td>凌日法 · 2017年</td></tr>
+              <tr><td><strong>开普勒-452b</strong></td><td>类日恒星</td><td>约1400光年</td><td>被称为“地球的表哥”，轨道周期约385天</td><td>凌日法 · 2015年</td></tr>
+              <tr><td><strong>K2-18b</strong></td><td>红矮星</td><td>约124光年</td><td>超级地球，大气中探测到水蒸气（2019年）</td><td>凌日法 · 2015年</td></tr>
+            </tbody>
+          </table>
+        </div>
+<h3>对照表：系外行星探测方法对比</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>方法</th><th>原理</th><th>可测参数</th><th>优点</th><th>局限</th><th>代表成果</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>凌日法</strong></td><td>行星遮挡星光，恒星亮度周期性变暗</td><td>半径 · 轨道周期</td><td>可获大气光谱，可大规模巡天</td><td>需轨道面恰好侧对观测者</td><td>开普勒任务 · TRAPPIST-1系统</td></tr>
+              <tr><td><strong>径向速度法</strong></td><td>行星引力使恒星视向速度周期性摆动</td><td>质量下限 · 轨道</td><td>灵敏度高，历史最久</td><td>仅得质量下限，受恒星活动干扰</td><td>51 Pegasi b（1995年首颗）</td></tr>
+              <tr><td><strong>直接成像</strong></td><td>掩蔽恒星光芒后直接拍摄行星</td><td>光度 · 轨道 · 光谱</td><td>可直接分析行星大气</td><td>仅适用大而遥远年轻行星</td><td>HR 8799行星系 · HIP 65426 b</td></tr>
+              <tr><td><strong>微引力透镜</strong></td><td>行星引力放大背景恒星光芒</td><td>质量</td><td>可探测极远低质量行星</td><td>事件不可重复，难后续验证</td><td>OGLE-2005-BLG-390Lb</td></tr>
+            </tbody>
+          </table>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">费米 · 1901–1954</div>
+            <blockquote>他们都在哪里？<cite>——费米悖论</cite></blockquote>
+          </div>
+<div>
+            <div class="legacy-who">阿西莫夫 · 1920–1992</div>
+            <blockquote>在宇宙中，要么我们是孤独的，要么我们不是。两者同样可怕。<cite>——阿西莫夫</cite></blockquote>
+          </div>
+</div>
+</section>
+<section class="sec" id="summary">
+        <h2><span class="chapno">第六章 &middot; 总结：宇宙观</span></h2>
+<p>天文学让人类意识到：我们生活在一个中等大小的星系中，围绕一颗普通的恒星运行，而这样的星系在可观测宇宙中就有数千亿个。这种'宇宙谦卑'或许是天文学给人类最重要的礼物。</p>
+<figure class="diagram">
+          <figcaption>图 6 · 天文学思想谱系</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["古代天文学<br>观测·历法·占星"] --> B["哥白尼革命<br>日心说"]
+  B --> C["牛顿天体力学<br>万有引力"]
+  C --> D["恒星天文学<br>光谱·分类"]
+  D --> E["宇宙学<br>大爆炸·膨胀"]
+  E --> F["当代前沿<br>暗物质·暗能量<br>系外行星·地外生命"]
+  classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class F root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>天文学与物理学：</strong>天文学与物理学深度交织：牛顿的万有引力来自天文学，爱因斯坦的广义相对论需要天文验证，核物理解释了恒星的能量来源，粒子物理帮助我们理解早期宇宙。
+
+**跨辑关联**：本卷与物理学思想谱系互为补充——物理学研究基本规律，天文学研究宇宙尺度的应用。</p>
+        </div>
+<figure class="diagram">
+          <figcaption>图 6a · 天文学重塑人类宇宙观</figcaption>
+          <pre class="mermaid">
+flowchart TD
+  A["古代宇宙观<br>地心 · 天人感应<br>人类居于中心"] --> B["哥白尼革命<br>16世纪<br>地球降格为行星"]
+  B --> C["星系天文学<br>1924年 哈勃<br>银河系只是众多星系之一"]
+  C --> D["大爆炸宇宙学<br>20世纪<br>宇宙有开端且可演化"]
+  D --> E["系外行星时代<br>1995年至今<br>行星系统普遍存在"]
+  E --> F["当代宇宙观<br>宇宙谦卑 · 科学理性<br>仰望星空 探索未知"]
+  classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class A root;
+          </pre>
+        </figure>
+<div class="explain">
+          <p><strong>图 6a 详解：</strong>回顾三千年天文学史，可以清晰地看到人类宇宙观的“三次降格”：哥白尼把地球从宇宙中心移开，哈勃把银河系从“整个宇宙”降格为普通一员，系外行星的发现则宣告太阳系并不特殊——行星系统在银河系中俯拾皆是。</p>
+          <p><strong>1924年的关键一步：</strong>哈勃在仙女座大星云中辨认出造父变星，据此测出其距离远超银河系尺度，“河外星系”的存在被证实，持续多年的“沙普利—柯蒂斯之争”由此落幕。人类第一次意识到：我们所在的银河系，只是可观测宇宙中数千亿个星系之一。</p>
+          <p><strong>谦卑而勇敢的宇宙观：</strong>1990年，旅行者1号在约60亿公里外回望地球，拍下著名的“暗淡蓝点”照片。卡尔·萨根写道：“再看看那个点，那是家园，那是我们。”今天，天文学给予现代人的不是傲慢，而是一种清醒的谦卑与探索的勇气并存的世界观。</p>
+          <p><strong>现实案例：</strong>中国郭守敬望远镜（LAMOST）已发布超过2000万条恒星光谱，正精细刻画银河系盘面与晕的结构；中国天眼FAST的中性氢巡天则致力于绘制宇宙大尺度结构的物质分布图——人类对自身在宇宙中位置的认知，仍在被这两台“中国之眼”不断刷新。</p>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 从人类中心到宇宙谦卑</strong></p>
+          <p>天文学史是一部人类不断“离开中心”的历史。哥白尼把地球从宇宙中心移开，达尔文把人从生物界的顶端请下来，20世纪宇宙学则宣告：太阳只是银河系旋臂上一颗普通的主序星，银河系只是数千亿星系之一，而我们的“可观测宇宙”（半径约465亿光年）也未必是宇宙的全部。每一次“降格”都曾引发思想震荡，但科学最终证明：正是这些“降格”，让人类对自身位置的理解从神话走向了测量。</p>
+          <p>这种层层“降格”并未让人类变得渺小，反而成就了一种独特的清醒：我们栖居的星球在已知宇宙中罕见地宜居，文明与科学本身则是宇宙演化在极小尺度上的一次自我认识。卡尔·萨根说“我们是宇宙认识自己的方式”，或许正是对“天文学有什么用”的最好回答——它让人类在承认渺小之后，仍然选择仰望；在承认未知之后，仍然选择追问。<strong>这种兼具谦卑与勇气的宇宙观，正是天文学留给现代社会最重要的思想遗产。</strong></p>
+        </div>
+<div class="explain">
+          <p><strong>深度解读 · 科学精神的样本：天文学的方法论遗产</strong></p>
+          <p>天文学之所以成为“科学方法”最纯粹的样本，是因为它研究的对象既无法触摸，也无法实验——天文学家只能“观察”。从第谷对火星位置的二十年测量，到哈勃对造父变星的耐心分辨，再到普朗克卫星对十万分之一温度涨落的精确测量，天文学的发展始终遵循同一套方法：把猜想变成可检验的预言，把预言变成定量的测量，把测量变成对理论的判决。哥白尼革命证明了“观测服从理论”的偏见可以多么顽固，而哈勃定律又证明理论的预见可以多么深远。</p>
+          <p>今天，引力波天文学（2015年LIGO首次直接探测）甚至让人类拥有了“聆听宇宙”的第五种感官。天文学的方法论遗产与它的知识一样珍贵：<strong>它示范了一种与未知相处的文明态度——不因渺小而停止追问，不因遥远而放弃精确</strong>。</p>
+        </div>
+<h3>对照表：人类宇宙观演变大事表</h3>
+<div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>时间</th><th>事件</th><th>宇宙观意义</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>公元前2世纪</strong></td><td>托勒密地心体系成形</td><td>地心宇宙的经典形态，统治千年</td></tr>
+              <tr><td><strong>1543年</strong></td><td>哥白尼《天体运行论》出版</td><td>日心说开启科学革命</td></tr>
+              <tr><td><strong>1609–1610年</strong></td><td>开普勒定律与伽利略望远镜</td><td>观测与数学开始联手</td></tr>
+              <tr><td><strong>1687年</strong></td><td>牛顿《自然哲学的数学原理》</td><td>天上与地下的运动统一</td></tr>
+              <tr><td><strong>1924–1929年</strong></td><td>哈勃确认河外星系与宇宙膨胀</td><td>银河系降格，宇宙开始“膨胀”</td></tr>
+              <tr><td><strong>1965年</strong></td><td>微波背景辐射被发现</td><td>大爆炸理论获得实证</td></tr>
+              <tr><td><strong>1995年至今</strong></td><td>系外行星大规模发现</td><td>太阳系不再特殊，行星普遍存在</td></tr>
+            </tbody>
+          </table>
+        </div>
+<h3>代表人物语录</h3>
+<div class="legacy">
+<div>
+            <div class="legacy-who">霍金 · 1942–2018</div>
+            <blockquote>仰望星空，不要只看脚下。<cite>——霍金</cite></blockquote>
+          </div>
+</div>
+</section>
+
+    <section class="sec">
+      <h2>关联辑目</h2>
+      <div class="explain">
+        <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+        <ul>
+<li><span class="rel-link" data-vol="vol30">物理学思想谱系</span></li>
+<li><span class="rel-link" data-vol="vol16">数学思想</span></li>
+<li><span class="rel-link" data-vol="vol17">科学与技术思想谱系</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      天文学与宇宙学 · 思想图谱系列第31辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-06
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+(function() {
+  if (window.mermaid) {
+    mermaid.initialize({
+      startOnLoad: true, theme: 'neutral', securityLevel: 'loose',
+      flowchart: { curve: 'basis', htmlLabels: true },
+      fontFamily: 'Segoe UI, PingFang SC, Microsoft YaHei, sans-serif'
+    });
+  }
+
+  var input = document.getElementById('searchInput');
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section.sec'));
+  var tocLinks = Array.prototype.slice.call(document.querySelectorAll('#toc a'));
+
+  function applyFilter() {
+    var q = (input.value || '').trim().toLowerCase();
+    sections.forEach(function (sec) {
+      var hit = !q || sec.textContent.toLowerCase().indexOf(q) !== -1;
+      sec.classList.toggle('hidden-by-search', !hit);
+    });
+    tocLinks.forEach(function (a) {
+      var id = a.getAttribute('href').slice(1);
+      var sec = document.getElementById(id);
+      var visible = sec && !sec.classList.contains('hidden-by-search');
+      a.style.opacity = visible ? '' : '0.35';
+    });
+  }
+
+  if (input) { input.addEventListener('input', applyFilter); }
+})();
+</script>
+</body>
+</html>

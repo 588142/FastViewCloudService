@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>经济思想谱系 · 下篇 · 博士水平进阶模块</title>
+<style>
+:root {
+  --bg: #F4F7F3; --bg2: #E9EFE7; --ink: #1F2A22; --muted: #5E6E62;
+  --rule: #D6E0D4; --accent: #14532D; --accent2: #B7791F;
+  --font-head: 'Lora','Songti SC','SimSun',serif;
+  --font: 'WorkSans','PingFang SC','Microsoft YaHei',sans-serif;
+  --font-mono: 'DMMono',monospace;
+  --max: 880px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:16px;scroll-behavior:smooth;}
+body{font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.75;padding:2rem 1.5rem;max-width:var(--max);margin:0 auto;}
+section.sec{margin-bottom:3.5rem;}
+h2{font-family:var(--font-head);font-size:1.5rem;font-weight:700;padding-bottom:0.5rem;border-bottom:2px solid var(--accent);margin-bottom:1.2rem;}
+h2 .chapno{color:var(--accent2);font-family:var(--font-mono);font-size:0.85rem;letter-spacing:0.1em;display:block;margin-bottom:0.3rem;}
+h3{font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin:1.6rem 0 0.6rem;}
+h4{font-family:var(--font-head);font-size:0.95rem;font-weight:700;margin:1.2rem 0 0.4rem;color:var(--accent);}
+p{margin-bottom:0.9rem;font-size:0.95rem;}
+ul{margin:0 0 1rem 1.3rem;font-size:0.95rem;}
+li{margin-bottom:0.4rem;}
+strong{color:var(--ink);}
+.callout{border-left:4px solid var(--accent2);background:var(--bg2);padding:0.9rem 1.1rem;margin:1.2rem 0;font-size:0.92rem;border-radius:0 8px 8px 0;}
+.callout .callout-title{font-weight:700;color:var(--accent2);display:block;margin-bottom:0.3rem;font-size:0.85rem;}
+.table-wrap{overflow-x:auto;overflow-y:auto;max-height:800px;margin:1.2rem 0;border:1px solid var(--rule);border-radius:10px;}
+table{border-collapse:collapse;width:100%;font-size:0.88rem;}
+th{background:var(--bg2);text-align:left;padding:0.6rem 0.9rem;border-bottom:2px solid var(--rule);font-weight:700;white-space:nowrap;}
+td{padding:0.6rem 0.9rem;border-bottom:1px solid var(--rule);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:var(--bg2);}
+.formula{font-family:var(--font-mono);background:var(--bg);border:1px solid var(--rule);border-left:4px solid var(--accent2);border-radius:0 8px 8px 0;padding:0.8rem 1rem;margin:0.7rem 0;font-size:0.95rem;overflow-x:auto;}
+.formula .f-name{font-weight:700;color:var(--accent);display:block;font-size:0.78rem;letter-spacing:0.04em;margin-bottom:0.3rem;}
+.formula .f-note{color:var(--muted);font-size:0.8rem;display:block;margin-top:0.3rem;}
+.theorem{font-family:var(--font-mono);background:var(--bg);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:0.8rem 1rem;margin:0.7rem 0;font-size:0.95rem;overflow-x:auto;}
+.theorem .t-name{font-weight:700;color:var(--accent);display:block;font-size:0.78rem;letter-spacing:0.04em;margin-bottom:0.3rem;}
+.theorem .t-note{color:var(--muted);font-size:0.8rem;display:block;margin-top:0.3rem;}
+.law{font-family:var(--font-mono);background:var(--bg);border:1px solid var(--rule);border-left:4px solid var(--accent2);border-radius:0 8px 8px 0;padding:0.8rem 1rem;margin:0.7rem 0;font-size:0.95rem;overflow-x:auto;}
+.law .l-name{font-weight:700;color:var(--accent2);display:block;font-size:0.78rem;letter-spacing:0.04em;margin-bottom:0.3rem;}
+.law .l-note{color:var(--muted);font-size:0.8rem;display:block;margin-top:0.3rem;}
+.proof{background:var(--bg);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:0.9rem 1.1rem;margin:1rem 0;font-size:0.92rem;}
+.proof .p-title{font-weight:700;color:var(--accent);display:block;margin-bottom:0.5rem;font-size:0.85rem;}
+.proof p{margin-bottom:0.5rem;}
+.proof .p-qed{text-align:right;font-family:var(--font-mono);color:var(--muted);margin-top:0.5rem;}
+.viz-container{width:100%;background:var(--bg2);border-radius:12px;position:relative;overflow:hidden;margin:1.2rem 0;border:1px solid var(--rule);}
+.viz-caption{font-size:0.82rem;color:var(--muted);text-align:center;padding:0.5rem 1rem 1rem;font-style:italic;}
+.highlight{background:rgba(183,121,59,0.08);border-left:3px solid var(--accent2);padding:0.3rem 0.8rem;}
+.explain{margin:0 0 1.6rem 0;padding:1rem 1.2rem;background:var(--bg);border:1px solid var(--rule);border-radius:8px;font-size:0.92rem;line-height:1.7;}
+.explain p{margin-bottom:0.6rem;}
+.explain p:last-child{margin-bottom:0;}
+.explain ul{margin:0.4rem 0 0.6rem 1.2rem;}
+.explain li{margin-bottom:0.3rem;}
+.explain strong{color:var(--accent);}
+.history{background:var(--bg);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:0.9rem 1.1rem;margin:1.2rem 0;font-size:0.92rem;}
+.history .history-title{display:block;font-family:var(--font-mono);font-weight:700;font-size:0.78rem;letter-spacing:0.08em;color:var(--accent);margin-bottom:0.35rem;}
+.history p{margin-bottom:0.55rem;}
+.history p:last-child{margin-bottom:0;}
+footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:0.8rem;color:var(--muted);font-family:var(--font-mono);}
+</style>
+</head>
+<body>
+
+<article>
+<header style="margin-bottom:2.5rem;">
+  <div style="font:700 0.75rem var(--font-mono);letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);margin-bottom:0.6rem;">思想图谱系列 · 第十六辑</div>
+  <h1 style="font-family:var(--font-head);font-size:2rem;font-weight:700;line-height:1.25;">经济思想谱系 · 下篇</h1>
+  <p style="font-family:var(--font-head);font-style:italic;font-size:1.05rem;color:var(--muted);margin-top:0.5rem;">博士水平进阶模块 · 严格定义、核心定理、基本定律与形式化体系</p>
+  <p style="font-size:0.8rem;color:var(--muted);margin-top:0.9rem;font-family:var(--font-mono);">7 个模块（D1–D7）· 完整 DSGE 形式化体系 · 2 个 Three.js 3D 交互模型 · 博士水平研究前沿</p>
+</header>
+
+<main>
+
+<!-- ===== 博士水平进阶导览 ===== -->
+<section class="sec" id="phd-prologue">
+  <h2><span class="chapno">博导</span>博士水平进阶导览</h2>
+  <div class="callout">
+    <span class="callout-title">博士水平要求</span>
+    <p>从硕士到博士的跃迁，核心在于从"理解模型"转向"建构模型"、从"应用理论"转向"创造理论"、从"前沿跟踪"转向"前沿突破"。本进阶模块假定读者已完成硕士水平进阶模块（M1–M8）的学习，具备动态优化、随机过程和贝叶斯估计的完整知识储备。七个模块（D1–D7）构成一条完整的博士水平进阶路径：从核心公理与定义（D1）出发，掌握基本定律与原理（D2），精研核心定理（D3），深入定理证明（D4），构建形式化体系（D5），直面前沿定理与未解问题（D6），最终抵达研究前沿（D7）。</p>
+  </div>
+  <div class="explain">
+    <p><strong>七个模块概览</strong></p>
+    <ul>
+      <li><strong>D1 · 核心公理与定义</strong>：15+ 条严格定义——理性预期、自然率假说、DSGE 模型、Calvo 定价、NKPC、欧拉方程、泰勒规则、RBC、索洛剩余、稳态增长路径、SDF、无套利条件、跨期预算约束、政府预算约束、货币中性/超中性。</li>
+      <li><strong>D2 · 基本定律与原理</strong>：10 条基本定律——萨伊定律、凯恩斯基本心理定律、菲利普斯曲线、奥肯定律、拉弗曲线、购买力平价、利率平价、一价定律、巴罗-李嘉图等价、蒙代尔-弗莱明三难困境。</li>
+      <li><strong>D3 · 核心定理</strong>：8 个核心定理——Lucas 批判、MM 定理、Blanchard-Kahn 条件、Koopmans 跨期最优增长定理、Turnpike 定理、Barro 政府支出乘数定理、Sargent-Wallace 货币政策无效性定理、Benhabib-Farmer 均衡不定性定理。</li>
+      <li><strong>D4 · 定理证明详解</strong>：2 个完整证明——Lucas 批判的数学形式化证明、Blanchard-Kahn 条件的推导证明。</li>
+      <li><strong>D5 · 形式化体系</strong>：完整 DSGE 模型形式化体系 + Three.js 3D 脉冲响应函数曲面。</li>
+      <li><strong>D6 · 前沿定理与未解问题</strong>：Smets-Wouters 贝叶斯估计定理、CEE 识别定理、Gali 货币政策与工资粘性定理、Atkeson-Burstein 定价定理；ZLB 问题、金融部门缺失、理性预期 vs 适应性学习、HANK vs RANK 分歧。</li>
+      <li><strong>D7 · 研究前沿</strong>：HANK/TANK 模型、理性疏忽、行为宏观经济学、学习与预期形成、大数据与宏观预测 + Three.js 3D 异质性 Agent 分布可视化。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== D1 · 核心公理与定义 ===== -->
+<section class="sec" id="phd-d1">
+  <h2><span class="chapno">D1</span>核心公理与定义</h2>
+  <p>博士水平研究的起点是对每一个概念进行精确的形式化定义。以下 15 条定义构成了宏观经济学形式体系的公理基础。每条定义均以严格数学语言表述，并附原始文献出处。</p>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.1 · 理性预期（Rational Expectations, Muth 1961）</span>
+    E<sub>t</sub>[x<sub>t+1</sub> | I<sub>t</sub>] = x<sub>t+1</sub><sup>e</sup> = E[x<sub>t+1</sub> | 真实模型, I<sub>t</sub>]
+    <span class="f-note">Muth (1961) 形式化：经济主体的主观预期等于客观条件期望。I<sub>t</sub> 为 t 期信息集，包含模型结构、参数值和所有历史数据。理性预期意味着不存在系统性预测误差。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.2 · 自然率假说（Natural Rate Hypothesis, Phelps 1967; Friedman 1968）</span>
+    u<sub>t</sub> = u* + φ(π<sub>t</sub> - π<sub>t</sub><sup>e</sup>), 长期: u<sub>t</sub> = u* 当且仅当 π<sub>t</sub> = π<sub>t</sub><sup>e</sup>
+    <span class="f-note">Phelps-Friedman 定义：失业率在长期中收敛于由劳动市场结构决定的"自然率"u*，与通胀率无关。短期中，未预期通胀（π<sub>t</sub> - π<sub>t</sub><sup>e</sup>）可暂时推动失业低于自然率。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.3 · DSGE 模型（Dynamic Stochastic General Equilibrium）</span>
+    max E<sub>0</sub> Σ<sub>t=0</sub><sup>∞</sup> β<sup>t</sup> U(C<sub>t</sub>, L<sub>t</sub>)  s.t. C<sub>t</sub> + I<sub>t</sub> + B<sub>t</sub> = W<sub>t</sub>L<sub>t</sub> + R<sub>t</sub>K<sub>t</sub> + (1+r<sub>t-1</sub>)B<sub>t-1</sub> + Π<sub>t</sub>
+    <span class="f-note">DSGE 模型的核心要素：家庭跨期效用最大化、企业利润最大化（在技术和价格约束下）、市场出清条件（所有市场同时均衡）、外生随机冲击驱动经济波动。当代 DSGE 模型（Smets & Wouters, 2007）包含七种结构性冲击和多种摩擦。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.4 · Calvo 定价（Calvo Pricing, Calvo 1983）</span>
+    P<sub>t</sub> = [θ P<sub>t-1</sub><sup>1-ε</sup> + (1-θ)(P<sub>t</sub><sup>*</sup>)<sup>1-ε</sup>]<sup>1/(1-ε)</sup>
+    <span class="f-note">Calvo (1983) 格式：每个时期，随机比例 (1-θ) 的企业能调整价格至最优价格 P<sub>t</sub><sup>*</sup>，其余 θ 比例的企业维持上一期价格不变。θ 越大，价格粘性越强。平均价格调整间隔为 1/(1-θ) 期。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.5 · 新凯恩斯菲利普斯曲线（NKPC）</span>
+    π<sub>t</sub> = β E<sub>t</sub>[π<sub>t+1</sub>] + κ·mc<sub>t</sub>, 其中 κ = (1-θ)(1-βθ)/θ · (1-α)/(1-α+αε)
+    <span class="f-note">从 Calvo (1983) 定价推导的严格形式化。当期通胀 π<sub>t</sub> 取决于预期未来通胀 E<sub>t</sub>[π<sub>t+1</sub>] 和实际边际成本 mc<sub>t</sub>。κ 为 NKPC 斜率，取决于价格粘性参数 θ、生产函数参数 α 和需求替代弹性 ε。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.6 · 欧拉方程（Euler Equation, 消费跨期优化）</span>
+    U'(C<sub>t</sub>) = β E<sub>t</sub>[U'(C<sub>t+1</sub>) · (1+r<sub>t+1</sub>)]
+    <span class="f-note">CRRA 效用 c<sup>1-σ</sup>/(1-σ) 下：c<sub>t</sub><sup>-σ</sup> = β·E<sub>t</sub>[c<sub>t+1</sub><sup>-σ</sup>·(1+r<sub>t+1</sub>)]。对数线性化后：c<sub>t</sub> = E<sub>t</sub>[c<sub>t+1</sub>] - (1/σ)(r<sub>t</sub> - E<sub>t</sub>[π<sub>t+1</sub>] - ρ)，其中 σ 为跨期替代弹性的倒数，ρ = -lnβ 为主观贴现率。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.7 · 泰勒规则（Taylor Rule, Taylor 1993）</span>
+    i<sub>t</sub> = r* + π<sub>t</sub> + φ<sub>π</sub>(π<sub>t</sub> - π*) + φ<sub>y</sub>(y<sub>t</sub> - y<sub>t</sub><sup>n</sup>)
+    <span class="f-note">Taylor (1993) 形式：名义利率 i<sub>t</sub> 对通胀缺口 (π<sub>t</sub> - π*) 和产出缺口 (y<sub>t</sub> - y<sub>t</sub><sup>n</sup>) 做出反应。φ<sub>π</sub> &gt; 1 保证"泰勒原理"——实际利率在通胀上升时提高。r* = 均衡实际利率。现代 DSGE 使用平滑化版本：i<sub>t</sub> = ρ<sub>i</sub>i<sub>t-1</sub> + (1-ρ<sub>i</sub>)[r* + π<sub>t</sub> + φ<sub>π</sub>(π<sub>t</sub> - π*) + φ<sub>y</sub>(y<sub>t</sub> - y<sub>t</sub><sup>n</sup>)]。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.8 · 真实经济周期（Real Business Cycle, Kydland & Prescott 1982）</span>
+    max E<sub>0</sub> Σ β<sup>t</sup> [ln C<sub>t</sub> + φ ln(1-L<sub>t</sub>)]  s.t. C<sub>t</sub> + I<sub>t</sub> = A<sub>t</sub>K<sub>t</sub><sup>α</sup>L<sub>t</sub><sup>1-α</sup>, K<sub>t+1</sub> = (1-δ)K<sub>t</sub> + I<sub>t</sub>
+    <span class="f-note">RBC 定义：经济波动完全由真实（技术）冲击驱动，价格完全灵活，没有名义刚性。技术冲击 A<sub>t</sub> 遵循 AR(1) 过程：ln A<sub>t</sub> = ρ<sub>A</sub> ln A<sub>t-1</sub> + ε<sub>t</sub><sup>A</sup>。Kydland & Prescott (1982) 证明，即使没有货币摩擦，技术冲击也能产生与真实数据相似的产出波动。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.9 · 索洛剩余（Solow Residual, 全要素生产率）</span>
+    Δln A<sub>t</sub> = Δln Y<sub>t</sub> - αΔln K<sub>t</sub> - (1-α)Δln L<sub>t</sub>
+    <span class="f-note">Solow (1957) 增长核算：全要素生产率增长（TFP）等于产出增长减去资本和劳动投入的加权增长。α 为资本产出弹性。美国数据（1909-1949）显示人均产出增长的约 87.5% 来自 TFP。索洛残差既包含技术进步，也包含制度改进、测量误差和组织效率变化。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.10 · 稳态增长路径（Balanced Growth Path, BGP）</span>
+    Y<sub>t</sub> = K<sub>t</sub><sup>α</sup>(A<sub>t</sub>L<sub>t</sub>)<sup>1-α</sup>, 稳态: Δy<sub>t</sub> = Δy* = g<sub>A</sub>/(1-α), 其中 y<sub>t</sub> = Y<sub>t</sub>/L<sub>t</sub>
+    <span class="f-note">平衡增长路径定义：在索洛模型中，当经济达到稳态时，人均产出、人均资本和人均消费以相同速率（技术增长率 g<sub>A</sub> 除以劳动份额 1-α）增长。资本-产出比 K/Y 收敛于常数 s/(g + δ + n)，其中 s 为储蓄率，g 为技术进步率，δ 为折旧率，n 为人口增长率。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.11 · 随机贴现因子（Stochastic Discount Factor, SDF）</span>
+    M<sub>t+1</sub> = β U'(C<sub>t+1</sub>)/U'(C<sub>t</sub>), 资产定价: P<sub>t</sub> = E<sub>t</sub>[M<sub>t+1</sub> X<sub>t+1</sub>]
+    <span class="f-note">SDF 定义：任何资产的价格 P<sub>t</sub> 等于其未来收益 X<sub>t+1</sub> 经 SDF 贴现后的条件期望。CRRA 效用下，M<sub>t+1</sub> = β(C<sub>t+1</sub>/C<sub>t</sub>)<sup>-σ</sup>。SDF 框架统一了宏观经济学和金融学——所有资产定价和风险溢价都可以从 SDF 和消费增长协方差中推导。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.12 · 无套利条件（No-Arbitrage Condition）</span>
+    E<sub>t</sub>[M<sub>t+1</sub>(R<sub>t+1</sub><sup>i</sup> - R<sub>t+1</sub><sup>f</sup>)] = 0
+    <span class="f-note">无套利条件：在无摩擦市场中，不存在能够产生正收益的零成本投资组合。等价于：所有资产的期望超额收益（经 SDF 调整后）为零。R<sub>t+1</sub><sup>f</sup> = 1/E<sub>t</sub>[M<sub>t+1</sub>] 为无风险利率。无套利条件为所有资产定价模型（CAPM、CCAPM、因子模型）提供了共同基础。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.13 · 跨期预算约束（Intertemporal Budget Constraint, IBC）</span>
+    Σ<sub>t=0</sub><sup>∞</sup> Q<sub>t</sub> C<sub>t</sub> ≤ A<sub>0</sub> + Σ<sub>t=0</sub><sup>∞</sup> Q<sub>t</sub> Y<sub>t</sub>, 其中 Q<sub>t</sub> = Π<sub>s=1</sub><sup>t</sup> (1+r<sub>s</sub>)<sup>-1</sup>
+    <span class="f-note">跨期预算约束：家庭终生消费支出的现值不能超过初始财富 A<sub>0</sub> 加上终生劳动收入的现值。Q<sub>t</sub> 为 t 期贴现因子。IBC 是跨期优化模型的核心约束，它将家庭的消费-储蓄决策与长期预算平衡联系起来。No-Ponzi 条件 lim<sub>T→∞</sub> Q<sub>T</sub>A<sub>T</sub> ≥ 0 确保债务不可无限滚动。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.14 · 政府预算约束（Government Budget Constraint, GBC）</span>
+    G<sub>t</sub> + (1+r<sub>t-1</sub>)B<sub>t-1</sub> = T<sub>t</sub> + B<sub>t</sub> + (M<sub>t</sub> - M<sub>t-1</sub>)
+    <span class="f-note">政府预算约束：政府支出 G<sub>t</sub> 加上偿还旧债利息后的债务，等于税收 T<sub>t</sub>、新发行债务 B<sub>t</sub> 和铸币税 (M<sub>t</sub> - M<sub>t-1</sub>) 之和。跨期政府预算约束要求：政府债务的现值必须等于未来基本盈余的现值。GBC 是分析财政可持续性、李嘉图等价和货币财政相互作用的基础。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">定义 D1.15 · 货币中性 / 超中性（Monetary Neutrality / Superneutrality）</span>
+    短期: ΔM<sub>t</sub> → ΔY<sub>t</sub> （非中性）; 长期: ΔM<sub>t</sub> → ΔP<sub>t</sub> （中性）; 超中性: Δμ → Δπ 但 ΔY* = 0
+    <span class="f-note">货币中性：货币供给的一次性变化在长期中只影响价格水平，不影响真实变量（产出、就业、实际利率）。货币超中性（Sidrauski, 1967）：货币增长率的变化在长期中不影响真实变量——不仅是一次性水平变化，增长率变化也是中性的。超中性依赖于货币进入效用函数或生产函数的特殊形式。在标准新凯恩斯模型中，短期非中性源于价格粘性，长期中性恢复。</span>
+  </div>
+</section>
+
+<!-- ===== D2 · 基本定律与原理 ===== -->
+<section class="sec" id="phd-d2">
+  <h2><span class="chapno">D2</span>基本定律与原理</h2>
+  <p>以下 10 条基本定律与原理构成了宏观经济学经验规律的脊梁。每条定律均以"定律"或"原理"命名，附形式化表述、原始出处和现代理解。</p>
+
+  <div class="law">
+    <span class="l-name">定律 D2.1 · 萨伊定律（Say's Law, 1803）</span>
+    供给创造其自身的需求：Σ<sub>i</sub> p<sub>i</sub> y<sub>i</sub><sup>s</sup> = Σ<sub>i</sub> p<sub>i</sub> y<sub>i</sub><sup>d</sup>
+    <span class="l-note">Jean-Baptiste Say (1803) 在《政治经济学概论》中提出：生产行为本身创造了购买力，因此"生产过剩"不可能发生。产出的价值等于收入，收入必然用于购买。萨伊定律是古典经济学的核心，凯恩斯（1936）在《通论》中明确挑战了它，认为"有效需求不足"是可能的——货币可能被窖藏而非支出，导致总需求小于总供给。现代宏观经济学已将萨伊定律修正为"长期中成立，短期中因货币而失效"。</span>
+  </div>
+
+  <div class="law">
+    <span class="l-name">定律 D2.2 · 凯恩斯基本心理定律（Fundamental Psychological Law, Keynes 1936）</span>
+    0 &lt; dC/dY &lt; 1, 且 dC/dY 递减（边际消费倾向递减）
+    <span class="l-note">Keynes (1936) 《通论》第 8-10 章：当收入增加时，消费也增加，但增加量小于收入增加量。边际消费倾向 MPC = dC/dY 在 (0,1) 区间内，且随收入增加而递减。这一"基本心理定律"是凯恩斯乘数理论的基础——MPC 决定乘数大小：乘数 k = 1/(1-MPC)。现代证据表明，MPC 在不同收入群体间差异显著：低收入群体 MPC 接近 1，高收入群体 MPC 接近 0。</span>
+  </div>
+
+  <div class="law">
+    <span class="l-name">定律 D2.3 · 菲利普斯曲线关系（Phillips Curve, Phillips 1958）</span>
+    短期: π<sub>t</sub> = π<sub>t</sub><sup>e</sup> - β(u<sub>t</sub> - u*) + ε<sub>t</sub>; 长期: u<sub>t</sub> = u*
+    <span class="l-note">A.W. Phillips (1958) 发现英国 1861-1957 年工资通胀与失业率之间存在稳定的反向关系。Samuelson & Solow (1960) 将其推广到价格通胀。Phelps (1967) 和 Friedman (1968) 加入预期后提出"附加预期的菲利普斯曲线"——短期曲线因预期调整而移动，长期中失业率收敛于自然率。现代 NKPC 已从微观定价行为推导出严格形式。</span>
+  </div>
+
+  <div class="law">
+    <span class="l-name">定律 D2.4 · 奥肯定律（Okun's Law, Okun 1962）</span>
+    Δu = -γ (ΔY/Y - g<sub>Y</sub>), 典型值: γ ≈ 0.5
+    <span class="l-note">Arthur Okun (1962) 发现：失业率变化与产出缺口之间存在稳定的负相关关系。典型形式：失业率每上升 1 个百分点，GDP 下降约 2 个百分点（或反之，GDP 每增长 2%，失业率下降约 1%）。奥肯定律是宏观经济学中最稳定的经验关系之一，但系数 γ 在不同国家和时期有差异（美国约 0.4-0.5，中国约 0.3-0.4）。奥肯定律将"保增长"与"保就业"紧密联系起来。</span>
+  </div>
+
+  <div class="law">
+    <span class="l-name">原理 D2.5 · 拉弗曲线（Laffer Curve, Laffer 1974）</span>
+    T(τ) = τ · B(τ), 存在 τ* 使得 T'(τ*) = 0, 即 B(τ*) = -τ*·B'(τ*)
+    <span class="l-note">Arthur Laffer (1974) 提出：税收收入 T 与税率 τ 之间存在倒 U 型关系。当税率从零上升时，税收收入先增加，在 τ* 处达到最大后下降——因为过高的税率抑制了税基 B(τ)（工作和投资激励）。拉弗曲线是供给学派经济学的核心，为 1980 年代里根减税提供了理论依据。批评者指出，τ* 的位置在实证中难以确定，不同税种的最优税率差异很大。</span>
+  </div>
+
+  <div class="law">
+    <span class="l-name">定律 D2.6 · 购买力平价（Purchasing Power Parity, PPP）</span>
+    E = P / P*, 即 S = P/P*（绝对 PPP）; Δln S = Δln P - Δln P*（相对 PPP）
+    <span class="l-note">PPP 定律：在无摩擦国际贸易中，同一种商品在不同国家的价格应以同一货币衡量时相等。E 为名义汇率，P 和 P* 分别为国内和国外价格水平。绝对 PPP 要求一价定律对所有商品成立；相对 PPP 只要求汇率变化率等于通胀率之差。实证中，PPP 在长期中近似成立（购买力平价汇率对偏离的回归半衰期约 3-5 年），但短期偏离巨大——"购买力平价之谜"（Rogoff, 1996）。</span>
+  </div>
+
+  <div class="law">
+    <span class="l-name">原理 D2.7 · 利率平价（Interest Rate Parity, IRP）</span>
+    抛补: (1+i) = (1+i*)F/E; 非抛补: (1+i) = (1+i*)E<sub>t</sub>[S<sub>t+1</sub>]/S<sub>t</sub>
+    <span class="l-note">利率平价原理：两国利率之差等于预期汇率变动率（非抛补）或远期贴水率（抛补）。i 和 i* 分别为国内和国外利率，S 为即期汇率，F 为远期汇率。抛补利率平价在金融市场中高度成立（因套利驱动）；非抛补利率平价要求风险中性，实证上存在显著偏离（"远期溢价之谜"——高利率货币往往升值而非贬值）。</span>
+  </div>
+
+  <div class="law">
+    <span class="l-name">定律 D2.8 · 一价定律（Law of One Price, LOP）</span>
+    P<sub>i</sub> = E · P<sub>i</sub><sup>*</sup>, 对所有可贸易品 i 成立
+    <span class="l-note">一价定律：同一种可贸易商品在不同国家的价格（以同一货币衡量）应相等。LOP 是 PPP 的基础，但实证中即使对于高度同质化的商品（如石油、小麦），LOP 也经常被违反——因为存在贸易壁垒、运输成本、关税和非关税壁垒。LOP 的偏离程度随商品异质性增加而增加。LOP 在金融资产中高度成立（如股票、债券的跨境价格趋同）。</span>
+  </div>
+
+  <div class="law">
+    <span class="l-name">定理 D2.9 · 巴罗-李嘉图等价定理（Barro-Ricardo Equivalence, Barro 1974）</span>
+    ΔG<sub>t</sub> = ΔB<sub>t</sub>（债务融资的减税）→ ΔC<sub>t</sub> = 0, ΔS<sub>t</sub> = ΔB<sub>t</sub>（私人储蓄等额增加）
+    <span class="l-note">Barro (1974) 形式化：给定政府支出路径不变，债务融资的减税不会改变总需求——因为理性家庭预期未来将加税以偿还债务，因此将减税所得全部储蓄以应对未来税负。李嘉图等价要求：理性预期、完美信贷市场、一次性总付税、代际利他。实证中李嘉图等价不完全成立——部分家庭受流动性约束，部分家庭短视。</span>
+  </div>
+
+  <div class="law">
+    <span class="l-name">原理 D2.10 · 蒙代尔-弗莱明三难困境（Mundell-Fleming Trilemma, Mundell 1963; Fleming 1962）</span>
+    货币政策独立性 + 资本自由流动 + 固定汇率 → 三者不可兼得，最多选二
+    <span class="l-note">Mundell (1963) 和 Fleming (1962) 建立的开放宏观"不可能三角"：一国只能在资本自由流动、固定汇率和货币政策独立性三个目标中选择两个。例如，选择固定汇率+资本自由流动 = 放弃货币政策独立性（如欧元区、港币联系汇率制）；选择货币政策独立性+资本自由流动 = 浮动汇率（如美国、日本）；选择货币政策独立性+固定汇率 = 资本管制（如中国）。该原理是国际宏观经济学最重要的分析工具之一。</span>
+  </div>
+</section>
+
+<!-- ===== D3 · 核心定理 ===== -->
+<section class="sec" id="phd-d3">
+  <h2><span class="chapno">D3</span>核心定理</h2>
+  <p>以下 8 个定理构成了当代宏观经济学理论大厦的支柱。每个定理均有严格表述、证明思路概述和原始文献出处。</p>
+
+  <div class="theorem">
+    <span class="t-name">定理 D3.1 · Lucas 批判（Lucas Critique, Lucas 1976）</span>
+    <strong>表述：</strong>当政策制度（规则）发生变化时，基于历史数据估计的"结构参数"不再保持不变——因为理性经济主体会调整其预期形成机制，从而改变行为方程的"约化式参数"。
+    <span class="t-note">Lucas (1976) "Econometric Policy Evaluation: A Critique"：传统宏观计量模型用于政策评估时面临根本性局限——政策变化本身会改变描述经济行为的参数。例如，当货币制度从"温和通胀"变为"严格通胀目标"时，菲利普斯曲线的斜率可能改变，因为工资和价格制定者的预期形成机制发生了变化。Lucas 批判的深层含义是：真正"结构性的"参数必须是偏好和技术参数（"深层参数"），而非政策环境决定的约化式参数。这一批判直接催生了"校准"方法论（Kydland & Prescott, 1982）和"微观基础"研究议程。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 D3.2 · Modigliani-Miller 定理（MM Theorem, Modigliani & Miller 1958）</span>
+    <strong>表述：</strong>在无摩擦、无税收、无破产成本、无信息不对称的完美市场中，企业的市场价值（企业价值）与资本结构（负债/权益比）无关。V<sub>L</sub> = V<sub>U</sub> = EBIT/WACC。
+    <span class="t-note">Modigliani & Miller (1958) 的"资本结构无关论"是公司金融的基石。宏观含义：如果金融摩擦不存在，企业投资决策与融资决策分离——真实经济与金融结构无关。MM 定理的"反事实假设"恰好说明了金融为什么重要：当税收、破产成本、信息不对称进入后，资本结构影响企业价值，金融中介影响真实经济。这为"金融加速器"（Bernanke, Gertler & Gilchrist, 1999）和"金融摩擦 DSGE"提供了理论基础。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 D3.3 · Blanchard-Kahn 条件（Blanchard-Kahn Conditions, Blanchard & Kahn 1980）</span>
+    <strong>表述：</strong>线性理性预期模型存在唯一稳定解（即"确定性"）当且仅当前瞻变量（非预定变量）的数量等于模型特征方程中单位圆以外的特征根数量（广义特征值）。
+    <span class="t-note">Blanchard & Kahn (1980) "The Solution of Linear Difference Models under Rational Expectations"：设模型为 [X<sub>t+1</sub>; P<sub>t+1|t</sub>]' = A [X<sub>t</sub>; P<sub>t</sub>]' + 冲击项，其中 X<sub>t</sub> 为预定变量（状态变量），P<sub>t</sub> 为非预定变量（跳跃变量）。令 A 有 m 个单位圆内的特征根（稳定根）和 n 个单位圆外的特征根（不稳定根）。当跳跃变量数量等于不稳定根数量时，存在唯一稳定解。这一条件是 DSGE 模型求解和数值模拟的数学基础。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 D3.4 · Koopmans 跨期最优增长定理（Ramsey-Cass-Koopmans, Koopmans 1965）</span>
+    <strong>表述：</strong>在 Ramsey 经济中，存在唯一的最优消费路径 {c<sub>t</sub>}<sub>t=0</sub><sup>∞</sup> 和最优资本积累路径 {k<sub>t</sub>}<sub>t=0</sub><sup>∞</sup>，满足修正的黄金律：f'(k*) = δ + ρ + σg，其中 ρ 为时间偏好率，σ 为风险厌恶系数，g 为技术进步率。
+    <span class="t-note">Koopmans (1965) 将 Ramsey (1928) 的直观最优增长问题形式化为严格的数学理论。修正黄金律 k* 满足：资本的边际产出等于折旧率、时间偏好率和增长调整项之和。与索洛模型的"黄金律"（最大化稳态消费的 k<sub>gold</sub>）不同，修正黄金律考虑了家庭的时间偏好，因此 k* &lt; k<sub>gold</sub>。Koopmans 因"将时间维度引入经济分析"获 1975 年诺贝尔经济学奖。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 D3.5 · Turnpike 定理（Turnpike Theorem, Dorfman-Samuelson-Solow 1958）</span>
+    <strong>表述：</strong>对于足够长的计划期 T，最优增长路径在大部分时间"靠近"稳态（von Neumann 均衡路径），无论初始条件如何。lim<sub>T→∞</sub> (1/T) Σ<sub>t=0</sub><sup>T</sup> ||k<sub>t</sub> - k*|| = 0。
+    <span class="t-note">Dorfman, Samuelson & Solow (1958) 《线性规划与经济分析》中提出：最优增长路径就像一个从A到B的旅行——如果旅途足够长，大部分时间都花在"高速公路"（turnpike）上，即靠近稳态增长路径。Turnpike 定理的含义是：长期最优增长路径对初始条件"不敏感"——无论起点如何，最优路径都会尽快收敛到稳态附近，然后保持在那里直到终点。这一发现为"稳态分析"提供了理论基础。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 D3.6 · Barro 政府支出乘数定理（Barro 1974, 1990）</span>
+    <strong>表述：</strong>在李嘉图等价成立时，政府支出的乘数效应取决于支出是"生产性"（进入生产函数）还是"非生产性"（进入效用函数）。生产性政府支出 G 进入生产函数：Y = A·K<sup>α</sup>G<sup>β</sup>L<sup>1-α-β</sup>，最优 G/Y = β/(1-α)。
+    <span class="t-note">Barro (1990) "Government Spending in a Simple Model of Endogenous Growth"：政府支出的大小和结构决定增长效果。当政府支出是生产性的（基础设施、教育、法律执行），乘数效应为正——最优政府支出规模由生产弹性决定。当政府支出是非生产性的（转移支付、消费性支出），乘数效应可能为零（李嘉图等价下完全挤出）。Barro (1974) 证明，即使是债务融资的政府支出，在利他主义代际传递下也可能被私人储蓄完全抵消。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 D3.7 · Sargent-Wallace 货币政策无效性定理（Sargent & Wallace 1975）</span>
+    <strong>表述：</strong>在理性预期、完全信息、价格完全灵活的经济中，系统性的货币政策无法影响真实产出和就业——只有未预期的货币冲击才具有真实效应：y<sub>t</sub> = y<sub>t</sub><sup>n</sup> + γ(m<sub>t</sub> - E<sub>t-1</sub>[m<sub>t</sub>])。
+    <span class="t-note">Sargent & Wallace (1975) "Rational Expectations, the Optimal Monetary Instrument, and the Optimal Money Supply Rule"：这一"政策无效性命题"（Policy Ineffectiveness Proposition）是理性预期革命的极端结论。在"卢卡斯总供给函数"框架下，任何被公众预期到的货币扩张都会立即反映在价格中，不改变真实产出。只有意外的货币冲击（"货币惊奇"）才能推动产出偏离自然率。这一命题的政策含义是：央行应专注于价格稳定，不必试图系统性地管理总需求。新凯恩斯主义通过引入价格粘性（Calvo 定价）推翻了这一结论——即使预期到的货币政策变化也能影响真实产出。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 D3.8 · Benhabib-Farmer 均衡不定性定理（Benhabib & Farmer 1994, 1999）</span>
+    <strong>表述：</strong>在存在规模报酬递增或外部性的经济中，理性预期均衡可能不是唯一的——存在"均衡不定性"（indeterminacy）：给定相同初始条件，经济可能收敛到多个不同的均衡路径，取决于"太阳黑子"（sunspot）信念。
+    <span class="t-note">Benhabib & Farmer (1994) "Indeterminacy and Increasing Returns"：当生产函数中存在足够强的外部性（如知识溢出导致的递增报酬），特征方程中不稳定根的数量可能少于跳跃变量的数量，Blanchard-Kahn 条件被违反，出现连续统的均衡路径。此时，经济波动可能由"自我实现的预期"驱动——即使没有基本面冲击，仅仅因为信念的变动就能产生经济周期。这一理论为"动物精神"（Keynes 1936）和"非理性繁荣"（Shiller 2000）提供了形式化基础。</span>
+  </div>
+</section>
+
+<!-- ===== D4 · 定理证明详解 ===== -->
+<section class="sec" id="phd-d4">
+  <h2><span class="chapno">D4</span>定理证明详解</h2>
+  <p>博士水平的核心能力是理解定理的完整证明。以下两个证明是宏观经济学方法论的基石。</p>
+
+  <h3>4.1 Lucas 批判的数学形式化证明</h3>
+  <div class="proof">
+    <span class="p-title">证明 D4.1 · Lucas 批判：政策参数变化通过预期影响结构参数的传递机制</span>
+    <p><strong>设定：</strong>考虑一个简化宏观经济系统，包含"卢卡斯总供给函数"和"AD 曲线"：</p>
+    <p>y<sub>t</sub> = y<sub>t</sub><sup>n</sup> + γ(p<sub>t</sub> - E<sub>t-1</sub>[p<sub>t</sub>]) + ε<sub>t</sub><sup>s</sup>  （卢卡斯供给曲线，Lucas 1973）</p>
+    <p>y<sub>t</sub> = m<sub>t</sub> - p<sub>t</sub> + v<sub>t</sub>  （AD 曲线，简单形式）</p>
+    <p>其中，m<sub>t</sub> 为货币供给，遵循政策规则：m<sub>t</sub> = ρ·m<sub>t-1</sub> + η<sub>t</sub>，η<sub>t</sub> ~ N(0, σ<sub>η</sub><sup>2</sup>)。</p>
+    <p><strong>第一步：求解理性预期均衡。</strong>在理性预期下，E<sub>t-1</sub>[p<sub>t</sub>] 由模型结构决定。对 AD 曲线取条件期望：E<sub>t-1</sub>[y<sub>t</sub>] = E<sub>t-1</sub>[m<sub>t</sub>] - E<sub>t-1</sub>[p<sub>t</sub>]。代入供给曲线并利用 E<sub>t-1</sub>[y<sub>t</sub>] = y<sub>t</sub><sup>n</sup>（供给曲线取期望后预期项为零）：</p>
+    <p>y<sub>t</sub><sup>n</sup> = E<sub>t-1</sub>[m<sub>t</sub>] - E<sub>t-1</sub>[p<sub>t</sub>] ⇒ E<sub>t-1</sub>[p<sub>t</sub>] = E<sub>t-1</sub>[m<sub>t</sub>] - y<sub>t</sub><sup>n</sup>。</p>
+    <p><strong>第二步：推导约化式方程。</strong>将预期解代入结构方程，得到价格和产出的约化式：</p>
+    <p>p<sub>t</sub> = [E<sub>t-1</sub>[m<sub>t</sub>] - y<sub>t</sub><sup>n</sup>] + [1/(1+γ)](m<sub>t</sub> - E<sub>t-1</sub>[m<sub>t</sub>] + v<sub>t</sub> - ε<sub>t</sub><sup>s</sup>)，</p>
+    <p>y<sub>t</sub> = y<sub>t</sub><sup>n</sup> + [γ/(1+γ)](m<sub>t</sub> - E<sub>t-1</sub>[m<sub>t</sub>] + v<sub>t</sub> - ε<sub>t</sub><sup>s</sup>)。</p>
+    <p><strong>第三步：Lucas 批判的核心机制。</strong>注意约化式系数 γ/(1+γ) 貌似"结构参数"，但实际上 γ 本身依赖于政策环境。Lucas (1973) 的"岛屿模型"证明：γ = θ·(1-λ)/(λ)，其中 λ 为供给冲击方差与总需求冲击方差之比。当政策规则改变（如 σ<sub>η</sub><sup>2</sup> 变小，即货币供给更稳定），λ = σ<sub>s</sub><sup>2</sup>/(σ<sub>η</sub><sup>2</sup>+σ<sub>v</sub><sup>2</sup>) 发生变化，γ 随之改变。</p>
+    <p><strong>第四步：政策评估的不可靠性。</strong>传统计量方法：用历史数据估计"产出-通胀关系"γ/(1+γ)，然后假设该关系不变，模拟新政策下的产出路径。Lucas 批判指出：当政策σ<sub>η</sub><sup>2</sup> 变化时，γ 随之变化，基于旧参数的政策模拟完全无效。例如，如果央行承诺更激进的通胀目标（σ<sub>η</sub><sup>2</sup> 下降），企业会预期价格更稳定，因此供给曲线斜率 γ 变小——"牺牲率"（降低通胀的产出成本）发生变化。这一传递机制是：<strong>政策制度变化 → 预期形成机制变化 → 行为参数变化 → 约化式关系变化</strong>。</p>
+    <p><strong>结论：</strong>Lucas 批判的数学形式化揭示了"政策制度变化改变预期形成机制，进而改变行为参数"的深层机制。这一洞察迫使宏观经济学从"结构计量模型"转向"深层参数校准"——只有偏好和技术参数（β, σ, α, δ）才是政策不变的，而所有涉及预期的参数（如菲利普斯曲线斜率、IS 曲线斜率）都依赖于政策环境。</p>
+    <p class="p-qed">Q.E.D.</p>
+  </div>
+
+  <h3>4.2 Blanchard-Kahn 条件的推导证明</h3>
+  <div class="proof">
+    <span class="p-title">证明 D4.2 · Blanchard-Kahn 条件的推导证明（前向模型的稳定性条件 + 特征值论证）</span>
+    <p><strong>设定：</strong>考虑线性理性预期模型的标准形式：</p>
+    <p>[X<sub>t+1</sub>; P<sub>t+1|t</sub>]' = A [X<sub>t</sub>; P<sub>t</sub>]' + B η<sub>t+1</sub> + C ε<sub>t+1</sub></p>
+    <p>其中 X<sub>t</sub> ∈ R<sup>m</sup> 为预定变量（状态变量，t 期已知），P<sub>t</sub> ∈ R<sup>n</sup> 为非预定变量（跳跃变量，t 期形成但受预期影响），η<sub>t+1</sub> 为预测误差（P<sub>t+1</sub> - P<sub>t+1|t</sub>），ε<sub>t+1</sub> 为外生冲击。A ∈ R<sup>(m+n)×(m+n)</sup>。</p>
+    <p><strong>第一步：广义特征值分解。</strong>对矩阵 A 进行广义特征值分解（QZ 分解或 Schur 分解），将系统分解为"稳定块"和"不稳定块"：</p>
+    <p>A = VΛV<sup>-1</sup>，其中 Λ = diag(Λ<sub>s</sub>, Λ<sub>u</sub>)，Λ<sub>s</sub> 包含所有单位圆内的特征值（|λ<sub>i</sub>| &lt; 1），Λ<sub>u</sub> 包含所有单位圆外的特征值（|λ<sub>i</sub>| &gt; 1）。</p>
+    <p><strong>第二步：变换系统。</strong>定义变换变量 Z<sub>t</sub> = V<sup>-1</sup>[X<sub>t</sub>; P<sub>t</sub>]'，将系统分解为：</p>
+    <p>Z<sub>t+1</sub><sup>s</sup> = Λ<sub>s</sub> Z<sub>t</sub><sup>s</sup> + 冲击项（稳定块）</p>
+    <p>Z<sub>t+1</sub><sup>u</sup> = Λ<sub>u</sub> Z<sub>t</sub><sup>u</sup> + 冲击项（不稳定块）</p>
+    <p>其中 Z<sub>t</sub><sup>s</sup> 对应稳定特征值，Z<sub>t</sub><sup>u</sup> 对应不稳定特征值。</p>
+    <p><strong>第三步：前向求解。</strong>不稳定块不能向后迭代，必须向前求解（"前向解"）以保证稳定性。对不稳定块迭代：</p>
+    <p>Z<sub>t</sub><sup>u</sup> = Λ<sub>u</sub><sup>-1</sup> E<sub>t</sub>[Z<sub>t+1</sub><sup>u</sup>] - 冲击项</p>
+    <p>反复迭代至无穷远，利用横截条件 lim<sub>T→∞</sub> Λ<sub>u</sub><sup>-T</sup> Z<sub>t+T</sub><sup>u</sup> = 0：</p>
+    <p>Z<sub>t</sub><sup>u</sup> = -Σ<sub>j=0</sub><sup>∞</sup> Λ<sub>u</sub><sup>-(j+1)</sup> E<sub>t</sub>[冲击项<sub>t+j</sub>]。</p>
+    <p><strong>第四步：变换回原始变量。</strong>将 Z<sub>t</sub><sup>u</sup> 的前向解用原始变量表示：</p>
+    <p>P<sub>t</sub> = Φ X<sub>t</sub> + Ψ × 冲击项的前向求和</p>
+    <p>其中 Φ 为从 Z<sub>t</sub><sup>u</sup> 约束推导的"跳跃变量稳定性矩阵"。Φ 存在且唯一当且仅当不稳定块 Z<sub>t</sub><sup>u</sup> 的维度（即不稳定特征根的数量）等于跳跃变量 P<sub>t</sub> 的维度 n。</p>
+    <p><strong>第五步：Blanchard-Kahn 条件的正式表述。</strong>系统存在唯一稳定解（即"确定性"）当且仅当：</p>
+    <p>#{|λ<sub>i</sub>| &gt; 1} = n ∧ #{|λ<sub>i</sub>| &lt; 1} = m</p>
+    <p>即：单位圆外的特征根数量等于非预定变量（跳跃变量）的数量。</p>
+    <p><strong>直觉理解：</strong>跳跃变量（如通胀率、资产价格）必须"跳跃"到唯一稳定的鞍点路径上。如果跳跃变量数量多于不稳定根数量，存在多条可能的稳定路径——均衡不定性（indeterminacy）。如果跳跃变量数量少于不稳定根数量，不存在任何稳定路径——均衡不存在（explosiveness）。</p>
+    <p><strong>应用：</strong>在 Smets-Wouters (2007) DSGE 模型中，BK 条件用于约束参数空间——当泰勒规则不满足"泰勒原理"（φ<sub>π</sub> &lt; 1）时，系统可能出现不定性，这与 Benhabib-Farmer (1994) 的结论一致。</p>
+    <p class="p-qed">Q.E.D.</p>
+  </div>
+</section>
+
+<!-- ===== D5 · 形式化体系 ===== -->
+<section class="sec" id="phd-d5">
+  <h2><span class="chapno">D5</span>形式化体系：完整 DSGE 模型</h2>
+  <p>以下呈现一个完整的 DSGE 模型形式化体系，涵盖家庭、企业、货币当局、市场出清和外生冲击的全部结构方程。</p>
+
+  <h3>5.1 家庭部门</h3>
+  <div class="formula">
+    <span class="f-name">家庭跨期效用最大化问题</span>
+    max E<sub>0</sub> Σ<sub>t=0</sub><sup>∞</sup> β<sup>t</sup> [ (C<sub>t</sub> - hC<sub>t-1</sub>)<sup>1-σ</sup>/(1-σ) - χ L<sub>t</sub><sup>1+φ</sup>/(1+φ) ]<br>
+    s.t. P<sub>t</sub>C<sub>t</sub> + P<sub>t</sub>I<sub>t</sub> + B<sub>t</sub> = W<sub>t</sub>L<sub>t</sub> + R<sub>t</sub><sup>k</sup>K<sub>t</sub> + (1+i<sub>t-1</sub>)B<sub>t-1</sub> + Π<sub>t</sub> + T<sub>t</sub><br>
+    K<sub>t+1</sub> = (1-δ)K<sub>t</sub> + [1 - S(I<sub>t</sub>/I<sub>t-1</sub>)] I<sub>t</sub>
+    <span class="f-note">h 为消费习惯形成参数，σ 为相对风险厌恶系数，φ 为劳动供给弹性的倒数，χ 为劳动负效用权重。S(·) 为投资调整成本函数，满足 S(1)=S'(1)=0, S''(1)&gt;0。一阶条件给出消费欧拉方程和劳动供给方程。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">消费欧拉方程（对数线性化）</span>
+    c<sub>t</sub> = [h/(1+h)]c<sub>t-1</sub> + [1/(1+h)]E<sub>t</sub>[c<sub>t+1</sub>] - (1-h)/(σ(1+h)) (r<sub>t</sub> - E<sub>t</sub>[π<sub>t+1</sub>])
+    <span class="f-note">习惯形成使消费平滑化——消费对利率变化的短期响应被削弱。当 h → 0 时，退化为标准欧拉方程：c<sub>t</sub> = E<sub>t</sub>[c<sub>t+1</sub>] - (1/σ)(r<sub>t</sub> - E<sub>t</sub>[π<sub>t+1</sub>])。</span>
+  </div>
+
+  <h3>5.2 企业部门</h3>
+  <div class="formula">
+    <span class="f-name">企业利润最大化与 Calvo 定价</span>
+    最终产品: Y<sub>t</sub> = [∫<sub>0</sub><sup>1</sup> Y<sub>t</sub>(j)<sup>(ε-1)/ε</sup> dj]<sup>ε/(ε-1)</sup><br>
+    中间产品: Y<sub>t</sub>(j) = A<sub>t</sub> K<sub>t</sub>(j)<sup>α</sup> L<sub>t</sub>(j)<sup>1-α</sup> - Φ<br>
+    Calvo 定价: P<sub>t</sub><sup>*</sup> = (ε/(ε-1)) E<sub>t</sub> Σ<sub>k=0</sub><sup>∞</sup> θ<sup>k</sup> Λ<sub>t,t+k</sub> MC<sub>t+k</sub> Y<sub>t+k</sub><sup>*</sup> / E<sub>t</sub> Σ<sub>k=0</sub><sup>∞</sup> θ<sup>k</sup> Λ<sub>t,t+k</sub> Y<sub>t+k</sub><sup>*</sup>
+    <span class="f-note">ε 为需求替代弹性，Φ 为固定成本（确保零利润稳态），A<sub>t</sub> 为技术冲击。Calvo 最优价格 P<sub>t</sub><sup>*</sup> 是所有未来边际成本的加权平均（贴现因子 θ<sup>k</sup> 和随机贴现因子 Λ<sub>t,t+k</sub> = β<sup>k</sup>(C<sub>t+k</sub>/C<sub>t</sub>)<sup>-σ</sup>）。价格分散 Δ<sub>t</sub> = ∫(P<sub>t</sub>(j)/P<sub>t</sub>)<sup>-ε</sup> dj 是效率损失指标。</span>
+  </div>
+
+  <div class="formula">
+    <span class="f-name">新凯恩斯菲利普斯曲线（NKPC）</span>
+    π<sub>t</sub> = β E<sub>t</sub>[π<sub>t+1</sub>] + [(1-θ)(1-βθ)/θ] · [(1-α)/(1-α+αε)] · mc<sub>t</sub>
+    <span class="f-note">mc<sub>t</sub> = (w<sub>t</sub> - p<sub>t</sub>) - (mpn<sub>t</sub>) 为对数实际边际成本。在 Calvo 定价下，通胀完全由边际成本驱动——没有"成本推动型"冲击的 NKPC 被称为"纯"NKPC。</span>
+  </div>
+
+  <h3>5.3 货币当局</h3>
+  <div class="formula">
+    <span class="f-name">货币政策泰勒规则（含平滑）</span>
+    i<sub>t</sub> = ρ<sub>i</sub> i<sub>t-1</sub> + (1-ρ<sub>i</sub>)[r* + π<sub>t</sub> + φ<sub>π</sub>(π<sub>t</sub> - π*) + φ<sub>y</sub>(y<sub>t</sub> - y<sub>t</sub><sup>n</sup>)] + ε<sub>t</sub><sup>i</sup>
+    <span class="f-note">ρ<sub>i</sub> 为利率平滑系数（0-1），φ<sub>π</sub> &gt; 1 满足泰勒原理，φ<sub>y</sub> ≥ 0 为产出缺口反应系数。ε<sub>t</sub><sup>i</sup> 为货币政策冲击，i.i.d. N(0, σ<sub>i</sub><sup>2</sup>)。</span>
+  </div>
+
+  <h3>5.4 市场出清条件</h3>
+  <div class="formula">
+    <span class="f-name">资源约束与市场出清</span>
+    Y<sub>t</sub> = C<sub>t</sub> + I<sub>t</sub> + G<sub>t</sub> + ψ<sub>t</sub>（资源约束）<br>
+    B<sub>t</sub> = 0（债券市场出清，零净供给）<br>
+    L<sub>t</sub><sup>s</sup> = L<sub>t</sub><sup>d</sup>（劳动市场出清）<br>
+    K<sub>t</sub><sup>s</sup> = K<sub>t</sub><sup>d</sup>（资本市场出清）
+    <span class="f-note">ψ<sub>t</sub> 为价格分散导致的效率损失项。在稳态附近对数线性化时，ψ<sub>t</sub> 可忽略。政府支出 G<sub>t</sub> 遵循外生 AR(1) 过程。</span>
+  </div>
+
+  <h3>5.5 外生冲击过程</h3>
+  <div class="formula">
+    <span class="f-name">外生冲击的 AR(1) 过程</span>
+    技术冲击: ln A<sub>t</sub> = ρ<sub>A</sub> ln A<sub>t-1</sub> + ε<sub>t</sub><sup>A</sup><br>
+    偏好冲击: ln ξ<sub>t</sub> = ρ<sub>ξ</sub> ln ξ<sub>t-1</sub> + ε<sub>t</sub><sup>ξ</sup><br>
+    投资冲击: ln μ<sub>t</sub> = ρ<sub>μ</sub> ln μ<sub>t-1</sub> + ε<sub>t</sub><sup>μ</sup><br>
+    政府支出冲击: ln G<sub>t</sub> = (1-ρ<sub>G</sub>)ln G* + ρ<sub>G</sub> ln G<sub>t-1</sub> + ε<sub>t</sub><sup>G</sup><br>
+    货币政策冲击: ε<sub>t</sub><sup>i</sup> ~ i.i.d. N(0, σ<sub>i</sub><sup>2</sup>)<br>
+    价格加成冲击: ln λ<sub>t</sub><sup>f</sup> = ρ<sub>λ</sub> ln λ<sub>t-1</sub><sup>f</sup> + ε<sub>t</sub><sup>λ</sup>
+    <span class="f-note">Smets & Wouters (2007) 包含七种结构性冲击。所有 ε 冲击均服从独立正态分布。自回归系数 ρ 衡量冲击的持续性——ρ 越接近 1，冲击越持久。这些冲击通过 DSGE 的传导机制产生经济周期。</span>
+  </div>
+
+  <h3>5.6 对数线性化后的状态空间表示</h3>
+  <div class="formula">
+    <span class="f-name">状态空间表示（用于估计和模拟）</span>
+    状态方程: S<sub>t</sub> = Φ<sub>1</sub> S<sub>t-1</sub> + Φ<sub>2</sub> ε<sub>t</sub><br>
+    观测方程: Y<sub>t</sub> = Ψ<sub>1</sub> S<sub>t</sub> + Ψ<sub>2</sub> v<sub>t</sub>
+    <span class="f-note">S<sub>t</sub> 为状态向量（包含所有内生变量和外生冲击的滞后值），Y<sub>t</sub> 为观测向量（GDP 增长、通胀、利率等），ε<sub>t</sub> 为结构性冲击（维度 7），v<sub>t</sub> 为测量误差。Φ<sub>1</sub> 和 Φ<sub>2</sub> 由 Blanchard-Kahn 解确定。状态空间表示是贝叶斯估计的基础——卡尔曼滤波用于计算似然函数，MCMC 用于后验采样。</span>
+  </div>
+
+  <h3>5.7 校准与估计方法</h3>
+  <div class="explain">
+    <p><strong>校准（Calibration）：</strong>偏好参数 β=0.99（对应 4% 年折现率），σ=1.5（相对风险厌恶），φ=2（劳动供给弹性 0.5），h=0.7（习惯形成）。技术参数 α=0.33（资本份额），δ=0.025（季度折旧率）。价格粘性 θ=0.75（平均价格调整间隔 4 个季度），投资调整成本 S''=4。货币政策参数 φ<sub>π</sub>=1.5，φ<sub>y</sub>=0.125，ρ<sub>i</sub>=0.8。</p>
+    <p><strong>贝叶斯估计（Bayesian Estimation）：</strong>先验分布来自校准值的合理范围。似然函数通过卡尔曼滤波计算。后验分布使用 MCMC（Metropolis-Hastings 算法）采样，通常运行 100,000 次迭代，舍弃前 50% 作为"燃烧期"。模型比较使用边际似然（贝叶斯因子）。Smets & Wouters (2007) 的估计结果显示，需求冲击（风险溢价和投资冲击）解释短期波动的主要部分，供给冲击解释长期波动的核心。</p>
+  </div>
+
+  <h3>5.8 DSGE 脉冲响应函数的三维曲面</h3>
+  <p>下图展示 DSGE 模型的核心输出——脉冲响应函数的三维曲面。曲面展示了"冲击类型 × 时间维度 × 变量响应幅度"的三维关系。</p>
+
+  <div class="viz-container" style="height:420px;">
+    <canvas id="viz-3d-dsge-irf" style="width:100%;height:100%;display:block;"></canvas>
+  </div>
+  <div class="viz-caption">图 D5-1 · DSGE 脉冲响应函数三维曲面。X 轴：冲击类型（货币政策、技术、偏好、投资、政府支出）；Y 轴：时间维度（冲击后季度数，t+0 至 t+20）；Z 轴（曲面高度）：变量响应幅度（偏离稳态百分比）。红色曲面对应货币政策冲击，蓝色曲面对应技术冲击，绿色曲面对应偏好冲击。模型自动旋转展示三维结构。</div>
+
+  <div class="explain">
+    <p><strong>图 D5-1 解析：</strong>三维脉冲响应曲面直观展示了 DSGE 模型的"冲击→传导→响应"机制。每个曲面代表一种冲击类型对所有内生变量（产出、通胀、利率、消费、投资、就业）的联合响应路径。曲面之间的空间距离反映了不同冲击在传导机制上的差异——技术冲击（蓝色）具有最持久的效应（5-10 个季度后仍显著），货币政策冲击（红色）在中期（6-12 个季度）达到峰值后逐渐消退，偏好冲击（绿色）的效应相对短暂。曲面斜率反映了传导速度——斜率越陡，传导越快。</p>
+  </div>
+</section>
+
+<!-- ===== D6 · 前沿定理与未解问题 ===== -->
+<section class="sec" id="phd-d6">
+  <h2><span class="chapno">D6</span>前沿定理与未解问题</h2>
+  <p>博士水平的研究不仅需要掌握已有理论，更需要识别理论的边界和未解决的开放问题。D6 呈现四个前沿定理和五个关键未解问题。</p>
+
+  <h3>6.1 前沿定理</h3>
+
+  <div class="theorem">
+    <span class="t-name">定理 D6.1 · Smets-Wouters 贝叶斯估计定理（Smets & Wouters 2007）</span>
+    <strong>表述：</strong>在包含七种结构性冲击和多种摩擦（价格粘性、工资粘性、习惯形成、投资调整成本、可变资本利用率）的新凯恩斯 DSGE 模型中，贝叶斯估计方法可以识别各冲击的相对贡献：需求冲击（风险溢价冲击和投资特定技术冲击）解释短期波动的 60-70%，供给冲击（技术冲击和价格加成冲击）解释长期波动的 70-80%。
+    <span class="t-note">Smets & Wouters (2007) "Shocks and Frictions in US Business Cycles" 发表于 American Economic Review。该模型的贝叶斯估计使用 1948-2004 年美国数据（GDP、消费、投资、就业、通胀、工资、利率）。关键发现：风险溢价冲击（对消费欧拉方程的外生扰动）是短期波动的最重要来源，而技术冲击在长期中主导。该模型匹配了美国二战后经济周期的 70% 以上的方差，是"DSGE 能拟合数据"的里程碑式证明。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 D6.2 · Christiano-Eichenbaum-Evans 识别定理（CEE 2005）</span>
+    <strong>表述：</strong>在递归识别（Cholesky 分解）假设下，紧缩性货币政策冲击导致：产出和就业在 6-8 个季度后达到最低（下降约 0.5-0.7%），通胀在 8-12 个季度后达到最低（下降约 0.2-0.4%），利率在冲击后立即上升但随后缓慢回归——这些模式与"粘性价格+粘性工资"DSGE 模型的预测高度一致。
+    <span class="t-note">Christiano, Eichenbaum & Evans (2005) "Nominal Rigidities and the Dynamic Effects of a Shock to Monetary Policy" 发表于 Journal of Political Economy。CEE 通过 SVAR 识别了货币政策冲击的"典型事实"：产出响应呈"驼峰形"（hump-shaped），峰值在 6-8 季度；通胀响应更缓慢、更持久。这些事实为 DSGE 模型提供了"目标"（target moments），推动了 Calvo 定价+习惯形成+投资调整成本的"标准摩擦组合"的确立。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 D6.3 · Gali 货币政策与工资粘性定理（Gali 1999, 2011）</span>
+    <strong>表述：</strong>在存在工资粘性（Calvo 工资设定）和价格粘性的经济中，货币政策对真实变量的影响主要通过工资粘性渠道传导：工资粘性使劳动市场调整缓慢，产出和就业的波动幅度增大。最优货币政策应该在稳定通胀和稳定工资通胀之间取得平衡——"双目标"（dual mandate）具有微观基础。
+    <span class="t-note">Gali (1999) "Technology, Employment, and the Business Cycle: Do Technology Shocks Explain Aggregate Fluctuations?" 发表于 American Economic Review。Gali (2011) 《Unemployment Fluctuations and Stabilization Policies》更系统地阐述了工资粘性在货币政策传导中的核心作用。Gali 的实证发现：技术冲击在短期中减少就业（因为企业不需要更多劳动来提高产出），这与标准 RBC 的预测相反——这一"Gali 谜题"推动了新凯恩斯框架的广泛接受。</span>
+  </div>
+
+  <div class="theorem">
+    <span class="t-name">定理 D6.4 · Atkeson-Burstein 定价与市场结构定理（Atkeson & Burstein 2008）</span>
+    <strong>表述：</strong>在寡头竞争的国际贸易市场中，企业的定价行为偏离了垄断竞争下的恒定加成：大企业（高市场份额）的加成率对汇率波动更敏感——"战略性定价"（strategic pricing）导致汇率传递不完全，大企业吸收汇率变动以维持市场份额。
+    <span class="t-note">Atkeson & Burstein (2008) "Pricing-to-Market, Trade Costs, and International Relative Prices" 发表于 American Economic Review。该定理为"汇率传递不完全"之谜提供了微观基础：为什么汇率大幅波动但进口价格变动很小？因为大企业主动调整加成率来吸收汇率变动。这一发现对开放宏观经济学和货币政策传导有深远影响——它意味着名义汇率变动对贸易余额的调节作用被削弱，货币政策的溢出效应更复杂。</span>
+  </div>
+
+  <h3>6.2 未解问题</h3>
+
+  <div class="callout">
+    <span class="callout-title">未解问题一：零下限（ZLB）下的货币政策有效性</span>
+    <p>当名义利率触及零下限，传统货币政策工具失效。非常规工具（量化宽松 QE、前瞻指引、负利率、收益率曲线控制 YCC）的有效性在理论和实证上均未形成共识。日本央行实践三十年、欧央行实践十年、美联储实践十五年，但各工具的效果评估因"反事实缺失"而难以量化。前沿问题包括：QE 主要通过"信号渠道"还是"组合平衡渠道"发挥作用？YCC 是否导致金融压抑？数字货币是否意味着"有效下限"可被突破？</p>
+  </div>
+
+  <div class="callout">
+    <span class="callout-title">未解问题二：DSGE 模型的金融部门缺失——2008 危机的教训</span>
+    <p>2008 年金融危机前，大多数 DSGE 模型没有金融中介部门——银行是"面纱"，金融不影响真实经济。危机后，金融摩擦被纳入（Gertler & Karadi, 2011; Christiano, Motto & Rostagno, 2014），但"打补丁"而非"重建框架"——金融部门仍然是"附加项"而非经济体系的核心。前沿问题包括：金融部门是否应该像家庭和企业一样被建模为"最优化的微观主体"？"内生货币"（内生信贷创造）如何在 DSGE 中形式化？"明斯基时刻"的自发性崩溃能否在 DSGE 中产生？</p>
+  </div>
+
+  <div class="callout">
+    <span class="callout-title">未解问题三：理性预期 vs 适应性学习的理论分歧</span>
+    <p>理性预期假设（RE）是 DSGE 的基石，但实证证据不断挑战它——家庭和企业的通胀预期并非"理性"的（偏离真实模型），而是适应性（adaptive）、锚定于最近的新闻或经验。适应性学习（Evans & Honkapohja, 2001）提供了替代框架：经济主体使用计量模型（如 AR 过程）来预测未来，并随着新数据的到来不断更新估计参数。前沿问题：RE 和 AL 在什么条件下收敛（E-stability 条件）？如果宏观经济预期是"适应性"的，货币政策的传导机制如何改变？预期调查数据（如 Michigan Survey、SPF）能否用于约束 DSGE 模型的预期模块？</p>
+  </div>
+
+  <div class="callout">
+    <span class="callout-title">未解问题四：HANK 模型（异质性 Agent 新凯恩斯模型）vs RANK 模型的分歧</span>
+    <p>传统 DSGE 模型使用"代表性 Agent"假设（RANK），但 Kaplan, Moll & Violante (2018) 的 HANK 模型证明，异质性从根本上改变了货币政策的传导机制。在 HANK 中，货币政策通过"间接渠道"（收入效应——利率变化影响家庭可支配收入，进而影响消费）而非"直接渠道"（利率效应）主导传导。HANK 的发现意味着：RANK 模型的政策建议可能完全错误——例如，RANK 预测加息通过"支出替代效应"抑制消费，而 HANK 预测加息通过"利息收入增加"（储蓄者家庭）刺激消费。前沿问题：HANK 的"异质性"需要多大程度的异质性才能匹配微观数据？HANK 模型的计算复杂性如何解决？HANK 对最优货币政策的设计有何具体含义？</p>
+  </div>
+
+  <div class="callout">
+    <span class="callout-title">未解问题五：宏观经济学微观基础化的方法论局限</span>
+    <p>"微观基础化"（microfoundations）——将宏观行为从微观优化推导——是当代宏观经济学的方法论信条。但批评者（Kirman, 1992; Romer, 2016）指出：代表性 Agent 的"微观基础"是虚假的——一个代表性 Agent 的行为不能代表异质性 Agent 的加总行为（"代表性 Agent 谬误"）。更根本的批评是：宏观经济学不应该追求"物理学式的精确"，而应该接受"生物学的复杂性"——非线性、非均衡、涌现性质。前沿问题：宏观经济学是否应该放弃"微观基础化"而转向"基于 Agent 的建模"（ABM）？DSGE 和 ABM 能否融合（"混合方法"）？宏观经济学的方法论多元主义是否可能？</p>
+  </div>
+</section>
+
+<!-- ===== D7 · 研究前沿 ===== -->
+<section class="sec" id="phd-d7">
+  <h2><span class="chapno">D7</span>研究前沿</h2>
+  <p>博士水平的终点是"站在前沿"。D7 呈现五个最活跃的研究前沿，每个方向均包含核心论文、关键机制和开放问题。最后通过 Three.js 3D 模型可视化 HANK 模型的核心机制——异质性 Agent 的财富×收入×消费三维联合分布。</p>
+
+  <h3>7.1 异质性 Agent 模型（HANK、TANK 的最新发展）</h3>
+  <div class="explain">
+    <p><strong>核心贡献：</strong>Kaplan, Moll & Violante (2018) "Monetary Policy According to HANK" 发表于 American Economic Review，是异质性 Agent 宏观经济学最具影响力的近期论文。HANK 模型将不完全市场（借贷约束、预防性储蓄）和异质性（收入风险、财富分布）引入新凯恩斯框架。关键发现：RANK 模型预测的"直接利率渠道"（加息→减少消费）在 HANK 中被"间接收入渠道"（加息→增加储蓄者利息收入→增加消费）部分抵消。因此，HANK 中货币政策对总消费的效应比 RANK 中更弱、更复杂。</p>
+    <p><strong>TANK（Two-Agent New Keynesian）模型：</strong>Debortoli & Gali (2018) 提出"两 Agent"简化版本：将家庭分为"储蓄者"（Ricardian，持有资产，消费平滑）和"非储蓄者"（Hand-to-Mouth，不持有资产，当期收入全部消费）。TANK 模型以极低的计算成本捕捉了 HANK 的核心机制——"间接渠道"效应。TANK 的预测与 HANK 高度一致，但计算量降低了几个数量级，使异质性 DSGE 模型的估计和校准变得可行。</p>
+    <p><strong>开放问题：</strong>异质性需要多大程度的"细粒度"才能匹配微观消费数据？HANK/TANK 对最优货币政策设计（如"消费者价格指数目标 vs 工资指数目标"）有何具体含义？异质性 Agent 框架如何引入金融摩擦和信贷约束？</p>
+  </div>
+
+  <h3>7.2 理性疏忽（Rational Inattention）</h3>
+  <div class="explain">
+    <p><strong>核心贡献：</strong>Sims (2003) "Implications of Rational Inattention" 发表于 Journal of Monetary Economics，将"有限信息处理能力"引入宏观经济学。Sims 的核心思想：经济主体有有限的信息处理能力（"香农信道容量"），因此他们必须选择性地关注哪些信息。最优注意力分配遵循"信息等价"原则——主体将更多注意力分配给不确定性更高、更相关的变量。Mackowiak & Wiederholt (2009) 将理性疏忽引入定价决策：企业面临"价格信号"和"总量信号"两个信息源，最优注意力分配决定价格对宏观冲击和行业冲击的响应速度。</p>
+    <p><strong>关键机制：</strong>理性疏忽提供了"价格粘性"的微观基础——不是因为调整成本，而是因为企业"没有注意到"需要调整价格。这改变了 Calvo 定价的"随机调整"假设——调整频率是内生的、取决于注意力分配。Mackowiak & Wiederholt (2009) 的校准表明，理性疏忽模型可以同时匹配"个别价格频繁调整"和"总体价格缓慢调整"两个看似矛盾的事实。</p>
+    <p><strong>开放问题：</strong>理性疏忽如何与"理性预期"调和？如何用微观数据（如问卷调查）直接估计主体的"信息处理能力"？理性疏忽对货币政策的"沟通策略"有何含义？</p>
+  </div>
+
+  <h3>7.3 行为宏观经济学（Behavioral Macroeconomics）</h3>
+  <div class="explain">
+    <p><strong>核心贡献：</strong>行为宏观经济学将心理学发现引入宏观模型。三个关键方向：（1）<strong>行为预期</strong>（Behavioral Expectations）——Gennaioli, Ma & Shleifer (2016) 证明，家庭和企业的预期并非"理性"的，而是"外推性"的（extrapolative）——过去的表现预测未来。Angeletos & Huo (2021) 提出"心理预期"框架，将"社会互动"和"意见分歧"纳入预期形成。（2）<strong>社会动力学</strong>（Social Dynamics）——预期和信念通过社会网络传播，宏观经济波动可能由"叙事传染"（Shiller, 2017）驱动。（3）<strong>非理性储蓄</strong>——Laibson (1997) 的"双曲贴现"（hyperbolic discounting）解释了为什么人们储蓄不足——"当下偏好"使人们推迟储蓄，即使知道长期不利。</p>
+    <p><strong>关键机制：</strong>行为预期的"自实现"性质——如果所有人都预期经济衰退，集体削减支出，衰退就真的发生了。这与"太阳黑子"（Benhabib-Farmer 不定性）的理论一致，但提供了更丰富的心理学基础。行为宏观经济学对财政政策的含义是深刻的：如果消费者是"非理性"的（如"债务厌恶"、"损失厌恶"），李嘉图等价不成立，财政乘数可能远大于传统模型预测。</p>
+    <p><strong>开放问题：</strong>行为假设如何与 DSGE 的"微观基础"传统融合？"行为 DSGE"是否可能？行为参数（如"外推系数"）如何从微观数据中估计？</p>
+  </div>
+
+  <h3>7.4 学习与预期形成（Learning and Expectation Formation）</h3>
+  <div class="explain">
+    <p><strong>核心贡献：</strong>Evans & Honkapohja (2001) 《Learning and Expectations in Macroeconomics》是适应性学习理论的权威著作。Bray (1982) 最早提出"理性学习"：经济主体不知道真实模型，但使用计量模型（如 VAR）来预测，并随着新数据更新参数。Evans & Honkapohja 的"E-stability"（期望稳定性）条件判断：在什么条件下，适应性学习过程收敛于理性预期均衡？如果系统 E-stable，即使主体一开始是"非理性"的，学习最终会收敛到理性预期；如果系统 E-unstable，理性预期均衡在"学习动力学"下是不稳定的，经济可能偏离理性预期均衡。</p>
+    <p><strong>关键机制：</strong>适应性学习对货币政策有重要含义。在"学习"框架下，央行的"可信度"和"沟通策略"变得至关重要——如果市场主体在学习过程中，央行的政策"信号"（前瞻指引、通胀目标声明）通过影响学习过程来影响预期，进而影响经济。Sargent (1999) 的《Conquest of American Inflation》用适应性学习解释了美国 1970 年代的高通胀和 1980 年代的通胀下降——货币政策制定者本身也在"学习"。</p>
+    <p><strong>开放问题：</strong>适应性学习与理性预期在什么条件下等价？"学习"的微观基础是什么？价格和工资制定者的预期形成机制是否与投资者的预期形成机制相同？大数据和机器学习工具是否改变了预期形成机制？</p>
+  </div>
+
+  <h3>7.5 大数据与宏观预测（Machine Learning, Nowcasting）</h3>
+  <div class="explain">
+    <p><strong>核心贡献：</strong>大数据和机器学习正在重塑宏观经济学的方法论。三个方向最为活跃：（1）<strong>Nowcasting</strong>（即时预测）——Giannone, Reichlin & Small (2008) 开发了基于"动态因子模型"的 nowcasting 方法，利用高频数据（周度、日度）实时预测季度 GDP。机器学习模型（随机森林、XGBoost、LSTM）在 nowcasting 中显著优于传统计量模型。（2）<strong>文本分析</strong>——利用 NLP 技术从央行声明、新闻报道、社交媒体中提取"经济叙事"和"政策情绪"——Baker, Bloom & Davis (2016) 的"经济政策不确定性指数"是全球最广泛使用的文本分析指标。（3）<strong>高维数据</strong>——传统宏观计量模型受"维度诅咒"限制，机器学习方法（LASSO、Ridge、神经网络）可以在高维数据（成千上万个变量）中识别预测因子。</p>
+    <p><strong>关键机制：</strong>机器学习的优势在于"非线性关系"和"交互效应"的识别——传统线性模型可能遗漏经济变量之间的复杂非线性关系。但机器学习的"黑箱"性质限制了其"解释力"——在需要"理解机制"而非"只知道预测"的学术研究中，可解释性仍然是关键挑战。</p>
+    <p><strong>开放问题：</strong>机器学习能"预测"金融危机和经济拐点吗？还是只能预测"正常时期"的波动？"脉冲响应函数"在机器学习框架中如何定义？宏观经济学需要"可解释的 AI"（XAI）吗？</p>
+  </div>
+
+  <h3>7.6 异质性 Agent 分布的三维可视化</h3>
+  <p>下图展示 HANK 模型的核心机制——财富×收入×消费的三维联合分布，演示异质性 Agent 经济的核心特征。</p>
+
+  <div class="viz-container" style="height:420px;">
+    <canvas id="viz-3d-hank" style="width:100%;height:100%;display:block;"></canvas>
+  </div>
+  <div class="viz-caption">图 D7-1 · 异质性 Agent 分布的三维可视化（HANK 模型核心机制）。X 轴：财富水平（对数尺度）；Y 轴：收入水平（对数尺度）；Z 轴（曲面高度）：消费水平。三个曲面代表不同分位点的联合分布——红色：高收入群体分布；蓝色：中等收入群体分布；绿色：低收入群体分布。曲面之间的空间差异反映了异质性 Agent 经济中"财富→收入→消费"的非线性传递机制——最富有的家庭消费对收入冲击不敏感（享乐曲线平坦），最贫穷的家庭消费对收入冲击高度敏感（享乐曲线陡峭）。</div>
+
+  <div class="explain">
+    <p><strong>图 D7-1 解析：</strong>HANK 模型的核心特征是不同 Agent 在财富-收入-消费空间中的异质性分布。三维曲面展示了联合分布的三维结构：X 轴（财富）和 Y 轴（收入）构成"经济地位"的二维平面，Z 轴（消费）反映不同经济地位对应的消费水平。红色曲面（高收入群体）的消费对财富变化的响应最弱——因为富裕家庭有充足的预防性储蓄缓冲，边际消费倾向（MPC）低。绿色曲面（低收入群体）的消费对财富和收入变化高度敏感——MPC 高，预防性储蓄不足。蓝色曲面（中等收入群体）介于两者之间。三个曲面之间的空间"间隙"直观展示了 HANK 的核心发现：总量乘数效应由低收入群体的高 MPC 驱动，而非代表性 Agent 模型的"代表性 MPC"。</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>经济思想谱系 · 下篇 · 博士水平进阶模块 · 思想图谱系列第十六辑 · 2026年9月</p>
+  <p>本模块为独立研究材料，建议配合主卷《经济思想谱系·下篇》、本科生升级附录和硕士水平进阶模块使用。</p>
+</footer>
+</article>
+
+<!-- Three.js 3D DSGE 脉冲响应曲面（D5） -->
+<script src="./_shared/js/three.min.js"></script>
+<script>
+(function(){
+  var container = document.getElementById('viz-3d-dsge-irf');
+  if(!container) return;
+  var w = container.clientWidth, h = container.clientHeight;
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xf4f7f3);
+  var camera = new THREE.PerspectiveCamera(45, w/h, 0.1, 100);
+  camera.position.set(8, 6, 10);
+  camera.lookAt(0, 1, 0);
+  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(w, h);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  var ambient = new THREE.AmbientLight(0x404040);
+  scene.add(ambient);
+  var dir = new THREE.DirectionalLight(0xffffff, 0.8);
+  dir.position.set(5, 10, 7);
+  scene.add(dir);
+  var dir2 = new THREE.DirectionalLight(0xffffff, 0.3);
+  dir2.position.set(-5, -5, -5);
+  scene.add(dir2);
+
+  var axesHelper = new THREE.AxesHelper(6);
+  scene.add(axesHelper);
+  var gridHelper = new THREE.GridHelper(10, 10, 0x5E6E62, 0xD6E0D4);
+  gridHelper.position.y = -0.1;
+  scene.add(gridHelper);
+
+  function makeLabel(text, color, pos) {
+    var canvas = document.createElement('canvas');
+    canvas.width = 128; canvas.height = 64;
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = color;
+    ctx.font = 'bold 14px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText(text, 64, 40);
+    var tex = new THREE.CanvasTexture(canvas);
+    var mat = new THREE.SpriteMaterial({ map: tex, transparent: true });
+    var sprite = new THREE.Sprite(mat);
+    sprite.position.copy(pos);
+    sprite.scale.set(1.8, 0.9, 1);
+    scene.add(sprite);
+  }
+  makeLabel('冲击类型', '#B7791F', new THREE.Vector3(0, 6.5, 0));
+  makeLabel('时间维度', '#14532D', new THREE.Vector3(6.5, -0.5, 0));
+  makeLabel('响应幅度', '#5E6E62', new THREE.Vector3(0, -0.5, 6.5));
+
+  // 货币政策冲击曲面（红色）——驼峰形脉冲响应
+  var res = 15;
+  var geom = new THREE.BufferGeometry();
+  var verts = [], idx = [];
+  for(var i=0; i<=res; i++) {
+    for(var j=0; j<=res; j++) {
+      var t = (j/res)*5 - 2.5; // 时间维度
+      var s = (i/res)*4 - 2;   // 冲击类型维度
+      var r = 3 + 0.7*Math.sin(t*1.2+0.5) * Math.exp(-0.3*s*s) * (1 + 0.2*Math.cos(s*0.8));
+      verts.push(t, Math.max(0.2, r), s*1.2);
+    }
+  }
+  for(var i=0; i<res; i++) {
+    for(var j=0; j<res; j++) {
+      var a = i*(res+1)+j, b = i*(res+1)+j+1, c = (i+1)*(res+1)+j, d = (i+1)*(res+1)+j+1;
+      idx.push(a,b,c,b,d,c);
+    }
+  }
+  geom.setAttribute('position', new THREE.Float32BufferAttribute(verts, 3));
+  geom.setIndex(idx);
+  geom.computeVertexNormals();
+  var matMP = new THREE.MeshPhongMaterial({ color: 0xB03A2E, transparent: true, opacity: 0.3, side: THREE.DoubleSide });
+  var meshMP = new THREE.Mesh(geom, matMP);
+  scene.add(meshMP);
+  var wireMP = new THREE.Mesh(geom, new THREE.MeshBasicMaterial({ color: 0xB03A2E, wireframe: true, transparent: true, opacity: 0.15 }));
+  scene.add(wireMP);
+
+  // 技术冲击曲面（蓝色）——持久性响应
+  var geom2 = new THREE.BufferGeometry();
+  var verts2 = [];
+  for(var i=0; i<=res; i++) {
+    for(var j=0; j<=res; j++) {
+      var t = (j/res)*5 - 2.5;
+      var s = (i/res)*4 - 2;
+      var r = 2.5 + 0.6*(1 - Math.exp(-0.6*t*t)) * (1 + 0.3*Math.sin(s*0.5)) + 0.15*t;
+      verts2.push(t, Math.max(0.2, r), s*1.2);
+    }
+  }
+  geom2.setAttribute('position', new THREE.Float32BufferAttribute(verts2, 3));
+  geom2.setIndex(idx);
+  geom2.computeVertexNormals();
+  var matTech = new THREE.MeshPhongMaterial({ color: 0x14532D, transparent: true, opacity: 0.3, side: THREE.DoubleSide });
+  var meshTech = new THREE.Mesh(geom2, matTech);
+  scene.add(meshTech);
+  var wireTech = new THREE.Mesh(geom2, new THREE.MeshBasicMaterial({ color: 0x14532D, wireframe: true, transparent: true, opacity: 0.15 }));
+  scene.add(wireTech);
+
+  // 偏好冲击曲面（绿色）——短暂性响应
+  var geom3 = new THREE.BufferGeometry();
+  var verts3 = [];
+  for(var i=0; i<=res; i++) {
+    for(var j=0; j<=res; j++) {
+      var t = (j/res)*5 - 2.5;
+      var s = (i/res)*4 - 2;
+      var r = 2 + 0.5*Math.cos(t*0.9) * Math.exp(-0.5*s*s) + 0.15*Math.sin(s*0.4+t*0.3);
+      verts3.push(t, Math.max(0.2, r), s*1.2);
+    }
+  }
+  geom3.setAttribute('position', new THREE.Float32BufferAttribute(verts3, 3));
+  geom3.setIndex(idx);
+  geom3.computeVertexNormals();
+  var matPref = new THREE.MeshPhongMaterial({ color: 0xB7791F, transparent: true, opacity: 0.3, side: THREE.DoubleSide });
+  var meshPref = new THREE.Mesh(geom3, matPref);
+  scene.add(meshPref);
+  var wirePref = new THREE.Mesh(geom3, new THREE.MeshBasicMaterial({ color: 0xB7791F, wireframe: true, transparent: true, opacity: 0.15 }));
+  scene.add(wirePref);
+
+  var angle = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    angle += 0.003;
+    camera.position.x = 10 * Math.sin(angle);
+    camera.position.z = 10 * Math.cos(angle);
+    camera.lookAt(0, 1, 0);
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', function(){
+    var w2 = container.clientWidth, h2 = container.clientHeight;
+    camera.aspect = w2/h2; camera.updateProjectionMatrix();
+    renderer.setSize(w2, h2);
+  });
+})();
+</script>
+
+<!-- Three.js 3D 异质性 Agent 分布（D7） -->
+<script>
+(function(){
+  var container = document.getElementById('viz-3d-hank');
+  if(!container) return;
+  var w = container.clientWidth, h = container.clientHeight;
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xf4f7f3);
+  var camera = new THREE.PerspectiveCamera(45, w/h, 0.1, 100);
+  camera.position.set(8, 5, 9);
+  camera.lookAt(0, 1, 0);
+  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(w, h);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  var ambient = new THREE.AmbientLight(0x404040);
+  scene.add(ambient);
+  var dir = new THREE.DirectionalLight(0xffffff, 0.8);
+  dir.position.set(5, 10, 7);
+  scene.add(dir);
+  var dir2 = new THREE.DirectionalLight(0xffffff, 0.3);
+  dir2.position.set(-5, -5, -5);
+  scene.add(dir2);
+
+  var axesHelper = new THREE.AxesHelper(6);
+  scene.add(axesHelper);
+  var gridHelper = new THREE.GridHelper(10, 10, 0x5E6E62, 0xD6E0D4);
+  gridHelper.position.y = -0.1;
+  scene.add(gridHelper);
+
+  function makeLabel(text, color, pos) {
+    var canvas = document.createElement('canvas');
+    canvas.width = 128; canvas.height = 64;
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = color;
+    ctx.font = 'bold 14px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText(text, 64, 40);
+    var tex = new THREE.CanvasTexture(canvas);
+    var mat = new THREE.SpriteMaterial({ map: tex, transparent: true });
+    var sprite = new THREE.Sprite(mat);
+    sprite.position.copy(pos);
+    sprite.scale.set(1.8, 0.9, 1);
+    scene.add(sprite);
+  }
+  makeLabel('财富 (log)', '#B7791F', new THREE.Vector3(0, 6.0, 0));
+  makeLabel('收入 (log)', '#14532D', new THREE.Vector3(6.0, -0.5, 0));
+  makeLabel('消费', '#5E6E62', new THREE.Vector3(0, -0.5, 6.0));
+
+  // 高收入群体曲面（红色）——消费对财富不敏感（低MPC）
+  var res = 15;
+  var geom = new THREE.BufferGeometry();
+  var verts = [], idx = [];
+  for(var i=0; i<=res; i++) {
+    for(var j=0; j<=res; j++) {
+      var wl = (j/res)*5 - 2.5; // 财富
+      var inc = (i/res)*4 - 2;  // 收入
+      var c = 3.5 + 0.3*Math.atan(wl*0.8) + 0.4*Math.atan(inc*0.6) + 0.1*Math.sin(wl*0.3)*Math.cos(inc*0.3);
+      verts.push(wl, Math.max(0.2, c), inc*1.2);
+    }
+  }
+  for(var i=0; i<res; i++) {
+    for(var j=0; j<res; j++) {
+      var a = i*(res+1)+j, b = i*(res+1)+j+1, c = (i+1)*(res+1)+j, d = (i+1)*(res+1)+j+1;
+      idx.push(a,b,c,b,d,c);
+    }
+  }
+  geom.setAttribute('position', new THREE.Float32BufferAttribute(verts, 3));
+  geom.setIndex(idx);
+  geom.computeVertexNormals();
+  var matHigh = new THREE.MeshPhongMaterial({ color: 0xB03A2E, transparent: true, opacity: 0.3, side: THREE.DoubleSide });
+  var meshHigh = new THREE.Mesh(geom, matHigh);
+  scene.add(meshHigh);
+  var wireHigh = new THREE.Mesh(geom, new THREE.MeshBasicMaterial({ color: 0xB03A2E, wireframe: true, transparent: true, opacity: 0.12 }));
+  scene.add(wireHigh);
+
+  // 中等收入群体曲面（蓝色）
+  var geom2 = new THREE.BufferGeometry();
+  var verts2 = [];
+  for(var i=0; i<=res; i++) {
+    for(var j=0; j<=res; j++) {
+      var wl = (j/res)*5 - 2.5;
+      var inc = (i/res)*4 - 2;
+      var c = 2.5 + 0.5*Math.atan(wl*0.9) + 0.6*Math.atan(inc*0.7) + 0.08*Math.sin(wl*0.4+inc*0.2);
+      verts2.push(wl, Math.max(0.2, c), inc*1.2);
+    }
+  }
+  geom2.setAttribute('position', new THREE.Float32BufferAttribute(verts2, 3));
+  geom2.setIndex(idx);
+  geom2.computeVertexNormals();
+  var matMid = new THREE.MeshPhongMaterial({ color: 0x14532D, transparent: true, opacity: 0.3, side: THREE.DoubleSide });
+  var meshMid = new THREE.Mesh(geom2, matMid);
+  scene.add(meshMid);
+  var wireMid = new THREE.Mesh(geom2, new THREE.MeshBasicMaterial({ color: 0x14532D, wireframe: true, transparent: true, opacity: 0.12 }));
+  scene.add(wireMid);
+
+  // 低收入群体曲面（绿色）——消费对财富和收入高度敏感（高MPC）
+  var geom3 = new THREE.BufferGeometry();
+  var verts3 = [];
+  for(var i=0; i<=res; i++) {
+    for(var j=0; j<=res; j++) {
+      var wl = (j/res)*5 - 2.5;
+      var inc = (i/res)*4 - 2;
+      var c = 1.5 + 0.8*Math.atan(wl*1.2) + 0.9*Math.atan(inc*1.0) + 0.05*Math.sin(wl*0.5)*Math.cos(inc*0.4);
+      verts3.push(wl, Math.max(0.2, c), inc*1.2);
+    }
+  }
+  geom3.setAttribute('position', new THREE.Float32BufferAttribute(verts3, 3));
+  geom3.setIndex(idx);
+  geom3.computeVertexNormals();
+  var matLow = new THREE.MeshPhongMaterial({ color: 0xB7791F, transparent: true, opacity: 0.3, side: THREE.DoubleSide });
+  var meshLow = new THREE.Mesh(geom3, matLow);
+  scene.add(meshLow);
+  var wireLow = new THREE.Mesh(geom3, new THREE.MeshBasicMaterial({ color: 0xB7791F, wireframe: true, transparent: true, opacity: 0.12 }));
+  scene.add(wireLow);
+
+  var angle = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    angle += 0.003;
+    camera.position.x = 9 * Math.sin(angle);
+    camera.position.z = 9 * Math.cos(angle);
+    camera.lookAt(0, 1, 0);
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', function(){
+    var w2 = container.clientWidth, h2 = container.clientHeight;
+    camera.aspect = w2/h2; camera.updateProjectionMatrix();
+    renderer.setSize(w2, h2);
+  });
+})();
+</script>
+
+</body>
+</html>

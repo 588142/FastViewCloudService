@@ -1,0 +1,1017 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>修辞与演说思想谱系 · 思想图谱系列第二十八辑</title>
+
+  <style>
+
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+
+  </style>
+
+  <style>
+
+    :root {
+      --bg: #FBF8F3;
+      --bg2: #F3EDE1;
+      --ink: #2B2418;
+      --muted: #6E6352;
+      --rule: #E4DBC9;
+      --accent: #C2410C;
+      --accent2: #1D4ED8;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:first-child { margin-left: 0; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .legacy .legacy-title { font-weight: 700; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .legacy ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; }
+    @media (max-width: 700px) { .legacy { grid-template-columns: 1fr; } }
+
+    .history { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; }
+    .history .history-title { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem; }
+    .history p { margin-bottom: 0.55rem; }
+    .history p:last-child { margin-bottom: 0; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+    p a, li a { color: var(--accent); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    .formula {
+      font-family: var(--font-mono);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidenav { position: static; max-height: none; }
+    }
+    @media print {
+      .sidenav { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      section.sec { break-inside: avoid-page; }
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="shell">
+
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">修辞与演说思想谱系</div>
+    <div class="brand-sub">思想图谱系列 · 第二十八辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+      <li><a href="#intro">导言 · 修辞与演说</a></li>
+      <li><a href="#overview">第一章 · 总览：修辞与演说的演变</a></li>
+      <li><a href="#origin">第二章 · 修辞的起源：从智者派到亚里士多德</a></li>
+      <li><a href="#roman">第三章 · 罗马雄辩术：西塞罗与昆体良</a></li>
+      <li><a href="#revival">第四章 · 修辞的衰落与复兴：从经院到文艺复兴</a></li>
+      <li><a href="#enlightenment">第五章 · 启蒙与理性修辞：培根、洛克与新修辞学</a></li>
+      <li><a href="#democracy">第六章 · 民主与公共演说：林肯、金与政治修辞</a></li>
+      <li><a href="#summary">第七章 · 总结提炼：修辞与演说的启示</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第二十八辑</span>
+        <span class="series-links">
+          <a href="../index.html">系列目录</a>
+          <a href="../传播与媒介思想谱系/传播与媒介思想谱系.html">← 上一辑 · 传播与媒介思想谱系</a>
+          <a href="../人类学思想谱系/人类学思想谱系.html">下一辑 · 人类学思想谱系 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>修辞与演说思想谱系</h1>
+      <p class="subtitle">从智者派到马丁·路德·金——人类如何说服他人、以言成事、以辞立言：修辞的起源、亚里士多德修辞学、罗马雄辩术、修辞的衰落与复兴、启蒙与理性修辞、民主与公共演说，提炼“说服之艺、辞格之美、论辩之智、理性之基、民主之声”的修辞与演说规律</p>
+      <p class="meta">作者：詹家杨 · 2026-09-05 · 8 张思维导图 · 7 张对照表 · 10+ 人物语录 · 修辞与演说</p>
+    </header>
+
+    <main>
+      <!-- 导言 -->
+      <section class="sec" id="intro">
+        <h2>导言 · 修辞与演说</h2>
+        <p>修辞（rhetoric）来自希腊语 rhētorikē——“演说的技艺”，rhētōr——“演说者”；修辞学是研究如何有效说服、以言成事的学问。前面各辑梳理了人类关于世界、社会与心灵的种种思想，而本辑要追问的是更根本的问题：<strong>语言如何说服人？言辞如何改变世界？我们如何以言立言？</strong>当我们谈论演讲、辩论、广告、宣传时，我们其实在谈论同一个问题——人如何用语言影响他人。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 修辞学的历史演变：从古希腊到后真相时代</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ANC["古希腊修辞学\n亚里士多德·智者派\n说服的艺术"] --> ROM["罗马雄辩术\n西塞罗·昆体良\n修辞五艺"]
+  ROM --> MED["中世纪修辞学\n经院·布道\n修辞为神学服务"]
+  MED --> REN["文艺复兴\n佩特拉克·伊拉斯谟\n修辞复兴"]
+  REN --> MOD["启蒙修辞学\n培根·洛克\n理性修辞"]
+  MOD --> NEW["新修辞学\n1950-\n佩雷尔曼·图尔敏\n论证与听众"]
+  NEW --> POST["后真相时代\n21世纪\n情绪 vs 事实"]
+  classDef anc fill:#FFF7ED,stroke:#EA580C,color:#7C2D12;
+  classDef rom fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef med fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  classDef ren fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef mod fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  classDef new fill:#FCE7F3,stroke:#DB2777,color:#831843;
+  class ANC anc;
+  class ROM rom;
+  class MED med;
+  class REN ren;
+  class MOD mod;
+  class NEW,POST new;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：修辞学的历史演变</strong>——从古希腊到后真相时代，修辞学经历了从"说服的艺术"到"论证的哲学"再到"被质疑的艺术"的完整轮回。</p>
+          <p><strong>修辞学的诞生与衰落：</strong>修辞学诞生于古希腊民主城邦。西塞罗把它推到巅峰，认为"完美的演说家是完美的公民"。但到了中世纪，修辞沦为布道的工具；启蒙时代，洛克和笛卡尔贬低修辞——他们认为修辞是"欺骗的面纱"。</p>
+          <p><strong>新修辞学：</strong>20世纪中叶，佩雷尔曼和图尔敏复兴了修辞学。佩雷尔曼说，论证的目标是"获得听众的认同"，而不是"证明真理"。图尔敏提出了更实用的论证模型：主张→事实→理由→支持→限定→反驳。</p>
+          <p><strong>后真相时代的修辞：</strong>今天，修辞学面临深刻的悖论——分析工具前所未有地强大，但真相本身正在被解构。"另类事实"、"深度伪造"让修辞变成了操纵的同义词。修辞学能否在后真相时代重新找到自己的伦理根基？</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>0.1 修辞的定义：rhētorikē——演说的技艺</li>
+          <li>0.2 修辞与演说的七次转向：为说服→为雄辩→为论辩→为文采→为理性→为民主→为传播</li>
+          <li>0.3 修辞与演说同文学卷、逻辑卷的关联</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>rhētorikē</strong>：修辞的词源，意为“演说的技艺”</li>
+          <li><strong>说服三要素</strong>：人格（ethos）、情感（pathos）、逻辑（logos）</li>
+          <li><strong>修辞与演说谱系</strong>：说服→雄辩→论辩→文采→理性→民主→传播</li>
+        </ul>
+<figure class="diagram">
+          <figcaption>图 0a · 修辞学基本概念树状图</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  ROOT["修辞与演说思想谱系"] --> A["修辞三要素"]
+  ROOT --> B["修辞五艺"]
+  ROOT --> C["三大说服手段"]
+  ROOT --> D["修辞类型"]
+  A --> A1["Ethos 人格\n说话者的可信度"]
+  A --> A2["Pathos 情感\n调动听众情绪"]
+  A --> A3["Logos 逻辑\n论证的说服力"]
+  B --> B1["觅材 Inventio\n寻找论据"]
+  B --> B2["布局 Dispositio\n组织结构"]
+  B --> B3["文体 Elocutio\n语言风格"]
+  B --> B4["记忆 Memoria\n背诵"]
+  B --> B5["发表 Pronuntiatio\n演讲技巧"]
+  C --> C1["亚里士多德\n三种说服手段"]
+  C --> C2["西塞罗\n罗马雄辩术"]
+  C --> C3["佩雷尔曼\n新修辞学"]
+  D --> D1["议政修辞\n政治演说"]
+  D --> D2["庭辩修辞\n法庭辩论"]
+  D --> D3["藻饰修辞\n典礼演讲"]
+  classDef root fill:#A85B2A,color:#fff,stroke:#A85B2A;
+  classDef cat fill:#C2410C,color:#fff,stroke:#C2410C;
+  classDef leaf fill:#FFF7ED,stroke:#EA580C,color:#7C2D12;
+  class ROOT root;
+  class A,B,C,D cat;
+  class A1,A2,A3,B1,B2,B3,B4,B5,C1,C2,C3,D1,D2,D3 leaf;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 0a 详解：修辞学的基本概念框架</strong>——修辞不是"华丽的辞藻"，而是"有效说服的艺术"。</p>
+          <p><strong>修辞三要素（Ethos·Pathos·Logos）：</strong>亚里士多德在《修辞学》中提出的这三个说服手段，至今仍是所有有效沟通的基石。Ethos是说话者的可信度——没有可信度，再好的逻辑也不会被接受。Pathos是情感调动——纯粹的逻辑论证无法激励行动。Logos是逻辑论证——没有逻辑，说服就变成了操纵。三者缺一不可。</p>
+          <p><strong>修辞五艺：</strong>西塞罗和昆体良将修辞学系统化为五个步骤。觅材（寻找论据）、布局（安排结构）、文体（选择语言风格）、记忆（背诵）、发表（演讲技巧）。这五个步骤不仅是演讲的框架，也是任何有效沟通的框架——写文章、做PPT、甚至是商业谈判，都可以用这个框架来组织。</p>
+          <p><strong>现实案例：</strong>马丁·路德·金的"I Have a Dream"是修辞学的完美范例。Ethos：他作为民权运动领袖的道德权威。Pathos：对梦想的动人描述，激发听众的情感共鸣。Logos：引用《独立宣言》和《宪法》的承诺，逻辑上论证种族平等的正当性。结构上遵循了修辞五艺：觅材（引用美国建国文献）、布局（从现实不公到未来梦想）、文体（诗意的重复句式）、发表（极具感染力的演讲技巧）。</p>
+        </div>
+        <div class="callout">
+          <span class="callout-title">一条主线</span>
+          修辞与演说关注对象的七次转向：<strong>为说服</strong>（智者派与亚里士多德，修辞是说服的技艺）→ <strong>为雄辩</strong>（西塞罗与昆体良，修辞是雄辩的艺术）→ <strong>为论辩</strong>（中世纪经院哲学，修辞是论辩之术）→ <strong>为文采</strong>（文艺复兴与文学修辞，修辞是辞格的华彩）→ <strong>为理性</strong>（培根与洛克，修辞为理性服务）→ <strong>为民主</strong>（美国革命与民权运动，修辞是公共演说的力量）→ <strong>为传播</strong>（当代传播学与说服研究，修辞是影响的艺术）。每一次转向，都是人类对“如何以言成事”的一次重新回答。
+        </div>
+        <p>本辑沿修辞与演说的谱系展开——<strong>修辞的起源</strong>（智者派、苏格拉底、亚里士多德）、<strong>罗马雄辩术</strong>（西塞罗、昆体良）、<strong>修辞的衰落与复兴</strong>（经院论辩、文艺复兴辞格）、<strong>启蒙与理性修辞</strong>（培根、洛克、新修辞学）、<strong>民主与公共演说</strong>（林肯、马丁·路德·金、丘吉尔），看“以言成事”的技艺如何从雅典法庭的辩护，长成塑造公共生活的演说传统。它与第二十一辑《文学与语言思想谱系》血脉相连——文学卷问“语言如何创造意义”，本辑问“语言如何说服行动”；又与第二辑《逻辑与论证思想谱系》遥相呼应——逻辑卷问“如何论证为真”，本辑问“如何说服人信”。</p>
+        <figure class="diagram">
+          <figcaption>图 1 · 图 1 · 修辞与演说的七次转向图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["为说服"]
+  B["为雄辩"]
+  C["为论辩"]
+  D["为文采"]
+  E["为理性"]
+  F["为民主"]
+  G["为传播"]
+  A --> B
+  B --> C
+  C --> D
+  D --> E
+  E --> F
+  F --> G
+  classDef shift fill:#C2410C,color:#fff,stroke:#C2410C;
+  class A,B,C,D,E,F,G shift;
+          </pre>
+        </figure>
+      </section>
+      <section class="sec" id="overview">
+        <h2><span class="chapno">第一章</span>总览：修辞与演说的演变</h2>
+        <p>先看全景：修辞与人类的说服行为同龄。古希腊的智者派以言辞为武器，亚里士多德把修辞建成系统的学问；罗马的西塞罗与昆体良把修辞推向雄辩的巅峰；中世纪，修辞沦为论辩与布道的附庸；文艺复兴，修辞以辞格之美复兴；启蒙时代，培根与洛克让修辞为理性服务；美国革命与民权运动中，林肯与马丁·路德·金用演说改变历史；当代，修辞学与传播学、说服研究合流，成为影响世界的艺术。理解修辞与演说，就是理解语言如何说服人、言辞如何改变世界。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 修辞学的历史演变：从古希腊到后真相时代</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ANC["古希腊修辞学\n亚里士多德·智者派\n说服的艺术"] --> ROM["罗马雄辩术\n西塞罗·昆体良\n修辞五艺"]
+  ROM --> MED["中世纪修辞学\n经院·布道\n修辞为神学服务"]
+  MED --> REN["文艺复兴\n佩特拉克·伊拉斯谟\n修辞复兴"]
+  REN --> MOD["启蒙修辞学\n培根·洛克\n理性修辞"]
+  MOD --> NEW["新修辞学\n1950-\n佩雷尔曼·图尔敏\n论证与听众"]
+  NEW --> POST["后真相时代\n21世纪\n情绪 vs 事实"]
+  classDef anc fill:#FFF7ED,stroke:#EA580C,color:#7C2D12;
+  classDef rom fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef med fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  classDef ren fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef mod fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  classDef new fill:#FCE7F3,stroke:#DB2777,color:#831843;
+  class ANC anc;
+  class ROM rom;
+  class MED med;
+  class REN ren;
+  class MOD mod;
+  class NEW,POST new;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：修辞学的历史演变</strong>——从古希腊到后真相时代，修辞学经历了从"说服的艺术"到"论证的哲学"再到"被质疑的艺术"的完整轮回。</p>
+          <p><strong>修辞学的诞生与衰落：</strong>修辞学诞生于古希腊民主城邦。西塞罗把它推到巅峰，认为"完美的演说家是完美的公民"。但到了中世纪，修辞沦为布道的工具；启蒙时代，洛克和笛卡尔贬低修辞——他们认为修辞是"欺骗的面纱"。</p>
+          <p><strong>新修辞学：</strong>20世纪中叶，佩雷尔曼和图尔敏复兴了修辞学。佩雷尔曼说，论证的目标是"获得听众的认同"，而不是"证明真理"。图尔敏提出了更实用的论证模型：主张→事实→理由→支持→限定→反驳。</p>
+          <p><strong>后真相时代的修辞：</strong>今天，修辞学面临深刻的悖论——分析工具前所未有地强大，但真相本身正在被解构。"另类事实"、"深度伪造"让修辞变成了操纵的同义词。修辞学能否在后真相时代重新找到自己的伦理根基？</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>1.1 古希腊修辞学：从智者派到亚里士多德</li>
+          <li>1.2 罗马雄辩术与中世纪的衰落</li>
+          <li>1.3 文艺复兴、启蒙与现代修辞学</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>说服三要素</strong>：ethos、pathos、logos</li>
+          <li><strong>雄辩术</strong>：罗马修辞的巅峰</li>
+          <li><strong>新修辞学</strong>：当代修辞的复兴</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>古希腊修辞学（前5–前3世纪）</strong>：智者派（普罗泰戈拉、高尔吉亚）以言辞为武器；柏拉图批评修辞为“奉承术”；亚里士多德《修辞学》（约前335）把修辞建成系统学问，提出说服三要素 ethos、pathos、logos。</p>
+          <p><strong>罗马雄辩术（前1世纪–2世纪）</strong>：西塞罗《论演说家》把修辞与政治、哲学结合；昆体良《雄辩术原理》（约95）建立完整的修辞教育体系，雄辩家成为理想公民的典范。</p>
+          <p><strong>中世纪与文艺复兴（5–16世纪）</strong>：中世纪修辞沦为论辩术与布道术；文艺复兴重新发现古典修辞，辞格（比喻、排比、反问）成为文学修辞的核心；拉米斯把修辞简化为风格与辞格。</p>
+          <p><strong>启蒙与现代修辞学（17世纪–）</strong>：培根、洛克批评传统修辞，主张清晰平实的语言；18世纪苏格兰修辞学（坎贝尔、布莱尔）复兴修辞；20世纪，佩雷尔曼、伯克建立新修辞学，修辞学与传播学、说服研究合流。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>普罗泰戈拉（约前490–前420）</strong>——智者派、人是万物的尺度。</p>
+        <p><strong>高尔吉亚（约前483–前375）</strong>——智者派、修辞大师。</p>
+        <p><strong>亚里士多德（前384–前322）</strong>——《修辞学》、说服三要素。</p>
+        <p><strong>西塞罗（前106–前43）</strong>——《论演说家》。</p>
+        <p><strong>昆体良（约35–100）</strong>——《雄辩术原理》。</p>
+        <p><strong>佩雷尔曼（1912–1984）</strong>——新修辞学。</p>
+        <p><strong>肯尼斯·伯克（1897–1993）</strong>——修辞认同论。</p>
+        <figure class="diagram">
+          <figcaption>图 2 · 修辞与演说演变结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["修辞与演说"] --> A["古希腊<br>智者派 · 亚里士多德"]
+  ROOT --> B["罗马雄辩<br>西塞罗 · 昆体良"]
+  ROOT --> C["中世纪与文艺复兴<br>论辩 · 辞格"]
+  ROOT --> D["启蒙与现代<br>培根 · 佩雷尔曼"]
+  classDef rootNode fill:#C2410C,color:#fff,stroke:#C2410C;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：修辞与演说主要时期速览</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>时期</th><th>核心问题</th><th>代表人物</th><th>思想遗产</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>古希腊</strong></td><td>如何说服</td><td>亚里士多德</td><td>说服三要素</td></tr>
+              <tr><td><strong>罗马</strong></td><td>如何雄辩</td><td>西塞罗 · 昆体良</td><td>雄辩术教育</td></tr>
+              <tr><td><strong>中世纪</strong></td><td>如何论辩</td><td>经院哲学家</td><td>论辩术</td></tr>
+              <tr><td><strong>文艺复兴</strong></td><td>如何华美</td><td>拉米斯 · 文学修辞</td><td>辞格体系</td></tr>
+              <tr><td><strong>启蒙与现代</strong></td><td>如何理性说服</td><td>培根 · 佩雷尔曼</td><td>新修辞学</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="sec" id="origin">
+        <h2><span class="chapno">第二章</span>修辞的起源：从智者派到亚里士多德</h2>
+        <p>修辞学诞生于古希腊的民主城邦。在雅典的法庭与公民大会上，公民需要以言辞说服陪审团与民众，于是智者派应运而生——他们以教授辩论与演说为业，普罗泰戈拉宣称“人是万物的尺度”，高尔吉亚以华丽的修辞震撼雅典。苏格拉底与柏拉图批评智者派把修辞变成“奉承术”，但亚里士多德以《修辞学》为修辞正名：修辞是“在每一事例上发现可行说服方式的能力”，并提出说服三要素——人格（ethos）、情感（pathos）、逻辑（logos）。本章的核心洞见是：<strong>修辞是民主的技艺</strong>——它诞生于自由言说的城邦，也服务于自由言说的生活。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 修辞学的历史演变：从古希腊到后真相时代</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ANC["古希腊修辞学\n亚里士多德·智者派\n说服的艺术"] --> ROM["罗马雄辩术\n西塞罗·昆体良\n修辞五艺"]
+  ROM --> MED["中世纪修辞学\n经院·布道\n修辞为神学服务"]
+  MED --> REN["文艺复兴\n佩特拉克·伊拉斯谟\n修辞复兴"]
+  REN --> MOD["启蒙修辞学\n培根·洛克\n理性修辞"]
+  MOD --> NEW["新修辞学\n1950-\n佩雷尔曼·图尔敏\n论证与听众"]
+  NEW --> POST["后真相时代\n21世纪\n情绪 vs 事实"]
+  classDef anc fill:#FFF7ED,stroke:#EA580C,color:#7C2D12;
+  classDef rom fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef med fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  classDef ren fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef mod fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  classDef new fill:#FCE7F3,stroke:#DB2777,color:#831843;
+  class ANC anc;
+  class ROM rom;
+  class MED med;
+  class REN ren;
+  class MOD mod;
+  class NEW,POST new;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：修辞学的历史演变</strong>——从古希腊到后真相时代，修辞学经历了从"说服的艺术"到"论证的哲学"再到"被质疑的艺术"的完整轮回。</p>
+          <p><strong>修辞学的诞生与衰落：</strong>修辞学诞生于古希腊民主城邦。西塞罗把它推到巅峰，认为"完美的演说家是完美的公民"。但到了中世纪，修辞沦为布道的工具；启蒙时代，洛克和笛卡尔贬低修辞——他们认为修辞是"欺骗的面纱"。</p>
+          <p><strong>新修辞学：</strong>20世纪中叶，佩雷尔曼和图尔敏复兴了修辞学。佩雷尔曼说，论证的目标是"获得听众的认同"，而不是"证明真理"。图尔敏提出了更实用的论证模型：主张→事实→理由→支持→限定→反驳。</p>
+          <p><strong>后真相时代的修辞：</strong>今天，修辞学面临深刻的悖论——分析工具前所未有地强大，但真相本身正在被解构。"另类事实"、"深度伪造"让修辞变成了操纵的同义词。修辞学能否在后真相时代重新找到自己的伦理根基？</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>2.1 智者派：言辞的启蒙</li>
+          <li>2.2 苏格拉底与柏拉图：对修辞的批评</li>
+          <li>2.3 亚里士多德《修辞学》：说服三要素</li>
+          <li>2.4 修辞与民主城邦</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>人是万物的尺度</strong>：普罗泰戈拉的名言</li>
+          <li><strong>说服三要素</strong>：ethos、pathos、logos</li>
+          <li><strong>修辞的定义</strong>：发现可行说服方式的能力</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>智者派（前5世纪）</strong>：雅典民主催生演说需求；智者派以教授修辞为业；普罗泰戈拉提出“人是万物的尺度”；高尔吉亚《海伦颂》展示修辞的力量。</p>
+          <p><strong>苏格拉底与柏拉图（前5–前4世纪）</strong>：苏格拉底以对话揭露智者派的诡辩；柏拉图在《高尔吉亚篇》《斐德罗篇》批评修辞为“奉承术”，主张以真理为基础的修辞。</p>
+          <p><strong>亚里士多德《修辞学》（约前335）</strong>：亚里士多德把修辞定义为“在每一事例上发现可行说服方式的能力”；提出说服三要素 ethos（人格）、pathos（情感）、logos（逻辑）；区分三种演说：议事、法庭、展示。</p>
+          <p><strong>修辞与民主城邦（前5–前4世纪）</strong>：修辞是公民参与公共生活的技艺；伯里克利《阵亡将士葬礼演说》是古典演说的典范；修辞教育成为希腊教育“三艺”之一。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>普罗泰戈拉（约前490–前420）</strong>——人是万物的尺度。</p>
+        <p><strong>高尔吉亚（约前483–前375）</strong>——《海伦颂》。</p>
+        <p><strong>苏格拉底（前469–前399）</strong>——对话与诘问。</p>
+        <p><strong>柏拉图（前427–前347）</strong>——《高尔吉亚篇》。</p>
+        <p><strong>亚里士多德（前384–前322）</strong>——《修辞学》。</p>
+        <p><strong>伯里克利（约前495–前429）</strong>——阵亡将士葬礼演说。</p>
+        <figure class="diagram">
+          <figcaption>图 3 · 修辞起源结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["修辞的起源"] --> A["智者派<br>普罗泰戈拉 · 高尔吉亚"]
+  ROOT --> B["苏格拉底与柏拉图<br>对话 · 批评"]
+  ROOT --> C["亚里士多德<br>《修辞学》 · 三要素"]
+  ROOT --> D["民主城邦<br>公民演说 · 三艺"]
+  classDef rootNode fill:#C2410C,color:#fff,stroke:#C2410C;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：说服三要素对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>要素</th><th>含义</th><th>运用</th><th>典型</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>ethos 人格</strong></td><td>演说者的可信度</td><td>展现品格与权威</td><td>医生谈医术</td></tr>
+              <tr><td><strong>pathos 情感</strong></td><td>调动听众情绪</td><td>激发同情与愤怒</td><td>法庭悲情陈述</td></tr>
+              <tr><td><strong>logos 逻辑</strong></td><td>论证的说服力</td><td>用证据与推理</td><td>三段论论证</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">普罗泰戈拉 · 约前490–前420</div>
+            <blockquote>人是万物的尺度。<cite>——《论真理》</cite></blockquote>
+            <div class="legacy-who">高尔吉亚 · 约前483–前375</div>
+            <blockquote>言辞是强大的主宰者。<cite>——《海伦颂》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">亚里士多德 · 前384–前322</div>
+            <blockquote>修辞是在每一事例上发现可行说服方式的能力。<cite>——《修辞学》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="roman">
+        <h2><span class="chapno">第三章</span>罗马雄辩术：西塞罗与昆体良</h2>
+        <p>罗马人把希腊的修辞学发展为雄辩术（eloquentia），并把它与政治、法律、教育紧密结合。西塞罗是罗马最伟大的演说家，他的《论演说家》主张演说家应兼具哲学与修辞、智慧与雄辩；他的《反喀提林》演说以雷霆之势挽救罗马。昆体良在《雄辩术原理》中提出“雄辩家是善于说话的好人”（vir bonus dicendi peritus），把修辞教育与道德教育合一。本章的核心洞见是：<strong>雄辩术是公民的技艺</strong>——它不仅是说话的艺术，更是参与公共事务、维护正义的能力。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 修辞学的历史演变：从古希腊到后真相时代</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ANC["古希腊修辞学\n亚里士多德·智者派\n说服的艺术"] --> ROM["罗马雄辩术\n西塞罗·昆体良\n修辞五艺"]
+  ROM --> MED["中世纪修辞学\n经院·布道\n修辞为神学服务"]
+  MED --> REN["文艺复兴\n佩特拉克·伊拉斯谟\n修辞复兴"]
+  REN --> MOD["启蒙修辞学\n培根·洛克\n理性修辞"]
+  MOD --> NEW["新修辞学\n1950-\n佩雷尔曼·图尔敏\n论证与听众"]
+  NEW --> POST["后真相时代\n21世纪\n情绪 vs 事实"]
+  classDef anc fill:#FFF7ED,stroke:#EA580C,color:#7C2D12;
+  classDef rom fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef med fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  classDef ren fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef mod fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  classDef new fill:#FCE7F3,stroke:#DB2777,color:#831843;
+  class ANC anc;
+  class ROM rom;
+  class MED med;
+  class REN ren;
+  class MOD mod;
+  class NEW,POST new;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：修辞学的历史演变</strong>——从古希腊到后真相时代，修辞学经历了从"说服的艺术"到"论证的哲学"再到"被质疑的艺术"的完整轮回。</p>
+          <p><strong>修辞学的诞生与衰落：</strong>修辞学诞生于古希腊民主城邦。西塞罗把它推到巅峰，认为"完美的演说家是完美的公民"。但到了中世纪，修辞沦为布道的工具；启蒙时代，洛克和笛卡尔贬低修辞——他们认为修辞是"欺骗的面纱"。</p>
+          <p><strong>新修辞学：</strong>20世纪中叶，佩雷尔曼和图尔敏复兴了修辞学。佩雷尔曼说，论证的目标是"获得听众的认同"，而不是"证明真理"。图尔敏提出了更实用的论证模型：主张→事实→理由→支持→限定→反驳。</p>
+          <p><strong>后真相时代的修辞：</strong>今天，修辞学面临深刻的悖论——分析工具前所未有地强大，但真相本身正在被解构。"另类事实"、"深度伪造"让修辞变成了操纵的同义词。修辞学能否在后真相时代重新找到自己的伦理根基？</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>3.1 西塞罗：演说家与政治家</li>
+          <li>3.2 《论演说家》：智慧与雄辩</li>
+          <li>3.3 昆体良《雄辩术原理》：雄辩家教育</li>
+          <li>3.4 罗马雄辩术的遗产</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>雄辩术</strong>：罗马修辞的核心</li>
+          <li><strong>善于说话的好人</strong>：昆体良的雄辩家理想</li>
+          <li><strong>修辞五艺</strong>：立意、布局、措辞、记忆、发表</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>西塞罗（前106–前43）</strong>：罗马最伟大的演说家与政治家；《反喀提林》四篇演说挽救罗马；《论演说家》《布鲁图斯》《演说家》奠定修辞理论。</p>
+          <p><strong>《论演说家》（前55）</strong>：西塞罗主张演说家应兼具哲学与修辞、智慧与雄辩；演说需要广博的知识、敏锐的洞察与优雅的表达。</p>
+          <p><strong>昆体良《雄辩术原理》（约95）</strong>：昆体良提出“雄辩家是善于说话的好人”；建立从文法到修辞的完整教育体系；主张修辞教育应培养德才兼备的公民。</p>
+          <p><strong>罗马雄辩术的遗产（1世纪–）</strong>：罗马的修辞五艺（立意、布局、措辞、记忆、发表）成为后世修辞教育的框架；雄辩术传统影响中世纪布道与文艺复兴人文教育。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>西塞罗（前106–前43）</strong>——《论演说家》、反喀提林。</p>
+        <p><strong>昆体良（约35–100）</strong>——《雄辩术原理》。</p>
+        <p><strong>加图（前234–前149）</strong>——罗马最早的演说家。</p>
+        <p><strong>格拉古兄弟（前2世纪）</strong>——改革演说。</p>
+        <figure class="diagram">
+          <figcaption>图 4 · 罗马雄辩术结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["罗马雄辩术"] --> A["西塞罗<br>《论演说家》 · 反喀提林"]
+  ROOT --> B["昆体良<br>《雄辩术原理》"]
+  ROOT --> C["修辞五艺<br>立意 · 布局 · 措辞 · 记忆 · 发表"]
+  ROOT --> D["遗产<br>布道 · 人文教育"]
+  classDef rootNode fill:#C2410C,color:#fff,stroke:#C2410C;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：修辞五艺对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>五艺</th><th>含义</th><th>说明</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>inventio 立意</strong></td><td>发现论据</td><td>寻找说服的材料</td></tr>
+              <tr><td><strong>dispositio 布局</strong></td><td>组织结构</td><td>安排论证的顺序</td></tr>
+              <tr><td><strong>elocutio 措辞</strong></td><td>语言风格</td><td>选择表达的方式</td></tr>
+              <tr><td><strong>memoria 记忆</strong></td><td>记忆训练</td><td>记住演讲内容</td></tr>
+              <tr><td><strong>pronuntiatio 发表</strong></td><td>声音与姿态</td><td>呈现演讲的方式</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">西塞罗 · 前106–前43</div>
+            <blockquote>演说家是精通言说的好人。<cite>——《论演说家》</cite></blockquote>
+            <div class="legacy-who">昆体良 · 约35–100</div>
+            <blockquote>雄辩家是善于说话的好人。<cite>——《雄辩术原理》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">加图 · 前234–前149</div>
+            <blockquote>抓住要点，言辞自随。<cite>——古罗马谚语</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="revival">
+        <h2><span class="chapno">第四章</span>修辞的衰落与复兴：从经院到文艺复兴</h2>
+        <p>罗马帝国衰亡后，修辞学从公共生活的技艺退入书斋。中世纪，修辞成为经院哲学论辩的工具与布道的技艺，与文法、逻辑并称“三艺”；奥古斯丁把修辞用于基督教布道。文艺复兴重新发现古典修辞，人文主义者以西塞罗为典范，修辞成为人文教育的核心；拉米斯把修辞简化为风格与辞格，文学修辞（比喻、排比、反问）大放异彩。本章的核心洞见是：<strong>修辞的生命在于公共生活</strong>——当修辞脱离公共生活，它就退化为辞藻；当它重返公共生活，它就焕发新生。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 修辞学的历史演变：从古希腊到后真相时代</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ANC["古希腊修辞学\n亚里士多德·智者派\n说服的艺术"] --> ROM["罗马雄辩术\n西塞罗·昆体良\n修辞五艺"]
+  ROM --> MED["中世纪修辞学\n经院·布道\n修辞为神学服务"]
+  MED --> REN["文艺复兴\n佩特拉克·伊拉斯谟\n修辞复兴"]
+  REN --> MOD["启蒙修辞学\n培根·洛克\n理性修辞"]
+  MOD --> NEW["新修辞学\n1950-\n佩雷尔曼·图尔敏\n论证与听众"]
+  NEW --> POST["后真相时代\n21世纪\n情绪 vs 事实"]
+  classDef anc fill:#FFF7ED,stroke:#EA580C,color:#7C2D12;
+  classDef rom fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef med fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  classDef ren fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef mod fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  classDef new fill:#FCE7F3,stroke:#DB2777,color:#831843;
+  class ANC anc;
+  class ROM rom;
+  class MED med;
+  class REN ren;
+  class MOD mod;
+  class NEW,POST new;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：修辞学的历史演变</strong>——从古希腊到后真相时代，修辞学经历了从"说服的艺术"到"论证的哲学"再到"被质疑的艺术"的完整轮回。</p>
+          <p><strong>修辞学的诞生与衰落：</strong>修辞学诞生于古希腊民主城邦。西塞罗把它推到巅峰，认为"完美的演说家是完美的公民"。但到了中世纪，修辞沦为布道的工具；启蒙时代，洛克和笛卡尔贬低修辞——他们认为修辞是"欺骗的面纱"。</p>
+          <p><strong>新修辞学：</strong>20世纪中叶，佩雷尔曼和图尔敏复兴了修辞学。佩雷尔曼说，论证的目标是"获得听众的认同"，而不是"证明真理"。图尔敏提出了更实用的论证模型：主张→事实→理由→支持→限定→反驳。</p>
+          <p><strong>后真相时代的修辞：</strong>今天，修辞学面临深刻的悖论——分析工具前所未有地强大，但真相本身正在被解构。"另类事实"、"深度伪造"让修辞变成了操纵的同义词。修辞学能否在后真相时代重新找到自己的伦理根基？</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>4.1 中世纪：修辞与布道、论辩</li>
+          <li>4.2 奥古斯丁：基督教修辞学</li>
+          <li>4.3 文艺复兴：古典修辞的复兴</li>
+          <li>4.4 拉米斯与辞格体系</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>三艺</strong>：文法、修辞、逻辑</li>
+          <li><strong>辞格</strong>：比喻、排比、反问等修辞手法</li>
+          <li><strong>人文主义修辞</strong>：文艺复兴的修辞复兴</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>中世纪修辞（5–14世纪）</strong>：修辞成为“三艺”之一；波爱修斯等把修辞与论辩结合；修辞用于布道、书信（ars dictaminis）与诗歌（ars poetriae）。</p>
+          <p><strong>奥古斯丁《论基督教教义》（约397）</strong>：奥古斯丁把古典修辞用于基督教布道；主张以修辞传播真理、说服信徒；修辞成为神学的侍女。</p>
+          <p><strong>文艺复兴（14–16世纪）</strong>：彼特拉克、伊拉斯谟重新发现西塞罗与昆体良；修辞成为人文教育的核心；宫廷与学院盛行拉丁演说。</p>
+          <p><strong>拉米斯与辞格体系（16世纪）</strong>：拉米斯把修辞简化为风格与辞格；辞格（比喻、排比、反问、夸张）成为文学修辞的核心；修辞学与诗学、文学批评交融。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>奥古斯丁（354–430）</strong>——《论基督教教义》。</p>
+        <p><strong>波爱修斯（约480–524）</strong>——三艺的传承者。</p>
+        <p><strong>彼特拉克（1304–1374）</strong>——文艺复兴之父。</p>
+        <p><strong>伊拉斯谟（1466–1536）</strong>——人文主义修辞。</p>
+        <p><strong>拉米斯（1515–1572）</strong>——修辞与逻辑的分野。</p>
+        <figure class="diagram">
+          <figcaption>图 5 · 修辞衰落与复兴结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["修辞的衰落与复兴"] --> A["中世纪<br>布道 · 论辩 · 三艺"]
+  ROOT --> B["奥古斯丁<br>基督教修辞学"]
+  ROOT --> C["文艺复兴<br>西塞罗典范 · 人文教育"]
+  ROOT --> D["拉米斯<br>辞格体系"]
+  classDef rootNode fill:#C2410C,color:#fff,stroke:#C2410C;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：中世纪与文艺复兴修辞对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>时期</th><th>修辞的形态</th><th>代表人物</th><th>核心特征</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>中世纪</strong></td><td>布道与论辩</td><td>奥古斯丁 · 波爱修斯</td><td>神学服务</td></tr>
+              <tr><td><strong>文艺复兴</strong></td><td>人文修辞</td><td>伊拉斯谟 · 彼特拉克</td><td>古典复兴</td></tr>
+              <tr><td><strong>拉米斯主义</strong></td><td>辞格体系</td><td>拉米斯</td><td>风格与辞格</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">奥古斯丁 · 354–430</div>
+            <blockquote>以修辞传播真理，以言辞说服人心。<cite>——《论基督教教义》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">伊拉斯谟 · 1466–1536</div>
+            <blockquote>言辞是思想的衣裳。<cite>——《愚人颂》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="enlightenment">
+        <h2><span class="chapno">第五章</span>启蒙与理性修辞：培根、洛克与新修辞学</h2>
+        <p>启蒙时代，理性成为新的权威，传统修辞被批评为浮华与诡辩。培根主张修辞应为理性服务，洛克批评滥用言辞的“修辞花招”，主张清晰平实的语言；18世纪苏格兰修辞学家坎贝尔、布莱尔复兴修辞，把它与心理学、美学结合；20世纪，佩雷尔曼的“新修辞学”把论证重新带回修辞的中心，肯尼斯·伯克提出“认同”是修辞的本质。本章的核心洞见是：<strong>修辞与理性并非对立</strong>——好的修辞让真理更有力量，坏的修辞让谬误更危险。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 修辞学的历史演变：从古希腊到后真相时代</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ANC["古希腊修辞学\n亚里士多德·智者派\n说服的艺术"] --> ROM["罗马雄辩术\n西塞罗·昆体良\n修辞五艺"]
+  ROM --> MED["中世纪修辞学\n经院·布道\n修辞为神学服务"]
+  MED --> REN["文艺复兴\n佩特拉克·伊拉斯谟\n修辞复兴"]
+  REN --> MOD["启蒙修辞学\n培根·洛克\n理性修辞"]
+  MOD --> NEW["新修辞学\n1950-\n佩雷尔曼·图尔敏\n论证与听众"]
+  NEW --> POST["后真相时代\n21世纪\n情绪 vs 事实"]
+  classDef anc fill:#FFF7ED,stroke:#EA580C,color:#7C2D12;
+  classDef rom fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef med fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  classDef ren fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef mod fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  classDef new fill:#FCE7F3,stroke:#DB2777,color:#831843;
+  class ANC anc;
+  class ROM rom;
+  class MED med;
+  class REN ren;
+  class MOD mod;
+  class NEW,POST new;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：修辞学的历史演变</strong>——从古希腊到后真相时代，修辞学经历了从"说服的艺术"到"论证的哲学"再到"被质疑的艺术"的完整轮回。</p>
+          <p><strong>修辞学的诞生与衰落：</strong>修辞学诞生于古希腊民主城邦。西塞罗把它推到巅峰，认为"完美的演说家是完美的公民"。但到了中世纪，修辞沦为布道的工具；启蒙时代，洛克和笛卡尔贬低修辞——他们认为修辞是"欺骗的面纱"。</p>
+          <p><strong>新修辞学：</strong>20世纪中叶，佩雷尔曼和图尔敏复兴了修辞学。佩雷尔曼说，论证的目标是"获得听众的认同"，而不是"证明真理"。图尔敏提出了更实用的论证模型：主张→事实→理由→支持→限定→反驳。</p>
+          <p><strong>后真相时代的修辞：</strong>今天，修辞学面临深刻的悖论——分析工具前所未有地强大，但真相本身正在被解构。"另类事实"、"深度伪造"让修辞变成了操纵的同义词。修辞学能否在后真相时代重新找到自己的伦理根基？</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>5.1 培根：修辞为理性服务</li>
+          <li>5.2 洛克：对“修辞花招”的批评</li>
+          <li>5.3 苏格兰修辞学：坎贝尔与布莱尔</li>
+          <li>5.4 新修辞学：佩雷尔曼与伯克</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>新修辞学</strong>：论证的复兴</li>
+          <li><strong>认同</strong>：伯克的修辞本质观</li>
+          <li><strong>受众</strong>：佩雷尔曼的论证核心</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>培根（1561–1626）</strong>：培根在《学术的进展》中为修辞辩护，主张修辞是“理性的应用”，让真理更易被接受；修辞应服务于知识，而非掩盖无知。</p>
+          <p><strong>洛克（1632–1704）</strong>：洛克在《人类理解论》中批评“修辞花招”是“完美的欺骗艺术”；主张哲学语言应清晰、精确、平实；修辞被逐出知识领域。</p>
+          <p><strong>苏格兰修辞学（18世纪）</strong>：坎贝尔《修辞哲学》把修辞与心理学结合，提出“说服基于理解、想象、情感、意志”；布莱尔《修辞学与纯文学讲座》复兴修辞教育。</p>
+          <p><strong>新修辞学（20世纪）</strong>：佩雷尔曼《新修辞学》把论证带回修辞中心，提出“论证面向受众”；伯克提出“人是使用象征的动物”，修辞的本质是“认同”；修辞学与传播学、说服研究合流。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>培根（1561–1626）</strong>——《学术的进展》。</p>
+        <p><strong>洛克（1632–1704）</strong>——《人类理解论》。</p>
+        <p><strong>坎贝尔（1719–1796）</strong>——《修辞哲学》。</p>
+        <p><strong>布莱尔（1718–1800）</strong>——《修辞学与纯文学讲座》。</p>
+        <p><strong>佩雷尔曼（1912–1984）</strong>——《新修辞学》。</p>
+        <p><strong>肯尼斯·伯克（1897–1993）</strong>——修辞认同论。</p>
+        <figure class="diagram">
+          <figcaption>图 6 · 启蒙与现代修辞结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["启蒙与现代修辞"] --> A["培根<br>修辞为理性服务"]
+  ROOT --> B["洛克<br>批评修辞花招"]
+  ROOT --> C["苏格兰修辞学<br>坎贝尔 · 布莱尔"]
+  ROOT --> D["新修辞学<br>佩雷尔曼 · 伯克"]
+  classDef rootNode fill:#C2410C,color:#fff,stroke:#C2410C;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：修辞观的演变对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>思想家</th><th>核心主张</th><th>对修辞的态度</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>培根</strong></td><td>修辞为理性服务</td><td>肯定</td></tr>
+              <tr><td><strong>洛克</strong></td><td>修辞是欺骗艺术</td><td>批评</td></tr>
+              <tr><td><strong>坎贝尔</strong></td><td>修辞基于心理</td><td>复兴</td></tr>
+              <tr><td><strong>佩雷尔曼</strong></td><td>论证面向受众</td><td>复兴</td></tr>
+              <tr><td><strong>伯克</strong></td><td>修辞即认同</td><td>扩展</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">培根 · 1561–1626</div>
+            <blockquote>修辞是理性的应用，让真理更易被接受。<cite>——《学术的进展》</cite></blockquote>
+            <div class="legacy-who">洛克 · 1632–1704</div>
+            <blockquote>修辞花招是完美的欺骗艺术。<cite>——《人类理解论》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">佩雷尔曼 · 1912–1984</div>
+            <blockquote>论证是面向受众的理性活动。<cite>——《新修辞学》</cite></blockquote>
+            <div class="legacy-who">伯克 · 1897–1993</div>
+            <blockquote>人是使用象征的动物。<cite>——《动机修辞学》</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="democracy">
+        <h2><span class="chapno">第六章</span>民主与公共演说：林肯、金与政治修辞</h2>
+        <p>修辞的最高舞台是公共生活。美国革命中，帕特里克·亨利高呼“不自由，毋宁死”；林肯的《葛底斯堡演说》以两分钟重塑美国的立国精神；马丁·路德·金《我有一个梦想》以排比与意象点燃民权运动；丘吉尔在至暗时刻以演说凝聚英国。政治修辞既是权力的工具，也是自由的技艺——它既能煽动狂热，也能唤醒良知。本章的核心洞见是：<strong>伟大的演说改变历史</strong>——在民主社会，言辞是公民参与政治、争取权利、凝聚共识的首要方式。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 修辞学的历史演变：从古希腊到后真相时代</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ANC["古希腊修辞学\n亚里士多德·智者派\n说服的艺术"] --> ROM["罗马雄辩术\n西塞罗·昆体良\n修辞五艺"]
+  ROM --> MED["中世纪修辞学\n经院·布道\n修辞为神学服务"]
+  MED --> REN["文艺复兴\n佩特拉克·伊拉斯谟\n修辞复兴"]
+  REN --> MOD["启蒙修辞学\n培根·洛克\n理性修辞"]
+  MOD --> NEW["新修辞学\n1950-\n佩雷尔曼·图尔敏\n论证与听众"]
+  NEW --> POST["后真相时代\n21世纪\n情绪 vs 事实"]
+  classDef anc fill:#FFF7ED,stroke:#EA580C,color:#7C2D12;
+  classDef rom fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef med fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  classDef ren fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef mod fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  classDef new fill:#FCE7F3,stroke:#DB2777,color:#831843;
+  class ANC anc;
+  class ROM rom;
+  class MED med;
+  class REN ren;
+  class MOD mod;
+  class NEW,POST new;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：修辞学的历史演变</strong>——从古希腊到后真相时代，修辞学经历了从"说服的艺术"到"论证的哲学"再到"被质疑的艺术"的完整轮回。</p>
+          <p><strong>修辞学的诞生与衰落：</strong>修辞学诞生于古希腊民主城邦。西塞罗把它推到巅峰，认为"完美的演说家是完美的公民"。但到了中世纪，修辞沦为布道的工具；启蒙时代，洛克和笛卡尔贬低修辞——他们认为修辞是"欺骗的面纱"。</p>
+          <p><strong>新修辞学：</strong>20世纪中叶，佩雷尔曼和图尔敏复兴了修辞学。佩雷尔曼说，论证的目标是"获得听众的认同"，而不是"证明真理"。图尔敏提出了更实用的论证模型：主张→事实→理由→支持→限定→反驳。</p>
+          <p><strong>后真相时代的修辞：</strong>今天，修辞学面临深刻的悖论——分析工具前所未有地强大，但真相本身正在被解构。"另类事实"、"深度伪造"让修辞变成了操纵的同义词。修辞学能否在后真相时代重新找到自己的伦理根基？</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>6.1 美国革命修辞：从亨利到杰斐逊</li>
+          <li>6.2 林肯：葛底斯堡演说与第二次就职演说</li>
+          <li>6.3 马丁·路德·金：我有一个梦想</li>
+          <li>6.4 丘吉尔与政治修辞的力量</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>葛底斯堡演说</strong>：两分钟的立国演说</li>
+          <li><strong>我有一个梦想</strong>：民权运动的修辞高峰</li>
+          <li><strong>政治修辞</strong>：权力与自由的技艺</li>
+        </ul>
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>美国革命修辞（18世纪）</strong>：帕特里克·亨利“不自由，毋宁死”（1775）；杰斐逊《独立宣言》（1776）以“我们认为这些真理不言而喻”开篇；革命修辞以自然权利论证独立。</p>
+          <p><strong>林肯（1809–1865）</strong>：《葛底斯堡演说》（1863）以“民有、民治、民享”重塑民主理想；《第二次就职演说》（1865）以“对任何人都不怀恶意”寻求和解。</p>
+          <p><strong>马丁·路德·金（1929–1968）</strong>：《我有一个梦想》（1963）以排比、意象与圣经语言点燃民权运动；金把黑人争取权利的事业纳入美国立国理想。</p>
+          <p><strong>丘吉尔（1874–1965）</strong>：二战期间以“我们将在海滩上作战”“这是他们最光辉的时刻”凝聚英国；政治修辞在危机时刻成为民族的精神支柱。</p>
+        </div>
+        <h3>代表人物</h3>
+        <p><strong>帕特里克·亨利（1736–1799）</strong>——不自由，毋宁死。</p>
+        <p><strong>杰斐逊（1743–1826）</strong>——《独立宣言》。</p>
+        <p><strong>林肯（1809–1865）</strong>——葛底斯堡演说。</p>
+        <p><strong>马丁·路德·金（1929–1968）</strong>——我有一个梦想。</p>
+        <p><strong>丘吉尔（1874–1965）</strong>——至暗时刻的演说。</p>
+        <p><strong>肯尼迪（1917–1963）</strong>——不要问国家能为你做什么。</p>
+        <figure class="diagram">
+          <figcaption>图 7 · 民主与公共演说结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["民主与公共演说"] --> A["美国革命<br>亨利 · 杰斐逊"]
+  ROOT --> B["林肯<br>葛底斯堡演说"]
+  ROOT --> C["马丁·路德·金<br>我有一个梦想"]
+  ROOT --> D["丘吉尔<br>至暗时刻的演说"]
+  classDef rootNode fill:#C2410C,color:#fff,stroke:#C2410C;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <h3>对照表：经典演说对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>演说</th><th>时间</th><th>核心主张</th><th>修辞手法</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>不自由毋宁死</strong></td><td>1775</td><td>自由高于生命</td><td>呼告</td></tr>
+              <tr><td><strong>独立宣言</strong></td><td>1776</td><td>自然权利</td><td>排比</td></tr>
+              <tr><td><strong>葛底斯堡演说</strong></td><td>1863</td><td>民有民治民享</td><td>对比</td></tr>
+              <tr><td><strong>我有一个梦想</strong></td><td>1963</td><td>种族平等</td><td>排比与意象</td></tr>
+              <tr><td><strong>至暗时刻</strong></td><td>1940</td><td>绝不投降</td><td>反复</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">帕特里克·亨利 · 1736–1799</div>
+            <blockquote>不自由，毋宁死！<cite>——1775年演说</cite></blockquote>
+            <div class="legacy-who">林肯 · 1809–1865</div>
+            <blockquote>民有、民治、民享的政府永世长存。<cite>——《葛底斯堡演说》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">马丁·路德·金 · 1929–1968</div>
+            <blockquote>我有一个梦想。<cite>——《我有一个梦想》</cite></blockquote>
+            <div class="legacy-who">丘吉尔 · 1874–1965</div>
+            <blockquote>我们将在海滩上作战。<cite>——1940年演说</cite></blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="sec" id="summary">
+        <h2><span class="chapno">第七章</span>总结提炼：修辞与演说的启示</h2>
+        <p>回顾从智者派到马丁·路德·金，可以提炼出修辞与演说的核心规律：<strong>说服之艺、辞格之美、论辩之智、理性之基、民主之声</strong>。修辞与演说不提供“巧言令色”的捷径，它提供的是“以言成事”的清醒智慧——它让我们看见语言如何说服人，言辞如何改变世界，演说如何凝聚共同体。理解修辞与演说，就是理解我们如何被言辞影响，也是理解我们如何成为负责任的言说者。</p>
+<figure class="diagram">
+          <figcaption>图 1a · 修辞学的历史演变：从古希腊到后真相时代</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ANC["古希腊修辞学\n亚里士多德·智者派\n说服的艺术"] --> ROM["罗马雄辩术\n西塞罗·昆体良\n修辞五艺"]
+  ROM --> MED["中世纪修辞学\n经院·布道\n修辞为神学服务"]
+  MED --> REN["文艺复兴\n佩特拉克·伊拉斯谟\n修辞复兴"]
+  REN --> MOD["启蒙修辞学\n培根·洛克\n理性修辞"]
+  MOD --> NEW["新修辞学\n1950-\n佩雷尔曼·图尔敏\n论证与听众"]
+  NEW --> POST["后真相时代\n21世纪\n情绪 vs 事实"]
+  classDef anc fill:#FFF7ED,stroke:#EA580C,color:#7C2D12;
+  classDef rom fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef med fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  classDef ren fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef mod fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  classDef new fill:#FCE7F3,stroke:#DB2777,color:#831843;
+  class ANC anc;
+  class ROM rom;
+  class MED med;
+  class REN ren;
+  class MOD mod;
+  class NEW,POST new;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 1a 详解：修辞学的历史演变</strong>——从古希腊到后真相时代，修辞学经历了从"说服的艺术"到"论证的哲学"再到"被质疑的艺术"的完整轮回。</p>
+          <p><strong>修辞学的诞生与衰落：</strong>修辞学诞生于古希腊民主城邦。西塞罗把它推到巅峰，认为"完美的演说家是完美的公民"。但到了中世纪，修辞沦为布道的工具；启蒙时代，洛克和笛卡尔贬低修辞——他们认为修辞是"欺骗的面纱"。</p>
+          <p><strong>新修辞学：</strong>20世纪中叶，佩雷尔曼和图尔敏复兴了修辞学。佩雷尔曼说，论证的目标是"获得听众的认同"，而不是"证明真理"。图尔敏提出了更实用的论证模型：主张→事实→理由→支持→限定→反驳。</p>
+          <p><strong>后真相时代的修辞：</strong>今天，修辞学面临深刻的悖论——分析工具前所未有地强大，但真相本身正在被解构。"另类事实"、"深度伪造"让修辞变成了操纵的同义词。修辞学能否在后真相时代重新找到自己的伦理根基？</p>
+        </div>
+        <h3>本章大纲</h3>
+        <ul>
+          <li>7.1 修辞与演说五大规律回顾</li>
+          <li>7.2 修辞与演说同文学、逻辑的关系</li>
+          <li>7.3 修辞与演说精神的当代意义</li>
+        </ul>
+        <h3>核心知识点</h3>
+        <ul>
+          <li><strong>说服之艺</strong>：以言成事的技艺</li>
+          <li><strong>辞格之美</strong>：语言的美学力量</li>
+          <li><strong>论辩之智</strong>：论证的智慧</li>
+          <li><strong>理性之基</strong>：修辞为理性服务</li>
+          <li><strong>民主之声</strong>：公共演说的力量</li>
+        </ul>
+        <figure class="diagram">
+          <figcaption>图 8 · 修辞与演说五大规律图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["修辞与演说五大规律"] --> A["说服之艺<br>以言成事"]
+  ROOT --> B["辞格之美<br>语言的美学"]
+  ROOT --> C["论辩之智<br>论证的智慧"]
+  ROOT --> D["理性之基<br>修辞为理性服务"]
+  ROOT --> E["民主之声<br>公共演说的力量"]
+  classDef rootNode fill:#C2410C,color:#fff,stroke:#C2410C;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <div class="history">
+          <span class="history-title">五大规律的提炼</span>
+          <p><strong>说服之艺</strong>：从智者派到当代说服研究，修辞始终是以言成事的技艺。说服之艺的启示是：说服不是操纵，而是理解——理解听众的处境与关切，才能以诚服人。</p>
+          <p><strong>辞格之美</strong>：从比喻、排比到反问，辞格让语言拥有打动人心的力量。辞格之美的启示是：表达不仅是传递信息，更是创造体验——好的言辞让人记住，也让人感动。</p>
+          <p><strong>论辩之智</strong>：从亚里士多德的三段论到佩雷尔曼的论证，论辩是修辞的理性内核。论辩之智的启示是：说服需要理由——没有论证的言辞只是噪音，有论证的言辞才有力量。</p>
+          <p><strong>理性之基</strong>：从培根到洛克，修辞必须为理性服务。理性之基的启示是：修辞与真理并不对立——好的修辞让真理更有力量，坏的修辞让谬误更危险。</p>
+          <p><strong>民主之声</strong>：从雅典公民大会到民权运动，演说一直是民主的技艺。民主之声的启示是：在自由社会，言辞是公民参与政治、争取权利、凝聚共识的首要方式——守护言说的自由，就是守护民主本身。</p>
+        </div>
+        <h3>对照表：修辞与演说五大规律的对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>规律</th><th>核心命题</th><th>代表人物</th><th>思想启示</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>说服之艺</strong></td><td>以言成事的技艺</td><td>亚里士多德 · 佩雷尔曼</td><td>说服是理解不是操纵</td></tr>
+              <tr><td><strong>辞格之美</strong></td><td>语言的美学力量</td><td>拉米斯 · 文学修辞</td><td>表达创造体验</td></tr>
+              <tr><td><strong>论辩之智</strong></td><td>论证的智慧</td><td>亚里士多德 · 昆体良</td><td>说服需要理由</td></tr>
+              <tr><td><strong>理性之基</strong></td><td>修辞为理性服务</td><td>培根 · 洛克</td><td>修辞让真理更有力量</td></tr>
+              <tr><td><strong>民主之声</strong></td><td>公共演说的力量</td><td>林肯 · 马丁·路德·金</td><td>守护言说就是守护民主</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <span class="callout-title">修辞与演说精神三句话</span>
+          第一，<strong>修辞是民主的技艺</strong>——从雅典公民大会到民权运动，言辞是自由人参与公共生活的首要方式；第二，<strong>修辞是理性的应用</strong>——好的修辞让真理更有力量，坏的修辞让谬误更危险，修辞必须为真与善服务；第三，<strong>修辞最终通向责任</strong>——每一次言说都在塑造世界，负责任的言说者既善用言辞，也敬畏言辞。与第二十一辑《文学与语言思想谱系》合观，文学卷问“语言如何创造意义”，本辑问“语言如何说服行动”；与第二辑《逻辑与论证思想谱系》对话，逻辑卷问“如何论证为真”，本辑问“如何说服人信”。这正是思想图谱系列的意义——既理解语言如何表达，也理解言辞如何行动，一个完整的人，二者缺一不可。
+        </div>
+      </section>
+    </main>
+
+    
+      <section class="sec">
+        <h2>关联辑目</h2>
+        <div class="explain">
+          <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+          <ul>
+          <li><a href="../逻辑与论证思想谱系/逻辑与论证思想谱系.html">逻辑与论证思想谱系</a></li>
+          <li><a href="../文学与语言思想谱系/文学与语言思想谱系.html">文学与语言思想谱系</a></li>
+          <li><a href="../政治学通论/政治学通论.html">政治学通论</a></li>
+          <li><a href="../西方哲学思想谱系/西方哲学思想谱系.html">西方哲学思想谱系</a></li>
+          <li><a href="../传播与媒介思想谱系/传播与媒介思想谱系.html">传播与媒介思想谱系</a></li>
+          </ul>
+        </div>
+      </section>
+<footer>
+      修辞与演说思想谱系 · 思想图谱系列第二十八辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-05
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'PingFang SC, Microsoft YaHei, Helvetica, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>

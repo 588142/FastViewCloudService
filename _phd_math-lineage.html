@@ -1,0 +1,1185 @@
+<!-- ==================== 博士水平进阶模块 ==================== -->
+<!-- 嵌入位置：在硕士水平进阶模块（M8）之后，</article> 之前 -->
+<style>
+  /* 博士模块专用样式 - 使用与主文件一致的CSS变量 */
+  .sec.phd { margin-bottom: 3.5rem; }
+  .sec.phd.hidden-by-search { display: none; }
+  .sec.phd h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+  .sec.phd h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+  .sec.phd h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+  .sec.phd h4 { font-family: var(--font-head); font-size: 0.98rem; font-weight: 700; margin: 1.2rem 0 0.5rem; color: var(--accent); }
+  .sec.phd p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+  .sec.phd ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+  .sec.phd li { margin-bottom: 0.4rem; }
+
+  /* 博士模块专用盒子 */
+  .phd-callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+  .phd-callout .phd-callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+  /* 公式块 */
+  .phd-formula {
+    font-family: var(--font-mono);
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent2);
+    border-radius: 0 8px 8px 0;
+    padding: 0.8rem 1rem;
+    margin: 0.7rem 0;
+    font-size: 0.95rem;
+    overflow-x: auto;
+  }
+  .phd-formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+  .phd-formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+  /* 定理块 */
+  .phd-theorem {
+    font-family: var(--font);
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-left: 4px solid #D97706;
+    border-radius: 0 8px 8px 0;
+    padding: 0.8rem 1rem;
+    margin: 0.7rem 0;
+    font-size: 0.95rem;
+  }
+  .phd-theorem .t-name { font-weight: 700; color: #D97706; display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+  .phd-theorem .t-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+  /* 定律块 */
+  .phd-law {
+    font-family: var(--font);
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-left: 4px solid #DC2626;
+    border-radius: 0 8px 8px 0;
+    padding: 0.8rem 1rem;
+    margin: 0.7rem 0;
+    font-size: 0.95rem;
+  }
+  .phd-law .l-name { font-weight: 700; color: #DC2626; display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+  .phd-law .l-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+  /* 证明块 */
+  .phd-proof {
+    font-family: var(--font);
+    background: var(--bg2);
+    border: 1px solid var(--rule);
+    border-left: 4px solid #059669;
+    border-radius: 0 8px 8px 0;
+    padding: 0.8rem 1rem;
+    margin: 0.7rem 0;
+    font-size: 0.93rem;
+  }
+  .phd-proof .p-name { font-weight: 700; color: #059669; display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+  .phd-proof .p-qed { display: block; text-align: right; font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem; }
+
+  /* 引用块 */
+  .phd-ref { font-size: 0.85rem; color: var(--muted); display: block; margin: 0.3rem 0 0.5rem; }
+  .phd-ref strong { color: var(--ink); }
+
+  /* 3D容器 */
+  .phd-three-container { width:100%; height:500px; overflow:hidden; border-radius:8px; background:#f3ede1; margin: 1rem 0; }
+  .phd-three-container canvas { display: block; width: 100% !important; height: 100% !important; }
+
+  /* 博士级分隔线 */
+  .phd-divider { border: none; border-top: 3px double var(--accent2); margin: 2.5rem 0; opacity: 0.4; }
+
+  /* 博士级模型图注 */
+  .phd-figcaption { font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem; text-align: center; }
+</style>
+
+<!-- ==================== 博士水平进阶模块 ==================== -->
+<section class="sec phd" id="phd-prologue">
+  <h2><span class="chapno">博导</span>博士水平进阶导览</h2>
+  <div class="phd-callout">
+    <span class="phd-callout-title">博士水平要求</span>
+    <p>本进阶模块面向已完成硕士水平进阶（M1-M8）的读者，旨在将数学基础知识的掌握从"批判性参与"提升至"原创性研究预备"的层次。博士水平的核心能力不是"知道更多定理"，而是"理解数学真理的严格基础、掌握形式化体系的内在结构、具备独立证明定理的能力、以及追踪研究前沿的视野"。</p>
+    <p><strong>核心素养：</strong>（1）<strong>严格性</strong>——能够用形式化语言精确表述数学概念与命题；（2）<strong>系统性</strong>——理解公理系统之间的逻辑关系与一致性强度；（3）<strong>证明能力</strong>——掌握经典定理的证明方法并能独立构造证明；（4）<strong>前沿意识</strong>——了解当前未解问题与研究前沿的动态。</p>
+    <p>七大模块（D1-D7）覆盖：核心公理与严格定义、基本定律与原理、核心定理及其证明、定理证明详解、形式化公理体系、前沿定理与未解问题、研究前沿——从最基础的ZFC公理到最前沿的同伦类型论，构成一条完整的博士水平进阶路径。</p>
+  </div>
+  <p><strong>前置要求：</strong>已完成硕士水平模块（M1-M8）的学习，熟悉实数理论、度量空间、测度论、ZFC公理系统、范畴论初步、证明论与模型论的基本概念，具备阅读原始文献的能力。</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>模块</th><th>内容</th><th>核心能力目标</th></tr></thead>
+      <tbody>
+        <tr><td><strong>D1</strong></td><td>核心公理与定义</td><td>掌握15+条严格定义（ZFC、序数、基数、拓扑、测度、代数结构、范畴、流形、李群）</td></tr>
+        <tr><td><strong>D2</strong></td><td>基本定律与原理</td><td>理解排中律、选择公理、CH、良序原理、Zorn引理等10条基本定律的形式化表述</td></tr>
+        <tr><td><strong>D3</strong></td><td>核心定理</td><td>掌握Godel完备性/不完备定理、L-S定理、紧致性定理、代数基本定理等10个核心定理</td></tr>
+        <tr><td><strong>D4</strong></td><td>定理证明详解</td><td>完成哥德尔第一不完备定理与康托尔定理的完整证明，培养证明构造能力</td></tr>
+        <tr><td><strong>D5</strong></td><td>形式化体系</td><td>理解ZFC完整形式化、选择公理等价形式、CH独立性、大基数层级（含Three.js 3D模型）</td></tr>
+        <tr><td><strong>D6</strong></td><td>前沿定理与未解问题</td><td>追踪Cohen力迫法、Shelah pcf理论、Woodin Omega猜想、千禧年七大问题</td></tr>
+        <tr><td><strong>D7</strong></td><td>研究前沿</td><td>了解HoTT、解析数论、无穷范畴论、算术几何、计算复杂性（含Three.js 3D模型）</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="phd-divider">
+
+<!-- ==================== D1 核心公理与定义 ==================== -->
+<section class="sec phd" id="phd-d1">
+  <h2><span class="chapno">D1</span>核心公理与定义</h2>
+  <p>博士水平的数学训练要求对基本概念有严格的形式化理解。以下汇集了支撑现代数学大厦的15个核心定义与公理系统——从集合论的基础到现代几何与代数的前沿概念。每条定义用形式化语言给出，附有概念背景与直观解释。</p>
+
+  <h3>1.1 ZFC公理系统（Zermelo-Fraenkel Set Theory with Choice）</h3>
+  <p>ZFC是当代数学的"标准基础"。它由Zermelo（1908）提出，Fraenkel与Skolem（1922）补充，最终定型为以下10条公理（含公理模式）。以下逐一给出其形式化表述。</p>
+
+  <div class="phd-formula">
+    <span class="f-name">公理1 · 空集公理（Axiom of Empty Set）</span>
+    ∃x ∀y (y ∉ x)
+    <span class="f-note">存在一个没有任何元素的集合，记作∅。Zermelo（1908）将其作为集合论的第一条存在性公理。</span>
+  </div>
+
+  <div class="phd-formula">
+    <span class="f-name">公理2 · 外延公理（Axiom of Extensionality）</span>
+    ∀x ∀y (∀z (z ∈ x ⇔ z ∈ y) ⇒ x = y)
+    <span class="f-note">两个集合相等当且仅当它们有相同的元素。这是集合论"同一性"的基础——集合由它的元素唯一确定。</span>
+  </div>
+
+  <div class="phd-formula">
+    <span class="f-name">公理3 · 配对公理（Axiom of Pairing）</span>
+    ∀x ∀y ∃z (x ∈ z ∧ y ∈ z)
+    <span class="f-note">对任意两个集合x和y，存在一个集合z包含x和y作为元素。由此可定义无序对{x,y}和有序对(x,y) = {{x},{x,y}}（Kuratowski, 1921）。</span>
+  </div>
+
+  <div class="phd-formula">
+    <span class="f-name">公理4 · 并集公理（Axiom of Union）</span>
+    ∀x ∃y ∀z (z ∈ y ⇔ ∃w (w ∈ x ∧ z ∈ w))
+    <span class="f-note">对任意集合x，存在一个集合y包含x中所有元素的元素。记作y = ∪x。这是集合论中"并"运算的基础。</span>
+  </div>
+
+  <div class="phd-formula">
+    <span class="f-name">公理5 · 幂集公理（Axiom of Power Set）</span>
+    ∀x ∃y ∀z (z ⊆ x ⇒ z ∈ y)
+    <span class="f-note">对任意集合x，存在一个集合y包含x的所有子集。记作y = P(x) = {z : z ⊆ x}。幂集运算是构造更大集合的基本方法。</span>
+  </div>
+
+  <div class="phd-formula">
+    <span class="f-name">公理6 · 无穷公理（Axiom of Infinity）</span>
+    ∃x (∅ ∈ x ∧ ∀y (y ∈ x ⇒ y ∪ {y} ∈ x))
+    <span class="f-note">存在一个归纳集——包含空集且对"后继运算"y ↦ y ∪ {y}封闭的集合。由此保证自然数集ℕ的存在性：0 = ∅, 1 = {0}, 2 = {0,1}, ...（von Neumann, 1923）。</span>
+  </div>
+
+  <div class="phd-formula">
+    <span class="f-name">公理7 · 分离公理模式（Axiom Schema of Separation）</span>
+    ∀z ∀w₁ … ∀wₙ ∃y ∀x (x ∈ y ⇔ x ∈ z ∧ φ(x, w₁, …, wₙ))
+    <span class="f-note">对任意集合z和公式φ（不含y自由），存在一个子集y = {x ∈ z : φ(x)}。这是"受限概括"——避免了Russell悖论（1902）的"无限制概括"。Fraenkel（1922）与Skolem（1922）独立提出。</span>
+  </div>
+
+  <div class="phd-formula">
+    <span class="f-name">公理8 · 替换公理模式（Axiom Schema of Replacement）</span>
+    ∀A ∀w₁…∀wₙ (∀x ∈ A ∃!y φ(x,y,w₁,…,wₙ) ⇒ ∃Y ∀x ∈ A ∃y ∈ Y φ(x,y,w₁,…,wₙ))
+    <span class="f-note">如果φ在A的每个元素上定义一个"函数"，那么A的像构成一个集合。替换公理模式比分离公理模式更强——它允许构造更大基数的集合（如ℵ_ω = {ℵ_n : n ∈ ω}）。Fraenkel（1922）补充。</span>
+  </div>
+
+  <div class="phd-formula">
+    <span class="f-name">公理9 · 正则公理（Axiom of Regularity / Foundation）</span>
+    ∀x (x ≠ ∅ ⇒ ∃y ∈ x (y ∩ x = ∅))
+    <span class="f-note">每个非空集合x都有一个"∈-极小元"——y是x的元素且y与x没有公共元素。这排除了"x ∈ x"这样的循环链和无穷降链。von Neumann（1925）加入。</span>
+  </div>
+
+  <div class="phd-formula">
+    <span class="f-name">公理10 · 选择公理（Axiom of Choice, AC）</span>
+    ∀x (∅ ∉ x ⇒ ∃f (f: x → ∪x ∧ ∀y ∈ x (f(y) ∈ y)))
+    <span class="f-note">对任意由非空集合组成的集合x，存在一个选择函数f从x中每个集合里选出一个元素。Zermelo（1904）为证明良序定理而引入。AC是ZFC中最具争议的公理——它保证"存在性"但非"构造性"。</span>
+  </div>
+
+  <h3>1.2 序数定义（von Neumann Ordinals）</h3>
+  <div class="phd-formula">
+    <span class="f-name">定义1 · von Neumann序数（von Neumann, 1923）</span>
+    α是序数 ⇔ (∀β ∈ α (β ⊆ α)) ∧ (∈ 在α上是良序的)
+    <span class="f-note">一个集合α是序数，当且仅当α是传递集（α的元素也是α的子集）且∈关系在α上构成良序。自然数n = {0,1,…,n-1}是有限序数；ω = {0,1,2,…}是第一个无限序数。序数理论是超穷归纳法的基础——Cantor（1883, 1897）奠基，von Neumann（1923）给出严格定义。</span>
+  </div>
+
+  <h3>1.3 基数定义</h3>
+  <div class="phd-formula">
+    <span class="f-name">定义2 · 基数（Cardinal Number）</span>
+    |A| = card(A) = min{α ∈ Ord : ∃双射 f: α → A}
+    <span class="f-note">集合A的基数定义为与A等势的最小序数。这个定义依赖于选择公理（保证每个集合可以良序，从而存在一个等势的序数）。ℵ₀ = |ℕ|是第一个无限基数；ℵ₁ = |{α ∈ Ord : |α| ≤ ℵ₀}|是第二个无限基数。Cantor（1878）首次区分了"可数无穷"与"不可数无穷"。</span>
+  </div>
+
+  <h3>1.4 连续统假设（Continuum Hypothesis）</h3>
+  <div class="phd-formula">
+    <span class="f-name">定义3 · 连续统假设（CH — Cantor, 1878）</span>
+    2^ℵ₀ = ℵ₁  （等价表述：不存在基数κ使得ℵ₀ < κ < 2^ℵ₀）
+    <span class="f-note">Cantor猜测实数集ℝ的基数（连续统的基数）恰好是ℵ₁。Gödel（1938）证明CH与ZFC一致；Cohen（1963）证明CH的否定与ZFC一致——因此CH独立于ZFC。这是Hilbert第一问题（1900）的最终答案。</span>
+  </div>
+
+  <h3>1.5 拓扑空间定义</h3>
+  <div class="phd-formula">
+    <span class="f-name">定义4 · 拓扑空间（Topological Space — Hausdorff, 1914）</span>
+    (X, τ)是拓扑空间 ⇔ τ ⊆ P(X) 满足：
+    (i) ∅, X ∈ τ；
+    (ii) 任意并封闭：∀S ⊆ τ (∪S ∈ τ)；
+    (iii) 有限交封闭：∀U,V ∈ τ (U ∩ V ∈ τ)
+    <span class="f-note">τ称为X上的拓扑，τ的元素称为开集。开集的补集称为闭集。拓扑空间是"连续性的最一般框架"——度量空间是特殊的拓扑空间，其开集由开球生成。Hausdorff（1914）在《集合论基础》中给出了拓扑空间的公理化定义。</span>
+  </div>
+
+  <h3>1.6 度量空间定义</h3>
+  <div class="phd-formula">
+    <span class="f-name">定义5 · 度量空间（Metric Space — Fréchet, 1906）</span>
+    (X, d)是度量空间 ⇔ d: X × X → ℝ 满足：
+    (i) d(x, y) ≥ 0, d(x, y) = 0 ⇔ x = y（正定性）；
+    (ii) d(x, y) = d(y, x)（对称性）；
+    (iii) d(x, z) ≤ d(x, y) + d(y, z)（三角不等式）
+    <span class="f-note">d称为度量（距离函数）。Fréchet（1906）在博士论文中首次系统定义度量空间，为泛函分析的诞生奠定了基础。</span>
+  </div>
+
+  <h3>1.7 可测空间定义</h3>
+  <div class="phd-formula">
+    <span class="f-name">定义6 · 可测空间与测度（Measurable Space & Measure — Lebesgue, 1902; Carathéodory, 1914）</span>
+    (X, Σ, μ)是测度空间 ⇔ Σ ⊆ P(X) 满足：
+    (i) X ∈ Σ；
+    (ii) Σ对补集封闭：A ∈ Σ ⇒ X \ A ∈ Σ；
+    (iii) Σ对可数并封闭：∀{A_n} ⊆ Σ (∪_{n=1}^∞ A_n ∈ Σ)；
+    μ: Σ → [0, ∞] 满足 μ(∅) = 0 且σ-可加性：∀{A_n}两两不交 ⇒ μ(∪A_n) = Σ μ(A_n)
+    <span class="f-note">Σ称为σ-代数，μ称为测度。Lebesgue（1902）在博士论文中定义了Lebesgue测度与积分；Carathéodory（1914）给出了外测度的公理化构造。概率论中的"概率空间"就是一个测度空间满足μ(X) = 1（Kolmogorov, 1933）。</span>
+  </div>
+
+  <h3>1.8 群/环/域的定义</h3>
+  <div class="phd-formula">
+    <span class="f-name">定义7 · 群（Group — Cayley, 1854; von Dyck, 1882）</span>
+    (G, ·)是群 ⇔ 封闭性、结合律、存在单位元e、每个元素有逆元
+    <span class="f-note">群是"对称性"的数学形式化。Galois（1832）在多项式方程的可解性研究中首次隐含地使用了群的概念；Cayley（1854）给出了抽象群的定义；von Dyck（1882）给出了现代公理化定义。</span>
+  </div>
+
+  <div class="phd-formula">
+    <span class="f-name">定义8 · 环（Ring — Fraenkel, 1914; Noether, 1920s）</span>
+    (R, +, ·)是环 ⇔ (R, +)是交换群；(R, ·)是半群；乘法对加法分配
+    <span class="f-note">环是"可加、可乘但不必可逆"的代数结构。整数环ℤ是环的原型。Noether（1921）在《环中的理想论》中奠定了抽象环论的基础——这是"抽象代数的诞生"。</span>
+  </div>
+
+  <div class="phd-formula">
+    <span class="f-name">定义9 · 域（Field — Dedekind, 1871; Weber, 1893）</span>
+    (F, +, ·)是域 ⇔ (F, +, ·)是交换环，且每个非零元素有乘法逆元
+    <span class="f-note">域是"可加、可乘、可减、可除"的代数结构。有理数域ℚ、实数域ℝ、复数域ℂ是域的原型。有限域GF(p^n)（Galois域）是数论与密码学的基础。</span>
+  </div>
+
+  <h3>1.9 范畴定义</h3>
+  <div class="phd-formula">
+    <span class="f-name">定义10 · 范畴（Category — Eilenberg & Mac Lane, 1945）</span>
+    范畴C包含：对象类Ob(C)、态射类Mor(C)（每个f: A → B）、恒等态射id_A: A → A、复合运算∘: Mor(B,C) × Mor(A,B) → Mor(A,C)
+    满足：结合律h∘(g∘f) = (h∘g)∘f；单位律f∘id_A = f = id_B∘f
+    <span class="f-note">范畴论的核心思想：数学对象不是由"内部结构"定义的，而是由"与其他对象的关系"（态射）定义的。Eilenberg与Mac Lane（1945）在《自然等价的一般理论》中首次提出范畴的概念——这被Mac Lane（1971）称为"抽象废话的起点"。</span>
+  </div>
+
+  <h3>1.10 函子定义</h3>
+  <div class="phd-formula">
+    <span class="f-name">定义11 · 函子（Functor — Eilenberg & Mac Lane, 1945）</span>
+    协变函子F: C → D：∀A ∈ Ob(C), F(A) ∈ Ob(D)；∀f: A → B, F(f): F(A) → F(B)；
+    满足F(id_A) = id_{F(A)}且F(g∘f) = F(g)∘F(f)
+    逆变函子G: C → D：G(f): G(B) → G(A)（方向反转）
+    <span class="f-note">函子是范畴之间的"保持结构的映射"。Hom函子Hom(A, -): C → Set是协变函子；Hom(-, B): C → Set是逆变函子。</span>
+  </div>
+
+  <h3>1.11 自然变换定义</h3>
+  <div class="phd-formula">
+    <span class="f-name">定义12 · 自然变换（Natural Transformation — Eilenberg & Mac Lane, 1945）</span>
+    自然变换η: F ⇒ G（F, G: C → D）：∀A ∈ Ob(C), 有态射η_A: F(A) → G(A)，
+    使得∀f: A → B, η_B ∘ F(f) = G(f) ∘ η_A（自然性条件）
+    <span class="f-note">自然变换是函子之间的"映射"。Mac Lane（1971）的名言："范畴论不是为了研究范畴，而是为了研究自然变换。"Eilenberg与Mac Lane最初的目标是定义"自然变换"——范畴和函子只是"必要的铺垫"。</span>
+  </div>
+
+  <h3>1.12 同伦类型论中的同一类型</h3>
+  <div class="phd-formula">
+    <span class="f-name">定义13 · 同一类型（Identity Type — Martin-Löf, 1975; Voevodsky, 2009）</span>
+    Id_A(a, b) 或 a =_A b，其元素是"a等于b的证明"
+    引入规则：refl_a : Id_A(a, a)
+    消去规则（J-公理）：如果C(x, y, p)在x,y:A, p:Id_A(x,y)上可定义，
+    且d(x) : C(x, x, refl_x)，则存在J(d) : C(x, y, p)（对所有x,y,p）
+    <span class="f-note">同一类型是HoTT的核心。Voevodsky（2009）发现：同一类型Id_A(a,b)的拓扑解释是"从a到b的路径空间"——这与同伦论中的"同伦等价"对应。由此诞生了Homotopy Type Theory。</span>
+  </div>
+
+  <h3>1.13 模形式定义</h3>
+  <div class="phd-formula">
+    <span class="f-name">定义14 · 模形式（Modular Form — Hecke, 1930s; Shimura, 1960s）</span>
+    权为k的模形式f: ℍ → ℂ（ℍ为上半平面）满足：
+    (i) f是ℍ上的全纯函数；
+    (ii) 对所有γ = ((a,b),(c,d)) ∈ SL₂(ℤ)，f(γz) = (cz+d)^k f(z)；
+    (iii) 在尖点处全纯（f有Fourier展开f(z) = Σ_{n=0}^∞ a_n e^{2πinz}）
+    <span class="f-note">模形式在数论中居核心地位——Wiles（1995）证明费马大定理的关键步骤是证明"谷山-志村猜想"：每个椭圆曲线对应一个模形式。Langlands纲领（1967）将模形式推广为"自守形式"。</span>
+  </div>
+
+  <h3>1.14 流形定义</h3>
+  <div class="phd-formula">
+    <span class="f-name">定义15 · 流形（Manifold — Riemann, 1854; Whitney, 1936）</span>
+    M是n维光滑流形 ⇔ M是Hausdorff空间、第二可数、且局部欧氏：
+    ∀p ∈ M, ∃开邻域U ⊆ M, ∃开集V ⊆ ℝⁿ, ∃同胚φ: U → V
+    {(U_α, φ_α)}称为图册，转移映射φ_β ∘ φ_α^{-1}光滑
+    <span class="f-note">Riemann（1854）在就职演讲《论几何学的基础》中首次提出了"n维流形"的概念。Whitney（1936）给出了嵌入定理：每个n维光滑流形可嵌入ℝ^{2n}。流形是广义相对论（时空是4维伪黎曼流形）与弦论（额外维度是Calabi-Yau流形）的数学基础。</span>
+  </div>
+
+  <h3>1.15 李群定义</h3>
+  <div class="phd-formula">
+    <span class="f-name">定义16 · 李群（Lie Group — Lie, 1880s; Cartan, 1930s）</span>
+    G是李群 ⇔ G是群且是光滑流形，且群运算与取逆运算是光滑的
+    Lie(G) = T_eG（单位元处的切空间），带有Lie括号[,]: g × g → g
+    <span class="f-note">Lie（1883）在研究微分方程对称性时发现"连续变换群"——李群。李群将"连续对称性"（如旋转、平移）纳入群论的框架。李代数g = Lie(G)是G在单位元处的"线性化"——g的维数等于G的维数。分类：紧致单李群分为A_n, B_n, C_n, D_n, E_6, E_7, E_8, F_4, G_2（Cartan, 1894; Killing, 1888-1890）。</span>
+  </div>
+
+  <div class="phd-callout">
+    <span class="phd-callout-title">D1 核心文献</span>
+    <p>Zermelo (1908) "Untersuchungen uber die Grundlagen der Mengenlehre I" — 集合论公理化的奠基之作；von Neumann (1923) "Zur Einfuhrung der transfiniten Zahlen" — 序数的严格定义；Cantor (1878) "Ein Beitrag zur Mannigfaltigkeitslehre" — 连续统假设的提出；Eilenberg & Mac Lane (1945) "General Theory of Natural Equivalences" — 范畴论的诞生；Voevodsky (2009) "Notes on Homotopy Type Theory" — 单值基础的起点。</p>
+  </div>
+</section>
+
+<hr class="phd-divider">
+
+<!-- ==================== D2 基本定律与原理 ==================== -->
+<section class="sec phd" id="phd-d2">
+  <h2><span class="chapno">D2</span>基本定律与原理</h2>
+  <p>数学的基本定律和原理是数学推理的"语法规则"——它们定义了数学证明的合法形式。以下十条定律覆盖了古典逻辑的基础、集合论的核心原理以及组合学的基本事实。</p>
+
+  <div class="phd-law">
+    <span class="l-name">定律1 · 排中律（Law of Excluded Middle, LEM）</span>
+    ⊢ P ∨ ¬P   （对任意命题P，P或非P成立）
+    <span class="l-note">排中律是古典逻辑的基石——亚里士多德在《形而上学》中将其表述为"在矛盾双方中，必有一真"。它在直觉主义逻辑（Brouwer, 1907）中被拒斥——因为对无穷集合上的全称命题，排中律的"有效性"不满足"构造性"要求。排中律与选择公理一起，构成了"非构造性数学"的基础。</span>
+  </div>
+
+  <div class="phd-law">
+    <span class="l-name">定律2 · 矛盾律（Law of Non-Contradiction, LNC）</span>
+    ⊢ ¬(P ∧ ¬P)   （P和非P不能同时成立）
+    <span class="l-note">矛盾律是逻辑学最古老的定律——亚里士多德称之为"最确定的原则"："同一属性不能在同一方面既属于又不属于同一事物。"在次协调逻辑（paraconsistent logic, Priest, 1979）中，矛盾律被局部地放弃——允许"有意义的矛盾"存在而不导致"爆炸"（ex contradictione quodlibet）。</span>
+  </div>
+
+  <div class="phd-law">
+    <span class="l-name">定律3 · 同一律（Law of Identity）</span>
+    ⊢ P ⇒ P   （每个命题蕴涵自身）
+    <span class="l-note">同一律是最基本的逻辑原则——"A是A"。在莱布尼茨（Leibniz, 1680s）的表述中，同一律与"不可区分者的同一性"（Identity of Indiscernibles）相关：如果两个对象具有完全相同的性质，则它们是同一个对象。</span>
+  </div>
+
+  <div class="phd-law">
+    <span class="l-name">定律4 · 选择公理（Axiom of Choice, AC — Zermelo, 1904）</span>
+    ∀X (∅ ∉ X ⇒ ∃f: X → ∪X, ∀A ∈ X (f(A) ∈ A))
+    <span class="l-note">AC是数学中最基本的"非构造性存在原理"：它保证了选择函数的存在，但不提供具体构造。AC的等价形式包括：Zorn引理、良序原理、Tychonoff定理（紧致性的乘积保持）、Hamel基定理（每个向量空间有基）。Banach-Tarski悖论（1924）是AC最反直觉的结论——它表明AC与"测度"的直观概念不兼容。AC的独立性：Godel（1938）证明AC与ZFC一致；Cohen（1963）证明AC不能由ZFC的其他公理证明。</span>
+  </div>
+
+  <div class="phd-law">
+    <span class="l-name">定律5 · 连续统假设（Continuum Hypothesis, CH — Cantor, 1878）</span>
+    2^ℵ₀ = ℵ₁   （或等价地：不存在严格介于ℵ₀和2^ℵ₀之间的基数）
+    <span class="l-note">CH是Hilbert第一问题（1900）。Godel（1938）证明CH与ZFC一致（在可构造宇宙L中CH成立）。Cohen（1963）证明CH的否定与ZFC一致（用力迫法构造一个CH为假的ZFC模型）。CH的独立性是二十世纪数学基础最深刻的结果之一。Woodin（2001, 2010）的Omega逻辑框架中，CH的"Omega真值"为假——如果存在适当的大基数公理。</span>
+  </div>
+
+  <div class="phd-law">
+    <span class="l-name">定律6 · 良序原理（Well-Ordering Principle — Zermelo, 1904）</span>
+    每个集合X上都存在一个良序（即X的每个非空子集有最小元）
+    <span class="l-note">Zermelo（1904）证明良序原理等价于选择公理。良序原理是"超穷归纳法"的基础——在良序集上，可以像在自然数上一样进行"归纳证明"。良序原理的证明（Zermelo, 1904）是集合论历史上最具争议的论文——因为它使用了"选择公理"这一非构造性的假设。</span>
+  </div>
+
+  <div class="phd-law">
+    <span class="l-name">定律7 · 佐恩引理（Zorn's Lemma — Zorn, 1935; 但由Kuratowski, 1922与Hausdorff, 1909先发现）</span>
+    如果偏序集P中每个链（全序子集）在P中有上界，则P有极大元
+    <span class="l-note">Zorn引理等价于选择公理和良序原理。它是数学中最常用的"存在性"工具——用于证明每个向量空间有基（Hamel基）、每个域有代数闭包、每个理想可以扩展为极大理想、Tychonoff定理等。Zorn（1935）在论文中首次使用这一引理，但Kuratowski（1922）与Hausdorff（1909）更早发现了类似原理。</span>
+  </div>
+
+  <div class="phd-law">
+    <span class="l-name">定律8 · 康托尔定理（Cantor's Theorem — Cantor, 1891）</span>
+    |A| < |P(A)|   （对任意集合A，A的基数严格小于其幂集的基数）
+    <span class="l-note">康托尔定理是数学史上最深刻的定理之一——它证明"无穷"有不同的大小，且不存在"最大的无穷"。对角线论证（Cantor, 1891）是证明的核心：假设存在双射f: A → P(A)，构造D = {x ∈ A : x ∉ f(x)}，则D∈P(A)但不在f的像中，矛盾。这个论证是二十世纪逻辑学与计算机科学中最基本的方法——Godel的不完备定理（1931）与Turing的停机问题（1936）都使用了"对角线化"思想。</span>
+  </div>
+
+  <div class="phd-law">
+    <span class="l-name">定律9 · 康托尔-伯恩斯坦定理（Cantor-Bernstein Theorem — Cantor, 1897; Bernstein, 1898）</span>
+    |A| ≤ |B| 且 |B| ≤ |A| ⇒ |A| = |B|
+    <span class="f-note">等价地：如果存在单射f: A → B和单射g: B → A，则存在双射h: A → B。这个定理的证明不需要选择公理——Bernstein（1898）在Cantor的讨论班上给出了构造性证明。定理表明"基数比较"是"反对称的"——这是"基数"定义良好的关键。</span>
+  </div>
+
+  <div class="phd-law">
+    <span class="l-name">定律10 · 鸽笼原理（Pigeonhole Principle / Dirichlet Principle — Dirichlet, 1834）</span>
+    如果n个物品放入m个抽屉且n > m，则至少有一个抽屉包含至少两个物品
+    <span class="f-note">Dirichlet（1834）在数论中首次明确使用这一原理（用于证明Dirichlet逼近定理）。它是组合数学中最基本的计数原理——也是"所有"计数论证的基础。在无限版本中：如果|A| > |B|且f: A → B，则f不是单射。这个"无限鸽笼原理"是"基数比较"的基础。</span>
+  </div>
+
+  <div class="phd-callout">
+    <span class="phd-callout-title">D2 核心文献</span>
+    <p>Zermelo (1904) "Beweis, dass jede Menge wohlgeordnet werden kann" — 良序定理与选择公理；Cantor (1891) "Uber eine elementare Frage der Mannigfaltigkeitslehre" — 对角线论证；Bernstein (1898) 康托尔-伯恩斯坦定理的证明；Zorn (1935) "A remark on method in transfinite algebra" — Zorn引理；Dirichlet (1834) 鸽笼原理的首次表述。</p>
+  </div>
+</section>
+
+<hr class="phd-divider">
+
+<!-- ==================== D3 核心定理 ==================== -->
+<section class="sec phd" id="phd-d3">
+  <h2><span class="chapno">D3</span>核心定理</h2>
+  <p>以下十个定理代表了数学基础与数学分析中最核心、最深刻的结果。每个定理附有精确陈述、历史背景与数学意义。这些定理的理解是博士水平数学训练的"必修课"。</p>
+
+  <div class="phd-theorem">
+    <span class="t-name">定理1 · 哥德尔完全性定理（Godel's Completeness Theorem — Godel, 1930）</span>
+    <strong>一阶逻辑的完全性：</strong>对任意一阶理论T和任意一阶语句φ，
+    T ⊨ φ ⇔ T ⊢ φ
+    （语义蕴涵等价于语法可推导）
+    <span class="t-note">Godel（1930）在博士论文中证明：一阶逻辑是"完全"的——所有语义上有效的推论都可以在语法上被证明。这意味着"一阶逻辑的公理系统"是"足够强"的。完全性定理的证明构造了"Henkin模型"（Henkin, 1949）——从"一致的"理论出发构造一个"模型"。Godel的完全性定理与不完备定理的对比是深刻的：一阶逻辑本身是完全的，但"足够强"的一阶理论（如PA）是不完全的。</span>
+  </div>
+
+  <div class="phd-theorem">
+    <span class="t-name">定理2 · 哥德尔第一不完备定理（Godel's First Incompleteness Theorem — Godel, 1931）</span>
+    <strong>如果形式系统T包含算术且一致，则T是不完全的：</strong>
+    存在T的语句φ，使得T ⊬ φ 且 T ⊬ ¬φ
+    <span class="t-note">Godel（1931）证明了：任何"足够强"（包含Peano算术）的一致形式系统一定存在"不可判定"的命题——这个命题"说"自己不可证明。Godel的证明使用了"Godel编码"——将元数学命题编码为算术命题，从而让系统"谈论自己"。"自指"是证明的核心技术。这个定理终结了Hilbert的"完全形式化"纲领——"我们必须知道，我们将会知道"（Hilbert, 1930）在严格意义上不成立。</span>
+  </div>
+
+  <div class="phd-theorem">
+    <span class="t-name">定理3 · 哥德尔第二不完备定理（Godel's Second Incompleteness Theorem — Godel, 1931）</span>
+    <strong>如果T包含算术且一致，则T不能证明自己的一致性：</strong>
+    T ⊬ Con(T)
+    <span class="t-note">第二不完备定理是第一定理的推论：如果T能证明自己的一致性，则T可以构造"Godel句子"并证明其不可证明——从而导出矛盾。第二定理对数学基础有深远影响：Hilbert的"一致性证明"纲领——在"有穷主义"框架内证明算术的一致性——是不可能的。Gentzen（1936）用超穷归纳（至ε₀）证明了算术的一致性，但这一方法超出了有穷主义范围。</span>
+  </div>
+
+  <div class="phd-theorem">
+    <span class="t-name">定理4 · Löwenheim-Skolem定理（Löwenheim-Skolem Theorem — Löwenheim, 1915; Skolem, 1920）</span>
+    <strong>向下Löwenheim-Skolem：</strong>如果一阶理论T有无限模型，则T有可数模型。
+    <strong>向上Löwenheim-Skolem：</strong>如果T有无限模型，则T有任意大基数的模型。
+    <span class="t-note">Skolem悖论（Skolem's Paradox）：ZFC集合论断言"存在不可数集合"，但ZFC本身（如果一致）有可数模型——在可数模型中，"不可数"是"相对于模型"的。这揭示了一阶逻辑的局限性：一阶逻辑不能唯一地刻画"无穷"的概念——"不可数性"不是一阶逻辑可以"绝对地"表达的性质。</span>
+  </div>
+
+  <div class="phd-theorem">
+    <span class="t-name">定理5 · 紧致性定理（Compactness Theorem — Godel, 1930; Mal'cev, 1936）</span>
+    <strong>一阶理论T有模型当且仅当T的每个有限子集有模型。</strong>
+    <span class="t-note">紧致性定理是完全性定理的推论，也是模型论最基本的工具之一。它可以用于构造"非标准模型"——例如，扩展实数集的语言加入常数c，公理化为"c > 0"、"c > 1"、"c > 2"……每个有限子集有模型（取足够大的实数），因此整个理论有模型——即包含"无穷大"的超实数系统。Robinson（1966）的非标准分析正是基于紧致性定理。</span>
+  </div>
+
+  <div class="phd-theorem">
+    <span class="t-name">定理6 · 博尔扎诺-魏尔斯特拉斯定理（Bolzano-Weierstrass Theorem — Bolzano, 1817; Weierstrass, 1860s）</span>
+    <strong>ℝⁿ中的每个有界无穷集都有聚点（极限点）。</strong>
+    <span class="t-note">Bolzano（1817）在证明"介值定理"时首次使用了"聚点"的概念——这是"实分析"严格化的起点。Weierstrass在1860年代的柏林讲座中系统化了这一思想。这个定理等价于"实数完备性"的多种表述之一——它也是"紧致性"概念的起源：在ℝⁿ中，紧致等价于"有界闭集"（Heine-Borel定理）。在现代拓扑学中，紧致性的推广是"每个开覆盖有有限子覆盖"。</span>
+  </div>
+
+  <div class="phd-theorem">
+    <span class="t-name">定理7 · 海涅-博雷尔定理（Heine-Borel Theorem — Heine, 1872; Borel, 1895）</span>
+    <strong>ℝⁿ中的子集是紧致的当且仅当它是有界闭集。</strong>
+    <span class="t-note">Heine（1872）在证明"一致连续性定理"时隐含地使用了"有限子覆盖"的性质。Borel（1895）首次明确陈述并证明了"从每个开覆盖可以选出有限子覆盖"——这是"紧致性"的现代定义。Borel的证明使用了"选择公理"的弱版本（可数选择）。这个定理是实分析中最重要的定理之一——它保证了"闭区间上的连续函数有最大值与最小值"。</span>
+  </div>
+
+  <div class="phd-theorem">
+    <span class="t-name">定理8 · 代数基本定理（Fundamental Theorem of Algebra — Gauss, 1799; 但d'Alembert, 1746首次猜测）</span>
+    <strong>每个非常数复系数多项式在ℂ中至少有一个根。</strong>
+    （等价地：ℂ是代数封闭的）
+    <span class="t-note">Gauss（1799）在博士论文中给出了第一个"严格"的证明（尽管有拓扑上的漏洞）。代数基本定理的"基本"体现在它"不是纯代数的"——所有已知证明都需要分析（或拓扑）的工具。这个定理揭示了复数域ℂ的"完美性"：实系数多项式在ℝ中可能无根（如x²+1=0），但在ℂ中总有根。这体现了代数基本定理的"统一性"——它证明了复数域是"代数封闭的"。</span>
+  </div>
+
+  <div class="phd-theorem">
+    <span class="t-name">定理9 · 布劳威尔不动点定理（Brouwer Fixed Point Theorem — Brouwer, 1911）</span>
+    <strong>每个连续函数f: Dⁿ → Dⁿ（Dⁿ是n维闭单位球）有不动点：</strong>
+    ∃x ∈ Dⁿ (f(x) = x)
+    <span class="t-note">Brouwer（1911）使用Borsuk-Ulam定理（Borsuk, 1933）的拓扑方法证明。这个定理在经济学中有直接应用——Nash（1950）在证明"纳什均衡存在性"时使用了Brouwer不动点定理的推广（Kakutani不动点定理, 1941）。Brouwer本人是直觉主义者——他后来拒绝了自己证明的非构造性（"存在性"证明不提供"构造"不动点的方法）。</span>
+  </div>
+
+  <div class="phd-theorem">
+    <span class="t-name">定理10 · 黎曼映射定理（Riemann Mapping Theorem — Riemann, 1851; 严格证明由Carathéodory, 1912; Koebe, 1907）</span>
+    <strong>每个单连通真子域U ⊂ ℂ（U ≠ ℂ）都是共形等价于单位圆盘D = {z : |z| < 1}。</strong>
+    <span class="t-note">Riemann（1851）在博士论文中陈述了这一定理，但他的证明依赖于"Dirichlet原理"——该原理的"有效性"有争议（Weierstrass指出了漏洞）。Hilbert（1901）为Dirichlet原理提供了严格的基础。Carathéodory（1912）与Koebe（1907）给出了完全严格的证明。这个定理说明：单连通性（"没有洞"）在共形几何中具有决定性——所有单连通区域（除了ℂ本身）在"共形意义上"是相同的。</span>
+  </div>
+
+  <div class="phd-callout">
+    <span class="phd-callout-title">D3 核心文献</span>
+    <p>Godel (1930) "Die Vollstandigkeit der Axiome des logischen Funktionenkalkuls" — 完全性定理；Godel (1931) "Uber formal unentscheidbare Satze..." — 不完备定理；Löwenheim (1915) "Uber Moglichkeiten im Relativkalkul" — L-S定理；Brouwer (1911) "Uber Abbildung von Mannigfaltigkeiten" — 不动点定理；Gauss (1799) "Demonstratio nova theorematis..." — 代数基本定理。</p>
+  </div>
+</section>
+
+<hr class="phd-divider">
+
+<!-- ==================== D4 定理证明详解 ==================== -->
+<section class="sec phd" id="phd-d4">
+  <h2><span class="chapno">D4</span>定理证明详解</h2>
+  <p>博士水平的核心能力之一是"证明的构造与理解"。以下给出两个完整证明——一个最深刻的（Godel不完备定理）和一个最优雅的（Cantor定理）。每个证明附有详细步骤、技术要点与数学意义分析。</p>
+
+  <h3>4.1 哥德尔第一不完备定理的完整证明概要</h3>
+  <p><strong>背景：</strong>Godel（1931）在论文《论数学原理及相关系统的形式不可判定命题》中证明了一个震惊数学界的结论：任何包含算术的一致形式系统都是"不完全的"——存在系统中不可判定的命题。以下给出证明的核心步骤。</p>
+  <div class="phd-proof">
+    <span class="p-name">证明 · 哥德尔第一不完备定理（Godel, 1931）</span>
+    <p><strong>步骤1：Godel编码。</strong>将形式系统P（Peano算术）的每个符号、公式和证明序列编码为一个自然数——"Godel数"。例如，符号0↦1, s↦3, =↦5, (↦7, )↦9, ¬↦11, ∧↦13, ∀↦15, 变量xₖ↦17+2k。公式的Godel数是其符号序列的Godel数（用质数幂编码）：若公式由符号序列c₁,…,cₙ组成，其Godel数为⌜φ⌝ = 2^{⌜c₁⌝} · 3^{⌜c₂⌝} · … · p_n^{⌜cₙ⌝}。证明序列的编码类似。通过这种编码，元数学语句（如"公式φ可证明"）被转化为算术语句——使系统可以"谈论自己"。</p>
+    <p><strong>步骤2：定义可证明性谓词。</strong>在P中构造一个公式Bew(x)（Beweisbar），意为"x是可证明的公式的Godel数"。Bew(x)定义为：∃y (y是证明序列的Godel数，且y的最后一个公式的Godel数是x)。严格构造需要处理"代入"操作——定义函数sub(a, b) = ⌜φ(b)⌝，其中⌜φ(v)⌝ = a，即将公式φ(v)中的自由变量v替换为b（b的数值表示）。</p>
+    <p><strong>步骤3：构造自指语句（Godel句子）。</strong>这是证明中最天才的步骤。考虑公式φ(v) = ¬∃w Bew(sub(v, v))——即"以v的Godel数为码的公式，将其自由变量替换为v后得到的公式不可证明"。令m = ⌜φ(v)⌝。构造G = φ(m) = ¬∃w Bew(sub(m, m))。注意sub(m, m) = ⌜φ(m)⌝ = ⌜G⌝。因此G"说"的是："G在系统中不可证明"——即G ⇔ ¬Bew(⌜G⌝)。</p>
+    <p><strong>步骤4：证明G不可证明且不可否证。</strong>假设P ⊢ G（G可证明）。则Bew(⌜G⌝)为真，故P可证明Bew(⌜G⌝)。但G等价于¬Bew(⌜G⌝)，所以P ⊢ ¬Bew(⌜G⌝)。因此P ⊢ G且P ⊢ ¬Bew(⌜G⌝)——即P不一致。这与假设矛盾。假设P ⊢ ¬G（G的否定可证明）。则P ⊢ ∃w Bew(sub(m,m))，即P ⊢ Bew(⌜G⌝)。如果P是ω-一致的（不存在这样的公式φ：P ⊢ ∃x φ(x)但∀n P ⊢ ¬φ(n)），则存在某个n使得Bew(⌜G⌝)的"证明"——但n是G的"证明"的Godel数，因此P ⊢ G，矛盾。</p>
+    <p><strong>结论：</strong>如果P一致，则P ⊬ G且P ⊬ ¬G——G是P中不可判定的命题。同时，G在元数学中为"真"（因为G说"G不可证明"且确实不可证明）。因此，存在"真但不可证明"的命题。</p>
+    <span class="p-qed">∎</span>
+  </div>
+  <p><strong>技术要点：</strong>（1）Godel编码是"自指"的技术基础——它让形式系统"谈论自己"；（2）ω-一致性条件比"一致性"更强——Rosser（1936）后来改进了Godel的证明，用"一致性"替代了"ω-一致性"；（3）Godel定理的证明是"构造性"的——它确实构造了一个不可判定的命题（尽管这个命题在数学意义上"不自然"）；（4）Godel的证明启发了Turing（1936）的"停机问题"——停机问题的不可判定性是Godel定理在计算理论中的"翻版"。</p>
+
+  <h3>4.2 康托尔定理 |A| < |P(A)| 的完整证明</h3>
+  <p><strong>背景：</strong>Cantor（1891）在《论集合论的一个基本问题》中给出了这个证明，是数学史上最优雅的论证之一。它证明了"无穷"有不同的大小，且不存在"最大无穷"——这一结论深刻改变了人类对"无穷"的理解。</p>
+  <div class="phd-proof">
+    <span class="p-name">证明 · 康托尔定理（Cantor, 1891）</span>
+    <p><strong>定理陈述：</strong>对任意集合A，|A| < |P(A)|。即：存在单射f: A → P(A)，但不存在双射g: A → P(A)。</p>
+    <p><strong>证明：</strong></p>
+    <p><strong>第一部分：</strong>存在单射f: A → P(A)。定义f(a) = {a}（单元素集）。f是单射：若a ≠ b，则{a} ≠ {b}。因此|A| ≤ |P(A)|。</p>
+    <p><strong>第二部分（核心）：</strong>不存在双射g: A → P(A)。用反证法。假设存在双射g: A → P(A)。即g为A的每个元素a指派一个A的子集g(a) ⊆ A。</p>
+    <p><strong>构造"对角线集合"：</strong>令D = {a ∈ A : a ∉ g(a)}。即D包含所有"不属于自己像"的元素。D是A的子集（因为D ⊆ A），所以D ∈ P(A)。</p>
+    <p><strong>导出矛盾：</strong>由于g是双射（满射），存在d ∈ A使得g(d) = D。问题：d ∈ D是否成立？</p>
+    <p>如果d ∈ D，则根据D的定义（D = {a: a ∉ g(a)}），d ∉ g(d) = D，矛盾（d ∈ D且d ∉ D）。</p>
+    <p>如果d ∉ D，则d ∉ g(d)（因为g(d)=D），则根据D的定义，d ∈ D，矛盾（d ∉ D且d ∈ D）。</p>
+    <p>两种可能性都导致矛盾。因此，假设的"双射g"不存在。所以|A| ≠ |P(A)|。结合第一部分|A| ≤ |P(A)|，得|A| < |P(A)|。</p>
+    <span class="p-qed">∎</span>
+  </div>
+  <p><strong>对数学基础的意义：</strong></p>
+  <p>康托尔定理的哲学意义不亚于其数学意义。第一，它证明了"无穷不是单一的"——存在无穷多个不同的"无穷"（ℵ₀ < 2^ℵ₀ < 2^{2^ℵ₀} < …），且这个"无穷谱系"没有上限（因为对任意基数κ，2^κ > κ）。第二，它揭示了"对角化方法"的普遍力量——Godel（1931）的不完备定理、Turing（1936）的停机问题不可判定性、以及"可计算函数不能枚举所有总函数"的证明，都使用了"对角化"这个核心思想。第三，它引发了数学基础中的深刻问题：如果"最大的无穷"不存在，那么"集合论宇宙"V = ∪_{α∈Ord} V_α本身是不是一个"集合"？如果V是集合，则|V| < |P(V)|——但V包含所有集合，包括P(V)——矛盾。这就是"康托尔悖论"（Cantor, 1899），它证明了"所有集合的集合"不存在，从而催生了"类"（class）与"真类"（proper class）的区分（von Neumann, 1925）。</p>
+
+  <div class="phd-callout">
+    <span class="phd-callout-title">D4 核心文献</span>
+    <p>Godel (1931) "On formally undecidable propositions..." — 不完备定理的原始论文；Cantor (1891) "Uber eine elementare Frage der Mannigfaltigkeitslehre" — 对角线论证；Rosser (1936) "Extensions of some theorems of Godel and Church" — ω-一致性条件的改进；Turing (1936) "On Computable Numbers..." — 停机问题的不可判定性。</p>
+  </div>
+</section>
+
+<hr class="phd-divider">
+
+<!-- ==================== D5 形式化体系 ==================== -->
+<section class="sec phd" id="phd-d5">
+  <h2><span class="chapno">D5</span>形式化体系：ZFC与选择公理的形式化</h2>
+  <p>博士水平的"形式化体系"要求理解ZFC公理系统的完整形式化表述、选择公理及其等价形式、连续统假设的独立性证明概要和大型基数公理的分层结构。以下是一个完整的ZFC形式化体系——每一条公理用严格的一阶逻辑语言表述。</p>
+
+  <h3>5.1 ZFC公理系统的完整形式化表述</h3>
+  <p>以下给出ZFC全部10条公理/公理模式的一阶逻辑形式化表述。语言L = {∈}，仅有一个二元关系符号∈。</p>
+
+  <div class="phd-formula">
+    <span class="f-name">ZFC-1 · 空集公理</span>
+    ∃x ∀y ¬(y ∈ x)
+  </div>
+  <div class="phd-formula">
+    <span class="f-name">ZFC-2 · 外延公理</span>
+    ∀x ∀y (∀z (z ∈ x ⇔ z ∈ y) ⇒ x = y)
+  </div>
+  <div class="phd-formula">
+    <span class="f-name">ZFC-3 · 配对公理</span>
+    ∀x ∀y ∃z (x ∈ z ∧ y ∈ z ∧ ∀w (w ∈ z ⇒ (w = x ∨ w = y)))
+  </div>
+  <div class="phd-formula">
+    <span class="f-name">ZFC-4 · 并集公理</span>
+    ∀x ∃y ∀z (z ∈ y ⇔ ∃w (w ∈ x ∧ z ∈ w))
+  </div>
+  <div class="phd-formula">
+    <span class="f-name">ZFC-5 · 幂集公理</span>
+    ∀x ∃y ∀z (∀w (w ∈ z ⇒ w ∈ x) ⇒ z ∈ y)
+  </div>
+  <div class="phd-formula">
+    <span class="f-name">ZFC-6 · 无穷公理</span>
+    ∃x (∃y (y ∈ x ∧ ∀z ¬(z ∈ y)) ∧ ∀y (y ∈ x ⇒ ∃z (z ∈ x ∧ ∀w (w ∈ z ⇔ (w ∈ y ∨ w = y)))))
+  </div>
+  <div class="phd-formula">
+    <span class="f-name">ZFC-7 · 分离公理模式（对每个公式φ不含y自由）</span>
+    ∀z ∀w₁…∀wₙ ∃y ∀x (x ∈ y ⇔ (x ∈ z ∧ φ(x, w₁, …, wₙ)))
+  </div>
+  <div class="phd-formula">
+    <span class="f-name">ZFC-8 · 替换公理模式（对每个公式φ不含Y自由）</span>
+    ∀A ∀w₁…∀wₙ (∀x ∈ A ∃!y φ(x,y,w₁,…,wₙ) ⇒ ∃Y ∀x ∈ A ∃y ∈ Y φ(x,y,w₁,…,wₙ))
+  </div>
+  <div class="phd-formula">
+    <span class="f-name">ZFC-9 · 正则公理</span>
+    ∀x (∃y (y ∈ x) ⇒ ∃y ∈ x ∀z (z ∈ x ⇒ ¬(z ∈ y)))
+  </div>
+  <div class="phd-formula">
+    <span class="f-name">ZFC-10 · 选择公理（AC）</span>
+    ∀x (∀y ∈ x ∃z (z ∈ y) ⇒ ∃f (Fun(f) ∧ Dom(f) = x ∧ ∀y ∈ x (f(y) ∈ y)))
+    其中 Fun(f) 定义为 ∀p ∈ f (∃a ∃b (p = (a,b))) ∧ (∀a ∀b ∀c ((a,b)∈f ∧ (a,c)∈f ⇒ b=c))
+  </div>
+
+  <h3>5.2 选择公理的等价形式</h3>
+  <p>选择公理在数学中有大量等价形式——以下是最重要的五个：</p>
+  <div class="phd-formula">
+    <span class="f-name">AC等价形式1 · 良序原理（Zermelo, 1904）</span>
+    每个集合X上存在一个良序。
+  </div>
+  <div class="phd-formula">
+    <span class="f-name">AC等价形式2 · 佐恩引理（Zorn, 1935; Kuratowski, 1922）</span>
+    如果偏序集P的每个链有上界，则P有极大元。
+  </div>
+  <div class="phd-formula">
+    <span class="f-name">AC等价形式3 · 图基引理（Tukey's Lemma — Tukey, 1940）</span>
+    每个"有限特征"的集族有极大元（关于包含关系）。
+  </div>
+  <div class="phd-formula">
+    <span class="f-name">AC等价形式4 · 哈梅尔基定理（Hamel Basis Theorem — Hamel, 1905）</span>
+    每个向量空间有基（即Hamel基）。
+  </div>
+  <div class="phd-formula">
+    <span class="f-name">AC等价形式5 · Tychonoff定理（Tychonoff, 1930）</span>
+    任意紧致拓扑空间的乘积是紧致的。
+  </div>
+
+  <h3>5.3 连续统假设的独立性</h3>
+  <p><strong>Godel的可构造宇宙L（1938）：</strong>Godel定义了"可构造集"的层级——L_0 = ∅, L_{α+1} = Def(L_α)（L_α中一阶逻辑可定义的子集），极限序数L_λ = ∪_{α<λ} L_α。L = ∪_{α∈Ord} L_α。Godel证明：L满足ZFC的所有公理（包括AC），且L中CH成立。因此，如果ZFC一致，则ZFC+CH一致——CH不能被ZFC否证。</p>
+  <p><strong>Cohen的力迫法（1963）：</strong>Cohen发明了"力迫法"（forcing），从可数传递模型M开始，通过添加"生成元"G（一个"新"的实数集）构造M[G]，使得M[G]中ℝ的基数变为ℵ₂（而非ℵ₁）。在M[G]中，2^ℵ₀ = ℵ₂，因此CH为假。Cohen的证明使用了"力迫关系"p ⊩ φ——"条件p力迫φ"——这是集合论中构造新模型的最强大工具。Cohen因此获得1966年Fields Medal。</p>
+  <p><strong>独立性=多元性：</strong>CH的独立性是一个深刻的哲学结果——它意味着ZFC不足以决定"连续统"的基数。这意味着"数学真理"不是"唯一的"而是"依赖于模型"的——Setá（2019）的"集合论多元宇宙"观点认为，不同的ZFC模型对应不同的"数学可能性"，不存在"唯一正确的"集合论宇宙。</p>
+
+  <h3>5.4 大基数公理层级</h3>
+  <p>大基数公理是ZFC的"自然扩展"——它们断言存在"非常大的"无穷基数，其存在性不能用ZFC证明。大基数公理形成了一个"一致性强度"的层级：</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>层级</th><th>大基数公理</th><th>定义概要</th><th>提出者</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><strong>不可达基数</strong>（Inaccessible Cardinal）</td><td>κ > ℵ₀是正则的强极限基数</td><td>Hausdorff (1908), Sierpiński-Tarski (1930)</td></tr>
+        <tr><td>2</td><td><strong>马洛基数</strong>（Mahlo Cardinal）</td><td>κ是"不可达基数"的"驻点"</td><td>Mahlo (1911, 1912)</td></tr>
+        <tr><td>3</td><td><strong>弱紧致基数</strong>（Weakly Compact Cardinal）</td><td>κ满足κ → (κ)²₂（划分性质）</td><td>Erdos-Rado (1952)</td></tr>
+        <tr><td>4</td><td><strong>可测基数</strong>（Measurable Cardinal）</td><td>存在κ上的非平凡κ-完备超滤</td><td>Ulam (1930), Scott (1961)</td></tr>
+        <tr><td>5</td><td><strong>强基数</strong>（Strong Cardinal）</td><td>对所有λ > κ存在初等嵌入j: V → M</td><td>Reinhardt (1970)</td></tr>
+        <tr><td>6</td><td><strong>伍丁基数</strong>（Woodin Cardinal）</td><td>κ是"强于"可测基数的"反射点"</td><td>Woodin (1980s)</td></tr>
+        <tr><td>7</td><td><strong>超紧基数</strong>（Supercompact Cardinal）</td><td>对所有λ > κ存在"充分"的初等嵌入</td><td>Reinhardt-Solovay (1967)</td></tr>
+        <tr><td>8</td><td><strong>I0, I1, I3基数</strong>（huge基数层级）</td><td>κ是"huge"（巨）基数</td><td>Reinhardt (1970)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>大基数公理的研究表明：一致性强度是"线性"的——它们可以排列成一个"自然"的层级（"大基数层阶"——Cantor's attic, 2010）。Woodin（2001）的"Omega猜想"进一步提出：如果存在足够多的大基数（特别是"超紧基数"的类），则"集合论的理论"是"决定的"——即CH有一个"确定的"真值（在Omega逻辑框架中为假）。</p>
+
+  <h3>5.5 Three.js 3D模型：集合论宇宙的累积层级V_α</h3>
+  <figure class="diagram">
+    <figcaption>图 PhD-1 · 集合论宇宙累积层级 V_α 的三维可视化（从V_0到V_{ω+ω}）</figcaption>
+    <div class="phd-three-container" id="phd-three-settheory"></div>
+    <p class="phd-figcaption">集合论宇宙V的累积层级结构三维可视化。从底部的V_0 = ∅开始，经过幂集运算逐层累积。每层代表一个V_α：V_0 = ∅, V_{α+1} = P(V_α)，极限序数λ时V_λ = ∪_{α<λ} V_α。最终V = ∪_{α∈Ord} V_α。颜色从蓝色渐变到紫色再至红色，表示层级的递增。透明球体代表V_ω（所有有限论域的集合），红色球壳代表V_{ω+ω}的层次。</p>
+  </figure>
+
+  <div class="phd-callout">
+    <span class="phd-callout-title">D5 核心文献</span>
+    <p>Zermelo (1908) 集合论公理化的奠基论文；Godel (1938) "The Consistency of the Axiom of Choice and of the Generalized Continuum Hypothesis" — 可构造宇宙L；Cohen (1963) "The Independence of the Continuum Hypothesis" — 力迫法；Jech (2003) "Set Theory: The Third Millennium Edition" — 标准参考；Kanamori (2003) "The Higher Infinite" — 大基数理论标准参考；Woodin (2010) "The search for mathematical truth" — Ω逻辑与Ultimate-L。</p>
+  </div>
+</section>
+
+<hr class="phd-divider">
+
+<!-- ==================== D6 前沿定理与未解问题 ==================== -->
+<section class="sec phd" id="phd-d6">
+  <h2><span class="chapno">D6</span>前沿定理与未解问题</h2>
+  <p>博士水平的训练要求理解数学前沿的动态——哪些定理已被证明、哪些问题仍然悬而未决。以下介绍四个前沿定理和五个千禧年未解问题，覆盖数理逻辑、数论、代数几何与计算复杂性理论。</p>
+
+  <h3>6.1 前沿定理</h3>
+
+  <h4>定理1 · Cohen的力迫法（Forcing — Cohen, 1963）</h4>
+  <p>Cohen（1963）在"连续统假设的独立性"（PNAS, 50(6), 1143-1148）一文中发明了力迫法——一种构造ZFC模型的新方法。力迫法的核心思想是"往一个可数传递模型M中添加新的集合（称为"生成元"G）"来构造更大的模型M[G]。力迫法被描述为"集合论中最强大的工具"——它被用来证明大量数学命题的独立性：选择公理的独立性（ZFC不能证明AC）、Suslin猜想的独立性（Jech-Tennenbaum, 1968）、Whitehead问题的独立性（Shelah, 1974——"所有Whitehead群是否都是自由的？"独立于ZFC）、以及Kaplansky猜想的独立性等。Cohen因这一工作获得1966年Fields Medal。力迫法的技术核心是"力迫关系"p ⊩ φ——"条件p力迫公式φ"——它为"新集合G"的性质提供了"预测"机制。力迫法的"广义化"——"迭代力迫"（Solovay-Tennenbaum, 1971; Laver, 1978）——被用于构造满足"力迫公理"（PFA — Proper Forcing Axiom）的模型，这是当代集合论的核心研究领域。</p>
+
+  <h4>定理2 · Shelah的pcf理论（pcf Theory — Shelah, 1994）</h4>
+  <p>Shelah（1994）在《Cardinal Arithmetic》（牛津大学出版社）中提出了pcf理论（"possible cofinalities"理论）——一种研究基数算术的新方法。pcf理论的核心是"pcf定理"：对于由正则基数组成的集合a，|pcf(a)| ≤ |a|^+（如果a是"不相交并"的，则|pcf(a)| ≤ 2^{|a|}）。这看似平凡的结果有深刻的推论：Shelah证明了ℵ_ω的"幂"有上界——2^{ℵ_ω} < ℵ_{(2^ℵ₀)^+}（如果ℵ_ω是强极限基数）。这一结果在ZFC中成立，不需要额外的假设——这是"基数算术"理论中在ZFC内可证明的少数"非平凡"上界之一。pcf理论还证明了"Jonsson基数"的存在性等结果。Shelah因此获得了1998年的Wolf Prize和2013年的Steele Prize。Shelah的论文数量超过1000篇——他被称为"当代最伟大的集合论学家"。</p>
+
+  <h4>定理3 · Woodin的Ω-猜想与Ultimate-L（Woodin, 2001, 2010, 2017）</h4>
+  <p>Woodin的Ω逻辑（Omega Logic, 2001）是"集合论模型论"的一个新框架——它通过"Ω-有效性"（⊨_Ω）来比"一阶有效性"更精细地分析ZFC模型之间的关系。Ω-猜想（Omega Conjecture）是：Ω-有效性是"可证明的"——即存在一个Ω-逻辑的"完全公理化"。如果Ω-猜想成立，且存在足够多的大基数（特别是"超紧基数"的类），则"CH的Ω-真值"是"假"——这意味着，在任何"自然"的集合论宇宙中，CH都是假的。Woodin（2010）提出的"Ultimate-L"构造试图定义一个类似于Godel的"可构造宇宙"L但更包容的宇宙——"V = Ultimate-L"是一个新的"基础公理"候选。如果Ultimate-L存在且满足某些条件，则CH为假（2^ℵ₀ = ℵ₂）。Woodin（2017）在"Ultimate-L"的构造上取得了重要进展，但完整的构造尚未完成。Magidor（2012）对Ultimate-L的可能性提出了质疑。</p>
+
+  <h4>定理4 · Voevodsky的单值基础（Univalent Foundations — Voevodsky, 2009, 2013）</h4>
+  <p>Voevodsky（2009）在IAS的演讲中提出了"Univalent Foundations"——基于Homotopy Type Theory（HoTT）的数学新基础。HoTT的核心是"单值公理"（Univalence Axiom）：两个同构的类型是"相等的"——"同构即相等"。在ZFC中，两个同构的集合（如ℕ与偶数集）在集合论意义上不相等（因为它们有不同的元素）；但在HoTT中，同构的类型被视为"相同的"——这与"结构主义"的数学哲学一致。Voevodsky（2009）的"Voevodsky猜想"——Univalent Foundations的一致性——在2013年被Kapulkin、Lumsdaine与Voevodsky本人使用"simplicial集合模型"（在ZFC + 两个不可达基数中）证明。Voevodsky因在动机理论与Weil猜想上的工作获得2002年Fields Medal，但他在生命最后十年（2014-2017）将全部精力投入Univalent Foundations。HoTT的计算机实现（Coq, Agda, Lean）允许数学家将证明写为"计算机可验证"的形式——这是"形式化数学"（Formalized Mathematics）的重大进展。Voevodsky（2014）在ICM上的演讲中宣称："我认为在未来的几十年内，数学家们将使用计算机辅助证明系统来验证所有新的数学定理。"</p>
+
+  <h3>6.2 千禧年未解问题（Millennium Prize Problems）</h3>
+  <p>Clay数学研究所（2000年）公布了七个"千禧年大奖问题"——每个问题悬赏100万美元。以下五个问题与数学基础直接相关：</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>问题</th><th>领域</th><th>提出者</th><th>当前状态</th></tr></thead>
+      <tbody>
+        <tr><td><strong>P vs NP</strong></td><td>计算复杂性理论</td><td>Cook (1971), Levin (1973)</td><td>未解。绝大多数计算机科学家相信P ≠ NP，但无人能证明。</td></tr>
+        <tr><td><strong>黎曼猜想</strong></td><td>解析数论</td><td>Riemann (1859)</td><td>未解。ζ函数的所有非平凡零点都在临界线Re(s)=1/2上。已验证超过10万亿个零点。</td></tr>
+        <tr><td><strong>Hodge猜想</strong></td><td>代数几何</td><td>Hodge (1950)</td><td>未解。在某些上同调类中，哪些是"代数闭链"的"有理线性组合"？</td></tr>
+        <tr><td><strong>Birch和Swinnerton-Dyer猜想</strong></td><td>数论/算术几何</td><td>Birch & Swinnerton-Dyer (1965)</td><td>未解。椭圆曲线的"秩"是否等于其L-函数在s=1处的零点阶数？</td></tr>
+        <tr><td><strong>Yang-Mills存在性与质量间隙</strong></td><td>数学物理</td><td>Yang & Mills (1954)</td><td>未解。在ℝ⁴上是否存在量子Yang-Mills理论，且存在"质量间隙"（正的最小质量）？</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><strong>P vs NP的更详细说明：</strong>P = {在多项式时间内可解的问题}，NP = {在多项式时间内可验证的问题}。Cook-Levin定理（Cook, 1971; Levin, 1973）证明SAT问题是NP完全的——如果SAT∈P，则P=NP。P vs NP问题的解决将对密码学（RSA的安全性依赖于因子分解不是多项式时间问题）、人工智能（许多优化问题是NP完全的）、运筹学、生物学产生深远影响。目前已知的"最接近"的结果包括：Razborov（1985）的"单调电路下界"（证明单调电路不能解决CLIQUE问题）、Arora等（1998）的"PCP定理"（证明NP问题的近似解也是NP完全的）、以及Williams（2011）的"ACC电路下界"。</p>
+  <p><strong>黎曼猜想的更详细说明：</strong>Riemann ζ函数定义为ζ(s) = Σ_{n=1}^∞ 1/n^s（Re(s) > 1），然后通过解析延拓到整个复平面（除了s=1处的简单极点）。Riemann（1859）在一篇仅8页的论文中提出了猜想：ζ(s)的所有非平凡零点都在临界线Re(s)=1/2上。黎曼猜想的证明将揭示素数分布的"终极规律"——它有超过1000个数学推论。目前最好的结果：Selberg（1942）证明临界线上有"正比例"的零点；Conrey（1989）证明至少40%的零点在临界线上；Bourgain（2013等）改进了零点的"密度估计"。但完整的证明尚未出现。</p>
+
+  <div class="phd-callout">
+    <span class="phd-callout-title">D6 核心文献</span>
+    <p>Cohen (1963) "The Independence of the Continuum Hypothesis" — 力迫法；Shelah (1994) "Cardinal Arithmetic" — pcf理论；Woodin (2001, 2010) Omega逻辑与Ultimate-L；Voevodsky (2013) "The origins and motivations of Univalent Foundations" — 单值基础；Cook (1971) "The complexity of theorem-proving procedures" — NP完全性；Riemann (1859) "Uber die Anzahl der Primzahlen unter einer gegebenen Grosse" — 黎曼猜想。</p>
+  </div>
+</section>
+
+<hr class="phd-divider">
+
+<!-- ==================== D7 研究前沿 ==================== -->
+<section class="sec phd" id="phd-d7">
+  <h2><span class="chapno">D7</span>研究前沿</h2>
+  <p>当代数学的前沿正在多个方向同时推进——从同伦类型论对数学基础的重新构想，到解析数论中素数分布的新突破，从范畴论在代数几何中的深度应用到算术几何的跨领域融合，再到计算复杂性理论中深刻的"近似的极限"。以下五个方向代表了当前最活跃的研究前沿。</p>
+
+  <h3>7.1 同伦类型论（Homotopy Type Theory, HoTT）</h3>
+  <p>HoTT是数学基础研究中最激进也最富有前景的新方向。它由Voevodsky（2009）在"Univalent Foundations"的框架下提出，核心思想是"命题即类型、证明即程序"（Curry-Howard同构）与"同构即相等"（Univalence Axiom）的融合。HoTT将类型论（Martin-Löf, 1975）与同伦论（Quillen, 1967）结合起来——一个类型被视为一个"空间"，两个元素之间的"同一性证明"被视为这两个点之间的"路径"，而"高阶同一性"（路径之间的路径）被视为"同伦"。单值公理说：两个类型之间的"同构"（等价关系）与"相等"（类型论中的同一类型）是"一致的"——即"同构即相等"。</p>
+  <p>HoTT的研究前沿包括：（1）"高阶归纳类型"（Higher Inductive Types, HITs）——允许定义"空间"（如球面、环面）作为类型，这是HoTT中"空间"概念的"类型论"表示；（2）"计算解释"——是否存在一个"规范"的归一化算法（即HoTT的"计算内容"是什么）？Awodey（2018）的"立方类型论"（Cubical Type Theory）提供了HoTT的一种"计算解释"；（3）HoTT作为"计算机辅助证明"系统的基础——Lean（de Moura, 2013）与Coq（Inria, 1989）中HoTT的实现；（4）"HoTT在数学中的应用"——如"Brouwer不动点定理的HoTT证明"（Buchholtz et al., 2017）和"Serre谱序列的HoTT构造"。</p>
+
+  <h3>7.2 解析数论的前沿：张益唐与Maynard的素数间隙</h3>
+  <p>解析数论在二十一世纪取得了惊人的进展，特别是在"素数分布"问题上。Green与Tao（2004）证明了"素数中含有任意长的等差数列"——这是数论史上最令人惊讶的结果之一。Tao因此获得2006年Fields Medal。</p>
+  <p><strong>张益唐（2013）</strong>在《Annals of Mathematics》上发表了"素数间的有界间隙"——证明了存在无穷多对素数，其间隙小于7000万。这一结果是对"孪生素数猜想"（存在无穷多对间距为2的素数——如3和5、11和13、17和19）的重大突破。张益唐的论文在被接受前仅用了三周——这是Annals of Mathematics历史上最快的审稿之一。张益唐的证明使用了Bombieri-Vinogradov定理的"改进形式"和Selberg的"筛法"。</p>
+  <p><strong>Maynard（2013）</strong>在张益唐的结果公布后仅几个月，用不同的方法（"Maynard筛法"）将间隙缩小到600——并进一步证明了：对于任意整数m，存在无穷多对素数，其间隙不超过C·m³（C为常数）。Maynard因此获得2014年Fields Medal（38岁）。目前最好的结果：Polymath 8项目（2014，由Tao组织）将间隙缩小到246。但孪生素数猜想本身（间隙=2）仍未解决。当代解析数论的其他前沿包括：L-函数的"零点分布"（Bourgain, 2010s）、"素数定理在短区间中的推广"（Heath-Brown, 1980s）、以及"Chowla猜想"与"Sarnak猜想"（关于Mobius函数的随机性）。</p>
+
+  <h3>7.3 范畴论在代数几何中的应用：Lurie的∞-范畴论</h3>
+  <p>Lurie（2009）的《Higher Topos Theory》奠定了"∞-范畴论"（无穷范畴论）的基础——这是范畴论在代数几何中最深刻的进展之一。∞-范畴是"高维范畴"——它不仅包含"对象"与"态射"，还包含"态射之间的态射"（2-态射）、"3-态射"……"n-态射"（对任意n），且满足"高维交换性"条件。Lurie的∞-范畴论统一了"同伦论"与"范畴论"——将拓扑空间中的"同伦"概念"范畴化"。</p>
+  <p>∞-范畴论在代数几何中的应用包括：（1）"导出代数几何"（Derived Algebraic Geometry）——将经典代数几何推广到"导出范畴"的框架，允许处理"相交"中"多重性"的问题（如"奇点消解"与"Moser不变量的计算"）；（2）"谱代数几何"（Spectral Algebraic Geometry）——将"环"的概念推广为"E∞-环"（即"光谱"版本的环），从而将代数几何推广到"稳定同伦论"的框架；（3）"凝聚态数学"（Condensed Mathematics — Clausen & Scholze, 2019）——使用"凝聚态集"替代"拓扑空间"作为几何对象的基础，解决了"拓扑空间范畴"在函子范畴中不"封闭"的问题。Scholze因在算术几何中的工作（包括"p-进几何"与"完美的空间"）获得2018年Fields Medal。</p>
+
+  <h3>7.4 算术几何：Faltings的Mordell猜想与望月新一的IUT理论</h3>
+  <p>算术几何是数论与代数几何的交叉领域——用代数几何的方法研究数论问题。Faltings（1983）证明了"Mordell猜想"（1922）：一个亏格≥2的代数曲线上的有理点只有有限多个。Faltings的证明使用了"算术几何"的深刻工具——包括"丢番图逼近"（Roth, 1955）、"抛物化"（Parshin, 1968）、"Arakelov理论"（Arakelov, 1974）以及"Faltings自己的高度理论"。Faltings因此获得1986年Fields Medal（年仅32岁）。</p>
+  <p><strong>望月新一（Mochizuki, 2012）</strong>的"宇宙际Teichmuller理论"（Inter-universal Teichmuller Theory, IUT）是算术几何中最具争议的前沿成果。望月声称IUT理论可以证明"ABC猜想"——一个关于整数a+b=c的"素数分解"的深刻猜想（由Masser与Oesterle在1985年提出）。ABC猜想推论包括：Fermat大定理的"弱形式"、Mordell猜想的"有效版本"等。望月的IUT论文超过500页，发表于2012年。但IUT的证明至今未被广泛接受——因为望月的理论高度原创，使用了大量"新概念"（如"宇宙"、"环状"、"Hodge剧院"等），使得审稿极其困难。Scholze与Stix（2018）在访问望月后公开发表了对IUT的"批评"——认为IUT的证明在第3.12节有"不可修复的漏洞"。望月反驳了这些批评。这场争论是当代数学中最具争议的"基础争论"之一。</p>
+
+  <h3>7.5 计算复杂性理论：PCP定理与唯一博弈猜想</h3>
+  <p><strong>PCP定理</strong>（Probabilistically Checkable Proofs — Arora, Lund, Motwani, Sudan, Szegedy, 1998; 最终由Arora & Safra, 1998完成）是计算复杂性理论中最深刻的定理之一。PCP定理说：每个NP问题的证明都可以被"概率性地检查"——只需检查证明的"常数个"随机位置，就能以高概率判断证明的正确性。PCP定理的精确表述：NP = PCP(O(log n), O(1))。这意味着，对于任意NP问题，存在一个"证明系统"使得：正确的证明总是被接受；错误的证明被接受的概率小于1/2。PCP定理对"近似算法"有直接的影响——它证明了"Max-SAT"、"Max-Clique"等问题的"近似"也是NP完全的。Arora与Safra因此获得2001年的Godel Prize和2005年的Nevanlinna Prize。</p>
+  <p><strong>唯一博弈猜想</strong>（Unique Games Conjecture, UGC — Khot, 2002）是计算复杂性理论中另一个深刻的前沿问题。Khot的UGC说：一个特定的"约束满足问题"——"唯一博弈"问题——是NP完全的（在"近似"的意义上）。如果UGC成立，则大量优化问题的"近似困难"被统一解释——如"Max-Cut"问题（Goemans-Williamson, 1995的0.878-近似算法是"最优"的）、"顶点覆盖"问题（2-近似算法是"最优"的）等。Khot、Kindler、Mossel与O'Donnell（2007）证明了"唯一博弈"与"社会选择理论"（如"Arrow不可能定理"）之间的深刻联系。UGC至今未被证明或反驳——它被认为是"P vs NP之后最重要的开放问题之一"。Khot因此获得2014年Rolf Nevanlinna Prize。如果UGC被证明成立，它将揭示"近似计算的极限"——有些问题在"精确解"层面是NP完全，在"近似解"层面也是NP完全。</p>
+
+  <h3>7.6 Three.js 3D模型：同伦类型论中的同一性类型可视化</h3>
+  <figure class="diagram">
+    <figcaption>图 PhD-2 · 同伦类型论中的同一性类型可视化（基于路径空间的拓扑结构）</figcaption>
+    <div class="phd-three-container" id="phd-three-hott"></div>
+    <p class="phd-figcaption">同伦类型论（HoTT）中同一性类型的拓扑可视化。在类型（视为空间）A中，元素a和b之间的同一性证明Id_A(a,b)对应于从点a到点b的路径。本图展示了一个类型空间（蓝色半透明环面/曲面）上的多条路径及其高阶同伦关系。路径的同伦（路径之间的路径）对应于"同一性证明的同一性"。红色球体标记关键点，彩色曲线表示不同类型的路径。此可视化展示了HoTT的核心思想：类型 = 空间，同一性 = 路径，高阶同一性 = 同伦。</p>
+  </figure>
+
+  <div class="phd-callout">
+    <span class="phd-callout-title">D7 核心文献</span>
+    <p>Voevodsky (2009) "Univalent Foundations" — IAS Lecture Notes；Zhang (2013) "Bounded gaps between primes" — 张益唐的突破；Maynard (2013) "Small gaps between primes" — Maynard筛法；Lurie (2009) "Higher Topos Theory" — ∞-范畴论；Faltings (1983) "Endlichkeitssatze fur abelsche Varietaten uber Zahlkorpern" — Mordell猜想；Mochizuki (2012) "Inter-universal Teichmuller Theory" — IUT理论；Khot (2002) "On the power of unique 2-prover 1-round games" — UGC；Arora et al. (1998) "Proof verification and the hardness of approximation problems" — PCP定理。</p>
+  </div>
+</section>
+
+<!-- ==================== 博士模块 Three.js 3D 可视化脚本 ==================== -->
+<!-- 如果主文件已经加载了 Three.js 的 CDN，可以省略重复加载 -->
+<script>
+(function() {
+  // ===== 模型1：集合论宇宙累积层级 V_α 的三维可视化 =====
+  (function() {
+    const container = document.getElementById('phd-three-settheory');
+    if (!container) return;
+    const w = container.clientWidth, h = 500;
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x1a1a2e);
+    const camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 100);
+    camera.position.set(12, 8, 16);
+    camera.lookAt(0, 2, 0);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(w, h);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    container.appendChild(renderer.domElement);
+
+    // Lights
+    const ambient = new THREE.AmbientLight(0x404060);
+    scene.add(ambient);
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+    dirLight.position.set(2, 5, 3);
+    scene.add(dirLight);
+    const dirLight2 = new THREE.DirectionalLight(0x4466ff, 0.5);
+    dirLight2.position.set(-3, -1, -2);
+    scene.add(dirLight2);
+
+    // Build cumulative hierarchy V_α from bottom to top
+    const layers = [];
+    const numLayers = 12;
+    const layerHeight = 0.7;
+    const baseRadius = 0.3;
+    const radiusGrowth = 0.35;
+
+    for (let i = 0; i < numLayers; i++) {
+      const y = i * layerHeight;
+      const r = baseRadius + i * radiusGrowth + Math.sin(i * 0.8) * 0.2;
+      const hue = 0.6 + i * 0.03; // blue to purple to red
+      const color = new THREE.Color().setHSL(hue % 1, 0.8, 0.4 + i * 0.025);
+
+      // Disk/ring for each layer
+      const geo = new THREE.RingGeometry(r * 0.1, r, 48);
+      const mat = new THREE.MeshPhongMaterial({
+        color: color,
+        transparent: true,
+        opacity: 0.25 + i * 0.04,
+        side: THREE.DoubleSide,
+        emissive: color,
+        emissiveIntensity: 0.1
+      });
+      const mesh = new THREE.Mesh(geo, mat);
+      mesh.position.set(0, y, 0);
+      mesh.rotation.x = -Math.PI / 2;
+      scene.add(mesh);
+
+      // Wireframe ring for definition
+      const wireGeo = new THREE.RingGeometry(r * 0.1, r, 32);
+      const wireMat = new THREE.MeshBasicMaterial({
+        color: color,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.15
+      });
+      const wire = new THREE.Mesh(wireGeo, wireMat);
+      wire.position.set(0, y, 0);
+      wire.rotation.x = -Math.PI / 2;
+      scene.add(wire);
+
+      // Small sphere markers at specific layers
+      if (i === 0 || i === 5 || i === 8 || i === 11) {
+        const sphereGeo = new THREE.SphereGeometry(0.12, 16, 16);
+        const sphereMat = new THREE.MeshPhongMaterial({
+          color: 0xffffff,
+          emissive: color,
+          emissiveIntensity: 0.5
+        });
+        const sphere = new THREE.Mesh(sphereGeo, sphereMat);
+        sphere.position.set(0, y, 0);
+        scene.add(sphere);
+      }
+
+      layers.push({ y, r });
+    }
+
+    // Vertical axis (ordinal line)
+    const axisMat = new THREE.LineBasicMaterial({ color: 0x888888, transparent: true, opacity: 0.3 });
+    const axisPoints = [];
+    for (let i = 0; i <= numLayers; i++) {
+      axisPoints.push(new THREE.Vector3(0, i * layerHeight, 0));
+    }
+    const axisGeo = new THREE.BufferGeometry().setFromPoints(axisPoints);
+    const axisLine = new THREE.Line(axisGeo, axisMat);
+    scene.add(axisLine);
+
+    // Label sprites
+    function makeLabel(text, color, pos, size) {
+      const canvas = document.createElement('canvas');
+      canvas.width = 256; canvas.height = 64;
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, 256, 64);
+      ctx.font = 'bold 28px WorkSans, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = color;
+      ctx.fillText(text, 128, 32);
+      const texture = new THREE.CanvasTexture(canvas);
+      const mat = new THREE.SpriteMaterial({ map: texture, transparent: true, depthTest: false });
+      const sprite = new THREE.Sprite(mat);
+      sprite.position.set(pos[0], pos[1], pos[2]);
+      sprite.scale.set(size || 2.5, (size || 2.5) * 0.25, 1);
+      scene.add(sprite);
+    }
+
+    // Layer labels
+    makeLabel('V₀ = ∅', '#93C5FD', [0, -0.5, 0]);
+    makeLabel('V_ω', '#60A5FA', [0, 3.2, 0], 2.0);
+    makeLabel('V_{ω+ω}', '#7C3AED', [0, 5.5, 0], 2.0);
+    makeLabel('V_{ω₁}', '#DC2626', [0, 7.8, 0], 2.0);
+
+    // Title
+    makeLabel('集合论宇宙 V_α 累积层级', '#ffffff', [0, 9.5, 0], 3.5);
+
+    // Particles (stars) for background
+    const starGeo = new THREE.BufferGeometry();
+    const starCount = 400;
+    const starPos = new Float32Array(starCount * 3);
+    for (let i = 0; i < starCount * 3; i++) {
+      starPos[i] = (Math.random() - 0.5) * 60;
+    }
+    starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+    const starMat = new THREE.PointsMaterial({ color: 0xffffff, size: 0.05, transparent: true, opacity: 0.5 });
+    const stars = new THREE.Points(starGeo, starMat);
+    scene.add(stars);
+
+    // Animation
+    let angle = 0;
+    function animate() {
+      requestAnimationFrame(animate);
+      angle += 0.003;
+      const radius = 16;
+      camera.position.x = radius * Math.sin(angle * 0.3);
+      camera.position.z = radius * Math.cos(angle * 0.3);
+      camera.lookAt(0, 3, 0);
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      const w2 = container.clientWidth;
+      renderer.setSize(w2, 500);
+      camera.aspect = w2 / 500;
+      camera.updateProjectionMatrix();
+    });
+  })();
+
+  // ===== 模型2：同伦类型论中的同一性类型可视化 =====
+  (function() {
+    const container = document.getElementById('phd-three-hott');
+    if (!container) return;
+    const w = container.clientWidth, h = 500;
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0f0f23);
+    const camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 100);
+    camera.position.set(8, 6, 12);
+    camera.lookAt(0, 0, 0);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(w, h);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    container.appendChild(renderer.domElement);
+
+    // Lights
+    const ambient = new THREE.AmbientLight(0x404060);
+    scene.add(ambient);
+    const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    dirLight.position.set(2, 4, 3);
+    scene.add(dirLight);
+    const dirLight2 = new THREE.DirectionalLight(0x4466ff, 0.4);
+    dirLight2.position.set(-3, -1, -2);
+    scene.add(dirLight2);
+
+    // Main type space: a torus knot surface representing the "type" A
+    const knotGeo = new THREE.TorusKnotGeometry(2.5, 0.8, 100, 16, 2, 3);
+    const knotMat = new THREE.MeshPhongMaterial({
+      color: 0x2563EB,
+      transparent: true,
+      opacity: 0.15,
+      wireframe: false,
+      side: THREE.DoubleSide,
+      emissive: 0x2563EB,
+      emissiveIntensity: 0.05
+    });
+    const knot = new THREE.Mesh(knotGeo, knotMat);
+    scene.add(knot);
+
+    // Wireframe overlay
+    const knotWire = new THREE.TorusKnotGeometry(2.5, 0.8, 48, 8, 2, 3);
+    const wireMat = new THREE.MeshBasicMaterial({
+      color: 0x4466ff,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.12
+    });
+    const wireKnot = new THREE.Mesh(knotWire, wireMat);
+    scene.add(wireKnot);
+
+    // Key points on the type (a, b, c, etc.)
+    const pointPositions = [
+      { pos: [2.0, 0.5, 1.0], color: 0xff4444, label: 'a' },
+      { pos: [-1.5, -0.8, 2.0], color: 0x44ff44, label: 'b' },
+      { pos: [-0.5, 1.8, -1.5], color: 0x4444ff, label: 'c' },
+      { pos: [1.8, -1.2, -1.0], color: 0xffaa44, label: 'd' },
+      { pos: [-2.0, 0.3, -1.8], color: 0xff44ff, label: 'e' },
+    ];
+
+    pointPositions.forEach(p => {
+      const geo = new THREE.SphereGeometry(0.15, 16, 16);
+      const mat = new THREE.MeshPhongMaterial({
+        color: p.color,
+        emissive: p.color,
+        emissiveIntensity: 0.3
+      });
+      const mesh = new THREE.Mesh(geo, mat);
+      mesh.position.set(p.pos[0], p.pos[1], p.pos[2]);
+      scene.add(mesh);
+
+      // Glow effect
+      const glowGeo = new THREE.SphereGeometry(0.25, 16, 16);
+      const glowMat = new THREE.MeshBasicMaterial({
+        color: p.color,
+        transparent: true,
+        opacity: 0.15
+      });
+      const glow = new THREE.Mesh(glowGeo, glowMat);
+      glow.position.set(p.pos[0], p.pos[1], p.pos[2]);
+      scene.add(glow);
+    });
+
+    // Paths (identity proofs) between points - using CatmullRom curves
+    const pathPairs = [
+      { from: 0, to: 1, color: 0xff6666 },
+      { from: 0, to: 2, color: 0x66ff66 },
+      { from: 1, to: 2, color: 0x6666ff },
+      { from: 2, to: 3, color: 0xffaa66 },
+      { from: 0, to: 4, color: 0xff66ff },
+      { from: 3, to: 4, color: 0x66ffff },
+    ];
+
+    const pathMeshes = [];
+
+    pathPairs.forEach((pair, idx) => {
+      const p1 = pointPositions[pair.from].pos;
+      const p2 = pointPositions[pair.to].pos;
+
+      // Control points for curved path
+      const midX = (p1[0] + p2[0]) / 2 + (Math.random() - 0.5) * 1.5;
+      const midY = (p1[1] + p2[1]) / 2 + (Math.random() - 0.5) * 1.5;
+      const midZ = (p1[2] + p2[2]) / 2 + (Math.random() - 0.5) * 1.5;
+
+      const points = [
+        new THREE.Vector3(p1[0], p1[1], p1[2]),
+        new THREE.Vector3(midX, midY, midZ),
+        new THREE.Vector3(p2[0], p2[1], p2[2])
+      ];
+      const curve = new THREE.CatmullRomCurve3(points);
+
+      const curvePoints = curve.getPoints(50);
+      const geo = new THREE.BufferGeometry().setFromPoints(curvePoints);
+      const mat = new THREE.LineBasicMaterial({
+        color: pair.color,
+        transparent: true,
+        opacity: 0.5 + idx * 0.05,
+        linewidth: 1
+      });
+      const curveLine = new THREE.Line(geo, mat);
+      scene.add(curveLine);
+      pathMeshes.push(curveLine);
+
+      // Moving particle along each path
+      const particleGeo = new THREE.SphereGeometry(0.06, 8, 8);
+      const particleMat = new THREE.MeshPhongMaterial({
+        color: pair.color,
+        emissive: pair.color,
+        emissiveIntensity: 0.5
+      });
+      const particle = new THREE.Mesh(particleGeo, particleMat);
+      scene.add(particle);
+
+      // Store animation data
+      pathMeshes.push({
+        particle: particle,
+        curve: curve,
+        t: Math.random(),
+        speed: 0.005 + Math.random() * 0.01
+      });
+    });
+
+    // Higher homotopy: a 2D "sheet" between two paths (homotopy between paths)
+    // This represents Id_{Id_A(a,b)}(p, q) - a path between paths
+    try {
+      const sheetPoints = [];
+      const path1Start = pointPositions[0].pos;
+      const path1End = pointPositions[1].pos;
+      const path2Start = pointPositions[0].pos;
+      const path2End = pointPositions[1].pos;
+
+      // Create a surface between two different paths from a to b
+      for (let i = 0; i <= 20; i++) {
+        const t = i / 20;
+        const mid1 = [
+          (path1Start[0] + path1End[0]) / 2 + 0.8,
+          (path1Start[1] + path1End[1]) / 2 + 0.3,
+          (path1Start[2] + path1End[2]) / 2 - 0.5
+        ];
+        const mid2 = [
+          (path2Start[0] + path2End[0]) / 2 - 0.5,
+          (path2Start[1] + path2End[1]) / 2 - 0.4,
+          (path2Start[2] + path2End[2]) / 2 + 0.6
+        ];
+        for (let j = 0; j <= 20; j++) {
+          const s = j / 20;
+          const x = (1-s) * ((1-t)*path1Start[0] + t*mid1[0]) + s * ((1-t)*path2Start[0] + t*mid2[0]);
+          const y = (1-s) * ((1-t)*path1Start[1] + t*mid1[1]) + s * ((1-t)*path2Start[1] + t*mid2[1]);
+          const z = (1-s) * ((1-t)*path1Start[2] + t*mid1[2]) + s * ((1-t)*path2Start[2] + t*mid2[2]);
+          sheetPoints.push(new THREE.Vector3(x, y, z));
+        }
+      }
+
+      const sheetGeo = new THREE.BufferGeometry();
+      const positions = [];
+      sheetPoints.forEach(p => {
+        positions.push(p.x, p.y, p.z);
+      });
+      sheetGeo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+
+      // Create faces for the surface
+      const indices = [];
+      const rows = 21, cols = 21;
+      for (let i = 0; i < rows - 1; i++) {
+        for (let j = 0; j < cols - 1; j++) {
+          const a = i * cols + j;
+          const b = i * cols + j + 1;
+          const c = (i + 1) * cols + j;
+          const d = (i + 1) * cols + j + 1;
+          indices.push(a, b, c);
+          indices.push(b, d, c);
+        }
+      }
+      sheetGeo.setIndex(indices);
+      sheetGeo.computeVertexNormals();
+
+      const sheetMat = new THREE.MeshPhongMaterial({
+        color: 0x44ff88,
+        transparent: true,
+        opacity: 0.1,
+        side: THREE.DoubleSide,
+        wireframe: false,
+        emissive: 0x44ff88,
+        emissiveIntensity: 0.05
+      });
+      const sheet = new THREE.Mesh(sheetGeo, sheetMat);
+      scene.add(sheet);
+
+      // Sheet wireframe
+      const sheetWireMat = new THREE.MeshBasicMaterial({
+        color: 0x44ff88,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.08
+      });
+      const sheetWire = new THREE.Mesh(sheetGeo.clone(), sheetWireMat);
+      scene.add(sheetWire);
+    } catch(e) {
+      // Silently handle geometry errors
+    }
+
+    // Label sprites
+    function makeLabel(text, color, pos, size) {
+      const canvas = document.createElement('canvas');
+      canvas.width = 128; canvas.height = 48;
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, 128, 48);
+      ctx.font = 'bold 22px WorkSans, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = color;
+      ctx.fillText(text, 64, 24);
+      const texture = new THREE.CanvasTexture(canvas);
+      const mat = new THREE.SpriteMaterial({ map: texture, transparent: true, depthTest: false });
+      const sprite = new THREE.Sprite(mat);
+      sprite.position.set(pos[0], pos[1], pos[2]);
+      sprite.scale.set(size || 1.5, (size || 1.5) * 0.35, 1);
+      scene.add(sprite);
+    }
+
+    // Point labels
+    makeLabel('a', '#ff4444', [2.5, 1.0, 1.2]);
+    makeLabel('b', '#44ff44', [-2.0, -1.3, 2.2]);
+    makeLabel('c', '#4444ff', [-0.8, 2.3, -1.8]);
+    makeLabel('d', '#ffaa44', [2.2, -1.7, -1.2]);
+    makeLabel('e', '#ff44ff', [-2.5, 0.8, -2.2]);
+
+    // Path labels
+    makeLabel('Id_A(a,b)', '#ff6666', [0.5, 1.2, 2.5], 1.8);
+    makeLabel('Id_A(a,c)', '#66ff66', [1.5, 2.8, -0.5], 1.8);
+    makeLabel('Id_{Id}(p,q)', '#44ff88', [-1.5, 0.5, 3.0], 2.0);
+
+    // Title
+    makeLabel('同伦类型论 · 同一性类型路径空间', '#ffffff', [0, 4.5, 0], 3.0);
+
+    // Background particles
+    const starGeo = new THREE.BufferGeometry();
+    const starCount = 300;
+    const starPos = new Float32Array(starCount * 3);
+    for (let i = 0; i < starCount * 3; i++) {
+      starPos[i] = (Math.random() - 0.5) * 40;
+    }
+    starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+    const starMat = new THREE.PointsMaterial({ color: 0xffffff, size: 0.04, transparent: true, opacity: 0.4 });
+    const stars = new THREE.Points(starGeo, starMat);
+    scene.add(stars);
+
+    // Animation
+    let angle = 0;
+    function animate() {
+      requestAnimationFrame(animate);
+      angle += 0.005;
+
+      // Rotate the knot slowly
+      knot.rotation.x += 0.002;
+      knot.rotation.y += 0.003;
+      wireKnot.rotation.x = knot.rotation.x;
+      wireKnot.rotation.y = knot.rotation.y;
+
+      // Move particles along paths
+      for (let i = 1; i < pathMeshes.length; i += 2) {
+        const data = pathMeshes[i];
+        if (data && data.curve) {
+          data.t += data.speed;
+          if (data.t > 1) data.t = 0;
+          const pt = data.curve.getPoint(data.t);
+          data.particle.position.copy(pt);
+        }
+      }
+
+      // Camera orbit
+      camera.position.x = 10 * Math.sin(angle * 0.25);
+      camera.position.z = 10 * Math.cos(angle * 0.25);
+      camera.lookAt(0, 0, 0);
+
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      const w2 = container.clientWidth;
+      renderer.setSize(w2, 500);
+      camera.aspect = w2 / 500;
+      camera.updateProjectionMatrix();
+    });
+  })();
+})();
+</script>

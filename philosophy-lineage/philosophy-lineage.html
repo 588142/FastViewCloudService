@@ -1,0 +1,1214 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>西方哲学思想谱系 · 思想图谱系列第十七辑</title>
+
+  <style>
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+  </style>
+
+  <style>
+    :root {
+      --bg: #F5F6FA;
+      --bg2: #EAECF4;
+      --ink: #1F2430;
+      --muted: #5E6472;
+      --rule: #D6DAE6;
+      --accent: #1E3A8A;
+      --accent2: #A67C2E;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:first-child { margin-left: 0; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .legacy .legacy-title { font-weight: 700; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .legacy ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; }
+    @media (max-width: 700px) { .legacy { grid-template-columns: 1fr; } }
+
+    .history { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; }
+    .history .history-title { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem; }
+    .history p { margin-bottom: 0.55rem; }
+    .history p:last-child { margin-bottom: 0; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+    p a, li a { color: var(--accent); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .explain { margin: 0 0 1.6rem 0; padding: 1rem 1.2rem; background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; font-size: 0.92rem; line-height: 1.7; }
+    .explain p { margin-bottom: 0.6rem; }
+    .explain ul { margin: 0.4rem 0 0.6rem 1.2rem; }
+    .explain li { margin-bottom: 0.4rem; }
+
+    .table-wrap { overflow-x: auto; }overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    .formula {
+      font-family: var(--font-mono);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidenav { position: static; max-height: none; }
+    }
+    @media print {
+      .sidenav { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      section.sec { break-inside: avoid-page; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="shell">
+
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">西方哲学思想谱系</div>
+    <div class="brand-sub">思想图谱系列 · 第十七辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+      <li><a href="#intro">导言 · "哲学"的发现</a></li>
+      <li><a href="#overview">第一章 · 总览：西方哲学的演变</a></li>
+      <li><a href="#greek">第二章 · 古希腊哲学：从泰勒斯到亚里士多德</a></li>
+      <li><a href="#medieval">第三章 · 中世纪与近代转向：经院、笛卡尔与启蒙</a></li>
+      <li><a href="#german">第四章 · 德国古典与十九世纪：康德、黑格尔、尼采</a></li>
+      <li><a href="#contemporary">第五章 · 二十世纪哲学：现象学、存在主义与分析哲学</a></li>
+      <li><a href="#summary">第六章 · 总结提炼：西方哲学的启示</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第十七辑</span>
+        <span class="series-links">
+          <a href="../思想图谱系列/index.html">系列目录</a>
+          <a href="../econ-part2-lineage/econ-part2-lineage.html">← 上一辑 · 经济思想谱系·下篇</a>
+          <a href="../psych-lineage/psych-lineage.html">下一辑 · 心理学思想谱系 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>西方哲学思想谱系</h1>
+      <p class="subtitle">从泰勒斯到德里达——西方两千六百年如何追问存在、知识、善与意义：以古希腊哲学、中世纪与近代转向、德国古典与十九世纪、二十世纪哲学为脉络，提炼"存在之问、知识之问、价值之问、语言之问、意义之问"的哲学规律</p>
+      <p class="meta">作者：詹家杨 · 2026-09-05 · 7 张思维导图 · 7 张对照表 · 30+ 人物语录 · 西方哲学</p>
+    </header>
+
+    <main>
+      <!-- 导言 -->
+      <section class="sec" id="intro">
+        <h2>导言 · "哲学"的发现</h2>
+        <p>哲学（philosophia）在希腊语中是"爱智慧"——毕达哥拉斯第一个自称"爱智者"，他拒绝称自己为"智者"（sophos，拥有智慧的人），因为智慧属于神，人只能<strong>爱</strong>智慧、追求智慧。这个谦卑的命名，恰恰定义了哲学两千六百年的姿态：它不是一套现成的答案，而是一种永不停歇的追问。西方哲学追问四个根本问题：<strong>存在是什么</strong>（本体论）、<strong>知识如何可能</strong>（认识论）、<strong>何为善与正当</strong>（伦理学与政治哲学）、<strong>人生有何意义</strong>（存在论与美学）。</p>
+        <div class="callout">
+          <span class="callout-title">一条主线</span>
+          西方哲学的主线，是"哲学关注什么"的几次大转向：<strong>为神话</strong>（荷马与赫西俄德：世界由诸神解释）→ <strong>为自然</strong>（前苏格拉底：万物本源是水、火、原子）→ <strong>为人</strong>（苏格拉底："认识你自己"，哲学从天上回到人间）→ <strong>为上帝</strong>（中世纪：哲学是神学的婢女）→ <strong>为理性</strong>（笛卡尔与启蒙：我思故我在，理性为知识奠基）→ <strong>为存在与语言</strong>（二十世纪：现象学、存在主义与分析哲学，重新追问"意义"与"语言"）。每一次转向，都是人类重新回答"我们是谁、世界是什么、如何知道、为何而活"。
+        </div>
+        <p>本辑沿西方哲学自身的谱系展开——<strong>古希腊哲学</strong>（前苏格拉底、苏格拉底、柏拉图、亚里士多德、希腊化哲学）、<strong>中世纪与近代转向</strong>（经院哲学、笛卡尔、经验论与唯理论、启蒙）、<strong>德国古典与十九世纪</strong>（康德、黑格尔、叔本华、尼采）、<strong>二十世纪哲学</strong>（现象学、存在主义、分析哲学、后现代），看"爱智慧"如何从爱琴海的一粒火种，长成照亮整个现代世界的思想之树。它与第五辑（东方思想谱系）东西呼应，共同构成整个思想图谱系列的总纲。</p>
+
+        <figure class="diagram">
+          <figcaption>图 1 · 哲学关注的大转向：六次转向图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["为神话<br>荷马 · 诸神解释世界"] --> B["为自然<br>泰勒斯 · 万物本源"]
+  B --> C["为人<br>苏格拉底 · 认识你自己"]
+  C --> D["为上帝<br>奥古斯丁 · 阿奎那"]
+  D --> E["为理性<br>笛卡尔 · 我思故我在"]
+  E --> F["为存在与语言<br>现象学 · 分析哲学"]
+  classDef shift fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class A,B,C,D,E,F shift;
+          </pre>
+        </figure>
+      </section>
+
+      <figure class="diagram">
+        <figcaption>图 1a · 哲学基本概念树状图 —— 哲学的定义·分支·核心问题·方法·当代价值</figcaption>
+        <div style="overflow-x:auto;text-align:center;">
+        <svg viewBox="0 0 720 520" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;height:auto;">
+          <defs>
+            <marker id="arp" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+              <path d="M1 1 L7 4 L1 7 Z" fill="#52525B"/>
+            </marker>
+          </defs>
+          <rect x="0" y="0" width="720" height="520" fill="#F7F7F8" rx="8"/>
+          <rect x="210" y="12" width="300" height="40" rx="20" fill="#1E3A8A"/>
+          <text x="360" y="38" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700" font-family="system-ui,sans-serif">哲学基本概念</text>
+          <line x1="360" y1="52" x2="360" y2="68" stroke="#1E3A8A" stroke-width="2"/>
+          <line x1="72" y1="68" x2="648" y2="68" stroke="#52525B" stroke-width="1.5"/>
+          <line x1="72" y1="68" x2="72" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arp)"/>
+          <line x1="216" y1="68" x2="216" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arp)"/>
+          <line x1="360" y1="68" x2="360" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arp)"/>
+          <line x1="504" y1="68" x2="504" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arp)"/>
+          <line x1="648" y1="68" x2="648" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arp)"/>
+          <rect x="14" y="82" width="116" height="34" rx="8" fill="#F2F7FF" stroke="#1E3A8A" stroke-width="1.5"/>
+          <text x="72" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="sans-serif">哲学的定义</text>
+          <rect x="164" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#6F6FFF" stroke-width="1.5"/>
+          <text x="216" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="sans-serif">三大分支</text>
+          <rect x="308" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#1E3A8A" stroke-width="1.5"/>
+          <text x="360" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="sans-serif">核心概念</text>
+          <rect x="452" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#6F6FFF" stroke-width="1.5"/>
+          <text x="504" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="sans-serif">哲学方法</text>
+          <rect x="596" y="82" width="104" height="34" rx="8" fill="#F2F7FF" stroke="#1E3A8A" stroke-width="1.5"/>
+          <text x="648" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="sans-serif">当代价值</text>
+          <rect x="12" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="72" y="147" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">爱智慧（philosophia）</text>
+          <rect x="12" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="72" y="177" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">追问终极问题</text>
+          <rect x="12" y="190" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="72" y="207" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">为一切知识奠基</text>
+          <rect x="12" y="220" width="120" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+          <text x="72" y="237" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">元知识（meta-knowledge）</text>
+          <line x1="72" y1="116" x2="72" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="72" y1="154" x2="72" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="72" y1="184" x2="72" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="72" y1="214" x2="72" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <rect x="162" y="130" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="216" y="147" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">形而上学（本体论）</text>
+          <rect x="162" y="160" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="216" y="177" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">认识论（知识论）</text>
+          <rect x="162" y="190" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="216" y="207" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">伦理学（价值论）</text>
+          <rect x="162" y="220" width="108" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+          <text x="216" y="237" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">逻辑学·美学·政治哲学</text>
+          <line x1="216" y1="116" x2="216" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="216" y1="154" x2="216" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="216" y1="184" x2="216" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="216" y1="214" x2="216" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <rect x="300" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="360" y="147" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">存在（Being / Sein）</text>
+          <rect x="300" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="360" y="177" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">真理（Truth / Aletheia）</text>
+          <rect x="300" y="190" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="360" y="207" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">正义（Justice / Dikaiosyne）</text>
+          <rect x="300" y="220" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="360" y="237" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">自由·理性·主体·他者</text>
+          <line x1="360" y1="116" x2="360" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="360" y1="154" x2="360" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="360" y1="184" x2="360" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="360" y1="214" x2="360" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <rect x="450" y="130" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="504" y="147" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">逻辑论证（演绎·归纳）</text>
+          <rect x="450" y="160" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="504" y="177" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">概念分析（澄清意义）</text>
+          <rect x="450" y="190" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="504" y="207" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">现象学方法（悬置）</text>
+          <rect x="450" y="220" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="504" y="237" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">思辨·批判·诠释</text>
+          <line x1="504" y1="116" x2="504" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="504" y1="154" x2="504" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="504" y1="184" x2="504" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="504" y1="214" x2="504" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <rect x="590" y="130" width="116" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="648" y="147" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">批判性思维的基础</text>
+          <rect x="590" y="160" width="116" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="648" y="177" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">AI伦理·科技伦理</text>
+          <rect x="590" y="190" width="116" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="648" y="207" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">公共理性的基石</text>
+          <rect x="590" y="220" width="116" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="648" y="237" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">存在意义的追问</text>
+          <line x1="648" y1="116" x2="648" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="648" y1="154" x2="648" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="648" y1="184" x2="648" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="648" y1="214" x2="648" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <!-- 底部释义区 -->
+          <rect x="30" y="265" width="660" height="240" rx="10" fill="#EFEFF2" opacity="0.7"/>
+          <text x="360" y="290" text-anchor="middle" fill="#171717" font-size="14" font-weight="700" font-family="sans-serif">专业名词释义</text>
+          <text x="50" y="315" fill="#171717" font-size="12" font-weight="700" font-family="sans-serif">▎哲学（Philosophy）</text>
+          <text x="50" y="332" fill="#52525B" font-size="11" font-family="sans-serif">希腊语 philosophia（爱智慧），指以理性追问宇宙、人生、知识、价值等根本问题的系统性思考。哲学区别于</text>
+          <text x="50" y="348" fill="#52525B" font-size="11" font-family="sans-serif">具体科学之处在于：它不研究某一类现象，而追问一切现象的前提、基础和意义——是"关于知识的知识"。</text>
+          <text x="50" y="376" fill="#171717" font-size="12" font-weight="700" font-family="sans-serif">▎形而上学（Metaphysics）</text>
+          <text x="50" y="393" fill="#52525B" font-size="11" font-family="sans-serif">"物理学之后"——亚里士多德的门徒在整理其著作时，把讨论"存在本身"的篇章放在《物理学》之后，</text>
+          <text x="50" y="409" fill="#52525B" font-size="11" font-family="sans-serif">由此得名。形而上学追问"存在"（Being）本身：世界最终由什么构成？有没有不变的本质？</text>
+          <text x="50" y="437" fill="#171717" font-size="12" font-weight="700" font-family="sans-serif">▎认识论（Epistemology）</text>
+          <text x="50" y="454" fill="#52525B" font-size="11" font-family="sans-serif">研究知识的来源、范围和界限。核心问题：什么算"知道"？知识来自经验（经验论）还是理性（唯理论）？</text>
+          <text x="50" y="470" fill="#52525B" font-size="11" font-family="sans-serif">我们能否客观认识世界？——这是笛卡尔以来近代哲学的中心议题。</text>
+          <text x="50" y="498" fill="#171717" font-size="12" font-weight="700" font-family="sans-serif">▎伦理学（Ethics）</text>
+          <text x="50" y="515" fill="#52525B" font-size="11" font-family="sans-serif">研究"人应该如何生活"的规范性学问。三大核心流派：美德伦理学（成为什么样的人）、义务论（遵循</text>
+          <text x="50" y="531" fill="#52525B" font-size="11" font-family="sans-serif">什么规则）、后果主义（产生什么结果）——每一种都提供了一种"活法"的哲学论证。</text>
+        </svg>
+        </div>
+      </figure>
+      <div class="explain">
+        <p><strong>图 1a 详解：</strong>哲学看似高深莫测，但它的核心结构其实很清晰——"五大支柱"构成其基本框架。理解哲学，先要理解这五个维度及其相互关系。</p>
+        <p><strong>哲学的定义：</strong>哲学不是一门具体的学科，而是"元知识"——它不研究某一类现象（如物理学研究物质、经济学研究市场），而是追问一切知识的前提和方法。哲学是"爱智慧"而非"拥有智慧"，这意味着哲学是一种<strong>活动</strong>而非一套<strong>教条</strong>——你"做哲学"（doing philosophy），而不是"背诵哲学"（memorizing philosophy）。这一定义本身就有教育意义：哲学课的好坏不在于你记住了多少哲学家名字，而在于你是否学会了批判性思考。</p>
+        <p><strong>三大分支详解：</strong></p>
+        <ul>
+          <li><strong>形而上学（Metaphysics）</strong>——问"存在"。世界最终由什么构成？时间是真的吗？自由意志存在吗？这些问题看似"无用"，但每一个都有深刻的实践意义：如果你相信"一切都是被决定的"，你的行为方式会完全不同；如果你相信"人有自由意志"，法律惩罚就有了正当性。"自由意志 vs 决定论"的争论，直接关系到刑法、AI责任、教育理念等当代议题。</li>
+          <li><strong>认识论（Epistemology）</strong>——问"知识"。你怎么知道"这不是幻觉"？你怎么知道"太阳明天会升起"？认识论不给出具体知识，而是审查知识的"资质"——它教会我们区分"信念"、"意见"和"知识"。在"后真相"时代，这是最实用的技能：当你在社交媒体上看到一条信息，认识论教你的第一个问题不是"这符合我的观点吗"，而是"我凭什么相信这是真的"。</li>
+          <li><strong>伦理学（Ethics）</strong>——问"善"。什么是好的生活？什么是对的、什么是错的？伦理学不是给出一个道德清单，而是提供论证——你为自己的选择提供理由的能力。自动驾驶汽车遇到"电车难题"时该如何编程？这不是一个技术问题，而是一个伦理问题——而伦理学的三大流派（义务论、后果主义、美德伦理学）给出了不同的回答框架。</li>
+        </ul>
+        <p><strong>哲学方法的独特性：</strong>哲学不依赖实验（如科学）、不依赖数据（如经济学），而是依赖<strong>论证</strong>——提出前提、推导结论、检查逻辑一致性。哲学方法的训练，就是批判性思维本身。这也是为什么无论你学什么专业，哲学训练都能提升你的思维质量。</p>
+      </div>
+
+      <!-- 第一章 总览 -->
+      <section class="sec" id="overview">
+        <h2><span class="chapno">第一章</span>总览：西方哲学的演变</h2>
+        <p>先看全景：公元前6世纪，爱琴海东岸的米利都，泰勒斯说"万物的本源是水"——这看似朴素的断言，却是一个石破天惊的转折：世界第一次不再由神话解释，而由<strong>理性与自然</strong>解释。此后两千六百年，哲学在雅典的广场、亚历山大的学园、巴黎的经院、柯尼斯堡的书房、维也纳的咖啡馆与剑桥的讲台上接力演进。它时而与宗教联姻（中世纪），时而与科学决裂（近代认识论），时而与文学交融（存在主义），时而与语言结盟（分析哲学）。理解西方哲学，就是理解现代世界的思想基因——科学、民主、法治、个人权利，这些塑造现代文明的观念，全部从哲学的追问中生长出来。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>哲学诞生（前6世纪）</strong>：米利都学派（泰勒斯、阿那克西曼德、阿那克西美尼）以自然解释自然；毕达哥拉斯发现数是万物的尺度；赫拉克利特与巴门尼德围绕"变与不变"展开第一次大争论；德谟克利特提出原子论。</p>
+          <p><strong>雅典黄金时代（前5–前4世纪）</strong>：智者运动开启修辞与相对主义；苏格拉底以"助产术"追问德性；柏拉图建立学园与理念论；亚里士多德集古希腊之大成，创立逻辑学与众多学科。</p>
+          <p><strong>希腊化与罗马（前323–529）</strong>：斯多亚、伊壁鸠鲁、怀疑论三大学派转向"如何幸福地生活"；罗马人西塞罗、塞涅卡继承之；529年查士丁尼关闭雅典学园，古典哲学落幕。</p>
+          <p><strong>中世纪（5–15世纪）</strong>：基督教哲学兴起，奥古斯丁融合柏拉图，阿奎那融合亚里士多德；唯名论与实在论之争为近代科学埋下伏笔；文艺复兴重新发现古典。</p>
+          <p><strong>近代转向（17–18世纪）</strong>：科学革命（哥白尼、伽利略、牛顿）震撼哲学；笛卡尔以"我思"奠基近代哲学；经验论（洛克、贝克莱、休谟）与唯理论（斯宾诺莎、莱布尼茨）双峰对峙；启蒙运动把理性推向政治与社会。</p>
+          <p><strong>德国古典与十九世纪（18世纪末–19世纪）</strong>：康德完成"哥白尼式革命"；黑格尔建立绝对唯心论；叔本华、尼采转向意志与生命；实证主义、功利主义、马克思主义哲学相继登场。</p>
+          <p><strong>二十世纪（1900–）</strong>：胡塞尔开创现象学；海德格尔、萨特发展存在主义；弗雷格、罗素、维特根斯坦开创分析哲学；福柯、德里达掀起后现代思潮——哲学进入多元并存的当代。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>泰勒斯（约前624–前546）</strong>——哲学之父。"万物的本源是水"。</p>
+        <p><strong>赫拉克利特（约前535–前475）</strong>——万物流变。"人不能两次踏进同一条河流"。</p>
+        <p><strong>巴门尼德（约前515–前450）</strong>——存在不变。"存在者存在，非存在者不存在"。</p>
+        <p><strong>苏格拉底（前469–前399）</strong>——认识你自己。助产术、精神助产。</p>
+        <p><strong>柏拉图（前427–前347）</strong>——理念论。理想国、洞穴喻。</p>
+        <p><strong>亚里士多德（前384–前322）</strong>——四因说、逻辑学。"吾爱吾师，吾更爱真理"。</p>
+        <p><strong>奥古斯丁（354–430）</strong>——基督教哲学奠基者。上帝之城。</p>
+        <p><strong>阿奎那（1225–1274）</strong>——经院哲学集大成者。五路证明。</p>
+        <p><strong>笛卡尔（1596–1650）</strong>——近代哲学之父。我思故我在。</p>
+        <p><strong>斯宾诺莎（1632–1677）</strong>——实体一元论。伦理学。</p>
+        <p><strong>洛克（1632–1704）</strong>——经验论。白板说、社会契约。</p>
+        <p><strong>休谟（1711–1776）</strong>——怀疑论。归纳问题。</p>
+        <p><strong>康德（1724–1804）</strong>——批判哲学。三大批判。</p>
+        <p><strong>黑格尔（1770–1831）</strong>——辩证法。绝对精神。</p>
+        <p><strong>叔本华（1788–1860）</strong>——意志哲学。作为意志和表象的世界。</p>
+        <p><strong>尼采（1844–1900）</strong>——权力意志。上帝已死、超人。</p>
+        <p><strong>胡塞尔（1859–1938）</strong>——现象学创始人。</p>
+        <p><strong>海德格尔（1889–1976）</strong>——存在主义。此在、向死而生。</p>
+        <p><strong>维特根斯坦（1889–1951）</strong>——语言哲学。"凡是不可说的，应当沉默"。</p>
+        <p><strong>萨特（1905–1980）</strong>——存在先于本质。</p>
+
+        <figure class="diagram">
+          <figcaption>图 2 · 西方哲学演变结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["西方哲学"] --> A["古希腊<br>泰勒斯 · 苏格拉底 · 柏拉图 · 亚里士多德"]
+  ROOT --> B["中世纪<br>奥古斯丁 · 阿奎那 · 唯名论"]
+  ROOT --> C["近代转向<br>笛卡尔 · 经验论 · 唯理论 · 启蒙"]
+  ROOT --> D["德国古典与十九世纪<br>康德 · 黑格尔 · 叔本华 · 尼采"]
+  ROOT --> E["二十世纪<br>现象学 · 存在主义 · 分析哲学 · 后现代"]
+  classDef rootNode fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 2 详解：</strong>西方哲学演变结构图展示了从古希腊到二十世纪的思想谱系。理解这一演变的深层逻辑，需要把握哲学问题本身的几次重大转型。</p>
+          <p><strong>哲学重心转移的逻辑：</strong></p>
+          <ul>
+            <li><strong>古希腊→中世纪：从"世界是什么"到"上帝与信仰"</strong>。古希腊哲学问"世界由什么构成"（本体论），中世纪哲学问"上帝是否存在、信仰与理性如何调和"（神学哲学）。这一转变并非偶然——罗马帝国灭亡后，基督教成为欧洲统一的精神力量，哲学成为"神学的婢女"，但正是在这一"婢女"身份中，经院哲学保存并发展了亚里士多德的逻辑学，为近代科学准备了方法论工具。</li>
+            <li><strong>中世纪→近代：从"上帝"到"我"</strong>。科学革命（哥白尼、伽利略、牛顿）撼动了地心说和基督教世界图景，笛卡尔以"我思故我在"将哲学奠基于"自我"之上——这是哲学的"主体性转向"。从此，哲学不再问"世界是什么"（那是科学的事），而问"我如何知道世界"（认识论）。</li>
+            <li><strong>近代→十九世纪：从"知识"到"历史与意志"</strong>。当康德为理性划界后，黑格尔把理性从个人主体推进到历史本身——"绝对精神"在历史中自我展开；叔本华和尼采则翻转了理性主义传统，认为世界本质是"意志"而非理性，开启了二十世纪存在主义的先声。</li>
+            <li><strong>十九世纪→二十世纪：从"体系"到"语言与存在"</strong>。二十世纪哲学告别了建构宏大体系（如黑格尔）的雄心。分析哲学认为哲学问题多是语言问题，通过逻辑分析澄清思想；欧陆哲学则转向"存在"与"意义"——海德格尔追问"存在"本身，萨特面对"荒谬"与"自由"。哲学从"解释世界"的系统工程，退回到"治疗思想"或"直面存在"的个体事业。</li>
+          </ul>
+          <p><strong>现实案例——哲学转型如何影响当代生活：</strong></p>
+          <ul>
+            <li><strong>古希腊理性传统 → 现代科学方法</strong>：亚里士多德对经验观察和逻辑分类的重视，直接影响了培根的经验归纳法和现代科学方法论。每当科学家提出假设、收集数据、验证结论，他们都在实践古希腊的理性精神。</li>
+            <li><strong>笛卡尔主体性 → 现代个体主义</strong>：笛卡尔"我思故我在"确立了个体自我作为知识的最终裁判，这一观念经洛克、康德、密尔的接力，成为现代个人主义、人权观念和民主制度的哲学基石。你在选举中投下的一票，其哲学前提就是"个体有理性判断能力"——这正是笛卡尔的遗产。</li>
+            <li><strong>尼采"上帝已死" → 现代价值多元</strong>：尼采宣告传统宗教和形而上学的价值体系崩溃，这意味着现代人必须在没有绝对标准的情况下自己创造价值。从"多元文化主义"到"个人生活方式的选择"，从"996"工作制的伦理争论到"成功定义的多元化"，都是"上帝已死"之后价值重估的当代回响。</li>
+          </ul>
+          <p><strong>跨文化视角——西方哲学与东方思想的镜像：</strong></p>
+          <p>西方哲学以"理性"和"存在"为核心，追求清晰的概念界说和逻辑论证；东方思想（儒释道）以"心性"和"境界"为核心，追求内在的超越和生命的转化。两者的差异不是优劣之分，而是路向之分——西方哲学"向外"追问世界与知识，东方思想"向内"安顿心性与生命。二十世纪以来，两条路径开始交汇：海德格尔晚年对话老子，维特根斯坦的"生活形式"与禅宗的"日用平常"产生共鸣，都在提示我们：哲学的未来，或许在中西对话之中。</p>
+        </div>
+
+        <figure class="diagram">
+          <figcaption>图 2a · 哲学三大分支总览：形而上学·认识论·伦理学</figcaption>
+          <pre class="mermaid">
+        flowchart LR
+          ROOT["哲学三大分支"] --> A["形而上学<br>追问：存在是什么？<br>核心问题：世界本源·自由意志<br>　　　　　时间·实体·因果"]
+          A --> A1[""万物本源是什么？""]
+          A1 --> A2["泰勒斯：水<br>德谟克利特：原子<br>柏拉图：理念"]
+          A --> A3[""自由意志存在吗？""]
+          A3 --> A4["决定论：拉普拉斯妖<br>自由论：萨特自由<br>相容论：休谟"]
+          ROOT --> B["认识论<br>追问：我们如何知道？<br>核心问题：知识来源·真理标准<br>　　　　　怀疑论·科学方法论"]
+          B --> B1[""知识来自哪里？""]
+          B1 --> B2["经验论：洛克·休谟<br>唯理论：笛卡尔·莱布尼茨<br>先验论：康德"]
+          B --> B3[""我们如何知道真理？""]
+          B3 --> B4["符合论：真理即符合事实<br>融贯论：真理即逻辑一致<br>实用论：真理即有效"]
+          ROOT --> C["伦理学<br>追问：人应该如何生活？<br>核心问题：善恶标准·道德义务<br>　　　　　幸福·正义·权利"]
+          C --> C1[""什么是对的？""]
+          C1 --> C2["义务论：康德·绝对命令<br>后果论：边沁·密尔<br>美德论：亚里士多德"]
+          classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+          classDef branch fill:#F2F7FF,stroke:#3C2ECA,color:#1A1759;
+          classDef leaf fill:#EFEFF2,stroke:rgba(23,23,23,0.12),color:#52525B;
+          class ROOT root;
+          class A,B,C branch;
+          class A1,A2,A3,A4,B1,B2,B3,B4,C1,C2 leaf;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 2a 详解：</strong>哲学的三大分支构成了这门学科的"骨架"。理解它们之间的区别与联系，是掌握哲学的关键。形而上学问"存在"，认识论问"知识"，伦理学问"善"——三者看似独立，实则紧密交织。</p>
+          <p><strong>形而上学——哲学的第一追问：</strong></p>
+          <ul>
+            <li>形而上学追问"最底层"的问题：世界最终由什么构成？自由意志是真的还是幻觉？时间流动是真实的还是我们的错觉？这些问题听起来"无用"，但每一个都决定了我们如何理解自己和世界。如果你相信"一切都是被决定的"（决定论），那么你如何看待法律惩罚？如果一个罪犯的行为是环境、基因和过往经历共同决定的，他"应该"被惩罚吗？刑法的正当性，最终取决于你在自由意志问题上的立场。</li>
+            <li><strong>现实案例：</strong>2019年，美国神经科学家利贝特（Libet）的实验表明，大脑在人有意识"决定"做一个动作之前数百毫秒就已经发出了指令。这一发现被很多人用来质疑自由意志的真实性。但哲学家们指出：神经活动不等于"无自由"，"自由"可能不是"没有神经活动"，而是"理性选择的能力"。这一争论直接影响法律实践中"责任"概念的界定——如果自由意志被推翻，刑法的基础将被动摇。</li>
+          </ul>
+          <p><strong>认识论——知识的"质检员"：</strong></p>
+          <ul>
+            <li>认识论不问"我们知道什么"，而问"我们如何知道"。区分"知识"（justified true belief）、"意见"和"信念"的标准是什么？在"后真相"时代，这是最实用的哲学工具。认识论还追问"真理的本质"——符合论（事实符合）、融贯论（逻辑一致）、实用论（有效有用）——每一种真理理论都对应不同的认知立场。</li>
+            <li><strong>现实案例：</strong>"符合论"是日常科学的基础——"地球绕太阳转"是真的，因为它符合事实。"融贯论"在数学和逻辑中适用——一个数学定理是真的，因为它与公理系统一致。"实用论"在日常决策中常见——"这种方法有效"就是"真"的。在AI领域，三种真理理论的冲突尤为明显：深度学习模型的"知识"是"实用的"（它能准确预测），但"不融贯"（它没有逻辑推理结构），也"不反映因果关系"（它不是"符合"世界本身）——AI到底"知道"什么？这是认识论给AI时代提出的核心问题。</li>
+          </ul>
+          <p><strong>伦理学——"应该如何"的学问：</strong></p>
+          <ul>
+            <li>伦理学不是"道德说教"，而是对"善恶"的系统论证。它提供的是理由，而不是命令。三大流派各有侧重：义务论关注"动机"（你出于什么原则做事），后果论关注"结果"（你的行为带来什么影响），美德伦理学关注"品格"（你成为什么样的人）。这三种视角在真实生活中往往是互补的。</li>
+            <li><strong>现实案例：</strong>设想一个企业CEO面临裁员决策。义务论者会说"永远不能把人当作工具"——不裁员，即使公司倒闭。后果论者会计算——裁员100人，公司存活，保住500个岗位，净收益400个岗位——裁。美德论者会问"一个有德性的CEO会怎么做？"——在裁员中保持尊严、提供补偿、帮助被裁员工找到新工作。三种视角都不是"错的"，但它们的侧重点不同——这正是伦理学训练的价值：它让你看到同一个问题的不同维度，从而做出更审慎的判断。</li>
+          </ul>
+          <p><strong>三大分支的内在联系：</strong>你对形而上学问题的回答（例如"有没有自由意志"），决定了你的认识论立场（"我们能否知道真理"），进而影响你的伦理学立场（"人是否应该为自己的行为负责"）。哲学不是三个孤立的领域，而是一个相互关联的追问系统——理解这一点，就理解了哲学的力量。</p>
+        </div>
+
+        <h3>对照表：西方哲学主要时期速览</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>时期</th><th>核心问题</th><th>代表人物</th><th>思想遗产</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>古希腊</strong></td><td>万物本源 · 德性 · 理念</td><td>泰勒斯 · 苏格拉底 · 柏拉图 · 亚里士多德</td><td>理性传统 · 逻辑学 · 形而上学</td></tr>
+              <tr><td><strong>希腊化</strong></td><td>如何幸福地生活</td><td>斯多亚 · 伊壁鸠鲁 · 怀疑论</td><td>幸福论 · 心灵安宁</td></tr>
+              <tr><td><strong>中世纪</strong></td><td>信仰与理性的关系</td><td>奥古斯丁 · 阿奎那</td><td>经院方法 · 自然法</td></tr>
+              <tr><td><strong>近代</strong></td><td>知识如何可能</td><td>笛卡尔 · 洛克 · 休谟 · 康德</td><td>认识论转向 · 主体性 · 启蒙</td></tr>
+              <tr><td><strong>十九世纪</strong></td><td>历史 · 意志 · 生命</td><td>黑格尔 · 叔本华 · 尼采 · 马克思</td><td>辩证法 · 意志哲学 · 批判传统</td></tr>
+              <tr><td><strong>二十世纪</strong></td><td>存在 · 语言 · 意义</td><td>胡塞尔 · 海德格尔 · 维特根斯坦 · 萨特</td><td>现象学 · 语言转向 · 存在主义</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 第二章 古希腊哲学 -->
+      <section class="sec" id="greek">
+        <h2><span class="chapno">第二章</span>古希腊哲学：从泰勒斯到亚里士多德</h2>
+        <p>西方哲学的童年，在爱琴海畔的城邦与剧场中度过。前苏格拉底哲学家仰望星空，追问"万物的本源"；苏格拉底把目光从天上收回人间，追问"何为德性"；柏拉图在理念的天空中建造理想国；亚里士多德则把哲学从云端拉回大地，为每一门学科奠基。这四步，奠定了西方哲学此后两千年的全部问题与基本气质。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>米利都学派（前6世纪）</strong>：爱奥尼亚的商业城邦米利都，泰勒斯断言"万物的本源是水"，阿那克西曼德提出"无定"（apeiron），阿那克西美尼主张"气"——哲学从神话中挣脱，以自然解释自然。</p>
+          <p><strong>毕达哥拉斯与爱利亚（前6–前5世纪）</strong>：毕达哥拉斯在意大利南部建立学派，发现"数是万物的尺度"，创立"哲学"一词；赫拉克利特主张"万物流变，唯有逻各斯（logos）不变"；巴门尼德针锋相对："存在者存在，非存在者不存在"——变与不变的争论，是哲学史上第一次大辩论。</p>
+          <p><strong>智者运动与苏格拉底（前5世纪）</strong>：伯里克利时代的雅典，智者（sophist）以修辞与辩论为业，普罗泰戈拉宣称"人是万物的尺度"，开启相对主义；苏格拉底以"助产术"在广场上追问德性，被雅典民主审判处死（前399）——"未经审视的人生不值得过"。</p>
+          <p><strong>柏拉图学园（前387）</strong>：苏格拉底之死使柏拉图对民主失望，他在雅典城外建立学园（Academy），讲授理念论与理想国，学园延续九百年，是西方第一所高等教育机构。</p>
+          <p><strong>亚里士多德与吕克昂（前335）</strong>：柏拉图的学生亚里士多德创立吕克昂学园，以经验观察与逻辑分类研究万物——逻辑学、物理学、生物学、伦理学、政治学、诗学皆由他奠基；亚历山大大帝曾是他的学生。</p>
+          <p><strong>希腊化三学派（前323–）</strong>：亚历山大死后，城邦衰落，哲学转向个人幸福——斯多亚（芝诺：顺应自然、不动心）、伊壁鸠鲁（快乐主义：原子论与心灵宁静）、怀疑论（皮浪：悬置判断）。</p>
+        </div>
+
+        <h3>思想详解</h3>
+        <p><strong>万物本源（arche）</strong>：前苏格拉底哲学的共同问题——纷繁变化的世界背后，有没有一个不变的本源？泰勒斯说水，赫拉克利特说火与逻各斯，德谟克利特说原子与虚空。无论答案如何，提问方式本身已是革命：世界可以被理性理解，而非只能被神话接受。</p>
+        <p><strong>苏格拉底方法</strong>：苏格拉底不写书，只在广场上与人对话。他佯装无知（苏格拉底式反讽），通过层层追问暴露对方信念中的矛盾，再引导对方自己"生出"真理——这就是"助产术"（精神助产术）。"认识你自己"（德尔斐神谕）是他的座右铭：未经审视的人生不值得过。</p>
+        <p><strong>柏拉图的理念论</strong>：我们看见的每一匹具体的马都会衰老死亡，但"马"的理念（eidos）永恒不变——可感世界是理念世界的影子。洞穴喻：囚徒只见墙上的影子，转身走出洞穴才能看见真实。理念论为西方形而上学与理想主义奠基，也孕育了"理想国"的政治蓝图——哲人王统治，正义即各安其位。</p>
+        <div class="formula">
+          <span class="f-name">柏拉图洞穴喻</span>
+          影子（可感世界）→ 转身（哲学）→ 太阳（善的理念）
+          <span class="f-note">认识论与政治哲学的隐喻：走出洞穴，是哲学家的使命</span>
+        </div>
+        <p><strong>亚里士多德的四因说</strong>：亚里士多德批评老师的理念论"把世界一分为二"，主张形式就在事物之中。解释任何事物需四因——质料因（由什么构成）、形式因（是什么）、动力因（由什么推动）、目的因（为了什么）。他的"实体"、"潜能与现实"、"中道"（德性是两极之间的中道）等概念，至今是哲学的基本词汇。</p>
+        <p><strong>希腊化的幸福论</strong>：城邦衰落后，哲学从"如何治理城邦"转向"如何安顿灵魂"。斯多亚的"不动心"（apatheia）、伊壁鸠鲁的"宁静"（ataraxia）、怀疑论的"悬置"（epoché），都是乱世中的心灵处方——它们预示了两千年后存在主义的追问。</p>
+
+        <figure class="diagram">
+          <figcaption>图 3 · 古希腊哲学结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["古希腊哲学"] --> A["前苏格拉底<br>泰勒斯 · 赫拉克利特 · 巴门尼德 · 原子论"]
+  ROOT --> B["苏格拉底<br>认识你自己 · 助产术"]
+  ROOT --> C["柏拉图<br>理念论 · 洞穴喻 · 理想国"]
+  ROOT --> D["亚里士多德<br>四因说 · 逻辑学 · 中道"]
+  ROOT --> E["希腊化三派<br>斯多亚 · 伊壁鸠鲁 · 怀疑论"]
+  classDef rootNode fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 3 详解：</strong>古希腊哲学是西方哲学的"轴心时代"，短短三百年间奠基了此后两千年的全部问题领域。理解这一阶段的关键，在于把握"理性"如何从神话中诞生、如何从自然转向人间、又如何从理念走向经验。</p>
+          <p><strong>思想演进的深层逻辑：</strong></p>
+          <ul>
+            <li><strong>前苏格拉底：从神话到自然</strong>。泰勒斯说"万物的本源是水"，这个在今天看来天真的断言，其革命性不在于"水"这个答案，而在于提问方式本身——世界可以被理性理解，而非只能被神话接受。赫拉克利特与巴门尼德关于"变与不变"的争论，是哲学史上第一次深度辩论，也预示了后世所有哲学争论的基本结构：一方强调流动与过程，一方强调永恒与本质。</li>
+            <li><strong>苏格拉底：从自然到人</strong>。苏格拉底把哲学的目光从天上拉回人间。他不追问"世界的本源"，而追问"什么是正义""什么是勇敢""什么是美德"。他的"助产术"是一个天才的教育方法——不是灌输真理，而是通过对话帮助对方自己"生出"真理。这种"不教而教"的方式，至今仍是苏格拉底教学法（Socratic Method）在法学院和商学院的课堂中广泛使用。</li>
+            <li><strong>柏拉图：从现象到理念</strong>。柏拉图发现，我们看见的每一匹具体的马都会衰老死亡，但"马"的理念（eidos）永恒不变。这一洞见建立了西方形而上学的基本框架：可感世界（现象）与可知世界（理念）的二分。洞穴喻是最深刻的哲学隐喻之一——囚徒看见墙上的影子，以为那就是真实，直到有人转身走出洞穴，才看见太阳下的真实世界。这个隐喻在当代找到了新的诠释：社交媒体上的信息茧房、算法推荐制造的"过滤气泡"，不正是当代的"洞穴"吗？</li>
+            <li><strong>亚里士多德：从理念到经验</strong>。亚里士多德批评老师的理念论"把世界一分为二"，主张形式就在事物之中。他像科学家一样研究万物——收集了158种城邦的宪法进行比较分析，研究动物的分类和结构，建立逻辑学。他的"中道"原则（德性是两极之间的中道，如勇敢是怯懦与鲁莽的中道）至今仍是伦理学的经典框架。</li>
+            <li><strong>希腊化：从城邦到个人</strong>。城邦衰落后，哲学从"如何治理城邦"转向"如何安顿灵魂"。斯多亚的"不动心"、伊壁鸠鲁的"宁静"、怀疑论的"悬置"——都是乱世中的心灵处方。斯多亚哲学在当代迎来了复兴：当代认知行为疗法（CBT）的核心思想——"扰乱人心的不是事物本身，而是人对事物的看法"——直接来自斯多亚哲学家爱比克泰德。</li>
+          </ul>
+          <p><strong>现实案例——古希腊哲学在当代的回响：</strong></p>
+          <ul>
+            <li><strong>斯多亚哲学与当代心理治疗</strong>：斯多亚哲学的核心是"区分你能控制的和不能控制的"。这一思想被现代心理学的"控制二分法"（Circle of Control）直接继承——关注你能控制的事情（你的判断、选择、行动），接受你不能控制的事情（他人的看法、市场波动、天气）。硅谷创业者、运动员、对冲基金经理中，斯多亚哲学拥有大量拥趸。</li>
+            <li><strong>柏拉图的洞穴喻与信息茧房</strong>：算法推荐系统根据你的点击历史推送内容，你看到的都是你想看到的——这不就是"墙上的影子"吗？柏拉图的洞穴喻在当代的启示是：走出舒适区、主动接触与自己观点相反的信息，就是当代的"走出洞穴"——这是批判性思维和信息素养的哲学基础。</li>
+            <li><strong>亚里士多德的"中道"与职场伦理</strong>：亚里士多德说勇敢是怯懦与鲁莽的中道。在企业管理中，决策者面临的往往是这种"中道"选择：过于保守（怯懦）会错失机会，过于激进（鲁莽）会承担巨大风险。中道不是平庸，而是审慎的判断——这正是亚里士多德"实践智慧"（phronesis）的当代意义。</li>
+          </ul>
+        </div>
+
+        <h3>对照表：前苏格拉底学派对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>学派 / 人物</th><th>万物本源</th><th>核心命题</th><th>历史地位</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>米利都学派</strong></td><td>水 · 无定 · 气</td><td>以自然解释自然</td><td>哲学之父（泰勒斯）</td></tr>
+              <tr><td><strong>毕达哥拉斯</strong></td><td>数</td><td>数是万物的尺度</td><td>命名"哲学" · 数学传统</td></tr>
+              <tr><td><strong>赫拉克利特</strong></td><td>火 · 逻各斯</td><td>万物流变，唯有逻各斯</td><td>辩证法萌芽</td></tr>
+              <tr><td><strong>巴门尼德</strong></td><td>存在</td><td>存在者存在，非存在者不存在</td><td>形而上学与逻辑论证</td></tr>
+              <tr><td><strong>德谟克利特</strong></td><td>原子与虚空</td><td>万物由原子构成</td><td>原子论 · 科学唯物主义源头</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>对照表：苏格拉底 / 柏拉图 / 亚里士多德对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>苏格拉底</th><th>柏拉图</th><th>亚里士多德</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>核心问题</strong></td><td>何为德性</td><td>何为理念与正义</td><td>何为实体与幸福</td></tr>
+              <tr><td><strong>方法</strong></td><td>对话 · 助产术</td><td>辩证法 · 理念回忆</td><td>经验观察 · 逻辑分类</td></tr>
+              <tr><td><strong>本体论</strong></td><td>德性即知识</td><td>理念世界 vs 可感世界</td><td>形式寓于质料</td></tr>
+              <tr><td><strong>政治理想</strong></td><td>（未系统提出）</td><td>哲人王 · 理想国</td><td>中产阶级政体 · 法治</td></tr>
+              <tr><td><strong>对后世</strong></td><td>伦理学的源头</td><td>形而上学与理想主义</td><td>科学方法与逻辑学</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">泰勒斯 · 约前624–前546</div>
+            <blockquote>万物的本源是水。<cite>——米利都学派第一命题</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">赫拉克利特 · 约前535–前475</div>
+            <blockquote>人不能两次踏进同一条河流——万物皆流，唯有逻各斯永恒。<cite>——《残篇》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">苏格拉底 · 前469–前399</div>
+            <blockquote>未经审视的人生，是不值得过的。<cite>——《申辩篇》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">苏格拉底 · 前469–前399</div>
+            <blockquote>我唯一知道的，就是我一无所知。<cite>——《申辩篇》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">柏拉图 · 前427–前347</div>
+            <blockquote>洞穴中的囚徒，只能看见墙上的影子；哲学家的使命，是转身走向太阳。<cite>——《理想国》第七卷</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">亚里士多德 · 前384–前322</div>
+            <blockquote>吾爱吾师，吾更爱真理。<cite>——《尼各马可伦理学》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">亚里士多德 · 前384–前322</div>
+            <blockquote>人是政治的动物——只有在城邦中，人才能实现其本性。<cite>——《政治学》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">伊壁鸠鲁 · 前341–前270</div>
+            <blockquote>死亡与我们无关：当我们存在时，死亡尚未到来；当死亡到来时，我们已不存在。<cite>——《致美诺寇的信》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">爱比克泰德 · 约55–135</div>
+            <blockquote>扰乱人心的不是事物本身，而是人对事物的看法。<cite>——《手册》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">古希腊哲学的遗产</div>
+            <ul>
+              <li>理性传统：世界可以被理解</li>
+              <li>形而上学：追问存在本身</li>
+              <li>逻辑学：亚里士多德奠基</li>
+              <li>幸福论：心灵安宁的处方</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第三章 中世纪与近代转向 -->
+      <section class="sec" id="medieval">
+        <h2><span class="chapno">第三章</span>中世纪与近代转向：经院、笛卡尔与启蒙</h2>
+        <p>从雅典学园关闭（529年）到笛卡尔出版《第一哲学沉思集》（1641年），一千年间，哲学与信仰深度纠缠：奥古斯丁说"理解为了信仰，信仰为了理解"，阿奎那用亚里士多德的逻辑为上帝的存在做"五路证明"。而近代的转折来得迅猛而彻底——科学革命撼动了托勒密宇宙，笛卡尔以"我思故我在"把哲学的地基从上帝换成自我，认识论取代本体论成为哲学的中心。启蒙运动则把理性从书斋推向广场，宣告"敢于认识！"（Sapere aude）。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>教父哲学（2–8世纪）</strong>：基督教在罗马帝国崛起，教父们以希腊哲学阐释信仰。奥古斯丁融合柏拉图与基督教，写下《忏悔录》《上帝之城》，提出"光照论"——真理是上帝之光照入人心。</p>
+          <p><strong>经院哲学（11–14世纪）</strong>：大学兴起，阿奎那以亚里士多德主义重建神学，《神学大全》成为经院哲学巅峰；唯名论（奥卡姆："如无必要，勿增实体"）与实在论之争，为近代经验科学埋下伏笔。</p>
+          <p><strong>文艺复兴与科学革命（14–17世纪）</strong>：人文主义复兴古典；哥白尼日心说、伽利略实验、牛顿力学彻底改写世界观——世界不再需要上帝随时干预，而是一架按自然规律运转的机器。</p>
+          <p><strong>笛卡尔革命（1637–1641）</strong>：笛卡尔在荷兰的炉边写下《方法谈》与《沉思集》，以普遍怀疑为起点，找到"我思故我在"这一不可怀疑的基石，开创近代主体性哲学。</p>
+          <p><strong>经验论与唯理论（17–18世纪）</strong>：英国经验论（洛克"白板说"、贝克莱"存在即被感知"、休谟怀疑论）主张一切知识源于经验；欧陆唯理论（斯宾诺莎实体一元论、莱布尼茨单子论）主张理性先天演绎——两条路线围绕"知识如何可能"展开世纪之争。</p>
+          <p><strong>启蒙运动（18世纪）</strong>：伏尔泰、孟德斯鸠、卢梭、狄德罗以理性批判权威；康德以"敢于认识！"为启蒙定义；《百科全书》试图以理性整理全部人类知识——启蒙为法国大革命与现代社会奠基。</p>
+        </div>
+
+        <h3>思想详解</h3>
+        <p><strong>信仰与理性的关系</strong>：中世纪哲学的核心张力。德尔图良说"正因其荒谬，我才相信"（信仰主义）；阿奎那则主张信仰与理性可以调和——上帝的存在可以由理性证明（五路证明：从运动、因果、偶然、完善、目的推出第一因），启示则补充理性不及之处。这一"调和"使亚里士多德逻辑进入神学，也意外地为理性留下了独立空间。</p>
+        <p><strong>笛卡尔的普遍怀疑</strong>：笛卡尔要为大科学时代寻找不可动摇的地基。他怀疑感官（梦境可能骗我）、怀疑数学（恶魔可能骗我），但"我在怀疑"这件事本身无可怀疑——怀疑即思，思即我在。"我思故我在"（Cogito ergo sum）确立了主体的确定性，也确立了近代哲学的方向：从"世界是什么"转向"我如何知道世界"。</p>
+        <div class="formula">
+          <span class="f-name">笛卡尔方法</span>
+          普遍怀疑 → 我思故我在 → 上帝存在 → 外部世界可知
+          <span class="f-note">从怀疑出发，为知识重建地基——近代认识论的起点</span>
+        </div>
+        <p><strong>经验论与唯理论之争</strong>：洛克的白板说（tabula rasa）——心灵生来如白板，一切知识来自经验；休谟则把经验论推到极致：因果联系不过是习惯性联想，"归纳问题"至今无解。唯理论者坚持理性先天——斯宾诺莎以几何方法证明伦理学，莱布尼茨宣称"没有无因之果，我们的心灵中潜藏着全部真理"。康德的批判哲学，正是要调解这场争论。</p>
+        <p><strong>休谟的怀疑与康德的回应</strong>：休谟把经验论推到怀疑论："太阳明天升起"无法被理性证明，只是习惯。康德说：休谟把他从独断论的迷梦中唤醒——但因果性不是来自经验，而是心灵为经验立法（先验范畴）。这一"哥白尼式革命"（不是认识符合对象，而是对象符合认识）开启了德国古典哲学。</p>
+
+        <figure class="diagram">
+          <figcaption>图 4 · 中世纪与近代转向结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["中世纪与近代"] --> A["教父哲学<br>奥古斯丁 · 光照论"]
+  ROOT --> B["经院哲学<br>阿奎那 · 五路证明 · 唯名论"]
+  ROOT --> C["笛卡尔<br>我思故我在 · 心物二元"]
+  ROOT --> D["经验论<br>洛克 · 贝克莱 · 休谟"]
+  ROOT --> E["唯理论<br>斯宾诺莎 · 莱布尼茨"]
+  ROOT --> F["启蒙运动<br>理性批判 · 敢于认识"]
+  classDef rootNode fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 4 详解：</strong>中世纪到近代的哲学转型，是西方思想史上最深刻的一次范式转换。它从"信仰时代"跨入"理性时代"，核心动力不是哲学本身，而是科学革命——哥白尼、伽利略、牛顿的发现彻底改变了人类对宇宙的认知，迫使哲学重新审视自己的根基。</p>
+          <p><strong>思想演进的深层逻辑：</strong></p>
+          <ul>
+            <li><strong>教父哲学与经院哲学：信仰与理性的千年磨合</strong>。奥古斯丁说"理解为了信仰，信仰为了理解"，阿奎那试图用亚里士多德的逻辑证明上帝的存在——"五路证明"（从运动、因果、偶然、完善、目的出发）展示了理性在神学中的应用。但值得注意的是，阿奎那的论证无意中为理性划出了一块独立领域：既然上帝的存在可以用理性证明，那么理性本身就有独立于信仰的能力。这一潜伏的张力，最终在近代爆发——理性不再满足于证明上帝，而是开始质疑上帝。</li>
+            <li><strong>笛卡尔革命：从"上帝"到"我"</strong>。笛卡尔面对的是一个不再确定的世界：科学革命推翻了托勒密体系，宗教改革撕裂了基督教世界，旧有的权威崩塌了。他的回应是：把一切推倒重来，从"我"开始重建。普遍怀疑不是怀疑主义——不是要证明我们什么都不知道，而是要为知识找到不可动摇的起点。我思故我在，这一命题的深刻之处在于：它把"确定性"的根基从外部权威（上帝、教会、传统）转移到了内部主体（自我意识）。这是现代主体性哲学的诞生，也是现代个人主义的哲学源头。</li>
+            <li><strong>经验论与唯理论：认识论的双峰对决</strong>。这场跨越英吉利海峡的世纪之争，本质上是在问一个至今没有终极答案的问题：知识从哪里来？洛克说"所有的知识都来自经验"，休谟补充"连因果性都只是习惯联想"；笛卡尔说"有些观念是天赋的"，莱布尼茨补充"心灵不是白板，而是有纹理的大理石"。康德的解决方案是天才的：经验提供质料，理性提供形式——两者结合才产生知识。这一"先天综合判断"的概念，至今仍是认识论的核心议题。</li>
+            <li><strong>启蒙运动：从书斋到广场</strong>。康德说"敢于认识！要有勇气运用你自己的理性"——这是启蒙的座右铭。启蒙不是一套哲学理论，而是人类走出"自我招致的蒙昧状态"的集体行动。它把理性从学者的书斋推向公共领域，推动了对权威、传统和教条的全面批判。启蒙的遗产包括：言论自由、宗教宽容、人权观念、法治精神——这些现代文明的基石，都是启蒙运动的思想成果。</li>
+          </ul>
+          <p><strong>现实案例——中世纪与近代哲学在当代的应用：</strong></p>
+          <ul>
+            <li><strong>笛卡尔的"我思"与AI意识之争</strong>：笛卡尔说"我思故我在"，把"自我意识"作为存在的核心标志。当代AI是否具有意识？一个AI如果能够通过图灵测试，它是否"存在"？笛卡尔的心物二元论——心灵（思维实体）与身体（广延实体）是两种不同的实体——为理解AI的"意识"问题提供了哲学框架：如果意识不需要物质身体，那么AI确实可能拥有意识；如果意识与特定的生物结构不可分，那么AI永远只是"模拟"而非"拥有"意识。</li>
+            <li><strong>休谟的"归纳问题"与大数据预测</strong>：休谟指出，我们无法证明"太阳明天会升起"——归纳法无法被逻辑证明，只是习惯的产物。这对当代大数据和AI预测提出了根本性的哲学挑战：过去的数据只能告诉你"过去发生了什么"，不能保证"未来会怎样"。2020年，几乎所有经济预测模型都没有预测到新冠疫情——这就是休谟"归纳问题"的当代版本。AI模型在训练数据上表现完美，但在新情境下可能完全失效（分布外泛化问题）。</li>
+            <li><strong>康德的"人是目的"与当代伦理</strong>：康德说"人是目的，而不仅仅是手段"——这一绝对命令式的道德律，是当代伦理学的核心基石。在商业伦理中，它意味着企业不能仅仅把员工视为"人力资源"（工具），而应尊重每个员工的尊严和自主性。在AI伦理中，它意味着不能把用户视为"数据生产机器"，而应尊重用户的隐私和自主权。GDPR（欧盟通用数据保护条例）中对"知情同意"的要求，本质上是康德"人是目的"原则在数据时代的法律体现。</li>
+          </ul>
+        </div>
+
+        <figure class="diagram">
+          <figcaption>图 4a · 自由意志与决定论：哲学史上最持久的争论</figcaption>
+          <pre class="mermaid">
+        flowchart LR
+          ROOT["自由意志 vs 决定论"] --> A["严格决定论<br>一切事件（包括人类选择）<br>都由先前原因必然决定"]
+          A --> A1["拉普拉斯妖：<br>如果知道所有粒子的位置和速度，<br>就能预测一切未来"]
+          A --> A2["物理决定论：<br>宇宙遵循因果律，<br>人的选择只是原因链条的一环"]
+          A --> A3["神经科学挑战：<br>Libet实验：大脑在意识决定<br>前数百毫秒已发出指令"]
+          ROOT --> B["自由意志论<br>人有真正的选择能力，<br>能够做出非决定论的选择"]
+          B --> B1["萨特存在主义：<br>人是被判为自由的，<br>选择无法逃避"]
+          B --> B2["现象学：<br>我们有"选择"的直接体验，<br>否认体验就是否认事实"]
+          B --> B3["道德责任论证：<br>没有自由意志，<br>惩罚与奖励都失去意义"]
+          ROOT --> C["相容论<br>自由意志与决定论<br>可以在一定意义上共存"]
+          C --> C1["休谟的调和：<br>自由不是没有原因，<br>而是不被外部强制"]
+          C --> C2["当代相容论：<br>自由 = 理性选择的能力，<br>而非无原因的"超自然"选择"]
+          C --> C3["实践意义：<br>法律和人日常实践<br>已经预设了这种相容"]
+          classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+          classDef branch fill:#F2F7FF,stroke:#3C2ECA,color:#1A1759;
+          classDef leaf fill:#EFEFF2,stroke:rgba(23,23,23,0.12),color:#52525B;
+          class ROOT root;
+          class A,B,C branch;
+          class A1,A2,A3,B1,B2,B3,C1,C2,C3 leaf;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 4a 详解：</strong>自由意志问题是哲学史上最持久、最深刻的核心争论之一。它横跨形而上学（"世界是决定论的还是自由的？"）、认识论（"我们如何知道自己是自由的？"）和伦理学（"没有自由意志，道德责任还有意义吗？"）三大分支。理解这个争论，就是理解哲学如何"连接"最抽象的形而上学和最实用的法律实践。</p>
+          <p><strong>严格决定论（Hard Determinism）：</strong></p>
+          <ul>
+            <li>决定论者认为，宇宙中的每一个事件——包括你的每一个"选择"——都是由先前的原因必然决定的。拉普拉斯妖（Laplace's Demon）是这一立场的经典表达：如果有一个智能体知道所有粒子的位置和速度，它就能预测整个宇宙的未来，包括你明天是否会读这本书。现代神经科学似乎支持这一观点：Libet实验（1983）发现，大脑在你有意识"决定"做某事之前约350毫秒，就已经发出了指令信号。这意味着"决定"可能只是大脑的无意识活动之后的一个"后知后觉"。</li>
+            <li><strong>现实挑战：</strong>如果严格决定论为真，那么"责任"概念就面临危机。2020年，美国一个法律案例中，被告的辩护律师引用神经科学证据，主张被告的"暴力倾向"是大脑结构决定的，因此他"不负有道德责任"。虽然这一辩护未被采纳，但它提出了一个真实的伦理困境：如果科学证明"决定论"为真，我们还能惩罚罪犯吗？惩罚的"正当性"是建立在"他本可以选择不犯罪"这一前提上的——如果这个前提被推翻，法律体系的基础将被动摇。</li>
+          </ul>
+          <p><strong>自由意志论（Libertarianism）：</strong></p>
+          <ul>
+            <li>自由意志论者认为，人有真正的选择能力——不是"没有原因"，而是"原因中包括理性选择本身"。萨特的存在主义是最极端的版本：人是"被判为自由的"——即使你试图逃避自由（比如"我没办法，只能996"），你仍然在选择（你选择不辞职）。你无法"不选择"，因为不选择也是一种选择。自由意志论的核心论据是"道德责任"——没有自由意志，我们无法解释为什么奖励好人、惩罚坏人是"正当的"。</li>
+            <li><strong>现实案例：</strong>在教育中，自由意志论的影响深刻。如果你相信"孩子的一切行为都是基因和环境决定的"，那么教育就是"操纵"——设计条件来"塑造"行为。但如果你相信孩子有自由意志，教育就是"启发"——帮助孩子发展理性选择能力。这两种教育理念在实践中导致完全不同的方法：前者是"行为矫正"（奖励正确行为、惩罚错误行为），后者是"对话与思考"（帮助孩子理解为什么某些选择是对的）。</li>
+          </ul>
+          <p><strong>相容论（Compatibilism）：</strong></p>
+          <ul>
+            <li>相容论是目前哲学家中最流行的立场。它认为"自由意志"和"决定论"并不矛盾——关键在于"自由"的定义。休谟说：自由不是"没有原因"，而是"不被外部强制"。当你在咖啡店选择拿铁而非美式时，你的选择是"自由的"——不是因为"没有原因"（你的口味偏好是一个原因），而是因为"没有人强迫你"。相容论者认为，Libet实验并不能证明"没有自由意志"——它只证明"有意识决定"之前有神经活动，但这不等于"神经活动决定了你的选择"——神经活动就是"你"的选择过程的一部分。</li>
+            <li><strong>现实案例：</strong>法律体系实际上已经预设了相容论。刑法中区分"故意"和"过失"、"自愿"和"被迫"——这些区分的基础就是"自由"的相容论定义。在法庭上，问题不是"被告的行为是不是被决定的"（那一定是被决定的），而是"被告是否在不受外部强制的情况下做出了理性选择"。这一定义使法律可以在"科学决定论"和"道德责任"之间找到平衡——这也是相容论在当代哲学中占据主流的原因。</li>
+          </ul>
+          <p><strong>三者的深层关系：</strong>自由意志问题之所以重要，是因为它不是一个学院问题——它直接关系到法律、教育、AI伦理、心理健康等当代核心议题。理解三种立场，不是为了选边站队，而是为了理解：<strong>你在这个问题上的立场，决定了你如何回答"人是什么""人应该被如何对待"这些最根本的问题。</strong></p>
+        </div>
+
+        <h3>对照表：经验论 vs 唯理论</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>经验论</th><th>唯理论</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>知识来源</strong></td><td>感觉经验</td><td>理性先天</td></tr>
+              <tr><td><strong>心灵图像</strong></td><td>白板（洛克）</td><td>天赋观念（笛卡尔 · 莱布尼茨）</td></tr>
+              <tr><td><strong>代表人物</strong></td><td>洛克 · 贝克莱 · 休谟</td><td>笛卡尔 · 斯宾诺莎 · 莱布尼茨</td></tr>
+              <tr><td><strong>方法</strong></td><td>观察 · 归纳</td><td>演绎 · 几何证明</td></tr>
+              <tr><td><strong>理论终点</strong></td><td>休谟怀疑论</td><td>独断论</td></tr>
+              <tr><td><strong>康德的综合</strong></td><td colspan="2">经验提供质料，理性提供形式——先天综合判断</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">奥古斯丁 · 354–430</div>
+            <blockquote>你为自己造了我们，我们的心若不安息在你里面，便永远不得安宁。<cite>——《忏悔录》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">阿奎那 · 1225–1274</div>
+            <blockquote>信仰寻求理解——启示并不取消理性，而是成全理性。<cite>——《神学大全》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">笛卡尔 · 1596–1650</div>
+            <blockquote>我思故我在——我可以怀疑一切，但"我在怀疑"这件事本身无可怀疑。<cite>——《第一哲学沉思集》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">帕斯卡 · 1623–1662</div>
+            <blockquote>人是一根会思想的芦苇——宇宙可以碾碎他，但人知道自己将被碾碎，而宇宙对此一无所知。<cite>——《思想录》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">斯宾诺莎 · 1632–1677</div>
+            <blockquote>不要哭，不要笑，不要恨，而要理解。<cite>——斯宾诺莎的座右铭</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">洛克 · 1632–1704</div>
+            <blockquote>人的心灵如同一张白板，上面没有任何字迹——一切观念都来自经验。<cite>——《人类理解论》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">休谟 · 1711–1776</div>
+            <blockquote>我们关于因果的信念，不过是习惯性的联想——太阳明天升起，我们无法证明，只能相信。<cite>——《人类理解研究》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">康德 · 1724–1804</div>
+            <blockquote>敢于认识！要有勇气运用你自己的理性！这就是启蒙的座右铭。<cite>——《答复这个问题：什么是启蒙》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">卢梭 · 1712–1778</div>
+            <blockquote>人生而自由，却无往不在枷锁之中。<cite>——《社会契约论》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">中世纪与近代的遗产</div>
+            <ul>
+              <li>主体性：自我成为哲学的地基</li>
+              <li>认识论转向：知识问题成为中心</li>
+              <li>理性批判：启蒙的普遍原则</li>
+              <li>自然法与社会契约：现代政治之源</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四章 德国古典与十九世纪 -->
+      <section class="sec" id="german">
+        <h2><span class="chapno">第四章</span>德国古典与十九世纪：康德、黑格尔、尼采</h2>
+        <p>18世纪末到19世纪，哲学的中心从英法转移到德国。康德以三大批判为理性划定边界；黑格尔以辩证法把整个宇宙纳入绝对精神的自我展开；叔本华把世界还原为盲目的意志；尼采则宣告"上帝已死"，把价值重估的使命交给超人。与此同时，实证主义、功利主义与马克思主义哲学从不同方向回应工业革命与科学的崛起——哲学从书斋走向了时代的风暴中心。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>康德批判哲学（1781–1790）</strong>：柯尼斯堡的康德一生未离故乡，却以《纯粹理性批判》《实践理性批判》《判断力批判》完成哲学史上最系统的奠基。他调和经验论与唯理论，为科学划界（现象界可知，物自体不可知），为道德立法（绝对命令），为审美立则（无目的的合目的性）。</p>
+          <p><strong>德国唯心论（1794–1831）</strong>：费希特、谢林、黑格尔相继登场。黑格尔以《精神现象学》《逻辑学》建立绝对唯心论——"凡是合理的都是现实的，凡是现实的都是合理的"；辩证法（正题—反题—合题）成为理解历史与精神的钥匙。</p>
+          <p><strong>意志哲学（1818–1860）</strong>：叔本华《作为意志和表象的世界》——世界是表象，本质是盲目的生命意志；艺术与禁欲是解脱之道。尼采继承其意志论却翻转其悲观：意志不是要否定的，而是要肯定的权力意志。</p>
+          <p><strong>尼采与价值重估（1882–1889）</strong>：尼采宣告"上帝已死"，批判基督教道德的奴隶道德，提出主人道德、超人、永恒轮回。1889年尼采在都灵街头抱住一匹被鞭打的马而精神崩溃——他的思想却成为二十世纪哲学与文学最深的源头之一。</p>
+          <p><strong>十九世纪其他思潮</strong>：孔德实证主义（"观察优于想象"）开创社会学；边沁、密尔的功利主义（"最大多数人的最大幸福"）为现代政策奠基；马克思以历史唯物主义批判资本主义（与第三辑《马克思主义谱系》衔接）；达尔文进化论（1859）深刻冲击哲学的人类中心主义。</p>
+        </div>
+
+        <h3>思想详解</h3>
+        <p><strong>康德的哥白尼式革命</strong>：传统认识论假设"认识必须符合对象"，康德翻转之——"对象必须符合认识"。心灵不是被动接受世界的白板，而是主动为世界立法的结构：时间空间是感性直观形式，因果等范畴是知性先天概念。我们只能认识"现象"（为我们的认识形式所构造的世界），"物自体"（事物本身）不可知——这一划界既为科学奠基（现象界有必然规律），又为信仰留出地盘（物自体不可知，故上帝、自由、不朽不能被理性否定）。</p>
+        <div class="formula">
+          <span class="f-name">康德的绝对命令（定言命令）</span>
+          你要这样行动：使你的准则同时能够成为普遍法则。
+          <span class="f-note">人永远只能是目的，而不能仅仅是手段——道德自律的根基</span>
+        </div>
+        <p><strong>黑格尔的辩证法</strong>：黑格尔把康德的主体性推向极致——不是"我"为世界立法，而是"绝对精神"通过人类历史自我认识、自我展开。辩证法不是简单的"正反合"，而是内在矛盾的自我运动：每一个概念都包含否定自身的种子，否定之否定推动精神上升。历史不是偶然事件的堆积，而是自由意识的进步——"世界历史无非是自由意识的进展"。</p>
+        <p><strong>叔本华的意志世界</strong>：世界有两面——表象（我们看到的）与意志（背后的本质）。意志是盲目的、永不满足的生命冲动，因此人生本质是痛苦：欲望未满足则痛苦，满足则无聊。解脱之道有二：艺术的静观（暂时忘我）与禁欲的超越（否定意志）。叔本华是第一个把东方思想（佛教、印度教）引入西方哲学的大家。</p>
+        <p><strong>尼采的权力意志与价值重估</strong>：尼采说"上帝已死"——不是欢呼，而是宣告一个危机：西方两千年的道德与意义大厦崩塌了，而人们尚未察觉。他批判"奴隶道德"（基督教道德的谦卑、怜悯）压抑生命，主张"主人道德"（肯定生命、创造价值）；"超人"不是统治者的形象，而是克服自身、自我创造的形象；"永恒轮回"是终极的肯定——如果你愿意这人生无限重来，你才真正爱它。尼采把哲学从认识论重新拉回"如何生活"的古老问题。</p>
+
+        <figure class="diagram">
+          <figcaption>图 5 · 德国古典与十九世纪结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["德国古典与十九世纪"] --> A["康德<br>三大批判 · 哥白尼式革命"]
+  ROOT --> B["黑格尔<br>辩证法 · 绝对精神"]
+  ROOT --> C["叔本华<br>意志哲学 · 悲观主义"]
+  ROOT --> D["尼采<br>权力意志 · 上帝已死 · 超人"]
+  ROOT --> E["实证与功利<br>孔德 · 边沁 · 密尔"]
+  ROOT --> F["马克思<br>历史唯物主义 · 批判"]
+  classDef rootNode fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 5 详解：</strong>德国古典哲学到十九世纪是西方哲学最具创造力的时期之一。康德完成了"哥白尼式革命"，黑格尔试图用辩证法囊括全部现实，叔本华将世界还原为盲目的意志，尼采则宣告"上帝已死"并呼唤超人。与此同时，实证主义、功利主义和马克思主义从不同方向回应着工业革命的时代挑战。</p>
+          <p><strong>思想演进的深层逻辑：</strong></p>
+          <ul>
+            <li><strong>康德的"哥白尼式革命"——哲学史上的"康德时刻"</strong>。康德以前，认识论假设"认识必须符合对象"；康德翻转之——"对象必须符合认识"。这就像哥白尼不是让太阳绕地球转，而是让地球绕太阳转。康德的意思是：心灵不是被动接受世界的白板，而是主动为世界立法的结构。时间空间是我们的"感性直观形式"，因果等范畴是我们的"知性先天概念"——我们只能认识"现象"（为我们的认识形式所构造的世界），而"物自体"（事物本身）不可知。这一划界解放了科学（现象界有必然规律），也保护了信仰（物自体不可知，故上帝、自由、不朽不能被理性否定）。</li>
+            <li><strong>黑格尔的辩证法——历史与逻辑的统一</strong>。黑格尔把康德的主体性从个人扩展到"绝对精神"——不是"我"为世界立法，而是"绝对精神"通过人类历史自我认识、自我展开。辩证法不是简单的"正反合"公式，而是内在矛盾的自我运动：每一个概念都包含否定自身的种子，否定之否定推动精神上升。这一思想深刻影响了马克思（唯物辩证法）、存在主义（历史性）和后现代（对同一性的批判）。黑格尔的历史哲学也提醒我们：理解任何事物，都要理解它的历史——这是思维方式的革命。</li>
+            <li><strong>叔本华与尼采——从理性到意志</strong>。叔本华是西方哲学中第一个系统引入东方思想的大家。他翻转了西方两千年的理性主义传统：世界的本质不是理性，而是盲目的生命意志。人生是痛苦——欲望未满足则痛苦，满足则无聊。这一悲观主义在知识界引起巨大反响，但它也打开了通往存在主义的门。尼采继承了叔本华的"意志"概念，但翻转了其价值判断：意志不是要否定的，而是要用生命去肯定的。尼采的"上帝已死"不是欢呼，而是诊断——传统价值体系崩溃了，人类必须自己创造价值。</li>
+            <li><strong>十九世纪的多元面孔——实证、功利与批判</strong>。孔德的实证主义把人类社会的发展分为神学、形而上学、实证三个阶段，开创了社会学。边沁和密尔的功利主义以"最大多数人的最大幸福"为道德标准，为现代公共政策提供了可量化的伦理学框架。马克思则从哲学走向政治经济学，以"历史唯物主义"和"剩余价值"批判资本主义。这些思潮的共同特征是：哲学不再局限于书斋，而是直接介入社会变革。</li>
+          </ul>
+          <p><strong>现实案例——德国古典哲学在当代的应用：</strong></p>
+          <ul>
+            <li><strong>康德的"物自体"与科学的边界</strong>：康德说"物自体不可知"，为科学划定了边界。当代物理学中，量子力学的"波粒二象性"似乎印证了康德的洞见——我们永远无法知道"电子本身"是什么，只能知道它在我们测量方式下的表现。认知科学也告诉我们：大脑不是直接感知世界，而是建构模型——我们所知的"世界"永远是大脑建构的"现象"，而非"物自体"。</li>
+            <li><strong>黑格尔的辩证法与商业分析</strong>：黑格尔的"正题—反题—合题"是理解冲突和变革的强大工具。在商业分析中，一个公司的现有战略（正题）会遇到市场挑战（反题），通过危机和调整达到新的战略（合题）。这一框架帮助企业理解：冲突不是需要避免的坏东西，而是推动变革的必然动力。</li>
+            <li><strong>尼采的"价值重估"与当代身份政治</strong>：尼采说"上帝已死"，意味着不存在绝对的价值标准，所有价值都是人创造的。这一思想在当代身份政治中找到了回响：女权主义重估"男性中心"的价值体系，后殖民主义重估"西方中心"的价值体系，LGBTQ+运动重估"异性恋中心"的价值体系——每一次"价值重估"都是尼采"锤子哲学"的当代实践。</li>
+            <li><strong>功利主义的现代困境</strong>：密尔的"最大多数人的最大幸福"看似合理，但在实践中面临困境——为了多数人的利益是否可以牺牲少数人？新冠疫情期间，医疗资源分配（呼吸机该给谁）就是一个功利主义的典型困境。如果"最大多数人的最大幸福"意味着让老年人把呼吸机让给年轻人，这是否公正？这一问题至今没有简单答案，恰恰说明功利主义虽然有用，但不能是唯一的伦理原则。</li>
+          </ul>
+        </div>
+
+        <figure class="diagram">
+          <figcaption>图 5a · 伦理学三大流派对比：义务论·后果论·美德伦理学</figcaption>
+          <pre class="mermaid">
+        flowchart LR
+          ROOT["伦理学三大流派"] --> A["义务论<br>代表人物：康德<br>核心原则：绝对命令<br>关注焦点：动机·义务·规则"]
+          A --> A1[""永远把人当作目的<br>而非仅仅工具""]
+          A1 --> A2["应用：人权宣言<br>　　　诚实守信<br>　　　法治原则"]
+          ROOT --> B["后果论<br>代表人物：边沁·密尔<br>核心原则：最大幸福原则<br>关注焦点：结果·效用·影响"]
+          B --> B1[""最大多数人的<br>最大幸福""]
+          B1 --> B2["应用：公共政策<br>　　　成本收益分析<br>　　　AI伦理"]
+          ROOT --> C["美德伦理学<br>代表人物：亚里士多德<br>核心原则：中道·实践智慧<br>关注焦点：品格·德性·好生活"]
+          C --> C1[""成为一个有德性的人<br>而非遵循一套规则""]
+          C1 --> C2["应用：领导力<br>　　　职业伦理<br>　　　自我修养"]
+          classDef root fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+          classDef branch fill:#F2F7FF,stroke:#3C2ECA,color:#1A1759;
+          classDef leaf fill:#EFEFF2,stroke:rgba(23,23,23,0.12),color:#52525B;
+          class ROOT root;
+          class A,B,C branch;
+          class A1,A2,B1,B2,C1,C2 leaf;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 5a 详解：</strong>伦理学三大流派是西方哲学对"人应该如何生活"这一根本问题的三种系统回答。它们不是互相排斥的，而是从不同角度审视同一个道德问题。理解这三种框架，是做出审慎道德判断的前提。</p>
+          <p><strong>义务论（Deontology）——规则决定对错：</strong></p>
+          <ul>
+            <li>康德是义务论最著名的代表。他的"绝对命令"（Categorical Imperative）是伦理学的核心命题之一——"只按照你那同时可以成为普遍法则的准则去行动"。换句话说，你的行为准则应该可以被所有人遵循。另一个表述是"人是目的，而不仅仅是手段"——你永远不能利用他人，而要尊重他人的自主性。</li>
+            <li><strong>现实案例：</strong>为什么"诚实"是道德义务？即使说谎能带来更好的结果（比如善意的谎言）。康德会说：如果"说谎"成为普遍法则，信任将崩溃，承诺将失去意义——所以诚实是绝对的义务，不考虑后果。在商业伦理中，这一立场意味着：即使假账能让公司短期存活，它也是错的，因为"做假账"不能成为普遍法则。这也是为什么财务报表的真实性被视作商业伦理的底线，而非"可以权衡"的选项。</li>
+          </ul>
+          <p><strong>后果论（Consequentialism）——结果决定对错：</strong></p>
+          <ul>
+            <li>边沁和密尔的功利主义（Utilitarianism）是后果论的代表。核心原则是"最大多数人的最大幸福"——一个行为是对的，当且仅当它带来最大净收益（幸福减去痛苦）。后果论的优势在于：它提供了一个可量化的道德计算框架，适合公共政策和社会决策。</li>
+            <li><strong>现实案例：</strong>新冠疫情期间，各国政府面临"封城"决策——封城会带来巨大经济损失（痛苦），但能挽救大量生命（幸福）。功利主义的计算是：如果挽救的生命价值大于经济损失，封城就是对的。这一框架在经济学和公共政策中广泛使用（成本收益分析），但它的弱点是：少数人的权利可能被牺牲——这正是功利主义面临的"正义"困境。</li>
+          </ul>
+          <p><strong>美德伦理学（Virtue Ethics）——品格决定对错：</strong></p>
+          <ul>
+            <li>亚里士多德的"中道"原则——每种德性都是两个极端之间的中道：勇敢是怯懦与鲁莽的中道，慷慨是浪费与吝啬的中道。美德伦理学不问"我应该做什么"，而问"我应该成为什么样的人"——它关注的是品格（character）而非行为（action）。</li>
+            <li><strong>现实案例：</strong>在领导力培养中，美德伦理学是最有用的框架。一个领导者不是通过学习"管理技巧"（义务论的规则）或"KPI计算"（后果论的计算），而是通过培养"德性"——诚实、勇敢、公正、审慎——来成为好的领导者。这就是为什么很多商学院现在开设"领导力伦理"课程，回归亚里士多德的"实践智慧"（phronesis）传统。</li>
+          </ul>
+          <p><strong>三种流派的互补关系：</strong>在真实生活中，三个流派往往互补使用。做决策时：先用后果论评估影响（"这会带来什么后果？"），再用义务论检查原则（"这符合什么规则？"），最后用美德伦理反思品格（"这反映了我是谁？"）。三个问题都不是"正确的答案"，但三个问题一起问，就能做出更审慎、更周全的道德判断。</p>
+        </div>
+
+        <h3>对照表：康德 / 黑格尔 / 叔本华 / 尼采对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>康德</th><th>黑格尔</th><th>叔本华</th><th>尼采</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>世界本质</strong></td><td>现象与物自体</td><td>绝对精神</td><td>盲目的意志</td><td>权力意志</td></tr>
+              <tr><td><strong>核心方法</strong></td><td>批判 · 划界</td><td>辩证法</td><td>直观 · 静观</td><td>谱系学 · 重估</td></tr>
+              <tr><td><strong>对理性的态度</strong></td><td>为理性划界</td><td>理性即现实</td><td>理性是意志的工具</td><td>理性是生命的工具</td></tr>
+              <tr><td><strong>人生答案</strong></td><td>道德自律</td><td>参与历史精神</td><td>艺术与禁欲</td><td>超人 · 肯定生命</td></tr>
+              <tr><td><strong>代表著作</strong></td><td>《纯粹理性批判》</td><td>《精神现象学》</td><td>《作为意志和表象的世界》</td><td>《查拉图斯特拉如是说》</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">康德 · 1724–1804</div>
+            <blockquote>有两样东西，我愈是思考愈觉神奇，心中也愈充满敬畏——那就是我头顶的星空与我心中的道德律。<cite>——《实践理性批判》结语</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">康德 · 1724–1804</div>
+            <blockquote>人是目的，而不仅仅是手段。<cite>——《道德形而上学奠基》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">黑格尔 · 1770–1831</div>
+            <blockquote>凡是合理的都是现实的，凡是现实的都是合理的。<cite>——《法哲学原理》序言</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">叔本华 · 1788–1860</div>
+            <blockquote>人生是在痛苦与无聊之间摆动的钟摆。<cite>——《作为意志和表象的世界》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">尼采 · 1844–1900</div>
+            <blockquote>上帝已死！上帝已经死了！而正是我们杀死了他。<cite>——《快乐的科学》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">尼采 · 1844–1900</div>
+            <blockquote>那些杀不死我的，终将使我更强大。<cite>——《偶像的黄昏》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">密尔 · 1806–1873</div>
+            <blockquote>一个行为在道德上正当与否，取决于它是否增进幸福——最大多数人的最大幸福。<cite>——《功利主义》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">孔德 · 1798–1857</div>
+            <blockquote>观察优于想象——人类知识将经历神学、形而上学、实证三个阶段。<cite>——《实证哲学教程》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">马克思 · 1818–1883</div>
+            <blockquote>哲学家们只是用不同的方式解释世界，而问题在于改变世界。<cite>——《关于费尔巴哈的提纲》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">德国古典与十九世纪的遗产</div>
+            <ul>
+              <li>批判哲学：为理性与道德划界</li>
+              <li>辩证法：理解历史与矛盾的方法</li>
+              <li>意志哲学：重新发现生命与欲望</li>
+              <li>价值重估：现代性危机的先知</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第五章 二十世纪哲学 -->
+      <section class="sec" id="contemporary">
+        <h2><span class="chapno">第五章</span>二十世纪哲学：现象学、存在主义与分析哲学</h2>
+        <p>二十世纪是哲学的大分裂与大重生的时代。欧陆哲学沿着"意义"与"存在"深入——胡塞尔的现象学要"回到事物本身"，海德格尔追问"存在"本身，萨特宣告"存在先于本质"；英美哲学则沿着"语言"与"逻辑"推进——弗雷格、罗素、维特根斯坦相信哲学问题多是语言问题，通过逻辑分析可以消解大半哲学困惑。两条路线看似分道扬镳，却共同回应同一个时代困境：在科学昌明、上帝隐退、意义破碎的现代，人如何安身立命？</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>现象学运动（1900–）</strong>：胡塞尔《逻辑研究》（1900）开创现象学——"回到事物本身"，以"悬置"（epoché）搁置关于世界存在的自然态度，直接考察意识中的"意向性"结构。现象学成为二十世纪欧陆哲学的最大源头。</p>
+          <p><strong>分析哲学兴起（1879–1930）</strong>：弗雷格《概念文字》（1879）开创数理逻辑；罗素与怀特海《数学原理》（1910）试图把数学还原为逻辑；维特根斯坦《逻辑哲学论》（1921）宣告"凡是不可说的，应当沉默"；维也纳学派（石里克、卡尔纳普）以逻辑实证主义拒斥形而上学。</p>
+          <p><strong>存在主义（1927–1960）</strong>：海德格尔《存在与时间》（1927）以"此在"（Dasein）分析存在；二战废墟中，萨特《存在与虚无》（1943）与加缪《西西弗神话》（1942）把存在主义推向大众——"存在先于本质""他人即地狱""荒谬"成为时代关键词。</p>
+          <p><strong>日常语言学派（1945–1960）</strong>：后期维特根斯坦《哲学研究》（1953）转向"语言游戏"——哲学病源于语言的误用，治疗而非建构是哲学的任务；奥斯汀、赖尔、斯特劳森发展日常语言分析。</p>
+          <p><strong>后现代与批判理论（1960–）</strong>：福柯以知识考古学揭示权力与话语的关系；德里达以解构主义质疑一切二元对立；德勒兹、利奥塔宣告"宏大叙事的终结"；法兰克福学派（阿多诺、哈贝马斯）以批判理论诊断工具理性——哲学进入多元、反思、自我批判的当代。</p>
+        </div>
+
+        <h3>思想详解</h3>
+        <p><strong>现象学：回到事物本身</strong>：胡塞尔反对把哲学建立在心理或物理的预设上。现象学的方法是"悬置"——把关于世界是否存在的信念放进括号，只考察意识如何"意向"地指向对象。看一棵树，不是问"树是否存在"，而是问"看"这个行为本身的结构。现象学为欧陆哲学提供了严格的方法论基础，也深刻影响了心理学、社会学与文学批评。</p>
+        <p><strong>海德格尔的存在之问</strong>：海德格尔说，两千年的形而上学都问错了问题——只问"存在者"（具体事物）是什么，却遗忘了"存在"（Being）本身。他通过"此在"（Dasein，即"在世界中存在"的人）来追问存在：此在不是现成的物，而是"去存在"（to be）——它筹划自身、面对死亡（向死而生）、在时间中展开。海德格尔对技术的批判（"座架"）预见了当代对技术异化的反思。</p>
+        <div class="formula">
+          <span class="f-name">萨特的存在主义第一原理</span>
+          存在先于本质
+          <span class="f-note">人没有预定的本质，先存在、后自我塑造——人是绝对自由的，也因此绝对负责</span>
+        </div>
+        <p><strong>萨特的自由与责任</strong>：萨特把存在主义推向极端——没有上帝为人类规定本质，人"被判自由"。自由不是礼物而是重负：每一个选择都在为全人类立法（"我对自己负责，也对所有人负责"）。"他人即地狱"不是厌世，而是说：他人的目光把"我"凝固为对象，自由与自由的冲突是人际关系的本质。</p>
+        <p><strong>维特根斯坦的语言转向</strong>：早期维特根斯坦认为，语言是世界的图像，命题与事实一一对应——能说的（事实命题）可以说清楚，不能说的（伦理、宗教、意义）应当沉默。后期他推翻自己：语言不是图像，而是"游戏"——意义即用法，语言的意义来自生活形式。哲学不是发现真理，而是治疗思想的混乱："哲学是一场反对语言对我们的理智施魔的斗争。"</p>
+        <p><strong>福柯与后现代</strong>：福柯揭示"知识—权力"的纠缠——疯癫、性、惩罚的历史，是权力如何通过话语塑造主体的历史。德里达的解构则指出：一切文本都充满自我矛盾的痕迹，没有终极的意义中心。后现代哲学不是虚无主义，而是对"唯一真理叙事"的警惕——它要求我们看见被主流话语遮蔽的沉默者。</p>
+
+        <figure class="diagram">
+          <figcaption>图 6 · 二十世纪哲学结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["二十世纪哲学"] --> A["现象学<br>胡塞尔 · 回到事物本身"]
+  ROOT --> B["存在主义<br>海德格尔 · 萨特 · 加缪"]
+  ROOT --> C["分析哲学<br>弗雷格 · 罗素 · 维特根斯坦"]
+  ROOT --> D["逻辑实证主义<br>维也纳学派 · 拒斥形而上学"]
+  ROOT --> E["后现代<br>福柯 · 德里达 · 利奥塔"]
+  ROOT --> F["批判理论<br>法兰克福学派 · 哈贝马斯"]
+  classDef rootNode fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 6 详解：</strong>二十世纪哲学是"大分裂"的时代——欧陆与分析哲学分道扬镳，但两者都在回应同一个问题：在科学昌明、传统价值崩塌、技术日益支配人类生活的时代，哲学还能做什么？</p>
+          <p><strong>思想演进的深层逻辑：</strong></p>
+          <ul>
+            <li><strong>现象学：为哲学找回严格性</strong>。胡塞尔目睹了科学对哲学的"驱逐"——科学家不需要哲学也能做研究，哲学面临被边缘化的危机。他的回应是：哲学不是科学的附庸，而是比科学更根本的"严格科学"。现象学的方法——"回到事物本身"——要求悬置一切理论预设，直接考察意识行为本身的结构。这一方法的影响远远超出了哲学：它启发了格式塔心理学，影响了建筑学（诺伯格-舒尔茨的"场所精神"），也启发了交互设计中的"用户体验"理念——设计应该从"人的体验本身"出发，而非从技术规格出发。</li>
+            <li><strong>存在主义：直面荒谬的勇气</strong>。存在主义不是一套学院哲学，而是对两次世界大战后欧洲精神危机的回应。萨特说"存在先于本质"——人没有预定的本质（没有上帝为你设计人生），你先存在，然后通过选择定义自己。这意味着人"被判自由"——自由不是礼物，而是重负，因为你无法逃避选择，每一次选择都在为全人类立法。加缪的《西西弗神话》面对的是更根本的荒谬：世界没有意义，但人仍然选择活着，并热爱生活。西西弗推动巨石，巨石滚落，他再推——这不是悲剧，而是胜利。存在主义教会我们：意义不是被发现的，而是被创造的。</li>
+            <li><strong>分析哲学：哲学的语言治疗</strong>。分析哲学是一场"语言的转向"——哲学问题不是关于世界的，而是关于语言的。早期维特根斯坦认为语言是"世界的图像"，命题与事实一一对应；后期他推翻了自己，认为语言是"游戏"——意义即用法，语言的意义来自"生活形式"。"哲学是一场反对语言对我们的理智施魔的斗争"——哲学不是发现真理，而是治疗思想的混乱。这一思想深刻影响了当代认知科学（语言与思维的关系）、法学（法律解释学）和计算机科学（形式语义学）。</li>
+            <li><strong>后现代：对"宏大叙事"的警惕</strong>。福柯揭示了一个令人不安的真相：知识不是中立的，它与权力纠缠在一起——"疯癫"的历史，是社会如何把"不正常"的人排除出去的历史；"性"的历史，是权力如何通过话语规训身体的历史。德里达的解构则指出：任何文本都充满自我矛盾的痕迹，没有终极的意义中心。后现代哲学不是"一切都是相对的"的虚无主义，而是"警惕任何声称拥有唯一真理的话语"的批判态度——它要求我们倾听被主流叙事遮蔽的声音，看见被边缘化的人群。</li>
+          </ul>
+          <p><strong>现实案例——二十世纪哲学在当代的应用：</strong></p>
+          <ul>
+            <li><strong>现象学与产品设计（UX）</strong>：现象学"回到事物本身"的方法，与用户体验设计的原则高度一致——好的设计不是从技术能力出发，而是从"人的体验"出发。iPhone的触屏交互革命，本质上是现象学在设计中的应用：它回到了"人用手指直接触摸"这一最自然的体验，而不是通过键盘或触控笔的中介。苹果的"用户至上"原则，背后是现象学"回到事物本身"的哲学精神。</li>
+            <li><strong>萨特的"自由"与996工作制</strong>：萨特说"人是被判为自由的"——你无法逃避选择，不选择也是一种选择。在996工作制的讨论中，萨特的角度是：即使你在"被加班"，你仍然在"选择"——你选择不辞职、选择接受。这不是为996辩护，而是说：意识到"我始终在选择"，是反抗的第一步——当你意识到自己并非无能为力，你才真正拥有了行动的可能性。这正是存在主义的核心：自由带来责任，但责任带来尊严。</li>
+            <li><strong>福柯与社交媒体算法</strong>：福柯说"权力无处不在，因为它无处不在生产"——权力不仅是压制性的，更是生产性的。社交媒体算法不是通过"禁止"来操控你，而是通过"推荐"来塑造你——它生产你的欲望、你的偏好、你的世界观。你刷到的每一条视频，都在"温柔地"塑造你是什么样的人。福柯的"规训社会"在当代的版本，就是"算法社会"——权力不再通过监狱和学校来规训，而是通过推荐算法和评分系统来"温柔地引导"。</li>
+            <li><strong>维特根斯坦与"后真相"时代</strong>：维特根斯坦说"意义即用法"——一个词的意义不在于它指称什么，而在于人们在生活中如何使用它。在"后真相"时代，这一洞见有深刻的启示：人们争论的"真相"往往不是事实问题，而是语言游戏的问题——不同群体使用"真相"一词的方式不同，他们不是在争论同一个东西。理解这一点，有助于我们超越"事实核查"的局限，去理解对方为什么使用"真相"这个词、在什么"生活形式"中使用它。</li>
+          </ul>
+        </div>
+
+        <h3>对照表：欧陆哲学 vs 分析哲学</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>欧陆哲学</th><th>分析哲学</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>核心问题</strong></td><td>存在 · 意义 · 历史</td><td>语言 · 逻辑 · 知识</td></tr>
+              <tr><td><strong>方法</strong></td><td>现象学 · 诠释学 · 辩证法</td><td>逻辑分析 · 概念澄清</td></tr>
+              <tr><td><strong>代表人物</strong></td><td>胡塞尔 · 海德格尔 · 萨特 · 福柯</td><td>弗雷格 · 罗素 · 维特根斯坦 · 奎因</td></tr>
+              <tr><td><strong>与科学的关系</strong></td><td>批判科学主义</td><td>亲近科学 · 拒斥形而上学</td></tr>
+              <tr><td><strong>文风</strong></td><td>诗意 · 晦涩 · 体系性</td><td>清晰 · 论证 · 问题导向</td></tr>
+              <tr><td><strong>共同关切</strong></td><td colspan="2">现代性危机：意义、语言与人的处境</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">胡塞尔 · 1859–1938</div>
+            <blockquote>回到事物本身！——不要从理论预设出发，而要直接考察意识如何意向地指向对象。<cite>——《逻辑研究》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">海德格尔 · 1889–1976</div>
+            <blockquote>人，诗意地栖居于大地之上。<cite>——《人，诗意地栖居》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">海德格尔 · 1889–1976</div>
+            <blockquote>向死而生——唯有直面死亡，此在才能真正领会自身的可能性。<cite>——《存在与时间》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">萨特 · 1905–1980</div>
+            <blockquote>存在先于本质——人首先存在，然后才定义自己；人是被判为自由的。<cite>——《存在主义是一种人道主义》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">加缪 · 1913–1960</div>
+            <blockquote>真正严肃的哲学问题只有一个，那就是自杀——判断生活是否值得经历，本身就是回答哲学的根本问题。<cite>——《西西弗神话》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">维特根斯坦 · 1889–1951</div>
+            <blockquote>凡是不可说的，应当沉默。<cite>——《逻辑哲学论》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">维特根斯坦 · 1889–1951</div>
+            <blockquote>哲学是一场反对语言对我们的理智施魔的斗争。<cite>——《哲学研究》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">罗素 · 1872–1970</div>
+            <blockquote>哲学的价值，在于它使我们摆脱习俗的暴政，看见事物本来的样子。<cite>——《哲学问题》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">福柯 · 1926–1984</div>
+            <blockquote>权力无处不在，因为它无处不在生产——话语、知识、主体，都是权力运作的产物。<cite>——《规训与惩罚》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">二十世纪哲学的遗产</div>
+            <ul>
+              <li>现象学：回到事物本身的方法</li>
+              <li>存在主义：直面自由、死亡与荒谬</li>
+              <li>语言转向：哲学问题的语言治疗</li>
+              <li>后现代：对唯一真理叙事的警惕</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第六章 总结提炼 -->
+      <section class="sec" id="summary">
+        <h2><span class="chapno">第六章</span>总结提炼：西方哲学的启示</h2>
+        <p>回顾从泰勒斯到德里达的两千六百年，可以提炼出西方哲学的核心规律：<strong>存在之问、知识之问、价值之问、语言之问、意义之问</strong>。哲学不提供现成的答案，它提供的是追问的姿态——每一代人都以自己时代的方式重问这五个问题，而每一次追问，都让人类对自身与世界多一分清醒。理解西方哲学，就是理解现代文明的思想基因，也是理解我们自己。</p>
+
+        <figure class="diagram">
+          <figcaption>图 7 · 西方哲学五大规律图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["西方哲学五大规律"] --> A["存在之问<br>本体论 · 本源 · 实体 · 存在"]
+  ROOT --> B["知识之问<br>认识论 · 理性与经验 · 划界"]
+  ROOT --> C["价值之问<br>伦理学 · 德性 · 幸福 · 自由"]
+  ROOT --> D["语言之问<br>语言转向 · 意义即用法"]
+  ROOT --> E["意义之问<br>存在主义 · 荒谬 · 向死而生"]
+  classDef rootNode fill:#1E3A8A,color:#fff,stroke:#1E3A8A;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 7 详解：</strong>西方哲学两千六百年，看似纷繁庞杂，但其核心可以凝练为五个永恒的追问。这五个问题从古希腊贯穿到今天，每一代哲学家都以自己的方式回应它们，每一次回应都折射出那个时代最深的关切。理解这五个问题，就掌握了理解西方哲学的钥匙。</p>
+          <p><strong>五大规律的内在逻辑：</strong></p>
+          <ul>
+            <li><strong>存在之问：世界背后有什么？</strong>这是哲学最古老的追问，也是科学最根本的驱动力。泰勒斯说"万物是水"，不是因为他发现了正确答案，而是因为他开启了"用理性理解世界"这一全新的认知方式。柏拉图的"理念论"、笛卡尔的"实体"、黑格尔的"绝对精神"、海德格尔的"存在"——每一种回答都揭示了人类认知的一个维度。存在之问的现实意义在于：它教会我们，不要满足于现象层面的解释，要追问"底层逻辑"——这是批判性思维的最高形式。</li>
+            <li><strong>知识之问：我们如何知道？</strong>这是西方哲学最独特的贡献——它把"认知"本身作为研究对象。你如何知道"太阳明天会升起"？休谟说这是习惯，康德说这是因果范畴的运用。知识之问在当代的版本是：AI如何产生知识？深度学习模型真的"知道"它输出的内容吗？"算法偏见"是怎样产生的？这些问题没有简单的答案，但哲学分析给了我们分析框架——区分"经验"与"理性"、区分"相关"与"因果"、区分"知识"与"信念"。</li>
+            <li><strong>价值之问：什么是好的生活？</strong>苏格拉底问"美德是否可教"，亚里士多德说"幸福是灵魂合乎德性的活动"，康德说"人是目的"，密尔说"最大幸福"——每一种伦理理论都提供了一种"活法"的指南。价值之问在当代的紧迫性在于：技术越强大，越需要追问"我们应该做什么"而非仅仅"我们能够做什么"。AI的伦理框架、基因编辑的道德边界、气候变化的代际公平——这些当代的核心议题，本质上都是价值之问的当代版本。</li>
+            <li><strong>语言之问：我们如何说？</strong>二十世纪的语言转向揭示了：许多哲学问题不是关于世界的，而是关于语言的。维特根斯坦说"凡是不可说的，应当沉默"——不是神秘主义，而是对语言边界的清醒认识。在社交媒体时代，语言之问比以往任何时候都更紧迫：算法推荐制造的语言隔离、政治辩论中的概念混淆、网络暴力中的语言伤害——理解语言的结构和陷阱，是当代公民的核心素养。</li>
+            <li><strong>意义之问：活着是为了什么？</strong>这是存在主义的核心关切，也是现代人最深的焦虑。当传统宗教和形而上学的意义框架崩塌后，每个人必须自己面对"意义"的问题。萨特说"存在先于本质"——你不是为了某个目的被创造的，你先存在，然后通过选择赋予自己意义。加缪说"西西弗是幸福的"——不是因为他推石头是快乐的，而是因为他接受了命运，在荒诞中找到了反抗的尊严。意义之问的当代启示：意义不是等待被发现的宝藏，而是需要你去创造的工程。</li>
+          </ul>
+          <p><strong>现实案例——哲学五大规律在当代的体现：</strong></p>
+          <ul>
+            <li><strong>存在之问 × 底层逻辑思维</strong>：商业分析中流行的"第一性原理"思维，本质上是存在之问的当代应用——埃隆·马斯克说"与其类比，不如回归物理学的底层逻辑"。这正是哲学追问"本质"的精神在商业中的体现。</li>
+            <li><strong>知识之问 × 信息素养</strong>：在"后真相"时代，知识之问变得前所未有的实用——当你在社交媒体上看到一条信息，第一个问题应该是"我怎么知道这是真的？"而不是"这是符合我的观点吗？"康德的知识论区分（现象与物自体）提醒我们：我们永远在"建构"认知，而非"反映"现实——这是批判性媒体的哲学基础。</li>
+            <li><strong>价值之问 × AI伦理</strong>：自主驾驶汽车的"电车难题"、AI决策的"算法公平"——这些都不是技术问题，而是价值问题。康德"人是目的"原则要求AI不能把用户仅仅视为数据来源；功利主义"最大幸福"原则要求AI在决策时考虑整体利益而非个人利益。这些哲学框架为AI伦理提供了理论工具。</li>
+            <li><strong>语言之问 × 有效沟通</strong>：维特根斯坦的"语言游戏"理论对当代职场沟通的启示：同一个词在不同部门有不同"用法"——技术部门的"敏捷"和人力资源部门的"敏捷"可能不是同一个意思。理解语言游戏，是跨部门协作的哲学前提。</li>
+            <li><strong>意义之问 × 心理健康</strong>：当代心理治疗中的"意义疗法"（Logotherapy，弗兰克尔创立）直接源于存在主义哲学——不是追求快乐，而是追求意义，是心理健康的核心。弗兰克尔在集中营中发现：那些找到意义（哪怕只是"我要写完这本书"）的人，更有可能活下来。意义之问不是哲学家的奢侈品，而是每个人的生存必需品。</li>
+          </ul>
+        </div>
+
+        <div class="history">
+          <span class="history-title">五大规律的提炼</span>
+          <p><strong>存在之问</strong>：从泰勒斯的水到巴门尼德的存在、柏拉图的理念、亚里士多德的实体、黑格尔的绝对精神、海德格尔的存在本身——哲学的第一追问从未停止：世界背后有没有不变的东西？存在之问是全部形而上学的根，也是人类超越眼前现象、追问终极意义的本能。</p>
+          <p><strong>知识之问</strong>：笛卡尔之后，认识论成为哲学中心——我们如何知道？理性还是经验？康德以"哥白尼式革命"划界：知识既有经验的质料，又有理性的形式。知识之问提醒我们：任何断言都要追问"你如何知道"，这是科学精神与批判精神的哲学根基。</p>
+          <p><strong>价值之问</strong>：苏格拉底问"何为善"，亚里士多德讲中道，康德立绝对命令，密尔算最大幸福，尼采重估一切价值——伦理学是哲学最贴近生活的部分。价值之问的启示是：善不是现成的清单，而是需要每个人用理性与勇气去审视、去选择的事业。</p>
+          <p><strong>语言之问</strong>：二十世纪的语言转向是哲学最深刻的自我革命——许多哲学困惑不是世界的困惑，而是语言的困惑。维特根斯坦说"意义即用法"，福柯揭示话语即权力。语言之问教会我们：看清语言，才能看清思想；警惕语言，才能不被思想奴役。</p>
+          <p><strong>意义之问</strong>：当上帝隐退、传统瓦解，现代人直面意义的真空。存在主义没有给出安慰，而是给出勇气：意义不是被发现的，而是被创造的；自由是重负，也是尊严。意义之问是哲学对现代人最深的关切——它把哲学从学院带回每个人的生活。</p>
+        </div>
+
+        <h3>对照表：西方哲学五个阶段的对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>阶段</th><th>核心命题</th><th>代表人物</th><th>思想启示</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>古希腊</strong></td><td>万物有本源，德性可认识</td><td>泰勒斯 · 苏格拉底 · 柏拉图 · 亚里士多德</td><td>理性传统 · 形而上学奠基</td></tr>
+              <tr><td><strong>中世纪</strong></td><td>信仰寻求理解</td><td>奥古斯丁 · 阿奎那</td><td>理性与信仰的张力</td></tr>
+              <tr><td><strong>近代</strong></td><td>知识如何可能</td><td>笛卡尔 · 洛克 · 休谟 · 康德</td><td>主体性 · 认识论转向 · 启蒙</td></tr>
+              <tr><td><strong>十九世纪</strong></td><td>历史 · 意志 · 价值重估</td><td>黑格尔 · 叔本华 · 尼采 · 马克思</td><td>辩证法 · 批判传统</td></tr>
+              <tr><td><strong>二十世纪</strong></td><td>存在 · 语言 · 意义</td><td>胡塞尔 · 海德格尔 · 维特根斯坦 · 萨特</td><td>现象学 · 语言转向 · 存在主义</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">西方哲学精神三句话</span>
+          第一，<strong>哲学始于惊奇，成于追问</strong>——泰勒斯因仰望星空而坠井，苏格拉底因追问而被处死，哲学从不是安逸的学问，而是以全部生命去追问"为什么"的勇气；第二，<strong>未经审视的人生不值得过</strong>——哲学不提供答案，却提供审视的能力：看清自己的信念、时代的偏见与语言的陷阱，是自由的前提；第三，<strong>哲学永远在路上</strong>——从爱琴海到柯尼斯堡再到维也纳，两千六百年没有终结答案，只有更清醒的追问。与第五辑《东方思想谱系》东西合观，人类对存在、知识、善与意义的追问从未停歇——这正是思想图谱系列的全部意义。
+        </div>
+      </section>
+    </main>
+
+    
+      <section class="sec">
+        <h2>关联辑目</h2>
+        <div class="explain">
+          <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+          <ul>
+          <li><a href="../logic-lineage/logic-lineage.html">逻辑与论证思想谱系</a></li>
+          <li><a href="../ethics-lineage/ethics-lineage.html">伦理学思想谱系</a></li>
+          <li><a href="../truth-dimensions/truth-dimensions.html">真理的多维图景</a></li>
+          <li><a href="../science-lineage/science-lineage.html">科学思想谱系</a></li>
+          <li><a href="../eastern-thought-lineage/eastern-thought-lineage.html">东方思想谱系</a></li>
+          <li><a href="../marxism-lineage/marxism-lineage.html">马克思主义谱系</a></li>
+          <li><a href="../psych-lineage/psych-lineage.html">心理学思想谱系</a></li>
+          <li><a href="../tech-ai-lineage/tech-ai-lineage.html">科技与AI思想谱系</a></li>
+          </ul>
+        </div>
+      </section>
+<footer>
+      西方哲学思想谱系 · 思想图谱系列第十七辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-05
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'PingFang SC, Microsoft YaHei, Helvetica, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>马克思主义谱系 · 本科生升级附录</title>
+<style>
+:root {
+  --bg: #FBFAF7;
+  --bg2: #F2F0EA;
+  --ink: #23211C;
+  --muted: #6E6A60;
+  --rule: #E3E0D6;
+  --accent: #4B3FE3;
+  --accent2: #A85B2A;
+  --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+  --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'DMMono', monospace;
+  --max: 880px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.75;
+  padding: 2rem 1.5rem;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+h1 { font-family: var(--font-head); font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; border-bottom: 2px solid var(--ink); padding-bottom: 1rem; }
+.subtitle { font-family: var(--font-head); font-style: italic; font-size: 1rem; color: var(--muted); margin-bottom: 2rem; }
+section.sec { margin-bottom: 3.5rem; }
+h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+ol { margin: 0 0 1rem 1.5rem; font-size: 0.95rem; }
+li { margin-bottom: 0.4rem; }
+strong { color: var(--ink); }
+.callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+.callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+.highlight { background: #FFF3CD; padding: 0.1rem 0.3rem; border-radius: 3px; }
+.table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--bg2); }
+.viz-container { margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 12px; position: relative; overflow: hidden; }
+.viz-caption { font-size: 0.82rem; color: var(--muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1.5rem; font-style: italic; }
+pre { background: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.85rem; margin: 1rem 0; }
+code { font-family: 'DMMono', monospace; }
+footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+</style>
+</head>
+<body>
+
+<h1>马克思主义谱系 · 本科生升级附录</h1>
+<p class="subtitle">VOL.03 进阶阅读 · 交互式可视化 · 术语系统 · 习题与文献</p>
+
+<!-- ============================================================ -->
+<!-- 附录一 -->
+<!-- ============================================================ -->
+<section class="sec" id="appendix-a">
+<h2><span class="chapno">附录一</span>升级导览与教材对标</h2>
+
+<p>本附录是为已阅读《马克思主义谱系》主卷的本科生量身打造的进阶学习材料。它不重复主卷的骨架内容，而是提供：<strong>精确的术语定义系统、形式化模型、交互式可视化、推演方法训练、经典习题与一手文献索引</strong>——帮助读者从"了解"走向"掌握"。</p>
+
+<h3>一、升级目的</h3>
+<p>主卷为读者建立了"马克思主义谱系"的全局框架——从马克思主义到列宁主义、毛泽东思想、中国特色社会主义理论体系，九种理论形态的源流关系。但框架只是"骨架"——要真正理解马克思主义为什么是"科学"而不是"教条"，你需要知道：<strong>唯物史观和剩余价值学说的严格逻辑结构是什么？生产力与生产关系的"不适应"如何形式化？辩证法的"否定之否定"如何用模型展示？</strong></p>
+<p>本附录通过以下方式实现知识升级：</p>
+<ul>
+  <li><strong>概念精确化</strong>：将主卷中的日常语言表述转化为严格定义，建立术语表，区分易混概念；</li>
+  <li><strong>模型可视化</strong>：用三维坐标空间、函数曲线、动画演示等交互式可视化手段，将抽象关系具象化；</li>
+  <li><strong>方法训练</strong>：提供唯物辩证法、历史唯物主义分析、政治经济学批判等核心方法，配有操作指南；</li>
+  <li><strong>习题检验</strong>：经典习题与参考答案，用于自我评估；</li>
+  <li><strong>文献索引</strong>：一手文献选读与课程对照，为深入研究提供路标。</li>
+</ul>
+
+<h3>二、与主流教材对照</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>主卷章节</th><th>对应教材领域</th><th>主流教材推荐</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>导言：一条思想长河</td><td>马克思主义基本原理</td><td>《马克思主义基本原理》高等教育出版社</td></tr>
+    <tr><td>第一章 总览：谱系与传承</td><td>马克思主义发展史</td><td>《马克思主义发展史》顾海良主编</td></tr>
+    <tr><td>第二章 马克思主义</td><td>马克思主义哲学</td><td>《马克思主义哲学》陈先达；《资本论》马克思</td></tr>
+    <tr><td>第三章 列宁主义与斯大林主义</td><td>国际共运史</td><td>《列宁主义》高放；《苏联兴亡史》</td></tr>
+    <tr><td>第四章 毛泽东思想</td><td>毛泽东思想和生平</td><td>《毛泽东选集》；《毛泽东传》逄先知</td></tr>
+    <tr><td>第五章 中特理论体系</td><td>中国特色社会主义理论</td><td>《习近平新时代中国特色社会主义思想学习纲要》</td></tr>
+    <tr><td>第六章 关联与区别</td><td>马克思主义原理比较</td><td>《马克思主义与当代》各高校教材</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="callout">
+  <span class="callout-title">升级路径建议</span>
+  建议按以下顺序使用本附录：先读附录二（术语表），建立共同语言；然后逐个阅读附录三至五，每节配合可视化操作；之后完成附录七的实操练习；最后用附录八的习题自测。附录九至十一作为延伸资源，按需查阅。
+</div>
+
+<h3>三、知识结构鸟瞰</h3>
+<p>本附录的11个章节构成一个"从基础到前沿"的完整学习路径：</p>
+<ul>
+  <li><strong>附录一至二</strong>：定位与语言准备——告诉你"升级什么"和"用什么术语说"；</li>
+  <li><strong>附录三至五</strong>：核心模型——经济基础x上层建筑3D模型、生产关系适应曲线、辩证法螺旋动画；</li>
+  <li><strong>附录六至七</strong>：高阶与方法——西方马克思主义前沿和实操指南；</li>
+  <li><strong>附录八至十一</strong>：检验与资源——习题、文献、争论、课程对照。</li>
+</ul>
+</section>
+
+<!-- ============================================================ -->
+<!-- 附录二 -->
+<!-- ============================================================ -->
+<section class="sec" id="appendix-b">
+<h2><span class="chapno">附录二</span>精确定义与术语表</h2>
+
+<p>下列术语按学科领域分组，每个术语列出：<strong>中文名 · 英文名 · 严格定义</strong>（以主流教材为准）· <strong>易混点辨析</strong>。</p>
+
+<h3>2.1 唯物史观核心概念</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>术语</th><th>英文</th><th>严格定义</th><th>易混点辨析</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>生产力</strong></td><td>Productive Forces</td><td>人类改造自然、获取物质生活资料的能力。包括：劳动者（主体）、劳动资料（以生产工具为主）、劳动对象（原材料）。科学技术是第一生产力。</td><td>非"生产效率"——生产力是"能力"范畴，不是"效率"范畴。效率是生产力在特定生产关系下的表现。</td></tr>
+    <tr><td><strong>生产关系</strong></td><td>Relations of Production</td><td>人们在物质资料生产过程中结成的社会关系。包括：生产资料所有制形式（核心）、人们在生产中的地位和相互关系、产品分配形式。</td><td>非"交换关系"——生产关系首先是在"生产"过程中结成的，交换和消费是派生环节。</td></tr>
+    <tr><td><strong>经济基础</strong></td><td>Economic Base</td><td>社会一定发展阶段的生产关系的总和。构成社会的"经济结构"——即该社会的"骨骼"。</td><td>非"生产力"——经济基础是"生产关系"的总和，不是"生产力"的总和。生产力是"物质基础"，经济基础是"制度基础"。</td></tr>
+    <tr><td><strong>上层建筑</strong></td><td>Superstructure</td><td>建立在一定经济基础之上的政治法律制度、组织设施和意识形态的总和。包括：政治上层建筑（国家、法律、政党）和思想上层建筑（哲学、宗教、艺术）。</td><td>非"文化"——上层建筑包括政治制度（硬杠杠）和意识形态（软约束），比"文化"更宽泛。</td></tr>
+    <tr><td><strong>社会形态</strong></td><td>Social Formation</td><td>经济基础与上层建筑的统一体。马克思划分了五种社会形态：原始社会、奴隶社会、封建社会、资本主义社会、共产主义社会（第一阶段为社会主义）。</td><td>非"国家"——社会形态是比"国家"更宏观的概念，一个社会形态可以包含多个国家。</td></tr>
+    <tr><td><strong>阶级</strong></td><td>Social Class</td><td>列宁定义：在历史上一定社会生产体系中处于不同地位的社会集团，其中一个集团能够占有另一个集团的劳动。划分标准是对生产资料的占有关系。</td><td>非"收入水平"——阶级的划分标准是"生产资料占有关系"（所有制），不是"收入多少"（收入水平是结果不是原因）。</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>2.2 政治经济学核心概念</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>术语</th><th>英文</th><th>严格定义</th><th>易混点辨析</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>商品</strong></td><td>Commodity</td><td>用于交换的劳动产品。具有二重性：使用价值（满足人的某种需要）和交换价值（按一定比例交换其他商品的能力）。</td><td>非"产品"——产品不用于交换就不是商品。你为自己做的早餐是产品，不是商品。</td></tr>
+    <tr><td><strong>劳动价值论</strong></td><td>Labor Theory of Value</td><td>商品的价值量由生产该商品所耗费的社会必要劳动时间决定。社会必要劳动时间是在正常社会生产条件下、平均劳动熟练程度和劳动强度下生产某种使用价值所需的劳动时间。</td><td>非"越笨重的劳动越值钱"——价值由"社会必要"劳动时间决定，不是个别劳动时间。效率高的个别劳动时间低于社会必要劳动时间，反而能获得超额利润。</td></tr>
+    <tr><td><strong>剩余价值</strong></td><td>Surplus Value</td><td>雇佣工人创造的、被资本家无偿占有的、超过劳动力价值以上的那部分价值。用 m 表示。剩余价值率 = m / v（剩余价值 / 可变资本）。</td><td>非"利润"——利润是剩余价值的转化形式，两者在量上可以相等，但剩余价值揭示"剥削关系"，利润掩盖剥削关系。</td></tr>
+    <tr><td><strong>绝对剩余价值</strong></td><td>Absolute Surplus Value</td><td>通过延长工作日长度来生产的剩余价值。在必要劳动时间不变的情况下，延长剩余劳动时间。</td><td>非"相对剩余价值"——绝对剩余价值靠"延长劳动时间"，相对剩余价值靠"缩短必要劳动时间"（提高劳动生产率）。</td></tr>
+    <tr><td><strong>相对剩余价值</strong></td><td>Relative Surplus Value</td><td>通过提高劳动生产率、缩短必要劳动时间、相应延长剩余劳动时间生产出来的剩余价值。是整个社会劳动生产率普遍提高的结果。</td><td>非"单个企业的超额剩余价值"——单个企业提高效率获得的是"超额剩余价值"（暂时性的），整个社会效率提高才产生"相对剩余价值"。</td></tr>
+    <tr><td><strong>资本有机构成</strong></td><td>Organic Composition of Capital</td><td>由资本的技术构成决定并反映技术构成变化的资本价值构成。用 c:v 表示（不变资本:可变资本）。随着资本主义发展，资本有机构成有不断提高的趋势。</td><td>非"固定资本:流动资本"——c:v 是按"价值转移方式"划分的（不变资本是生产资料，可变资本是活劳动），不是按"周转方式"划分的。</td></tr>
+    <tr><td><strong>平均利润率下降规律</strong></td><td>Law of the Tendential Fall in the Rate of Profit</td><td>随着资本有机构成的提高，总资本中不变资本比重增大，可变资本比重减小，剩余价值总量相对于总资本的比例（利润率）趋于下降。</td><td>非"利润绝对量下降"——利润率下降伴随着利润总量增加（因为总资本量在增加）。这是"利润率下降规律的矛盾"。</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>2.3 科学社会主义核心概念</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>术语</th><th>英文</th><th>严格定义</th><th>易混点辨析</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>无产阶级专政</strong></td><td>Dictatorship of the Proletariat</td><td>无产阶级通过革命推翻资产阶级后建立的、以工人阶级为领导的、以工农联盟为基础的新型国家政权。本质是"人民当家作主"。</td><td>非"独裁"——无产阶级专政是"多数人对少数人的统治"（对资产阶级的镇压），而独裁是个人的专制统治。</td></tr>
+    <tr><td><strong>社会主义初级阶段</strong></td><td>Primary Stage of Socialism</td><td>中国在生产力落后、商品经济不发达条件下建设社会主义必然要经历的特定阶段。从1956年社会主义改造基本完成到基本实现现代化，至少需要一百年。</td><td>非"过渡时期"——过渡时期是从新民主主义到社会主义的转变时期（1953-1956），社会主义初级阶段是社会主义制度已经建立后的长期阶段。</td></tr>
+    <tr><td><strong>人类命运共同体</strong></td><td>Community with a Shared Future for Mankind</td><td>习近平提出的全球治理理念：在追求本国利益时兼顾他国合理关切，在谋求本国发展中促进各国共同发展，建设持久和平、普遍安全、共同繁荣、开放包容、清洁美丽的世界。</td><td>非"全球政府"——人类命运共同体不预设超国家机构，而是在主权平等基础上的国际合作。</td></tr>
+    <tr><td><strong>全人类共同价值</strong></td><td>Common Values of Humanity</td><td>和平、发展、公平、正义、民主、自由——这些是全人类共同追求的价值目标，不是哪个国家的专利。</td><td>非"普世价值"（西方语境）——全人类共同价值强调"共通性"而非"绝对性"，承认各种文明对价值的不同理解。</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>2.4 辩证法核心概念</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>术语</th><th>英文</th><th>严格定义</th><th>易混点辨析</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>对立统一规律</strong></td><td>Law of the Unity of Opposites</td><td>矛盾是事物发展的根本动力。任何事物都包含相互对立又相互统一的两个方面——对立（斗争性）推动事物变化，统一（同一性）维持事物稳定。</td><td>非"冲突论"——矛盾不是简单的"冲突"，矛盾双方相互依存（没有上就没有下）、相互转化（乐极生悲）。</td></tr>
+    <tr><td><strong>量变质变规律</strong></td><td>Law of the Transformation of Quantity into Quality</td><td>事物的发展由量变开始，量变积累到一定程度引起质变，质变又为新的量变开辟道路。量变是质变的必要准备，质变是量变的必然结果。</td><td>非"量变必然导致质变"——量变引起质变是有条件的，需要达到"度"（关节点）。水在标准大气压下加热到100°C才沸腾。</td></tr>
+    <tr><td><strong>否定之否定规律</strong></td><td>Law of the Negation of the Negation</td><td>事物的发展经历"肯定→否定→否定之否定"三个阶段，呈现螺旋式上升或波浪式前进的运动。否定不是完全抛弃，而是"扬弃"（既有克服又有保留）。</td><td>非"正-反-合"的简单循环——"三段式"是黑格尔的表述，马克思主义的否定之否定是"发展的螺旋"——每一轮否定都上升到更高层次。</td></tr>
+    <tr><td><strong>异化</strong></td><td>Alienation</td><td>马克思《1844年经济学哲学手稿》：劳动者在自己的劳动中"不是肯定自己，而是否定自己"——劳动产品反过来成为统治劳动者的力量。包括：劳动产品的异化、劳动过程的异化、类本质的异化、人与人关系的异化。</td><td>非"不喜欢工作"——异化是资本主义生产关系的必然产物，不是主观感受问题。在资本主义下，工人"只有在运用自己的动物机能（吃、喝、性行为）时才觉得自己是自由活动，而在运用人的机能（劳动）时，觉得自己不过是动物"。</td></tr>
+  </tbody>
+</table>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 附录三 -->
+<!-- ============================================================ -->
+<section class="sec" id="appendix-c">
+<h2><span class="chapno">附录三</span>形式系统与核心模型</h2>
+
+<p>本附录将马克思主义的核心理论转化为可操作的形式模型。核心工具是<strong>三维坐标空间</strong>和<strong>函数曲线</strong>，它们分别回答"经济基础、上层建筑、生产力三者的空间关系"和"生产关系适应生产力发展的动态规律"。</p>
+
+<h3>3.1 经济基础 x 上层建筑 x 生产力发展的三维模型</h3>
+<p>下图用三维坐标系统表示"历史唯物主义的三维空间"。X轴为生产力发展水平，Y轴为经济基础（生产关系总和）的成熟度，Z轴为上层建筑的先进性。不同社会形态在这个空间中占据不同位置。</p>
+
+<div class="viz-container" style="width:100%;height:450px;">
+  <canvas id="marx-space-3d" style="width:100%;height:100%;"></canvas>
+</div>
+<div class="viz-caption">图 B3-1 · 历史唯物主义的三维空间模型：生产力 x 经济基础 x 上层建筑。拖拽旋转查看不同社会形态的相对位置。</div>
+
+<h3>3.2 生产关系适应生产力发展的函数曲线</h3>
+<p>马克思的"生产关系适应生产力发展"是一个动态过程。下面的函数图展示了在不同生产力水平下，生产关系对生产力的"促进力"变化：</p>
+<ul>
+  <li><strong>适应阶段</strong>：生产关系有力地促进生产力发展，曲线呈上升趋势；</li>
+  <li><strong>临界阶段</strong>：生产力发展到一定水平，原有的生产关系从"促进"变为"阻碍"，曲线开始下行；</li>
+  <li><strong>革命阶段</strong>：社会革命爆发，新的生产关系建立，曲线重新上升。</li>
+</ul>
+
+<div class="viz-container" style="width:100%;height:380px;padding:15px;">
+  <canvas id="marx-adaptation-chart"></canvas>
+</div>
+<div class="viz-caption">图 B3-2 · 生产力发展水平（横轴）与生产关系对生产力的促进力（纵轴）的关系曲线。红色虚线为旧生产关系，蓝色实线为新生产关系，箭头处为革命临界点。</div>
+
+<h3>3.3 辩证法螺旋上升的动画演示</h3>
+<p>辩证法的"否定之否定"规律可以用一个螺旋上升的动画来直观展示。每一轮"肯定→否定→否定之否定"都使事物上升到更高层次，而不是回到原点。</p>
+
+<div class="viz-container" style="width:100%;height:350px;padding:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+  <canvas id="dialectics-spiral" style="width:90%;height:280px;"></canvas>
+</div>
+<div class="viz-caption">图 B3-3 · 辩证法螺旋上升模型。白色点沿螺旋路径运动，表示"否定之否定"的上升运动。每转一圈，水平位置仍在类似区域，但高度（发展层次）提升了。</div>
+
+</section>
+
+<!-- ============================================================ -->
+<!-- 附录四 -->
+<!-- ============================================================ -->
+<section class="sec" id="appendix-d">
+<h2><span class="chapno">附录四</span>推演方法与证明</h2>
+
+<p>本附录介绍马克思主义理论中的核心论证方法，每个方法配合图文说明和操作指南。</p>
+
+<h3>4.1 唯物辩证法的基本分析方法</h3>
+<p>唯物辩证法不仅是世界观，也是方法论。其分析框架可以概括为"三对范畴、三大规律"：</p>
+<ul>
+  <li><strong>三对范畴</strong>：原因与结果、必然与偶然、可能与现实——用于分析任何社会现象的因果结构；</li>
+  <li><strong>三大规律</strong>：对立统一规律（矛盾分析）、量变质变规律（历史分析）、否定之否定规律（发展分析）。</li>
+</ul>
+<p><strong>操作方法：</strong>面对任何一个社会现象，按以下步骤运用唯物辩证法分析：</p>
+<ol>
+  <li><strong>找矛盾</strong>：该现象中的主要矛盾是什么？主要方面和次要方面是什么？</li>
+  <li><strong>量变到质变</strong>：该现象目前处于量变阶段还是质变临界点？</li>
+  <li><strong>否定之否定</strong>：该现象的发展经历了哪些"肯定→否定→否定之否定"的阶段？</li>
+  <li><strong>因果分析</strong>：它的根本原因（经济基础）和上层建筑反作用分别是什么？</li>
+</ol>
+
+<div class="callout">
+  <span class="callout-title">案例：分析"工业革命"</span>
+  <strong>矛盾分析</strong>：主要矛盾是手工工场生产力与封建行会制度的矛盾。蒸汽机（生产力飞跃）→ 工厂制度（新生产关系）→ 资产阶级革命（上层建筑变革）。<br>
+  <strong>量变质变</strong>：从18世纪60年代到19世纪40年代，量变（技术积累）到达临界点，引发英国工业革命（质变）。<br>
+  <strong>否定之否定</strong>：封建庄园经济（肯定）→ 资本主义工厂（否定）→ 未来社会主义（否定之否定）。
+</div>
+
+<h3>4.2 剩余价值学说的推演逻辑</h3>
+<p>剩余价值学说是马克思主义政治经济学的核心。它的推演逻辑可以概括为以下"三段论"：</p>
+<ol>
+  <li><strong>大前提</strong>：商品的价值由劳动创造（劳动价值论）；</li>
+  <li><strong>小前提</strong>：劳动力是一种特殊商品，它的使用价值是创造价值的能力，且创造的价值大于它自身的价值（劳动力价值 = 维持工人生活所需的生活资料的价值）；</li>
+  <li><strong>结论</strong>：资本家购买劳动力，支付其价值（工资），但获得了劳动力创造的全部价值——其中超出劳动力价值的部分就是<strong>剩余价值</strong>，被资本家无偿占有。</li>
+</ol>
+<p><strong>数学表达：</strong></p>
+<ul>
+  <li>总价值 (C) = 不变资本 (c) + 可变资本 (v) + 剩余价值 (m)；</li>
+  <li>剩余价值率 m' = m / v；</li>
+  <li>利润率 p' = m / (c + v)。</li>
+</ul>
+<p>这一推演揭示了资本主义剥削的秘密：不是资本家"不劳而获"的道德问题，而是资本主义生产关系的必然结果——<strong>资本家占有生产资料，工人除了出卖劳动力一无所有，因此工人创造的剩余价值必然被资本家占有</strong>。</p>
+
+<h3>4.3 历史唯物主义的社会分析框架</h3>
+<p>历史唯物主义提供了一个"从下到上"的社会分析框架——从生产力出发，逐步分析上层建筑：</p>
+<ol>
+  <li><strong>第一层：生产力分析</strong>——该社会的生产力水平如何？主要生产工具是什么？劳动者的技能水平如何？</li>
+  <li><strong>第二层：生产关系分析</strong>——该社会的生产资料归谁所有？人们在生产中的地位如何？分配方式如何？</li>
+  <li><strong>第三层：经济基础分析</strong>——生产关系的总和构成该社会的经济基础。这个经济基础具有什么特征？</li>
+  <li><strong>第四层：上层建筑分析</strong>——该经济基础之上的政治制度和意识形态是什么？它们如何服务于经济基础？</li>
+  <li><strong>第五层：矛盾分析</strong>——生产力与生产关系之间存在什么矛盾？这个矛盾是否已经发展到需要革命的程度？</li>
+</ol>
+
+<div class="callout">
+  <span class="callout-title">练习：分析"互联网平台经济"</span>
+  用上述框架分析：<br>
+  1. 生产力：互联网技术、大数据、AI算法；<br>
+  2. 生产关系：平台提供基础设施，用户和商家提供内容和劳动，平台从中抽取利润；<br>
+  3. 经济基础：数字经济时代的新型生产关系总和；<br>
+  4. 上层建筑：数据产权法、平台监管政策、数字劳动保护制度；<br>
+  5. 矛盾：数字生产力的高度社会化与数据私有占有的矛盾。
+</div>
+
+<h3>4.4 政治经济学批判的方法</h3>
+<p>马克思在《资本论》中使用的"政治经济学批判"方法，核心是"从抽象到具体"：</p>
+<ol>
+  <li><strong>从最抽象的范畴出发</strong>：商品（最简单的经济细胞）；</li>
+  <li><strong>逐步增加规定性</strong>：商品→货币→资本→剩余价值→资本积累→危机；</li>
+  <li><strong>在思维中重建具体</strong>：通过一系列抽象范畴的逻辑展开，最终在思维中重建资本主义经济体系的"具体总体"。</li>
+</ol>
+<p>这一方法不同于黑格尔的"从抽象到具体"——马克思强调"抽象"不是纯粹的概念推演，而是对现实经济关系的科学抽象。抽象范畴如"商品"、"货币"不是思维的产物，而是现实经济关系的理论表现。</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- 附录五 -->
+<!-- ============================================================ -->
+<section class="sec" id="appendix-e">
+<h2><span class="chapno">附录五</span>核心模型与图表</h2>
+
+<p>本附录提供更多可视化模型，用于分析马克思主义谱系中的关键关系。</p>
+
+<h3>5.1 马克思主义谱系坐标图</h3>
+<p>以下图表展示九种理论形态在"革命性"和"建设性"二维空间中的分布：</p>
+
+<div class="viz-container" style="width:100%;height:380px;padding:15px;">
+  <canvas id="marx-spectrum-chart"></canvas>
+</div>
+<div class="viz-caption">图 B5-1 · 马克思主义谱系坐标：革命性（纵轴）与建设性（横轴）的二维分布。</div>
+
+<h3>5.2 资本循环与危机模型</h3>
+<p>马克思在《资本论》第二卷中分析了资本循环的三个阶段：货币资本→生产资本→商品资本→货币资本（G—W…P…W'—G'）。如果循环在某一个环节中断，就会爆发经济危机。下面的3D模型展示了这一循环过程：</p>
+
+<div class="viz-container" style="width:100%;height:400px;background:var(--bg2);border-radius:12px;position:relative;overflow:hidden;">
+  <canvas id="capital-cycle-3d" style="width:100%;height:100%;"></canvas>
+</div>
+<div class="viz-caption">图 B5-2 · 资本循环的3D模型。红色箭头为货币资本→生产资本，蓝色箭头为生产资本→商品资本，绿色箭头为商品资本→货币资本（含剩余价值）。</div>
+
+<h3>5.3 九种理论形态的比较矩阵</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>理论形态</th><th>时代主题</th><th>核心贡献</th><th>方法论特征</th><th>国际影响</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>马克思主义</strong></td><td>资本主义上升期</td><td>唯物史观+剩余价值学说</td><td>辩证唯物主义</td><td>全球工人运动</td></tr>
+    <tr><td><strong>列宁主义</strong></td><td>帝国主义战争</td><td>帝国主义论+先锋队政党</td><td>革命辩证法</td><td>十月革命</td></tr>
+    <tr><td><strong>斯大林主义</strong></td><td>资本主义包围</td><td>一国建成社会主义</td><td>高度集中体制</td><td>苏联模式</td></tr>
+    <tr><td><strong>毛泽东思想</strong></td><td>民族民主革命</td><td>新民主主义革命+农村包围城市</td><td>实事求是+群众路线</td><td>第三世界解放运动</td></tr>
+    <tr><td><strong>邓小平理论</strong></td><td>和平与发展</td><td>社会主义市场经济</td><td>解放思想+实践标准</td><td>改革开放</td></tr>
+    <tr><td><strong>"三个代表"</strong></td><td>世纪之交</td><td>执政党建设新要求</td><td>与时俱进</td><td>中国模式探索</td></tr>
+    <tr><td><strong>科学发展观</strong></td><td>新世纪新阶段</td><td>以人为本+可持续发展</td><td>统筹兼顾</td><td>绿色发展理念</td></tr>
+    <tr><td><strong>习近平新时代中国特色社会主义思想</strong></td><td>新时代</td><td>中国式现代化+人类命运共同体</td><td>系统观念+守正创新</td><td>全球治理方案</td></tr>
+    <tr><td><strong>中国特色社会主义</strong></td><td>改革开放以来</td><td>道路·理论·制度·文化统一</td><td>实践探索+理论创新</td><td>发展中国家现代化新路</td></tr>
+  </tbody>
+</table>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 附录六 -->
+<!-- ============================================================ -->
+<section class="sec" id="appendix-f">
+<h2><span class="chapno">附录六</span>高阶理论与前沿</h2>
+
+<p>本附录介绍马克思主义理论中超越主卷范围的高阶议题和前沿动态。</p>
+
+<h3>6.1 西方马克思主义</h3>
+<p>西方马克思主义是20世纪20年代后在欧洲兴起的一种马克思主义思潮，与"正统马克思主义"不同，它更强调<strong>文化批判</strong>和<strong>主体性</strong>，而不是经济决定论。主要流派包括：</p>
+<ul>
+  <li><strong>卢卡奇《历史与阶级意识》（1923）</strong>：提出"物化"（Reification）概念——资本主义的商品交换不仅改变了经济关系，还改变了人的意识，使人与人的关系表现为物与物的关系。物化是"异化在资本主义商品社会中的具体形式"。</li>
+  <li><strong>葛兰西《狱中札记》（1929-1935）</strong>：提出"文化霸权"（Cultural Hegemony）——资产阶级不仅通过国家机器统治，更通过控制文化、教育、媒体来使自己的价值观成为"常识"（普遍的意识形态）。革命不仅是夺取政权，更是争夺文化领导权。</li>
+  <li><strong>法兰克福学派（霍克海默、阿多诺、马尔库塞）</strong>：批判"工具理性"——资本主义的理性化过程不仅改造了生产方式，也改造了人的思维，使一切都被"计算"和"量化"——包括人本身。马尔库塞《单向度的人》分析了发达工业社会如何通过"富足"来消解批判能力。</li>
+  <li><strong>阿尔都塞《读资本论》（1965）</strong>：提出"结构因果性"——反对将马克思主义解释为"经济决定论"，主张社会是一个"多元决定的"结构整体，经济只是"最终决定"因素。</li>
+</ul>
+
+<h3>6.2 马克思主义与当代批判理论</h3>
+<ul>
+  <li><strong>数字资本主义批判</strong>：当代马克思主义学者（如福克斯）将马克思的剩余价值理论应用于数字平台经济——分析"数字劳动"（用户的内容生产、数据贡献）如何被平台无偿占有，形成"数字剩余价值"。</li>
+  <li><strong>生态马克思主义</strong>：奥康纳、福斯特等学者重新解读马克思的"物质变换"概念——资本主义不仅剥削工人，还剥削自然。生态危机不是资本主义的"外部性"，而是资本积累的内在逻辑。</li>
+  <li><strong>世界体系论</strong>：沃勒斯坦将马克思主义的"阶级分析"从民族国家扩展到全球范围——"核心-半边缘-边缘"的世界体系结构，以及"不平等交换"的全球资本积累机制。</li>
+</ul>
+
+<h3>6.3 马克思主义真理观的当代发展</h3>
+<p>马克思主义的"实践是检验真理的唯一标准"在当代面临新的挑战：</p>
+<ul>
+  <li><strong>大数据与真理检验</strong>：在大数据时代，"实践"的含义是否需要扩展？数据分析是否也是一种"实践"？</li>
+  <li><strong>AI时代的真理权威</strong>：当AI系统可以做出人类无法理解的决策时（如深度学习模型），"实践检验"如何实施？</li>
+  <li><strong>真理与意识形态</strong>：马克思主义的"真理观"如何区别于"意识形态"？如果真理是"对客观实在的正确反映"，那么意识形态（虚假意识）和真理的边界在哪里？</li>
+</ul>
+</section>
+
+<!-- ============================================================ -->
+<!-- 附录七 -->
+<!-- ============================================================ -->
+<section class="sec" id="appendix-g">
+<h2><span class="chapno">附录七</span>方法训练与实操指南</h2>
+
+<p>本附录提供可操作的训练方法，帮助读者将马克思主义的分析工具应用于实际社会分析。</p>
+
+<h3>7.1 如何用唯物史观分析一个社会现象？</h3>
+<p>面对任何一个社会现象，用"唯物史观五步法"进行分析：</p>
+<ol>
+  <li><strong>确定生产力水平</strong>：该现象涉及的生产力要素是什么？技术水平如何？</li>
+  <li><strong>分析生产关系</strong>：该现象中生产资料归谁所有？人们在生产中的关系如何？</li>
+  <li><strong>追溯经济基础</strong>：该现象反映的是什么样的经济基础？</li>
+  <li><strong>考察上层建筑</strong>：该现象受到什么样的政治制度和意识形态的影响？</li>
+  <li><strong>揭示矛盾</strong>：该现象中是否存在生产力与生产关系的矛盾？</li>
+</ol>
+<div class="callout">
+  <span class="callout-title">案例：分析"共享单车"现象</span>
+  1. 生产力：移动互联网、GPS定位、扫码支付、物联网技术；<br>
+  2. 生产关系：平台公司拥有单车资产，用户通过App按次付费使用；<br>
+  3. 经济基础：共享经济模式下的新型租赁关系；<br>
+  4. 上层建筑：城市管理政策（如停车指定区域）、数据安全法规；<br>
+  5. 矛盾：共享单车的"社会化使用"与"资本逐利逻辑"的矛盾——过度投放导致资源浪费，最终大量企业倒闭。
+</div>
+
+<h3>7.2 剩余价值计算练习</h3>
+<p>给定以下数据，计算剩余价值率：</p>
+<p>某工厂一天消耗：</p>
+<ul>
+  <li>厂房机器折旧：100元（不变资本 c）</li>
+  <li>原材料：200元（不变资本 c）</li>
+  <li>工人工资：100元（可变资本 v）</li>
+  <li>工人一天生产的产品总价值：500元</li>
+</ul>
+<p><strong>计算：</strong></p>
+<ul>
+  <li>剩余价值 m = 总价值 - (c + v) = 500 - (300 + 100) = 100元</li>
+  <li>剩余价值率 m' = m / v = 100 / 100 = 100%</li>
+  <li>利润率 p' = m / (c + v) = 100 / 400 = 25%</li>
+</ul>
+<p><strong>含义：</strong>工人一天创造的价值（500元）中，100元以工资形式返回给工人，100元被资本家无偿占有。工人每劳动1小时，有半小时是为自己劳动（必要劳动时间），半小时是为资本家劳动（剩余劳动时间）。</p>
+
+<h3>7.3 辩证法矛盾分析练习</h3>
+<p>用"对立统一规律"分析以下矛盾：</p>
+<ol>
+  <li><strong>自由与纪律</strong>：对立性（自由要求减少约束，纪律要求遵守规则）与统一性（没有纪律的自由是混乱，没有自由的纪律是专制）；</li>
+  <li><strong>效率与公平</strong>：对立性（效率优先可能牺牲公平，公平优先可能降低效率）与统一性（长期来看，公平是效率的社会基础，效率是公平的物质前提）；</li>
+  <li><strong>全球化与民族国家</strong>：对立性（全球化要求超越国界，民族国家要求维护主权）与统一性（全球化需要民族国家参与，民族国家需要全球化发展空间）。</li>
+</ol>
+<p>分析每个矛盾时，找出：（1）矛盾的主要方面；（2）矛盾转化的条件；（3）矛盾解决的可能途径。</p>
+
+<h3>7.4 马克思主义谱系识别练习</h3>
+<p>根据以下描述，判断属于哪种理论形态：</p>
+<ol>
+  <li>"资本主义已经发展到帝国主义阶段，垄断资本在全球范围内扩张，必须通过革命建立无产阶级专政。"</li>
+  <li>"计划多一点还是市场多一点，不是社会主义与资本主义的本质区别。社会主义的本质是解放生产力，发展生产力，消灭剥削，消除两极分化，最终达到共同富裕。"</li>
+  <li>"在半殖民地半封建社会的中国，革命必须分两步走：第一步是新民主主义革命，第二步是社会主义革命。农村包围城市，武装夺取政权。"</li>
+  <li>"发展是硬道理，但发展必须是科学发展——以人为本，全面协调可持续，统筹兼顾。"</li>
+  <li>"中国特色社会主义进入新时代，我国社会主要矛盾已经转化为人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾。"</li>
+</ol>
+<p><strong>答案：</strong>1-列宁主义；2-邓小平理论；3-毛泽东思想；4-科学发展观；5-习近平新时代中国特色社会主义思想。</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- 附录八 -->
+<!-- ============================================================ -->
+<section class="sec" id="appendix-h">
+<h2><span class="chapno">附录八</span>经典习题集</h2>
+
+<p>以下习题覆盖附录内容的主要知识点，难度逐题递增，参考答案附后。</p>
+
+<h3>习题</h3>
+
+<p><strong>题1</strong>（基础概念）<br>
+请简述"经济基础决定上层建筑"的含义，并举例说明上层建筑对经济基础的反作用。</p>
+
+<p><strong>题2</strong>（劳动价值论）<br>
+"如果一件商品的价格由其耗费的劳动时间决定，那么一件耗时更长但质量低劣的产品应该比一件高效生产的优质产品更贵。"——请从马克思主义政治经济学的角度分析这一批评。</p>
+
+<p><strong>题3</strong>（剩余价值）<br>
+某资本家投资100万元开办工厂，其中60万元用于厂房机器（使用10年，按直线折旧），20万元用于原材料，20万元用于工人工资。一年后销售收入为50万元。请计算：年剩余价值率、年利润率、工人一年创造的总价值。</p>
+
+<p><strong>题4</strong>（辩证法）<br>
+"否定之否定规律"是否意味着历史的发展是循环的？请用"原始社会→阶级社会→共产主义社会"的例子说明。</p>
+
+<p><strong>题5</strong>（谱系比较）<br>
+比较列宁主义的"帝国主义论"和毛泽东思想的"新民主主义革命理论"在"革命主体"和"革命策略"上的异同。</p>
+
+<p><strong>题6</strong>（综合题）<br>
+用历史唯物主义的框架分析"工业革命为什么首先发生在英国而不是中国"——分别从生产力、生产关系、经济基础、上层建筑四个层面作答。</p>
+
+<h3>参考答案</h3>
+
+<div class="callout">
+  <span class="callout-title">题1 参考答案</span>
+  "经济基础决定上层建筑"意味着：一个社会的政治法律制度、意识形态（上层建筑）归根结底是由该社会的生产关系总和（经济基础）决定的。例如，封建社会的经济基础（地主占有土地、农民交纳地租）决定了封建君主专制制度和儒家等级观念。上层建筑的反作用体现在：当上层建筑适应经济基础时，促进经济发展；当不适应时，阻碍发展。例如，改革开放后中国逐步建立市场经济法律体系（上层建筑变革），极大地促进了经济基础的发展。
+</div>
+
+<div class="callout">
+  <span class="callout-title">题2 参考答案</span>
+  这一批评混淆了"个别劳动时间"和"社会必要劳动时间"。马克思明确指出：商品的价值量由<strong>社会必要劳动时间</strong>决定，不是个别劳动时间。质量低劣意味着它的使用价值低于社会平均水平，因此它的个别劳动时间中有一部分是无效的（被市场否定）。高效率的优质产品因为个别劳动时间小于社会必要劳动时间，反而能获得超额利润。因此，劳动价值论不是"越笨重越值钱"，而是"<strong>社会认可</strong>的劳动才创造价值"。
+</div>
+
+<div class="callout">
+  <span class="callout-title">题3 参考答案</span>
+  不变资本 c = 60万（机器折旧10年 → 年折旧6万）+ 20万（原材料年消耗）= 26万/年<br>
+  可变资本 v = 20万（工人年工资）<br>
+  剩余价值 m = 销售收入 - (c + v) = 50 - (26 + 20) = 4万元<br>
+  年剩余价值率 m' = m / v = 4 / 20 = 20%<br>
+  年利润率 p' = m / (c + v) = 4 / 46 ≈ 8.7%<br>
+  工人一年创造的总价值 = v + m = 20 + 4 = 24万元<br>
+  注意：这个例子中资本家只获得了较低的利润率——现实中资本家会通过延长劳动时间、提高劳动生产率来提高剩余价值率。
+</div>
+
+<div class="callout">
+  <span class="callout-title">题4 参考答案</span>
+  否定之否定规律不是简单的循环，而是"螺旋式上升"或"波浪式前进"。以"原始社会→阶级社会→共产主义社会"为例：<br>
+  原始社会（肯定）：没有阶级、没有剥削，但是生产力极其低下；<br>
+  阶级社会（否定）：产生了阶级和剥削，但生产力得到了巨大发展——这是进步的否定；<br>
+  共产主义社会（否定之否定）：消灭了阶级和剥削，但建立在生产力高度发达的基础之上——这是"在更高层次上"回归原始社会的某些特征（没有阶级对立），但不是回到原始社会的贫穷。因此，历史的运动是"螺旋式"的——看起来在绕圈子，实际上在不断上升。
+</div>
+
+<div class="callout">
+  <span class="callout-title">题5 参考答案</span>
+  <strong>相同点：</strong>两者都是把马克思主义基本原理同本国国情相结合的理论创新；都强调革命必须由无产阶级（通过共产党）领导；都承认革命需要分阶段进行。<br>
+  <strong>不同点：</strong><br>
+  革命主体：列宁强调"工业无产阶级"是革命的主力军（因为俄国资本主义有一定发展）；毛泽东则强调"工农联盟"是革命的基础，农民是革命的主力军（因为中国是农业国，无产阶级人数很少）。<br>
+  革命策略：列宁主张"城市中心论"——在城市发动武装起义，然后夺取全国政权（十月革命模式）；毛泽东主张"农村包围城市"——在敌人统治薄弱的农村建立根据地，最后夺取城市。<br>
+  阶段划分：列宁的"帝国主义论"将革命分为"民主革命"和"社会主义革命"两个阶段但紧密衔接；毛泽东的"新民主主义革命理论"则明确提出了"新民主主义革命"这个相对独立的过渡阶段。
+</div>
+
+<div class="callout">
+  <span class="callout-title">题6 参考答案</span>
+  <strong>生产力层面</strong>：英国在18世纪已经积累了较高的农业生产力（农业革命），为工业发展提供了劳动力、粮食和资本原始积累。中国的农业生产力在明清时期虽然也有发展，但人口增长消耗了大部分粮食剩余，无法形成足够的资本积累。<br>
+  <strong>生产关系层面</strong>：英国通过圈地运动形成了资本主义农场和自由劳动力市场，封建行会制度在17世纪已经瓦解。中国仍处于封建地主经济和小农经济，缺乏自由劳动力市场。<br>
+  <strong>经济基础层面</strong>：英国的经济基础是资本主义商品经济的萌芽，国内外贸易发达，金融体系（英格兰银行、伦敦证券交易所）为工业投资提供了融资渠道。中国的经济基础是自给自足的自然经济，商业资本被限制在封建经济框架内。<br>
+  <strong>上层建筑层面</strong>：英国资产阶级革命（1688年光荣革命）建立了君主立宪制，保护私有财产和商业契约，为工业革命提供了制度保障。中国的清朝专制政权重农抑商，压制工商业发展，科举制度使人才流向官僚体系而非技术发明。
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 附录九 -->
+<!-- ============================================================ -->
+<section class="sec" id="appendix-i">
+<h2><span class="chapno">附录九</span>一手文献选读</h2>
+
+<p>以下文献按主题分组，标注了阅读难度和重点章节。</p>
+
+<h3>9.1 马克思主义哲学</h3>
+<ul>
+  <li><strong>马克思《关于费尔巴哈的提纲》（1845）</strong>——难度：中。全文仅11条，但内涵极其丰富。重点：第1条（实践是理解世界的基础）、第2条（真理的实践标准）、第11条（哲学的任务是改变世界）。这是"新唯物主义"的纲领。</li>
+  <li><strong>马克思、恩格斯《德意志意识形态》（1845-1846）</strong>——难度：中高。重点：第一章"费尔巴哈"。唯物史观的首次系统阐述。"不是意识决定生活，而是生活决定意识"——这是历史唯物主义的"哥白尼革命"。</li>
+  <li><strong>恩格斯《路德维希·费尔巴哈和德国古典哲学的终结》（1888）</strong>——难度：中。重点：第二章和第四章。恩格斯系统阐述了马克思主义哲学与黑格尔、费尔巴哈的关系，对"哲学基本问题"（思维与存在的关系）做了经典表述。</li>
+  <li><strong>列宁《唯物主义和经验批判主义》（1909）</strong>——难度：中高。重点：第二章"真理的客观性"和第三章"真理的绝对性与相对性"。列宁在批判马赫主义时系统阐述了马克思主义认识论。</li>
+  <li><strong>毛泽东《实践论》（1937）</strong>——难度：中。全文应完整阅读。毛泽东用中国化的语言阐述了马克思主义认识论——"实践、认识、再实践、再认识，这种形式，循环往复以至无穷"。</li>
+</ul>
+
+<h3>9.2 政治经济学</h3>
+<ul>
+  <li><strong>马克思《资本论》第一卷（1867）</strong>——难度：高。重点：第一章"商品"（劳动二重性）、第四章"货币转化为资本"、第五章"劳动过程和价值增殖过程"、第二十四章"所谓原始积累"。建议从第一章开始，理解"商品拜物教"这一核心概念。</li>
+  <li><strong>马克思《1844年经济学哲学手稿》（1844）</strong>——难度：中高。重点：关于"异化劳动"的论述。马克思从工人的经济事实出发，分析了"异化"的四种形式。这是理解马克思早期思想的必经之路。</li>
+  <li><strong>列宁《帝国主义是资本主义的最高阶段》（1916）</strong>——难度：中。重点：关于垄断的五大特征和"帝国主义是寄生的、腐朽的资本主义"的论述。列宁对20世纪初资本主义新变化的分析，为十月革命提供了理论依据。</li>
+</ul>
+
+<h3>9.3 科学社会主义</h3>
+<ul>
+  <li><strong>马克思、恩格斯《共产党宣言》（1848）</strong>——难度：中。重点：第一章"资产者和无产者"、第二章"无产者和共产党人"。这是马克思主义的"出生证"，语言极富感染力。建议全文背诵第一章的开头和结尾。</li>
+  <li><strong>恩格斯《社会主义从空想到科学的发展》（1880）</strong>——难度：中。重点：第三章。恩格斯用19页的篇幅概述了唯物史观和剩余价值学说的基本内容，并推导出科学社会主义的结论。这是进入马克思主义最简洁的入口。</li>
+  <li><strong>马克思《法兰西内战》（1871）</strong>——难度：中。重点：关于巴黎公社的经验总结。马克思从巴黎公社的实践中提炼出"无产阶级专政"的具体形式——公社是"终于发现的、可以使劳动在经济上获得解放的政治形式"。</li>
+</ul>
+
+<h3>9.4 毛泽东思想与中特理论</h3>
+<ul>
+  <li><strong>毛泽东《中国革命和中国共产党》（1939）</strong>——难度：中。重点：关于"中国社会性质"和"中国革命的对象、任务、动力、性质、前途"的分析。这是"新民主主义革命理论"的完整阐述。</li>
+  <li><strong>毛泽东《新民主主义论》（1940）</strong>——难度：中。重点：关于"新民主主义的政治、经济、文化"的论述。毛泽东系统回答了"中国向何处去"的问题。</li>
+  <li><strong>邓小平《在武昌、深圳、珠海、上海等地的谈话要点》（1992年南方谈话）</strong>——难度：中。重点：关于"社会主义本质"、"计划与市场"、"发展才是硬道理"的论述。这是中国特色社会主义理论体系形成的关键文献。</li>
+  <li><strong>习近平《在庆祝中国共产党成立100周年大会上的讲话》（2021）</strong>——难度：中。重点：关于"两个结合"（马克思主义基本原理同中国具体实际相结合、同中华优秀传统文化相结合）的论述。这是习近平新时代中国特色社会主义思想的最新发展。</li>
+</ul>
+</section>
+
+<!-- ============================================================ -->
+<!-- 附录十 -->
+<!-- ============================================================ -->
+<section class="sec" id="appendix-j">
+<h2><span class="chapno">附录十</span>关键争论</h2>
+
+<p>马克思主义理论中的五大核心争论，每个争论列出正反两方的主要论据。</p>
+
+<h3>10.1 经济决定论 vs 多元决定论</h3>
+<p><strong>经济决定论</strong>：历史唯物主义的核心命题是"经济基础决定上层建筑"。第二国际的理论家（如考茨基）倾向于将这一命题解释为"经济因素在任何时候都是唯一决定因素"。</p>
+<p><strong>多元决定论</strong>：阿尔都塞和后来者批评经济决定论是"经济主义"，认为社会是一个"多元决定的"结构——经济只是"最终决定"因素，在特定历史条件下，政治、意识形态等上层建筑也可以成为"主导因素"。</p>
+<p><strong>恩格斯晚年回应</strong>：恩格斯在1890年代的书信中明确批评了经济决定论——"根据唯物史观，历史过程中的决定性因素归根到底是现实生活的生产和再生产。无论马克思或我都从来没有肯定过比这更多的东西。如果有人在这里加以歪曲，说经济因素是唯一决定性的因素，那么他就是把这个命题变成毫无内容的、抽象的、荒诞无稽的空话。"</p>
+
+<h3>10.2 马克思早期 vs 晚期思想的连续性</h3>
+<p><strong>断裂论</strong>（以阿尔都塞为代表）：马克思的思想存在一个"认识论断裂"——1845年之前是"意识形态阶段"（受费尔巴哈人道主义影响，强调异化），1845年之后是"科学阶段"（历史唯物主义，强调结构分析）。</p>
+<p><strong>连续论</strong>：马克思的思想是连续发展的，早期《1844年手稿》中的"异化"概念在后来的《资本论》中发展为"商品拜物教"——只是表述方式从哲学语言转向了政治经济学语言，但核心关切是一致的。</p>
+
+<h3>10.3 马克思主义与道德</h3>
+<p><strong>反道德论</strong>：马克思主义是"科学"而不是"道德学说"——马克思明确反对"道德化的批判"（批判蒲鲁东的"永恒正义"），认为道德是上层建筑，是意识形态，不能作为批判资本主义的最终依据。</p>
+<p><strong>道德论</strong>：马克思主义隐含着一套道德理论——对资本主义的批判（剥削、异化、压迫）不可能不包含道德维度。马克思的"共产主义"不仅是一个科学预测，也包含了对"人的自由全面发展"的道德承诺。</p>
+
+<h3>10.4 苏联模式 vs 中国模式</h3>
+<p><strong>苏联模式</strong>：高度集中的计划经济、优先发展重工业、农业全盘集体化、单一公有制。优点：在短期内实现了工业化，为反法西斯战争奠定了物质基础。缺点：经济结构失衡、缺乏创新动力、忽视民生。</p>
+<p><strong>中国模式</strong>：社会主义市场经济、公有制为主体多种所有制共同发展、政府主导的渐进式改革。优点：灵活高效、经济持续高速增长、人民生活水平显著提高。挑战：收入差距、环境问题、发展不平衡。</p>
+<p><strong>争论焦点</strong>：中国模式是否"背离"了马克思主义？中国官方立场：中国模式是马克思主义中国化的最新成果，是社会主义的"初级阶段"形式，不是对马克思主义的否定而是发展。</p>
+
+<h3>10.5 马克思主义在当代还有效吗？</h3>
+<p><strong>肯定论</strong>：马克思对资本主义的分析在今天仍然有效——2008年全球金融危机重演了马克思描述的"生产过剩危机"；皮凯蒂《21世纪资本论》用数据证实了马克思的"资本积累"和"两极分化"趋势；全球化本质上就是马克思分析的"资本的世界市场"扩张。</p>
+<p><strong>质疑论</strong>：马克思的剩余价值理论难以解释现代知识经济——知识工人的"生产"与工厂工人的"生产"在性质上完全不同；资本主义的自我调节能力（福利国家、社会保障）超出了马克思的预料；社会主义在苏联的失败表明马克思的"计划经济"设想存在根本缺陷。</p>
+<p><strong>调和尝试</strong>：马克思主义不是"预言的体系"而是"分析的方法"——它的核心价值不在于具体结论，而在于"历史唯物主义"的分析框架。用这个框架分析当代资本主义，可以得出新的结论（如数字资本主义、生态马克思主义），而不必拘泥于马克思的具体结论。</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- 附录十一 -->
+<!-- ============================================================ -->
+<section class="sec" id="appendix-k">
+<h2><span class="chapno">附录十一</span>延伸阅读与课程对照</h2>
+
+<h3>11.1 推荐进阶阅读</h3>
+<ul>
+  <li><strong>顾海良主编《马克思主义发展史》（中国人民大学出版社）</strong>——目前国内最权威的马克思主义发展史教材，系统梳理马克思主义从诞生到当代的发展历程。适合本科高年级和研究生。</li>
+  <li><strong>陈先达《马克思主义哲学》（人民出版社）</strong>——国内马克思主义哲学教科书的经典之作，逻辑清晰、论证严谨。适合系统学习马克思主义哲学。</li>
+  <li><strong>大卫·哈维《资本论导读》（David Harvey, A Companion to Marx's Capital）</strong>——哈维以逐章导读的方式解读《资本论》第一卷，语言通俗但不失深度。适合《资本论》入门者。</li>
+  <li><strong>特里·伊格尔顿《马克思为什么是对的》（Terry Eagleton, Why Marx Was Right）</strong>——伊格尔顿以犀利的文笔回应了对马克思主义的十大常见批评。适合对马克思主义持怀疑态度的读者。</li>
+  <li><strong>乔万尼·阿瑞吉《漫长的20世纪》（Giovanni Arrighi, The Long Twentieth Century）</strong>——用世界体系论分析资本主义500年的历史，将马克思的资本积累理论与布罗代尔的历史研究相结合。</li>
+  <li><strong>托马斯·皮凯蒂《21世纪资本论》（Thomas Piketty, Capital in the Twenty-First Century）</strong>——用大量历史数据证明"r > g"（资本收益率 > 经济增长率）导致财富两极分化，实质上是马克思"资本积累规律"的现代实证。</li>
+  <li><strong>韩庆祥《中国道路的哲学基础》</strong>——从马克思主义哲学角度解读中国特色社会主义道路的哲学内涵。</li>
+</ul>
+
+<h3>11.2 国内外课程对照</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>课程名称</th><th>开课单位</th><th>与本附录的对标内容</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>马克思主义基本原理</strong></td><td>各高校公共必修课</td><td>与附录一、二、三、四整体对标</td></tr>
+    <tr><td><strong>马克思主义发展史</strong></td><td>中国人民大学马克思主义学院</td><td>与附录一、五、六对标</td></tr>
+    <tr><td><strong>《资本论》研读</strong></td><td>北京大学经济学院</td><td>与附录二、四、八对标</td></tr>
+    <tr><td><strong>国外马克思主义</strong></td><td>复旦大学哲学学院</td><td>与附录六对标</td></tr>
+    <tr><td><strong>毛泽东思想与中国特色社会主义理论体系概论</strong></td><td>各高校公共必修课</td><td>与附录五、九、十对标</td></tr>
+    <tr><td><strong>科学社会主义</strong></td><td>中共中央党校</td><td>与附录二、四、九对标</td></tr>
+    <tr><td><strong>马克思主义哲学研究</strong></td><td>南京大学哲学系</td><td>与附录三、四、六对标</td></tr>
+    <tr><td><strong>Marxist Theory</strong></td><td>University of Oxford</td><td>与附录二、四、十对标</td></tr>
+    <tr><td><strong>Critical Theory</strong></td><td>University of California, Berkeley</td><td>与附录六、十对标</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>11.3 在线资源</h3>
+<ul>
+  <li><strong>马克思主义文库</strong> (www.marxists.org) —— 收录马克思、恩格斯、列宁、毛泽东等经典作家的全部著作，多语种，免费。是研究马克思主义最基本的一手文献库。</li>
+  <li><strong>Stanford Encyclopedia of Philosophy</strong> (plato.stanford.edu) —— 关键词：Marxism, Historical Materialism, Dialectical Materialism, Alienation, Labor Theory of Value, Surplus Value, Capitalism, Socialism, Communism, Critical Theory, Frankfurt School</li>
+  <li><strong>中国理论网</strong> (www.ccpph.com.cn) —— 中共中央党校主管，收录中国特色社会主义理论体系的最新研究文献。</li>
+  <li><strong>学习强国</strong> —— 中共中央宣传部主管的学习平台，有大量马克思主义理论视频课程和文献解读。</li>
+  <li><strong>Coursera: Marx's Capital</strong> (Universiteit van Amsterdam) —— 在线课程，系统讲解《资本论》第一卷。</li>
+</ul>
+</section>
+
+<!-- ============================================================ -->
+<!-- 可视化脚本 -->
+<!-- ============================================================ -->
+<script src="./_shared/js/three.min.js"></script>
+<script src="./_shared/js/chart.umd.min.js"></script>
+<script>
+// ================================================================
+// B3-1: 历史唯物主义三维空间 (Three.js)
+// ================================================================
+(function() {
+  const canvas = document.getElementById('marx-space-3d');
+  if (!canvas) return;
+  const w = canvas.parentElement.clientWidth;
+  const h = 450;
+  canvas.width = w;
+  canvas.height = h;
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xF2F0EA);
+  const camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 1000);
+  camera.position.set(6, 5, 8);
+  camera.lookAt(0, 0, 0);
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+  renderer.setSize(w, h);
+  renderer.setPixelRatio(window.devicePixelRatio);
+
+  // OrbitControls
+  let isDragging = false, prevMouse = { x: 0, y: 0 };
+  let theta = Math.PI / 4, phi = Math.PI / 5, radius = 12;
+  canvas.addEventListener('mousedown', (e) => { isDragging = true; prevMouse = { x: e.clientX, y: e.clientY }; });
+  window.addEventListener('mouseup', () => { isDragging = false; });
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const dx = e.clientX - prevMouse.x, dy = e.clientY - prevMouse.y;
+    theta -= dx * 0.01;
+    phi = Math.max(0.1, Math.min(Math.PI / 2, phi + dy * 0.01));
+    prevMouse = { x: e.clientX, y: e.clientY };
+    camera.position.x = radius * Math.sin(phi) * Math.cos(theta);
+    camera.position.y = radius * Math.cos(phi);
+    camera.position.z = radius * Math.sin(phi) * Math.sin(theta);
+    camera.lookAt(0, 0, 0);
+  });
+
+  // Axes
+  const axesHelper = new THREE.AxesHelper(5);
+  scene.add(axesHelper);
+
+  // Grid
+  const gridHelper = new THREE.GridHelper(8, 8, 0x4B3FE3, 0xCCCCCC);
+  gridHelper.position.y = -2.5;
+  scene.add(gridHelper);
+
+  // Axis labels
+  function makeLabel(text, pos, color = '#23211C') {
+    const c = document.createElement('canvas');
+    c.width = 200; c.height = 48;
+    const ctx = c.getContext('2d');
+    ctx.fillStyle = 'transparent'; ctx.fillRect(0, 0, 200, 48);
+    ctx.font = 'bold 22px WorkSans, sans-serif';
+    ctx.fillStyle = color;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText(text, 100, 24);
+    const tex = new THREE.CanvasTexture(c);
+    const mat = new THREE.SpriteMaterial({ map: tex, depthTest: false });
+    const sprite = new THREE.Sprite(mat);
+    sprite.position.copy(pos);
+    sprite.scale.set(1.8, 0.43, 1);
+    scene.add(sprite);
+  }
+  makeLabel('生产力发展水平', new THREE.Vector3(3.5, -0.5, 0), '#DC2626');
+  makeLabel('经济基础成熟度', new THREE.Vector3(0, 3.5, 0), '#2563EB');
+  makeLabel('上层建筑先进性', new THREE.Vector3(0, -0.5, 3.5), '#16A34A');
+
+  // Social formations data points
+  const formations = [
+    { pos: [-1.5, -1.0, -1.5], label: '原始社会', color: 0x9CA3AF },
+    { pos: [-0.5, 0.0, -0.5], label: '奴隶社会', color: 0xBE185D },
+    { pos: [0.5, 0.5, 0.3], label: '封建社会', color: 0xCA8A04 },
+    { pos: [1.5, 1.5, 1.0], label: '资本主义', color: 0xDC2626 },
+    { pos: [2.5, 2.0, 2.5], label: '社会主义', color: 0xDC2626 },
+    { pos: [3.5, 3.0, 3.5], label: '共产主义', color: 0x16A34A },
+  ];
+
+  const sphereGeom = new THREE.SphereGeometry(0.35, 16, 16);
+  formations.forEach(t => {
+    const mat = new THREE.MeshStandardMaterial({ color: t.color, emissive: t.color, emissiveIntensity: 0.2 });
+    const sphere = new THREE.Mesh(sphereGeom, mat);
+    sphere.position.set(t.pos[0], t.pos[1], t.pos[2]);
+    scene.add(sphere);
+
+    const c = document.createElement('canvas');
+    c.width = 200; c.height = 48;
+    const ctx = c.getContext('2d');
+    ctx.fillStyle = 'transparent'; ctx.fillRect(0, 0, 200, 48);
+    ctx.font = 'bold 18px WorkSans, sans-serif';
+    ctx.fillStyle = '#23211C';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText(t.label, 100, 24);
+    const tex = new THREE.CanvasTexture(c);
+    const mat2 = new THREE.SpriteMaterial({ map: tex, depthTest: false });
+    const sprite = new THREE.Sprite(mat2);
+    sprite.position.set(t.pos[0], t.pos[1] + 0.6, t.pos[2]);
+    sprite.scale.set(1.0, 0.24, 1);
+    scene.add(sprite);
+  });
+
+  // Connecting line (evolution path)
+  const pts = formations.map(t => new THREE.Vector3(t.pos[0], t.pos[1], t.pos[2]));
+  const lineGeom = new THREE.BufferGeometry().setFromPoints(pts);
+  const lineMat = new THREE.LineBasicMaterial({ color: 0x4B3FE3, dashed: true, dashSize: 0.15, gapSize: 0.1 });
+  const line = new THREE.Line(lineGeom, lineMat);
+  scene.add(line);
+
+  // Lighting
+  const ambient = new THREE.AmbientLight(0xffffff, 0.6);
+  scene.add(ambient);
+  const dir = new THREE.DirectionalLight(0xffffff, 0.8);
+  dir.position.set(5, 10, 5);
+  scene.add(dir);
+
+  function animate() {
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    const w2 = canvas.parentElement.clientWidth;
+    canvas.width = w2; canvas.height = 450;
+    camera.aspect = w2 / 450;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w2, 450);
+  });
+})();
+
+// ================================================================
+// B3-2: 生产关系适应生产力曲线 (Chart.js)
+// ================================================================
+(function() {
+  const canvas = document.getElementById('marx-adaptation-chart');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const parent = canvas.parentElement;
+  canvas.width = parent.clientWidth - 30;
+  canvas.height = 350;
+
+  const labels = [];
+  for (let i = 0; i <= 30; i++) labels.push(i * 0.5);
+
+  // Old relations: starts high, declines
+  const oldRel = labels.map(x => {
+    if (x < 3) return 0.2 + 0.8 * (x / 3);
+    if (x < 8) return 1.0 - 0.3 * ((x - 3) / 5);
+    if (x < 12) return 0.7 - 0.5 * ((x - 8) / 4);
+    return 0.2 - 0.05 * ((x - 12) / 3);
+  });
+
+  // New relations: starts low, rises, then declines
+  const newRel = labels.map(x => {
+    if (x < 8) return 0.05;
+    if (x < 10) return 0.05 + 0.3 * ((x - 8) / 2);
+    if (x < 15) return 0.35 + 0.65 * ((x - 10) / 5);
+    if (x < 18) return 1.0 - 0.15 * ((x - 15) / 3);
+    return 0.85 - 0.1 * ((x - 18) / 3);
+  });
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels.map(x => x.toFixed(1)),
+      datasets: [
+        { label: '旧生产关系 (封建/资本主义)', data: oldRel, borderColor: '#DC2626', borderWidth: 2.5, pointRadius: 0, tension: 0.3, borderDash: [5, 3] },
+        { label: '新生产关系 (社会主义)', data: newRel, borderColor: '#2563EB', borderWidth: 2.5, pointRadius: 0, tension: 0.3 },
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        title: { display: true, text: '生产关系对生产力的促进力随生产力发展水平的变化', color: '#23211C', font: { size: 14, family: 'Lora' } },
+        legend: { labels: { color: '#23211C', font: { size: 11 } } },
+        annotation: { annotations: {} }
+      },
+      scales: {
+        x: { title: { display: true, text: '生产力发展水平 →', color: '#6E6A60' }, grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { color: '#6E6A60' } },
+        y: { title: { display: true, text: '促进力 →', color: '#6E6A60' }, min: 0, max: 1.2, grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { color: '#6E6A60' } }
+      }
+    }
+  });
+
+  // Draw revolution marker on canvas overlay
+  setTimeout(() => {
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position:absolute;left:26%;top:12%;color:#DC2626;font-size:14px;font-weight:bold;font-family:WorkSans,sans-serif;';
+    overlay.textContent = '▼ 革命临界点';
+    canvas.parentElement.style.position = 'relative';
+    canvas.parentElement.appendChild(overlay);
+  }, 100);
+})();
+
+// ================================================================
+// B3-3: 辩证法螺旋动画 (Canvas)
+// ================================================================
+(function() {
+  const canvas = document.getElementById('dialectics-spiral');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const w = canvas.parentElement.clientWidth * 0.9;
+  const h = 280;
+  canvas.width = w;
+  canvas.height = h;
+
+  const cx = w / 2, cy = h / 2;
+  let frame = 0;
+
+  // Spiral parameters
+  const a = 0.15, b = 0.08;
+  const maxR = Math.min(w, h) * 0.4;
+  const turns = 3;
+
+  // Labels
+  const labels = ['肯定', '否定', '否定之否定', '新肯定'];
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    const t = frame * 0.015;
+
+    // Draw spiral path
+    ctx.strokeStyle = 'rgba(75, 63, 227, 0.25)';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    for (let i = 0; i <= 200; i++) {
+      const angle = i * 0.08;
+      const r = a + b * angle;
+      const x = cx + r * Math.cos(angle) * 30;
+      const y = cy + r * Math.sin(angle) * 30 - angle * 8;
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+
+    // Draw animated dot
+    const angle = t * 2;
+    const r = a + b * angle;
+    const x = cx + r * Math.cos(angle) * 30;
+    const y = cy + r * Math.sin(angle) * 30 - angle * 8;
+
+    // Glow
+    const grad = ctx.createRadialGradient(x, y, 0, x, y, 15);
+    grad.addColorStop(0, 'rgba(220, 38, 38, 0.6)');
+    grad.addColorStop(1, 'rgba(220, 38, 38, 0)');
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.arc(x, y, 15, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Dot
+    ctx.fillStyle = '#DC2626';
+    ctx.beginPath();
+    ctx.arc(x, y, 5, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Labels at specific points
+    const labelPositions = [
+      { angle: 0.3, label: '肯定', color: '#2563EB' },
+      { angle: 3.5, label: '否定', color: '#CA8A04' },
+      { angle: 6.8, label: '否定之否定', color: '#16A34A' },
+    ];
+
+    labelPositions.forEach(lp => {
+      const la = lp.angle;
+      const lr = a + b * la;
+      const lx = cx + lr * Math.cos(la) * 30;
+      const ly = cy + lr * Math.sin(la) * 30 - la * 8;
+
+      ctx.fillStyle = lp.color;
+      ctx.font = 'bold 13px WorkSans, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(lp.label, lx, ly - 18);
+    });
+
+    // Height indicator (showing upward movement)
+    ctx.fillStyle = '#6E6A60';
+    ctx.font = '11px WorkSans, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('螺旋上升 → 更高发展层次', cx, 20);
+
+    // Rising arrow
+    ctx.strokeStyle = '#4B3FE3';
+    ctx.lineWidth = 2;
+    ctx.fillStyle = '#4B3FE3';
+    ctx.beginPath();
+    ctx.moveTo(cx + 120, 25);
+    ctx.lineTo(cx + 120, 55);
+    ctx.lineTo(cx + 110, 45);
+    ctx.moveTo(cx + 120, 55);
+    ctx.lineTo(cx + 130, 45);
+    ctx.stroke();
+
+    // Annotation text
+    ctx.fillStyle = '#6E6A60';
+    ctx.font = '11px WorkSans, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText('每转一圈，发展层次提升一级', 20, h - 15);
+
+    // Current phase label
+    const phaseIdx = Math.floor((angle % (Math.PI * 2 * turns)) / (Math.PI * 2 * turns / 3));
+    const phaseLabels = ['肯定阶段', '否定阶段', '否定之否定', '新循环'];
+    ctx.fillStyle = '#DC2626';
+    ctx.font = 'bold 13px WorkSans, sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillText('当前：' + phaseLabels[Math.min(phaseIdx, 3)], w - 20, h - 15);
+
+    frame++;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ================================================================
+// B5-1: 马克思主义谱系坐标 (Chart.js scatter)
+// ================================================================
+(function() {
+  const canvas = document.getElementById('marx-spectrum-chart');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const parent = canvas.parentElement;
+  canvas.width = parent.clientWidth - 30;
+  canvas.height = 350;
+
+  const theories = [
+    { label: '马克思主义', x: 0.2, y: 0.85, color: '#4B3FE3' },
+    { label: '列宁主义', x: 0.15, y: 0.95, color: '#DC2626' },
+    { label: '斯大林主义', x: 0.1, y: 0.7, color: '#BE185D' },
+    { label: '毛泽东思想', x: 0.35, y: 0.8, color: '#CA8A04' },
+    { label: '邓小平理论', x: 0.7, y: 0.35, color: '#2563EB' },
+    { label: '"三个代表"', x: 0.75, y: 0.25, color: '#16A34A' },
+    { label: '科学发展观', x: 0.8, y: 0.2, color: '#0891B2' },
+    { label: '习近平新时代', x: 0.85, y: 0.45, color: '#EA580C' },
+    { label: '中国特色社会主义', x: 0.78, y: 0.3, color: '#7C3AED' },
+  ];
+
+  new Chart(ctx, {
+    type: 'scatter',
+    data: {
+      datasets: theories.map(t => ({
+        label: t.label,
+        data: [{ x: t.x, y: t.y }],
+        backgroundColor: t.color,
+        borderColor: t.color,
+        pointRadius: 10,
+        pointHoverRadius: 14,
+      }))
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        title: { display: true, text: '马克思主义谱系：革命性 x 建设性', color: '#23211C', font: { size: 14, family: 'Lora' } },
+        legend: { display: false },
+        tooltip: { callbacks: { label: (c) => c.dataset.label } }
+      },
+      scales: {
+        x: { title: { display: true, text: '→ 建设性', color: '#6E6A60' }, min: 0, max: 1, grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { color: '#6E6A60' } },
+        y: { title: { display: true, text: '革命性 →', color: '#6E6A60' }, min: 0, max: 1, grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { color: '#6E6A60' } }
+      }
+    }
+  });
+})();
+
+// ================================================================
+// B5-2: 资本循环3D模型 (Three.js)
+// ================================================================
+(function() {
+  const canvas = document.getElementById('capital-cycle-3d');
+  if (!canvas) return;
+  const w = canvas.parentElement.clientWidth;
+  const h = 400;
+  canvas.width = w;
+  canvas.height = h;
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xF2F0EA);
+  const camera = new THREE.PerspectiveCamera(40, w / h, 0.1, 1000);
+  camera.position.set(8, 5, 10);
+  camera.lookAt(0, 0, 0);
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+  renderer.setSize(w, h);
+  renderer.setPixelRatio(window.devicePixelRatio);
+
+  // OrbitControls
+  let isDragging = false, prevMouse = { x: 0, y: 0 };
+  let theta = Math.PI / 4, phi = Math.PI / 5, radius = 14;
+  canvas.addEventListener('mousedown', (e) => { isDragging = true; prevMouse = { x: e.clientX, y: e.clientY }; });
+  window.addEventListener('mouseup', () => { isDragging = false; });
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const dx = e.clientX - prevMouse.x, dy = e.clientY - prevMouse.y;
+    theta -= dx * 0.01;
+    phi = Math.max(0.1, Math.min(Math.PI / 2, phi + dy * 0.01));
+    prevMouse = { x: e.clientX, y: e.clientY };
+    camera.position.x = radius * Math.sin(phi) * Math.cos(theta);
+    camera.position.y = radius * Math.cos(phi);
+    camera.position.z = radius * Math.sin(phi) * Math.sin(theta);
+    camera.lookAt(0, 0, 0);
+  });
+
+  // Grid
+  const grid = new THREE.GridHelper(10, 10, 0x4B3FE3, 0xCCCCCC);
+  grid.position.y = -2.5;
+  scene.add(grid);
+
+  // Positions for 4 nodes (triangle + center)
+  const nodes = [
+    { pos: [-2.5, 0, 0], label: '货币资本\nG', color: 0xDC2626 },
+    { pos: [0, 2.5, 0], label: '生产资本\nP', color: 0x2563EB },
+    { pos: [2.5, 0, 0], label: '商品资本\nW\'', color: 0x16A34A },
+    { pos: [0, 0, 2.5], label: '剩余价值\nm', color: 0xCA8A04 },
+  ];
+
+  // Spheres and labels
+  const sphereGeom = new THREE.SphereGeometry(0.4, 16, 16);
+  nodes.forEach(n => {
+    const mat = new THREE.MeshStandardMaterial({ color: n.color, emissive: n.color, emissiveIntensity: 0.2 });
+    const sphere = new THREE.Mesh(sphereGeom, mat);
+    sphere.position.set(n.pos[0], n.pos[1], n.pos[2]);
+    scene.add(sphere);
+
+    const c = document.createElement('canvas');
+    c.width = 200; c.height = 64;
+    const ctx = c.getContext('2d');
+    ctx.fillStyle = 'transparent'; ctx.fillRect(0, 0, 200, 64);
+    ctx.font = 'bold 16px WorkSans, sans-serif';
+    ctx.fillStyle = '#23211C';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText(n.label, 100, 32);
+    const tex = new THREE.CanvasTexture(c);
+    const mat2 = new THREE.SpriteMaterial({ map: tex, depthTest: false });
+    const sprite = new THREE.Sprite(mat2);
+    sprite.position.set(n.pos[0], n.pos[1] + 0.7, n.pos[2]);
+    sprite.scale.set(1.2, 0.38, 1);
+    scene.add(sprite);
+  });
+
+  // Arrows (cycle)
+  const cycle = [
+    { from: 0, to: 1, color: 0xDC2626, label: 'G → P' },
+    { from: 1, to: 2, color: 0x2563EB, label: 'P → W\'' },
+    { from: 2, to: 0, color: 0x16A34A, label: 'W\' → G\'' },
+    { from: 0, to: 3, color: 0xCA8A04, label: '→ m' },
+    { from: 3, to: 0, color: 0xCA8A04, label: 'm → G' },
+  ];
+
+  cycle.forEach(c => {
+    const from = nodes[c.from].pos;
+    const to = nodes[c.to].pos;
+    const mid = new THREE.Vector3(
+      (from[0] + to[0]) / 2,
+      (from[1] + to[1]) / 2,
+      (from[2] + to[2]) / 2
+    );
+
+    const points = [
+      new THREE.Vector3(from[0], from[1], from[2]),
+      new THREE.Vector3(to[0], to[1], to[2])
+    ];
+    const geom = new THREE.BufferGeometry().setFromPoints(points);
+    const mat = new THREE.LineBasicMaterial({ color: c.color, linewidth: 2 });
+    const line = new THREE.Line(geom, mat);
+    scene.add(line);
+
+    // Arrowhead
+    const dir = new THREE.Vector3(to[0]-from[0], to[1]-from[1], to[2]-from[2]).normalize();
+    const arrowLen = 0.4;
+    const arrowEnd = new THREE.Vector3(to[0], to[1], to[2]).sub(dir.clone().multiplyScalar(0.6));
+    const arrowHelper = new THREE.ArrowHelper(dir, arrowEnd, arrowLen, '#' + c.color.toString(16).padStart(6, '0'), 0.3, 0.2);
+    scene.add(arrowHelper);
+
+    // Label
+    const c2 = document.createElement('canvas');
+    c2.width = 128; c2.height = 48;
+    const ctx2 = c2.getContext('2d');
+    ctx2.fillStyle = 'transparent'; ctx2.fillRect(0, 0, 128, 48);
+    ctx2.font = 'bold 14px WorkSans, sans-serif';
+    ctx2.fillStyle = '#' + c.color.toString(16).padStart(6, '0');
+    ctx2.textAlign = 'center'; ctx2.textBaseline = 'middle';
+    ctx2.fillText(c.label, 64, 24);
+    const tex3 = new THREE.CanvasTexture(c2);
+    const mat3 = new THREE.SpriteMaterial({ map: tex3, depthTest: false });
+    const sprite = new THREE.Sprite(mat3);
+    sprite.position.set(mid.x, mid.y + 0.5, mid.z);
+    sprite.scale.set(0.9, 0.34, 1);
+    scene.add(sprite);
+  });
+
+  // Lighting
+  const ambient = new THREE.AmbientLight(0xffffff, 0.6);
+  scene.add(ambient);
+  const dir = new THREE.DirectionalLight(0xffffff, 0.8);
+  dir.position.set(5, 10, 5);
+  scene.add(dir);
+
+  function animate() {
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    const w2 = canvas.parentElement.clientWidth;
+    canvas.width = w2; canvas.height = 400;
+    camera.aspect = w2 / 400;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w2, 400);
+  });
+})();
+</script>
+
+<footer>
+  <p>马克思主义谱系 · 本科生升级附录 · 作者：詹家杨 · 2026-09-05</p>
+  <p>本附录是为《马克思主义谱系》主卷配套的进阶学习材料。建议配合主卷阅读。</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,714 @@
+<!-- ==================== 硕士水平进阶模块 ==================== -->
+<section class="sec" id="masters-prologue">
+  <h2><span class="chapno">进阶级</span>硕士水平进阶导览</h2>
+  <div class="callout"><span class="callout-title">学习目标</span><p>从本科到硕士的跃迁路径。本进阶模块面向已完成本科生升级附录（附录一至十一）的读者，旨在将数学知识的掌握从"系统理解"提升至"批判性参与"的层次。你将接触高阶理论框架、数学基础的形式化、原始论文精读、前沿议题与独立研究设计——这些是数学研究生训练的核心内容。</p></div>
+  <p><strong>前置要求：</strong>已完成附录一至十一的学习，熟悉数学核心分支的基本概念与术语体系，具备数学分析、线性代数与抽象代数的本科基础。</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>模块</th><th>内容</th><th>能力目标</th></tr></thead>
+      <tbody>
+        <tr><td><strong>M1</strong></td><td>高阶理论框架</td><td>理解实数理论、度量空间与拓扑、测度论的核心概念与形式化表达</td></tr>
+        <tr><td><strong>M2</strong></td><td>形式化与数学基础</td><td>掌握数学基础三大流派、ZFC公理系统、范畴论初步</td></tr>
+        <tr><td><strong>M3</strong></td><td>核心论文精读</td><td>精读五篇里程碑论文，培养原始文献阅读与批判性评价能力</td></tr>
+        <tr><td><strong>M4</strong></td><td>研究方法论</td><td>理解公理化方法、证明论、模型论与范畴论方法</td></tr>
+        <tr><td><strong>M5</strong></td><td>前沿议题</td><td>追踪同伦类型论、Large Cardinal公理、P vs NP、非标准分析</td></tr>
+        <tr><td><strong>M6</strong></td><td>跨学科交叉</td><td>探索数学与物理学、计算机科学、生物学的交叉领域</td></tr>
+        <tr><td><strong>M7</strong></td><td>批判性分析</td><td>审视形式主义vs直觉主义、数学本体论、客观性难题与Langlands纲领</td></tr>
+        <tr><td><strong>M8</strong></td><td>研究实践与论文</td><td>获取论文选题方向、可研究问题、进阶文献书目与学术写作规范</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ==================== M1 高阶理论框架 ==================== -->
+<section class="sec" id="masters-m1">
+  <h2><span class="chapno">M1</span>高阶理论框架</h2>
+  <p>本科阶段的数学学习使你熟悉了微积分、线性代数、概率论等核心工具。硕士层面的进阶要求你深入理解这些工具背后的数学基础——那些支撑整个现代数学大厦的理论框架。</p>
+
+  <h3>1.1 实数理论：Dedekind分割、Cantor基本列与完备性公理</h3>
+  <p>实数是什么？这个问题看似简单，但直到十九世纪下半叶，数学家才给出了严格的回答。此前，微积分依赖于"无穷小"的直观概念——牛顿的"流数"与莱布尼茨的"微分"都建立在模糊的无穷小基础上。Cauchy与Weierstrass在十九世纪前期用ε-δ语言为极限提供了严格的形式化定义，但实数本身仍然缺乏严格的定义。</p>
+  <p><strong>Dedekind分割</strong>（Dedekind, 1872）将实数定义为有理数集合的一个"分割"：一个Dedekind分割将有理数集Q划分为两个非空集合A与B，使得A中的每个元素都小于B中的每个元素，且A没有最大元。每个这样的分割对应一个实数——如果B有最小元，该分割对应有理数；如果B没有最小元，该分割对应无理数。例如，√2对应的分割为A = {x ∈ Q : x < 0 或 x² < 2}，B = {x ∈ Q : x > 0 且 x² > 2}。Dedekind分割的优雅之处在于：它只用有理数构造了实数，不预设任何几何直观。</p>
+  <p><strong>Cantor基本列</strong>（Cantor, 1883）是另一种构造方法：实数是"有理数Cauchy序列的等价类"。两个有理数序列(a_n)与(b_n)称为等价，如果lim_{n→∞}(a_n − b_n) = 0。每个等价类对应一个实数。Cantor的方法与Dedekind的方法在数学上等价——它们定义了同一个实数结构。这两种构造共同展示了数学的"结构主义"特征：数学对象不是被"发现"的，而是被"构造"的。</p>
+  <p><strong>完备性公理</strong>是实数的核心性质：R的每个非空有上界的子集都有上确界（supremum）。这一性质在有理数中不成立——{x ∈ Q : x² < 2}在Q中没有上确界（因为√2不在Q中）。实数的完备性——又称"连续统的完备性"——是微积分全部定理的基础：介值定理、极值定理、一致连续性定理等都依赖于完备性。</p>
+
+  <h3>1.2 度量空间与拓扑初步</h3>
+  <p>度量空间（Metric Space）是带有"距离"概念的集合——这是将微积分中的极限、连续性、收敛性概念从实数推广到一般集合的框架。一个度量空间(X, d)满足：d(x, y) ≥ 0（非负性），d(x, y) = 0当且仅当x = y（不可区分性），d(x, y) = d(y, x)（对称性），d(x, z) ≤ d(x, y) + d(y, z)（三角不等式）。</p>
+  <p>在度量空间中，<strong>开球</strong>B(x, r) = {y ∈ X : d(x, y) < r}定义了"邻域"的概念。<strong>开集</strong>是每个点都存在一个包含在该集合中的开球的集合；<strong>闭集</strong>是开集的补集。<strong>紧致性</strong>（compactness）是度量空间理论中最核心的概念之一——在R中，Heine-Borel定理告诉我们：一个集合是紧致的当且仅当它是有界闭集。紧致性在分析中的重要性在于：紧致集合上的连续函数具有最大值与最小值（极值定理的推广），且一致连续。</p>
+  <p><strong>连通性</strong>（connectedness）是另一个核心拓扑概念：一个空间不能写成两个非空不相交开集的并集。在R中，连通子集恰好是区间。介值定理的拓扑表述是：连续函数将连通集映射为连通集——因此区间上的连续函数的值域也是区间。Banach不动点定理（压缩映射原理）——完备度量空间上每个压缩映射有唯一不动点——是微分方程、积分方程与数值分析中最强有力的存在性定理。</p>
+
+  <figure class="diagram">
+    <figcaption>图 M1-1 · 度量空间的三维可视化：开球、闭球与边界</figcaption>
+    <div id="math-threejs-container" style="width:100%;height:480px;overflow:hidden;border-radius:8px;background:#f3ede1;"></div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem;">三维度量空间中的开球（半透明蓝色球体）、闭球（包含边界表面的实体）与边界（红色球壳网格）。中心点标记为黄色小球。展示了在欧几里得度量下，开球、闭球与边界"球面"的拓扑关系。</p>
+  </figure>
+
+  <h3>1.3 测度论初步：Lebesgue测度与可测函数</h3>
+  <p>测度论（Measure Theory）是概率论、积分论与调和分析的基础。Riemann积分——本科微积分中学习的积分——有一个根本性的局限：它的可积函数类不够广泛。例如，Dirichlet函数（有理点取1，无理点取0）在Riemann意义下不可积。Lebesgue（1902）在他的博士论文中提出了新的积分理论——以"测度"替代"区间长度"作为积分的基础。</p>
+  <p><strong>Lebesgue测度</strong>是区间长度的推广。开区间(a, b)的Lebesgue测度为b − a。更一般的集合通过"外测度"与"内测度"来定义测度：一个集合的Lebesgue外测度是覆盖它的所有可数开区间覆盖的总长度的下确界。一个集合是Lebesgue可测的，如果它"在测度意义上"是"好"的——外测度与内测度相等。不可测集的存在（如Vitali集, 1905）依赖于选择公理——这是数学的"尴尬秘密"：我们无法为R的所有子集赋予一致的"长度"概念。</p>
+  <p><strong>可测函数</strong>是Lebesgue积分理论的基本对象：一个函数f是可测的，如果对于每个实数α，集合{x : f(x) > α}是可测的。几乎所有在分析中出现的函数（连续函数、单调函数、逐点极限）都是可测的。Lebesgue积分通过将函数值域而非定义域划分来定义——将函数值域分成小段，测量每个"值段"对应的定义域集合的测度，然后求和。Lebesgue控制收敛定理（Dominated Convergence Theorem）是这一理论最强大的工具：如果f_n逐点收敛到f且|f_n| ≤ g（g可积），则∫f_n → ∫f。这一结果在Riemann积分框架中不成立——它需要更严格的"一致收敛"条件。</p>
+
+  <div class="callout">
+    <span class="callout-title">关键学者</span>
+    <p>Dedekind（实数分割）、Cantor（基本列与集合论）、Weierstrass（ε-δ严格化）、Cauchy（极限理论）、Banach（泛函分析与不动点定理）、Lebesgue（测度论与积分）、Vitali（不可测集）、Heine与Borel（紧致性）</p>
+  </div>
+</section>
+
+<!-- ==================== M2 形式化与数学基础 ==================== -->
+<section class="sec" id="masters-m2">
+  <h2><span class="chapno">M2</span>形式化与数学基础</h2>
+  <p>十九世纪末至二十世纪初，数学经历了一场"基础危机"——非欧几何的发现、集合论悖论的涌现（Russell悖论, 1902）、以及Cantor无穷概念的争议，使数学家们不得不追问：数学的基础到底是什么？这个问题催生了数学基础研究的三大学派。</p>
+
+  <h3>2.1 数学基础三大流派</h3>
+  <p><strong>逻辑主义</strong>（Logicism）由Frege（1879, 1884）与Russell（1903, 1910–1913）倡导。逻辑主义的核心主张是：所有数学概念可用纯逻辑概念定义，所有数学定理可用纯逻辑原理证明。Frege在《概念文字》（1879）中发明了现代谓词逻辑的符号系统——这是自亚里士多德以来逻辑学最重大的进步。Russell与Whitehead在《数学原理》（Principia Mathematica, 1910–1913）中从逻辑公理出发，经过数百页的推导，终于证明了"1+1=2"（在第362页）。逻辑主义的困境在于：为了定义数学概念，不得不引入"可化归性公理"等非逻辑的假设——"纯逻辑"的纯洁性被打折扣。Gödel的不完备定理（1931）进一步打击了逻辑主义：即使是最强的逻辑系统，其一致性也不能在系统内部证明。</p>
+  <p><strong>形式主义</strong>（Formalism）由Hilbert（1900, 1920s）倡导。Hilbert的"元数学"（metamathematics）纲领：将数学表达为形式系统——无意义的符号串——然后以"有穷主义"（finitistic）的方法证明这些形式系统的一致性（无矛盾性）。Hilbert说："我们必须知道——我们将会知道。"Gödel的不完备定理（1931）证明：对于包含算术的一致形式系统，一致性不能在系统内部证明——Hilbert的纲领在"有穷主义"的限制下不可实现。但Gödel不完备定理也揭示了一个更深的事实：数学真理超越了形式证明——有些真理"存在"但"不可证明"。</p>
+  <p><strong>直觉主义</strong>（Intuitionism）由Brouwer（1907, 1912）创立。Brouwer认为：数学是心智构造的活动——"存在即被构造"。直觉主义拒绝排中律（P ∨ ¬P）在无穷集合上的应用——因为"P为真或¬P为真"在无穷情况下不一定可判定。直觉主义数学的"构造性"要求：要证明存在一个具有性质P的对象，你必须给出一个具体的构造方法。这导致直觉主义数学放弃了大量经典数学的成果——如实数完备性定理、Cantor的"更大无穷"理论。Brouwer的学生Heyting（1930）为直觉主义逻辑建立了形式化公理系统。Weil（1946）的《数学基础》将直觉主义与构造性数学实用化。当代，Bishop（1967）的《构造性分析》展示了如何在构造性框架下重写大量经典分析——这是直觉主义最令人印象深刻的成就。</p>
+
+  <h3>2.2 ZFC公理系统：选择公理与连续统假设的独立性</h3>
+  <p>Zermelo-Fraenkel集合论（ZFC）是当代数学的"标准基础"。ZFC由Zermelo（1908）首先提出，后经Fraenkel与Skolem的补充，最终定型为以下公理：外延公理、空集公理、对集公理、并集公理、幂集公理、无穷公理、分离公理模式、替换公理模式、正则公理、选择公理。</p>
+  <p><strong>选择公理</strong>（Axiom of Choice, AC）是ZFC中最具争议的公理。它说：对于任意非空集合族，存在一个"选择函数"从每个集合中选出一个元素。AC在经典数学中必不可少——它保证了每个向量空间有基（Hamel基）、实数集可良序、Tychonoff定理（紧致性的乘积保持）。但AC也导致反直觉的结论——如Banach-Tarski悖论（1924）：一个球体可以被分割成有限块，然后重新组合成两个与原来完全相同的球体。AC的"独立性"由Gödel（1938）与Cohen（1963）证明：AC与ZFC的其他公理一致（Gödel的可构造宇宙L），且不能被ZFC的其他公理证明（Cohen的力迫法）。</p>
+  <p><strong>连续统假设</strong>（Continuum Hypothesis, CH）由Cantor（1878）提出：不存在基数严格介于ℵ₀（自然数集的基数）与2^ℵ₀（实数集的基数）之间的无穷集合。CH的独立性同样由Gödel（1938）与Cohen（1963）证明：CH与ZFC一致，且CH的否定也与ZFC一致。这意味着CH是"独立于"ZFC的——我们可以选择接受CH或拒绝CH，两种选择都不会导致矛盾。这一结果深刻揭示了ZFC的"不完备性"：数学基础不是唯一的，而是"开放的"。</p>
+
+  <figure class="diagram">
+    <figcaption>图 M2-1 · 集合论宇宙的层次结构图（累积层级V_α）</figcaption>
+    <div style="position:relative;width:100%;height:340px;">
+      <canvas id="math-chart-settheory" style="width:100%;height:100%;"></canvas>
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem;">集合论宇宙V的累积层级结构——从空集开始，经过幂集运算逐层累积。V_0 = ∅, V_{α+1} = P(V_α), 极限序数λ时V_λ = ∪_{α<λ} V_α。最终V = ∪_{α∈Ord} V_α。展示了ZFC模型中的"层级"直观。</p>
+  </figure>
+
+  <h3>2.3 范畴论初步：对象与态射、函子、自然变换</h3>
+  <p>范畴论（Category Theory）由Eilenberg与Mac Lane（1945）创立，最初是代数拓扑的形式化工具，如今已成为数学的"元语言"。范畴论的核心思想是：数学对象不是"由内部结构定义的"，而是"由与其他对象的关系定义的"——"关系"（态射）比"对象"更基本。</p>
+  <p>一个<strong>范畴</strong>C包含：对象（objects）的类、态射（morphisms）的类（每个态射f: A → B将对象A映射到对象B）、恒等态射（每个对象A有id_A: A → A）、态射复合（若f: A → B, g: B → C，则g∘f: A → C），满足结合律与单位律。<strong>函子</strong>（functor）F: C → D是范畴之间的"映射"——将每个对象映射到对象，每个态射映射到态射，保持恒等态射与复合。<strong>自然变换</strong>（natural transformation）η: F ⇒ G是函子之间的"映射"——为每个对象X指定一个态射η_X: F(X) → G(X)，使得"自然性条件"成立。</p>
+  <p>范畴论中最深刻的概念是<strong>伴随函子</strong>（adjoint functors）：两个函子F: C → D与G: D → C之间的"配对"关系——"F是G的左伴随"意味着Hom_D(F(X), Y) ≅ Hom_C(X, G(Y))"自然同构"。伴随函子几乎出现在数学的所有领域：自由对象与遗忘函子、张量积与Hom函子、存在量词与全称量词……Mac Lane（1971）的《Working Mathematician's Categories》是这一领域的经典教材。Lawvere（1963, 1966）进一步将范畴论引入数学基础——试图用范畴论替代ZFC作为数学的基础。Grothendieck（1957）在代数几何中开创性地使用了范畴论——"Grothendieck拓扑"与"层"的概念已成为现代数学的核心工具。</p>
+
+  <div class="callout">
+    <span class="callout-title">关键学者</span>
+    <p>Frege（逻辑主义先驱）、Russell（逻辑主义与类型论）、Whitehead（数学原理）、Hilbert（形式主义纲领）、Brouwer（直觉主义）、Heyting（直觉主义逻辑）、Gödel（不完备定理与独立性）、Cohen（力迫法）、Eilenberg & Mac Lane（范畴论奠基人）、Grothendieck（范畴论在代数几何中的应用）</p>
+  </div>
+</section>
+
+<!-- ==================== M3 核心论文精读 ==================== -->
+<section class="sec" id="masters-m3">
+  <h2><span class="chapno">M3</span>核心论文精读</h2>
+  <p>硕士阶段的核心能力之一是阅读与批判性评价原始文献。以下五篇论文代表了数学基础与数学思想五个关键领域的里程碑，每篇附300字以上的评论，指引你如何理解其在学术谱系中的位置、方法贡献与局限。</p>
+
+  <h3>3.1 Cantor (1874) ——《论所有实代数数集合的一个性质》</h3>
+  <div class="callout">
+    <span class="callout-title">On a Property of the Collection of All Real Algebraic Numbers, Crelle's Journal, 77, 258–262</span>
+    <p><strong>评论：</strong>Cantor的这篇论文是集合论的诞生宣言，也是数学史上第一次对"无穷"进行精确的数学处理。此前，无穷被视为"不是数"——亚里士多德区分了"潜无穷"（potential infinity，如"数列可以无限延伸"）与"实无穷"（actual infinity，如"自然数全体是一个完成了的集合"），并认为实无穷是"不可能的"。Cantor在论文中证明了两个惊人的结果：第一，代数数（整系数多项式的根）的集合是可数的——可以一一对应于自然数；第二，实数的集合是不可数的——不存在这样的对应。这一结果意味着：几乎所有的实数都是"超越数"（非代数数）——尽管Liouville（1851）已经构造了具体的超越数，但Cantor的"存在性证明"（不构造具体例子）展示了"几乎所有"实数都是超越数。论文的证明方法——"Cantor对角线法"——是数学史上最优雅、最深刻的论证之一。Cantor还发现：无穷集合有不同的"大小"（基数），且存在一个无穷的"无穷谱系"（ℵ₀, ℵ₁, ℵ₂, …）。这一发现引发了巨大的争议——Kronecker激烈反对Cantor的"实无穷"概念，称Cantor为"吹牛者"与"科学骗子"。Cantor在1884年经历了第一次精神崩溃——部分原因来自Kronecker的持续攻击。但今天，Cantor的集合论是整个数学的基础。</p>
+  </div>
+
+  <h3>3.2 Frege (1879) ——《概念文字》</h3>
+  <div class="callout">
+    <span class="callout-title">Begriffsschrift, eine der arithmetischen nachgebildete Formelsprache des reinen Denkens, Verlag von Louis Nebert</span>
+    <p><strong>评论：</strong>《概念文字》（Begriffsschrift）是逻辑学史上最重要的著作之一——它发名了现代谓词逻辑，取代了亚里士多德逻辑（三段论）统治了两千年的地位。Frege在书中提出了"命题函项"（propositional function）的概念——"x是有死的"不是命题，但"苏格拉底是有死的"是命题——这解决了亚里士多德逻辑无法处理"关系推理"的问题（如"所有A都是B"与"所有B都是C"推出"所有A都是C"——这是三段论能处理的；但"a比b高"与"b比c高"推出"a比c高"——三段论无法处理，因为"比…高"是二元关系）。Frege还发明了"量词"（quantifier）——∀与∃——这是逻辑学最伟大的发明之一，也是计算机科学中"谓词逻辑"与"数据库查询"的基础。在数学基础上，Frege的目标是证明"算术可以从逻辑推导出来"。他在《算术基础》（1884）中定义了"数"：一个数是一个"概念的外延"——"2"是"与{0, 1}一一对应的概念"的集合。Russell在1902年写信给Frege，指出这个定义会导致悖论：考虑"所有不是自身元素的集合的集合"——它是否属于自身？这封信的到达时间恰好在Frege的《算术基本法则》第二卷即将付印之时——Frege在书末加了一个绝望的附注："一个科学家最不愿遇到的事情莫过于：当他的工作即将完成时，基础却崩塌了。"Russell悖论暴露了"朴素集合论"的缺陷，催生了ZFC公理集合论的出现。</p>
+  </div>
+
+  <h3>3.3 Hilbert (1900) ——《数学问题》</h3>
+  <div class="callout">
+    <span class="callout-title">Mathematical Problems, Lecture at the International Congress of Mathematicians, Paris</span>
+    <p><strong>评论：</strong>1900年巴黎国际数学家大会（ICM）上，Hilbert发表了题为《数学问题》的演讲，提出了23个未解决的数学问题——这就是数学史上著名的"Hilbert的23个问题"。这些问题覆盖了数学的几乎所有分支——数论、代数、几何、拓扑、分析、数学基础、变分法、概率论——每一个问题都像一座灯塔，指引了二十世纪数学的发展方向。Hilbert的第一问题（连续统假设）——Cantor的猜想：没有介于ℵ₀与2^ℵ₀之间的基数——由Gödel（1938）与Cohen（1963）证明为独立于ZFC。第二问题（算术公理的一致性）——被Gödel的不完备定理（1931）从根本上打击。第三问题（两个等底等高四面体的体积相等但不能分割成相等的小四面体）——由Hilbert自己的学生Dehn（1901）在当年解决，肯定答案。第七问题（2^√2的超越性）——由Gel'fond（1934）与Schneider（1935）独立解决。第八问题（Riemann猜想）——至今未解。Hilbert的演讲中有一句著名的话："我们必须知道，我们将会知道"（Wir müssen wissen, wir werden wissen）——这是Hilbert对于数学可完全形式化的信念的宣言。Gödel不完备定理证明这句话在严格的意义上是错误的——但作为数学精神的宣言，它仍然激励着每一代数学家。</p>
+  </div>
+
+  <h3>3.4 Gödel (1931) ——《论数学原理及相关系统的形式不可判定命题》</h3>
+  <div class="callout">
+    <span class="callout-title">On Formally Undecidable Propositions of Principia Mathematica and Related Systems, Monatshefte für Mathematik und Physik, 38, 173–198</span>
+    <p><strong>评论：</strong>Gödel的不完备定理是数学史上最深刻、最令人谦卑的定理——它揭示了形式化数学的固有边界。Gödel的第一不完备定理：任何包含算术的一致形式系统，都存在一个在该系统中既不能被证明也不能被否证的命题——"Gödel句子"G，它"说"："G在系统中不可证明"。如果G可证明，则系统不一致（因为G说"G不可证明"）；如果G的否定可证明，则系统不一致（因为"G可证明"与G的内容矛盾）。因此，一个一致的系统必然不完备——存在真理超出证明的范围。Gödel的第二不完备定理：一个一致的形式系统不能证明自己的一致性——系统的一致性只能在一个更强的"元系统"中证明。Gödel的证明技术——"Gödel编码"——将元数学命题编码为数论命题，从而让形式系统"谈论自己"——这是数学史上最天才的构造之一，也是计算机科学中"自指"思想的先驱（Turing的停机问题与Gödel的定理在结构上同构）。Gödel的定理对Hilbert的形式主义纲领是致命的打击，但Gödel本人是柏拉图主义者——他认为数学真理超越了形式证明，而Gödel句子"是真的"——尽管不可证明。这一立场在数学哲学中被称为"Gödel的柏拉图主义"。</p>
+  </div>
+
+  <h3>3.5 Cohen (1963) ——《连续统假设的独立性》</h3>
+  <div class="callout">
+    <span class="callout-title">The Independence of the Continuum Hypothesis, Proceedings of the National Academy of Sciences, 50(6), 1143–1148</span>
+    <p><strong>评论：</strong>Cohen的这篇论文解决了Hilbert第一问题中"独立性"的一半（另一半由Gödel在1938年解决，证明CH与ZFC一致）。Cohen发明了"力迫法"（forcing）——一种构造ZFC模型的新方法，用于证明CH不能被ZFC证明。力迫法的核心思想是：从一个"可数传递模型"M开始，通过"添加"新的实数（称为"生成元"）来构造一个更大的模型M[G]，使得M[G]中实数的数量至少为ℵ₂。力迫法被称为"集合论中最强大的工具"——它被用来证明大量数学命题的独立性（选择公理的独立性、Suslin猜想的独立性、Whitehead问题的独立性等）。Cohen的证明是"构造性"的——他实际上构造了一个ZFC模型，其中CH为假。Cohen因此获得了1966年的Fields Medal——这是Fields Medal首次颁发给数理逻辑学家。Cohen的论文技术性极强，但它的哲学含义是深刻的：数学基础不是"唯一的"，而是"多元的"。如果我们接受ZFC作为数学的基础，那么CH既不是真的也不是假的——它是"独立于"ZFC的。这提出了一个问题：CH是不是"真的"？如果CH独立于ZFC，那么"真"意味着什么？Gödel（1947）认为CH的假设是"假的"——因为"可构造性公理"（V = L）是"限制性的"；Woodin（2001）提出"Ultimate-L"猜想，认为如果存在适当的大基数公理，CH将为假。但Setá（2019）的"多重宇宙"观点——不同的ZFC模型对应不同的"数学宇宙"——认为CH的真值在不同的宇宙中可能不同。这场争论至今没有解决。</p>
+  </div>
+
+  <div class="callout">
+    <span class="callout-title">阅读建议</span>
+    <p>建议按照发表年代顺序阅读：Cantor（1874，集合论诞生）、Frege（1879，现代逻辑的诞生）、Hilbert（1900，数学问题的灯塔）、Gödel（1931，不完备定理）、Cohen（1963，力迫法与独立性）。每篇读两遍：第一遍获取大意，第二遍做"批判性笔记"——记录假设、论证方法、核心结论与开放问题。</p>
+  </div>
+</section>
+
+<!-- ==================== M4 研究方法论 ==================== -->
+<section class="sec" id="masters-m4">
+  <h2><span class="chapno">M4</span>研究方法论</h2>
+  <p>数学的方法论——数学家如何"做"数学——与数学本身同样重要。理解数学方法的内在逻辑，是硕士阶段从"学数学"到"做数学"的关键跃迁。</p>
+
+  <h3>4.1 公理化方法的历史与结构</h3>
+  <p>公理化方法（Axiomatic Method）是数学最独特的特征——没有其他学科以"从公理出发演绎全部定理"作为核心方法。欧几里得的《几何原本》（约前300年）是公理化方法的第一个典范：从5条公设与5条公理出发，推导出465个命题。但欧几里得的公理化并不是严格意义上的"形式化"——它依赖于几何直观（如"点在线上"没有被定义），且某些论证隐含地使用了未明确陈述的假设（如"连续性假设"——Pasch, 1882指出）。</p>
+  <p>Hilbert的《几何基础》（1899）将公理化方法提升到新的高度。Hilbert的做法是：不定义"点"、"线"、"面"是什么——它们只是"满足公理的对象"。公理系统不是关于"几何世界"的真理，而是关于"任何满足公理的结构"的真理——这就是"形式公理化"（formal axiomatics）的本质。一个公理系统需要满足三条性质：<strong>一致性</strong>（consistency——不能推导出矛盾）、<strong>独立性</strong>（independence——每条公理不能被其他公理推导）、<strong>完备性</strong>（completeness——所有真命题都可被证明）。Gödel不完备定理证明：对于足够强大的形式系统，一致性与完备性不可兼得。但"局部完备性"——如Presburger算术（只有加法，没有乘法）——是完备的。</p>
+
+  <h3>4.2 证明论方法：形式化证明与元数学</h3>
+  <p>证明论（Proof Theory）是Hilbert"元数学"纲领的核心：将数学证明本身作为数学研究的对象。Gödel的编码技术打开了证明论的大门——将"证明"编码为自然数，从而用数论方法研究"证明"的性质。Gentzen（1934, 1936）的"自然演绎"（Natural Deduction）与"矢列演算"（Sequent Calculus）是证明论最重要的工具。Gentzen还证明了"算术的一致性"（1936）——但使用了"超穷归纳"（transfinite induction up to ε₀），这一方法超出了Hilbert的有穷主义限制，但被广泛接受为有效的证明论方法。</p>
+  <p>当代证明论的发展包括：<strong>证明挖掘</strong>（Proof Mining——Kohlenbach, 2008）——从非构造性证明中提取构造性信息；<strong>反推数学</strong>（Reverse Mathematics——Friedman, 1975; Simpson, 2009）——不是从公理推导定理，而是从定理"反推"所需的最小公理系统；<strong>结构证明论</strong>（Structural Proof Theory——Negri & von Plato, 2001）——将证明视为"结构"而非"序列"。</p>
+
+  <h3>4.3 模型论方法：紧致性与Löwenheim-Skolem</h3>
+  <p>模型论（Model Theory）研究"形式语言与数学结构之间的关系"——一个"模型"是"使一组公理为真的数学结构"。模型论的核心定理包括：</p>
+  <p><strong>紧致性定理</strong>（Compactness Theorem, Gödel, 1930; Mal'cev, 1936）：如果一个一阶理论T的每个有限子集都有模型，那么T本身有模型。紧致性定理的推论令人惊讶：如果存在"任意大"的有限结构（如有限域），那么也存在"无穷大"的结构（超滤积构造——非标准模型）。</p>
+  <p><strong>Löwenheim-Skolem定理</strong>（Löwenheim, 1915; Skolem, 1920）：如果一个一阶理论有无限模型，那么它有任意大基数的模型（上行）和可数模型（下行）。"Skolem悖论"（Skolem's Paradox）是下行Löwenheim-Skolem定理的直接推论：ZFC集合论断言"存在不可数集合"，但ZFC本身（如果一致）有可数模型——在可数模型中，"不可数集合"的"不可数性"是"相对于模型"的，而非"绝对的"。这揭示了"一阶逻辑的局限性"：一阶逻辑不能唯一地刻画"无穷"的概念。</p>
+  <p>模型论在当代数学中的应用包括：<strong>o-极小结构</strong>（o-minimal structures——van den Dries, 1998）——为实代数几何与实分析提供模型论框架；<strong>稳定性理论</strong>（Stability Theory——Shelah, 1978, 1990）——分类所有"可判定"的理论；<strong>非标准分析</strong>（Nonstandard Analysis——Robinson, 1966）——通过模型论构造"超实数"系统，为无穷小提供严格的逻辑基础。</p>
+
+  <h3>4.4 范畴论方法：泛性质与伴随函子</h3>
+  <p>范畴论方法（Categorical Method）是二十世纪数学最深刻的"方法革命"之一。它的核心是"泛性质"（Universal Property）——一个对象被"泛性质"唯一地确定（在同构意义下），而不是通过其内部结构。例如，自由群F(S)的泛性质：对于任意群G与映射f: S → G，存在唯一的群同态F: F(S) → G扩展f。这个性质唯一地确定了F(S)（在同构意义下），而不需要知道F(S)内部元素的具体结构。</p>
+  <p><strong>伴随函子</strong>（Adjoint Functors）是范畴论中最深刻的"泛性质"概念。Freyd（1964）的"伴随函子定理"给出了伴随函子存在的充要条件。Mac Lane（1971）的名言："伴随函子无处不在"——在代数、拓扑、分析、逻辑中，伴随函子揭示了不同数学结构之间的"深层对称性"。例如，"自由对象"函子是"遗忘函子"的左伴随；"张量积"-⊗X是"Hom函子"Hom(X, -)的左伴随；"存在量词"是"替代函子"的左伴随（Lawvere, 1969）。范畴论方法的"元方法论"意义在于：它提供了一个"数学的统一语言"——不同数学领域中的结构，在范畴论的语言中，可以被视为"同一个结构的不同实例"。</p>
+
+  <figure class="diagram">
+    <figcaption>图 M4-1 · 数学方法论谱系图</figcaption>
+    <div style="position:relative;width:100%;height:380px;">
+      <canvas id="math-chart-methods" style="width:100%;height:100%;"></canvas>
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem;">数学方法论谱系：从公理化方法（欧几里得→Hilbert）到证明论（Gentzen→Kohlenbach）、模型论（Löwenheim→Shelah）、范畴论方法（Eilenberg-Mac Lane→Grothendieck），展示各方法之间的逻辑关系、核心贡献者与适用领域。</p>
+  </figure>
+
+  <div class="callout">
+    <span class="callout-title">关键学者</span>
+    <p>Hilbert（公理化方法）、Gentzen（证明论）、Gödel（紧致性定理）、Löwenheim & Skolem（模型论奠基）、Shelah（稳定性理论与分类理论）、Eilenberg & Mac Lane（范畴论奠基）、Grothendieck（范畴论在代数几何中的应用）、Freyd（伴随函子定理）</p>
+  </div>
+</section>
+
+<!-- ==================== M5 前沿议题 ==================== -->
+<section class="sec" id="masters-m5">
+  <h2><span class="chapno">M5</span>前沿议题</h2>
+  <p>当代数学的前沿议题正在重新定义数学本身的边界。以下四个议题代表了当前最活跃、最具变革潜能的研究方向——它们不仅在数学内部产生深远影响，也在哲学、计算机科学与物理学中引起广泛的关注。</p>
+
+  <h3>5.1 Voevodsky的Univalent Foundations：同伦类型论</h3>
+  <p>Voevodsky（2009, 2013）提出的<strong>Univalent Foundations</strong>（单值基础）——基于同伦类型论（Homotopy Type Theory, HoTT）——试图为数学建立一个"新基础"。传统的ZFC集合论以"集合"与"属于关系"∈为基本概念，而HoTT以"类型"（type）与"证明"（proof）为基本概念——"命题作为类型"（propositions as types, Curry-Howard同构）原则：一个命题是一个类型，该命题的证明是类型的"元素"。</p>
+  <p>HoTT的核心创新是"单值公理"（Univalence Axiom）：两个同构的类型在"类型论的意义上"是相等的——"同构即相等"。这一公理在ZFC框架中不成立——在ZFC中，两个同构的集合（如"自然数集"与"自然数集的偶数子集"）在"集合论的意义上"不相等，因为它们有不同的元素。但在类型论中，如果两个类型之间存在同构，那么"类型论"的"相等"概念可以扩展为包含这种"结构等价"——这就是"同伦类型论"中"同伦"的含义：类型被视为"空间"，相等被视为"路径"，同构被视为"同伦等价"。</p>
+  <p>Voevodsky（2009）的"Voevodsky猜想"——Univalent Foundations的一致性——在2013年被Kapulkin、Lumsdaine与Voevodsky本人使用"simplicial集合模型"证明。HoTT的计算机实现（如Coq、Agda）允许数学家将证明写为"计算机可验证"的形式——这是"形式化数学"（Formalized Mathematics）的重大进展。Voevodsky因在动机理论与Weil猜想上的工作获得了2002年Fields Medal，但他在生命最后十年（2014–2017年去世）将全部精力投入了Univalent Foundations——他认为这是数学基础的下一个范式。</p>
+
+  <h3>5.2 Large Cardinal公理与集合论宇宙：Woodin的Ultimate-L猜想</h3>
+  <p>大基数公理（Large Cardinal Axioms）是ZFC的"自然扩展"——它们断言存在"非常大的"无穷基数，其存在性不能用ZFC证明。大基数公理形成了一个"层级"：不可达基数、弱紧致基数、可测基数、Woodin基数、超紧基数、huge基数、I0基数……这个层级被认为是"一致的"——它们似乎不产生矛盾，且越大的基数"一致性强度"越大。大基数公理的研究可以回答ZFC独立性问题：如果存在适当的"大基数"，那么"投射确定性"（Projective Determinacy）——一个关于无穷博弈的定理——成立，从而为实数集的理论提供"决定性"的答案。</p>
+  <p>Woodin（2001, 2010, 2017）的<strong>Ultimate-L猜想</strong>是集合论前沿最引人注目的问题之一。Woodin提出：如果存在一类"超紧基数"——并且如果"Ultimate-L"构造（一个类似于Gödel的"可构造宇宙"L但更包容的宇宙）存在——那么连续统假设（CH）将为假。具体来说，Woodin的"Ω逻辑"框架中，CH的"Ω真值"是"假"——这意味着，如果存在足够强的大基数公理，CH的否定是"必然的"。Woodin的"Ultimate-L"构造试图将"V = Ultimate-L"作为一个新的"基础公理"——它既保留了"大基数"的丰富结构，又限制了"力迫"的"任意性"，从而为集合论宇宙提供一个"确定的"描述。但这一猜想尚未被证明，且面临Magidor（2012）等人的批评——"Ultimate-L"可能根本不存在。</p>
+
+  <h3>5.3 P vs NP问题：Cook-Levin定理与计算复杂性理论</h3>
+  <p>P vs NP问题是Clay数学研究所的"千禧年七个问题"之一（2000年），也是计算复杂性理论的核心问题。P（Polynomial Time）是"在多项式时间内可解"的问题类——如排序、最短路径、线性规划。NP（Nondeterministic Polynomial Time）是"在多项式时间内可验证"的问题类——如"给定一个整数，它是否有因子？"——如果答案"是"，你可以通过提供一个因子来"验证"答案（在多项式时间内验证），但寻找这个因子可能需要指数时间。</p>
+  <p><strong>Cook-Levin定理</strong>（Cook, 1971; Levin, 1973）是计算复杂性理论中最深刻的定理之一：SAT问题（布尔公式的可满足性）是NP完全的——即，如果SAT可以在多项式时间内解决，那么所有NP问题都可以在多项式时间内解决。Cook因此获得了1982年的Turing Award。NP完全问题包括：旅行商问题（TSP）、图着色问题、背包问题、整数规划——这些问题在工业中无处不在。如果P = NP，那么"寻找"与"验证"一样容易——这意味着所有"容易验证"的问题都可以"容易解决"。绝大多数计算机科学家相信P ≠ NP——但没有人能证明。P vs NP问题的解决将对密码学（RSA的安全性依赖于"因子分解不是多项式时间问题"）、人工智能、运筹学、生物学产生深远影响。</p>
+
+  <figure class="diagram">
+    <figcaption>图 M5-1 · P vs NP的复杂性类关系动画</figcaption>
+    <div style="position:relative;width:100%;height:360px;">
+      <canvas id="math-chart-pnp" style="width:100%;height:100%;"></canvas>
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem;">P vs NP的复杂性类关系图。外圈代表所有可判定问题（R），内圈依次为PSPACE、NP、P、NL、L等核心复杂性类。NP完全问题（NPC）位于NP内，是"最难"的NP问题。展示了P ≠ NP假设下的复杂性类层次结构。</p>
+  </figure>
+
+  <h3>5.4 非标准分析：Robinson的超实数</h3>
+  <p>非标准分析（Nonstandard Analysis）由Robinson（1966）在《非标准分析》一书中正式创立。Robinson使用模型论的方法——特别是"超积"（ultrapower）构造——构造了一个"超实数"系统*R，它包含所有实数作为子集，同时包含"无穷小"（infinitesimal——比任何正实数都小但大于0）与"无穷大"（infinite——比任何实数都大）。在超实数系统中，微积分可以回归到Leibniz的"无穷小"直观——不需要ε-δ语言：f'(x) = (f(x + dx) − f(x)) / dx，其中dx是无穷小。在超实数系统中，这不是"近似"而是"精确"——因为f(x + dx) − f(x)与dx的比值是精确的，而"标准部分"（standard part）运算将无穷小部分"舍去"，得到标准导数。</p>
+  <p>非标准分析在数学分析、拓扑学、概率论、数理经济学中都有应用——如Loeb测度（Loeb, 1975）将非标准分析引入概率论，构造了"非标准概率空间"；van den Berg等（1987）使用非标准分析研究"粘性"（sticky）粒子系统中的非线性扩散。但非标准分析一直存在争议：Bishop（1967）批评它是"特洛伊木马"——"如果你有选择公理，你可以做任何事"——"非标准分析没有提供任何经典分析不能提供的结果"。这一批评不完全准确——非标准分析确实在某些问题上提供了更简洁的论证（如"Lob's定理"的证明），但确实没有产生"经典分析无法证明"的新定理。非标准分析的哲学意义在于：它证明了"无穷小"可以严格化——Leibniz的直觉（三百年前）在数学上是可以辩护的。</p>
+
+  <div class="callout">
+    <span class="callout-title">关键学者</span>
+    <p>Voevodsky（Univalent Foundations）、Woodin（Ultimate-L猜想与大基数）、Cook（NP完全性）、Levin（NP完全性）、Robinson（非标准分析）、Loeb（Loeb测度）、Gödel（可构造性）、Cohen（力迫法）、Magidor（大基数理论）</p>
+  </div>
+</section>
+
+<!-- ==================== M6 跨学科交叉 ==================== -->
+<section class="sec" id="masters-m6">
+  <h2><span class="chapno">M6</span>跨学科交叉</h2>
+  <p>数学的边界早已超越"纯粹数学"的范畴。数学与物理学的对话催生了分析力学与规范场论，与计算机科学的互动催生了算法信息论与类型论，与生物学的交叉催生了图灵模式形成理论。理解这些交叉领域，是硕士阶段拓宽视野的关键。</p>
+
+  <h3>6.1 数学与物理学：规范场论中的数学结构、弦论中的Calabi-Yau流形</h3>
+  <p>数学与物理学的关系是"最古老的跨学科对话"——从牛顿的《自然哲学的数学原理》（1687）到当代的弦论。Wigner（1960）的名篇《数学在自然科学中不可理喻的有效性》表达了物理学家的困惑：为什么数学——这种"纯粹思维的产物"——如此精确地描述了物理世界？</p>
+  <p><strong>规范场论</strong>（Gauge Field Theory）是当代物理学的核心——它描述了电磁力、弱力与强力的统一。Yang-Mills理论（1954）——规范场论的数学基础——建立在"纤维丛"（fiber bundle）这一抽象的数学概念之上。纤维丛不是物理学家发明的，而是由E. Cartan、Ehresmann与Steenrod在二十世纪前期纯粹从数学角度发展出来的。当物理学家发现"规范势"恰好是"纤维丛上的联络"时，这是数学"先于物理"的又一次惊人预演。Donaldson（1983）与Seiberg-Witten（1994）在四维流形拓扑中的突破——使用规范场论的物理方程——是数学从物理学"借用"工具的典范。</p>
+  <p><strong>Calabi-Yau流形</strong>是弦论（String Theory）的核心几何对象。Calabi（1957）猜想：存在Kähler流形上的Ricci平坦度量——这一猜想被Yau（1977）证明。Calabi-Yau流形在弦论中的作用是"额外维度的紧致化"——为了将10维超弦理论"解释"为4维时空，额外的6个维度需要"卷曲"成极小的Calabi-Yau流形。Calabi-Yau流形的"拓扑类型"（如欧拉数、Hodge数）决定了物理理论的"粒子谱"与"耦合常数"。Yau因此获得了1982年的Fields Medal。Gross、Huybrechts与Joyce（2003）的《Calabi-Yau流形》是这一领域的标准参考。</p>
+
+  <h3>6.2 数学与计算机科学：类型论与编程语言、算法信息论</h3>
+  <p>数学与计算机科学的交叉产生了两个深刻的领域：<strong>类型论</strong>（Type Theory）与<strong>算法信息论</strong>（Algorithmic Information Theory）。类型论源于Russell的"类型论"（1903）——为了解决"所有不是自身元素的集合的集合"这一悖论。但当代类型论的核心是Curry-Howard同构（Curry, 1934; Howard, 1980）："命题即类型，证明即程序"——一个命题是一个类型，该命题的证明是一个"类型为该命题"的程序。Martin-Löf（1975, 1984）的"直觉主义类型论"（Intuitionistic Type Theory）是这一同构的完整形式化——它既是数学基础（"构造性"数学基础），也是"依赖类型"编程语言（如Agda、Coq、Lean）的理论基础。这些语言允许数学家将"证明"写为"程序"并由计算机验证——"形式化证明"运动（如"Flyspeck"项目——Hales, 2014的Kepler猜想证明被完全形式化——Gonthier et al., 2015）正在改变数学的"验证"实践。</p>
+  <p><strong>算法信息论</strong>由Kolmogorov（1965）、Chaitin（1966）与Solomonoff（1964）独立创立。Kolmogorov复杂性（K(x)）定义为"生成字符串x的最短程序的长度"。一个字符串是"随机的"如果它不能被任何短程序生成——即K(x) ≈ |x|。Kolmogorov复杂性为"随机性"提供了一个精确的数学定义——这是概率论中"随机性"概念的"确定论"替代。Kolmogorov复杂性的核心定理——"K(x)不可计算"——揭示了"随机性"与"不可判定性"之间的深层联系。算法信息论在机器学习（"最小描述长度"原则——Rissanen, 1978）、生物信息学（"序列复杂性"）、哲学（"随机性到底是什么？"）中都有重要应用。</p>
+
+  <h3>6.3 数学与生物学：图灵模式形成理论</h3>
+  <p>Turing（1952）在《形态发生的化学基础》中提出了一个数学模型——"反应-扩散系统"（reaction-diffusion system）——来解释生物体中的模式形成（如斑马鱼的条纹、斑点的分布、叶序的排列）。Turing的模型是：两个在空间扩散的化学物质（"形态素"——morphogens）——一个"激活剂"（activator）与一个"抑制剂"（inhibitor）——在特定条件下产生"空间模式"：均匀的初始状态会"自发地"形成周期性的空间图案（如斑马条纹）。Turing模型的核心是"扩散驱动的不稳定性"（diffusion-driven instability）——"扩散"通常认为"均匀化"物质分布，但在特定条件下，扩散反而"放大"了微小的扰动，产生空间模式。</p>
+  <p>Turing的论文在当时被忽视——它发表于Turing因同性恋被定罪并接受化学阉割之后不久。直到二十世纪九十年代，实验证据才开始积累——Kondo与Asai（1995）在热带鱼皮肤中观察到了Turing模式；Sick等（2006）在老鼠胚胎的腭部发现了Turing模式。Gierer与Meinhardt（1972）的"激活-抑制模型"是Turing模型的推广。Meinhardt（2009, 2012）的《生物模式形成的算法》是这一领域的经典著作。Turing的论文不仅是数学在生物学中的一次成功应用，也展示了Turing作为一个"思想的通才"的深度——他已经超越了"可计算性"与"人工智能"的标签，进入了"形态发生学"这一全新的领域。</p>
+
+  <div class="callout">
+    <span class="callout-title">关键学者</span>
+    <p>Wigner（数学有效性的哲学反思）、Yang & Mills（规范场论）、Yau（Calabi-Yau流形）、Donaldson（规范场论在拓扑中的应用）、Martin-Löf（类型论）、Kolmogorov（算法信息论）、Chaitin（算法信息论）、Turing（反应-扩散系统）、Meinhardt（生物模式形成）、Gierer（激活-抑制模型）</p>
+  </div>
+</section>
+
+<!-- ==================== M7 批判性分析 ==================== -->
+<section class="sec" id="masters-m7">
+  <h2><span class="chapno">M7</span>批判性分析</h2>
+  <p>硕士训练的核心不是"掌握更多数学知识"，而是"培养批判性判断力"。以下四个问题代表了数学作为一门学科所面临的深层认识论挑战——理解这些挑战，是成为成熟数学研究者的标志。</p>
+
+  <h3>7.1 形式主义vs直觉主义的百年之争：Hilbert vs Brouwer</h3>
+  <p>形式主义（Hilbert）与直觉主义（Brouwer）之间的争论是二十世纪数学最著名的"哲学战争"。争议的焦点是：<strong>排中律</strong>（P ∨ ¬P）在无穷集合上是否有效？Brouwer说"不"——因为要判断一个无穷集合中的每个元素是否具有性质P，我们无法在有限时间内验证"所有"元素。Hilbert说"是"——"禁止数学家使用排中律，就像禁止拳击手使用拳头"。</p>
+  <p>这场争论在1920年代达到高潮。Hilbert在1928年波伦亚ICM上的演讲中宣称："对于数学家来说，不存在'不可知'。"Brouwer被排除在Hilbert主导的编辑委员会之外——这一事件被称为"Grundlagenstreit"（基础之争）。Weyl（1921）在《数学的"新危机"》中表达了深刻的困惑："Brouwer的观点使数学的'确定性'不再——但Hilbert的纲领似乎也无法实现。"Weyl最初支持Brouwer，但后来转向了Hilbert的"形式化"路线——这一转变反映了那个时代数学家的两难。从今天的视角看，这场争论"没有赢家"：Gödel不完备定理（1931）证明Hilbert的"一致性证明"纲领在"有穷主义"限制下不可实现，而Brouwer的直觉主义放弃的经典数学内容太多——大多数数学家"实际上"是柏拉图主义者，但"方法论上"是形式主义者。当代数学哲学中的"多元主义"（pluralism——Körner, 1960; Shapiro, 2014）认为：不同的数学基础——ZFC、HoTT、范畴论——是"不同的数学系统"，它们各自"局部有效"，没有"唯一正确"的基础。</p>
+
+  <h3>7.2 数学的本体论：Platonism vs Nominalism</h3>
+  <p>数学对象（数、集合、函数、群、拓扑空间）"存在"吗？如果存在，它们"在哪里"？这是数学本体论的核心问题。<strong>柏拉图主义</strong>（Platonism）认为：数学对象客观存在，独立于人类心智——"π在人类出现之前就已经存在了"。Gödel（1947, 1964）是柏拉图主义的坚定捍卫者——他认为数学对象是"类似物理对象"的独立存在，我们通过"数学直觉"来"感知"它们。柏拉图主义的长处是：它解释了数学的"客观性"与"普遍性"——为什么全世界的数学家都同意"2+2=4"？因为他们在"发现"同一个独立存在的真理。柏拉图主义的短处是：数学对象"存在于哪里"？如果它们不在物理世界，也不在心灵世界，那么它们"在哪里"？</p>
+  <p><strong>唯名论</strong>（Nominalism）拒绝数学对象的"独立存在"。Field（1980, 1989）的<strong>虚构主义</strong>（Fictionalism）是唯名论最系统的主张：数学是一种"有用的虚构"——就像小说一样，数学语句在"字面意义"上是"假的"（因为不存在"数"这样的对象），但数学是"有用的"（因为它可以"保守地扩展"科学理论——即任何关于物理世界的结论，如果使用数学能推导出来，不使用数学也能推导出来，只是更繁琐）。Quine与Putnam（1971）的"不可或缺论证"（Indispensability Argument）是柏拉图主义最有力的辩护：数学是科学理论中"不可或缺的"部分——"数"与"电子"在"本体论意义"上是"同等地位"的——因为我们不能接受"电子存在"而"数不存在"——如果我们相信科学理论，我们就必须相信科学理论"不可或缺"的数学对象。Field反过来论证：如果数学可以"被消除"（即科学理论可以"数学化"地表述但不"承诺"数学对象的存在），那么"不可或缺"论证就失效了。Field的"虚构主义"面临的挑战是：他的"消除性"方案在微积分中遇到了严重的困难。</p>
+
+  <h3>7.3 数学知识的客观性：Benacerraf的认识论难题</h3>
+  <p>Benacerraf（1973）在《数学真理》中提出了一个著名的"认识论难题"：如果数学对象（如数）是"独立于心智"的抽象实体（柏拉图主义立场），那么我们如何获得关于它们的知识？我们与数学对象之间没有"因果接触"——我们看不见"数"，摸不着"集合"。但如果数学知识不是"因果知识"，它如何是"知识"？Benacerraf的论证是：一个"可接受的"真理理论应该与"可接受的"知识理论兼容——如果柏拉图主义不能解释"数学知识如何可能"，那么柏拉图主义就是"不可接受的"。</p>
+  <p>这一难题催生了大量回应方案。Maddy（1990, 1997）的"自然主义"（Naturalism）认为：数学知识可以用"感知"来解释——我们可以"看见"集合（如"三个苹果"的集合）。Gödel的"数学直觉"——类似于"感官知觉"——是另一种回应。但"直觉"的模糊性使这一方案难以令人满意。Chihara（1990）的"构造性唯名论"试图通过"构造性"的方法来避免数学对象的"独立存在"——数学不是关于"对象"的，而是关于"构造"的。Shapiro（1997）的"结构主义"（Structuralism）——数学是关于"结构"的，而非"对象"的——"2"不是一个"对象"，而是"自然数结构"中的一个"位置"。结构主义试图在"柏拉图主义"与"唯名论"之间走一条"第三条道路"：结构是"真实的"但"抽象的"——我们的知识是通过"结构抽象"（pattern abstraction）获得的。Benacerraf的难题至今没有公认的解决方案——它是数学哲学中最深刻、最持久的问题之一。</p>
+
+  <h3>7.4 数学的"无序"与"统一"：向统一数学的Langlands纲领</h3>
+  <p>数学的"分支"在不断增多——代数、数论、几何、拓扑、分析、概率、逻辑……每一个分支都有自己独立的问题、方法与论文。数学是否正在"碎片化"——就像心理学一样？Langlands纲领（Langlands Program）是二十世纪数学最雄心勃勃的"统一"尝试。Langlands（1967）在一封给Weil的信中提出了一个"大局"：数论中的Galois群表示与自守形式理论（分析中的对象）之间存在深刻的"对应"关系——"Langlands对偶"（Langlands Duality）。</p>
+  <p>Langlands纲领的核心是"Langlands函子性猜想"（Langlands Functoriality Conjecture）：不同代数群之间的"L-函数"应该满足某种"转移"关系。如果这一猜想成立，那么数论中许多长期悬而未决的问题（如"Ramanujan猜想"——被Deligne在1974年证明，使用了Langlands纲领的一部分）可以得到统一解决。Wiles（1995）对费马大定理的证明——使用了"模形式"（自守形式的一个特例）与"椭圆曲线"（数论对象）之间的"对应"——可以被视为Langlands纲领的一个特例（"谷山-志村-Weil猜想"）。Langlands因此获得了1996年的Wolf Prize与2018年的Abel Prize。</p>
+  <p>Langlands纲领的"统一"力量在于：它把数论、代数几何、调和分析、表示论——这些看似"无关"的数学分支——联系在一起。它揭示了数学的"深层统一性"：数学不是一堆"各自为政"的分支，而是一个"相互关联"的整体，其中每个分支都在"照亮"其他分支。Gowers（2000）的"数学的两种文化"——"问题解决者"vs"理论构建者"——也强调了数学的"统一"与"多元"之间的张力。Langlands纲领是"统一"的最强证据——但数学的"统一"是否最终可以实现？这是一个悬而未决的元问题。</p>
+
+  <div class="callout">
+    <span class="callout-title">关键学者</span>
+    <p>Hilbert（形式主义）、Brouwer（直觉主义）、Weyl（基础之争）、Gödel（柏拉图主义）、Field（虚构主义）、Quine & Putnam（不可或缺论证）、Benacerraf（认识论难题）、Maddy（数学自然主义）、Shapiro（结构主义）、Langlands（Langlands纲领）、Wiles（费马大定理证明）</p>
+  </div>
+</section>
+
+<!-- ==================== M8 研究实践与论文 ==================== -->
+<section class="sec" id="masters-m8">
+  <h2><span class="chapno">M8</span>研究实践与论文</h2>
+  <p>硕士训练的最终目标是使学习者具备独立开展数学研究的能力。以下提供论文选题方向、可研究问题、进阶文献书目与学术写作规范。</p>
+
+  <h3>8.1 五个论文选题方向</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>方向</th><th>研究领域</th><th>推荐导师专长</th><th>方法要求</th></tr></thead>
+      <tbody>
+        <tr><td><strong>方向一</strong></td><td>集合论中的力迫法与大基数之间的关系（如"力迫公理"（PFA）与大基数的一致性强度）</td><td>数理逻辑、集合论</td><td>力迫法技术、大基数理论</td></tr>
+        <tr><td><strong>方向二</strong></td><td>类型论在形式化数学中的应用（如"Flyspeck"项目风格的形式化定理证明）</td><td>数理逻辑、计算机科学</td><td>Coq/Agda/Lean编程</td></tr>
+        <tr><td><strong>方向三</strong></td><td>非交换几何中的"局部指标定理"及其在物理学中的应用</td><td>算子代数、非交换几何</td><td>算子K理论、循环上同调</td></tr>
+        <tr><td><strong>方向四</strong></td><td>数学哲学中的"结构主义"——从范畴论的角度重审数学基础</td><td>数学哲学、范畴论</td><td>范畴论、数学基础</td></tr>
+        <tr><td><strong>方向五</strong></td><td>反应-扩散系统在生物模式形成中的数学建模与分析</td><td>应用数学、数学生物学</td><td>偏微分方程、数值模拟</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>8.2 十个可研究问题</h3>
+  <ol style="margin:0 0 1rem 1.5rem;font-size:0.95rem;">
+    <li><strong>Q1：</strong>是否存在一个"自然"的数学命题，其真值独立于ZFC，但"在直觉上是真的"？（类似于Gödel句子，但"自然"——如"连续统假设"在非集合论家看来是"自然的"问题）</li>
+    <li><strong>Q2：</strong>在"Ultimate-L"存在的假设下，L中的"大基数"是否与"力迫公理"兼容？</li>
+    <li><strong>Q3：</strong>同伦类型论（HoTT）的"单值公理"的"计算解释"——是否存在一个"规范"的归一化算法？</li>
+    <li><strong>Q4：</strong>Kolmogorov复杂性与"随机性"——是否存在一个"自然"的随机序列，其Kolmogorov复杂性与"熵"的关系是什么？</li>
+    <li><strong>Q5：</strong>Calabi-Yau流形的"模空间"的拓扑与"镜像对称"（Mirror Symmetry）的数学严格化。</li>
+    <li><strong>Q6：</strong>P vs NP——如果P ≠ NP，是否存在"NP中间"问题（既不是P也不是NP完全）？Ladner（1975）的定理说"存在"，但"自然"的例子呢？</li>
+    <li><strong>Q7：</strong>非标准分析中的"超幂"构造与"Loeb测度"在随机分析中的应用——能否简化Itô积分的构造？</li>
+    <li><strong>Q8：</strong>Langlands纲领中"函数域"（function field）情况与"数域"（number field）情况的对应——"几何Langlands"与"算术Langlands"的桥梁。</li>
+    <li><strong>Q9：</strong>Turing模式形成理论中的"模式选择"——为什么同一系统在不同参数下产生不同的模式（斑马条纹vs豹子斑点）？</li>
+    <li><strong>Q10：</strong>数学哲学中的"结构主义"——"结构"的"同一性"条件是什么？两个同构的结构是否"相同"？</li>
+  </ol>
+
+  <h3>8.3 进阶文献书目（20+篇）</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>领域</th><th>文献</th></tr></thead>
+      <tbody>
+        <tr><td><strong>数学基础</strong></td><td>Gödel, K. (1931). On formally undecidable propositions of Principia Mathematica and related systems. <em>Monatshefte f. Math. u. Physik</em>, 38, 173–198.<br>Cohen, P. J. (1963). The independence of the Continuum Hypothesis. <em>PNAS</em>, 50(6), 1143–1148.<br>Voevodsky, V. (2013). The origins and motivations of Univalent Foundations. <em>IAS Lecture Notes</em>.</td></tr>
+        <tr><td><strong>集合论</strong></td><td>Jech, T. (2003). <em>Set Theory: The Third Millennium Edition</em>. Springer.<br>Woodin, W. H. (2010). The search for mathematical truth. <em>Notices of the AMS</em>, 57(10), 1236–1244.<br>Kanamori, A. (2003). <em>The Higher Infinite</em> (2nd ed.). Springer.</td></tr>
+        <tr><td><strong>范畴论</strong></td><td>Mac Lane, S. (1971). <em>Categories for the Working Mathematician</em>. Springer.<br>Eilenberg, S., & Mac Lane, S. (1945). General theory of natural equivalences. <em>Transactions of the AMS</em>, 58, 231–294.<br>Lawvere, F. W. (1963). Functorial semantics of algebraic theories. <em>PNAS</em>, 50, 869–872.</td></tr>
+        <tr><td><strong>模型论</strong></td><td>Shelah, S. (1990). <em>Classification Theory</em> (2nd ed.). North-Holland.<br>Marker, D. (2002). <em>Model Theory: An Introduction</em>. Springer.</td></tr>
+        <tr><td><strong>非标准分析</strong></td><td>Robinson, A. (1966). <em>Non-Standard Analysis</em>. North-Holland.<br>Loeb, P. A. (1975). Conversion from nonstandard to standard measure spaces. <em>Annals of Mathematics</em>, 102(1), 155–170.</td></tr>
+        <tr><td><strong>数学与物理学</strong></td><td>Wigner, E. (1960). The unreasonable effectiveness of mathematics in the natural sciences. <em>Communications on Pure and Applied Mathematics</em>, 13(1), 1–14.<br>Yau, S. T. (1977). Calabi's conjecture and some new results in algebraic geometry. <em>PNAS</em>, 74(5), 1798–1799.</td></tr>
+        <tr><td><strong>数学与计算机科学</strong></td><td>Cook, S. A. (1971). The complexity of theorem-proving procedures. <em>STOC 1971</em>, 151–158.<br>Martín-Löf, P. (1984). <em>Intuitionistic Type Theory</em>. Bibliopolis.</td></tr>
+        <tr><td><strong>数学与生物学</strong></td><td>Turing, A. M. (1952). The chemical basis of morphogenesis. <em>Philosophical Transactions of the Royal Society B</em>, 237(641), 37–72.<br>Meinhardt, H. (2009). <em>The Algorithmic Beauty of Sea Shells</em> (4th ed.). Springer.</td></tr>
+        <tr><td><strong>数学哲学</strong></td><td>Benacerraf, P. (1973). Mathematical truth. <em>Journal of Philosophy</em>, 70(19), 661–679.<br>Field, H. (1980). <em>Science without Numbers</em>. Princeton University Press.<br>Shapiro, S. (1997). <em>Philosophy of Mathematics: Structure and Ontology</em>. Oxford University Press.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>8.4 学术写作规范</h3>
+  <p>数学学术写作有独特的传统与规范。以下为硕士阶段需特别注意的要点：</p>
+  <ul>
+    <li><strong>定理-证明结构：</strong>数学论文的核心结构是"定理-证明"——每个新结果以定理（Theorem）、引理（Lemma）、命题（Proposition）、推论（Corollary）的形式陈述，后附证明。证明应清晰、完整、自包含——不依赖未陈述的假设。</li>
+    <li><strong>定义先行：</strong>所有非标准术语必须在首次使用前给出精确定义。数学写作中的"定义前置"原则——不能在定义之前使用一个概念。</li>
+    <li><strong>符号的一致性：</strong>同一符号在全文中保持同一含义。避免使用相似符号表示不同概念（如"x"与"χ"、"i"与"j"混用）。</li>
+    <li><strong>数学格式：</strong>使用LaTeX排版——包括数学公式、定理环境、交叉引用与文献索引。期刊投稿通常要求使用AMS（American Mathematical Society）的模板。</li>
+    <li><strong>文献引用：</strong>数学文献通常采用"作者-年份"制或"编号"制（如[1]）。引用应具体到定理或页码（如"参见Gödel [1931, p. 190]"）。</li>
+    <li><strong>摘要与引言：</strong>摘要应包含主要结果（定理）而非仅"研究背景"。引言应说明"问题背景"、"已有结果"、"本文贡献"与"论文结构"。</li>
+    <li><strong>致谢：</strong>学术规范要求对资助来源、讨论伙伴、匿名审稿人表示感谢。</li>
+  </ul>
+
+  <div class="callout">
+    <span class="callout-title">写作提示</span>
+    <p>数学写作的核心是"清晰"而非"华丽"——最好的数学写作让读者感觉"这个问题很简单"（即使内容很难）。建议在写作中遵循"三段式"：先写"主要结果"（定理部分），再写"证明"（技术部分），最后写"引言与背景"（背景部分）。每篇论文至少修改三遍——第一遍检查"逻辑链条"（是否有跳步？），第二遍检查"符号与格式"（是否一致？），第三遍检查"语言表达"（是否清晰？）。</p>
+  </div>
+</section>
+
+<!-- ==================== 交互式可视化脚本 ==================== -->
+<script src="./_shared/js/three.min.js"></script>
+<script src="./_shared/js/chart.umd.min.js"></script>
+<style>
+  #math-threejs-container canvas { display: block; width: 100% !important; height: 100% !important; }
+</style>
+<script>
+// ===== Three.js 3D 度量空间可视化 =====
+(function() {
+  const container = document.getElementById('math-threejs-container');
+  if (!container) return;
+  const w = container.clientWidth, h = 480;
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xf3ede1);
+  const camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 100);
+  camera.position.set(8, 6, 12);
+  camera.lookAt(0, 0, 0);
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(w, h);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  // Ambient light
+  const ambient = new THREE.AmbientLight(0x404060);
+  scene.add(ambient);
+  const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+  dirLight.position.set(1, 2, 1);
+  scene.add(dirLight);
+  const dirLight2 = new THREE.DirectionalLight(0xffffff, 0.5);
+  dirLight2.position.set(-1, -1, -1);
+  scene.add(dirLight2);
+
+  // Center point (yellow sphere)
+  const centerGeo = new THREE.SphereGeometry(0.25, 24, 24);
+  const centerMat = new THREE.MeshPhongMaterial({ color: 0xD97706, emissive: 0xD97706, emissiveIntensity: 0.3 });
+  const center = new THREE.Mesh(centerGeo, centerMat);
+  center.position.set(0, 0, 0);
+  scene.add(center);
+
+  // Open ball (semi-transparent sphere)
+  const openBallGeo = new THREE.SphereGeometry(3, 48, 48);
+  const openBallMat = new THREE.MeshPhongMaterial({
+    color: 0x2563EB,
+    transparent: true,
+    opacity: 0.15,
+    wireframe: false,
+    side: THREE.DoubleSide
+  });
+  const openBall = new THREE.Mesh(openBallGeo, openBallMat);
+  openBall.position.set(0, 0, 0);
+  scene.add(openBall);
+
+  // Open ball wireframe (boundary indication)
+  const openBallWire = new THREE.SphereGeometry(3, 32, 32);
+  const wireMat = new THREE.MeshBasicMaterial({
+    color: 0x2563EB,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.2
+  });
+  const wireSphere = new THREE.Mesh(openBallWire, wireMat);
+  wireSphere.position.set(0, 0, 0);
+  scene.add(wireSphere);
+
+  // Closed ball boundary (red sphere wireframe - the "closed" surface)
+  const closedBallGeo = new THREE.SphereGeometry(3, 32, 32);
+  const closedMat = new THREE.MeshBasicMaterial({
+    color: 0xDC2626,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.6
+  });
+  const closedBall = new THREE.Mesh(closedBallGeo, closedMat);
+  closedBall.position.set(0, 0, 0);
+  scene.add(closedBall);
+
+  // Boundary points (small red dots on the sphere surface)
+  const boundaryPts = [];
+  for (let i = 0; i < 60; i++) {
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.acos(2 * Math.random() - 1);
+    const r = 3;
+    const x = r * Math.sin(phi) * Math.cos(theta);
+    const y = r * Math.sin(phi) * Math.sin(theta);
+    const z = r * Math.cos(phi);
+    const ptGeo = new THREE.SphereGeometry(0.08, 8, 8);
+    const ptMat = new THREE.MeshPhongMaterial({ color: 0xDC2626 });
+    const pt = new THREE.Mesh(ptGeo, ptMat);
+    pt.position.set(x, y, z);
+    scene.add(pt);
+    boundaryPts.push(pt);
+  }
+
+  // Some interior points (blue dots inside the ball)
+  for (let i = 0; i < 40; i++) {
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.acos(2 * Math.random() - 1);
+    const r = Math.random() * 2.8;
+    const x = r * Math.sin(phi) * Math.cos(theta);
+    const y = r * Math.sin(phi) * Math.sin(theta);
+    const z = r * Math.cos(phi);
+    const ptGeo = new THREE.SphereGeometry(0.08, 8, 8);
+    const ptMat = new THREE.MeshPhongMaterial({ color: 0x2563EB });
+    const pt = new THREE.Mesh(ptGeo, ptMat);
+    pt.position.set(x, y, z);
+    scene.add(pt);
+  }
+
+  // Exterior points (gray dots outside the ball)
+  for (let i = 0; i < 30; i++) {
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.acos(2 * Math.random() - 1);
+    const r = 3.3 + Math.random() * 2;
+    const x = r * Math.sin(phi) * Math.cos(theta);
+    const y = r * Math.sin(phi) * Math.sin(theta);
+    const z = r * Math.cos(phi);
+    const ptGeo = new THREE.SphereGeometry(0.08, 8, 8);
+    const ptMat = new THREE.MeshPhongMaterial({ color: 0x9CA3AF });
+    const pt = new THREE.Mesh(ptGeo, ptMat);
+    pt.position.set(x, y, z);
+    scene.add(pt);
+  }
+
+  // Coordinate axes
+  const axesHelper = new THREE.AxesHelper(5);
+  scene.add(axesHelper);
+
+  // Labels using sprites (simplified)
+  function makeLabel(text, color, pos) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 128; canvas.height = 48;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'transparent';
+    ctx.fillRect(0, 0, 128, 48);
+    ctx.font = 'bold 22px WorkSans, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = color;
+    ctx.fillText(text, 64, 30);
+    const texture = new THREE.CanvasTexture(canvas);
+    const mat = new THREE.SpriteMaterial({ map: texture, transparent: true, depthTest: false });
+    const sprite = new THREE.Sprite(mat);
+    sprite.position.set(pos[0], pos[1], pos[2]);
+    sprite.scale.set(2, 0.75, 1);
+    scene.add(sprite);
+  }
+
+  makeLabel('开球', '#2563EB', [0, 3.8, 0]);
+  makeLabel('边界', '#DC2626', [0, -3.8, 0]);
+  makeLabel('中心', '#D97706', [0, 0, 0]);
+
+  // Animation
+  let angle = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    angle += 0.005;
+    camera.position.x = 10 * Math.sin(angle * 0.4);
+    camera.position.z = 10 * Math.cos(angle * 0.4);
+    camera.lookAt(0, 0, 0);
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    const w2 = container.clientWidth;
+    renderer.setSize(w2, 480);
+    camera.aspect = w2 / 480;
+    camera.updateProjectionMatrix();
+  });
+})();
+
+// ===== Chart.js 集合论宇宙层级结构 =====
+(function() {
+  const ctx = document.getElementById('math-chart-settheory');
+  if (!ctx) return;
+  const labels = ['V₀ = ∅', 'V₁ = P(∅)', 'V₂', 'V₃', 'V₄', 'V₅', 'V_ω', 'V_{ω+1}', 'V_{ω+2}', 'V_{ω+ω}', 'V_{ω₁}', 'V'];
+  const sizes = [0, 1, 2, 4, 16, 65536, 'ℵ₀', '2^ℵ₀', '2^{2^ℵ₀}', 'ℵ_ω', 'ℵ₂', '宇宙'];
+  const cardSizes = [0, 1, 2, 4, 16, 65536, 1e6, 1e12, 1e24, 1e100, 1e200, 1e300];
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: '基数大小（对数尺度）',
+        data: cardSizes.map(v => v === 0 ? 0.1 : Math.log10(v + 1)),
+        backgroundColor: [
+          '#2563EB', '#3B82F6', '#60A5FA', '#93C5FD', '#BFDBFE',
+          '#7C3AED', '#6D28D9', '#5B21B6', '#4C1D95',
+          '#D97706', '#B45309', '#92400E'
+        ],
+        borderRadius: 4,
+        borderColor: '#1E3A5F',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: items => items[0].label,
+            label: ctx => {
+              const idx = ctx.dataIndex;
+              return '基数: ' + sizes[idx] + ' | log₁₀ ≈ ' + ctx.parsed.y.toFixed(2);
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { font: { family: 'WorkSans, sans-serif', size: 9 }, maxRotation: 45 }
+        },
+        y: {
+          title: { display: true, text: 'log₁₀(基数)', font: { family: 'WorkSans, sans-serif', size: 12 } },
+          grid: { color: 'rgba(0,0,0,0.06)' },
+          ticks: { font: { family: 'WorkSans, sans-serif', size: 9 } }
+        }
+      }
+    }
+  });
+})();
+
+// ===== Chart.js 数学方法论谱系图 =====
+(function() {
+  const ctx = document.getElementById('math-chart-methods');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: ['公理化方法', '证明论', '模型论', '范畴论方法', '构造性方法', '计算方法'],
+      datasets: [
+        {
+          label: '抽象性',
+          data: [0.95, 0.85, 0.90, 0.95, 0.70, 0.60],
+          borderColor: '#2563EB',
+          backgroundColor: 'rgba(37,99,235,0.15)',
+          borderWidth: 2,
+          pointBackgroundColor: '#2563EB'
+        },
+        {
+          label: '形式化程度',
+          data: [0.85, 0.95, 0.90, 0.80, 0.75, 0.90],
+          borderColor: '#7C3AED',
+          backgroundColor: 'rgba(124,58,237,0.15)',
+          borderWidth: 2,
+          pointBackgroundColor: '#7C3AED'
+        },
+        {
+          label: '统一性',
+          data: [0.70, 0.55, 0.55, 0.85, 0.40, 0.50],
+          borderColor: '#D97706',
+          backgroundColor: 'rgba(217,119,6,0.15)',
+          borderWidth: 2,
+          pointBackgroundColor: '#D97706'
+        }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top', labels: { font: { family: 'WorkSans, sans-serif', size: 11 } } }
+      },
+      scales: {
+        r: {
+          min: 0, max: 1,
+          ticks: { stepSize: 0.2, font: { family: 'WorkSans, sans-serif', size: 9 }, callback: v => (v * 100).toFixed(0) + '%' },
+          pointLabels: { font: { family: 'WorkSans, sans-serif', size: 11 } },
+          grid: { color: 'rgba(0,0,0,0.08)' }
+        }
+      }
+    }
+  });
+})();
+
+// ===== P vs NP 复杂性类关系动画 =====
+(function() {
+  const canvas = document.getElementById('math-chart-pnp');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const parent = canvas.parentElement;
+  let w = parent.clientWidth, h = 360;
+  canvas.width = w * 2; canvas.height = h * 2;
+  canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
+  ctx.scale(2, 2);
+
+  const cx = w / 2, cy = h / 2 + 10;
+
+  // Class definitions
+  const classes = [
+    { name: 'L', r: 20, label: 'L' },
+    { name: 'NL', r: 35, label: 'NL' },
+    { name: 'P', r: 55, label: 'P' },
+    { name: 'NP', r: 85, label: 'NP' },
+    { name: 'NPC', r: 65, label: 'NPC' },
+    { name: 'PSPACE', r: 110, label: 'PSPACE' },
+    { name: 'R', r: 135, label: 'R (可判定)' },
+  ];
+
+  const colors = {
+    'L': '#93C5FD',
+    'NL': '#60A5FA',
+    'P': '#3B82F6',
+    'NP': '#2563EB',
+    'NPC': '#7C3AED',
+    'PSPACE': '#D97706',
+    'R (可判定)': '#9CA3AF'
+  };
+
+  let frame = 0;
+  const maxFrames = 80;
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+
+    // Background
+    ctx.fillStyle = '#FBF8F3';
+    ctx.fillRect(0, 0, w, h);
+
+    // Title
+    ctx.fillStyle = '#2B2418';
+    ctx.font = 'bold 13px WorkSans, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('P vs NP 复杂性类层次 (P ≠ NP 假设)', w / 2, 22);
+
+    // Draw concentric circles (from outside in)
+    for (let i = classes.length - 1; i >= 0; i--) {
+      const cls = classes[i];
+      const r = cls.r + Math.sin(frame * 0.05 + i * 0.5) * 2;
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.fillStyle = colors[cls.label];
+      ctx.globalAlpha = 0.25;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+      ctx.strokeStyle = '#2B2418';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    }
+
+    // Draw class labels
+    classes.forEach(cls => {
+      ctx.fillStyle = '#2B2418';
+      ctx.font = 'bold 11px WorkSans, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      const labelR = cls.r;
+      const angle = frame * 0.01 + classes.indexOf(cls) * 1.2;
+      const lx = cx + labelR * 0.5 * Math.cos(angle);
+      const ly = cy + labelR * 0.5 * Math.sin(angle);
+      ctx.fillText(cls.label, lx, ly);
+    });
+
+    // Special NPC label inside NP
+    ctx.fillStyle = '#7C3AED';
+    ctx.font = 'bold 10px WorkSans, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    const npcAngle = frame * 0.02;
+    const npcR = 55;
+    ctx.fillText('NPC', cx + npcR * 0.6 * Math.cos(npcAngle), cy + npcR * 0.6 * Math.sin(npcAngle));
+
+    // Arrow & label for P vs NP question
+    ctx.strokeStyle = '#2B2418';
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([4, 3]);
+    ctx.beginPath();
+    ctx.moveTo(cx + 50, cy - 80);
+    ctx.lineTo(cx + 100, cy - 110);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = '#B45309';
+    ctx.font = 'bold 10px WorkSans, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText('P = NP?', cx + 105, cy - 112);
+
+    // Legend
+    ctx.fillStyle = '#6E6352';
+    ctx.font = '10px WorkSans, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('P ≠ NP 假设下的复杂性类包含关系（外圈包含内圈）', w / 2, h - 6);
+
+    frame++;
+    if (frame >= maxFrames) frame = 0;
+    setTimeout(draw, 120);
+  }
+  draw();
+})();
+</script>

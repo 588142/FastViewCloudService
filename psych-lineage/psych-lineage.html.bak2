@@ -1,0 +1,1318 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>心理学思想谱系 · 思想图谱系列第十八辑</title>
+
+  <style>
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('./_shared/fonts/Lora-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'WorkSans';
+      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'DMMono';
+      src: url('./_shared/fonts/DMMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+  </style>
+
+  <style>
+    :root {
+      --bg: #FAF6FB;
+      --bg2: #F0E9F5;
+      --ink: #2A2033;
+      --muted: #6A5E75;
+      --rule: #E0D6E8;
+      --accent: #6D28D9;
+      --accent2: #B45309;
+      --font-head: 'Lora', 'Songti SC', 'SimSun', serif;
+      --font: 'WorkSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'DMMono', monospace;
+      --max: 880px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2.5rem; max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .sidenav { position: sticky; top: 2rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; }
+    .sidenav .brand { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .sidenav .brand-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+    .searchbox { width: 100%; padding: 0.5rem 0.7rem; font: 400 0.85rem var(--font); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 1.2rem; }
+    .searchbox:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .toc { list-style: none; font-size: 0.85rem; }
+    .toc li { margin-bottom: 0.15rem; }
+    .toc a { display: block; padding: 0.35rem 0.6rem; color: var(--muted); text-decoration: none; border-left: 2px solid var(--rule); }
+    .toc a:hover, .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg2); }
+
+    article.page { max-width: var(--max); }
+
+    header.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+    .kicker { font: 700 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.6rem; }
+    header.masthead h1 { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; line-height: 1.25; }
+    header.masthead .subtitle { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; color: var(--muted); margin-top: 0.5rem; }
+    header.masthead .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; font-family: var(--font-mono); }
+
+    .series-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap;
+      font-family: var(--font); font-size: 0.8rem; color: var(--muted);
+      border: 1px solid var(--rule); background: var(--bg2);
+      border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem;
+    }
+    .series-bar .series-tag { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+    .series-bar a { color: var(--accent); text-decoration: none; margin-left: 1rem; }
+    .series-bar a:first-child { margin-left: 0; }
+    .series-bar a:hover { text-decoration: underline; }
+
+    .legacy { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem; margin: 1.2rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.2rem; }
+    .legacy .legacy-who { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent2); margin-bottom: 0.6rem; }
+    .legacy blockquote { font-family: var(--font-head); font-style: italic; font-size: 0.95rem; margin-bottom: 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent); }
+    .legacy blockquote cite { display: block; font-style: normal; font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .legacy .legacy-title { font-weight: 700; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .legacy ul { margin: 0 0 0 1.1rem; font-size: 0.88rem; }
+    @media (max-width: 700px) { .legacy { grid-template-columns: 1fr; } }
+
+    .history { background: var(--bg); border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; }
+    .history .history-title { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.35rem; }
+    .history p { margin-bottom: 0.55rem; }
+    .history p:last-child { margin-bottom: 0; }
+
+    section.sec { margin-bottom: 3.5rem; }
+    section.sec.hidden-by-search { display: none; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); margin-bottom: 1.2rem; }
+    h2 .chapno { color: var(--accent2); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; }
+    h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 0.6rem; }
+    p { margin-bottom: 0.9rem; font-size: 0.95rem; }
+    ul { margin: 0 0 1rem 1.3rem; font-size: 0.95rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+    p a, li a { color: var(--accent); }
+
+    .callout { border-left: 4px solid var(--accent2); background: var(--bg2); padding: 0.9rem 1.1rem; margin: 1.2rem 0; font-size: 0.92rem; border-radius: 0 8px 8px 0; }
+    .callout .callout-title { font-weight: 700; color: var(--accent2); display: block; margin-bottom: 0.3rem; font-size: 0.85rem; }
+
+    .diagram { margin: 1.6rem 0; background: var(--bg2); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; overflow-x: auto; }
+    .diagram figcaption { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .diagram pre.mermaid { text-align: center; }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 600px; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+    th { background: var(--bg2); text-align: left; padding: 0.6rem 0.9rem; border-bottom: 2px solid var(--rule); font-weight: 700; white-space: nowrap; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+
+    .formula {
+      font-family: var(--font-mono);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      margin: 0.7rem 0;
+      font-size: 0.95rem;
+      overflow-x: auto;
+    }
+    .formula .f-name { font-weight: 700; color: var(--accent); display: block; font-size: 0.78rem; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .formula .f-note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 0.3rem; }
+
+    .explain { margin: 0 0 1.6rem 0; padding: 1rem 1.2rem; background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; font-size: 0.92rem; line-height: 1.7; }
+    .explain p { margin-bottom: 0.6rem; }
+    .explain ul { margin: 0.4rem 0 0.6rem 1.2rem; }
+
+    footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--muted); font-family: var(--font-mono); }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidenav { position: static; max-height: none; }
+    }
+    @media print {
+      .sidenav { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      section.sec { break-inside: avoid-page; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="shell">
+
+  <nav class="sidenav" aria-label="目录">
+    <div class="brand">心理学思想谱系</div>
+    <div class="brand-sub">思想图谱系列 · 第十八辑</div>
+    <input class="searchbox" id="searchInput" type="search" placeholder="搜索章节内容…" aria-label="搜索章节内容">
+    <ul class="toc" id="toc">
+      <li><a href="#intro">导言 · "心灵"的发现</a></li>
+      <li><a href="#overview">第一章 · 总览：心理学的演变</a></li>
+      <li><a href="#psychoanalysis">第二章 · 无意识与精神分析：弗洛伊德与深层心灵</a></li>
+      <li><a href="#behaviorism">第三章 · 行为主义与科学心理学：从内省到实验</a></li>
+      <li><a href="#humanism">第四章 · 人本主义与存在心理学：人的潜能与意义</a></li>
+      <li><a href="#cognitive">第五章 · 认知革命与心智科学：从行为到计算</a></li>
+      <li><a href="#summary">第六章 · 总结提炼：心理学的启示</a></li>
+    </ul>
+  </nav>
+
+  <article class="page">
+    <header class="masthead">
+      <nav class="series-bar" aria-label="系列导航">
+        <span class="series-tag">思想图谱系列 · 第十八辑</span>
+        <span class="series-links">
+          <a href="../思想图谱系列/index.html">系列目录</a>
+          <a href="../philosophy-lineage/philosophy-lineage.html">← 上一辑 · 西方哲学思想谱系</a>
+          <a href="../education-lineage/education-lineage.html">下一辑 · 教育思想谱系 →</a>
+        </span>
+      </nav>
+      <div class="kicker">思想图谱系列</div>
+      <h1>心理学思想谱系</h1>
+    <div class="advanced-badge" style="display:inline-flex;align-items:center;gap:6px;margin:6px 0 2px;padding:5px 13px;border:1px solid #c9a227;border-radius:999px;background:rgba(201,162,39,0.10);color:#a8841f;font-size:0.82rem;font-weight:700;letter-spacing:0.02em;">★ 高阶内容 · 建议在通识骨架建立后精读本卷</div>
+      <p class="subtitle">从灵魂到心智——心理学如何从哲学母体中诞生，又在实验室、诊室与计算机中重塑人类对"自己"的理解：以精神分析、行为主义、人本主义、认知革命为脉络，提炼"无意识之深、行为之塑、需要之阶、认知之构、意义之寻"的心理规律</p>
+      <p class="meta">作者：詹家杨 · 2026-09-05 · 8 张思维导图 · 9 张对照表 · 30+ 人物语录 · 心理学</p>
+    </header>
+
+    <main>
+      <!-- 导言 -->
+      <section class="sec" id="intro">
+        <h2>导言 · "心灵"的发现</h2>
+        <p>心理学（psychology）来自希腊语 psyche（灵魂）与 logos（学问）——"关于灵魂的学问"。这个词本身透露了它的身世：心理学是哲学的女儿，却在十九世纪末离家出走，自立门户。它追问的问题却比哲学更古老：<strong>我是谁？我为何这样想、这样感受、这样行动？</strong>两千多年来，人类对"自己"的理解经历了数次大转向——从灵魂，到意识，到行为，到无意识，到需要，到心智计算，再到脑与人工智能。每一次转向，都是人类重新认识自己的革命。</p>
+        <div class="callout">
+          <span class="callout-title">一条主线</span>
+          心理学关注对象的大转向：<strong>为灵魂</strong>（古希腊：柏拉图、亚里士多德把心理当作灵魂的功能）→ <strong>为意识</strong>（冯特：1879年建立第一个心理学实验室，用内省研究意识）→ <strong>为行为</strong>（华生、斯金纳：心理学只研究可观察的行为）→ <strong>为无意识</strong>（弗洛伊德：意识只是冰山一角，无意识才是心灵的主体）→ <strong>为人本</strong>（马斯洛、罗杰斯：心理学要研究健康的人与人的潜能）→ <strong>为心智计算</strong>（认知革命：心灵是处理信息的计算机）→ <strong>为脑与AI</strong>（当代：神经科学、人工智能与心智科学合流）。每一次转向，都是对"人是什么"的一次重新回答。
+        </div>
+        <p>本辑沿心理学的谱系展开——<strong>无意识与精神分析</strong>（弗洛伊德、荣格、阿德勒）、<strong>行为主义与科学心理学</strong>（冯特、华生、斯金纳、班杜拉）、<strong>人本主义与存在心理学</strong>（马斯洛、罗杰斯、弗兰克尔）、<strong>认知革命与心智科学</strong>（皮亚杰、乔姆斯基、卡尼曼、西蒙），看"关于灵魂的学问"如何从哲学的一支，长成横跨实验室、诊室、学校与人工智能的现代科学。它与第十七辑（西方哲学思想谱系）一脉相承——哲学问"人是什么"，心理学用实验与临床回答"人实际上如何"；又与第十二辑（科技与人工智能思想谱系）隔空对话——当机器开始思考，人类对"心智"的定义正在被重新书写。</p>
+
+        <figure class="diagram">
+          <figcaption>图 1 · 心理学的大转向：七次转向图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  A["为灵魂<br>柏拉图 · 亚里士多德"] --> B["为意识<br>冯特 · 内省实验"]
+  B --> C["为行为<br>华生 · 斯金纳"]
+  C --> D["为无意识<br>弗洛伊德 · 深层心灵"]
+  D --> E["为人本<br>马斯洛 · 罗杰斯"]
+  E --> F["为心智计算<br>认知革命 · 信息加工"]
+  F --> G["为脑与AI<br>神经科学 · 人工智能"]
+  classDef shift fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class A,B,C,D,E,F,G shift;
+          </pre>
+        </figure>
+      </section>
+
+<figure class="diagram">
+        <figcaption>图 0a · 心理学基本概念树状图 —— 心理学的定义、五大流派、研究方法、核心概念与当代应用</figcaption>
+        <div style="overflow-x:auto;text-align:center;">
+        <svg viewBox="0 0 720 520" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;height:auto;">
+          <defs>
+            <marker id="arp" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+              <path d="M1 1 L7 4 L1 7 Z" fill="#52525B"/>
+            </marker>
+          </defs>
+          <rect x="0" y="0" width="720" height="520" fill="#F7F7F8" rx="8"/>
+          <rect x="210" y="12" width="300" height="40" rx="20" fill="#6D28D9"/>
+          <text x="360" y="38" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700" font-family="system-ui,sans-serif">心理学的基本概念</text>
+          <line x1="360" y1="52" x2="360" y2="68" stroke="#6D28D9" stroke-width="2"/>
+          <line x1="72" y1="68" x2="648" y2="68" stroke="#52525B" stroke-width="1.5"/>
+          <line x1="72" y1="68" x2="72" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arp)"/>
+          <line x1="216" y1="68" x2="216" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arp)"/>
+          <line x1="360" y1="68" x2="360" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arp)"/>
+          <line x1="504" y1="68" x2="504" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arp)"/>
+          <line x1="648" y1="68" x2="648" y2="82" stroke="#52525B" stroke-width="1.5" marker-end="url(#arp)"/>
+          <rect x="14" y="82" width="116" height="34" rx="8" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.5"/>
+          <text x="72" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="sans-serif">心理学的定义</text>
+          <rect x="164" y="82" width="104" height="34" rx="8" fill="#F5F3FF" stroke="#9333EA" stroke-width="1.5"/>
+          <text x="216" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="sans-serif">五大流派</text>
+          <rect x="308" y="82" width="104" height="34" rx="8" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.5"/>
+          <text x="360" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="sans-serif">研究方法</text>
+          <rect x="452" y="82" width="104" height="34" rx="8" fill="#F5F3FF" stroke="#9333EA" stroke-width="1.5"/>
+          <text x="504" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="sans-serif">核心概念</text>
+          <rect x="596" y="82" width="104" height="34" rx="8" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.5"/>
+          <text x="648" y="104" text-anchor="middle" fill="#1A1759" font-size="13" font-weight="700" font-family="sans-serif">当代应用</text>
+          <rect x="12" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="72" y="147" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">psyche(灵魂)+logos(学问)</text>
+          <rect x="12" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="72" y="177" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">研究行为与心理过程</text>
+          <rect x="12" y="190" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="72" y="207" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">描述·解释·预测·改变</text>
+          <rect x="12" y="220" width="120" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+          <text x="72" y="237" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">心灵 vs 行为 vs 脑</text>
+          <line x1="72" y1="116" x2="72" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="72" y1="154" x2="72" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="72" y1="184" x2="72" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="72" y1="214" x2="72" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <rect x="162" y="130" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="216" y="147" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">精神分析</text>
+          <rect x="162" y="160" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="216" y="177" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">行为主义</text>
+          <rect x="162" y="190" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="216" y="207" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">人本主义</text>
+          <rect x="162" y="220" width="108" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+          <text x="216" y="237" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">认知革命·生物心理学</text>
+          <line x1="216" y1="116" x2="216" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="216" y1="154" x2="216" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="216" y1="184" x2="216" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="216" y1="214" x2="216" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <rect x="300" y="130" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="360" y="147" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">实验法（因果推断）</text>
+          <rect x="300" y="160" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="360" y="177" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">相关法（变量关系）</text>
+          <rect x="300" y="190" width="120" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="360" y="207" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">临床观察（个案）</text>
+          <rect x="300" y="220" width="120" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+          <text x="360" y="237" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">问卷·量表·脑成像</text>
+          <line x1="360" y1="116" x2="360" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="360" y1="154" x2="360" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="360" y1="184" x2="360" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="360" y1="214" x2="360" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <rect x="450" y="130" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="504" y="147" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">意识·无意识</text>
+          <rect x="450" y="160" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="504" y="177" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">学习·强化·条件反射</text>
+          <rect x="450" y="190" width="108" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="504" y="207" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">需要·动机·人格</text>
+          <rect x="450" y="220" width="108" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+          <text x="504" y="237" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">认知·记忆·情绪·智力</text>
+          <line x1="504" y1="116" x2="504" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="504" y1="154" x2="504" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="504" y1="184" x2="504" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="504" y1="214" x2="504" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <rect x="590" y="130" width="116" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="648" y="147" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">临床/咨询心理学</text>
+          <rect x="590" y="160" width="116" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="648" y="177" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">教育与发展心理学</text>
+          <rect x="590" y="190" width="116" height="24" rx="6" fill="#EFEFF2"/>
+          <text x="648" y="207" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">组织/工业心理学</text>
+          <rect x="590" y="220" width="116" height="24" rx="6" fill="#EAFBF8" stroke="#27D2BF" stroke-width="1"/>
+          <text x="648" y="237" text-anchor="middle" fill="#52525B" font-size="11" font-family="sans-serif">积极心理学·AI心理</text>
+          <line x1="648" y1="116" x2="648" y2="130" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="648" y1="154" x2="648" y2="160" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="648" y1="184" x2="648" y2="190" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <line x1="648" y1="214" x2="648" y2="220" stroke="#52525B" stroke-width="1" marker-end="url(#arp)"/>
+          <rect x="30" y="265" width="660" height="240" rx="10" fill="#EFEFF2" opacity="0.7"/>
+          <text x="360" y="290" text-anchor="middle" fill="#171717" font-size="14" font-weight="700" font-family="sans-serif">专业名词释义</text>
+          <text x="50" y="315" fill="#171717" font-size="12" font-weight="700" font-family="sans-serif">▎心理学（Psychology）</text>
+          <text x="50" y="332" fill="#52525B" font-size="11" font-family="sans-serif">源自希腊语 psyche（灵魂）与 logos（学问），即"关于灵魂的学问"。1879年，冯特在莱比锡建立第一个</text>
+          <text x="50" y="348" fill="#52525B" font-size="11" font-family="sans-serif">心理学实验室，心理学从此从哲学中独立。现代心理学定义为"研究行为与心理过程的科学"——包括外显</text>
+          <text x="50" y="364" fill="#52525B" font-size="11" font-family="sans-serif">的可观察行为，也包括内隐的思维、情感、意识等心理过程。</text>
+          <text x="50" y="392" fill="#171717" font-size="12" font-weight="700" font-family="sans-serif">▎无意识（Unconscious）</text>
+          <text x="50" y="409" fill="#52525B" font-size="11" font-family="sans-serif">弗洛伊德发现的核心概念：意识只是心灵这座冰山的尖顶，水面之下是被压抑的欲望、记忆与冲突，它们</text>
+          <text x="50" y="425" fill="#52525B" font-size="11" font-family="sans-serif">通过梦、口误、神经症症状"泄露"自己。荣格进一步提出集体无意识——人类共同的、与生俱来的心理遗产。</text>
+          <text x="50" y="453" fill="#171717" font-size="12" font-weight="700" font-family="sans-serif">▎条件反射（Conditioning）</text>
+          <text x="50" y="470" fill="#52525B" font-size="11" font-family="sans-serif">行为主义的核心概念：经典条件反射（巴甫洛夫：中性刺激与无条件刺激配对产生条件反应）和操作性条件</text>
+          <text x="50" y="486" fill="#52525B" font-size="11" font-family="sans-serif">反射（斯金纳：行为因后果而被强化或削弱）。条件反射解释了大部分学习行为——从宠物训练到习惯养成。</text>
+          <text x="50" y="514" fill="#171717" font-size="12" font-weight="700" font-family="sans-serif">▎自我实现（Self-actualization）</text>
+          <text x="50" y="531" fill="#52525B" font-size="11" font-family="sans-serif">马斯洛需要层次理论的最高层次——人发挥全部潜能，成为"能成为的一切"。它不是"幸福"或"成功"，</text>
+          <text x="50" y="547" fill="#52525B" font-size="11" font-family="sans-serif">而是"成为自己"——每个人以自己的方式实现自己的独特潜能。</text>
+        </svg>
+        </div>
+      </figure>
+      <div class="explain">
+        <p><strong>图 0a 详解：</strong>心理学看似流派众多、理论庞杂，但它的基本框架可以沿着"五大支柱"来理解。这五大支柱——定义、流派、方法、概念、应用——构成了心理学的全景图。</p>
+        <p><strong>心理学的定义：</strong>心理学不是"读心术"，也不是"算命"。它是"关于灵魂的学问"——但用科学的方法来研究。现代心理学定义的核心是"行为与心理过程"六个字：行为是可观察的（你说什么、做什么），心理过程是不可直接观察的（你想什么、感受什么、记得什么）。心理学同时研究两者，因为只有两者都理解，才能真正理解"人"。</p>
+        <p><strong>五大流派与核心概念：</strong>精神分析发现了"无意识"——你做的很多事情，你并不知道自己为什么这么做。行为主义发现了"条件反射"——你的很多习惯，是被环境塑造的。人本主义发现了"自我实现"——每个人心中都有成长的种子。认知革命发现了"信息加工"——你的大脑是一部最精密的生物计算机。生物学派发现了"脑与神经"——你的所有心理活动，都有物质基础。五大流派不是"谁对谁错"的关系，而是"各自照亮了同一座大山的不同侧面"。</p>
+        <p><strong>心理学与生活：</strong>心理学不是"象牙塔"里的学问。临床心理学帮你理解焦虑与抑郁，教育心理学让你更懂如何学习，组织心理学帮你理解职场中的人际关系，积极心理学教你如何更幸福。理解心理学，就是理解"人"——包括你自己。</p>
+      </div>
+
+
+      <!-- 第一章 总览 -->
+      <section class="sec" id="overview">
+        <h2><span class="chapno">第一章</span>总览：心理学的演变</h2>
+        <p>先看全景：1879年，德国莱比锡大学的一间小屋里，冯特建立了世界上第一个心理学实验室——心理学从此从哲学中独立出来，成为一门实验科学。此后一个半世纪，它经历了"三大势力"的交替与融合：弗洛伊德的精神分析潜入无意识的深海，华生与斯金纳的行为主义把心理学拉回可观察的行为，马斯洛与罗杰斯的人本主义则把目光重新投向健康与潜能。1956年前后，认知革命让"心灵"以"信息加工"的面貌回归，心理学与计算机科学、神经科学合流，最终在当代与人工智能相遇。理解心理学，就是理解人类认识自己的全部历程。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>哲学心理学（古希腊–19世纪）</strong>：柏拉图把灵魂分为理性、意气、欲望三部分；亚里士多德著《论灵魂》，把心理当作有机体的功能；笛卡尔提出心物二元论，为近代心理学留下"身心关系"的难题；洛克、休谟以经验论讨论观念的联想。</p>
+          <p><strong>科学心理学诞生（1879）</strong>：冯特在莱比锡建立第一个心理学实验室，用实验内省法研究意识的基本元素；他的学生铁钦纳把这一传统带到美国，创立构造主义；詹姆斯在哈佛以《心理学原理》（1890）开创机能主义——"意识流"。</p>
+          <p><strong>精神分析运动（1900–）</strong>：弗洛伊德《梦的解析》（1900）宣告无意识的发现；荣格、阿德勒相继自立门户，精神分析从维也纳辐射到整个西方文化与艺术。</p>
+          <p><strong>行为主义革命（1913–1950）</strong>：华生发表《行为主义者眼中的心理学》（1913），宣称心理学只研究可观察的行为；巴甫洛夫的经典条件反射、斯金纳的操作性条件反射把学习理论推向极致；行为主义统治美国心理学近半个世纪。</p>
+          <p><strong>人本主义兴起（1950s–1960s）</strong>：马斯洛提出需要层次理论，罗杰斯创立来访者中心疗法——心理学从"研究病人"转向"研究健康的人"，成为继精神分析、行为主义之后的"第三势力"。</p>
+          <p><strong>认知革命（1956–）</strong>：乔姆斯基批判斯金纳的《言语行为》，米勒提出"神奇数字7"，纽厄尔与西蒙开创信息加工范式；1967年奈瑟《认知心理学》为学科命名——心灵重新成为心理学的研究对象，但这次是作为"信息处理系统"。</p>
+          <p><strong>当代合流（1990s–）</strong>：脑成像技术（fMRI）让"看心灵"成为可能；积极心理学（塞利格曼）研究幸福；进化心理学追问心理的演化根源；人工智能与认知科学合流——"心智"的定义正在被机器重新书写。</p>
+        </div>
+
+        <h3>代表人物</h3>
+        <p><strong>冯特（1832–1920）</strong>——实验心理学之父。1879年建立第一个心理学实验室。</p>
+        <p><strong>詹姆斯（1842–1910）</strong>——机能主义。意识流、《心理学原理》。</p>
+        <p><strong>弗洛伊德（1856–1939）</strong>——精神分析。无意识、梦的解析。</p>
+        <p><strong>华生（1878–1958）</strong>——行为主义创始人。"给我一打健全的婴儿"。</p>
+        <p><strong>斯金纳（1904–1990）</strong>——操作性条件反射。强化理论、斯金纳箱。</p>
+        <p><strong>马斯洛（1908–1970）</strong>——需要层次理论。自我实现。</p>
+        <p><strong>罗杰斯（1902–1987）</strong>——人本主义。来访者中心疗法。</p>
+        <p><strong>皮亚杰（1896–1980）</strong>——认知发展理论。发生认识论。</p>
+        <p><strong>乔姆斯基（1928–）</strong>——语言先天论。生成语法。</p>
+        <p><strong>卡尼曼（1934–2024）</strong>——行为经济学。系统1与系统2、前景理论。</p>
+        <p><strong>西蒙（1916–2001）</strong>——有限理性。人工智能先驱。</p>
+        <p><strong>塞利格曼（1942–）</strong>——积极心理学创始人。</p>
+
+        <figure class="diagram">
+          <figcaption>图 2 · 心理学演变结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["心理学"] --> A["科学奠基<br>冯特 · 詹姆斯 · 实验内省"]
+  ROOT --> B["精神分析<br>弗洛伊德 · 荣格 · 阿德勒"]
+  ROOT --> C["行为主义<br>华生 · 斯金纳 · 班杜拉"]
+  ROOT --> D["人本主义<br>马斯洛 · 罗杰斯 · 弗兰克尔"]
+  ROOT --> E["认知革命<br>皮亚杰 · 乔姆斯基 · 卡尼曼"]
+  ROOT --> F["当代合流<br>神经科学 · 积极心理学 · AI"]
+  classDef rootNode fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+<div class="explain">
+        <p><strong>图 2 详解：</strong>心理学的演变结构图展示了这门学科的分支谱系。从科学奠基到当代合流，每个分支都代表了一种理解"人"的不同视角。</p>
+        <ul>
+          <li><strong>科学奠基：</strong>冯特和詹姆斯用实验和内省为心理学打下了"科学"的烙印。从此，心理学不再是"坐在扶手椅里思考心灵"，而是"走进实验室观察心灵"。</li>
+          <li><strong>精神分析：</strong>弗洛伊德、荣格、阿德勒把目光投向无意识——他们发现人不是自己房子的主人，冰山之下才是更真实的世界。</li>
+          <li><strong>行为主义：</strong>华生、斯金纳、班杜拉把心理学拉回可观察的行为——"给我一打健全的婴儿，我可以把他们训练成任何类型的人"。行为主义教会我们：环境塑造人，但人也能主动塑造环境（班杜拉的交互决定论）。</li>
+          <li><strong>人本主义：</strong>马斯洛、罗杰斯、弗兰克尔说：心理学不能只研究"病人"和"白鼠"，还要研究健康的人、人的潜能、人的意义。</li>
+          <li><strong>认知革命：</strong>皮亚杰、乔姆斯基、卡尼曼、西蒙把心灵重新请回心理学——但这次不是"意识流"，而是"信息加工"。心灵是计算机，大脑是硬件，思维是软件。</li>
+          <li><strong>当代合流：</strong>神经科学、积极心理学、AI——心理学正在走向"大融合"。心灵不再只是"心理学的对象"，而是"脑科学、计算机科学、人类学的共同课题"。</li>
+        </ul>
+        <p><strong>现实案例：</strong>理解这六个分支，对日常生活中的"自我认识"有直接帮助。当你感到焦虑时，精神分析说"去看看你的童年"，行为主义说"看看你的环境触发了什么反应"，人本主义说"你有一个未被满足的需要"，认知革命说"检查一下你的自动思维"——同一种焦虑，六个视角，六种解释，六种干预。心理学不是"一个答案"，而是"一套工具箱"。</p>
+      </div>
+        <h3>对照表：心理学主要时期速览</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>时期</th><th>核心问题</th><th>代表人物</th><th>思想遗产</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>哲学心理学</strong></td><td>灵魂 · 意识 · 观念</td><td>柏拉图 · 亚里士多德 · 笛卡尔 · 洛克</td><td>身心问题 · 观念联想</td></tr>
+              <tr><td><strong>科学奠基</strong></td><td>意识的基本元素与功能</td><td>冯特 · 铁钦纳 · 詹姆斯</td><td>实验方法 · 意识流</td></tr>
+              <tr><td><strong>精神分析</strong></td><td>无意识如何支配行为</td><td>弗洛伊德 · 荣格 · 阿德勒</td><td>无意识 · 防御机制 · 人格结构</td></tr>
+              <tr><td><strong>行为主义</strong></td><td>行为如何被环境塑造</td><td>华生 · 斯金纳 · 巴甫洛夫</td><td>条件反射 · 强化 · 学习理论</td></tr>
+              <tr><td><strong>人本主义</strong></td><td>人的潜能与自我实现</td><td>马斯洛 · 罗杰斯 · 弗兰克尔</td><td>需要层次 · 无条件积极关注</td></tr>
+              <tr><td><strong>认知革命</strong></td><td>心灵如何加工信息</td><td>皮亚杰 · 乔姆斯基 · 卡尼曼 · 西蒙</td><td>信息加工 · 有限理性 · 启发式</td></tr>
+              <tr><td><strong>当代合流</strong></td><td>脑、幸福与机器心智</td><td>塞利格曼 · 神经科学 · AI</td><td>脑成像 · 积极心理学 · 认知科学</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 第二章 无意识与精神分析 -->
+      <section class="sec" id="psychoanalysis">
+        <h2><span class="chapno">第二章</span>无意识与精神分析：弗洛伊德与深层心灵</h2>
+        <p>1900年，弗洛伊德出版《梦的解析》。这本书改变了人类对自身的想象：意识只是心灵这座冰山的尖顶，水面之下是广袤的无意识——那里藏着被压抑的欲望、童年的创伤与文明的代价。精神分析不仅是一种疗法，更是一套关于人性的哲学：人不是理性的主人，而是被无意识力量驱动的旅人。荣格把无意识从个人拓展到集体，阿德勒把目光从欲望转向自卑与超越，弗洛姆则把精神分析引向社会批判——这一脉思想深刻影响了文学、艺术与整个二十世纪的文化。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>维也纳的诊室（1880s–1900）</strong>：弗洛伊德与布洛伊尔合作治疗癔症，发现"谈话疗法"——让病人说出被遗忘的记忆可以缓解症状；《梦的解析》（1900）提出梦是"愿望的达成"，无意识理论正式登场。</p>
+          <p><strong>精神分析运动的建立（1902–1913）</strong>：弗洛伊德在维也纳组织"星期三心理学会"，荣格、阿德勒先后加入又决裂——阿德勒（1911）创立个体心理学，荣格（1913）创立分析心理学，精神分析分裂为三支。</p>
+          <p><strong>荣格与无意识的遭遇（1913–1930）</strong>：与弗洛伊德决裂后，荣格陷入深刻的精神危机，开始以"主动想象"记录幻象与梦境——这些原始记录构成《黑书》（1913–1932），后经艺术加工成为彩绘手稿《红书》（1914–1930）；《红书》2009年出版、《黑书》2020年出版，被视为理解荣格全部思想的钥匙。</p>
+          <p><strong>第一次世界大战的冲击（1914–1918）</strong>：战争创伤（炮弹休克）让精神分析获得广泛承认——无意识不再只是维也纳沙龙的话题，而是理解人类暴力的钥匙。</p>
+          <p><strong>精神分析的流亡与扩散（1930s–）</strong>：纳粹崛起，弗洛伊德流亡伦敦（1938）；精神分析随移民传入美国，与新弗洛伊德主义（弗洛姆、霍妮、沙利文）融合，并深刻影响法兰克福学派的社会批判。</p>
+          <p><strong>拉康与结构精神分析（1950s–）</strong>：法国精神分析学家拉康以结构语言学重读弗洛伊德——"无意识具有语言的结构"，把精神分析推向哲学与文学理论的前沿。</p>
+        </div>
+
+        <h3>思想详解</h3>
+        <p><strong>弗洛伊德的无意识与人格结构</strong>：弗洛伊德把心灵比作冰山——意识是露出水面的尖顶，前意识是水面下可见的部分，无意识则是深不见底的主体。人格由三部分构成：<strong>本我</strong>（id，原始欲望，遵循快乐原则）、<strong>自我</strong>（ego，现实调节，遵循现实原则）、<strong>超我</strong>（superego，道德内化，遵循至善原则）。本我与超我冲突，自我在两者之间斡旋——焦虑由此产生，防御机制（压抑、投射、升华）由此运作。弗洛伊德还提出性心理发展阶段论（口唇期、肛门期、性器期、潜伏期、生殖期），认为童年经验塑造一生的人格。</p>
+        <div class="formula">
+          <span class="f-name">弗洛伊德人格结构</span>
+          本我（快乐原则）↔ 自我（现实原则）↔ 超我（至善原则）
+          <span class="f-note">三者的冲突与调和，构成人格的动力；防御机制是自我应对焦虑的无意识策略</span>
+        </div>
+        <p><strong>梦的解析与自由联想</strong>：弗洛伊德称梦为"通往无意识的皇家大道"。梦有<strong>显意</strong>（梦的表面内容）与<strong>隐意</strong>（梦的深层愿望），释梦就是透过"梦的工作"（凝缩、移置、象征、润饰）回溯隐意。临床中，弗洛伊德用自由联想让病人不加审查地说出一切，在阻抗与移情中触及被压抑的记忆——谈话本身成为疗愈。</p>
+        <p><strong>荣格的研究成果与集体无意识</strong>：荣格早年是苏黎世布尔格霍尔茨利精神病院的医生，师从布洛伊勒，以<strong>词语联想实验</strong>（1904–1907）开创了实验心理学对无意识的测量——通过记录被试对刺激词的反应时间与错误，他发现某些词会触发情绪性的"绊倒"，由此提出<strong>情结</strong>（complex）理论：情结是围绕某一主题（如权力、自卑、恋母）聚集的情感与记忆簇，是个人无意识的基本单位。1913年与弗洛伊德决裂后，荣格创立<strong>分析心理学</strong>，提出<strong>集体无意识</strong>——比个人无意识更深，是人类祖先在漫长演化中沉淀下来的心理遗产，其内容是<strong>原型</strong>（archetype）：人格面具（社会角色）、阿尼玛与阿尼姆斯（内在异性形象）、阴影（被压抑的黑暗面）、自性（整合的中心）。荣格还提出<strong>个体化</strong>（individuation）——人一生的使命是整合意识与无意识，成为完整的自己；1921年《心理类型》区分<strong>内倾</strong>与<strong>外倾</strong>两种态度、思维/情感/感觉/直觉四种功能，成为现代人格测验（MBTI）的思想源头；晚年他又提出<strong>共时性</strong>（synchronicity）——有意义的巧合，试图为心灵与世界的深层关联寻找科学解释。</p>
+        <p><strong>阿德勒的自卑与超越</strong>：阿德勒从个体心理学出发，认为人不是被欲望驱动，而是被<strong>自卑感</strong>驱动——每个人生来都带着身体或社会性的不足，终其一生的努力是"追求优越"以克服自卑。健康者把自卑转化为创造的动力（补偿），病态者则陷入自卑情结或过度补偿。阿德勒强调社会兴趣（Gemeinschaftsgefühl）与生活风格——人不是环境的产物，而是自我解释、自我创造的主体。他的思想是积极心理学与认知行为疗法的先声。</p>
+        <p><strong>弗洛姆与社会无意识</strong>：弗洛姆把精神分析与社会批判结合——社会通过"社会无意识"（被社会压抑的共同经验）塑造成员，使人"逃避自由"。现代人摆脱了外在权威，却陷入孤独与无力，于是逃避自由（权威主义、破坏性、机械趋同）。弗洛姆主张"爱的艺术"——成熟的爱是"在保持自我尊严与个性前提下的结合"，这是对精神分析最深刻的人道主义改造。</p>
+
+        <figure class="diagram">
+          <figcaption>图 3 · 精神分析结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["精神分析"] --> A["弗洛伊德<br>无意识 · 本我自我超我 · 梦"]
+  ROOT --> B["荣格<br>集体无意识 · 原型 · 个体化"]
+  ROOT --> C["阿德勒<br>自卑与超越 · 社会兴趣"]
+  ROOT --> D["弗洛姆<br>逃避自由 · 爱的艺术"]
+  ROOT --> E["拉康<br>无意识具有语言的结构"]
+  classDef rootNode fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+<div class="explain">
+        <p><strong>图 3 详解：</strong>精神分析不是"一个"理论，而是"四个"相互关联又彼此竞争的理论体系。弗洛伊德、荣格、阿德勒、弗洛姆——他们各自发现了无意识的一个侧面，各自提出了理解心灵的独特路径。</p>
+        <ul>
+          <li><strong>弗洛伊德：</strong>无意识是被压抑的欲望——尤其是童年性欲。本我、自我、超我三者的冲突，构成了人格的动力。防御机制是自我在焦虑中发展出的"心理免疫系统"——压抑、投射、升华、合理化——你每天使用的"心理保护伞"。</li>
+          <li><strong>荣格：</strong>无意识不仅是"个人的"，更是"集体的"。集体无意识是人类祖先在漫长演化中沉淀下来的心理遗产——原型（英雄、母亲、阴影、智慧老人）以神话、梦境、艺术的形式出现在所有文化中。荣格的"个体化"——成为完整的自己——是当代"自我成长"运动的哲学源头。</li>
+          <li><strong>阿德勒：</strong>人的动力不是性，而是自卑感。每个人生来都带着身体或社会性的不足，终其一生的努力是"追求优越"以克服自卑。阿德勒是积极心理学和认知行为疗法的"先声"——他告诉我们：重要的不是你拥有什么，而是你如何利用你所拥有的。</li>
+          <li><strong>弗洛姆：</strong>精神分析不能只分析个人，还要分析社会。"逃避自由"——现代人摆脱了外在权威（国王、教会），却陷入孤独与无力，于是用"趋同"来逃避自由。弗洛姆把精神分析从"诊室"引向"社会批判"。</li>
+        </ul>
+        <p><strong>现实案例：</strong>在职场中，阿德勒的理论尤其有用。当你感到"我不如别人"时，这是"自卑感"——健康的应对是"补偿"（加倍努力提升自己），不健康的应对是"过度补偿"（贬低他人、炫耀自己）。弗洛伊德会问你"童年经历"，荣格会问你"你的人生原型是什么"，阿德勒会问你"你想成为什么样的人"，弗洛姆会问你"你的工作环境是否压抑了你的真实自我"——四个问题，四种深度，四种帮助。</p>
+      </div>
+        <figure class="diagram">
+          <figcaption>图 3a · 弗洛伊德人格结构图 —— 本我、自我、超我的三部分模型与动力关系</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  subgraph ICEBERG["意识冰山模型"]
+    direction TB
+    CONSCIOUS["<b>意识</b>\n理性思维 · 知觉"]
+    PRECONSCIOUS["<b>前意识</b>\n可被回忆的记忆"]
+    UNCONSCIOUS["<b>无意识</b>\n被压抑的欲望 · 恐惧 · 冲突"]
+  end
+  subgraph STRUCTURE["人格结构"]
+    ID["<b>本我 Id</b>\n快乐原则 · 原始冲动\n完全无意识"]
+    EGO["<b>自我 Ego</b>\n现实原则 · 调节冲突\n部分意识 + 部分无意识"]
+    SUPEREGO["<b>超我 Superego</b>\n道德原则 · 理想与禁忌\n部分意识 + 部分无意识"]
+  end
+  ID -->|"冲动要求即刻满足"| EGO
+  SUPEREGO -->|"道德评判与罪恶感"| EGO
+  EGO -->|"焦虑与防御机制"| CONSCIOUS
+  EGO -.->|"调节冲突"| PRECONSCIOUS
+  ID -.-> UNCONSCIOUS
+  classDef conscious fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  classDef pre fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef un fill:#FEE2E2,stroke:#DC2626,color:#1E1B4B;
+  classDef id fill:#FECACA,stroke:#DC2626,color:#7F1D1D;
+  classDef ego fill:#DBEAFE,stroke:#2563EB,color:#1E3A5F;
+  classDef super fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  class CONSCIOUS,PRECONSCIOUS,UNCONSCIOUS conscious,pre,un;
+  class ID id;
+  class EGO ego;
+  class SUPEREGO super;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 3a 详解：弗洛伊德的人格结构模型</strong>是心理学史上最具影响力的"地形学"之一。弗洛伊德把人的心灵比作冰山：水面之上的意识是极小的一部分，水面之下的无意识才是主体。</p>
+          <p><strong>本我·自我·超我：</strong>本我是原始冲动——饿了就要吃，怒了就要打，完全遵循快乐原则，不管后果；超我是内化的道德——父母与社会告诉你的"应该"与"不应该"，是你的内在法官；自我是现实世界的协调者——它在本我的冲动与超我的禁令之间寻找现实可行的出路。弗洛伊德说：一个健康的人格，是自我能够有效调节本我和超我的冲突——而不是完全压抑本我，也不是完全放纵本我。</p>
+          <p><strong>焦虑与防御机制：</strong>当本我冲动与超我禁令之间的冲突太过剧烈，自我会感到焦虑。为了缓解焦虑，自我发展出防御机制——压抑（把痛苦记忆推回无意识）、投射（把自己不愿承认的冲动归因于他人）、合理化（给自己的行为找"合理"的解释）、升华（把不被接受的冲动转化为社会可接受的创造性行为——如把攻击性转化为竞技体育）。防御机制不是"病"，而是"心理免疫系统"——但当它过度使用，就会变成症状。</p>
+          <p><strong>现实案例：</strong>假设你被老板批评了。本我的反应："我要骂回去！"超我的反应："不能顶撞权威，要尊重。"自我做一个现实判断："骂回去会丢工作，不说话又憋屈——那我用适当的语气表达不同意见。"如果自我协调失败，你可能会用"投射"："老板就是看我不顺眼"（其实是你自己愤怒的投射），或者用"合理化"："这份工作本来就没前途，无所谓"（其实是给自己的懦弱找理由）。理解这三种力量，就是理解你每天在做的"内心谈判"。</p>
+        </div>
+        <h3>荣格专题：《红书》与《黑书》</h3>
+        <p><strong>《红书》（Liber Novus，拉丁语"新书"）</strong>是荣格1914至1930年间亲手用德语书写、以书法与彩绘装帧的手稿，2009年才首次出版。它的诞生源于一场深刻的精神危机：1913年与弗洛伊德决裂后，荣格陷入长达数年的"与无意识的遭遇"——他频繁经历幻象、梦境与内在的剧烈动荡，甚至担心自己精神失常。为了自救，他发展出<strong>主动想象</strong>（active imagination）技术：不抗拒幻象，而是有意识地进入其中，与内在意象对话。他把这些经历逐日记入笔记本（即《黑书》），再从中提炼、润色、扩写为《红书》。书中记录了他与一系列内在人物的对话——智慧老人<strong>腓利门</strong>（Philemon）、少女<strong>莎乐美</strong>（Salome）、先知<strong>以利亚</strong>（Elijah）、蛇、骷髅与十字架——这是一场灵魂的旅程：从迷失、下坠，到与阴影相遇、与内在女性（阿尼玛）和解，最终走向自性的整合。荣格说，《红书》是他此后全部著作的"源头"——集体无意识、原型、阴影、阿尼玛、个体化这些概念，几乎都在这场遭遇中初具雏形。它既是一部心理档案，也是一部彩绘手抄本，被誉为"心理学界的《死海古卷》"。</p>
+        <p><strong>《黑书》（The Black Books）</strong>是荣格1913至1932年间使用的七册黑色笔记本，2020年才整理出版。如果说《红书》是经过艺术加工与系统整理的"成品"，那么《黑书》就是最原始的"底稿"——荣格在幻象发生的当下，以近乎日记的方式如实记录所见、所闻、所感，包括那些尚未被理性整理、尚未被文学化的碎片：梦、幻象、内在对话、情绪波动，甚至他对自身疯狂的恐惧。两书的关系可以这样理解：《黑书》是"与无意识遭遇"的第一现场，《红书》是这场遭遇的"再创作"——荣格在《红书》中把《黑书》的原始素材重写为更具象征性与艺术性的叙事，并配以大量彩绘。因此，读《黑书》能看见荣格心灵最真实的搏斗，读《红书》则能看见他如何把这场搏斗升华为一套关于心灵的理论与艺术。</p>
+        <div class="formula">
+          <span class="f-name">荣格的主动想象与个体化</span>
+          幻象（《黑书》如实记录）→ 主动想象（与内在意象对话）→ 象征升华（《红书》艺术创作）→ 自性整合（个体化）
+          <span class="f-note">从与无意识遭遇，到把遭遇转化为理论——荣格全部思想的生成路径</span>
+        </div>
+        <p><strong>《红书》《黑书》与荣格研究对心理学发展的影响</strong>：第一，<strong>确立了分析心理学</strong>——荣格学派成为与弗洛伊德精神分析并立的心理治疗传统，其梦的工作、主动想象、阴影整合至今是荣格派分析的核心技术。第二，<strong>开创了人格类型学</strong>——《心理类型》衍生出 MBTI、16PF 等广泛应用的人格测验，深刻影响了组织心理学与职业咨询。第三，<strong>孕育了原型心理学与超个人心理学</strong>——希尔曼（James Hillman）的原型心理学、把灵性与意识研究纳入心理学的超个人心理学，都直接承袭荣格。第四，<strong>推动了艺术治疗与表达性治疗</strong>——《红书》的彩绘实践启发了艺术治疗、沙盘游戏（卡尔夫）等表达性疗法。第五，<strong>打通了心理学与人文、宗教的边界</strong>——荣格对神话、炼金术、东西方宗教的研究，使心理学重新与文学、神话学、宗教学对话（坎贝尔的"英雄之旅"即受其影响），也为心理学重新打开了"心灵"的深度与神圣维度。第六，<strong>预见了当代意识研究</strong>——他对共时性、集体无意识、心灵与象征的思考，与当代神经科学对默认模式网络、冥想与意识的研究遥相呼应。可以说，荣格让心理学在"科学的心理学"之外，始终保有一条通往"灵魂的心理学"的路径。</p>
+
+        <figure class="diagram">
+          <figcaption>图 4 · 荣格思想与《红书》《黑书》结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["荣格思想与《红书》《黑书》"] --> A["研究成果<br>词语联想 · 情结 · 集体无意识 · 原型"]
+  ROOT --> B["《黑书》<br>1913–1932 · 幻象原始记录 · 底稿"]
+  ROOT --> C["《红书》<br>1914–1930 · 主动想象 · 彩绘手稿"]
+  ROOT --> D["核心概念<br>阴影 · 阿尼玛 · 自性 · 个体化"]
+  ROOT --> E["对心理学的影响<br>分析心理学 · 类型学 · 原型心理学 · 艺术治疗"]
+  classDef rootNode fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+<div class="explain">
+        <p><strong>图 4 详解：</strong>荣格的思想体系是心理学中最复杂、最神秘、也最迷人的一支。他的核心概念——集体无意识、原型、阴影、阿尼玛、个体化、共时性——不仅影响了心理学，还深刻影响了文学、艺术、神话学和宗教研究。</p>
+        <ul>
+          <li><strong>词语联想与情结：</strong>荣格的学术起点是科学实验。1904年，他用"词语联想实验"测量被试对刺激词的反应时间——发现某些词（如"母亲"、"死亡"）会触发情绪性"绊倒"。由此提出"情结"理论：情结是围绕某一主题聚集的情感与记忆簇，是个人无意识的基本单位。今天，我们说的"自卑情结"、"俄狄浦斯情结"、"权力情结"，都源于荣格的发现。</li>
+          <li><strong>集体无意识与原型：</strong>荣格发现，不同文化的神话、梦境和象征中有惊人的相似——"英雄之旅"在任何文化中都存在。他由此提出：在个人无意识之下，还有一层更深的集体无意识——人类祖先在漫长演化中沉淀下来的心理遗产。其内容是原型：人格面具（社会角色）、阴影（被压抑的黑暗面）、阿尼玛/阿尼姆斯（内在异性）、自性（整合中心）。</li>
+          <li><strong>个体化：</strong>荣格认为，人一生的使命是"成为完整的自己"——不是"成为完美的人"，而是"整合自己的所有面向"：意识与无意识，光明与阴影，男性与女性（内在）。个体化不是"自我提升"，而是"自我整合"。</li>
+          <li><strong>《红书》与《黑书》：</strong>2009年出版的《红书》和2020年出版的《黑书》，是荣格与无意识遭遇的"原始记录"。理解这两本书，就是理解荣格全部思想的"源头"。</li>
+        </ul>
+        <p><strong>现实案例：</strong>荣格的"阴影"概念在自我成长中极为实用。你的"阴影"是你压抑的、不愿承认的自我部分——愤怒、嫉妒、懒惰、控制欲。但荣格说：你越压抑阴影，它越控制你。承认"我有嫉妒的一面"，不是承认"我是一个嫉妒的人"，而是"我有嫉妒这个面向，我选择如何与之相处"——这就是"阴影整合"。</p>
+      </div>
+        <figure class="diagram">
+          <figcaption>图 3b · 防御机制分类图 —— 弗洛伊德与安娜·弗洛伊德发现的十种主要防御机制</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["防御机制\nDefense Mechanisms"] --> A["成熟型"]
+  ROOT --> B["神经症型"]
+  ROOT --> C["不成熟型"]
+  A --> A1["升华 把冲动转化为创造性行为\n如：攻击性 竞技体育"]
+  A --> A2["幽默 以玩笑释放紧张\n如：用自嘲化解尴尬"]
+  A --> A3["利他 将冲动转化为服务他人\n如：以助人满足被认可的需要"]
+  B --> B1["压抑 把痛苦记忆推入无意识\n如：遗忘童年创伤"]
+  B --> B2["合理化 给行为找合理借口\n如：考不好因为'题目太难'"]
+  B --> B3["反向形成 以相反的情感掩盖\n如：过度关心掩盖敌意"]
+  B --> B4["理智化 用理性分析隔离情感\n如：冷静分析自己的失恋"]
+  C --> C1["投射 把自己的冲动归因于他人\n如：'不是我嫉妒，是他嫉妒我'"]
+  C --> C2["否定 拒绝接受现实\n如：吸烟者否定'吸烟有害健康'"]
+  C --> C3["退行 回到更早的发展阶段\n如：成年人压力大时摔东西"]
+  classDef mature fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef neuro fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef imm fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef root fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class ROOT root;
+  class A1,A2,A3 mature;
+  class B1,B2,B3,B4 neuro;
+  class C1,C2,C3 imm;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 3b 详解：防御机制的分类与识别</strong>——安娜·弗洛伊德在《自我与防御机制》（1936）中系统整理了其父弗洛伊德发现的各种防御机制，并按成熟度分为三个层次。</p>
+          <p><strong>成熟型：</strong>升华是最高级的防御——把不被接受的冲动转化为社会可接受的创造性行为，比如把攻击性转化为竞技体育、把性欲转化为艺术创作。幽默是一种优雅的应对——用自嘲化解尴尬，用玩笑释放紧张，不伤害他人。利他主义则是通过帮助他人来满足自己未被满足的需要——比如一个渴望被认可的人通过做志愿者来获得价值感。</p>
+          <p><strong>神经症型：</strong>压抑是最基础也最常用的防御——把痛苦的记忆、不被接受的欲望"推入"无意识，假装它们不存在。合理化是"找借口"——考不好是因为"题目太难"而不是"我没复习"。反向形成则是"此地无银三百两"——一个人越是激烈地反对某种行为，可能恰恰说明他内心有那种冲动。理智化是用理性分析来隔离情感——比如在失恋后冷静地分析"这段关系的问题出在哪里"，而不去感受悲伤。</p>
+          <p><strong>不成熟型：</strong>投射把自己不想要的冲动归因于他人——"不是我嫉妒他，是他嫉妒我"。否定是最原始的防御——面对无法接受的现实，干脆说"这不是真的"。退行是回到更安全的早期阶段——成年人在压力下哭闹、摔东西，就是退行到儿童期。</p>
+          <p><strong>现实案例：</strong>在职场中，一个人总是"理性地指出同事的问题"（理智化），可能是在掩盖自己渴望被认可却得不到满足的焦虑。一个人"特别讨厌办公室八卦"（反向形成），可能恰恰是对八卦内容充满好奇。理解防御机制不是为了"诊断"别人，而是为了"觉察"自己——当你发现自己正在"合理化"一个糟糕的决定，或"投射"自己的不满给他人，你就有了选择：继续用防御，还是用更健康的方式面对。</p>
+        </div>
+        <h3>对照表：《红书》与《黑书》对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>《黑书》</th><th>《红书》</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>时间</strong></td><td>1913–1932</td><td>1914–1930</td></tr>
+              <tr><td><strong>性质</strong></td><td>原始笔记 · 日记</td><td>艺术化的彩绘手稿</td></tr>
+              <tr><td><strong>记录方式</strong></td><td>幻象当下如实记录</td><td>从《黑书》素材提炼重写</td></tr>
+              <tr><td><strong>语言风格</strong></td><td>零散 · 直白 · 未经修饰</td><td>象征性 · 叙事性 · 文学化</td></tr>
+              <tr><td><strong>视觉呈现</strong></td><td>纯文字笔记本</td><td>书法 + 大量彩绘</td></tr>
+              <tr><td><strong>出版时间</strong></td><td>2020年</td><td>2009年</td></tr>
+              <tr><td><strong>历史意义</strong></td><td>与无意识遭遇的第一现场</td><td>荣格全部理论的源头</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>对照表：精神分析学派对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>弗洛伊德</th><th>荣格</th><th>阿德勒</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>无意识的性质</strong></td><td>个人被压抑的欲望</td><td>集体无意识 · 原型</td><td>（弱化无意识，强调意识选择）</td></tr>
+              <tr><td><strong>人的动力</strong></td><td>性本能 · 快乐原则</td><td>自性化 · 整合对立</td><td>自卑感 · 追求优越</td></tr>
+              <tr><td><strong>人格结构</strong></td><td>本我 · 自我 · 超我</td><td>意识 · 个人无意识 · 集体无意识</td><td>生活风格 · 社会兴趣</td></tr>
+              <tr><td><strong>治疗目标</strong></td><td>使无意识意识化</td><td>个体化 · 自性整合</td><td>克服自卑 · 增进社会兴趣</td></tr>
+              <tr><td><strong>对后世</strong></td><td>心理治疗 · 文化批判</td><td>人格类型学 · 神话学</td><td>积极心理学 · 认知行为疗法</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>对照表：精神分析 vs 行为主义 vs 人本主义</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>精神分析</th><th>行为主义</th><th>人本主义</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>人的形象</strong></td><td>被无意识驱动的旅人</td><td>被环境塑造的机器</td><td>追求成长的种子</td></tr>
+              <tr><td><strong>研究焦点</strong></td><td>无意识 · 童年 · 冲突</td><td>可观察的行为 · 强化</td><td>需要 · 潜能 · 自我实现</td></tr>
+              <tr><td><strong>方法</strong></td><td>临床访谈 · 梦 · 自由联想</td><td>实验 · 条件反射 · 观察</td><td>现象学 · 个案 · 咨询</td></tr>
+              <tr><td><strong>人性观</strong></td><td>悲观（本能与文明冲突）</td><td>中立（环境决定）</td><td>乐观（向善 · 自我实现）</td></tr>
+              <tr><td><strong>代表</strong></td><td>弗洛伊德 · 荣格 · 阿德勒</td><td>华生 · 斯金纳 · 班杜拉</td><td>马斯洛 · 罗杰斯 · 弗兰克尔</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">弗洛伊德 · 1856–1939</div>
+            <blockquote>梦是通往无意识的皇家大道。<cite>——《梦的解析》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">弗洛伊德 · 1856–1939</div>
+            <blockquote>人不是自己房子的主人——意识只是冰山一角，无意识才是心灵的主体。<cite>——《精神分析引论》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">荣格 · 1875–1961</div>
+            <blockquote>向外看的人在做梦，向内看的人正在醒来。<cite>——《荣格文集》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">荣格 · 1875–1961</div>
+            <blockquote>你的潜意识若不进入意识，就会成为你的命运。<cite>——荣格名言</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">荣格 · 1875–1961</div>
+            <blockquote>我一生中最重要的岁月，是我追随内在意象的岁月——我此后的一切工作，都源于此。<cite>——《回忆·梦·思考》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">荣格 · 1875–1961</div>
+            <blockquote>对肤浅的观察者而言，这看起来像是疯狂——但唯有与无意识相遇，灵魂才能走向整合。<cite>——论《红书》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">阿德勒 · 1870–1937</div>
+            <blockquote>重要的不是我们拥有什么，而是我们如何利用我们所拥有的。<cite>——《自卑与超越》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">弗洛姆 · 1900–1980</div>
+            <blockquote>现代人生活在幻觉中：他自以为知道自己想要什么，而实际上他想要的，不过是别人期望他要的东西。<cite>——《逃避自由》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">弗洛姆 · 1900–1980</div>
+            <blockquote>爱不是一种感情，而是一种能力、一门艺术——成熟的爱是在保持自我尊严与个性前提下的结合。<cite>——《爱的艺术》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">精神分析的遗产</div>
+            <ul>
+              <li>无意识：心灵的主体性发现</li>
+              <li>防御机制：理解自我欺骗</li>
+              <li>童年经验：人格的塑造力</li>
+              <li>谈话疗法：心理治疗的源头</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第三章 行为主义与科学心理学 -->
+      <section class="sec" id="behaviorism">
+        <h2><span class="chapno">第三章</span>行为主义与科学心理学：从内省到实验</h2>
+        <p>1913年，华生发表《行为主义者眼中的心理学》，向整个心理学界宣战：意识看不见、摸不着，不能成为科学的研究对象；心理学要成为科学，就必须只研究可观察、可测量、可重复的行为。这一宣言把心理学从扶手椅上的思辨拉进实验室，巴甫洛夫的狗、斯金纳箱中的鸽子、小阿尔伯特的恐惧实验，成为心理学史上最著名的画面。行为主义统治美国心理学近半个世纪，直到认知革命才让"心灵"回归——但它的实验方法与学习理论，至今仍是心理学最坚实的科学底座。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>巴甫洛夫的狗（1890s–1900s）</strong>：俄国生理学家巴甫洛夫在研究消化时偶然发现——狗听到铃声也会分泌唾液。经典条件反射由此确立：中性刺激（铃声）与无条件刺激（食物）反复配对后，单独呈现也能引发反应。1904年巴甫洛夫获诺贝尔奖。</p>
+          <p><strong>华生的行为主义宣言（1913）</strong>：华生在哥伦比亚大学发表宣言，主张心理学放弃意识与内省，只研究行为；1920年"小阿尔伯特实验"证明恐惧可以习得——行为主义开始主导美国心理学。</p>
+          <p><strong>新行为主义（1930s–1950s）</strong>：托尔曼提出"认知地图"（白鼠走迷宫），赫尔建立假设—演绎体系；斯金纳以《有机体的行为》（1938）提出操作性条件反射，用"斯金纳箱"研究强化与惩罚——行为主义达到巅峰。</p>
+          <p><strong>斯金纳的乌托邦（1948–1971）</strong>：斯金纳的小说《沃尔登第二》描绘了一个用强化原理设计的社会；《超越自由与尊严》（1971）主张用行为技术改善人类——"行为技术"的构想引发巨大争议。</p>
+          <p><strong>班杜拉与社会学习（1960s–）</strong>：班杜拉以"波波娃娃实验"证明观察学习——儿童通过观看成人攻击行为而习得攻击；他提出自我效能感，成为行为主义向认知过渡的桥梁。</p>
+        </div>
+
+        <h3>思想详解</h3>
+        <p><strong>经典条件反射</strong>：巴甫洛夫的狗——食物（无条件刺激）引发唾液分泌（无条件反应）；铃声（中性刺激）与食物反复配对后，铃声单独出现也能引发唾液（条件反应）。经典条件反射解释了情绪与恐惧如何习得：小阿尔伯特原本不怕白鼠，但白鼠与巨响配对后，他对白鼠也产生恐惧——华生由此宣称"给我一打健全的婴儿，我可以把他们训练成任何类型的人"。</p>
+        <div class="formula">
+          <span class="f-name">经典条件反射</span>
+          中性刺激 + 无条件刺激 → 条件刺激引发条件反应
+          <span class="f-note">情绪、恐惧、偏好如何习得——学习理论的第一个范式</span>
+        </div>
+        <p><strong>操作性条件反射与强化</strong>：斯金纳的斯金纳箱——白鼠按压杠杆，偶然获得食物（强化），按压行为便增加。斯金纳区分了<strong>应答性行为</strong>（被刺激引发，经典条件反射）与<strong>操作性行为</strong>（自发产生，被后果塑造）。<strong>强化</strong>（正强化：给予奖励；负强化：移除厌恶刺激）增加行为，<strong>惩罚</strong>减少行为。他还发现<strong>强化程序</strong>（连续/间歇、固定/可变）对行为的影响——赌博机正是可变比率强化的典型。斯金纳认为"自由意志"是幻觉，行为完全由强化史决定——这一激进立场至今仍是心理学与哲学争论的焦点。</p>
+        <p><strong>观察学习与自我效能</strong>：班杜拉证明，学习不必亲历强化——儿童看成人攻击波波娃娃，自己也会模仿。观察学习包含注意、保持、再现、动机四个过程。班杜拉还提出<strong>自我效能感</strong>（self-efficacy）——"我相信自己能做到"的信念，比实际能力更能预测行为与成就。自我效能概念把行为主义引向认知，成为当代教育、管理与健康心理学的核心概念。</p>
+        <p><strong>行为主义的方法论遗产</strong>：无论行为主义的理论是否过时，它留给心理学的遗产是永久的——严格的实验控制、可操作的定义、可重复的测量。行为治疗（系统脱敏、暴露疗法、行为塑造）至今是临床心理学最有效的工具之一。行为主义教会心理学一件事：关于心灵的断言，必须经得起实验的检验。</p>
+
+        <figure class="diagram">
+          <figcaption>图 5 · 行为主义结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["行为主义"] --> A["巴甫洛夫<br>经典条件反射"]
+  ROOT --> B["华生<br>行为主义宣言 · 恐惧习得"]
+  ROOT --> C["斯金纳<br>操作性条件反射 · 强化"]
+  ROOT --> D["托尔曼<br>认知地图 · 潜伏学习"]
+  ROOT --> E["班杜拉<br>观察学习 · 自我效能"]
+  classDef rootNode fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <figure class="diagram">
+          <figcaption>图 5a · 经典条件反射与操作性条件反射对比图 —— 两种学习机制的完整对比</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  subgraph CLASSICAL["经典条件反射 · 巴甫洛夫"]
+    direction TB
+    US["无条件刺激 US\n食物"] --> UR["无条件反应 UR\n唾液分泌"]
+    NS["中性刺激 NS\n铃声"] -.->|"反复配对"| CS["条件刺激 CS\n铃声"]
+    CS --> CR["条件反应 CR\n听到铃声就分泌唾液"]
+  end
+  subgraph OPERANT["操作性条件反射 · 斯金纳"]
+    direction TB
+    B["自发行为\n按压杠杆"] --> R["结果\n获得食物"]
+    R -->|"正强化"| B
+    B2["自发行为\n按压杠杆"] --> R2["结果\n电击"]
+    R2 -->|"惩罚"| B2
+  end
+  classDef pav fill:#E0E7FF,stroke:#4338CA;
+  classDef skin fill:#FEF3C7,stroke:#D97706;
+  class US,NS,CS,UR,CR pav;
+  class B,R,B2,R2 skin;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 5a 详解：两种条件反射的对比</strong>——行为主义的两大学习机制看似相似，实则有着根本性的区别。</p>
+          <p><strong>经典条件反射（巴甫洛夫）</strong>是关于"被动的反应"——一个中性刺激与一个能自动引发反应的刺激反复配对，最终中性刺激也能引发同样的反应。你不需要主动做什么，只要你"经历"了配对，你的身体就会自动学会。这就是为什么一个人听到牙医钻头的声音就会紧张——钻头声（中性刺激）与疼痛（无条件刺激）配对过，现在钻头声本身就能引发紧张反应。</p>
+          <p><strong>操作性条件反射（斯金纳）</strong>是关于"主动的行为"——你做出一个行为，如果带来了好结果，你就更可能再做；如果带来了坏结果，你就更少再做。你不是被动反应的，而是主动探索的——你按杠杆，得食物，你学会了按杠杆。你发了一条朋友圈，很多人点赞，你更愿意发——这就是正强化在起作用。</p>
+          <p><strong>现实案例：</strong>在育儿中，两种条件反射同时存在。孩子看到狗（中性刺激）被狗咬过（无条件刺激：疼痛），以后看到狗就哭——这是经典条件反射，孩子"被动"学会了恐惧。孩子主动收拾玩具，你表扬他（正强化），他以后更愿意收拾——这是操作性条件反射，孩子在"主动"学习。两种学习机制共同塑造了人的行为与情感——前者解释你"为什么害怕"，后者解释你"为什么习惯"。</p>
+        </div>
+        <h3>对照表：经典条件反射 vs 操作性条件反射</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>经典条件反射</th><th>操作性条件反射</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>提出者</strong></td><td>巴甫洛夫</td><td>斯金纳</td></tr>
+              <tr><td><strong>行为类型</strong></td><td>应答性（被刺激引发）</td><td>操作性（自发产生）</td></tr>
+              <tr><td><strong>关键机制</strong></td><td>刺激—刺激配对</td><td>行为—后果联结</td></tr>
+              <tr><td><strong>学习内容</strong></td><td>情绪 · 恐惧 · 偏好</td><td>技能 · 习惯 · 行为塑造</td></tr>
+              <tr><td><strong>典型实验</strong></td><td>巴甫洛夫的狗</td><td>斯金纳箱的白鼠与鸽子</td></tr>
+              <tr><td><strong>应用</strong></td><td>系统脱敏 · 暴露疗法</td><td>行为塑造 · 代币制 · 程序教学</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>对照表：行为主义 vs 认知心理学</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>行为主义</th><th>认知心理学</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>研究对象</strong></td><td>可观察的行为</td><td>内部的心理过程</td></tr>
+              <tr><td><strong>人的形象</strong></td><td>被环境塑造的机器</td><td>主动加工信息的系统</td></tr>
+              <tr><td><strong>学习观</strong></td><td>刺激—反应联结</td><td>信息加工 · 图式 · 表征</td></tr>
+              <tr><td><strong>语言观</strong></td><td>语言是习惯的联结</td><td>语言是规则生成（乔姆斯基）</td></tr>
+              <tr><td><strong>代表</strong></td><td>华生 · 斯金纳 · 巴甫洛夫</td><td>皮亚杰 · 乔姆斯基 · 卡尼曼 · 西蒙</td></tr>
+              <tr><td><strong>转折点</strong></td><td colspan="2">乔姆斯基（1959）对斯金纳《言语行为》的批判，标志认知革命</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">华生 · 1878–1958</div>
+            <blockquote>给我一打健全的婴儿，我可以把他们训练成任何类型的人——医生、律师、艺术家，甚至乞丐与盗贼。<cite>——《行为主义》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">巴甫洛夫 · 1849–1936</div>
+            <blockquote>不要成为自己记忆的奴隶——学会抑制，是高级神经活动的最高成就。<cite>——巴甫洛夫实验札记</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">斯金纳 · 1904–1990</div>
+            <blockquote>教育是塑造行为的技术——所谓"自由意志"，不过是尚未被认识的强化史。<cite>——《超越自由与尊严》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">斯金纳 · 1904–1990</div>
+            <blockquote>不要问一个人想要什么，而要问环境使他做了什么——行为科学从后果出发。<cite>——《沃尔登第二》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">班杜拉 · 1925–2021</div>
+            <blockquote>人不仅是环境的产物，也是环境的创造者——自我效能感决定我们能否把潜能变为现实。<cite>——《自我效能》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">托尔曼 · 1886–1959</div>
+            <blockquote>白鼠在大脑中绘制认知地图——行为背后，藏着对世界的内部表征。<cite>——《动物与人的目的性行为》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">行为主义的遗产</div>
+            <ul>
+              <li>实验方法：可操作、可测量、可重复</li>
+              <li>学习理论：经典与操作性条件反射</li>
+              <li>行为治疗：脱敏 · 暴露 · 行为塑造</li>
+              <li>程序教学：教育技术的源头</li>
+            </ul>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">行为主义的局限</div>
+            <ul>
+              <li>忽视内部过程与语言生成</li>
+              <li>低估主动性与创造力</li>
+              <li>对"自由与尊严"的激进否定</li>
+              <li>被认知革命部分超越</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第四章 人本主义与存在心理学 -->
+      <section class="sec" id="humanism">
+        <h2><span class="chapno">第四章</span>人本主义与存在心理学：人的潜能与意义</h2>
+        <p>二十世纪中叶，心理学在精神分析与行为主义之间左右摇摆：一个把人看作无意识的病人，一个把人看作环境的机器。马斯洛与罗杰斯不满意这两种图景——他们追问：为什么心理学只研究病态与行为，却不研究健康、创造与潜能？人本主义由此兴起，被称为心理学的"第三势力"。它把<strong>自我实现</strong>与<strong>意义</strong>放回心理学的中心：人不是被决定的客体，而是追求成长、自由与意义的主体。弗兰克尔在集中营中写下的《活出生命的意义》，是这一思想最震撼的证词。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>马斯洛与需要层次（1943–1954）</strong>：马斯洛在《人类动机理论》（1943）提出需要层次理论，1954年《动机与人格》系统阐述自我实现；他研究"自我实现者"（林肯、爱因斯坦、斯宾诺莎等），开创积极人性观。</p>
+          <p><strong>罗杰斯与来访者中心疗法（1942–1961）</strong>：罗杰斯《咨询与心理治疗》（1942）提出非指导性治疗，1961年《成为一个人》系统阐述"无条件积极关注"与"机体评价过程"——人本主义心理治疗诞生。</p>
+          <p><strong>存在主义心理学的汇入（1946–）</strong>：罗洛·梅把欧洲存在主义引入美国心理学，著《焦虑的意义》；弗兰克尔在纳粹集中营幸存后创立意义治疗（logotherapy），《活出生命的意义》（1946）成为二十世纪最具影响力的心理学著作之一。</p>
+          <p><strong>人本主义的高峰与扩散（1960s–）</strong>：1961年马斯洛与萨蒂奇创办《人本主义心理学杂志》，1962年成立美国人本主义心理学会；人本主义思想深刻影响教育（以学生为中心）、管理（自我实现）、心理咨询与积极心理学。</p>
+          <p><strong>积极心理学的接续（1998–）</strong>：塞利格曼就任美国心理学会主席，提出积极心理学——研究幸福、优势、心流与意义，把马斯洛"研究健康的人"的愿景推向实证科学。</p>
+        </div>
+
+        <h3>思想详解</h3>
+        <p><strong>马斯洛的需要层次与自我实现</strong>：马斯洛把人的需要排列为阶梯——生理需要、安全需要、归属与爱的需要、尊重需要、自我实现需要。低层需要基本满足后，高层需要才浮现；自我实现是最高需要——"成为你能成为的一切"。马斯洛研究自我实现者的特征：对现实的清晰知觉、接纳自我与他人、自发性与创造性、高峰体验（巅峰时刻的狂喜与意义感）。他还提出"匮乏性动机"与"成长性动机"的区分——前者消除缺失，后者追求成长。马斯洛晚年提出"超越性需要"（Z理论），把自我实现推向超越个人。</p>
+        <div class="formula">
+          <span class="f-name">马斯洛需要层次</span>
+          生理 → 安全 → 归属与爱 → 尊重 → 自我实现
+          <span class="f-note">低层满足是高层浮现的前提；自我实现是"成为你能成为的一切"</span>
+        </div>
+        <p><strong>罗杰斯的来访者中心疗法</strong>：罗杰斯相信，每个人内心都有"实现的倾向"（actualizing tendency）——像种子一样朝向成长。心理问题源于"价值条件"（为获得爱与认可而扭曲真实的自我）。治疗的目标不是指导，而是提供三种条件：<strong>无条件积极关注</strong>（不评判地接纳）、<strong>共情理解</strong>（设身处地地感受）、<strong>真诚一致</strong>（治疗师真实透明）。当这些条件具备，来访者会自己找到成长的方向——"成为一个人"（becoming a person）。罗杰斯把这一理念扩展到教育（以学生为中心）与冲突解决（罗杰斯—布伯对话）。</p>
+        <p><strong>弗兰克尔的意义治疗</strong>：弗兰克尔在奥斯维辛集中营失去父母、妻子与全部手稿，却从苦难中提炼出意义治疗——人对意义的追求是首要动机（"求意义的意志"）。他提出三种发现意义的途径：<strong>创造的价值</strong>（工作与创造）、<strong>体验的价值</strong>（爱、自然、艺术）、<strong>态度的价值</strong>（面对无法改变的苦难时选择的态度）。"人所拥有的任何东西，都可以被剥夺，唯独人性最后的自由——在任何境遇中选择自己态度的自由——不能被剥夺。"</p>
+        <p><strong>罗洛·梅的存在心理学</strong>：罗洛·梅把克尔凯郭尔、海德格尔的存在主义引入心理学——焦虑不是病，而是自由与可能性的信号；勇气是"在焦虑面前仍然行动的能力"。他主张心理学要面对人的终极关切：自由、责任、孤独、死亡与意义。存在心理学提醒我们：人的痛苦往往不是"症状"，而是对真实生活的逃避。</p>
+
+        <figure class="diagram">
+          <figcaption>图 6 · 人本主义结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["人本主义"] --> A["马斯洛<br>需要层次 · 自我实现 · 高峰体验"]
+  ROOT --> B["罗杰斯<br>来访者中心 · 无条件积极关注"]
+  ROOT --> C["弗兰克尔<br>意义治疗 · 求意义的意志"]
+  ROOT --> D["罗洛·梅<br>存在心理学 · 焦虑与勇气"]
+  ROOT --> E["塞利格曼<br>积极心理学 · 幸福与优势"]
+  classDef rootNode fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <figure class="diagram">
+          <figcaption>图 6a · 马斯洛需要层次金字塔 —— 从生理到自我实现的五层需要结构</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  subgraph PYRAMID["需要层次金字塔"]
+    SELF["自我实现\nSelf-actualization\n成为你能成为的一切\n创造力 · 高峰体验 · 超越自我"]
+    ESTEEM["尊重需要\nEsteem\n成就 · 认可 · 尊重 · 自尊"]
+    LOVE["归属与爱\nLove and Belonging\n友谊 · 家庭 · 亲密关系 · 社区"]
+    SAFETY["安全需要\nSafety\n安全 · 稳定 · 健康 · 秩序 · 免于恐惧"]
+    PHYSIO["生理需要\nPhysiological\n食物 · 水 · 睡眠 · 性 · 呼吸"]
+  end
+  SELF --> ESTEEM
+  ESTEEM --> LOVE
+  LOVE --> SAFETY
+  SAFETY --> PHYSIO
+  GR["成长性动机\nGrowth Motivation"] -.-> SELF
+  DEF["匮乏性动机\nDeficit Motivation"] -.-> PHYSIO
+  classDef top fill:#4C1D95,stroke:#6D28D9,color:#FFFFFF;
+  classDef high fill:#6D28D9,stroke:#8B5CF6,color:#FFFFFF;
+  classDef mid fill:#7C3AED,stroke:#A78BFA,color:#FFFFFF;
+  classDef low fill:#9333EA,stroke:#C084FC,color:#FFFFFF;
+  classDef base fill:#A855F7,stroke:#D8B4FE,color:#FFFFFF;
+  class SELF top;
+  class ESTEEM high;
+  class LOVE mid;
+  class SAFETY low;
+  class PHYSIO base;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 6a 详解：马斯洛需要层次理论</strong>是心理学中最著名的动机理论之一，也是理解"人为什么这样做"的最直观框架。</p>
+          <p><strong>匮乏性动机 vs 成长性动机：</strong>马斯洛区分了两种根本不同的动机。匮乏性动机源于"缺了什么"——你饿了就要吃，缺少安全感就想抓住稳定，感到孤独就渴望爱。这些动机的满足是"缓解"——吃饱了就不饿了，安全了就安心了。但成长性动机源于"想成为什么"——即使你什么都不缺，你仍然渴望成长、创造、成为更好的自己。自我实现不是"补缺"，而是"绽放"。</p>
+          <p><strong>五层需要的递进关系：</strong>马斯洛的核心洞见是：低层需要基本满足后，高层需要才会浮现。一个饥饿的人不会关心"自我实现"——他所有的精力都在找食物。一个生活在战乱中的人不会关心"创造力"——他所有的精力都在寻求安全。这就是为什么"脱贫"比"唤醒潜能"更优先：马斯洛不是在说"哪个需要更重要"，而是在说"哪个需要更紧迫"。</p>
+          <p><strong>现实案例：</strong>在企业管理中，员工激励的经典问题就是"需要错位"。如果员工的基本工资都不够生活（生理需要未满足），你给他搞"企业文化"（归属与爱）和"荣誉称号"（尊重需要）是没用的——他需要的是加薪。反之，如果员工的生活已经富裕，你再用加薪来激励他，效果也会递减——此时他需要的是"有意义的工作"和"成长的机会"（自我实现需要）。理解一个人处于需要的哪一层，才能理解他真正想要什么。</p>
+        </div>
+        <h3>对照表：人本主义 vs 精神分析 vs 行为主义</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>人本主义</th><th>精神分析</th><th>行为主义</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>人性观</strong></td><td>向善 · 自我实现</td><td>本能与文明冲突</td><td>环境决定</td></tr>
+              <tr><td><strong>研究焦点</strong></td><td>健康 · 潜能 · 意义</td><td>无意识 · 童年创伤</td><td>行为 · 强化</td></tr>
+              <tr><td><strong>人的自由</strong></td><td>自由选择 · 责任</td><td>被无意识决定</td><td>被环境决定</td></tr>
+              <tr><td><strong>治疗取向</strong></td><td>共情 · 无条件接纳</td><td>解释 · 移情分析</td><td>行为矫正 · 强化</td></tr>
+              <tr><td><strong>代表人物</strong></td><td>马斯洛 · 罗杰斯 · 弗兰克尔</td><td>弗洛伊德 · 荣格 · 阿德勒</td><td>华生 · 斯金纳 · 班杜拉</td></tr>
+              <tr><td><strong>共同局限</strong></td><td colspan="3">三者都难以完全用实验验证其核心假设——心理学需要三者的综合</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">马斯洛 · 1908–1970</div>
+            <blockquote>一个人能成为什么，他就必须成为什么——这种需要，我们称之为自我实现。<cite>——《动机与人格》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">马斯洛 · 1908–1970</div>
+            <blockquote>如果你唯一的工具是锤子，你会把所有问题都看成钉子。<cite>——《科学心理学》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">罗杰斯 · 1902–1987</div>
+            <blockquote>当一个人被接纳与理解时，他会开始改变——成为他真正的自己。<cite>——《成为一个人》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">罗杰斯 · 1902–1987</div>
+            <blockquote>生命的过程，不是成为某种固定的东西，而是成为"正在成为"的过程。<cite>——《成为一个人》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">弗兰克尔 · 1905–1997</div>
+            <blockquote>人所拥有的任何东西都可以被剥夺，唯独人性最后的自由——在任何境遇中选择自己态度的自由——不能被剥夺。<cite>——《活出生命的意义》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">弗兰克尔 · 1905–1997</div>
+            <blockquote>那些杀不死我们的，会让我们更强大——不，是那些我们为之而活的意义，让我们活下去。<cite>——《活出生命的意义》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">罗洛·梅 · 1909–1994</div>
+            <blockquote>勇气不是没有恐惧，而是面对恐惧仍然行动的能力。<cite>——《创造的勇气》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">塞利格曼 · 1942–</div>
+            <blockquote>心理学不只是修复破损，更要培育最好的东西——研究幸福，与研究痛苦同样重要。<cite>——《真实的幸福》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">人本主义的遗产</div>
+            <ul>
+              <li>自我实现：研究健康的人</li>
+              <li>来访者中心：共情与接纳的治疗</li>
+              <li>意义治疗：苦难中的意义</li>
+              <li>积极心理学：幸福成为科学</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第五章 认知革命与心智科学 -->
+      <section class="sec" id="cognitive">
+        <h2><span class="chapno">第五章</span>认知革命与心智科学：从行为到计算</h2>
+        <p>1956年，达特茅斯会议与一系列里程碑式论文共同开启了认知革命——心理学、语言学、计算机科学与神经科学在这一年交汇。乔姆斯基证明语言不是习惯的联结而是规则的生成，米勒发现工作记忆的"神奇数字7"，纽厄尔与西蒙让计算机"思考"，皮亚杰揭示了儿童心智的建构过程，卡尼曼则发现人类理性的种种偏差。心灵重新成为心理学的研究对象——但这一次，它不再是被内省的神秘实体，而是可以被建模、被计算、被实验的<strong>信息加工系统</strong>。认知革命最终把心理学引向人工智能：当机器开始思考，心智科学进入了全新的时代。</p>
+
+        <div class="history">
+          <span class="history-title">历史背景</span>
+          <p><strong>皮亚杰的发生认识论（1920s–）</strong>：皮亚杰以临床法观察儿童，提出认知发展阶段论——感知运动、前运算、具体运算、形式运算四阶段；他创立发生认识论，认为知识不是被给予的，而是儿童在与世界的互动中主动建构的。</p>
+          <p><strong>乔姆斯基的批判（1957–1959）</strong>：乔姆斯基《句法结构》（1957）提出生成语法；1959年他对斯金纳《言语行为》的批判，被公认为认知革命的宣言——语言无法用刺激—反应解释，因为儿童能说出从未听过的句子。</p>
+          <p><strong>认知革命的里程碑（1956）</strong>：米勒发表《神奇的数字7±2》，纽厄尔与西蒙提出"逻辑理论家"程序，布鲁纳倡导认知研究——1956年被称为"认知革命元年"；1967年奈瑟《认知心理学》为学科命名。</p>
+          <p><strong>行为经济学与启发式（1970s–）</strong>：卡尼曼与特沃斯基发表《不确定性下的判断：启发式与偏差》（1974）与前景理论（1979），证明人类决策系统性地偏离理性——2002年卡尼曼获诺贝尔经济学奖。</p>
+          <p><strong>认知科学与AI合流（1980s–）</strong>：认知科学作为交叉学科兴起，联结认知心理学、人工智能、语言学、神经科学与哲学；脑成像技术（fMRI）让认知研究有了神经基础；深度学习（2010s）让"心智计算"从隐喻变成工程现实。</p>
+        </div>
+
+        <h3>思想详解</h3>
+        <p><strong>皮亚杰的认知发展</strong>：皮亚杰认为，儿童的思维不是成人思维的缩小版，而是质上不同的阶段：<strong>感知运动阶段</strong>（0–2岁，通过动作认识世界，获得客体永久性）、<strong>前运算阶段</strong>（2–7岁，出现符号与语言，但自我中心、不可逆）、<strong>具体运算阶段</strong>（7–11岁，获得守恒与逻辑运算，但需具体对象）、<strong>形式运算阶段</strong>（11岁+，抽象思维与假设演绎）。发展的机制是<strong>同化</strong>（把新经验纳入已有图式）与<strong>顺应</strong>（调整图式适应新经验）的平衡——知识是主动建构的，不是被动接受的。皮亚杰深刻影响了教育：教学要匹配儿童的认知水平，让儿童在操作中学习。</p>
+        <div class="formula">
+          <span class="f-name">皮亚杰认知发展四阶段</span>
+          感知运动 → 前运算 → 具体运算 → 形式运算
+          <span class="f-note">思维不是量的积累，而是质的跃迁；知识在同化与顺应的平衡中建构</span>
+        </div>
+        <p><strong>乔姆斯基的语言先天论</strong>：乔姆斯基指出，儿童在语言贫乏的刺激下，却能迅速掌握复杂语法、说出从未听过的句子——这无法用模仿与强化解释。他提出<strong>语言先天论</strong>：人类天生具有"语言习得机制"（LAD），普遍语法（UG）是大脑的先天结构。语言不是习惯，而是<strong>规则生成</strong>——有限的规则生成无限的句子。乔姆斯基的"深层结构—表层结构"理论，把语言学变成认知科学的核心，也直接启发了计算机对自然语言的处理。</p>
+        <p><strong>卡尼曼的系统1与系统2</strong>：卡尼曼与特沃斯基发现，人类决策系统性地偏离理性预期。他们提出双系统理论：<strong>系统1</strong>（快速、自动、直觉、省力）与<strong>系统2</strong>（缓慢、审慎、逻辑、费力）。系统1依赖<strong>启发式</strong>（代表性、可得性、锚定）快速判断，却常常产生系统性偏差；前景理论则证明，人对损失比对收益更敏感（损失厌恶），决策参照的是"变化"而非"绝对财富"。卡尼曼的工作揭示了理性的边界——也解释了为什么人类既聪明又容易犯错。</p>
+        <p><strong>西蒙的有限理性与AI</strong>：西蒙提出，人不是"完全理性"的决策者，而是<strong>有限理性</strong>的——受信息、时间与认知能力限制，人只能"满意"而非"最优"。他开创"启发式搜索"与"手段—目的分析"，与纽厄尔一起编写"逻辑理论家"——第一个真正的人工智能程序。西蒙是认知科学与人工智能的共同奠基人，1978年获诺贝尔经济学奖。他的洞见至今指导着AI设计：智能不是全知，而是在有限资源中做出足够好的决策。</p>
+
+        <figure class="diagram">
+          <figcaption>图 7 · 认知革命结构图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["认知革命"] --> A["皮亚杰<br>认知发展 · 建构主义"]
+  ROOT --> B["乔姆斯基<br>语言先天论 · 生成语法"]
+  ROOT --> C["米勒<br>工作记忆 · 神奇数字7"]
+  ROOT --> D["卡尼曼<br>系统1与系统2 · 前景理论"]
+  ROOT --> E["西蒙<br>有限理性 · 人工智能"]
+  classDef rootNode fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <figure class="diagram">
+          <figcaption>图 7a · 记忆三阶段模型 —— 阿特金森-谢夫林记忆信息加工模型</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  INPUT["外部输入\n感官信息"] --> SM["感觉记忆\nSensory Memory\n容量：极大\n持续时间：0.25-2秒\n如：视觉后像"]
+  SM -->|"注意"| STM["短时记忆/工作记忆\nShort-term Memory\n容量：7+/-2 个组块\n持续时间：15-30秒\n如：拨号前记住一个号码"]
+  STM -->|"复述"| LTM["长时记忆\nLong-term Memory\n容量：几乎无限\n持续时间：数天至终身\n如：童年的家、英语单词"]
+  STM -->|"遗忘"| FORGET1["X 遗忘\n未复述的信息"]
+  LTM -->|"提取"| STM
+  LTM -->|"遗忘"| FORGET2["X 遗忘\n提取失败"]
+  subgraph LTM_TYPES["长时记忆的亚型"]
+    EXPLICIT["外显记忆\n有意识回忆\n语义记忆（事实）\n情景记忆（经历）"]
+    IMPLICIT["内隐记忆\n无意识影响\n程序记忆（技能）\n启动效应（暗示）"]
+  end
+  LTM --- LTM_TYPES
+  classDef sense fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef stm fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef ltm fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef exp fill:#DBEAFE,stroke:#2563EB,color:#1E3A5F;
+  classDef imp fill:#F3E8FF,stroke:#9333EA,color:#4C1D95;
+  class SM sense;
+  class STM stm;
+  class LTM ltm;
+  class EXPLICIT exp;
+  class IMPLICIT imp;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 7a 详解：记忆的三阶段模型</strong>——阿特金森和谢夫林在1968年提出的记忆信息加工模型，至今仍是理解记忆的最经典框架。</p>
+          <p><strong>感觉记忆：</strong>你看到一幅画面、听到一段声音，即使你"没有注意"，它们也会在感觉记忆中停留零点几秒。这就是为什么你眨一下眼睛，世界的画面并没有"中断"——感觉记忆给你的大脑提供了"连续感"。但绝大多数感觉记忆在1-2秒内就消失了，除非你"注意"到它。</p>
+          <p><strong>短时记忆（工作记忆）：</strong>米勒的"神奇数字7±2"发现：你一次只能记住大约7个"组块"——7个数字、7个单词、7个念头。这就是为什么你查了一个电话号码，不重复的话，走到电话前就忘了。短时记忆是"思维的工作台"——你在这里处理信息、做决定、解决问题。但如果不复述，信息在15-30秒内就会消失。</p>
+          <p><strong>长时记忆：</strong>长时记忆的容量几乎是无限的——你记得童年的家、小学同学的名字、骑自行车的方法。长时记忆分为外显记忆（你能"有意识地"回忆的——事实和经历）和内隐记忆（你"不知不觉"学会的——骑自行车、弹钢琴、打字的技能）。遗忘不是"丢失"，更多是"提取失败"——钥匙就在家里，你只是找不到它在哪里。</p>
+          <p><strong>现实案例：</strong>理解记忆三阶段模型，是"高效学习"的起点。第一，你不可能"一次性"记住大量信息——短时记忆只有7±2的容量，所以学习要"分块"（chunking）。第二，如果你不"复述"（复习），信息在15-30秒后就会消失——这就是"间隔重复"（艾宾浩斯遗忘曲线）的科学基础。第三，要想让信息进入长时记忆，你需要"深度加工"——不是"读三遍"，而是"理解、关联、应用"——这就是"精加工编码"。</p>
+        </div>
+        <figure class="diagram">
+          <figcaption>图 7b · 情绪维度模型 —— 效价-唤醒度二维空间与基本情绪定位</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  subgraph AFFECT["情绪二维模型 · 效价 x 唤醒度"]
+    POS_HIGH["喜悦\n兴奋 · 狂喜\n效价高 · 唤醒度高"]
+    POS_LOW["平静\n满足 · 安宁\n效价高 · 唤醒度低"]
+    NEG_HIGH["愤怒\n恐惧 · 焦虑\n效价低 · 唤醒度高"]
+    NEG_LOW["悲伤\n抑郁 · 倦怠\n效价低 · 唤醒度低"]
+  end
+  subgraph BASIC["基本情绪 · 保罗·埃克曼"]
+    ANGER["愤怒 Anger"]
+    FEAR["恐惧 Fear"]
+    SAD["悲伤 Sadness"]
+    JOY["喜悦 Joy"]
+    DISG["厌恶 Disgust"]
+    SURP["惊讶 Surprise"]
+  end
+  AFFECT --- BASIC
+  classDef posHigh fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  classDef posLow fill:#E0E7FF,stroke:#4338CA,color:#1E1B4B;
+  classDef negHigh fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef negLow fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 7b 详解：情绪的维度模型与基本情绪</strong>——情绪不是"好的"和"坏的"这么简单，它有更精细的结构。</p>
+          <p><strong>效价-唤醒度二维空间：</strong>心理学家发现，所有的情绪都可以在两个维度上定位：效价（正面/负面）和唤醒度（高/低）。喜悦是"高正面·高唤醒"——你兴奋、激动、充满能量。平静是"高正面·低唤醒"——你满足、安宁、放松。愤怒是"高负面·高唤醒"——你心跳加速、肌肉紧绷、充满攻击性。悲伤是"高负面·低唤醒"——你疲惫、无力、不想动。理解这个二维模型，你就不会对自己说"我不应该生气"——情绪不是"应该"的问题，而是"信号"的问题：每一种情绪都在告诉你关于你的需要与环境的信息。</p>
+          <p><strong>六种基本情绪：</strong>埃克曼通过跨文化研究发现，有六种基本情绪是全世界人类共通的——无论你是在纽约、东京还是亚马逊雨林，人们表达愤怒、恐惧、悲伤、喜悦、厌恶、惊讶的方式是一致的。这意味着这些情绪有生物学基础，是演化的产物。恐惧让你远离危险，厌恶让你避免有毒食物，愤怒让你准备战斗——这些情绪不是"不理性"的，它们曾经是人类生存的关键。</p>
+          <p><strong>现实案例：</strong>情绪调节的第一步不是"控制情绪"，而是"识别情绪"。当你感到不舒服时，问自己：①这是什么情绪？（愤怒？悲伤？焦虑？）②它的效价是什么？（正面还是负面？）③它的唤醒度是高还是低？（心跳快不快？身体紧张吗？）④它想告诉我什么？（愤怒告诉我"边界被侵犯了"，焦虑告诉我"有不确定的危险"，悲伤告诉我"失去了什么"）。识别情绪，是管理情绪的前提——这也是认知行为疗法（CBT）的核心理念。</p>
+        </div>
+        <h3>对照表：认知革命主要人物对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>维度</th><th>皮亚杰</th><th>乔姆斯基</th><th>卡尼曼</th><th>西蒙</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>核心贡献</strong></td><td>认知发展阶段论</td><td>语言先天论 · 生成语法</td><td>双系统理论 · 前景理论</td><td>有限理性 · AI程序</td></tr>
+              <tr><td><strong>心智图景</strong></td><td>主动建构的图式</td><td>先天的语言装置</td><td>双系统：直觉与审慎</td><td>信息加工 · 启发式搜索</td></tr>
+              <tr><td><strong>研究方法</strong></td><td>临床观察儿童</td><td>句法分析 · 语言直觉</td><td>实验 · 行为经济学</td><td>计算机模拟 · 建模</td></tr>
+              <tr><td><strong>对教育的启示</strong></td><td>匹配认知水平 · 操作学习</td><td>语言能力是天赋</td><td>警惕直觉偏差 · 教学反馈</td><td>满意决策 · 问题解决</td></tr>
+              <tr><td><strong>对AI的启示</strong></td><td>认知发展建模</td><td>自然语言处理</td><td>对齐人类决策偏差</td><td>启发式搜索 · 智能体设计</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">皮亚杰 · 1896–1980</div>
+            <blockquote>智慧是适应——认知发展不是被动记录世界，而是主动建构世界的图式。<cite>——《发生认识论原理》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">乔姆斯基 · 1928–</div>
+            <blockquote>语言不是习惯的产物，而是规则的生成——儿童能说出从未听过的句子，这是任何强化理论都无法解释的。<cite>——《句法结构》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">米勒 · 1920–2012</div>
+            <blockquote>神奇的数字7±2——工作记忆一次只能容纳大约七个信息块。<cite>——《神奇的数字七》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">卡尼曼 · 1934–2024</div>
+            <blockquote>我们对自己的思维知之甚少——系统1的直觉常常先于系统2的理性做出判断。<cite>——《思考，快与慢》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">卡尼曼 · 1934–2024</div>
+            <blockquote>损失带来的痛苦，大约是同等收益带来的快乐的两倍——这是损失厌恶。<cite>——《思考，快与慢》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">西蒙 · 1916–2001</div>
+            <blockquote>人不是完全理性的决策者，而是有限理性的——我们寻求满意，而非最优。<cite>——《管理行为》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">西蒙 · 1916–2001</div>
+            <blockquote>计算机不是思维的隐喻，而是思维的模型——理解心智，就是理解信息如何被加工。<cite>——《人工科学》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">奈瑟 · 1928–2012</div>
+            <blockquote>认知心理学研究人如何获取、储存、转换与使用信息——心灵是信息加工系统。<cite>——《认知心理学》</cite></blockquote>
+          </div>
+        </div>
+        <div class="legacy">
+          <div>
+            <div class="legacy-who">特沃斯基 · 1937–1996</div>
+            <blockquote>人类判断的偏差不是随机的错误，而是可预测的、系统的——这正是它们可以被研究的原因。<cite>——《不确定性下的判断》</cite></blockquote>
+          </div>
+          <div>
+            <div class="legacy-who">思想成果</div>
+            <div class="legacy-title">认知革命的遗产</div>
+            <ul>
+              <li>信息加工：心灵作为计算系统</li>
+              <li>语言先天论：自然语言处理的根基</li>
+              <li>启发式与偏差：理解人类理性边界</li>
+              <li>有限理性：AI与决策科学的交汇</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第六章 总结提炼 -->
+      <section class="sec" id="summary">
+        <h2><span class="chapno">第六章</span>总结提炼：心理学的启示</h2>
+        <p>回顾从冯特的实验室到当代的脑成像与人工智能，可以提炼出心理学的核心规律：<strong>无意识之深、行为之塑、需要之阶、认知之构、意义之寻</strong>。心理学不提供关于灵魂的玄思，它提供的是理解"人实际上如何"的经验证据——我们被无意识驱动，被环境塑造，被需要牵引，被认知建构，也被意义召唤。理解心理学，就是理解我们自己的全部复杂性。</p>
+
+        <figure class="diagram">
+          <figcaption>图 8 · 心理学五大规律图</figcaption>
+          <pre class="mermaid">
+flowchart LR
+  ROOT["心理学五大规律"] --> A["无意识之深<br>精神分析 · 冰山之下 · 防御机制"]
+  ROOT --> B["行为之塑<br>条件反射 · 强化 · 观察学习"]
+  ROOT --> C["需要之阶<br>需要层次 · 自我实现 · 潜能"]
+  ROOT --> D["认知之构<br>信息加工 · 图式 · 启发式"]
+  ROOT --> E["意义之寻<br>求意义的意志 · 幸福 · 心流"]
+  classDef rootNode fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  class ROOT rootNode;
+          </pre>
+        </figure>
+
+        <div class="history">
+          <span class="history-title">五大规律的提炼</span>
+          <p><strong>无意识之深</strong>：弗洛伊德发现，意识只是心灵的冰山一角——动机、记忆、情绪的大半在意识之下运作。无意识之深的启示是：我们并不完全了解自己，许多"选择"其实是未被觉察的力量在驱动。学会审视自己的动机与防御，是自我认识的起点。</p>
+          <p><strong>行为之塑</strong>：行为主义证明，行为可以被环境系统地塑造——强化塑造习惯，观察学习传递模式。行为之塑的启示是：改变行为不必依赖意志的奇迹，而可以依靠环境的重新设计——把大目标拆成小强化，把坏习惯换成好替代，是行为科学给每个人的工具箱。</p>
+          <p><strong>需要之阶</strong>：马斯洛揭示，人的动机是有层次的——生理、安全、归属、尊重、自我实现。需要之阶的启示是：理解一个人，先要理解他处在需要的哪一级；满足低层需要，是激发高层潜能的前提。管理、教育与人际关系的许多难题，都是需要错位的难题。</p>
+          <p><strong>认知之构</strong>：认知革命证明，我们不是被动反映世界，而是主动建构世界——图式塑造知觉，启发式塑造判断，语言塑造思维。认知之构的启示是：我们看到的不是世界本身，而是被我们的认知结构过滤过的世界。保持对自身认知偏差的警惕，是理性生活的日常功课。</p>
+          <p><strong>意义之寻</strong>：人本主义与存在心理学提醒我们，人不仅是需求的集合，更是意义的追寻者——弗兰克尔在集中营中证明，找到"为什么而活"的人，能承受几乎任何"如何活"。意义之寻的启示是：幸福不是需要的满足，而是意义的实现；创造、爱与面对苦难的态度，是意义的三个来源。</p>
+        </div>
+
+<figure class="diagram">
+          <figcaption>图 9 · 心理治疗三大流派对比图 —— 精神分析、行为主义、人本主义疗法对比</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  ROOT["心理治疗三大流派"] --> PSY["<b>精神分析</b><br>Psychoanalysis<br>弗洛伊德 · 荣格"]
+  ROOT --> BEH["<b>行为治疗</b><br>Behavior Therapy<br>华生 · 斯金纳 · 沃尔普"]
+  ROOT --> HUM["<b>人本治疗</b><br>Humanistic Therapy<br>罗杰斯 · 马斯洛 · 弗兰克尔"]
+  PSY --> P1["核心假设：<br>症状源于无意识冲突"]
+  PSY --> P2["目标：<br>使无意识意识化"]
+  PSY --> P3["技术：<br>自由联想 · 梦的解析 · 移情分析"]
+  PSY --> P4["疗程：<br>数月到数年"]
+  BEH --> B1["核心假设：<br>症状是习得的不适应行为"]
+  BEH --> B2["目标：<br>消除不适应行为 · 建立新行为"]
+  BEH --> B3["技术：<br>系统脱敏 · 暴露 · 行为塑造"]
+  BEH --> B4["疗程：<br>数周到数月"]
+  HUM --> H1["核心假设：<br>症状源于自我实现的受阻"]
+  HUM --> H2["目标：<br>促进自我成长与意义发现"]
+  HUM --> H3["技术：<br>共情 · 无条件积极关注 · 意义对话"]
+  HUM --> H4["疗程：<br>因人而异"]
+  classDef root fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  classDef psy fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef beh fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef hum fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  class ROOT root;
+  class PSY,P1,P2,P3,P4 psy;
+  class BEH,B1,B2,B3,B4 beh;
+  class HUM,H1,H2,H3,H4 hum;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 9 详解：心理治疗三大流派的根本差异</strong>——心理治疗不是"一种方法"，而是三种完全不同的理解"人"和治疗"人的痛苦"的方式。</p>
+          <p><strong>精神分析：</strong>弗洛伊德认为，你的症状不是"错了"，而是"信号"——你的无意识在试图告诉你一些你还没有准备好面对的事情。治疗的目标不是"消除症状"，而是"让无意识意识化"——当你理解了你为什么焦虑、为什么重复同样的错误，症状就不再是必要的了。精神分析是"考古学"——你往深处挖，目的是找到心灵深处的真相。</p>
+          <p><strong>行为治疗：</strong>行为治疗师说：不管你的恐惧源自哪里，问题是你现在怕狗，而狗不会伤害你。你不用去"挖掘童年"，你只需要"重新学习"——用系统脱敏（逐步接近狗，同时放松自己）来消除恐惧。行为治疗是"工程学"——不关心过去，只关心现在，目标是"改变行为"。</p>
+          <p><strong>人本治疗：</strong>罗杰斯说：你的痛苦不是"病了"，而是"被阻止了成长"。治疗师不是"医生的角色"，而是"陪伴者"——提供共情、接纳、真诚，让你重新找到自己成长的方向。人本治疗是"园艺学"——种子就在你心里，治疗师只是创造让种子生长的土壤。</p>
+          <p><strong>现实选择：</strong>如果你有长期的、反复出现的模式（比如总是选错伴侣），精神分析可能最适合你——你需要理解"为什么"。如果你有具体的恐惧（比如恐高）或习惯（比如抽烟），行为治疗最高效——你不需要知道"为什么"，只需要"改变"。如果你感到"迷失"、"空虚"、"找不到意义"，人本治疗最合适——你需要的是"成长"而不是"修复"。</p>
+        </div>
+        <figure class="diagram">
+          <figcaption>图 9 · 心理治疗三大流派对比图 —— 精神分析、行为主义、人本主义疗法对比</figcaption>
+          <pre class="mermaid">
+flowchart TB
+  ROOT["心理治疗三大流派"] --> PSY["精神分析\nPsychoanalysis\n弗洛伊德 · 荣格"]
+  ROOT --> BEH["行为治疗\nBehavior Therapy\n华生 · 斯金纳 · 沃尔普"]
+  ROOT --> HUM["人本治疗\nHumanistic Therapy\n罗杰斯 · 马斯洛 · 弗兰克尔"]
+  PSY --> P1["核心假设：\n症状源于无意识冲突"]
+  PSY --> P2["目标：\n使无意识意识化"]
+  PSY --> P3["技术：\n自由联想 · 梦的解析 · 移情分析"]
+  PSY --> P4["疗程：\n数月到数年"]
+  BEH --> B1["核心假设：\n症状是习得的不适应行为"]
+  BEH --> B2["目标：\n消除不适应行为 · 建立新行为"]
+  BEH --> B3["技术：\n系统脱敏 · 暴露 · 行为塑造"]
+  BEH --> B4["疗程：\n数周到数月"]
+  HUM --> H1["核心假设：\n症状源于自我实现的受阻"]
+  HUM --> H2["目标：\n促进自我成长与意义发现"]
+  HUM --> H3["技术：\n共情 · 无条件积极关注 · 意义对话"]
+  HUM --> H4["疗程：\n因人而异"]
+  classDef root fill:#6D28D9,color:#fff,stroke:#6D28D9;
+  classDef psy fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+  classDef beh fill:#FEF3C7,stroke:#D97706,color:#1E1B4B;
+  classDef hum fill:#D1FAE5,stroke:#059669,color:#064E3B;
+  class ROOT root;
+  class PSY,P1,P2,P3,P4 psy;
+  class BEH,B1,B2,B3,B4 beh;
+  class HUM,H1,H2,H3,H4 hum;
+          </pre>
+        </figure>
+        <div class="explain">
+          <p><strong>图 9 详解：心理治疗三大流派的根本差异</strong>——心理治疗不是"一种方法"，而是三种完全不同的理解"人"和治疗"人的痛苦"的方式。</p>
+          <p><strong>精神分析：</strong>弗洛伊德认为，你的症状不是"错了"，而是"信号"——你的无意识在试图告诉你一些你还没有准备好面对的事情。治疗的目标不是"消除症状"，而是"让无意识意识化"——当你理解了你为什么焦虑、为什么重复同样的错误，症状就不再是必要的了。精神分析是"考古学"——你往深处挖，目的是找到心灵深处的真相。</p>
+          <p><strong>行为治疗：</strong>行为治疗师说：不管你的恐惧源自哪里，问题是你现在怕狗，而狗不会伤害你。你不用去"挖掘童年"，你只需要"重新学习"——用系统脱敏（逐步接近狗，同时放松自己）来消除恐惧。行为治疗是"工程学"——不关心过去，只关心现在，目标是"改变行为"。</p>
+          <p><strong>人本治疗：</strong>罗杰斯说：你的痛苦不是"病了"，而是"被阻止了成长"。治疗师不是"医生的角色"，而是"陪伴者"——提供共情、接纳、真诚，让你重新找到自己成长的方向。人本治疗是"园艺学"——种子就在你心里，治疗师只是创造让种子生长的土壤。</p>
+          <p><strong>现实选择：</strong>如果你有长期的、反复出现的模式（比如总是选错伴侣），精神分析可能最适合你——你需要理解"为什么"。如果你有具体的恐惧（比如恐高）或习惯（比如抽烟），行为治疗最高效——你不需要知道"为什么"，只需要"改变"。如果你感到"迷失"、"空虚"、"找不到意义"，人本治疗最合适——你需要的是"成长"而不是"修复"。</p>
+        </div>
+        <h3>对照表：心理学五大规律的对照</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>规律</th><th>核心命题</th><th>代表人物</th><th>思想启示</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>无意识之深</strong></td><td>意识只是冰山一角</td><td>弗洛伊德 · 荣格 · 阿德勒</td><td>审视动机 · 自我认识</td></tr>
+              <tr><td><strong>行为之塑</strong></td><td>行为被环境塑造</td><td>华生 · 斯金纳 · 班杜拉</td><td>环境设计 · 习惯改变</td></tr>
+              <tr><td><strong>需要之阶</strong></td><td>动机有层次结构</td><td>马斯洛 · 罗杰斯</td><td>理解需要 · 激发潜能</td></tr>
+              <tr><td><strong>认知之构</strong></td><td>心灵主动建构世界</td><td>皮亚杰 · 乔姆斯基 · 卡尼曼</td><td>警惕偏差 · 理性生活</td></tr>
+              <tr><td><strong>意义之寻</strong></td><td>人追求意义与幸福</td><td>弗兰克尔 · 罗洛·梅 · 塞利格曼</td><td>创造 · 爱 · 态度</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <span class="callout-title">心理学精神三句话</span>
+          第一，<strong>认识你自己，从承认"不认识"开始</strong>——无意识之深告诉我们，自我认识是一场永无止境的考古；第二，<strong>人既是被塑造的，也是自我塑造的</strong>——行为主义看见环境的塑造力，人本主义看见主体的创造力，二者合观，才是完整的人；第三，<strong>心理学最终通向意义</strong>——从冯特的实验室到弗兰克尔的集中营，从斯金纳箱到人工智能，心理学始终在回答同一个问题：人如何理解自己，并活出值得活的人生。与第十七辑《西方哲学思想谱系》合观，哲学问"人是什么"，心理学答"人实际上如何"；与第十二辑《科技与人工智能思想谱系》对话，当机器开始思考，心理学正站在重新定义"心智"的最前沿——这正是思想图谱系列的全部意义。
+        </div>
+      </section>
+    </main>
+
+    
+      <section class="sec">
+        <h2>关联辑目</h2>
+        <div class="explain">
+          <p>本卷内容与以下辑目有密切关联，建议对照阅读：</p>
+          <ul>
+          <li><a href="../philosophy-lineage/philosophy-lineage.html">西方哲学思想谱系</a></li>
+          <li><a href="../logic-lineage/logic-lineage.html">逻辑与论证思想谱系</a></li>
+          <li><a href="../economics-lineage/economics-lineage.html">经济思想谱系·上篇</a></li>
+          <li><a href="../ethics-lineage/ethics-lineage.html">伦理学思想谱系</a></li>
+          <li><a href="../tech-ai-lineage/tech-ai-lineage.html">科技与AI思想谱系</a></li>
+          <li><a href="../life-science-lineage/life-science-lineage.html">生命科学思想谱系</a></li>
+          <li><a href="../education-lineage/education-lineage.html">教育思想谱系</a></li>
+          </ul>
+        </div>
+      </section>
+<footer>
+      心理学思想谱系 · 思想图谱系列第十八辑 · 作者：詹家杨 · 由 Trae Work 生成 · 2026-09-05
+    </footer>
+  </article>
+</div>
+
+<script src="./_shared/js/mermaid.min.js"></script>
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'neutral',
+  securityLevel: 'loose',
+  fontFamily: 'PingFang SC, Microsoft YaHei, Helvetica, sans-serif',
+  flowchart: { htmlLabels: true, curve: 'basis' }
+});
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>

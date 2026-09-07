@@ -1,0 +1,741 @@
+<!-- ==================== 硕士水平进阶模块 ==================== -->
+<section class="sec" id="masters-prologue">
+  <h2><span class="chapno">进阶级</span>硕士水平进阶导览</h2>
+  <div class="callout"><span class="callout-title">学习目标</span><p>从本科到硕士的跃迁路径。本进阶模块面向已完成本科生升级附录（附录一至十一）的读者，旨在将心理学知识的掌握从"系统理解"提升至"批判性参与"的层次。你将接触高阶理论框架、形式化基础、原始论文精读、前沿议题与独立研究设计——这些是心理学研究生训练的核心内容。</p></div>
+  <p><strong>前置要求：</strong>已完成附录一至十一的学习，熟悉心理学主干流派的基本概念与术语体系，具备基本的统计学素养（如理解p值、标准差、相关与回归）。</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>模块</th><th>内容</th><th>能力目标</th></tr></thead>
+      <tbody>
+        <tr><td><strong>M1</strong></td><td>高阶理论框架</td><td>理解认知神经科学、动态系统理论、具身理论、进化心理学的前沿理论框架</td></tr>
+        <tr><td><strong>M2</strong></td><td>形式化与数学基础</td><td>掌握IRT、SEM、HLM、贝叶斯统计的数学形式化表达</td></tr>
+        <tr><td><strong>M3</strong></td><td>核心论文精读</td><td>精读五篇里程碑论文，培养原始文献阅读与批判性评价能力</td></tr>
+        <tr><td><strong>M4</strong></td><td>研究方法论</td><td>理解实验设计、元分析方法与开放科学运动的深层逻辑</td></tr>
+        <tr><td><strong>M5</strong></td><td>前沿议题</td><td>追踪可重复性危机、p值争议、文化心理学前沿与计算精神病学</td></tr>
+        <tr><td><strong>M6</strong></td><td>跨学科交叉</td><td>探索心理学与神经科学、经济学、计算机科学、法律的交叉领域</td></tr>
+        <tr><td><strong>M7</strong></td><td>批判性分析</td><td>审视心理学理论碎片化、WEIRD问题、生态效度与DSM争议</td></tr>
+        <tr><td><strong>M8</strong></td><td>研究实践与论文</td><td>获取论文选题方向、可研究问题、进阶文献书目与学术写作规范</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ==================== M1 高阶理论框架 ==================== -->
+<section class="sec" id="masters-m1">
+  <h2><span class="chapno">M1</span>高阶理论框架</h2>
+  <p>本科阶段的学习使你熟悉了心理学的主要流派及其代表人物。硕士层面的进阶则需要你深入理解那些支撑当代心理学研究前沿的高阶理论框架。以下四个框架代表了当前心理学最活跃的理论生长点。</p>
+
+  <h3>1.1 认知神经科学：fMRI/EEG方法的理论假设与连接组学</h3>
+  <p>认知神经科学的核心假设是"心智功能可定位于脑结构"——这一假设源自十九世纪加尔（Gall）的颅相学与布罗卡（Broca）对语言区的发现。当代的功能磁共振成像（fMRI）通过测量血氧水平依赖（BOLD）信号来推断神经活动，其基本假设包括：<strong>神经-血管耦合假设</strong>（神经活动增加导致局部血流增加）与<strong>认知减影假设</strong>（实验条件与对照条件的差异反映了目标认知过程的神经活动）。然而，Logothetis（2008）的研究表明，BOLD信号更接近局部场电位而非神经元放电频率，这提醒我们fMRI信号与神经活动之间存在间接性。</p>
+  <p><strong>脑电图（EEG）</strong>以毫秒级的时间分辨率捕捉头皮电位的波动，但其空间分辨率有限。事件相关电位（ERP）通过叠加平均从噪声中提取与特定认知事件相关的脑电信号，P300、N400等成分已被广泛用于注意、记忆与语言研究。Lucky（2014）的源定位研究提醒我们，从头皮电位反推皮层源是"逆问题"——解不唯一。</p>
+  <p><strong>连接组学（Connectomics）</strong>是近年来认知神经科学最具革命性的转向。与传统的"定位"范式不同，连接组学认为心智功能产生于脑区之间的<strong>功能连接网络</strong>，而非单个脑区的独立活动。Sporns（2010）提出"人脑连接组"的概念，将图论方法引入神经科学：脑区是节点，功能连接是边，网络的小世界特性（Watts & Strogatz, 1998）、模块化（Newman, 2006）与枢纽节点（hubs）等概念为理解大脑的信息整合提供了强大的数学工具。例如，默认模式网络（DMN）的发现（Raichle et al., 2001）表明，大脑在静息状态下存在高度组织的自发活动——这一发现颠覆了"静息即静止"的传统假设。</p>
+
+  <figure class="diagram">
+    <figcaption>图 M1-1 · 脑功能连接组的三维可视化</figcaption>
+    <div id="psych-threejs-container" style="width:100%;height:480px;overflow:hidden;border-radius:8px;background:#f0e9f5;"></div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem;">三维脑功能连接网络：节点代表不同脑区（前额叶、颞叶、顶叶、枕叶、小脑等），连线代表静息态功能连接强度。颜色梯度表示模块化社区归属。</p>
+  </figure>
+
+  <h3>1.2 发展心理学的动态系统理论</h3>
+  <p>传统的发展心理学以阶段论（皮亚杰、弗洛伊德、埃里克森）为主导——发展被理解为一系列不连续的、普遍性的阶段。动态系统理论（DST）提供了另一种框架：<strong>发展是多个子系统在时间尺度上的自组织过程</strong>（Thelen & Smith, 1994）。大脑、身体、环境三者耦合，行为模式在相互作用的非线性动态中涌现。Thelen（1995）对踏步反射消失的研究表明，婴儿运动的"发展"不是中枢神经系统的成熟程序，而是力量、体重、姿势控制等变量的非线性相互作用——当这些变量达到临界值时，新的行为模式"自组织"地出现。这一框架对理解认知发展、语言习得、社会情绪发展均有深远意义。</p>
+
+  <h3>1.3 社会认知的具身理论：Barsalou的知觉符号系统</h3>
+  <p>传统的认知心理学采纳"认知即计算"的隐喻——心灵是一个抽象的符号处理系统，与身体和环境的物理特性无关。具身认知（Embodied Cognition）对此提出根本性质疑。Barsalou（1999, 2008）的<strong>知觉符号系统（Perceptual Symbol Systems）</strong>认为，概念知识不是存储在抽象语义网络中的任意符号，而是知觉、运动与内感受经验的<strong>模拟</strong>（simulation）——当你想"椅子"时，你的大脑部分地重新激活了你曾经坐过椅子的知觉-运动经验。Lakoff与Johnson（1980, 1999）从认知语言学的角度提供了支持：隐喻（如"时间是金钱"、"争论是战争"）不是修辞装饰，而是具身经验的认知结构。Niedenthal et al.（2005）的表情反馈实验表明，微笑肌肉（颧肌）的激活会影响情绪判断——身体状态是认知的组成部分，而不仅仅是认知的输出。</p>
+
+  <h3>1.4 进化心理学的模块性与大规模模块假说</h3>
+  <p>进化心理学（Evolutionary Psychology）将心灵视为一系列由自然选择塑造的<strong>心理模块</strong>（mental modules）。Cosmides与Tooby（1992, 2005）提出<strong>大规模模块假说</strong>（Massive Modularity Hypothesis）：心灵不是一块通用的问题解决板，而是由数百个领域特异性的、功能分化的模块组成，每个模块是为解决祖先环境中的特定适应性问题而设计的。经典例子包括：<strong>社会交换模块</strong>（Cosmides的"沃森选择任务"实验表明人类拥有检测社会契约违规者的专用推理机制——"如果你享受了利益，你必须支付成本"）、<strong>恐惧模块</strong>（蛇与蜘蛛的恐惧更易习得——对祖先威胁的进化准备）、<strong>配偶选择模块</strong>（跨文化研究显示男性更看重年轻与外貌，女性更看重资源与社会地位——Buss, 1989）。进化心理学引发激烈争议：Gould（1997）批评其为"适应主义故事"（adaptationist storytelling），认为缺乏实证可检验性；Richardson（2007）则质疑模块的可遗传性与演化可塑性。理解这一争论，是批判性参与心理学理论的前提。</p>
+
+  <div class="callout">
+    <span class="callout-title">关键学者</span>
+    <p>Logothetis（BOLD信号解释）、Sporns（连接组学）、Thelen（动态系统理论）、Barsalou（知觉符号系统）、Cosmides & Tooby（进化心理学）、Buss（进化心理学实证研究）、Watts & Strogatz（小世界网络）、Raichle（默认模式网络）、Gould（进化心理学批评）</p>
+  </div>
+</section>
+
+<!-- ==================== M2 形式化与数学基础 ==================== -->
+<section class="sec" id="masters-m2">
+  <h2><span class="chapno">M2</span>形式化与数学基础</h2>
+  <p>心理学作为一门科学，其理论发展与实证检验日益依赖数学工具。本科阶段你可能接触了基础的t检验与方差分析，硕士阶段则需要掌握以下更精深的数学框架。</p>
+
+  <h3>2.1 项目反应理论（IRT）与Rasch模型</h3>
+  <p>经典测量理论（CTT）以真分数模型为基础，但存在严重局限：项目难度与受试者能力相互依赖（同一项目在不同样本中难度不同）。项目反应理论（IRT）通过<strong>项目特征曲线（ICC）</strong>解决了这一问题。最常用的三参数逻辑模型（3PL）的形式为：</p>
+  <div class="formula">
+    <span class="f-name">三参数逻辑模型</span>
+    P(θ) = c + (1 − c) · e^{Da(θ−b)} / [1 + e^{Da(θ−b)}]
+    <span class="f-note">其中θ为潜在能力，a为区分度参数，b为难度参数，c为猜测参数（下渐近线），D为常数（通常取1.7）</span>
+  </div>
+  <p>Birnbaum（1968）首次系统阐述了这一模型。Lord（1980）在其经典著作中展示了IRT在自适应测验中的应用。Rasch模型（Rasch, 1960）是1PL的特例——固定a=1且c=0，强调"客观测量"的理想：受试者的能力估计不依赖于使用的项目集，这是"具体客观性"（specific objectivity）的体现。Andersen（1970）的条件最大似然估计方法为Rasch模型提供了参数估计的数学基础。Embretson与Reise（2000）对IRT的理论与应用做了全面综述。</p>
+
+  <figure class="diagram">
+    <figcaption>图 M2-1 · 项目特征曲线（ICC）的三参数逻辑模型</figcaption>
+    <div style="position:relative;width:100%;height:340px;">
+      <canvas id="psych-chart-icc" style="width:100%;height:100%;"></canvas>
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem;">三条ICC曲线展示不同参数组合：蓝线（高区分度a=1.8，中等难度b=0，低猜测c=0.1）、红线（中等区分度a=1.0，高难度b=1.5，猜测c=0.2）、绿线（低区分度a=0.6，低难度b=-1.0，猜测c=0.15）。横轴为潜在能力θ，纵轴为正确回答概率P(θ)。</p>
+  </figure>
+
+  <h3>2.2 结构方程模型（SEM）的数学形式化</h3>
+  <p>结构方程模型（SEM）是心理学的"回归分析升级版"，它允许研究者同时估计潜变量之间的因果关系与测量关系。Bollen（1989）给出了SEM的经典形式化：</p>
+  <div class="formula">
+    <span class="f-name">SEM的测量模型</span>
+    x = Λ_x ξ + δ, y = Λ_y η + ε
+    <span class="f-note">其中x与y为观测指标，ξ与η为潜变量（外生与内生），Λ为因子载荷矩阵，δ与ε为测量误差</span>
+  </div>
+  <div class="formula">
+    <span class="f-name">SEM的结构模型</span>
+    η = Bη + Γξ + ζ
+    <span class="f-note">其中B为内生潜变量之间的路径系数矩阵，Γ为外生潜变量对内生潜变量的效应矩阵，ζ为结构残差</span>
+  </div>
+  <p>Jöreskog（1973）的LISREL框架是SEM的早期实现。Bentler（1990）的比较拟合指数（CFI）与Steiger（1990）的RMSEA成为评估模型拟合的黄金标准。Muthén与Muthén（2017）的Mplus软件扩展了SEM到分类数据、纵向数据与多层数据。SEM的争议在于：<strong>模型拟合不等于因果成立</strong>——等同拟合模型（equivalent models）的存在意味着同一协方差矩阵可由不同因果结构产生（MacCallum et al., 1993）。</p>
+
+  <h3>2.3 多层线性模型（HLM）</h3>
+  <p>心理学数据天然具有嵌套结构：学生嵌套于班级，患者嵌套于诊所，测量嵌套于个体。多层线性模型（HLM）——亦称随机系数模型、混合效应模型——通过<strong>随机截距</strong>与<strong>随机斜率</strong>来处理这种嵌套依赖性。Raudenbush与Bryk（2002）的经典教材给出了HLM的完整形式化。一个两层模型的基本形式为：</p>
+  <div class="formula">
+    <span class="f-name">HLM两层模型</span>
+    层1（个体内）：Y_{ij} = β_{0j} + β_{1j}X_{ij} + r_{ij}<br>
+    层2（个体间）：β_{0j} = γ_{00} + γ_{01}W_j + u_{0j}, β_{1j} = γ_{10} + γ_{11}W_j + u_{1j}
+    <span class="f-note">r_{ij}为层1残差，u_{0j}与u_{1j}为层2随机效应，假设服从多元正态分布</span>
+  </div>
+
+  <h3>2.4 贝叶斯统计在心理学中的应用</h3>
+  <p>传统的频率主义统计以p值为核心，但p值不能回答研究者最关心的问题——"零假设为真的概率是多少？"贝叶斯统计通过贝叶斯定理提供了另一种框架：</p>
+  <div class="formula">
+    <span class="f-name">贝叶斯定理</span>
+    P(H|D) = P(D|H) · P(H) / P(D)
+    <span class="f-note">后验概率 ∝ 似然 × 先验概率。P(H|D)是"在看到数据D后，假设H为真的概率"</span>
+  </div>
+  <p>Wagenmakers（2007）倡导在心理学中广泛使用贝叶斯因子（Bayes Factor, BF）来替代p值。BF_{10} = P(D|H₁)/P(D|H₀)表示数据支持备择假设相对于零假设的程度。Kruschke（2015）的《Doing Bayesian Data Analysis》提供了实用的贝叶斯分析指南。Gelman等（2013）的《Bayesian Data Analysis》是更全面的理论参考。贝叶斯方法在心理学中的应用日益广泛，但批评者指出：先验分布的选择可以显著影响结果，当先验信息不足时，贝叶斯方法的"客观性"存疑。</p>
+
+  <div class="callout">
+    <span class="callout-title">关键学者</span>
+    <p>Lord（IRT）、Rasch（Rasch模型）、Birnbaum（3PL模型）、Bollen（SEM）、Jöreskog（LISREL）、Bentler（CFI）、Raudenbush（HLM）、Wagenmakers（贝叶斯心理学）、Kruschke（贝叶斯数据分析）、Gelman（贝叶斯统计）</p>
+  </div>
+</section>
+
+<!-- ==================== M3 核心论文精读 ==================== -->
+<section class="sec" id="masters-m3">
+  <h2><span class="chapno">M3</span>核心论文精读</h2>
+  <p>硕士阶段的核心能力之一是阅读与批判性评价原始文献。以下五篇论文代表了心理学五个关键领域的里程碑，每篇附300字以上的评论，指引你如何理解其在学术谱系中的位置、方法贡献与局限。</p>
+
+  <h3>3.1 Kahneman & Tversky (1979) ——《前景理论：风险决策的分析》</h3>
+  <div class="callout">
+    <span class="callout-title">Prospect Theory: An Analysis of Decision under Risk, Econometrica, 47(2), 263–291</span>
+    <p><strong>评论：</strong>Kahneman与Tversky的这篇论文是行为经济学的奠基之作，也是心理学对经济学最深刻的一次干预。此前，经济学中占主导地位的是"期望效用理论"（von Neumann & Morgenstern, 1944）——理性决策者在不确定条件下最大化期望效用。Kahneman与Tversky通过一系列精心设计的实验，展示了人类决策系统性地偏离期望效用理论的预测：在获益领域表现为风险规避，在损失领域表现为风险寻求——这一模式被称为"反射效应"。他们提出了"价值函数"（在参照点附近不对称——损失比获益更敏感）和"权重函数"（小概率被高估，中大概率被低估）两个核心构件。论文的方法论贡献同样重要：用假设性选择情景（hypothetical choice scenarios）研究决策，虽然此后关于"假设性偏差"的争议不断，但这一范式催生了整个行为决策研究领域。值得注意的局限是：实验使用的样本量较小（通常每组几十人），且被试多为大学生。后续研究（如Hertwig et al., 2004）使用"经验抽样法"发现，当人们从经验中学习概率时，前景理论的预测部分失效——决策从描述到经验的迁移并非直接的。</p>
+  </div>
+
+  <h3>3.2 Baddeley (1992) ——《工作记忆》</h3>
+  <div class="callout">
+    <span class="callout-title">Working Memory, Science, 255(5044), 556–559</span>
+    <p><strong>评论：</strong>Baddeley的这篇综述文章集中阐述了他与Hitch（1974）提出的"工作记忆"多成分模型。该模型替代了Atkinson与Shiffrin（1968）的"短时存储"概念——认为短时记忆不只是存储，而是"工作"——一个同时执行存储与加工的资源受限系统。模型包含三个核心成分：中央执行系统（控制注意与协调）、语音环路（存储语音信息）与视空间画板（存储视觉与空间信息）。2000年，Baddeley又增加了"情景缓冲器"作为第四个成分。这篇论文的重要性在于：它把"记忆"从被动的仓库重新定义为主动的"工作空间"，直接影响了认知心理学、发展心理学与认知神经科学的研究议程。在方法上，Baddeley采用"双重任务"范式来分离不同成分——如果两个任务使用同一子系统，它们的表现会相互干扰；如果使用不同子系统，则可以同时进行。这一逻辑至今仍是认知心理学实验设计的核心方法。局限在于：工作记忆模型各个成分之间的相互作用机制仍不清晰，且中央执行系统的功能划分过于笼统——Miyake et al.（2000）的潜变量分析表明，中央执行功能可进一步分解为"抑制、转换、更新"三个子成分。</p>
+  </div>
+
+  <h3>3.3 Neisser (1967) ——《认知心理学》</h3>
+  <div class="callout">
+    <span class="callout-title">Cognitive Psychology, Appleton-Century-Crofts</span>
+    <p><strong>评论：</strong>Neisser的这部著作命名了一门学科——"认知心理学"这个术语在此之前并不通用。在行为主义统治美国心理学近半个世纪后，Neisser在书中宣告：心灵重新成为心理学的研究对象，但这次不是以"意识流"（詹姆斯）或"无意识"（弗洛伊德）的形式，而是以"信息加工"的形式。Neisser将人类认知类比为计算机的信息处理：感觉输入→知觉编码→记忆存储→提取→思维与决策。他详细讨论了模式识别、注意、记忆、语言等主题，但最引人注目的可能是他对"认知"的谨慎定义——不是简单的"符号操作"，而是"感觉输入被转换、简化、加工、存储、恢复和使用的全部过程"。这种"认知的生态学取向"在Neisser后来的著作《认知与现实》（1976）中得到了进一步发挥——他批评实验室中的认知研究脱离真实世界的认知活动，呼吁"生态效度"。这篇著作的发表标志着"认知革命"从一场运动凝聚为一门学科，但它也留下了一个尚未解决的问题：如果认知是"信息加工"，那么这个"信息加工者"（即"自我"或"主体"）在哪里？Neisser对此没有给出答案，这个问题后来被Dennett（1991）的"多重草稿模型"与Metzinger（2003）的"自我模型理论"继续探索。</p>
+  </div>
+
+  <h3>3.4 Bandura (1977) ——《自我效能：关于行为变化的统一理论》</h3>
+  <div class="callout">
+    <span class="callout-title">Self-Efficacy: Toward a Unifying Theory of Behavioral Change, Psychological Review, 84(2), 191–215</span>
+    <p><strong>评论：</strong>Bandura的这篇论文提出了"自我效能感"（self-efficacy）这个概念——"人们对自身组织和执行既定行动过程的能力的信念"。这个概念看似简单，但它对心理学的贡献是范式性的。在行为主义传统中，行为变化被视为环境强化的直接结果，个体信念是"副现象"（epiphenomenon）——不影响行为的因果过程。Bandura以自我效能为核心，提出了"交互决定论"（reciprocal determinism）：个人（信念、预期）、行为与环境三者相互决定，这是对激进行为主义的一次根本性修正。论文识别了自我效能感的四个来源：掌握经验（成功的经历）、替代经验（观察他人的成功）、言语劝说、生理与情绪状态。这些来源至今仍是临床与教育干预的设计框架。在方法上，Bandura强调了"效能信念"与"结果预期"的区分——一个人可能相信某项行动会带来好结果（结果预期），但不相信自己能执行该行动（效能信念）。这一区分对理解焦虑、抑郁与健康行为有直接意义。局限在于：自我效能感与"自尊"（self-esteem）的概念边界有时模糊，且跨文化研究显示，自我效能感在集体主义文化中的预测力可能弱于个人主义文化（Markus & Kitayama, 1991）。</p>
+  </div>
+
+  <h3>3.5 Nisbett & Wilson (1977) ——《内省的不准确性：关于口述报告可靠性的证据》</h3>
+  <div class="callout">
+    <span class="callout-title">Telling More Than We Can Know: Verbal Reports on Mental Processes, Psychological Review, 84(3), 231–259</span>
+    <p><strong>评论：</strong>Nisbett与Wilson的这篇论文是心理学史上最令人不安的论文之一——它直接挑战了心理学作为一门"关于心灵的科学"的认识论基础。如果人们不能准确报告自己的心理过程，那么心理学的研究对象是什么？论文通过一系列精巧的实验（如"商品陈列效应"：消费者选择最右边的连裤袜，但否认位置影响了选择；"位置效应"：被试声称自己会被邻居的求助声救助，但实际行为并非如此）展示了：人们不仅不能准确报告自己的心理过程，而且他们给出的"解释"往往是事后编造的——是对行为的"理论"而非"观察"。Nisbett与Wilson提出，内省只能接近"心理过程的结果"，而不能接近"心理过程本身"。这篇论文对心理学的影响是双重的：一方面，它促成了"内省法"在主流心理学中的消退——认知心理学转而使用反应时、错误率等行为指标来推断心理过程；另一方面，它引发了关于"无意识认知"的广泛研究，间接支持了精神分析的无意识概念（尽管在方法论上精神分析采取的是完全不同的路径）。批评者（如Ericsson & Simon, 1980）指出，Nisbett与Wilson的结论可能过于悲观——当被试在特定条件下（如"出声思考"与"立即报告"）进行内省时，口述报告可以实现较高的准确性。这场争论至今未完全解决。</p>
+  </div>
+
+  <div class="callout">
+    <span class="callout-title">阅读建议</span>
+    <p>建议按照发表年代顺序阅读：先读Neisser（1967，认知科学宣言）、Bandura（1977，自我效能理论）、Nisbett & Wilson（1977，内省限度）、Kahneman & Tversky（1979，行为决策革命）、Baddeley（1992，工作记忆模型）。每篇读两遍：第一遍获取大意，第二遍做"批判性笔记"——记录假设、方法、证据、推论与局限。</p>
+  </div>
+</section>
+
+<!-- ==================== M4 研究方法论 ==================== -->
+<section class="sec" id="masters-m4">
+  <h2><span class="chapno">M4</span>研究方法论</h2>
+  <p>心理学的研究方法远不止"做实验"这么简单。硕士阶段需要理解实验设计的内在逻辑、元分析的方法论基础，以及当代心理学面临的"方法危机"与开放科学运动。</p>
+
+  <h3>4.1 实验设计：被试内/被试间、析因设计与准实验</h3>
+  <p>实验设计的核心是因果推断——操纵自变量，控制混杂变量，观察因变量的变化。<strong>被试间设计</strong>将不同被试分配到不同条件，统计效力依赖于组间变异；<strong>被试内设计</strong>让同一被试接受所有条件，控制了被试间变异，但面临顺序效应与练习效应的问题。Greenwald（1976）对"对照实验"的经典分析表明，被试内设计效力的前提是"条件顺序的平衡化"——拉丁方与随机化是常用的平衡策略。</p>
+  <p><strong>析因设计</strong>（factorial design）同时考察两个或多个自变量的主效应与交互效应。交互效应是心理学实验中最有趣但也最难解释的结果——它意味着一个自变量的效应依赖于另一个自变量的水平。例如，一个经典的"技能×压力"交互效应：高技能者在压力下表现更好，低技能者在压力下表现更差（"clutch"现象 vs "choking"现象）。</p>
+  <p><strong>准实验</strong>（quasi-experiment）在无法随机分配被试时使用——如比较不同性别、年龄、临床诊断组之间的差异。准实验不能建立严格的因果推断，但Campbell与Stanley（1963）的经典著作提供了多种准实验设计的"效度威胁"分析框架，帮助研究者最大程度地减少混淆变量的影响。Shadish、Cook与Campbell（2002）的更新版进一步扩展了这一框架。</p>
+
+  <h3>4.2 元分析方法：Hunter-Schmidt方法与随机效应模型</h3>
+  <p>元分析是对多个独立研究的结果进行定量综合的方法。Glass（1976）首次提出"元分析"这一术语，但在此之前，心理学家已经面临"研究结果不一致"的困境——为什么关于同一问题的不同研究会得出不同的结论？</p>
+  <p>Hunter与Schmidt（1990, 2004）的<strong>心理测量元分析方法</strong>（Psychometric Meta-Analysis）强调，研究间差异主要来自三个来源：<strong>抽样误差</strong>（sampling error）——样本量小导致效应量估计不稳定；<strong>测量误差</strong>（measurement error）——信度不完美导致效应量被低估；<strong>范围限制</strong>（range restriction）——样本变异范围小于总体导致效应量低估。Hunter-Schmidt方法通过"修正"这些人为误差，得到一个更接近总体真实效应的估计值。</p>
+  <p>随机效应模型（Random Effects Model）是另一种元分析框架（DerSimonian & Laird, 1986），它假设不同研究的真实效应围绕一个总体均值随机分布——即研究间既存在抽样误差，也存在真实效应变异。Borenstein等（2009）的《Introduction to Meta-Analysis》是这一领域的标准教材。固定效应模型与随机效应模型的选择是一个长期争论：当研究间异质性较大时，固定效应模型会产生误导性的窄置信区间。</p>
+
+  <h3>4.3 重复性危机与开放科学</h3>
+  <p>2010年代以来，心理学经历了深刻的可重复性危机（replicability crisis）。Open Science Collaboration（2015）的"再现性项目"（Reproducibility Project）对100项心理学研究进行了系统复制，结果只有36%的复制研究得到了统计显著的结果，且复制效应量只有原始研究的约一半。这一结果对心理学作为一门科学的可信度造成了严重冲击。</p>
+  <p>危机的根源包括：<strong>出版偏倚</strong>（显著性结果更易发表）、<strong>可疑研究实践</strong>（QRPs——如p-hacking、HARKing、选择性报告结果）、<strong>低统计效力</strong>（Cohen, 1962, 1992早已警告心理学研究普遍效力不足）。开放科学运动（Open Science Movement）提出的应对策略包括：<strong>预注册</strong>（preregistration——在数据收集前公开研究设计、假设与分析方法）、<strong>直接复制</strong>（direct replication）、<strong>多实验室合作</strong>（如Many Labs项目——Klein et al., 2014, 2018）、<strong>开放数据与开放材料</strong>。Nosek等（2015）的"促进开放科学中心"（COS）推动了这些实践的制度化。</p>
+
+  <figure class="diagram">
+    <figcaption>图 M4-1 · 心理学研究方法论谱系图</figcaption>
+    <div style="position:relative;width:100%;height:380px;">
+      <canvas id="psych-chart-methods" style="width:100%;height:100%;"></canvas>
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem;">心理学研究方法论谱系：从研究类型（实验/准实验/相关/元分析/开放科学）到具体方法，展示各方法之间的逻辑关系与适用场景。</p>
+  </figure>
+
+  <div class="callout">
+    <span class="callout-title">关键学者</span>
+    <p>Campbell（实验设计效度）、Shadish（准实验设计）、Hunter & Schmidt（元分析方法）、DerSimonian & Laird（随机效应模型）、Borenstein（元分析教材）、Cohen（统计效力）、Nosek（开放科学）、Open Science Collaboration（重复性项目）</p>
+  </div>
+</section>
+
+<!-- ==================== M5 前沿议题 ==================== -->
+<section class="sec" id="masters-m5">
+  <h2><span class="chapno">M5</span>前沿议题</h2>
+  <p>当代心理学的前沿议题正在重新定义这门学科。以下四个议题代表了当前最活跃的争论与最具变革潜能的研究方向。</p>
+
+  <h3>5.1 可重复性危机：Open Science Collaboration 2015的结果与影响</h3>
+  <p>Open Science Collaboration（2015）的"再现性项目：心理学"是心理学史上最大规模的复制研究合作。100项原始研究来自三个顶级心理学期刊（2008年），经过精心设计的复制方案——包括高统计效力（平均达0.92）、预注册分析计划、开放数据与材料——结果令人震惊：只有36%的复制研究获得了统计显著结果（vs. 原始研究的97%），复制的平均效应量（r = 0.197）仅为原始平均效应量（r = 0.403）的约一半。这一结果不是某一特定领域的现象——在社会心理学、认知心理学、发展心理学等领域均出现了类似的可重复性率。</p>
+  <p>这一结果的影响远远超出了学术圈。它引发了公众对心理学"科学地位"的质疑，也促使心理学界进行深刻的自我反思。Gilbert等（2016）对OSC的方法论提出了批评，认为复制研究在程序上与原研究存在差异，且抽样误差本身可以解释部分结果。OSC的回应（Anderson et al., 2016）则坚持其结论的有效性。这场争论至今没有完全平息，但最积极的成果是：预注册、开放数据、高效力复制已成为心理学研究的"新常态"。</p>
+
+  <h3>5.2 p值争议与统计改革</h3>
+  <p>p值——零假设显著性检验（NHST）的核心——正在经历一场"身份危机"。p值被定义为"在零假设为真的条件下，观察到当前（或更极端）结果的概率"。这一定义本身就容易被误解：研究者常误以为p值是"零假设为真的概率"或"效应为真的概率"。Cohen（1994）的《地球是圆的（p < 0.05）》一文对p值的滥用进行了辛辣批评，指出p值对样本量过于敏感——大样本下任何微小效应都会变得"显著"，小样本下即使是真实效应也可能不显著。</p>
+  <p>统计改革的方向包括：</p>
+  <ul>
+    <li><strong>贝叶斯因子</strong>（Wagenmakers et al., 2011）：直接量化数据支持H₁相对于H₀的程度，而非"拒斥H₀"。</li>
+    <li><strong>效应量</strong>（Cohen's d, η², r）：报告效应量的点估计与置信区间，而非仅报告p值。</li>
+    <li><strong>估计值替代法</strong>（Cumming, 2012）：用"元分析思维"替代"显著/不显著"的二元决策——聚焦于效应量的精确估计与置信区间。</li>
+    <li><strong>新统计方法</strong>（如稳健估计、置换检验、bootstrapping）：不依赖正态分布假设的方法。</li>
+  </ul>
+  <p>美国统计协会（ASA）2016年发布了关于p值的正式声明（Wasserstein & Lazar, 2016），警告p值不能单独作为统计推断的依据，也不能作为"科学重要性"的度量。但正如Wasserstein等（2019）所指出的，p值的废止不是目标——目标是用更完整的统计推理框架来替代p值的垄断地位。</p>
+
+  <figure class="diagram">
+    <figcaption>图 M5-1 · p值分布的动态模拟：不同样本量下的p值波动</figcaption>
+    <div style="position:relative;width:100%;height:360px;">
+      <canvas id="psych-chart-pvalue" style="width:100%;height:100%;"></canvas>
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem;">动画模拟：在固定真实效应（Cohen's d = 0.3）下，不同样本量（n = 20, 50, 100, 200）的p值分布。红色虚线标记p = 0.05的显著性阈值。小样本下p值剧烈波动，大样本下p值更稳定地集中在低值区域。</p>
+  </figure>
+
+  <h3>5.3 文化心理学的前沿：Markus & Kitayama的独立自我与互依自我</h3>
+  <p>Markus与Kitayama（1991, 2010）的"独立自我vs互依自我"框架是文化心理学最具影响力的理论之一。他们提出：西方文化（尤其是北美与西欧）倾向于培养"独立自我"——自我被视为一个独立的、自主的、与环境分离的个体，核心特征是"表达独特性、实现自我潜能、维护个人权利"。东亚文化（如中国、日本、韩国）倾向于培养"互依自我"——自我被视为一个嵌入社会关系网络的、与重要他人相互依存的存在，核心特征是"维持和谐、适应社会期望、履行角色义务"。</p>
+  <p>这一框架的最初论文（1991）被引超过2万次，催生了大量跨文化心理学研究：自我概念（独立 vs 互依的自我描述）、认知风格（分析性vs整体性——Nisbett et al., 2001）、情绪体验（自我聚焦情绪vs他人聚焦情绪）、动机（自我提升vs自我批评——Heine et al., 1999）。然而，这一框架也面临批评：Matsumoto（1999）指出，自我构念的量表测量存在文化偏倚——"独立"与"互依"不是单一维度的两极，而是两个独立的维度；Oyserman等（2002）的元分析发现，文化内变异（如社会阶层、地区差异）往往大于文化间变异。当代文化心理学正在从"东西方二元论"转向更精细的跨文化模型——如Kitayama等（2014）的"社会生态学"框架，将文化差异与具体的社会生态因素（如作物种植方式、病原体流行率、历史流动性）联系起来。</p>
+
+  <h3>5.4 计算精神病学</h3>
+  <p>计算精神病学（Computational Psychiatry）是心理学、神经科学与计算科学交叉的最新前沿。它的核心假设是：精神疾病不是"化学失衡"或"发育缺陷"，而是<strong>大脑的计算机制出现系统性偏差</strong>。Huys等（2011, 2016）综述了计算精神病学的框架——将强化学习、贝叶斯推理、自由能原理等计算模型应用于精神疾病的理解。</p>
+  <p>例如，<strong>强化学习模型</strong>被用于理解精神分裂症：精神分裂症患者的"预测误差"（prediction error）信号——多巴胺系统编码的"实际奖励与预期奖励之差"——出现异常，导致他们无法正确学习奖励与惩罚的关联（Maia & Frank, 2011）。<strong>贝叶斯推理模型</strong>被用于理解焦虑障碍：焦虑患者对威胁的"先验信念"过于强烈，导致他们在面对安全信号时仍无法更新"威胁概率"的估计——"安全学习"失败（Browning et al., 2015）。<strong>自由能原理</strong>（Friston, 2010）提供了一个更统一的理论框架：大脑是一个"推理引擎"，通过最小化"自由能"（即预测误差）来维持与环境的适应。精神疾病是自由能最小化过程的异常——如自闭症可能源于"对精确性的过度敏感"（精确预测误差被过度加权），而精神分裂症可能源于"对精确性的不敏感"（预测误差权重过低）。</p>
+  <p>计算精神病学仍处于早期阶段，大多数模型尚未转化为临床实践。但它提供了一个有希望的方向：用精确的、可量化的计算模型来替代模糊的、描述性的精神疾病诊断——这是DSM-5之后精神病学最深层的范式革命。</p>
+
+  <div class="callout">
+    <span class="callout-title">关键学者</span>
+    <p>Open Science Collaboration（重复性危机）、Wagenmakers（贝叶斯因子）、Cohen（效应量与统计效力）、Markus & Kitayama（文化心理学）、Nisbett（认知风格）、Huys（计算精神病学）、Friston（自由能原理）、Maia & Frank（精神分裂症计算模型）</p>
+  </div>
+</section>
+
+<!-- ==================== M6 跨学科交叉 ==================== -->
+<section class="sec" id="masters-m6">
+  <h2><span class="chapno">M6</span>跨学科交叉</h2>
+  <p>心理学的边界比任何其他学科都更模糊——它既与生物学共享"脑"，又与社会科学共享"人"，还与计算机科学共享"智能"。理解这些交叉领域，是硕士阶段拓宽视野的关键。</p>
+
+  <h3>6.1 心理学与神经科学：认知神经科学</h3>
+  <p>认知神经科学是最成熟的心理学-神经科学交叉领域。如前文M1所述，fMRI、EEG、MEG、TMS等工具让研究者能够"看到"心理活动的脑基础。但更深层的交叉发生在理论层面：<strong>神经哲学</strong>（Neurophilosophy）——如Churchland（1986）的"消除性唯物主义"（Eliminative Materialism）——认为认知心理学的"常识心理学"概念（信念、欲望、意图）将被神经科学的精确语言所取代。这一主张引发了激烈争论：Dennett（1987）的"意向立场"与Fodor（1975）的"思想语言"是认知心理学的经典辩护。Pinker（1997）的《心灵如何工作》是认知神经科学立场面向大众的经典阐述。Gazzaniga（2015）主编的《认知神经科学》教材是这一领域的标准参考。</p>
+
+  <h3>6.2 心理学与经济学：行为经济学</h3>
+  <p>行为经济学可能是心理学对相邻学科最成功的"输出"。Tversky与Kahneman（1974）的"启发式与偏差"研究纲领——以可用性启发式、代表性启发式、锚定效应等概念——揭示人类决策的系统性非理性。Thaler（2015）的"助推"（Nudge）理论将这些发现应用于公共政策：在不限制自由选择的前提下，通过改变"选择架构"（如默认选项、社会规范信息）来引导人们做出更好的决策。Sunstein与Thaler（2008）的《助推》是这一运动的宣言。行为经济学的影响已从经济学扩展到公共卫生（器官捐献默认选项）、退休储蓄（自动加入计划）、环境保护（社会比较反馈）等领域。但批评者（如Gigerenzer, 2015）认为，所谓的"偏差"在生态理性的视角下可能不是偏差——当决策环境与人类心智的进化环境匹配时，启发式是高效的适应策略而非认知缺陷。</p>
+
+  <h3>6.3 心理学与计算机科学：人机交互与AI心理学</h3>
+  <p>心理学与计算机科学的关系是双向的。一方面，认知心理学为早期人工智能提供了理论基础——Newell与Simon（1972）的"物理符号系统假设"直接源于人类认知的信息加工模型。另一方面，计算机科学为心理学提供了新的研究工具与理论隐喻。当代<strong>人机交互</strong>（HCI）研究大量借鉴了认知心理学、社会心理学与工程心理学的理论框架——如Norman（1988, 2013）的"用户中心设计"与"可发现性"概念，Card等（1983）的"模型人类处理器"（Model Human Processor）——将人类视为信息处理系统，以预测人机交互的效率。</p>
+  <p><strong>AI心理学</strong>是近年来兴起的新方向。大型语言模型（如ChatGPT）是否拥有"心智"？它们是否可以通过"心理理论"测试？Kosinski（2023）的研究表明，GPT-3.5在错误信念任务（false-belief task）上的表现达到了6岁儿童的水平——但这一"心理理论"是通过统计学习习得的，还是通过真正的"心智模拟"实现的？这回到了心理学最古老的问题：什么是"理解"？Searle（1980）的"中文房间"思想实验已预先警告：符号操作本身不等于理解。但Dennett（2017）的"意向立场"则主张：当一个系统表现出足够复杂的、可预测的"理性行为"时，我们有权将其视为"有意向的"——即使我们知道它"内部"只是符号操作。</p>
+
+  <h3>6.4 心理学与法律：目击者证词与测谎</h3>
+  <p>心理学与法律的交叉——法律心理学（Legal Psychology）与司法心理学（Forensic Psychology）——是心理学社会应用最敏感的领域之一。<strong>目击者证词</strong>的研究是其中的经典。Loftus（1975, 1997）的"误导信息效应"（Misinformation Effect）展示了：目击者的记忆可以被事后提问的措辞系统性地扭曲——"你看到那辆车的灯坏了吗？"暗示了"灯坏了"这一事实。这一发现在法庭上产生了深远影响：美国"无辜者项目"（Innocence Project）通过DNA证据证明，超过70%的误判案件中涉及目击者证词错误。Wells等（1998, 2020）提出了目击者辨认的"最佳实践指南"——包括双盲排列（调查者不知道谁是嫌疑人）、逐次呈现（而非同时呈现）、即时信心声明（在得知确认结果前立即记录信心水平）。</p>
+  <p><strong>测谎</strong>（Lie Detection）是另一个争议领域。传统的多导测谎仪（polygraph）基于"说谎导致生理唤醒"的假设——测量心率、皮电、呼吸等指标。但国家科学院（NRC, 2003）的报告指出，多导测谎的科学基础薄弱，在现实场景中的准确率远低于实验室条件。fMRI测谎试图通过检测"前额叶皮层"的激活来识别说谎——说真话不需要额外努力，而说谎需要"抑制真相"的认知控制（Langleben et al., 2002）。但这一方法同样面临生态效度问题：在实验室中说"2+2=5"是"假"的，在法庭中否认犯罪是"真实的说谎"——两者涉及不同的认知过程。</p>
+
+  <div class="callout">
+    <span class="callout-title">关键学者</span>
+    <p>Churchland（神经哲学）、Fodor（思想语言）、Thaler（行为经济学）、Gigerenzer（生态理性）、Norman（HCI）、Card（模型人类处理器）、Loftus（目击者记忆）、Wells（目击者辨认）、Langleben（fMRI测谎）</p>
+  </div>
+</section>
+
+<!-- ==================== M7 批判性分析 ==================== -->
+<section class="sec" id="masters-m7">
+  <h2><span class="chapno">M7</span>批判性分析</h2>
+  <p>硕士训练的核心不是"掌握更多知识"，而是"培养批判性判断力"。以下四个问题代表了心理学作为一门学科所面临的深层认识论挑战——理解这些挑战，是成为成熟心理学研究者的标志。</p>
+
+  <h3>7.1 心理学理论的碎片化：没有统一范式的学科</h3>
+  <p>与物理学（从牛顿力学到量子场论，学科有统一的理论框架）不同，心理学从未拥有一个被所有分支接受的核心范式。Kuhn（1962）在《科学革命的结构》中描述"常规科学"——一个范式指导下的累积性研究——但心理学似乎从未进入"常规科学"状态。Staats（1983, 1991）将这种状态称为"心理学的碎片化"（fragmentation）：认知心理学、行为神经科学、精神分析、人本主义心理学、进化心理学各自使用不同的理论语言、方法与解释标准，彼此之间缺乏对话。</p>
+  <p>这种碎片化是"丰富的多样性"还是"学科不成熟"的体现？Henriques（2003, 2011）的"统一的知识框架"（Unified Framework）试图将心理学整合在"行为-心理-文化"的三层模型下，但未获得广泛接受。Sternberg与Grigorenko（2001）提出的"统一心理学"（Unified Psychology）呼吁在课程设置与学科组织上建立交叉领域的桥梁。现实的进展是：认知神经科学（连接认知与脑）与进化心理学（连接心理与演化）正在成为最有希望的"桥梁学科"。</p>
+
+  <h3>7.2 WEIRD人群问题：Henrich 2010的批评</h3>
+  <p>2010年，Henrich、Heine与Norenzayan在《行为与脑科学》上发表了一篇改变心理学学科自我认知的论文：<strong>心理学中最奇怪的人群</strong>（The Weirdest People in the World?）。他们指出，心理学研究（尤其是认知心理学与社会心理学）的参与者绝大多数来自<strong>WEIRD</strong>社会——Western（西方）、Educated（受过教育）、Industrialized（工业化）、Rich（富裕）、Democratic（民主的）。</p>
+  <p>具体数据令人震惊：2008年《心理科学》、《人格与社会心理学杂志》等顶级期刊中，96%的参与者来自只占世界人口12%的西方工业化国家，其中68%来自美国——而美国人口中又有约67%是心理学导论课程的大学生。Henrich等展示了WEIRD样本在多个心理学维度上是"极端异常值"：视觉感知（Müller-Lyer错觉的易感性）、道德推理（基于规则的vs基于关系的）、自我概念（独立的vs互依的）、推理风格（分析性vs整体性）。</p>
+  <p>这篇论文的深远影响在于：它迫使心理学界正视一个尴尬的事实——我们关于"人类心理"的"普遍知识"，可能实际上只是"WEIRD人群的心理"。解决之道是建立"跨文化心理学"（cross-cultural psychology）与"文化心理学"（cultural psychology）的互补研究框架，并推动"全球心理学"（global psychology）的学科建设。Arnett（2008）与Thalmayer等（2021）的后续研究显示，这一问题的改善进展缓慢——WEIRD偏倚在心理学研究中仍然严重。</p>
+
+  <h3>7.3 实验心理学的人为性：生态效度问题</h3>
+  <p>实验心理学为了内部效度（因果推断的确定性），往往将认知任务简化为高度人为的、去情境化的操作——在安静的实验室里，面对计算机屏幕，做按键反应。这种做法的生态效度（研究结果推广到真实世界的程度）一直受到质疑。Neisser（1976）在《认知与现实》中最早系统批评了这种"认知心理学的实验室化"——"如果认知心理学不能解释人们在真实世界中的认知活动，那么它就是一种伪科学"。</p>
+  <p>这一批评在记忆研究中尤为尖锐：Tulving（1983）的"编码特异性原则"与"情境依赖记忆"（Godden & Baddeley, 1975的潜水员实验）已经在实验室外证明了记忆的生态敏感性。但更多领域——如"面孔识别"与"视觉搜索"——在实验室中的发现是否适用于现实场景（如机场安检、警察辨认）？Simons等（2017）在"心理学研究中的普遍性"（generality）问题的综述中系统梳理了这一问题，并提出了"边界条件"（boundary conditions）分析框架：与其问"效应是否普遍"，不如问"效应在什么条件下存在、什么条件下消失"。</p>
+
+  <h3>7.4 精神疾病诊断的可靠性：DSM的争议</h3>
+  <p>美国精神医学协会的《精神障碍诊断与统计手册》（DSM）是精神疾病诊断的"圣经"。但DSM-5（2013）的发布引发了前所未有的争议与批评。核心问题有两个：诊断标准的<strong>效度</strong>（validity）与<strong>信度</strong>（reliability）。</p>
+  <p>信度方面：DSM-III（1980）通过操作化诊断标准——将精神疾病定义为"症状清单"——显著提高了诊断信度（不同医生对同一患者做出相同诊断的概率）。但DSM-5的现场试验显示，某些常见诊断（如重度抑郁症、广泛性焦虑障碍）的信度仅为"中等"（kappa值约0.4–0.6）。</p>
+  <p>效度方面：批评更具根本性。Hyman（2010）——DSM-5工作组的成员之一——指出，DSM诊断类别缺乏生物学基础——它们不是基于病因或病理机制，而是基于"症状聚类"的共识判断。Insel（2013）——时任美国国家精神卫生研究所（NIMH）所长——宣布NIMH将"脱离DSM的分类体系"，转向基于神经科学、遗传学与行为科学的"研究领域标准"（RDoC）框架。RDoC从"负效价系统、正效价系统、认知系统、社会过程系统、唤醒与调节系统"五个维度重新定义精神疾病，试图为精神疾病诊断提供生物学基础——但这一框架同样面临挑战：它是否过于简化了精神疾病的复杂性？</p>
+  <p>此外，DSM-5的"诊断扩增"（diagnostic inflation）——降低诊断阈值、增加新诊断类别——被批评为"医学化日常生活的痛苦"（Frances, 2013）。Frances——DSM-IV的主编——警告：DSM-5的某些改变（如"悲伤排除条款"的移除）可能导致正常哀伤被误诊为抑郁症，进而导致不必要的药物治疗。</p>
+
+  <div class="callout">
+    <span class="callout-title">关键学者</span>
+    <p>Kuhn（科学范式）、Henrich（WEIRD批评）、Neisser（生态效度）、Simons（普遍性问题）、Hyman（DSM批评）、Insel（RDoC）、Frances（DSM扩增批评）、Staats（心理学碎片化）</p>
+  </div>
+</section>
+
+<!-- ==================== M8 研究实践与论文 ==================== -->
+<section class="sec" id="masters-m8">
+  <h2><span class="chapno">M8</span>研究实践与论文</h2>
+  <p>硕士训练的最终目标是使学习者具备独立开展心理学研究的能力。以下提供论文选题方向、可研究问题、进阶文献书目与学术写作规范。</p>
+
+  <h3>8.1 五个论文选题方向</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>方向</th><th>研究领域</th><th>推荐导师专长</th><th>方法要求</th></tr></thead>
+      <tbody>
+        <tr><td><strong>方向一</strong></td><td>认知偏好的跨文化差异（如"分析性vs整体性思维"的神经基础）</td><td>文化心理学、认知神经科学</td><td>fMRI/EEG实验设计 + 跨文化被试招募</td></tr>
+        <tr><td><strong>方向二</strong></td><td>社会决策中的无意识过程（如"内隐态度"对经济决策的影响）</td><td>社会心理学、行为经济学</td><td>IAT（内隐联想测验）+ 实验经济学范式</td></tr>
+        <tr><td><strong>方向三</strong></td><td>数字心理健康干预的效果与机制（如"基于APP的认知行为疗法"）</td><td>临床心理学、人机交互</td><td>随机对照试验（RCT）+ 过程分析</td></tr>
+        <tr><td><strong>方向四</strong></td><td>儿童发展中的"执行功能"训练与迁移效应</td><td>发展心理学、认知训练</td><td>纵向设计 + 多时间点测量</td></tr>
+        <tr><td><strong>方向五</strong></td><td>心理学可重复性危机中的"元科学"研究（如QRPs的流行率变化）</td><td>元科学、研究方法论</td><td>元分析 + 大规模调查</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>8.2 十个可研究问题</h3>
+  <ol style="margin:0 0 1rem 1.5rem;font-size:0.95rem;">
+    <li><strong>Q1：</strong>来自不同社会阶层（高/低社会经济地位）的个体在"自我构念"上的差异是否大于跨文化差异？（假设：阶层内变异 > 文化间变异）</li>
+    <li><strong>Q2：</strong>工作记忆训练（如n-back任务）的"近迁移效应"是否可靠？"远迁移效应"（如流体智力）是否存在？——一项基于贝叶斯元分析的重新评估。</li>
+    <li><strong>Q3：</strong>"解释水平理论"（Construal Level Theory）中的"心理距离"效应在中国文化背景下是否成立？——跨文化复制研究。</li>
+    <li><strong>Q4：</strong>主观社会经济地位（Subjective SES）对健康行为的影响是否由"控制感"中介？——纵向中介分析。</li>
+    <li><strong>Q5：</strong>认知负荷对道德判断的影响——"道德困境"（如电车难题）中的双加工模型检验。</li>
+    <li><strong>Q6：</strong>社交媒体使用与青少年抑郁的关系——一项基于"被动使用vs主动使用"区分的精细分析。</li>
+    <li><strong>Q7：</strong>心理弹性（resilience）在创伤后成长中的机制——从"现状"到"过程"的纵向研究。</li>
+    <li><strong>Q8：</strong>身体姿势（如"力量姿势"）对权力感的影响——一项预注册的复制实验（回应Carney et al., 2010的争议）。</li>
+    <li><strong>Q9：</strong>AI聊天机器人（如ChatGPT）在与人类交互时是否表现出"心理理论"？——一项基于"错误信念任务"的计算-行为研究。</li>
+    <li><strong>Q10：</strong>正念冥想的效果——来自"主动对照组"的随机对照试验元分析。</li>
+  </ol>
+
+  <h3>8.3 进阶文献书目（20+篇）</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>领域</th><th>文献</th></tr></thead>
+      <tbody>
+        <tr><td><strong>认知神经科学</strong></td><td>Sporns, O. (2010). <em>Networks of the Brain</em>. MIT Press.<br>Raichle, M. E. (2015). The brain's default mode network. <em>Annual Review of Neuroscience</em>, 38, 433–447.<br>Poldrack, R. A. (2006). Can cognitive processes be inferred from neuroimaging data? <em>Trends in Cognitive Sciences</em>, 10(2), 59–63.</td></tr>
+        <tr><td><strong>心理测量学</strong></td><td>Embretson, S. E., & Reise, S. P. (2000). <em>Item Response Theory for Psychologists</em>. Erlbaum.<br>Bollen, K. A. (1989). <em>Structural Equations with Latent Variables</em>. Wiley.<br>Raudenbush, S. W., & Bryk, A. S. (2002). <em>Hierarchical Linear Models</em> (2nd ed.). Sage.</td></tr>
+        <tr><td><strong>元科学/开放科学</strong></td><td>Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. <em>Science</em>, 349(6251), aac4716.<br>Nosek, B. A., et al. (2015). Promoting an open research culture. <em>Science</em>, 348(6242), 1422–1425.<br>Simmons, J. P., Nelson, L. D., & Simonsohn, U. (2011). False-positive psychology. <em>Psychological Science</em>, 22(11), 1359–1366.</td></tr>
+        <tr><td><strong>文化心理学</strong></td><td>Markus, H. R., & Kitayama, S. (2010). Cultures and selves: A cycle of mutual constitution. <em>Perspectives on Psychological Science</em>, 5(4), 420–430.<br>Henrich, J., Heine, S. J., & Norenzayan, A. (2010). The weirdest people in the world? <em>Behavioral and Brain Sciences</em>, 33(2–3), 61–83.<br>Nisbett, R. E., et al. (2001). Culture and systems of thought: Holistic versus analytic cognition. <em>Psychological Review</em>, 108(2), 291–310.</td></tr>
+        <tr><td><strong>计算精神病学</strong></td><td>Huys, Q. J. M., et al. (2011). Disentangling the roles of approach, activation and valence in instrumental and pavlovian responding. <em>PLoS Computational Biology</em>, 7(4), e1002028.<br>Friston, K. J. (2010). The free-energy principle: A unified brain theory? <em>Nature Reviews Neuroscience</em>, 11(2), 127–138.</td></tr>
+        <tr><td><strong>行为经济学</strong></td><td>Kahneman, D. (2011). <em>Thinking, Fast and Slow</em>. Farrar, Straus and Giroux.<br>Thaler, R. H. (2015). <em>Misbehaving: The Making of Behavioral Economics</em>. Norton.</td></tr>
+        <tr><td><strong>法律心理学</strong></td><td>Loftus, E. F. (2005). Planting misinformation in the human mind: A 30-year investigation of the malleability of memory. <em>Learning & Memory</em>, 12(4), 361–366.<br>Wells, G. L., et al. (2020). Policy and procedure recommendations for the collection and preservation of eyewitness identification evidence. <em>Law and Human Behavior</em>, 44(1), 3–27.</td></tr>
+        <tr><td><strong>批判性视角</strong></td><td>Frances, A. (2013). <em>Saving Normal: An Insider's Revolt against Out-of-Control Psychiatric Diagnosis</em>. Morrow.<br>Hyman, S. E. (2010). The diagnosis of mental disorders: The problem of reification. <em>Annual Review of Clinical Psychology</em>, 6, 155–179.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>8.4 学术写作规范</h3>
+  <p>心理学学术写作的核心规范是<strong>APA格式</strong>（Publication Manual of the American Psychological Association, 7th ed., 2020）。以下为硕士阶段需特别注意的要点：</p>
+  <ul>
+    <li><strong>文献引用格式：</strong>正文中采用"作者-年份"制（Kahneman & Tversky, 1979）；三人及以上作者时使用"et al."（Simmons et al., 2011）；直接引用需注明页码（p. 265）。</li>
+    <li><strong>统计报告规范：</strong>报告效应量及其置信区间（d = 0.45, 95% CI [0.21, 0.69]），而非仅报告p值。报告统计检验的效力（post-hoc power）或精度（confidence interval width）。</li>
+    <li><strong>图表规范：</strong>图标题位于图下方，表标题位于表上方。图表应具有自明性（standalone）——读者在不阅读正文的情况下应能理解图表传达的信息。</li>
+    <li><strong>结果与讨论的分离：</strong>结果部分只报告数据分析结果（不解释），讨论部分解释结果（不报告新数据）。这是APA格式的核心结构要求。</li>
+    <li><strong>预注册与开放科学声明：</strong>越来越多的期刊要求作者声明研究是否预注册、数据与材料是否开放获取。在论文方法部分包含"开放实践声明"（Open Practices Statement）已成为标准实践。</li>
+    <li><strong>结构式摘要：</strong>APA学术论文通常要求200–250字的结构式摘要，包含背景、方法、结果、结论四个部分。</li>
+  </ul>
+
+  <div class="callout">
+    <span class="callout-title">写作提示</span>
+    <p>学术写作不是"表达你已经知道的东西"，而是"在写作中理清你的思路"。建议在论文写作中遵循"三段式"：先写方法（最容易的部分，帮助建立写作动量），再写结果（客观报告），最后写引言与讨论（需要最多的批判性思考）。每篇论文至少修改三遍——第一遍关注结构，第二遍关注论证，第三遍关注语言表达。</p>
+  </div>
+</section>
+
+<!-- ==================== 交互式可视化脚本 ==================== -->
+<script src="./_shared/js/three.min.js"></script>
+<script src="./_shared/js/chart.umd.min.js"></script>
+<style>
+  #psych-threejs-container canvas { display: block; width: 100% !important; height: 100% !important; }
+</style>
+<script>
+// ===== Three.js 3D 脑功能连接网络 =====
+(function() {
+  const container = document.getElementById('psych-threejs-container');
+  if (!container) return;
+  const w = container.clientWidth, h = 480;
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xf0e9f5);
+  const camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 100);
+  camera.position.set(12, 8, 16);
+  camera.lookAt(0, 0, 0);
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(w, h);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  // Add ambient light
+  const ambient = new THREE.AmbientLight(0x404060);
+  scene.add(ambient);
+  const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+  dirLight.position.set(1, 2, 1);
+  scene.add(dirLight);
+  const dirLight2 = new THREE.DirectionalLight(0xffffff, 0.5);
+  dirLight2.position.set(-1, -1, -1);
+  scene.add(dirLight2);
+
+  // Brain regions (nodes) positioned in 3D space
+  const regions = [
+    { name: 'PFC', pos: [-3, 4, 1], color: 0x6D28D9, label: '前额叶' },
+    { name: 'PMC', pos: [-1, 3, 3], color: 0x7C3AED, label: '前运动区' },
+    { name: 'M1', pos: [0, 2, 4], color: 0x8B5CF6, label: '初级运动皮层' },
+    { name: 'S1', pos: [1, 1.5, 4], color: 0x9333EA, label: '初级体感皮层' },
+    { name: 'STG', pos: [2, 2, 2], color: 0xA855F7, label: '颞上回' },
+    { name: 'MTG', pos: [3, 1, 1.5], color: 0xA855F7, label: '颞中回' },
+    { name: 'ITG', pos: [3.5, 0, 0.5], color: 0xBA6BFF, label: '颞下回' },
+    { name: 'SPL', pos: [1, 3, -1], color: 0x6D28D9, label: '顶上小叶' },
+    { name: 'IPL', pos: [2, 2, -2], color: 0x7C3AED, label: '顶下小叶' },
+    { name: 'V1', pos: [0, 0.5, -4], color: 0x9333EA, label: '初级视觉皮层' },
+    { name: 'V2', pos: [-1, 0.5, -3.5], color: 0x8B5CF6, label: '次级视觉皮层' },
+    { name: 'V4', pos: [-2, 0, -3], color: 0xA855F7, label: '视觉皮层V4' },
+    { name: 'Cerebellum', pos: [0, -3, 1], color: 0xBA6BFF, label: '小脑' },
+    { name: 'Hippocampus', pos: [3, -1, 0], color: 0x6D28D9, label: '海马' },
+    { name: 'Amygdala', pos: [2.5, -0.5, 2], color: 0x7C3AED, label: '杏仁核' },
+    { name: 'ACC', pos: [-2, 3, 0], color: 0x8B5CF6, label: '前扣带皮层' },
+    { name: 'PCC', pos: [-1, 1, -2], color: 0x9333EA, label: '后扣带皮层' },
+    { name: 'MPFC', pos: [-4, 3, 0.5], color: 0xA855F7, label: '内侧前额叶' },
+    { name: 'OFC', pos: [-4, 2, 2], color: 0xBA6BFF, label: '眶额皮层' },
+    { name: 'Insula', pos: [2, 1.5, 0], color: 0x6D28D9, label: '岛叶' },
+  ];
+
+  // Create node spheres
+  const nodes = [];
+  regions.forEach(r => {
+    const geo = new THREE.SphereGeometry(0.6, 24, 24);
+    const mat = new THREE.MeshPhongMaterial({ color: r.color, emissive: r.color, emissiveIntensity: 0.2 });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(r.pos[0], r.pos[1], r.pos[2]);
+    scene.add(mesh);
+    nodes.push(mesh);
+  });
+
+  // Create connections (edges) between brain regions
+  // Use a simple distance-based connectivity: nodes closer than threshold are connected
+  const threshold = 5.5;
+  const edgeMat = new THREE.LineBasicMaterial({ color: 0x6D28D9, transparent: true, opacity: 0.25 });
+  const edgeMatStrong = new THREE.LineBasicMaterial({ color: 0x8B5CF6, transparent: true, opacity: 0.5 });
+
+  for (let i = 0; i < regions.length; i++) {
+    for (let j = i + 1; j < regions.length; j++) {
+      const p1 = new THREE.Vector3(regions[i].pos[0], regions[i].pos[1], regions[i].pos[2]);
+      const p2 = new THREE.Vector3(regions[j].pos[0], regions[j].pos[1], regions[j].pos[2]);
+      const dist = p1.distanceTo(p2);
+      if (dist < threshold) {
+        // Stronger connections for closer nodes
+        const opacity = Math.max(0.1, 1 - dist / threshold);
+        const mat = new THREE.LineBasicMaterial({
+          color: 0x6D28D9,
+          transparent: true,
+          opacity: opacity * 0.5
+        });
+        const points = [p1, p2];
+        const geo = new THREE.BufferGeometry().setFromPoints(points);
+        const line = new THREE.Line(geo, mat);
+        scene.add(line);
+      }
+    }
+  }
+
+  // Add a subtle sphere wireframe for brain shape
+  const brainGeo = new THREE.SphereGeometry(5, 32, 32);
+  const brainMat = new THREE.MeshBasicMaterial({ color: 0x6D28D9, wireframe: true, transparent: true, opacity: 0.08 });
+  const brainWire = new THREE.Mesh(brainGeo, brainMat);
+  brainWire.position.set(0, 0.5, 0);
+  scene.add(brainWire);
+
+  // Animation
+  let angle = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    angle += 0.003;
+    const group = new THREE.Group();
+    // Rotate the whole scene around Y axis
+    nodes.forEach(n => {
+      n.position.x = regions[nodes.indexOf(n)].pos[0] * Math.cos(angle) + regions[nodes.indexOf(n)].pos[2] * Math.sin(angle);
+      n.position.z = -regions[nodes.indexOf(n)].pos[0] * Math.sin(angle) + regions[nodes.indexOf(n)].pos[2] * Math.cos(angle);
+    });
+    // Also rotate brain wire
+    brainWire.position.x = 0;
+    brainWire.position.z = 0;
+    // To keep it simple, use camera orbit instead
+    camera.position.x = 16 * Math.sin(angle * 0.5);
+    camera.position.z = 16 * Math.cos(angle * 0.5);
+    camera.lookAt(0, 0.5, 0);
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  // Handle resize
+  window.addEventListener('resize', () => {
+    const w2 = container.clientWidth;
+    renderer.setSize(w2, 480);
+    camera.aspect = w2 / 480;
+    camera.updateProjectionMatrix();
+  });
+})();
+
+// ===== Chart.js ICC 项目特征曲线 =====
+(function() {
+  const ctx = document.getElementById('psych-chart-icc');
+  if (!ctx) return;
+  const labels = [];
+  for (let theta = -3; theta <= 3; theta += 0.05) labels.push(theta.toFixed(2));
+
+  function icc3pl(theta, a, b, c) {
+    const D = 1.7;
+    return c + (1 - c) / (1 + Math.exp(-D * a * (theta - b)));
+  }
+
+  const data1 = labels.map(t => icc3pl(parseFloat(t), 1.8, 0, 0.1));
+  const data2 = labels.map(t => icc3pl(parseFloat(t), 1.0, 1.5, 0.2));
+  const data3 = labels.map(t => icc3pl(parseFloat(t), 0.6, -1.0, 0.15));
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        { label: 'a=1.8, b=0, c=0.1', data: data1, borderColor: '#6D28D9', backgroundColor: 'rgba(109,40,217,0.05)', borderWidth: 2.5, pointRadius: 0, tension: 0.3 },
+        { label: 'a=1.0, b=1.5, c=0.2', data: data2, borderColor: '#B45309', backgroundColor: 'rgba(180,83,9,0.05)', borderWidth: 2.5, pointRadius: 0, tension: 0.3 },
+        { label: 'a=0.6, b=-1.0, c=0.15', data: data3, borderColor: '#2563EB', backgroundColor: 'rgba(37,99,235,0.05)', borderWidth: 2.5, pointRadius: 0, tension: 0.3 },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top', labels: { font: { family: 'WorkSans, sans-serif', size: 11 }, usePointStyle: true } },
+        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': P(θ)=' + ctx.parsed.y.toFixed(3) } }
+      },
+      scales: {
+        x: { title: { display: true, text: '潜在能力 θ', font: { family: 'WorkSans, sans-serif', size: 12 } }, grid: { color: 'rgba(0,0,0,0.06)' } },
+        y: { min: 0, max: 1, title: { display: true, text: '正确概率 P(θ)', font: { family: 'WorkSans, sans-serif', size: 12 } }, grid: { color: 'rgba(0,0,0,0.06)' } }
+      }
+    }
+  });
+})();
+
+// ===== Chart.js 研究方法论谱系图 =====
+(function() {
+  const ctx = document.getElementById('psych-chart-methods');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['实验法', '准实验法', '相关法', '元分析', '开放科学'],
+      datasets: [
+        { label: '内部效度', data: [0.95, 0.65, 0.15, 0.85, 0.75], backgroundColor: 'rgba(109,40,217,0.7)', borderRadius: 4 },
+        { label: '外部效度', data: [0.35, 0.55, 0.90, 0.70, 0.80], backgroundColor: 'rgba(180,83,9,0.7)', borderRadius: 4 },
+        { label: '可重复性', data: [0.50, 0.45, 0.60, 0.85, 0.95], backgroundColor: 'rgba(37,99,235,0.7)', borderRadius: 4 },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top', labels: { font: { family: 'WorkSans, sans-serif', size: 11 } } },
+        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + (ctx.parsed.y * 100).toFixed(0) + '%' } }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { family: 'WorkSans, sans-serif', size: 11 } } },
+        y: { min: 0, max: 1, title: { display: true, text: '评估分数', font: { family: 'WorkSans, sans-serif', size: 12 } }, grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { callback: v => (v * 100).toFixed(0) + '%' } }
+      }
+    }
+  });
+})();
+
+// ===== p值分布动态模拟 =====
+(function() {
+  const canvas = document.getElementById('psych-chart-pvalue');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const parent = canvas.parentElement;
+  let w = parent.clientWidth, h = 360;
+  canvas.width = w * 2; canvas.height = h * 2;
+  canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
+  ctx.scale(2, 2);
+
+  function simulateP(n, d, iterations) {
+    const ps = [];
+    for (let i = 0; i < iterations; i++) {
+      // Simulate two-sample t-test
+      const x = new Array(n), y = new Array(n);
+      for (let j = 0; j < n; j++) {
+        x[j] = randn() + d / 2;
+        y[j] = randn() - d / 2;
+      }
+      const mx = x.reduce((a,b)=>a+b,0)/n, my = y.reduce((a,b)=>a+b,0)/n;
+      const vx = x.reduce((a,b)=>a+(b-mx)**2,0)/(n-1), vy = y.reduce((a,b)=>a+(b-my)**2,0)/(n-1);
+      const se = Math.sqrt(vx/n + vy/n);
+      const t = (mx - my) / se;
+      // Approximate p-value from t-distribution
+      const df = 2 * n - 2;
+      const p = 2 * (1 - tcdf(Math.abs(t), df));
+      ps.push(p);
+    }
+    return ps;
+  }
+
+  function randn() {
+    let u = 0, v = 0;
+    while (u === 0) u = Math.random();
+    while (v === 0) v = Math.random();
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  }
+
+  function tcdf(t, df) {
+    // Approximation using normal for large df; for simplicity use numerical integration
+    const x = df / (df + t * t);
+    const beta = 0.5 * Math.exp(lgamma(df/2) + lgamma(0.5) - lgamma((df+1)/2));
+    // Use simplified approximation
+    let p = 1;
+    for (let i = 0; i < 100; i++) {
+      const xi = i / 100 * x;
+      p -= (1/100) * Math.pow(xi, df/2 - 1) * Math.pow(1 - xi, -0.5) / beta;
+    }
+    p = Math.max(0, Math.min(1, p));
+    return 1 - p / 2;
+  }
+
+  // Gamma function log approximation (Stirling)
+  function lgamma(z) {
+    if (z < 0.5) return Math.log(Math.PI) - Math.log(Math.sin(Math.PI * z)) - lgamma(1 - z);
+    z -= 1;
+    const g = 7;
+    const c = [0.99999999999980993, 676.5203681218851, -1259.1392167224028, 771.32342877765313, -176.61502916214059, 12.507343278686905, -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7];
+    let x = c[0];
+    for (let i = 1; i < g + 2; i++) x += c[i] / (z + i);
+    const t = z + g + 0.5;
+    return 0.5 * Math.log(2 * Math.PI) + (z + 0.5) * Math.log(t) - t + Math.log(x);
+  }
+
+  // Use simpler approximation for p-value animation
+  function simulatePQuick(n, d, iterations) {
+    const ps = [];
+    for (let i = 0; i < iterations; i++) {
+      let sumX = 0, sumY = 0, sumX2 = 0, sumY2 = 0;
+      for (let j = 0; j < n; j++) {
+        const x = randn() + d / 2, y = randn() - d / 2;
+        sumX += x; sumY += y;
+        sumX2 += x * x; sumY2 += y * y;
+      }
+      const mx = sumX / n, my = sumY / n;
+      const vx = (sumX2 - n * mx * mx) / (n - 1);
+      const vy = (sumY2 - n * my * my) / (n - 1);
+      const se = Math.sqrt(vx / n + vy / n);
+      const t = Math.abs(mx - my) / se;
+      // Normal approximation p
+      const p = 2 * (1 - 0.5 * (1 + erf(t / Math.sqrt(2))));
+      ps.push(p);
+    }
+    return ps;
+  }
+
+  function erf(x) {
+    const a1 = 0.254829592, a2 = -0.284496736, a3 = 1.421413741, a4 = -1.453152027, a5 = 1.061405429, p = 0.3275911;
+    const sign = x < 0 ? -1 : 1;
+    x = Math.abs(x);
+    const t = 1 / (1 + p * x);
+    const y = 1 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
+    return sign * y;
+  }
+
+  const sampleSizes = [20, 50, 100, 200];
+  const colors = ['#6D28D9', '#B45309', '#2563EB', '#7C3AED'];
+  const d = 0.3; // effect size
+  const iterations = 500;
+
+  let frame = 0;
+  const maxFrames = 100;
+  const allPs = sampleSizes.map(n => simulatePQuick(n, d, iterations));
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    const active = Math.floor(frame / (maxFrames / sampleSizes.length));
+
+    // Draw background
+    ctx.fillStyle = '#FAF6FB';
+    ctx.fillRect(0, 0, w, h);
+
+    // Title
+    ctx.fillStyle = '#2A2033';
+    ctx.font = 'bold 13px WorkSans, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('p值分布模拟 (Cohen d = 0.3, 迭代 ' + iterations + ' 次)', w / 2, 22);
+
+    // Draw histograms for each sample size
+    const margin = { top: 35, bottom: 30, left: 15, right: 15 };
+    const barW = (w - margin.left - margin.right) / (sampleSizes.length * 2);
+
+    for (let si = 0; si <= active && si < sampleSizes.length; si++) {
+      const n = sampleSizes[si];
+      const ps = allPs[si];
+      const bins = 20;
+      const hist = new Array(bins).fill(0);
+      ps.forEach(p => {
+        const idx = Math.min(bins - 1, Math.floor(p * bins));
+        hist[idx]++;
+      });
+      const maxCount = Math.max(...hist, 1);
+
+      const x0 = margin.left + si * (w - margin.left - margin.right) / sampleSizes.length + 10;
+      const plotW = (w - margin.left - margin.right) / sampleSizes.length - 20;
+      const plotH = h - margin.top - margin.bottom;
+      const binW = plotW / bins;
+
+      // Label
+      ctx.fillStyle = '#2A2033';
+      ctx.font = 'bold 11px WorkSans, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('n = ' + n, x0 + plotW / 2, margin.top + 12);
+
+      // Draw bars
+      hist.forEach((count, i) => {
+        const barH = (count / maxCount) * plotH * 0.8;
+        const x = x0 + i * binW;
+        const y = margin.top + 18 + plotH - barH;
+        ctx.fillStyle = colors[si % colors.length];
+        ctx.globalAlpha = 0.7;
+        ctx.fillRect(x, y, Math.max(1, binW - 1), barH);
+        ctx.globalAlpha = 1;
+      });
+
+      // p = 0.05 line
+      const lineX = x0 + 0.05 * plotW;
+      ctx.strokeStyle = '#B45309';
+      ctx.setLineDash([4, 3]);
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(lineX, margin.top + 18);
+      ctx.lineTo(lineX, margin.top + 18 + plotH);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = '#B45309';
+      ctx.font = '10px WorkSans, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('p=0.05', lineX, margin.top + 14);
+    }
+
+    // Legend
+    ctx.fillStyle = '#6A5E75';
+    ctx.font = '10px WorkSans, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('拖动滑块观察不同样本量下的p值分布变化', w / 2, h - 6);
+
+    if (frame < maxFrames - 1) {
+      frame++;
+      setTimeout(draw, 80);
+    } else {
+      frame = 0;
+      setTimeout(draw, 100);
+    }
+  }
+  draw();
+})();
+</script>
