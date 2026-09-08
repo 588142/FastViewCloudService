@@ -43,13 +43,8 @@ def cmd_export(html_rel, dest):
     return 0
 
 def cmd_verify(root):
-    import importlib.util
-    spec = importlib.util.spec_from_file_location('verify_dedupe', os.path.join(ROOT, '_verify_dedupe.py'))
-    m = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(m)
-    sys.argv = [sys.argv[0], root]
-    exec(open(os.path.join(ROOT, '_audit_dom.py'), encoding='utf-8').read())
-    return 0
+    subprocess.run([sys.executable, os.path.join(ROOT, '_verify_dedupe.py')])
+    return subprocess.run([sys.executable, os.path.join(ROOT, '_audit_dom.py'), root]).returncode
 
 def cmd_sync():
     src = os.path.join(ROOT, '思想图谱系列')
@@ -66,13 +61,14 @@ def main():
     p_exp = sub.add_parser('export')
     p_exp.add_argument('html_rel')
     p_exp.add_argument('--dest')
-    sub.add_parser('verify')
+    p_verify = sub.add_parser('verify')
+    p_verify.add_argument('--root', default=ROOT)
     sub.add_parser('sync')
     args = ap.parse_args()
     if args.cmd == 'export':
         return cmd_export(args.html_rel, args.dest)
     if args.cmd == 'verify':
-        return cmd_verify(ROOT)
+        return cmd_verify(args.root)
     if args.cmd == 'sync':
         return cmd_sync()
     ap.print_help()
